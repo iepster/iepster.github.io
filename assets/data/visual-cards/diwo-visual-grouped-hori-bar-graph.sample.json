@@ -1,0 +1,110 @@
+{
+  "title": "Expected myRewards' Churn Rate for May 2017",
+  "legend": {
+    "isVisible": true,
+    "text": "{{name}}"
+  },
+  "tooltip": {
+    "hasImg": true,
+    "title": [ "{{name}}", "<span class='metric'>Stock/Sales Ratio</span><span class='number'>{{y}}</span>" ],
+    "body": []
+  },
+  "y": {
+    "title": "Revenue $",
+    "prefix": "",
+    "sufix": "",
+    "type": "time",
+    "outFormat": "%b - %Y",
+    "inFormat": "%Y-%d-%m"
+  },
+  "x": {
+    "title": "Contribution to sell Mix",
+    "equal": true,
+    "prefix": "$",
+    "sufix": "",
+    "format": "",
+    "min": 0,
+    "max": 0
+  },
+  "attrs": {
+    "barHeight": 10
+  },
+  "colors": {
+    "AgeGroup1": {
+      "fill": "#08a59d",
+      "gradient": "#78c9c5",
+      "stroke": "#006861",
+      "fill-neg": "#d4495b",
+      "gradient-neg": "#e7929d",
+      "stroke-neg": "#ad1427"
+    },
+    "AgeGroup2": {
+      "fill": "#08a59d",
+      "gradient": "#78c9c5",
+      "stroke": "#006861",
+      "fill-neg": "#d4495b",
+      "gradient-neg": "#e7929d",
+      "stroke-neg": "#ad1427"
+    },
+    "AgeGroup3": {
+      "fill": "#08a59d",
+      "gradient": "#78c9c5",
+      "stroke": "#006861",
+      "fill-neg": "#d4495b",
+      "gradient-neg": "#e7929d",
+      "stroke-neg": "#ad1427"
+    },
+    "AgeGroup4": {
+      "fill": "#08a59d",
+      "gradient": "#78c9c5",
+      "stroke": "#006861",
+      "fill-neg": "#d4495b",
+      "gradient-neg": "#e7929d",
+      "stroke-neg": "#ad1427"
+    }
+  },
+  "data": [
+    {
+      "y": "",
+      "name": "",
+      "values": [
+        {
+          "y": "AgeGroup1",
+          "name": "2016-01-01",
+          "x": 0.6
+        },
+        {
+          "y": "AgeGroup1",
+          "name": "2016-01-01",
+          "x": -0.9
+        },
+        {
+          "y": "AgeGroup2",
+          "name": "2016-01-02",
+          "x": 0.2
+        },
+        {
+          "y": "AgeGroup2",
+          "name": "2016-01-02",
+          "x": -0.2
+        },
+        {
+          "y": "AgeGroup3",
+          "name": "2016-01-03",
+          "x": 0.6
+        },
+        {
+          "y": "AgeGroup4",
+          "name": "2016-01-04",
+          "x": 0.5
+        },
+        {
+          "y": "AgeGroup4",
+          "name": "2016-01-04",
+          "x": -0.2
+        }
+
+      ]
+    }
+  ]
+}

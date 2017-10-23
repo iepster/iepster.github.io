@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Sunburst </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        /*  TOOLTIP ARROWS*/
+   .tooltip - div.right::after {
+       content: '';
+       display: block;
+       width: 0;
+       height: 0;
+       position: absolute;
+
+       border - top: 13 px solid transparent;
+       border - bottom: 13 px solid transparent;
+       border - left: 13 px solid white;
+       right: -10 px;
+
+       top: 1 px;
+   }
+
+
+
+
+   .tooltip - div.left::before {
+       content: '';
+       display: block;
+       width: 0;
+       height: 0;
+       position: absolute;
+
+       border - top: 13 px solid transparent;
+       border - bottom: 13 px solid transparent;
+       border - right: 13 px solid white;
+       left: -10 px;
+
+       top: 1 px;
+   }
+
+
+
+
+   body {
+       background - image: url(.. / .. / assets / sunburst / sunburst - back.png)
+   }
+
+
+
+
+   .sunburst - tree {
+       float: left;
+       width: 50 % ;
+       height: 800 px;
+       overflow: visible;
+       position: relative;
+       display: inline - block;
+       z - index: 9999999;
+       background - color: rgba(240, 254, 254, 0.47)
+   }
+
+
+
+
+   .sunburst - tree svg g {
+       pointer - events: auto;
+   }
+
+
+
+
+   .sunburst {
+       width: 45 % ;
+       height: 800 px;
+       display: inline - block;
+       position: relative;
+   }
+
+
+
+
+   .search {
+       top: 30 px;
+       left: 40 px;
+       width: 100 % ;
+       position: relative;
+   }
+
+
+
+
+   .search input {
+       width: 80 % ;
+       height: 21 px;
+       border: 1 px solid# D6D6D6;
+       background - color: rgba(240, 254, 254, 0.47)
+   }
+
+
+
+
+   .search input: focus {
+       outline: none;
+   }
+
+
+
+
+   .search.searchButton {
+       outline: none;
+   }
+
+
+
+
+   .searchButton {
+       position: relative;
+       display: inline - block;
+       width: 20;
+       height: 25 px;
+       left: -35 px;
+       text - align: center;
+       color: #D6D6D6;
+       border: none;
+       background: none;
+       cursor: pointer;
+       font - size: 14 px;
+   }
+
+
+
+
+   .wrap {
+       width: 100 % ;
+       position: absolute;
+   }
+    </style>
+
+
+</head>
+
+<body translate="no">
+
+    <div class="sunburst-tree">
+        <div class="wrap">
+            <div class="search">
+                <input type="text" class="searchTerm">
+                <button type="submit" class="searchButton">
+        <i class="fa fa-search"></i>
+     </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="sunburst">
+    </div>
+
+
+
+
+    <script>
+        var module = {}
+        var lineModule = {}
+        var treemodule = {}
+    </script>
+
+    <link rel="stylesheet" href="../../../lib/styles/font-awesome.min.css">
+    <script src="sunburst.line/handlers.js"></script>
+    <script src="sunburst.line/create.js"></script>
+    <script src="sunburst.line/elements.js"></script>
+    <script src="sunburst.line/initialize.js"></script>
+    <script src="sunburst.line/init.js"></script>
+
+
+    <script src="../../../lib/d3.v4.js"></script>
+    <script src="handlers.js"></script>
+    <script src="create.js"></script>
+    <script src="elements.js"></script>
+    <script src="initialize.js"></script>
+    <script src="init.js"></script>
+
+    <script src="../sunburst.tree/handlers.js"></script>
+    <script src="../sunburst.tree/create.js"></script>
+    <script src="../sunburst.tree/elements.js"></script>
+    <script src="../sunburst.tree/initialize.js"></script>
+    <script src="../sunburst.tree/init.js"></script>
+
+
+
+
+
+    <script>
+        var sunburst;
+        var tree;
+
+        d3.json("sunburstData.json", function (err, data) {
+            sunburst = module._init()
+
+            sunburst.container('.sunburst')
+                .data(data)
+                .type('LINED')
+                .run()
+        })
+
+
+        d3.json('../sunburst.tree/treeData.json', function (err, data) {
+            tree = treemodule._init()
+
+            tree.container('.sunburst-tree')
+                .data(data)
+                .svgWidth(document.documentElement.clientWidth/2)
+                .svgHeight(document.documentElement.clientHeight)
+                .dependentSunburst(sunburst)
+                
+                .run()
+        })
+    </script>
+
+
+</body>
+
+</html>

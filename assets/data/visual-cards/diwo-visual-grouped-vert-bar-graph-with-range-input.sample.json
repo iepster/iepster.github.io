@@ -1,0 +1,125 @@
+{
+  "title": "Expected myRewards' Churn Rate for May 2017",
+  "legend": {
+    "isVisible": true,
+    "text": "{{name}}"
+  },
+  "range": {
+    "bottomLabel": "CSAT",
+    "topLabel": "",
+    "min": 10,
+    "max": 50,
+    "value": 30,
+    "step": 5,
+    "prefix": "$",
+    "suffix": "",
+    "format": "",
+    "formula": "Math.random() * {{y}}"
+  },
+  "tooltip": {
+    "hasImg": true,
+    "title": [ "{{name}}", "<span class='metric'>Stock/Sales Ratio</span><span class='number'>{{y}}</span>" ],
+    "body": []
+  },
+  "x": {
+    "title": "Revenue $",
+    "prefix": "",
+    "suffix": "",
+    "type": "time",
+    "outFormat": "%b - %Y",
+    "inFormat": "%Y-%d-%m"
+  },
+  "y": {
+    "title": "Contribution to sell Mix",
+    "equal": true,
+    "prefix": "$",
+    "suffix": "",
+    "format": ""
+  },
+  "attrs": {
+    "barWidth": 10
+  },
+  "colors": {
+    "male": {
+      "fill": "#b1b7b9",
+      "gradient": "#e7e7e9",
+      "stroke": "#202a2e"
+    },
+    "AgeGroup1": {
+      "fill": "#08a59d",
+      "gradient": "#78c9c5",
+      "stroke": "#006861",
+      "fill-neg": "#d4495b",
+      "gradient-neg": "#e7929d",
+      "stroke-neg": "#ad1427"
+    },
+    "AgeGroup2": {
+      "fill": "#08a59d",
+      "gradient": "#78c9c5",
+      "stroke": "#006861",
+      "fill-neg": "#d4495b",
+      "gradient-neg": "#e7929d",
+      "stroke-neg": "#ad1427"
+    },
+    "AgeGroup3": {
+      "fill": "#08a59d",
+      "gradient": "#78c9c5",
+      "stroke": "#006861",
+      "fill-neg": "#d4495b",
+      "gradient-neg": "#e7929d",
+      "stroke-neg": "#ad1427"
+    },
+    "AgeGroup4": {
+      "fill": "#08a59d",
+      "gradient": "#78c9c5",
+      "stroke": "#006861",
+      "fill-neg": "#d4495b",
+      "gradient-neg": "#e7929d",
+      "stroke-neg": "#ad1427"
+    }
+  },
+  "data": [
+    {
+      "x": "male",
+      "name": "",
+      "values": [
+        {
+          "x": "AgeGroup1",
+          "name": "2016-01-01",
+          "y": 0.6
+        },
+        {
+          "x": "AgeGroup1",
+          "name": "2016-01-01",
+          "y": -0.9
+        },
+        {
+          "x": "AgeGroup2",
+          "name": "2016-01-02",
+          "y": 0.2
+        },
+        {
+          "x": "AgeGroup2",
+          "name": "2016-01-02",
+          "y": -0.2
+        },
+        {
+          "x": "AgeGroup3",
+          "name": "2016-01-03",
+          "y": -0.6
+        },
+        {
+          "x": "AgeGroup4",
+          "name": "2016-01-04",
+          "y": 0.5
+        },
+        {
+          "x": "AgeGroup4",
+          "name": "2016-01-04",
+          "y": -0.2
+        }
+
+      ]
+    }
+  ]
+}

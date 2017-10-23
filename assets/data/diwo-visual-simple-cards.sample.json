@@ -1,0 +1,28 @@
+{
+  "data": [
+    {
+      "title": {
+        "text": "Owner",
+        "backgroundColor": "#d2d5d5",
+        "color": "#323232"
+      },
+      "body": {
+        "text": "Personal Property Coverage for jewelery and silverware",
+        "backgroundColor": "#f2f2f2",
+        "color": "#323232"
+      }
+    },
+    {
+      "title": {
+        "text": "Non-Owers",
+        "backgroundColor": "#d2d5d5",
+        "color": "#323232"
+      },
+      "body": {
+        "text": "Personal Property Coverage for musical instruments and camera equipment ",
+        "backgroundColor": "#f2f2f2",
+        "color": "#323232"
+      }
+    }
+  ]
+}

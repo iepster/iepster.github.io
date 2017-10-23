@@ -1,0 +1,20 @@
+{
+  "title": "Primary account holders with custodial account relationships have",
+  "data": [
+    {
+      "name": { "type": "string", "value": "Assets Under Management:", "color": "#666" },
+      "value": { "type": "number", "value": 12835786, "prefix": "$", "sufix": "", "format": "locale", "color": "#0c3543" },
+      "line": { "width": 1 }
+    },
+    {
+      "name": { "type": "string", "value": "Average Number of Account:", "color": "#84acb4" },
+      "value": { "type": "number", "value": 3.21, "prefix": "$", "sufix": "", "format": "locale", "color": "#0c3543" },
+      "line": { "width": 0 }
+    },
+    {
+      "name": { "type": "string", "value": "Management Fee Ratio:", "color": "#3eb1d4" },
+      "value": { "type": "number", "value": 21.6, "prefix": "", "sufix": "%", "format": "locale", "color": "#6CD3EA" },
+      "line": { "color": "#6CD3EA", "style": "solid", "width": 2 }
+    }
+  ]
+}

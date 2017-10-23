@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Price Ranges </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+
+</head>
+
+<body translate="no">
+    <div class="chart">
+    </div>
+
+
+    <script>
+        var module = {}
+    </script>
+    <script src="../../../lib/d3.v4.js"></script>
+    <script src="handlers.js"></script>
+    <script src="create.js"></script>
+    <script src="elements.js"></script>
+    <script src="initialize.js"></script>
+    <script src="init.js"></script>
+
+    <script>
+        d3.json("price-ranges-data.json", (err, data) => {
+            var chart = module._init()
+                .container('.chart')
+                .data(data)
+                .run()
+        })
+    </script>
+
+
+</body>
+
+</html>

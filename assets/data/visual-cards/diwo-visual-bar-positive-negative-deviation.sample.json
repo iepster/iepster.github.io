@@ -1,0 +1,173 @@
+{
+  "title": "Bar with Positive and Negative Deviations",
+  "legend": {
+    "isVisible": true,
+    "text": "{{group}}"
+  },
+  "tooltip": {
+    "hasImg": false,
+    "title": [
+      "{{name}}",
+      "<span class='metric'>Contribution</span><span class='number'>{{x}}</span>",
+      "<span class='metric'>Deviation</span><span class='number'>{{y}}</span>"
+    ],
+    "body": []
+  },
+  "xTop": {
+    "title": "Master Style",
+    "prefix": "",
+    "sufix": "%",
+    "type": "number",
+    "format": "",
+    "intervals": [
+      { "min": 0,  "max": 10, "title": "0 to 10" },
+      { "min": 10, "max": 20, "title": "10 to 20" },
+      { "min": 20, "max": 30, "title": "20 to 30" }
+    ]
+  },
+  "xBottom": {
+    "title": "Master Style",
+    "prefix": "",
+    "sufix": "%",
+    "type": "number",
+    "format": "",
+    "intervals": [
+      { "min": -10, "max": 0,   "title": "-0 to -10" },
+      { "min": -20, "max": -10, "title": "-10 to -20" },
+      { "min": -30, "max": -20, "title": "-20 to -30" }
+    ]
+  },
+  "y": {
+    "title": "Gap between vs Actual and Planned Sales",
+    "prefix": "",
+    "sufix": "%",
+    "type": "number",
+    "format": ""
+  },
+  "attrs": {
+    "barWidth": 8,
+    "wrapText": false
+  },
+  "data": [
+    {
+      "id": "positive-1",
+      "x": "5",
+      "name": "5%",
+      "group": "Positive Gap",
+      "y": 5,
+      "fill": "#42b548",
+      "gradient": "#7cca80",
+      "stroke": "#0e6113"
+    },
+    {
+      "id": "positive-2",
+      "x": "19",
+      "name": "19%",
+      "group": "Positive Gap",
+      "y": 19,
+      "fill": "#42b548",
+      "gradient": "#7cca80",
+      "stroke": "#0e6113"
+    },
+    {
+      "id": "positive-3",
+      "x": "25",
+      "name": "25%",
+      "group": "Positive Gap",
+      "y": 25,
+      "fill": "#42b548",
+      "gradient": "#7cca80",
+      "stroke": "#0e6113"
+    },
+    {
+      "id": "positive-4",
+      "x": "35",
+      "name": "35%",
+      "group": "Positive Gap",
+      "y": 35,
+      "fill": "#42b548",
+      "gradient": "#7cca80",
+      "stroke": "#0e6113"
+    },
+    {
+      "id": "positive-5",
+      "x": "45",
+      "name": "45%",
+      "group": "Positive Gap",
+      "y": 45,
+      "fill": "#42b548",
+      "gradient": "#7cca80",
+      "stroke": "#0e6113"
+    },
+    {
+      "id": "positive-6",
+      "x": "50",
+      "name": "50%",
+      "group": "Positive Gap",
+      "y": 50,
+      "fill": "#42b548",
+      "gradient": "#7cca80",
+      "stroke": "#0e6113"
+    },
+    {
+      "id": "negative-1",
+      "x": "-51",
+      "name": "-51%",
+      "group": "Negative Gap",
+      "y": -51,
+      "fill": "#e10311",
+      "gradient": "#f3c7ca",
+      "stroke": "#5f0208"
+    },
+    {
+      "id": "negative-2",
+      "x": "-47",
+      "name": "-47%",
+      "group": "Negative Gap",
+      "y": -47,
+      "fill": "#e10311",
+      "gradient": "#f3c7ca",
+      "stroke": "#5f0208"
+    },
+    {
+      "id": "negative-3",
+      "x": "-31",
+      "name": "-31%",
+      "group": "Negative Gap",
+      "y": -31,
+      "fill": "#e10311",
+      "gradient": "#f3c7ca",
+      "stroke": "#5f0208"
+    },
+    {
+      "id": "negative-4",
+      "x": "-21",
+      "name": "-21%",
+      "group": "Negative Gap",
+      "y": -21,
+      "fill": "#e10311",
+      "gradient": "#f3c7ca",
+      "stroke": "#5f0208"
+    },
+    {
+      "id": "negative-5",
+      "x": "-13",
+      "name": "-13%",
+      "group": "Negative Gap",
+      "y": -13,
+      "fill": "#e10311",
+      "gradient": "#f3c7ca",
+      "stroke": "#5f0208"
+    },
+    {
+      "id": "negative-6",
+      "x": "-3",
+      "name": "-3%",
+      "group": "Negative Gap",
+      "y": -3,
+      "fill": "#e10311",
+      "gradient": "#f3c7ca",
+      "stroke": "#5f0208"
+    }
+  ]
+}

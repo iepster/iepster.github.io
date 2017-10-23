@@ -1,0 +1,52 @@
+{
+  "x": {
+    "title": "Sales Revenue",
+    "tooltip": "Sales Revenue",
+    "prefix": "$",
+    "sufix": ""
+  },
+  "y": {
+    "title": "Change in Sales across Categories",
+    "tooltip": "% Change in Sales",
+    "prefix": "",
+    "sufix": "%",
+    "target": 0
+  },
+  "data": [{
+      "id": "Red Clutches",
+      "name": "Red Clutches",
+      "img": "http://ecx.images-amazon.com/images/I/51m%2BsPQTgWL._SL256_.jpg",
+      "x": 234000,
+      "y": 2.3,
+      "color": "#FF420A"
+    }, {
+      "id": "Gray Clutches",
+      "name": "Gray Clutches ",
+      "img": "https://thumbnail.image.rakuten.co.jp/@0_mall/bestgallery/cabinet/7501_8000/1007539_1.jpg?_ex=128x128",
+      "x": 122120,
+      "y": 4.8,
+      "color": "#abacad"
+    }, {
+      "id": "Blue Carryall",
+      "name": "Blue Carryall",
+      "img": "http://store.meadia.net/images/product/h/http:-storemeadianet-cases-laptop-13-moshi-urbana-cerulean-b-256px-256px.png",
+      "x": 344000,
+      "y": -3.7,
+      "color": "#00B3DA"
+    }, {
+      "id": "Green Cross-Body",
+      "name": "Green Cross-Body",
+      "img": "https://i.ebayimg.com/00/s/NTAwWDUwMA==/z/2AwAAOSwcaFZD~G0/$_14.JPG",
+      "x": 144000,
+      "y": 1.7,
+      "color": "#00AA9E"
+    }, {
+      "id": "Orange Clutches",
+      "name": "Orange Clutches",
+      "img": "./assets/images/Shoulder-Bags.jpg",
+      "x": 268800,
+      "y": -0.9,
+      "color": "#FFB519"
+    }
+  ]
+}

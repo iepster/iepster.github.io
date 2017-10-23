@@ -1,0 +1,1216 @@
+{
+  "overridableParams": {
+    "title": "stores map",
+    "infoPanelProps": [
+      {
+        "key": "Store ",
+        "value": "{name} "
+      },
+      {
+        "key": "Sales Propensity",
+        "value": "{Sale Propensity} "
+      }
+    ],
+    "tooltipProps": [
+      {
+        "left": "{collectionPercent}",
+        "right": "off the collection"
+      },
+      {
+        "left": "{categoryPercent}",
+        "right": "of the category"
+      }
+    ],
+    "rectanglePatternLength": 19,
+    "patterBackgroundColor": "#ECECEC",
+    "svgFontFamily": "Yantramanav",
+    "barMaxHeight": 70,
+    "bottomBarHeight": 3,
+    "bottomBarColor": "#596A6D",
+    "barWidth": 1.5,
+    "barOpacity": 1,
+    "barColor": "#8DC4CD",
+    "infoPanelColor": "#8BC3D2",
+    "zoomWidth": 5,
+    "zoomHeight": 3.2,
+    "moveLeft": 200,
+    "moveTop": -150,
+    "hasInfoPanel": true,
+    "displayToggle": true
+  },
+  "stores": [
+    {
+      "values": [
+        {
+          "Category": "Bag",
+          "Class": "Carryalls",
+          "Collections": "Swagger",
+          "Style": "Embellished",
+          "Store": "S.1",
+          "Store City": "Alabama",
+          "Store Type": "Full Priced",
+          "Store Grade": "A",
+          "Store State": "AL",
+          "sales": "25",
+          "salesPerc": "0.12"
+        }
+      ],
+      "name": "Alabama",
+      "city": "Alabama",
+      "lat": 32.806671,
+      "lon": -86.79113,
+      "state": "AL",
+      "Sale Propensity": 18
+    },
+    {
+      "values": [
+        {
+          "Category": "Bag",
+          "Class": "Carryalls",
+          "Collections": "Swagger",
+          "Style": "Embellished",
+          "Store": "S.2",
+          "Store City": "Alaska",
+          "Store Type": "Full Priced",
+          "Store Grade": "B",
+          "Store State": "AK",
+          "sales": "30",
+          "salesPerc": "0.15"
+        }
+      ],
+      "name": "Alaska",
+      "city": "Alaska",
+      "lat": 61.370716,
+      "lon": -152.404419,
+      "state": "AK",
+      "Sale Propensity": 9
+    },
+    {
+      "values": [
+        {
+          "Category": "Bag",
+          "Class": "Carryalls",
+          "Collections": "Swagger",
+          "Style": "Embellished",
+          "Store": "S.3",
+          "Store City": "Arizona City",
+          "Store Type": "Full Priced",
+          "Store Grade": "A",
+          "Store State": "FL",
+          "sales": "32",
+          "salesPerc": "0.17"
+        }
+      ],
+      "name": "Arizona",
+      "city": "Arizona",
+      "lat": 33.729759,
+      "lon": -111.431221,
+      "state": "AZ",
+      "Sale Propensity": 19
+    },
+    {
+      "values": [
+        {
+          "Category": "Bag",
+          "Class": "Carryalls",
+          "Collections": "Swagger",
+          "Style": "Embellished",
+          "Store": "S.4",
+          "Store City": "Naples",
+          "Store Type": "Full Priced",
+          "Store Grade": "C",
+          "Store State": "FL",
+          "sales": "21",
+          "salesPerc": "0.03"
+        }
+      ],
+      "name": " Arkansas",
+      "city": " Arkansas",
+      "lat": 34.969704,
+      "lon": -92.373123,
+      "state": "AR",
+      "Sale Propensity": 20
+    },
+    {
+      "values": [
+        {
+          "Category": "Bag",
+          "Class": "Carryalls",
+          "Collections": "Swagger",
+          "Style": "Embellished",
+          "Store": "S.5",
+          "Store City": "Tampa",
+          "Store Type": "Full Priced",
+          "Store Grade": "A",
+          "Store State": "FL",
+          "sales": "20",
+          "salesPerc": "0.05"
+        }
+      ],
+      "name": "California",
+      "city": "California",
+      "lat": 36.116203,
+      "lon": -119.681564,
+      "state": "CA",
+      "Sale Propensity": 89
+    },
+    {
+      "values": [
+        {
+          "Category": "Bag",
+          "Class": "Carryalls",
+          "Collections": "Swagger",
+          "Style": "Embellished",
+          "Store": "S.6",
+          "Store City": "Jacksonville",
+          "Store Type": "Full Priced",
+          "Store Grade": "A",
+          "Store State": "FL",
+          "sales": "25",
+          "salesPerc": "0.10"
+        }
+      ],
+      "name": "Colorado",
+      "city": "Colorado",
+      "lat": 39.059811,
+      "lon": -105.311104,
+      "state": "CO",
+      "Sale Propensity": 70
+    },
+    {
+      "values": [
+        {
+          "Category": "Bag",
+          "Class": "Carryalls",
+          "Collections": "Swagger",
+          "Style": "Embellished",
+          "Store": "S.7",
+          "Store City": "Miami",
+          "Store Type": "Retail Outlet",
+          "Store Grade": "B",
+          "Store State": "FL",
+          "sales": "10",
+          "salesPerc": "0.02"
+        }
+      ],
+      "name": "Connecticut",
+      "city": "Connecticut",
+      "lat": 41.597782,
+      "lon": -72.755371,
+      "state": "CT",
+      "Sale Propensity": 11
+    },
+    {
+      "values": [
+        {
+          "Category": "Bag",
+          "Class": "Carryalls",
+          "Collections": "Swagger",
+          "Style": "Embellished",
+          "Store": "S.8",
+          "Store City": "Tampa",
+          "Store Type": "Retail Outlet",
+          "Store Grade": "B",
+          "Store State": "FL",
+          "sales": "23",
+          "salesPerc": "0.08"
+        }
+      ],
+      "name": "Delaware",
+      "city": "Delaware",
+      "lat": 41.597782,
+      "lon": -72.755371,
+      "state": "DE",
+      "Sale Propensity": 11
+    },
+    {
+      "values": [
+        {
+          "Category": "Bag",
+          "Class": "Carryalls",
+          "Collections": "Swagger",
+          "Style": "Embellished",
+          "Store": "S.9",
+          "Store City": "Charlotte",
+          "Store Type": "Full Priced",
+          "Store Grade": "B",
+          "Store State": "NC",
+          "sales": "24",
+          "salesPerc": "0.07"
+        }
+      ],
+      "name": "District of Columbia",
+      "city": "District of Columbia",
+      "lat": 38.897438,
+      "lon": -77.026817,
+      "state": "DC",
+      "Sale Propensity": 83
+    },
+    {
+      "values": [
+        {
+          "Category": "Bag",
+          "Class": "Carryalls",
+          "Collections": "Swagger",
+          "Style": "Embellished",
+          "Store": "S.10",
+          "Store City": "Washington DC",
+          "Store Type": "Full Priced",
+          "Store Grade": "B",
+          "Store State": "VA",
+          "sales": "23",
+          "salesPerc": "0.09"
+        }
+      ],
+      "name": "Florida",
+      "city": "Florida",
+      "lat": 27.766279,
+      "lon": -81.686783,
+      "state": "FL",
+      "Sale Propensity": 85
+    },
+    {
+      "values": [
+        {
+          "Category": "Bag",
+          "Class": "Carryalls",
+          "Collections": "Swagger",
+          "Style": "Embellished",
+          "Store": "S.10",
+          "Store City": "Washington DC",
+          "Store Type": "Full Priced",
+          "Store Grade": "B",
+          "Store State": "VA",
+          "sales": "24",
+          "salesPerc": "0.09"
+        }
+      ],
+      "name": "Georgia",
+      "city": "Georgia",
+      "lat": 33.040619,
+      "lon": -83.643074,
+      "state": "GA",
+      "Sale Propensity": 72
+    },
+    {
+      "values": [
+        {
+          "Category": "Bag",
+          "Class": "Carryalls",
+          "Collections": "Swagger",
+          "Style": "Embellished",
+          "Store": "S.10",
+          "Store City": "Washington DC",
+          "Store Type": "Full Priced",
+          "Store Grade": "B",
+          "Store State": "VA",
+          "sales": "28",
+          "salesPerc": "0.09"
+        }
+      ],
+      "name": "Hawaii",
+      "city": "Hawaii",
+      "lat": 21.094318,
+      "lon": -157.498337,
+      "state": "HI",
+      "Sale Propensity": 47
+    },
+    {
+      "values": [
+        {
+          "Category": "Bag",
+          "Class": "Carryalls",
+          "Collections": "Swagger",
+          "Style": "Embellished",
+          "Store": "S.10",
+          "Store City": "Washington DC",
+          "Store Type": "Full Priced",
+          "Store Grade": "B",
+          "Store State": "VA",
+          "sales": "16",
+          "salesPerc": "0.09"
+        }
+      ],
+      "name": "Idaho",
+      "city": "Idaho",
+      "lat": 44.240459,
+      "lon": -114.478828,
+      "state": "ID",
+      "Sale Propensity": 16
+    },
+    {
+      "values": [
+        {
+          "Category": "Bag",
+          "Class": "Carryalls",
+          "Collections": "Swagger",
+          "Style": "Embellished",
+          "Store": "S.10",
+          "Store City": "Washington DC",
+          "Store Type": "Full Priced",
+          "Store Grade": "B",
+          "Store State": "VA",
+          "sales": "36",
+          "salesPerc": "0.09"
+        }
+      ],
+      "name": "Illinois",
+      "city": "Illinois",
+      "lat": 40.349457,
+      "lon": -88.986137,
+      "state": "IL",
+      "Sale Propensity": 6
+    },
+    {
+      "values": [
+        {
+          "Category": "Bag",
+          "Class": "Carryalls",
+          "Collections": "Swagger",
+          "Style": "Embellished",
+          "Store": "S.10",
+          "Store City": "Washington DC",
+          "Store Type": "Full Priced",
+          "Store Grade": "B",
+          "Store State": "VA",
+          "sales": "22",
+          "salesPerc": "0.09"
+        }
+      ],
+      "name": "Indiana",
+      "city": "Indiana",
+      "lat": 39.849426,
+      "lon": -86.258278,
+      "state": "IN",
+      "Sale Propensity": 17
+    },
+    {
+      "values": [
+        {
+          "Category": "Bag",
+          "Class": "Carryalls",
+          "Collections": "Swagger",
+          "Style": "Embellished",
+          "Store": "S.10",
+          "Store City": "Washington DC",
+          "Store Type": "Full Priced",
+          "Store Grade": "B",
+          "Store State": "VA",
+          "sales": "20",
+          "salesPerc": "0.09"
+        }
+      ],
+      "name": "Iowa",
+      "city": "Iowa",
+      "lat": 42.011539,
+      "lon": -93.210526,
+      "state": "IA",
+      "Sale Propensity": 12
+    },
+    {
+      "values": [
+        {
+          "Category": "Bag",
+          "Class": "Carryalls",
+          "Collections": "Swagger",
+          "Style": "Embellished",
+          "Store": "S.10",
+          "Store City": "Washington DC",
+          "Store Type": "Full Priced",
+          "Store Grade": "B",
+          "Store State": "VA",
+          "sales": "14",
+          "salesPerc": "0.09"
+        }
+      ],
+      "name": "Kansas",
+      "city": "Kansas",
+      "lat": 38.5266,
+      "lon": -96.726486,
+      "state": "KS",
+      "Sale Propensity": 4
+    },
+    {
+      "values": [
+        {
+          "Category": "Bag",
+          "Class": "Carryalls",
+          "Collections": "Swagger",
+          "Style": "Embellished",
+          "Store": "S.10",
+          "Store City": "Washington DC",
+          "Store Type": "Full Priced",
+          "Store Grade": "B",
+          "Store State": "VA",
+          "sales": "18",
+          "salesPerc": "0.09"
+        }
+      ],
+      "name": "Kentucky",
+      "city": "Kentucky",
+      "lat": 37.66814,
+      "lon": -84.670067,
+      "state": "KY",
+      "Sale Propensity": 17
+    },
+    {
+      "values": [
+        {
+          "Category": "Bag",
+          "Class": "Carryalls",
+          "Collections": "Swagger",
+          "Style": "Embellished",
+          "Store": "S.10",
+          "Store City": "Washington DC",
+          "Store Type": "Full Priced",
+          "Store Grade": "B",
+          "Store State": "VA",
+          "sales": "26",
+          "salesPerc": "0.09"
+        }
+      ],
+      "name": "Louisiana",
+      "city": "Louisiana",
+      "lat": 31.169546,
+      "lon": -91.867805,
+      "state": "LA",
+      "Sale Propensity": 12
+    },
+    {
+      "values": [
+        {
+          "Category": "Bag",
+          "Class": "Carryalls",
+          "Collections": "Swagger",
+          "Style": "Embellished",
+          "Store": "S.10",
+          "Store City": "Washington DC",
+          "Store Type": "Full Priced",
+          "Store Grade": "B",
+          "Store State": "VA",
+          "sales": "32",
+          "salesPerc": "0.09"
+        }
+      ],
+      "name": "Maine",
+      "city": "Maine",
+      "lat": 44.693947,
+      "lon": -69.381927,
+      "state": "ME",
+      "Sale Propensity": 38
+    },
+    {
+      "values": [
+        {
+          "Category": "Bag",
+          "Class": "Carryalls",
+          "Collections": "Swagger",
+          "Style": "Embellished",
+          "Store": "S.10",
+          "Store City": "Washington DC",
+          "Store Type": "Full Priced",
+          "Store Grade": "B",
+          "Store State": "VA",
+          "sales": "31",
+          "salesPerc": "0.09"
+        }
+      ],
+      "name": "Maryland",
+      "city": "Maryland",
+      "lat": 39.063946,
+      "lon": -76.802101,
+      "state": "MD",
+      "Sale Propensity": 31
+    },
+    {
+      "values": [
+        {
+          "Category": "Bag",
+          "Class": "Carryalls",
+          "Collections": "Swagger",
+          "Style": "Embellished",
+          "Store": "S.10",
+          "Store City": "Washington DC",
+          "Store Type": "Full Priced",
+          "Store Grade": "B",
+          "Store State": "VA",
+          "sales": "34",
+          "salesPerc": "0.09"
+        }
+      ],
+      "name": "Massachusetts",
+      "city": "Massachusetts",
+      "lat": 42.230171,
+      "lon": -71.530106,
+      "state": "MA",
+      "Sale Propensity": 48
+    },
+    {
+      "values": [
+        {
+          "Category": "Bag",
+          "Class": "Carryalls",
+          "Collections": "Swagger",
+          "Style": "Embellished",
+          "Store": "S.10",
+          "Store City": "Washington DC",
+          "Store Type": "Full Priced",
+          "Store Grade": "B",
+          "Store State": "VA",
+          "sales": "29",
+          "salesPerc": "0.09"
+        }
+      ],
+      "name": "Michigan",
+      "city": "Michigan",
+      "lat": 43.326618,
+      "lon": -84.536095,
+      "state": "MI",
+      "Sale Propensity": 82
+    },
+    {
+      "values": [
+        {
+          "Category": "Bag",
+          "Class": "Carryalls",
+          "Collections": "Swagger",
+          "Style": "Embellished",
+          "Store": "S.10",
+          "Store City": "Washington DC",
+          "Store Type": "Full Priced",
+          "Store Grade": "B",
+          "Store State": "VA",
+          "sales": "23",
+          "salesPerc": "0.09"
+        }
+      ],
+      "name": "Minnesota",
+      "city": "Minnesota",
+      "lat": 45.694454,
+      "lon": -93.900192,
+      "state": "MN",
+      "Sale Propensity": 10
+    },
+    {
+      "values": [
+        {
+          "Category": "Bag",
+          "Class": "Carryalls",
+          "Collections": "Swagger",
+          "Style": "Embellished",
+          "Store": "S.10",
+          "Store City": "Washington DC",
+          "Store Type": "Full Priced",
+          "Store Grade": "B",
+          "Store State": "VA",
+          "sales": "34",
+          "salesPerc": "0.09"
+        }
+      ],
+      "name": "Mississippi",
+      "city": "Mississippi",
+      "lat": 32.741646,
+      "lon": -89.678696,
+      "state": "MS",
+      "Sale Propensity": 9
+    },
+    {
+      "values": [
+        {
+          "Category": "Bag",
+          "Class": "Carryalls",
+          "Collections": "Swagger",
+          "Style": "Embellished",
+          "Store": "S.10",
+          "Store City": "Washington DC",
+          "Store Type": "Full Priced",
+          "Store Grade": "B",
+          "Store State": "VA",
+          "sales": "19",
+          "salesPerc": "0.09"
+        }
+      ],
+      "name": "Missouri",
+      "city": "Missouri",
+      "lat": 38.456085,
+      "lon": -92.288368,
+      "state": "MO",
+      "Sale Propensity": 8
+    },
+    {
+      "values": [
+        {
+          "Category": "Bag",
+          "Class": "Carryalls",
+          "Collections": "Swagger",
+          "Style": "Embellished",
+          "Store": "S.10",
+          "Store City": "Washington DC",
+          "Store Type": "Full Priced",
+          "Store Grade": "B",
+          "Store State": "VA",
+          "sales": "23",
+          "salesPerc": "0.09"
+        }
+      ],
+      "name": "Montana",
+      "city": "Montana",
+      "lat": 38.456085,
+      "lon": -92.288368,
+      "state": "MT",
+      "Sale Propensity": 11
+    },
+    {
+      "values": [
+        {
+          "Category": "Bag",
+          "Class": "Carryalls",
+          "Collections": "Swagger",
+          "Style": "Embellished",
+          "Store": "S.10",
+          "Store City": "Washington DC",
+          "Store Type": "Full Priced",
+          "Store Grade": "B",
+          "Store State": "VA",
+          "sales": "27",
+          "salesPerc": "0.09"
+        }
+      ],
+      "name": "Nebraska",
+      "city": "Nebraska",
+      "lat": 41.12537,
+      "lon": -98.268082,
+      "state": "NE",
+      "Sale Propensity": 17
+    },
+    {
+      "values": [
+        {
+          "Category": "Bag",
+          "Class": "Carryalls",
+          "Collections": "Swagger",
+          "Style": "Embellished",
+          "Store": "S.10",
+          "Store City": "Washington DC",
+          "Store Type": "Full Priced",
+          "Store Grade": "B",
+          "Store State": "VA",
+          "sales": "20",
+          "salesPerc": "0.09"
+        }
+      ],
+      "name": "Nevada",
+      "city": "Nevada",
+      "lat": 38.313515,
+      "lon": -117.055374,
+      "state": "NV",
+      "Sale Propensity": 29
+    },
+    {
+      "values": [
+        {
+          "Category": "Bag",
+          "Class": "Carryalls",
+          "Collections": "Swagger",
+          "Style": "Embellished",
+          "Store": "S.10",
+          "Store City": "Washington DC",
+          "Store Type": "Full Priced",
+          "Store Grade": "B",
+          "Store State": "VA",
+          "sales": "29",
+          "salesPerc": "0.09"
+        }
+      ],
+      "name": "New Hampshire",
+      "city": "New Hampshire",
+      "lat": 43.452492,
+      "lon": -71.563896,
+      "state": "NH",
+      "Sale Propensity": 32
+    },
+    {
+      "values": [
+        {
+          "Category": "Bag",
+          "Class": "Carryalls",
+          "Collections": "Swagger",
+          "Style": "Embellished",
+          "Store": "S.10",
+          "Store City": "Washington DC",
+          "Store Type": "Full Priced",
+          "Store Grade": "B",
+          "Store State": "VA",
+          "sales": "32",
+          "salesPerc": "0.09"
+        }
+      ],
+      "name": "New Jersey",
+      "city": "New Jersey",
+      "lat": 40.298904,
+      "lon": -74.521011,
+      "state": "NJ",
+      "Sale Propensity": 38
+    },
+    {
+      "values": [
+        {
+          "Category": "Bag",
+          "Class": "Carryalls",
+          "Collections": "Swagger",
+          "Style": "Embellished",
+          "Store": "S.10",
+          "Store City": "Washington DC",
+          "Store Type": "Full Priced",
+          "Store Grade": "B",
+          "Store State": "VA",
+          "sales": "23",
+          "salesPerc": "0.09"
+        }
+      ],
+      "name": "New Mexico",
+      "city": "New Mexico",
+      "lat": 34.840515,
+      "lon": -106.248482,
+      "state": "NM",
+      "Sale Propensity": 21
+    },
+    {
+      "values": [
+        {
+          "Category": "Bag",
+          "Class": "Carryalls",
+          "Collections": "Swagger",
+          "Style": "Embellished",
+          "Store": "S.10",
+          "Store City": "Washington DC",
+          "Store Type": "Full Priced",
+          "Store Grade": "B",
+          "Store State": "VA",
+          "sales": "11",
+          "salesPerc": "0.09"
+        }
+      ],
+      "name": "New York",
+      "city": "New York",
+      "lat": 42.165726,
+      "lon": -74.948051,
+      "state": "NY",
+      "Sale Propensity": 59
+    },
+    {
+      "values": [
+        {
+          "Category": "Bag",
+          "Class": "Carryalls",
+          "Collections": "Swagger",
+          "Style": "Embellished",
+          "Store": "S.10",
+          "Store City": "Washington DC",
+          "Store Type": "Full Priced",
+          "Store Grade": "B",
+          "Store State": "VA",
+          "sales": "15",
+          "salesPerc": "0.09"
+        }
+      ],
+      "name": "North Carolina",
+      "city": "North Carolina",
+      "lat": 35.630066,
+      "lon": -79.806419,
+      "state": "NC",
+      "Sale Propensity": 71
+    },
+    {
+      "values": [
+        {
+          "Category": "Bag",
+          "Class": "Carryalls",
+          "Collections": "Swagger",
+          "Style": "Embellished",
+          "Store": "S.10",
+          "Store City": "Washington DC",
+          "Store Type": "Full Priced",
+          "Store Grade": "B",
+          "Store State": "VA",
+          "sales": "29",
+          "salesPerc": "0.09"
+        }
+      ],
+      "name": "North Dakota",
+      "city": "North Dakota",
+      "lat": 47.528912,
+      "lon": -99.784012,
+      "state": "ND",
+      "Sale Propensity": 49
+    },
+    {
+      "values": [
+        {
+          "Category": "Bag",
+          "Class": "Carryalls",
+          "Collections": "Swagger",
+          "Style": "Embellished",
+          "Store": "S.10",
+          "Store City": "Washington DC",
+          "Store Type": "Full Priced",
+          "Store Grade": "B",
+          "Store State": "VA",
+          "sales": "19",
+          "salesPerc": "0.09"
+        }
+      ],
+      "name": "OHIO",
+      "city": "OHIO",
+      "lat": 40.388783,
+      "lon": -82.764915,
+      "state": "OH",
+      "Sale Propensity": 74
+    },
+    {
+      "values": [
+        {
+          "Category": "Bag",
+          "Class": "Carryalls",
+          "Collections": "Swagger",
+          "Style": "Embellished",
+          "Store": "S.10",
+          "Store City": "Washington DC",
+          "Store Type": "Full Priced",
+          "Store Grade": "B",
+          "Store State": "VA",
+          "sales": "16",
+          "salesPerc": "0.09"
+        }
+      ],
+      "name": "Oklahoma",
+      "city": "Oklahoma",
+      "lat": 35.565342,
+      "lon": -96.928917,
+      "state": "OK",
+      "Sale Propensity": 34
+    },
+    {
+      "values": [
+        {
+          "Category": "Bag",
+          "Class": "Carryalls",
+          "Collections": "Swagger",
+          "Style": "Embellished",
+          "Store": "S.10",
+          "Store City": "Washington DC",
+          "Store Type": "Full Priced",
+          "Store Grade": "B",
+          "Store State": "VA",
+          "sales": "25",
+          "salesPerc": "0.09"
+        }
+      ],
+      "name": "Oregon",
+      "city": "Oregon",
+      "lat": 44.572021,
+      "lon": -122.070938,
+      "state": "OR",
+      "Sale Propensity": 18
+    },
+    {
+      "values": [
+        {
+          "Category": "Bag",
+          "Class": "Carryalls",
+          "Collections": "Swagger",
+          "Style": "Embellished",
+          "Store": "S.10",
+          "Store City": "Washington DC",
+          "Store Type": "Full Priced",
+          "Store Grade": "B",
+          "Store State": "VA",
+          "sales": "29",
+          "salesPerc": "0.09"
+        }
+      ],
+      "name": "Pennsylvania",
+      "city": "Pennsylvania",
+      "lat": 40.590752,
+      "lon": -77.209755,
+      "state": "PA",
+      "Sale Propensity": 53
+    },
+    {
+      "values": [
+        {
+          "Category": "Bag",
+          "Class": "Carryalls",
+          "Collections": "Swagger",
+          "Style": "Embellished",
+          "Store": "S.10",
+          "Store City": "Washington DC",
+          "Store Type": "Full Priced",
+          "Store Grade": "B",
+          "Store State": "VA",
+          "sales": "36",
+          "salesPerc": "0.09"
+        }
+      ],
+      "name": "Rhode Island",
+      "city": "Rhode Island",
+      "lat": 41.680893,
+      "lon": -71.51178,
+      "state": "RI",
+      "Sale Propensity": 64
+    },
+    {
+      "values": [
+        {
+          "Category": "Bag",
+          "Class": "Carryalls",
+          "Collections": "Swagger",
+          "Style": "Embellished",
+          "Store": "S.10",
+          "Store City": "Washington DC",
+          "Store Type": "Full Priced",
+          "Store Grade": "B",
+          "Store State": "VA",
+          "sales": "34",
+          "salesPerc": "0.09"
+        }
+      ],
+      "name": "South Carolina",
+      "city": "South Carolina",
+      "lat": 33.856892,
+      "lon": -80.945007,
+      "state": "SC",
+      "Sale Propensity": 46
+    },
+    {
+      "values": [
+        {
+          "Category": "Bag",
+          "Class": "Carryalls",
+          "Collections": "Swagger",
+          "Style": "Embellished",
+          "Store": "S.10",
+          "Store City": "Washington DC",
+          "Store Type": "Full Priced",
+          "Store Grade": "B",
+          "Store State": "VA",
+          "sales": "29",
+          "salesPerc": "0.09"
+        }
+      ],
+      "name": "South Dakota",
+      "city": "South Dakota",
+      "lat": 44.299782,
+      "lon": -99.438828,
+      "state": "SD",
+      "Sale Propensity": 18
+    },
+    {
+      "values": [
+        {
+          "Category": "Bag",
+          "Class": "Carryalls",
+          "Collections": "Swagger",
+          "Style": "Embellished",
+          "Store": "S.10",
+          "Store City": "Washington DC",
+          "Store Type": "Full Priced",
+          "Store Grade": "B",
+          "Store State": "VA",
+          "sales": "16",
+          "salesPerc": "0.09"
+        }
+      ],
+      "name": "Tennessee",
+      "city": "Tennessee",
+      "lat": 35.747845,
+      "lon": -86.692345,
+      "state": "TN",
+      "Sale Propensity": 32
+    },
+    {
+      "values": [
+        {
+          "Category": "Bag",
+          "Class": "Carryalls",
+          "Collections": "Swagger",
+          "Style": "Embellished",
+          "Store": "S.10",
+          "Store City": "Washington DC",
+          "Store Type": "Full Priced",
+          "Store Grade": "B",
+          "Store State": "VA",
+          "sales": "26",
+          "salesPerc": "0.09"
+        }
+      ],
+      "name": "Texas",
+      "city": "Texas",
+      "lat": 31.054487,
+      "lon": -97.563461,
+      "state": "TX",
+      "Sale Propensity": 22
+    },
+    {
+      "values": [
+        {
+          "Category": "Bag",
+          "Class": "Carryalls",
+          "Collections": "Swagger",
+          "Style": "Embellished",
+          "Store": "S.10",
+          "Store City": "Washington DC",
+          "Store Type": "Full Priced",
+          "Store Grade": "B",
+          "Store State": "VA",
+          "sales": "28",
+          "salesPerc": "0.09"
+        }
+      ],
+      "name": "Utah",
+      "city": "Utah",
+      "lat": 40.150032,
+      "lon": -111.862434,
+      "state": "UT",
+      "Sale Propensity": 56
+    },
+    {
+      "values": [
+        {
+          "Category": "Bag",
+          "Class": "Carryalls",
+          "Collections": "Swagger",
+          "Style": "Embellished",
+          "Store": "S.10",
+          "Store City": "Washington DC",
+          "Store Type": "Full Priced",
+          "Store Grade": "B",
+          "Store State": "VA",
+          "sales": "14",
+          "salesPerc": "0.09"
+        }
+      ],
+      "name": "Vermont",
+      "city": "Vermont",
+      "lat": 44.045876,
+      "lon": -72.710686,
+      "state": "VT",
+      "Sale Propensity": 45
+    },
+    {
+      "values": [
+        {
+          "Category": "Bag",
+          "Class": "Carryalls",
+          "Collections": "Swagger",
+          "Style": "Embellished",
+          "Store": "S.10",
+          "Store City": "Washington DC",
+          "Store Type": "Full Priced",
+          "Store Grade": "B",
+          "Store State": "VA",
+          "sales": "35",
+          "salesPerc": "0.09"
+        }
+      ],
+      "name": "Virginia",
+      "city": "Virginia",
+      "lat": 37.769337,
+      "lon": -78.169968,
+      "state": "VA",
+      "Sale Propensity": 69
+    },
+    {
+      "values": [
+        {
+          "Category": "Bag",
+          "Class": "Carryalls",
+          "Collections": "Swagger",
+          "Style": "Embellished",
+          "Store": "S.10",
+          "Store City": "Washington DC",
+          "Store Type": "Full Priced",
+          "Store Grade": "B",
+          "Store State": "VA",
+          "sales": "34",
+          "salesPerc": "0.09"
+        }
+      ],
+      "name": "Washington",
+      "city": "Washington",
+      "lat": 47.400902,
+      "lon": -121.490494,
+      "state": "WA",
+      "Sale Propensity": 66
+    },
+    {
+      "values": [
+        {
+          "Category": "Bag",
+          "Class": "Carryalls",
+          "Collections": "Swagger",
+          "Style": "Embellished",
+          "Store": "S.10",
+          "Store City": "Washington DC",
+          "Store Type": "Full Priced",
+          "Store Grade": "B",
+          "Store State": "VA",
+          "sales": "33",
+          "salesPerc": "0.09"
+        }
+      ],
+      "name": "West Virginia",
+      "city": "West Virginia",
+      "lat": 38.491226,
+      "lon": -80.954453,
+      "state": "WV",
+      "Sale Propensity": 43
+    },
+    {
+      "values": [
+        {
+          "Category": "Bag",
+          "Class": "Carryalls",
+          "Collections": "Swagger",
+          "Style": "Embellished",
+          "Store": "S.10",
+          "Store City": "Washington DC",
+          "Store Type": "Full Priced",
+          "Store Grade": "B",
+          "Store State": "VA",
+          "sales": "32",
+          "salesPerc": "0.09"
+        }
+      ],
+      "name": "Wisconsin",
+      "city": "Wisconsin",
+      "lat": 44.268543,
+      "lon": -89.616508,
+      "state": "WI",
+      "Sale Propensity": 30
+    },
+    {
+      "values": [
+        {
+          "Category": "Bag",
+          "Class": "Carryalls",
+          "Collections": "Swagger",
+          "Style": "Embellished",
+          "Store": "S.10",
+          "Store City": "Washington DC",
+          "Store Type": "Full Priced",
+          "Store Grade": "B",
+          "Store State": "VA",
+          "sales": "31",
+          "salesPerc": "0.09"
+        }
+      ],
+      "name": "Wyoming",
+      "city": "Wyoming",
+      "lat": 42.755966,
+      "lon": -107.30249,
+      "state": "WY",
+      "Sale Propensity": 4
+    }
+  ]
+}
