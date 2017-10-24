@@ -9492,13 +9492,13 @@ var PopupApi = (function () {
         ];
     }
     PopupApi.prototype.getAbbreviations = function () {
-        return this.http.get('https://ec2-52-70-82-178.compute-1.amazonaws.com:9443/api/diwousers/abbreviations', {});
+        return this.http.get('https://ec2-52-70-82-178.compute-1.amazonaws.com:9444/api/diwousers/abbreviations', {});
     };
     //   setAbbreviations(content: any) {
     //     let headers = new Headers();
     //     headers.append('Accept', 'application/json, text/plain, */*');
     //     headers.append('X-Requested-With', 'XMLHttpRequest');
-    //     return this.http.post('https://ec2-52-70-82-178.compute-1.amazonaws.com:9443/api/diwousers/settings/set',
+    //     return this.http.post('https://ec2-52-70-82-178.compute-1.amazonaws.com:9444/api/diwousers/settings/set',
     //       JSON.stringify(content), {
     //         headers: headers
     //       });
@@ -9563,7 +9563,7 @@ var QuestionApi = (function () {
         }).catch(function (error) { return __WEBPACK_IMPORTED_MODULE_2_rxjs__["Observable"].throw(error.json().error || 'Server error'); });
     };
     QuestionApi.prototype.askQuestion = function (messageId, text) {
-        //this.http.get('https://ec2-52-70-82-178.compute-1.amazonaws.com:9443/api/pdf/-607027142').map((res)=>{
+        //this.http.get('https://ec2-52-70-82-178.compute-1.amazonaws.com:9444/api/pdf/-607027142').map((res)=>{
         //  console.log("IT MAKE IT", res);
         //}).catch((err)=>{console.log(err); return err}).first().subscribe();
         text = text.replace("$", "").trim();
@@ -9745,13 +9745,13 @@ var SettingsApi = (function () {
         });
     }
     SettingsApi.prototype.getSettings = function (userId) {
-        return this.http.get('https://ec2-52-70-82-178.compute-1.amazonaws.com:9443/api/diwousers/settings?UserId=' + userId, {});
+        return this.http.get('https://ec2-52-70-82-178.compute-1.amazonaws.com:9444/api/diwousers/settings?UserId=' + userId, {});
     };
     SettingsApi.prototype.setSettings = function (content) {
         var headers = new __WEBPACK_IMPORTED_MODULE_2__angular_http__["a" /* Headers */]();
         headers.append('Accept', 'application/json, text/plain, */*');
         headers.append('X-Requested-With', 'XMLHttpRequest');
-        return this.http.post('https://ec2-52-70-82-178.compute-1.amazonaws.com:9443/api/diwousers/settings/set', JSON.stringify(content), {
+        return this.http.post('https://ec2-52-70-82-178.compute-1.amazonaws.com:9444/api/diwousers/settings/set', JSON.stringify(content), {
             headers: headers
         });
     };
@@ -10411,7 +10411,7 @@ var AskContentService = (function () {
         var headers = new __WEBPACK_IMPORTED_MODULE_4__angular_http__["a" /* Headers */]();
         headers.append('Accept', 'application/json, text/plain, */*');
         headers.append('X-Requested-With', 'XMLHttpRequest');
-        return this.http.post('https://ec2-52-70-82-178.compute-1.amazonaws.com:9443/api/history', JSON.stringify(content), {
+        return this.http.post('https://ec2-52-70-82-178.compute-1.amazonaws.com:9444/api/history', JSON.stringify(content), {
             headers: headers
         });
     };
@@ -96171,7 +96171,7 @@ module.exports = function() {
 // The file contents for the current environment will overwrite these during build.
 var environment = {
     production: false,
-    baseApi: "https://ec2-52-70-82-178.compute-1.amazonaws.com:9443/api/"
+    baseApi: "https://ec2-52-70-82-178.compute-1.amazonaws.com:9444/api/"
 };
 //# sourceMappingURL=environment.js.map
 
