@@ -26,7 +26,7 @@ module.exports = function () {
     marginTop: 100,
     marginBottom: 70,
     marginRight: 100,
-    marginLeft: 130,
+    marginLeft: 90,
     tooltipWidth: 300,
     svgFontFamily: "Helvetica",
     centerCircleRadius: 50,

@@ -257,7 +257,7 @@ module.exports = function () {
           var companyLegendsWrapper = chart.selectAll('company-legends-wrapper').data(['company-legends-wrapper']);
           companyLegendsWrapper.exit().remove()
           companyLegendsWrapper = companyLegendsWrapper.enter().insert('g', ':first-child').merge(companyLegendsWrapper);
-          companyLegendsWrapper.attr('class', 'company-legends-wrapper').attr('transform', `translate(${-attrs.marginLeft + 20}) scale(${1 / attrs.scale})`);
+          companyLegendsWrapper.attr('class', 'company-legends-wrapper').attr('transform', `translate(${-attrs.marginLeft + 20},70) scale(${1 / attrs.scale})`);
 
           var companyLegends = companyLegendsWrapper.patternify({ selector: 'company-legends', elementTag: 'g', data: attrs.data.companies }).attr('font-size', _var.fontSizes.companyLegendsFontSize)
 
@@ -283,7 +283,7 @@ module.exports = function () {
           var legendWrapper = centerPoint.patternify({ selector: 'legend-wrapper', elementTag: 'g' }).attr('pointer-events', 'none').attr('transform', 'translate(' + (-calc.halfWidth) + ',' + (-calc.halfWidth) + ')')
 
           // Legend items
-          var legendItems = legendWrapper.patternify({ selector: 'legend-item', elementTag: 'G', data: attrs.data.priceRanges.slice().reverse() }).attr('transform', function (d, i) { return 'translate(0,' + (((i + 0.5) * calc.eachDonutRadius) + (1 - attrs.circleDecreaseLevel) * calc.halfWidth) + ')' })
+          var legendItems = legendWrapper.patternify({ selector: 'legend-item', elementTag: 'g', data: attrs.data.priceRanges.slice().reverse() }).attr('transform', function (d, i) { return 'translate(0,' + (((i + 0.5) * calc.eachDonutRadius) + (1 - attrs.circleDecreaseLevel) * calc.halfWidth) + ')' })
 
           //Legend rects
           legendItems.patternify({ selector: 'legend-rects', elementTag: 'rect', data: d => [d] }).attr('width', calc.halfWidth).attr('height', 0.3).attr('fill', 'none').attr('stroke', attrs.legendLineFill).attr('stroke-width', 1).attr('stroke-dasharray', '1,2')
@@ -313,7 +313,7 @@ module.exports = function () {
           // FIXED REDESIGNED TOOLTIP 
           var width = attrs.tooltipWidth;
           var height = 159 / 6;
-          var fixedTooltip = svg.patternify({ selector: 'fixed-tooltip-wrapper', elementTag: 'g' }).attr('transform', `translate(0)`).attr('display', 'none').attr('pointer-events', 'none')
+          var fixedTooltip = svg.patternify({ selector: 'fixed-tooltip-wrapper', elementTag: 'g' }).attr('transform', `translate(-50)`).attr('display', 'none').attr('pointer-events', 'none')
 
           //TOP
           fixedTooltip.patternify({ selector: 'top-content', elementTag: 'rect' }).attr('class', 'top-content hover-fill hover-stroke').attr('width', width).attr('height', height).attr('fill', 'white').attr('stroke-width', 1)
@@ -331,10 +331,10 @@ module.exports = function () {
           fixedTooltip.patternify({ selector: 'value', elementTag: 'text' }).attr('class', 'value hover-fill font-highlight').attr('fill', 'black').attr('y', height + 20).attr('font-weight', 'bold').attr('x', width - 30).attr('text-anchor', 'end').text('20%')
 
           // Fixed tooltip background
-          fixedTooltip.patternify({ selector: 'fixed-tooltip-background-rect', elementTag: 'rect' }).attr('class', 'hover-stroke fixed-tooltip-background-rect').attr("x", 315).attr("y", 60).attr("width", 82).attr("height", 82).attr('fill', 'white').attr('stroke', 'black')
+          fixedTooltip.patternify({ selector: 'fixed-tooltip-background-rect', elementTag: 'rect' }).attr('class', 'hover-stroke fixed-tooltip-background-rect').attr("x", 315).attr("y", 60).attr("width", 82).attr("height", 82).attr('fill', 'white').attr('stroke', 'black').style('transform','translate(80)')
 
           //Fixed tooltip image
-          fixedTooltip.patternify({ selector: 'image', elementTag: 'image' }).attr('class', 'image').attr("xlink:href", "https://www.codeproject.com/KB/GDI-plus/ImageProcessing2/img.jpg").attr("x", 315).attr("y", 60).attr("width", 82).attr("height", 82);
+          fixedTooltip.patternify({ selector: 'image', elementTag: 'image' }).attr('class', 'image').attr("xlink:href", "https://www.codeproject.com/KB/GDI-plus/ImageProcessing2/img.jpg").attr("x", 315).attr("y", 60).attr("width", 82).attr("height", 82).style('transform','translate(80)');
 
           //#######################    TOOLTIP         ######################
 

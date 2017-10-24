@@ -2614,6 +2614,26 @@ var VISUALS = [
                 "datafile": "diwo-visual-bar-positive-negative-deviation.sample.json",
             }
         ]
+    },
+    {
+        "name": "Victoria's Secret Visualizations",
+        "description": "",
+        "visuals": [
+            {
+                "imgPath": "diwo-visual-vs-bar-vert-with-brush",
+                "name": "Bar Chart With Brush",
+                "component": "DiwoVisualVsBarVertWithBrushComponent",
+                "path": "assets/data/visual-cards",
+                "datafile": "diwo-visual-vs-bar-vert-with-brush.sample.json",
+            },
+            {
+                "imgPath": "diwo-visual-vs-line-graph-with-draggable-points",
+                "name": "Line Graph with Draggable Points",
+                "component": "DiwoVisualVsLineGraphWithDraggablePointsComponent",
+                "path": "assets/data/visual-cards",
+                "datafile": "diwo-visual-vs-line-graph-with-draggable-points.sample.json",
+            }
+        ]
     }
 ];
 //# sourceMappingURL=visuals-list.js.map
@@ -4793,6 +4813,9 @@ DecideRoutingModule = __decorate([
 /* unused harmony reexport DecideCardInterventionComponent */
 /* unused harmony reexport DecideService */
 /* unused harmony reexport HelpDecideService */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__decide_decide_panel_layout_decide_panel_layout_component__ = __webpack_require__("../../../../../src/app/microservices/decide/decide/decide-panel-layout/decide-panel-layout.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__decide_decide_trends_panel_decide_trends_panel_component__ = __webpack_require__("../../../../../src/app/microservices/decide/decide/decide-trends-panel/decide-trends-panel.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__decide_decide_what_if_analysis_panel_decide_what_if_analysis_panel_component__ = __webpack_require__("../../../../../src/app/microservices/decide/decide/decide-what-if-analysis-panel/decide-what-if-analysis-panel.component.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -4818,6 +4841,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 /* ####     EXPORTS     #### */
+
+
+
 
 
 
@@ -4855,6 +4881,9 @@ DecideModule = DecideModule_1 = __decorate([
             __WEBPACK_IMPORTED_MODULE_14__decide_card_help_help_component__["a" /* HelpComponent */],
             __WEBPACK_IMPORTED_MODULE_12__decide_card_dropdown_decide_list_decide_list_component__["a" /* DecideListComponent */],
             __WEBPACK_IMPORTED_MODULE_13__pipes_check_decide_value_pipe__["a" /* CheckDecideValuePipe */],
+            __WEBPACK_IMPORTED_MODULE_16__decide_decide_panel_layout_decide_panel_layout_component__["a" /* DecidePanelLayoutComponent */],
+            __WEBPACK_IMPORTED_MODULE_17__decide_decide_trends_panel_decide_trends_panel_component__["a" /* DecideTrendsPanelComponent */],
+            __WEBPACK_IMPORTED_MODULE_18__decide_decide_what_if_analysis_panel_decide_what_if_analysis_panel_component__["a" /* DecideWhatIfAnalysisPanelComponent */],
         ],
         entryComponents: [
             //TODO change place of Help component it should be general I think.
@@ -4873,10 +4902,212 @@ var DecideModule_1;
 
 /***/ }),
 
+/***/ "../../../../../src/app/microservices/decide/decide/decide-panel-layout/decide-panel-layout.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"panel-container gray\">\n  <div class=\"top-buttons\">\n    <div class=\"circle-button diwo-button\"></div>\n    <div class=\"line-header-elements\">\n      <span class=\"header-info-separator\">Optimize Assortment</span>\n      <span>Opp #135</span>\n    </div>\n    <div class=\"line-header-button\">\n      <div class=\"graph-button\"></div>\n      <div class=\"check-button\">\n        <i class=\"di-check di-12x sub-icon\"></i>\n      </div>\n    </div>\n    <div class=\"side-buttons\">\n      <div class=\"circle-button\">\n        <i class=\"di-view-list di-20x sub-icon\"></i>\n      </div>\n      <div class=\"circle-button\" (click)=\"state = 'trends'\">\n        <i class=\"di-write di-20x sub-icon\"></i>\n      </div>\n      <div class=\"circle-button\" (click)=\"state = 'what-if-analysis'\">\n        <i class=\"di-write di-20x sub-icon\"></i>\n      </div>\n    </div>\n  </div>\n  <div class=\"main-content\">\n     <!--Inside this should be placed the d3 components-->\n    <div class=\"left-graph\">\n      <img *ngIf=\"state === 'trends'\" src=\"./assets/images/placeholders/placeholder_graph_3.png\">\n      <img *ngIf=\"state === 'what-if-analysis'\" src=\"./assets/images/placeholders/placeholder_graph_4.png\">\n    </div>\n    <div class=\"right-fields\">\n      <div class=\"row\">\n        <div class='left-value'>Revenue impact</div>\n        <div class='right-value'>$1.3M</div>\n      </div>\n\n      <div class=\"row\">\n        <div class='left-value'>Confidence Score</div>\n        <div class='right-value'>89%</div>\n      </div>\n\n       <!--Inside this should be placed the details components-->\n      <div class=\"graph-details\">\n        <decide-trends-panel *ngIf=\"state === 'trends'\"></decide-trends-panel>\n        <decide-what-if-analysis-panel *ngIf=\"state === 'what-if-analysis'\"></decide-what-if-analysis-panel>\n      </div>\n    </div>\n  </div>\n</div>\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/microservices/decide/decide/decide-panel-layout/decide-panel-layout.component.scss":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "/* =============================================================================\n   MEDIA QUERIES\n   ========================================================================== */\n/* Eg.\n    .container{\n        width:1024px;\n\n        @include tablets{\n            width:90%;\n        }\n    }\n*/\n/* =============================================================================\n   Unit transform\n   ========================================================================== */\n:host {\n  display: block;\n  position: relative; }\n\n#decide-header {\n  z-index: 7000;\n  top: 145px; }\n\n@media screen and (max-width: 1280px) {\n  .cards-container {\n    height: 75vh;\n    width: 100vw;\n    position: fixed;\n    overflow-y: scroll;\n    padding: 2%;\n    margin-top: 70px !important;\n    left: 1%;\n    top: 24%; } }\n\n@media screen and (min-width: 1281px) {\n  .cards-container {\n    height: 75vh;\n    width: 100vw;\n    position: fixed;\n    overflow-y: scroll;\n    padding: 2%;\n    margin-top: 0 !important;\n    left: 1%;\n    top: 15%; } }\n\n.decide-card-item {\n  width: 0; }\n\n.decide-card-item:nth-of-type(1) {\n  -webkit-box-flex: 0.2;\n  box-flex: 0.2;\n  -ms-flex-positive: 0.2;\n      flex-grow: 0.2;\n  -webkit-flex-grow: 0.2;\n  -ms-flex-grow: 0.2;\n  -moz-flex-grow: 0.2; }\n\n.decide-card-item:nth-of-type(1n+2) {\n  -webkit-box-flex: 0.16;\n  box-flex: 0.16;\n  -ms-flex-positive: 0.16;\n      flex-grow: 0.16;\n  -webkit-flex-grow: 0.16;\n  -ms-flex-grow: 0.16;\n  -moz-flex-grow: 0.16; }\n\n#decideClose {\n  z-index: 8000;\n  padding: 10px;\n  padding-top: 0; }\n\n.border-card-right {\n  border-right: 1px solid #d1d1d1; }\n\n.card-header {\n  margin-bottom: 36px;\n  display: -webkit-box; }\n\n.card-header > div {\n  border-bottom: 1px solid #aeaeae;\n  font-size: 19px;\n  padding-bottom: 9px;\n  position: relative;\n  float: left;\n  margin: 10px;\n  box-sizing: initial; }\n\n.card-header .context {\n  width: 47%; }\n\n.card-header .forecast {\n  width: 31%; }\n\n.card-header .outcome {\n  width: 16%; }\n\n.card-line > * {\n  font-weight: thin;\n  white-space: nowrap; }\n\n.card-line {\n  margin: 20px 0;\n  position: relative;\n  clear: both;\n  float: left;\n  width: 100%; }\n\n.card-image {\n  width: 25%;\n  display: inline-block;\n  position: relative;\n  float: left;\n  padding: 10px; }\n  .card-image img {\n    width: 100%;\n    max-width: 70px; }\n\n.card-text {\n  padding: 15px; }\n\n.card-text .row {\n  padding: 5px; }\n\n.line-header-elements {\n  padding: 5px;\n  background: #202121;\n  color: #FFF;\n  font-weight: normal;\n  margin-top: -15px;\n  margin-left: 9px;\n  position: absolute;\n  z-index: 99;\n  font-size: 15px; }\n\n.line-icon {\n  width: 36px;\n  height: 36px;\n  border-radius: 18px;\n  background: #202121;\n  display: inline-block;\n  margin-left: -18px;\n  margin-top: 45px;\n  z-index: 99;\n  position: absolute;\n  cursor: pointer; }\n\n.line-icon i, .options-icon i {\n  color: #FFF;\n  font-size: 20px;\n  padding-left: 8px;\n  padding-top: 9px; }\n\n.options-icon i.di-check {\n  color: #202121; }\n\n.options-icon i.di-microphone {\n  padding-left: 10px;\n  padding-top: 3px;\n  color: #202121; }\n\n.options-icon {\n  width: 36px;\n  height: 36px;\n  border-radius: 18px;\n  background: #FFF;\n  border: 2px solid #202121;\n  display: inline-block;\n  margin-left: -15px;\n  margin-top: -19px;\n  position: absolute;\n  z-index: 100;\n  cursor: pointer; }\n\n.header-info-separator, .header-info-separator-last {\n  padding: 0 5px 0 10px;\n  margin-right: 5px;\n  border-right: 1px solid #FFF;\n  display: inline-block; }\n\n.header-info-separator-last {\n  border: none; }\n\n.card {\n  padding: 18px;\n  line-height: 36px !important;\n  font-size: 18px; }\n\n.line-group {\n  width: 74%;\n  display: inline-block;\n  position: relative;\n  float: left;\n  overflow: hidden; }\n\n.line-card {\n  display: inline-block;\n  width: 25%;\n  float: left;\n  border-top: 2px solid #e7e7e7;\n  border-bottom: 2px solid #e7e7e7; }\n\n.line-card > * {\n  line-height: 24px;\n  position: relative;\n  width: 100%;\n  float: left;\n  height: 110px; }\n\n.card-content-line h2 {\n  font-size: 17px; }\n\n.card .label {\n  font-size: 15px; }\n\n.card h3 {\n  font-size: 15px !important;\n  font-weight: normal !important; }\n\n.card .value-small, .card .value-big {\n  font-family: Bebas;\n  font-weight: bold !important; }\n\n.card .value-big {\n  font-size: 22px !important; }\n\n.col-25 {\n  width: 25%; }\n\n.col-50 {\n  width: 49%;\n  display: inline-block; }\n\n.col-75 {\n  width: 74%; }\n\n.col-100 {\n  width: 100%; }\n\n.col-rest-3 {\n  width: 16.66666667%; }\n\n.row-rest-6 {\n  height: 33.33333333%; }\n\n.pink {\n  color: #e96292; }\n\n.gray {\n  background: #e9e8e8; }\n\n.black {\n  color: #202121; }\n\n.white {\n  background: #f9f9f9; }\n\n.pull-left {\n  float: left; }\n\n.pull-right {\n  float: right; }\n\n.text-left {\n  text-align: left; }\n\n.text-right {\n  text-align: right; }\n\n.text-center {\n  text-align: center; }\n\n.last-card {\n  border: 2px solid #d1d1d1;\n  border-left: none !important;\n  overflow: hidden; }\n\n.bold {\n  font-weight: bold; }\n\n.normal {\n  font-weight: normal !important; }\n\n.collapsed.card-buttons {\n  height: auto !important;\n  margin-left: 7%;\n  margin-right: auto;\n  width: auto !important;\n  position: absolute !important;\n  top: 93px;\n  z-index: 999; }\n\n.card-button {\n  z-index: 999;\n  border-radius: 3px;\n  width: 70px;\n  height: 21px;\n  padding: 0 10px;\n  position: relative;\n  float: left;\n  margin: 5px;\n  font-size: 14px;\n  color: #FFF;\n  line-height: 23px;\n  cursor: pointer; }\n\n.button-expand {\n  background: #202121;\n  text-align: center; }\n\n.button-new {\n  background: #e96292; }\n\n.button-new .icon-btn-new {\n  width: 21px;\n  height: 21px;\n  background: #FFF;\n  position: absolute;\n  float: right;\n  border: 1px solid #202121;\n  border-radius: 3px;\n  bottom: 0;\n  right: 0; }\n\n.expanded {\n  position: relative;\n  float: left;\n  margin-top: 12px;\n  width: 100%;\n  background: #fafafa; }\n\n.expanded .container {\n  padding: 10px 10px 20px 10px;\n  overflow: auto; }\n  .expanded .container .main-content {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-orient: horizontal;\n    -webkit-box-direction: normal;\n        -ms-flex-direction: row;\n            flex-direction: row; }\n    .expanded .container .main-content .left-graph {\n      -webkit-box-flex: 2;\n          -ms-flex: 2;\n              flex: 2; }\n    .expanded .container .main-content .right-fields {\n      -webkit-box-flex: 1;\n          -ms-flex: 1;\n              flex: 1;\n      padding-left: 1%;\n      display: -webkit-box;\n      display: -ms-flexbox;\n      display: flex;\n      -webkit-box-orient: vertical;\n      -webkit-box-direction: normal;\n          -ms-flex-direction: column;\n              flex-direction: column; }\n      .expanded .container .main-content .right-fields .header {\n        border-bottom: 2px solid #E20613;\n        color: #E20613;\n        padding-bottom: 5px;\n        margin-bottom: 10px; }\n      .expanded .container .main-content .right-fields .top-fields {\n        -webkit-box-flex: 1;\n            -ms-flex: 1;\n                flex: 1;\n        padding-right: 10px; }\n      .expanded .container .main-content .right-fields .bottom-fields {\n        margin-top: 28px;\n        padding-right: 10px; }\n\n.expanded .card {\n  width: 32%;\n  margin-right: 1%;\n  background: #fafafa;\n  border: 1px solid #e9e8e8;\n  display: inline-block;\n  white-space: normal;\n  height: 350px; }\n\n.expanded .card {\n  line-height: 24px !important;\n  position: relative;\n  float: left;\n  display: inline-block; }\n\n.expanded .card .text {\n  float: left;\n  font-size: 15px; }\n\n.expanded .card-button {\n  bottom: -15px !important;\n  position: absolute;\n  float: left;\n  z-index: 9999; }\n  .expanded .card-button.button-expand {\n    margin-left: 7%; }\n  .expanded .card-button.button-new {\n    margin-left: calc(7% + 80px); }\n\n.expanded .card h3 {\n  color: #e96292;\n  font-weight: lighter;\n  border-bottom: 2px solid #e96292;\n  padding-bottom: 12px;\n  margin-bottom: 12px;\n  font-size: 17px; }\n\n.diwo-circle--actions .layout-column.diwo-circle--actions-ctn {\n  position: relative; }\n\n.diwo-circle--trigger {\n  z-index: 1; }\n\n.diwo-circle--action-item {\n  -webkit-transform: none !important;\n          transform: none !important; }\n\ntd {\n  background-color: white; }\n\n.w-100, .row, .row-small {\n  width: 100%; }\n\n.row {\n  border: solid 0.3px rgba(203, 87, 126, 0.39);\n  display: table;\n  clear: both;\n  padding: 5px;\n  margin-bottom: 2px;\n  background-color: white; }\n  .row .left-value {\n    padding: 5px; }\n  .row .right-value {\n    padding: 5px;\n    margin-left: 5px; }\n\n.tri-row {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: row;\n          flex-direction: row;\n  margin-bottom: 2px;\n  background-color: white; }\n  .tri-row .left-value {\n    border: solid 0.3px rgba(203, 87, 126, 0.39);\n    padding: 10px;\n    text-align: center;\n    line-height: 3.5em;\n    -webkit-box-flex: 1;\n        -ms-flex: 1;\n            flex: 1; }\n  .tri-row .right-rows {\n    -webkit-box-flex: 4;\n        -ms-flex: 4;\n            flex: 4;\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-orient: vertical;\n    -webkit-box-direction: normal;\n        -ms-flex-direction: column;\n            flex-direction: column; }\n    .tri-row .right-rows .row {\n      margin-bottom: 0; }\n\n.row-small {\n  border: solid 0.3px rgba(203, 87, 126, 0.39);\n  display: table;\n  clear: both;\n  background-color: white;\n  overflow: hidden; }\n\n.right-value {\n  float: right;\n  font-weight: 600;\n  color: #e96292;\n  font-size: 16px;\n  font-family: 'Yantramanav-Light'; }\n\n.left-value {\n  float: left;\n  color: #555;\n  font-size: 15px;\n  font-family: 'Yantramanav-Light'; }\n\n.bordered-heading {\n  font-size: 20px;\n  border-bottom: 3px solid #E20613;\n  display: block;\n  margin-bottom: 15px;\n  padding-bottom: 10px; }\n\n.image-outer-wrapper {\n  height: 100%;\n  position: relative; }\n  .image-outer-wrapper .border-rect {\n    position: absolute;\n    height: 15px;\n    width: 15px; }\n    .image-outer-wrapper .border-rect[data-side='top-left'] {\n      top: 1px;\n      left: 1px;\n      border-top: 2px solid #E20613;\n      border-left: 2px solid #E20613; }\n    .image-outer-wrapper .border-rect[data-side='top-middle'] {\n      top: 1px;\n      left: 50%;\n      width: 20px;\n      border-top: 2px solid #E20613; }\n    .image-outer-wrapper .border-rect[data-side='top-right'] {\n      top: 1px;\n      right: 1px;\n      border-top: 2px solid #E20613;\n      border-right: 2px solid #E20613; }\n    .image-outer-wrapper .border-rect[data-side='middle-left'] {\n      top: 50%;\n      left: 1px;\n      height: 20px;\n      border-left: 2px solid #E20613; }\n    .image-outer-wrapper .border-rect[data-side='middle-right'] {\n      top: 50%;\n      right: 1px;\n      height: 20px;\n      border-right: 2px solid #E20613; }\n    .image-outer-wrapper .border-rect[data-side='bottom-left'] {\n      bottom: 1px;\n      left: 1px;\n      border-bottom: 2px solid #E20613;\n      border-left: 2px solid #E20613; }\n    .image-outer-wrapper .border-rect[data-side='bottom-middle'] {\n      bottom: 1px;\n      left: 50%;\n      width: 20px;\n      border-bottom: 2px solid #E20613; }\n    .image-outer-wrapper .border-rect[data-side='bottom-right'] {\n      bottom: 1px;\n      right: 1px;\n      border-bottom: 2px solid #E20613;\n      border-right: 2px solid #E20613; }\n\n.panel-holder {\n  position: absolute;\n  left: 0;\n  top: 0;\n  right: 0;\n  z-index: 100; }\n\n.pink-background {\n  background-color: rgba(203, 87, 126, 0.23) !important;\n  overflow: auto; }\n\n.dark-pink-background {\n  background-color: rgba(203, 80, 99, 0.49) !important; }\n\n.pink-text {\n  color: #e96292; }\n\n.red-text {\n  color: #E20613; }\n\n.clear {\n  clear: both; }\n\n.bold {\n  font-weight: bold; }\n\n:host .panel-container {\n  padding: 30px 0 0 30px; }\n  :host .panel-container .top-buttons .circle-button {\n    background-color: white;\n    border-radius: 50%;\n    width: 36px;\n    height: 36px;\n    z-index: 100; }\n  :host .panel-container .top-buttons .diwo-button {\n    position: absolute;\n    top: -15px;\n    left: -15px;\n    border: 2px solid red; }\n  :host .panel-container .top-buttons .side-buttons {\n    position: absolute;\n    left: -15px;\n    top: 150px;\n    z-index: 100; }\n    :host .panel-container .top-buttons .side-buttons .circle-button {\n      border: 0;\n      background-color: #202121;\n      display: -webkit-box;\n      display: -ms-flexbox;\n      display: flex;\n      -webkit-box-pack: center;\n          -ms-flex-pack: center;\n              justify-content: center;\n      -webkit-box-align: center;\n          -ms-flex-align: center;\n              align-items: center; }\n      :host .panel-container .top-buttons .side-buttons .circle-button:hover {\n        background-color: red; }\n      :host .panel-container .top-buttons .side-buttons .circle-button i {\n        color: white; }\n    :host .panel-container .top-buttons .side-buttons > div {\n      margin-bottom: 30px; }\n  :host .panel-container .top-buttons .line-header-elements {\n    top: -10px;\n    left: 0;\n    margin-top: 0; }\n    :host .panel-container .top-buttons .line-header-elements span {\n      padding-right: 10px; }\n  :host .panel-container .top-buttons .line-header-button {\n    position: absolute;\n    top: -5px;\n    left: 280px;\n    height: 18px;\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-orient: horizontal;\n    -webkit-box-direction: normal;\n        -ms-flex-direction: row;\n            flex-direction: row;\n    background: white; }\n    :host .panel-container .top-buttons .line-header-button .graph-button {\n      border: 2px solid #e96292;\n      border-radius: 3px;\n      width: 42px; }\n    :host .panel-container .top-buttons .line-header-button .check-button {\n      border: 2px solid #202121;\n      border-radius: 3px;\n      width: 18px;\n      border-left: 0;\n      display: -webkit-box;\n      display: -ms-flexbox;\n      display: flex;\n      -webkit-box-align: center;\n          -ms-flex-align: center;\n              align-items: center;\n      -webkit-box-pack: center;\n          -ms-flex-pack: center;\n              justify-content: center; }\n      :host .panel-container .top-buttons .line-header-button .check-button i {\n        padding-top: 2px; }\n  :host .panel-container .main-content {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-orient: horizontal;\n    -webkit-box-direction: normal;\n        -ms-flex-direction: row;\n            flex-direction: row; }\n    :host .panel-container .main-content .left-graph {\n      -webkit-box-flex: 2;\n          -ms-flex: 2;\n              flex: 2; }\n      :host .panel-container .main-content .left-graph img {\n        width: 100%; }\n    :host .panel-container .main-content .right-fields {\n      padding-left: 20px;\n      -webkit-box-flex: 1;\n          -ms-flex: 1;\n              flex: 1; }\n      :host .panel-container .main-content .right-fields .graph-details {\n        margin-top: 20px; }\n        :host .panel-container .main-content .right-fields .graph-details img {\n          width: 100%; }\n    :host .panel-container .main-content .row {\n      background-color: #b3b3b3;\n      border: 0;\n      padding: 10px; }\n      :host .panel-container .main-content .row .left-value {\n        color: black;\n        font-size: 20px; }\n      :host .panel-container .main-content .row .right-value {\n        color: black;\n        font-size: 20px; }\n", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/microservices/decide/decide/decide-panel-layout/decide-panel-layout.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DecidePanelLayoutComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var DecidePanelLayoutComponent = (function () {
+    function DecidePanelLayoutComponent(_eref) {
+        this._eref = _eref;
+        this.panelClose = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["x" /* EventEmitter */]();
+        this.firstTimeClick = true;
+        this.state = 'trends';
+    }
+    DecidePanelLayoutComponent.prototype.clickedOutside = function ($event) {
+        if (!this._eref.nativeElement.contains($event.target) && !this.firstTimeClick) {
+            this.panelClose.emit();
+        }
+        this.firstTimeClick = false;
+    };
+    return DecidePanelLayoutComponent;
+}());
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["U" /* Output */])(),
+    __metadata("design:type", typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["x" /* EventEmitter */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["x" /* EventEmitter */]) === "function" && _a || Object)
+], DecidePanelLayoutComponent.prototype, "panelClose", void 0);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["A" /* HostListener */])('document:click', ['$event']),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Object]),
+    __metadata("design:returntype", void 0)
+], DecidePanelLayoutComponent.prototype, "clickedOutside", null);
+DecidePanelLayoutComponent = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["o" /* Component */])({
+        selector: 'decide-panel-layout',
+        template: __webpack_require__("../../../../../src/app/microservices/decide/decide/decide-panel-layout/decide-panel-layout.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/microservices/decide/decide/decide-panel-layout/decide-panel-layout.component.scss")]
+    }),
+    __metadata("design:paramtypes", [typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["v" /* ElementRef */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["v" /* ElementRef */]) === "function" && _b || Object])
+], DecidePanelLayoutComponent);
+
+var _a, _b;
+//# sourceMappingURL=decide-panel-layout.component.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/microservices/decide/decide/decide-trends-panel/decide-trends-panel.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"title\">\n  Related Insights\n</div>\n<div class=\"trends-graph\">\n  <img src=\"./assets/images/placeholders/placeholder_category_trends.png\">\n</div>\n<div class=\"attribute-trends\">\n  <div class=\"header\">Attribute Trends</div>\n  <div class=\"trends-table\">\n    <table>\n      <tr>\n        <th></th>\n        <th>Top <i class=\"di-arrow-thin-up  di-12x sub-icon green\"></i></th>\n        <th>Bottom <i class=\"di-arrow-thin-down  di-12x sub-icon red\"></i></th>\n      </tr>\n      <tr>\n        <td>Color(Solid)</td>\n        <td>Black</td>\n        <td>Purple</td>\n      </tr>\n      <tr>\n        <td>Color(Print)</td>\n        <td>Triangle</td>\n        <td>Floral</td>\n      </tr>\n      <tr>\n        <td>Size</td>\n        <td>Medium</td>\n        <td>Small</td>\n      </tr>\n      <tr>\n        <td>Fabric</td>\n        <td>Soft Cotton</td>\n        <td>Nylon</td>\n      </tr>\n      <tr>\n        <td>Lining</td>\n        <td>Light</td>\n        <td>Unlined</td>\n      </tr>\n      <tr>\n        <td>Lace</td>\n        <td>Embroidery</td>\n        <td>Light</td>\n      </tr>\n    </table>\n  </div>\n</div>\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/microservices/decide/decide/decide-trends-panel/decide-trends-panel.component.scss":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ":host {\n  background: white;\n  display: block; }\n  :host .title {\n    font-size: 20px;\n    padding: 10px 20px 10px 20px;\n    border-bottom: 1px solid red;\n    color: #8c8c8c; }\n  :host .trends-graph {\n    padding: 10px 20px 10px 20px; }\n    :host .trends-graph img {\n      width: 100%;\n      border-bottom: 1px solid darkgray; }\n  :host .attribute-trends {\n    padding: 10px 20px 10px 20px;\n    color: #8c8c8c; }\n    :host .attribute-trends .header {\n      font-size: 20px; }\n    :host .attribute-trends .trends-table table {\n      width: 100%; }\n      :host .attribute-trends .trends-table table tr {\n        display: -webkit-box;\n        display: -ms-flexbox;\n        display: flex;\n        -webkit-box-orient: horizontal;\n        -webkit-box-direction: normal;\n            -ms-flex-direction: row;\n                flex-direction: row;\n        -webkit-box-pack: end;\n            -ms-flex-pack: end;\n                justify-content: flex-end; }\n        :host .attribute-trends .trends-table table tr td:first-child, :host .attribute-trends .trends-table table tr th:first-child {\n          -webkit-box-flex: 3;\n              -ms-flex: 3;\n                  flex: 3;\n          text-align: start;\n          background: inherit;\n          color: #8c8c8c; }\n        :host .attribute-trends .trends-table table tr th:first-child {\n          border: 0; }\n        :host .attribute-trends .trends-table table tr td, :host .attribute-trends .trends-table table tr th {\n          -webkit-box-flex: 1;\n              -ms-flex: 1;\n                  flex: 1;\n          text-align: center;\n          margin: 1px;\n          border: 1px solid #ededed;\n          padding: 5px;\n          font-weight: normal;\n          color: black; }\n          :host .attribute-trends .trends-table table tr td i.green, :host .attribute-trends .trends-table table tr th i.green {\n            color: green; }\n          :host .attribute-trends .trends-table table tr td i.red, :host .attribute-trends .trends-table table tr th i.red {\n            color: red; }\n        :host .attribute-trends .trends-table table tr td {\n          background: #ededed; }\n", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/microservices/decide/decide/decide-trends-panel/decide-trends-panel.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DecideTrendsPanelComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var DecideTrendsPanelComponent = (function () {
+    function DecideTrendsPanelComponent() {
+    }
+    DecideTrendsPanelComponent.prototype.ngOnInit = function () {
+    };
+    return DecideTrendsPanelComponent;
+}());
+DecideTrendsPanelComponent = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["o" /* Component */])({
+        selector: 'decide-trends-panel',
+        template: __webpack_require__("../../../../../src/app/microservices/decide/decide/decide-trends-panel/decide-trends-panel.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/microservices/decide/decide/decide-trends-panel/decide-trends-panel.component.scss")]
+    }),
+    __metadata("design:paramtypes", [])
+], DecideTrendsPanelComponent);
+
+//# sourceMappingURL=decide-trends-panel.component.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/microservices/decide/decide/decide-what-if-analysis-panel/decide-what-if-analysis-panel.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"title\">\n  What-if Analysis\n</div>\n<div class=\"related-insights\">\n  Hover between the Planned Assortment and Recommended Assortment for insights\n</div>\n<div class=\"units-plan\">\n  <h2 class=\"period\">Week 33</h2>\n  <div class=\"plan\">\n    <div class=\"row recommended\">\n      <div class=\"left-value\">\n        diwo Recommended Units\n      </div>\n      <div class=\"right-value\">\n        15k\n      </div>\n    </div>\n    <div class=\"row planned\">\n      <div class=\"left-value\">\n        Planned Units\n      </div>\n      <div class=\"right-value\">\n        5K\n      </div>\n    </div>\n    <div class=\"row new-planned\">\n      <div class=\"left-value\">\n        New Planned Units\n      </div>\n      <div class=\"right-value\">\n        10K\n      </div>\n    </div>\n    <div class=\"row required\">\n      <div class=\"left-value\">\n        Units Required\n      </div>\n      <div class=\"right-value\">\n        5K\n      </div>\n    </div>\n  </div>\n</div>\n\n<div class=\"title\">\n  Modified Assortments\n</div>\n<div class=\"modifications\">\n  <div class=\"row modification\">\n    <div class=\"left-value\">\n      PK Date PU Deep Ruby - Week 33\n    </div>\n    <div class=\"right-value\">\n      +5K\n    </div>\n  </div>\n</div>\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/microservices/decide/decide/decide-what-if-analysis-panel/decide-what-if-analysis-panel.component.scss":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ":host {\n  background: white;\n  display: block; }\n  :host .row {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-orient: horizontal;\n    -webkit-box-direction: normal;\n        -ms-flex-direction: row;\n            flex-direction: row;\n    margin-bottom: 2px; }\n    :host .row .left-value {\n      -webkit-box-flex: 3;\n          -ms-flex: 3;\n              flex: 3;\n      padding: 10px; }\n    :host .row .right-value {\n      -webkit-box-flex: 1;\n          -ms-flex: 1;\n              flex: 1;\n      text-align: center;\n      padding: 10px; }\n    :host .row.recommended {\n      border: 1px solid red; }\n      :host .row.recommended .left-value {\n        color: red; }\n      :host .row.recommended .right-value {\n        background: red;\n        color: white; }\n    :host .row.planned {\n      border: 1px solid #ededed; }\n      :host .row.planned .left-value {\n        color: #8c8c8c; }\n      :host .row.planned .right-value {\n        background: #ededed;\n        color: black; }\n    :host .row.new-planned {\n      border: 1px solid #ededed;\n      background: #fff5cc; }\n      :host .row.new-planned .left-value {\n        color: #8c8c8c; }\n      :host .row.new-planned .right-value {\n        background: #ffeb99;\n        color: #cca300;\n        border: 1px solid #cca300; }\n    :host .row.required {\n      border-top: 2px solid red; }\n      :host .row.required .left-value {\n        color: red; }\n      :host .row.required .right-value {\n        color: red; }\n    :host .row.modification {\n      border: 1px solid #ededed; }\n      :host .row.modification .left-value {\n        color: #8c8c8c; }\n      :host .row.modification .right-value {\n        background: #ededed;\n        color: black; }\n  :host .title {\n    background: black;\n    color: #b3b3b3;\n    padding: 10px 20px 10px 20px; }\n  :host .related-insights {\n    margin: 10px 20px 10px 20px;\n    border-bottom: 2px solid red;\n    min-height: 100px; }\n  :host .units-plan {\n    padding: 10px 20px 10px 20px; }\n    :host .units-plan .period {\n      padding-bottom: 10px; }\n    :host .units-plan .plan {\n      font-size: 18px;\n      margin-bottom: 30px; }\n  :host .modifications {\n    padding: 20px; }\n", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/microservices/decide/decide/decide-what-if-analysis-panel/decide-what-if-analysis-panel.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DecideWhatIfAnalysisPanelComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var DecideWhatIfAnalysisPanelComponent = (function () {
+    function DecideWhatIfAnalysisPanelComponent() {
+    }
+    DecideWhatIfAnalysisPanelComponent.prototype.ngOnInit = function () {
+    };
+    return DecideWhatIfAnalysisPanelComponent;
+}());
+DecideWhatIfAnalysisPanelComponent = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["o" /* Component */])({
+        selector: 'decide-what-if-analysis-panel',
+        template: __webpack_require__("../../../../../src/app/microservices/decide/decide/decide-what-if-analysis-panel/decide-what-if-analysis-panel.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/microservices/decide/decide/decide-what-if-analysis-panel/decide-what-if-analysis-panel.component.scss")]
+    }),
+    __metadata("design:paramtypes", [])
+], DecideWhatIfAnalysisPanelComponent);
+
+//# sourceMappingURL=decide-what-if-analysis-panel.component.js.map
+
+/***/ }),
+
 /***/ "../../../../../src/app/microservices/decide/decide/decide.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<button id=\"decideClose\" (click)=\"navigateHome()\" class=\"has-pd-light is-fixed right-large top-large has-c-shade-9\"><i\n  class=\"di-close di-14x\"></i></button>\n<!-- <div  class=\"has-bg-shade-1 is-fixed left-large right-large has-pd-top-normal has-pd-bottom-small\" id=\"decide-header\">\n  <div  class=\"layout-row\" *ngIf=\"firstOpp\">\n    <div  class=\"decide-card-item  has-pd-vert-extra-small has-pd-right-extra-small\"><p class=\"has-bd-bottom  bd-light bd-secondary\">Product</p></div>\n    <div *ngFor=\"let column of firstOpp.rowInfo\"\n       class=\"decide-card-item   has-pd-vert-extra-small has-pd-right-extra-small\"><p class=\"has-bd-bottom  bd-light bd-secondary\">{{column.title | capitalize}}</p></div>\n\n  </div>\n</div> -->\n\n\n<!-- dynamic cards start | can be split into other components - used mock data -->\n\n<!-- cards header start -->\n<!-- <div class=\"card-header\" (mouseover)=\"resetContextualState()\">\n  <div class=\"context\">\n    Context\n  </div>\n  <div class=\"forecast\">\n    Forecast\n  </div>\n  <div class=\"outcome\">\n    Potential Outcome\n  </div>\n</div> -->\n<!-- cards header end -->\n\n<!-- line start -->\n<div id=\"cards-container\" class=\"cards-container\" (scroll)=\"didScroll($event)\">\n  <div id=\"{{ line.Identifyer }}\" class=\"card-line\" *ngFor=\"let line of data.Sections; let i = index\"\n       (mouseover)=\"checkContextualState(i,'over')\" (click)=\"getBox(line.Identifyer)\">\n\n    <!-- building the collapse state of the line -->\n    <!-- defining and adding card types -->\n\n    <!-- defining line frame -->\n    <div>\n      <!-- adding header elements -->\n      <div class=\"line-icon\">\n        <i class=\"di-chevron-down\"></i>\n      </div>\n      <div class=\"options-icon\">\n        <!-- placeholder icon until the way the icon is sent will be decided -->\n        <i class=\"di-check\" *ngIf=\"!accordionState[i]['Ask_Icon']\"></i>\n        <!-- <i class=\"di-microphone\" *ngIf=\"accordionState[i]['Ask_Icon']\" (click)=\"activateAsk(accordionState[i].Identifyer)\"></i> -->\n\n        <!-- diwo circle -->\n\n        <div [diwoCircleDirective]=\"diwoPosition\" class=\"is-relative\" *ngIf=\"accordionState[i]['Ask_Icon']\"\n\n             [diwoCircleActions]=\"{ clip: 'true', case: 'true',narrate: 'true',volume: 'true',pin: 'true', help: 'global', share: 'true'}\"\n             [diwoCircleTriggeredBy]=\"'hover'\"\n             [diwoCircleAllow]=\"!isMyDiwoOpen() && isMicroserviceOpen()\"\n             [diwoCircleClickAction]=\"openMyDiwo\"\n             [diwoCircleSize]=\"34\"\n             [diwoCircleDisableExtraNav]=\"true\"\n             [diwoCircleType]=\"'microphone'\" style=\"min-height: 100%;position:absolute;top:-3px;left:-3px;\">\n\n\n          <div id=\"nav\" [hidden]=\"!(!isMyDiwoOpen() && isMicroserviceOpen() || (showDock | async)) \"\n\n               class=\"card layout-row right-none with-mg-small layout--start-center  top-none left-none has-pd-hori-large has-pd-top-large\">\n            <!--<div id=\"nav-overlay\" class=\"is-absolute top-none left-none bottom-none right-none\" *ngIf=\"isWatchOpen()\"></div>-->\n            <div #diwoHolder class=\"logo-holder is-one-whole-tall is-relative layout-item\"\n                 [hidden]=\"(isMyDiwoOpen() || isAskOpen()) && !(showDock | async)\">\n              <button class=\"is-absolute transform-to-center top-one-half left-one-half\" [routerLink]=\"['/mydiwo']\">\n                <img class=\"is-absolute transform-to-center top-one-half left-one-half\" width=\"20\"\n                     src=\"./assets/images/diwoLogo-2x.png\"/>\n              </button>\n            </div>\n\n          </div>\n\n        </div>\n\n        <!-- end diwo circle -->\n\n      </div>\n      <span class=\"line-header-elements\">\n        <span *ngFor=\"let info of line.Header.Text; let j = index\"\n              [ngClass]=\"{'header-info-separator': j < (line.Header.Text.length-1) }\">{{ info }}</span>\n      </span>\n\n      <!-- defining and displaying cards -->\n      <div *ngFor=\"let card of line.Collapsed.Cards; let j = index\" class=\"line-card col-25\">\n\n        <!-- image card -->\n        <div *ngIf=\"card.Type == 'image'\"\n             [ngClass]=\"{ 'gray': card.Style.Background == 'gray', 'white': card.Style.Background == 'white' }\"\n             class=\"card border-card-right\">\n          <div class=\"card-image\"> <!-- the image will be blob or path?! -->\n            <img src=\"{{ card.Content.Image }}\" width=\"60\"/>\n          </div>\n          <div class=\"line-group\">\n            <div class=\"card-content-line\"\n                 [ngClass]=\"{ 'black': card.Content.Text.Style.Colors[0] == 'black', 'pink': card.Content.Text.Style.Colors[0] == 'pink', 'gray': card.Content.Text.Style.Colors[0] == 'gray', 'bold': card.Content.Text.Style.Weights[0] == 'bold', 'normal': card.Content.Text.Style.Weights[0] == 'normal' }\">\n              <div style=\"display: block\">{{ card.Content.Text.Value[0] }}</div>\n            </div>\n            <div class=\"card-content-line\"\n                 [ngClass]=\"{ 'black': card.Content.Text.Style.Colors[1] == 'black', 'pink': card.Content.Text.Style.Colors[1] == 'pink', 'gray': card.Content.Text.Style.Colors[1] == 'gray', 'bold': card.Content.Text.Style.Weights[1] == 'bold', 'normal': card.Content.Text.Style.Weights[1] == 'normal' }\">\n              <div style=\"display: block\">{{ card.Content.Text.Value[1] }}</div>\n            </div>\n          </div>\n        </div>\n\n        <!-- table card -->\n        <div *ngIf=\"card.Type == 'table'\"\n             [ngClass]=\"{ 'gray': card.Style.Background == 'gray', 'white': card.Style.Background == 'white' }\"\n             class=\"border-card-right\">\n          <div class='row-small row-rest-6 pink-background ' style='line-height: 37px'>\n            <div class='left-value pink-text' style='padding-left: 10px; width: 80%'>Revenue impact</div>\n            <div class='right-value ' style='padding-right: 10px; width: 20%'>$1.3M</div>\n          </div>\n          <div class='row-small row-rest-6 pink-background ' style='line-height: 37px'>\n            <div class='left-value pink-text' style='padding-left: 10px; width: 80%'>Profitability impact</div>\n            <div class='right-value ' style='padding-right: 10px; width: 20%'>$820K</div>\n          </div>\n          <div class='row-small row-rest-6 ' style='line-height: 37px'>\n            <div class='left-value red-text dark-pink-background'\n                 style='padding-left: 10px;font-weight: bold; width: 80%'>Confidence score\n            </div>\n            <div class='right-value red-text pink-background'\n                 style='padding-right: 10px; padding-left: 10px; width: 20%'>89%\n            </div>\n            <div class=\"clear\"></div>\n          </div>\n          <!-- iterate lines -->\n          <!--<div *ngFor=\"let tline of card.Content.Text.Value; let k = index\" class=\"\" >-->\n          <!--<div class=\"col-50  label\" [ngClass]=\"{ 'black': tline.Label.Style.Color == 'black', 'pink': tline.Label.Style.Color == 'pink' }\">-->\n          <!--<h3>{{ tline.Label.Text }}</h3>-->\n          <!--</div>-->\n          <!--<div class=\"col-50 pull-right text-right value-small\" [ngClass]=\"{ 'black': tline.Value.Style.Color == 'black', 'pink': tline.Value.Style.Color == 'pink' }\">-->\n          <!--<h3>{{ tline.Value.Text }}</h3>-->\n          <!--</div>-->\n          <!--</div>-->\n        </div>\n\n        <!-- table highlighted_value -->\n        <div *ngIf=\"card.Type == 'highlighted_value'\"\n             [ngClass]=\"{ 'gray': card.Style.Background == 'gray', 'white': card.Style.Background == 'white' }\"\n             class=\"card  border-card-right\">\n          <div class=\"col-100 text-center label\"\n               [ngClass]=\"{ 'black': card.Content.Text.Value[0].Label.Color == 'black', 'pink': card.Content.Text.Value[0].Label.Style.Color == 'pink' }\">\n            {{ card.Content.Text.Value[0].Label.Text }}\n          </div>\n          <div class=\"col-100 text-center value-big\"\n               [ngClass]=\"{ 'black': card.Content.Text.Value[1].Label.Style.Color == 'black', 'pink': card.Content.Text.Value[1].Label.Style.Color == 'pink' }\">\n            {{ card.Content.Text.Value[1].Label.Text }}\n          </div>\n        </div>\n\n        <!-- table rating_stars_down -->\n        <div *ngIf=\"card.Type == 'rating_stars_down'\"\n             [ngClass]=\"{ 'gray': card.Style.Background == 'gray', 'white': card.Style.Background == 'white' }\"\n             class=\"card  border-card-right\">\n          <div class=\"col-100 text-center label\"\n               [ngClass]=\"{ 'black': card.Content.Text.Value[0].Label.Color == 'black', 'pink': card.Content.Text.Value[0].Label.Style.Color == 'pink' }\">\n            {{ card.Content.Text.Value[0].Label.Text }}\n          </div>\n          <div class=\"col-100 text-center  value-big\"\n               [ngClass]=\"{ 'black': card.Content.Text.Value[1].Label.Style.Color == 'black', 'pink': card.Content.Text.Value[1].Label.Style.Color == 'pink' }\">\n            {{ card.Content.Text.Value[1].Label.Text }}\n          </div>\n        </div>\n\n        <!-- add the buttons on bottom of the first card in case they exist -->\n        <div *ngIf=\"j==0 && !accordionState[i].Expanded\" class=\"collapsed card-buttons\">\n          <div *ngIf=\"line.Buttons.Expand\" class=\"card-button  button-expand\"\n               (click)=\"accordionState[i].Expanded = true;accordionState[i].state = 'active';didScroll(event)\">\n            <i class=\"di-arrow-down expand-arrow di-12x sub-icon\"></i>\n          </div>\n          <div *ngIf=\"line.Buttons.New\" class=\"card-button button-new\" (click)=\"newCard()\">\n            New\n            <div class=\"icon-btn-new\">\n              <i class=\"di-check di-12x sub-icon\" style=\"color: black;\"></i>\n            </div>\n          </div>\n        </div>\n      </div>\n      <div class=\"expanded\" [@expanded]=\"accordionState[i].state\">\n        <div class=\"container\">\n          <div class='bordered-heading'><i class=\"di-decide\"></i><span class='red-text'> I sense...</span></div>\n          <div class=\"main-content\"\n               *ngIf=\"line.Expanded.Cards.length==2 && line.Expanded.Cards[0].Type == 'graph' && line.Expanded.Cards[1].Type == 'highlights'\">\n            <div class=\"left-graph\">\n              <div class='image-outer-wrapper'>\n                <div data-id='gViz-visuals-vis-wrapper' class='gViz-visuals-inner-wrapper'>\n                  <div *ngIf=\"!line.Expanded.Cards[0].Content.Graph.Data\">Loading data...</div>\n                  <ng-template *ngIf=\"line.Expanded.Cards[0].Content.Graph.Data\"\n                               [dynamic-component]=\"line.Expanded.Cards[0].Content.Graph.Type\"\n                               [data]=\"line.Expanded.Cards[0].Content.Graph.Data\"></ng-template>\n                </div>\n                <div class='border-rect' data-side='top-left'></div>\n                <div class='border-rect' data-side='top-right'></div>\n                <div class='border-rect' data-side='bottom-left'></div>\n                <div class='border-rect' data-side='bottom-right'></div>\n              </div>\n            </div>\n            <div class=\"right-fields\">\n              <div class=\"top-fields\">\n                <h2 class=\"header\">Highlights</h2>\n                <div class='row'>\n                  <div class='left-value'>Shortage (units)</div>\n                  <div class='right-value'>8450</div>\n                </div>\n                <div class='row'>\n                  <div class='left-value'>Impacted Choice Codes</div>\n                  <div class='right-value'>31</div>\n                </div>\n                <div class='row'>\n                  <div class='left-value'>Revenue Recovery</div>\n                  <div class='right-value'>$800K</div>\n                </div>\n                <div class='row'>\n                  <div class='left-value'>Profitability</div>\n                  <div class='right-value'>$300K</div>\n                </div>\n                <div class='tri-row'>\n                  <div class='left-value'>Most affected</div>\n                  <div class=\"right-rows\">\n                    <div class='row'>\n                      <div class='right-value'>WEW Push-up</div>\n                    </div>\n                    <div class='row'>\n                      <div class='right-value'>Sports Bra Demi LL</div>\n                    </div>\n                  </div>\n                </div>\n              </div>\n              <div class=\"bottom-fields\">\n                <div class='row'>\n                  <div class='left-value'>Surplus (units)</div>\n                  <div class='right-value'>3100</div>\n                </div>\n                <div class='row'>\n                  <div class='left-value'>Impacted Choice Codes</div>\n                  <div class='right-value'>22</div>\n                </div>\n                <div class='row'>\n                  <div class='left-value'>Revenue Recovery</div>\n                  <div class='right-value'>$500k</div>\n                </div>\n                <div class='row'>\n                  <div class='left-value'>Profitability</div>\n                  <div class='right-value'>$470k</div>\n                </div>\n                <div class='row'>\n                  <div class='left-value'>Most affected</div>\n                  <div class='right-value pink-background'>WEW Push-up</div>\n                  <div class='right-value pink-background'>Sports Bra Demi LL</div>\n                </div>\n              </div>\n            </div>\n          </div>\n          <div class=\"main-content\"\n               *ngIf=\"line.Expanded.Cards.length==2 && line.Expanded.Cards[0].Type == 'graph' && line.Expanded.Cards[1].Type == 'related-insights'\">\n            <div class=\"left-graph\">\n              <div class='image-outer-wrapper'>\n                <div data-id='gViz-visuals-vis-wrapper' class='gViz-visuals-inner-wrapper'>\n                  <div *ngIf=\"!line.Expanded.Cards[0].Content.Graph.Data\">Loading data...</div>\n                  <ng-template *ngIf=\"line.Expanded.Cards[0].Content.Graph.Data\"\n                               [dynamic-component]=\"line.Expanded.Cards[0].Content.Graph.Type\"\n                               [data]=\"line.Expanded.Cards[0].Content.Graph.Data\"></ng-template>\n                </div>\n                <div class='border-rect' data-side='top-left'></div>\n                <div class='border-rect' data-side='top-right'></div>\n                <div class='border-rect' data-side='bottom-left'></div>\n                <div class='border-rect' data-side='bottom-right'></div>\n              </div>\n            </div>\n            <div class=\"right-fields\">\n              <div class=\"top-fields\">\n                <h2 class=\"header\">Highlights</h2>\n                <div class='row'>\n                  <div class='left-value'>Shortage (units)</div>\n                  <div class='right-value'>8450</div>\n                </div>\n                <div class='row'>\n                  <div class='left-value'>Impacted Choice Codes</div>\n                  <div class='right-value'>31</div>\n                </div>\n                <div class='row'>\n                  <div class='left-value'>Revenue Recovery</div>\n                  <div class='right-value'>$800K</div>\n                </div>\n                <div class='row'>\n                  <div class='left-value'>Profitability</div>\n                  <div class='right-value'>$300K</div>\n                </div>\n                <div class='tri-row'>\n                  <div class='left-value'>Most affected</div>\n                  <div class=\"right-rows\">\n                    <div class='row'>\n                      <div class='right-value'>WEW Push-up</div>\n                    </div>\n                    <div class='row'>\n                      <div class='right-value'>Sports Bra Demi LL</div>\n                    </div>\n                  </div>\n                </div>\n              </div>\n              <div class=\"bottom-fields\">\n                <div class='row'>\n                  <div class='left-value'>Surplus (units)</div>\n                  <div class='right-value'>3100</div>\n                </div>\n                <div class='row'>\n                  <div class='left-value'>Impacted Choice Codes</div>\n                  <div class='right-value'>22</div>\n                </div>\n                <div class='row'>\n                  <div class='left-value'>Revenue Recovery</div>\n                  <div class='right-value'>$500k</div>\n                </div>\n                <div class='row'>\n                  <div class='left-value'>Profitability</div>\n                  <div class='right-value'>$470k</div>\n                </div>\n                <div class='row'>\n                  <div class='left-value'>Most affected</div>\n                  <div class='right-value pink-background'>WEW Push-up</div>\n                  <div class='right-value pink-background'>Sports Bra Demi LL</div>\n                </div>\n              </div>\n            </div>\n          </div>\n          <div class=\"main-content\"\n               *ngIf=\"line.Expanded.Cards.length==2 && line.Expanded.Cards[0].Type == 'graph' && line.Expanded.Cards[1].Type == 'what-if-analysis'\">\n            <div class=\"left-graph\">\n              <div class='image-outer-wrapper'>\n                <div data-id='gViz-visuals-vis-wrapper' class='gViz-visuals-inner-wrapper'>\n                  <div *ngIf=\"!line.Expanded.Cards[0].Content.Graph.Data\">Loading data...</div>\n                  <ng-template *ngIf=\"line.Expanded.Cards[0].Content.Graph.Data\"\n                               [dynamic-component]=\"line.Expanded.Cards[0].Content.Graph.Type\"\n                               [data]=\"line.Expanded.Cards[0].Content.Graph.Data\"></ng-template>\n                </div>\n                <div class='border-rect' data-side='top-left'></div>\n                <div class='border-rect' data-side='top-right'></div>\n                <div class='border-rect' data-side='bottom-left'></div>\n                <div class='border-rect' data-side='bottom-right'></div>\n              </div>\n            </div>\n            <div class=\"right-fields\">\n              <div class=\"top-fields\">\n                <h2 class=\"header\">Highlights</h2>\n                <div class='row'>\n                  <div class='left-value'>Shortage (units)</div>\n                  <div class='right-value'>8450</div>\n                </div>\n                <div class='row'>\n                  <div class='left-value'>Impacted Choice Codes</div>\n                  <div class='right-value'>31</div>\n                </div>\n                <div class='row'>\n                  <div class='left-value'>Revenue Recovery</div>\n                  <div class='right-value'>$800K</div>\n                </div>\n                <div class='row'>\n                  <div class='left-value'>Profitability</div>\n                  <div class='right-value'>$300K</div>\n                </div>\n                <div class='tri-row'>\n                  <div class='left-value'>Most affected</div>\n                  <div class=\"right-rows\">\n                    <div class='row'>\n                      <div class='right-value'>WEW Push-up</div>\n                    </div>\n                    <div class='row'>\n                      <div class='right-value'>Sports Bra Demi LL</div>\n                    </div>\n                  </div>\n                </div>\n              </div>\n              <div class=\"bottom-fields\">\n                <div class='row'>\n                  <div class='left-value'>Surplus (units)</div>\n                  <div class='right-value'>3100</div>\n                </div>\n                <div class='row'>\n                  <div class='left-value'>Impacted Choice Codes</div>\n                  <div class='right-value'>22</div>\n                </div>\n                <div class='row'>\n                  <div class='left-value'>Revenue Recovery</div>\n                  <div class='right-value'>$500k</div>\n                </div>\n                <div class='row'>\n                  <div class='left-value'>Profitability</div>\n                  <div class='right-value'>$470k</div>\n                </div>\n                <div class='row'>\n                  <div class='left-value'>Most affected</div>\n                  <div class='right-value pink-background'>WEW Push-up</div>\n                  <div class='right-value pink-background'>Sports Bra Demi LL</div>\n                </div>\n              </div>\n            </div>\n          </div>\n\n        <!--<table style='border: 1px solid deeppink;'>-->\n        <!--<tr>-->\n        <!--<td>Shortage (31 Choice Codes)</td>-->\n        <!--<td>8450</td>-->\n        <!--</tr>-->\n        <!--<tr>-->\n        <!--<td>Revenue Recovery</td>-->\n        <!--<td>$800K</td>-->\n        <!--</tr>-->\n        <!--<tr>-->\n        <!--<td>Profitability</td>-->\n        <!--<td>$300K</td>-->\n        <!--</tr>-->\n        <!--<tr>-->\n        <!--<td>Most affected</td>-->\n        <!--<td>WEW Push-up and Sports Bra Demi LL</td>-->\n        <!--</tr>-->\n        <!--</table>-->\n\n        <!--<div class=\"card\" *ngFor=\"let card of line.Expanded.Cards; let j = index\">-->\n        <!--<h3>{{ card.Title }}</h3>-->\n\n\n        <!-- card: text -->\n        <!--<div *ngIf=\"card.Type == 'text'\" class=\"text\">-->\n        <!--{{ card.Content.Text.Value[0].Label.Text }}-->\n        <!--</div>-->\n\n        <!--&lt;!&ndash; card: table &ndash;&gt;-->\n        <!--<div *ngIf=\"card.Type == 'table'\" class=\"text\">-->\n        <!--{{ card.Content?.Text.Value[0].Label.Text }}-->\n        <!--<img src=\"./assets/images/placeholders/placeholder_table.png\" width=\"100%\">-->\n        <!--</div>-->\n\n        <!--&lt;!&ndash; card: graph_map_1 &ndash;&gt;-->\n        <!--<div *ngIf=\"card.Type == 'graph_map_1'\" class=\"text\">-->\n        <!--{{ card.Content?.Text.Value[0].Label.Text }}-->\n        <!--<img src=\"./assets/images/placeholders/placeholder_graph.png\" width=\"100%\">-->\n        <!--</div>-->\n\n        <!-- add the buttons on bottom of the first card in case they exist -->\n        <!--<div *ngIf=\"j==0 && accordionState[i].Expanded\" class=\"card-buttons\">-->\n        <div *ngIf=\"line.Buttons.Expand\" class=\"card-button  button-expand\"\n             (click)=\"accordionState[i].Expanded = false;accordionState[i].state = 'inactive';didScroll(event)\">\n          <i class=\"di-arrow-up expand-arrow di-12x sub-icon\"></i>\n        </div>\n        <div *ngIf=\"line.Buttons.New\" class=\"card-button button-new\" (click)=\"newCard()\">\n          New\n          <div class=\"icon-btn-new\">\n            <i class=\"di-check di-12x sub-icon\" style=\"color: black;\"></i>\n          </div>\n        </div>\n        <!--</div>-->\n      </div>\n      <!--</div>-->\n    </div>\n\n\n  </div>\n\n  <!-- building the expanded state of the line -->\n  <!-- defining and adding card types | maps and tables should be predefined templates-->\n\n</div>\n\n</div>\n"
+module.exports = "<button id=\"decideClose\" (click)=\"navigateHome()\" class=\"has-pd-light is-fixed right-large top-large has-c-shade-9\"><i\n  class=\"di-close di-14x\"></i></button>\n<!-- <div  class=\"has-bg-shade-1 is-fixed left-large right-large has-pd-top-normal has-pd-bottom-small\" id=\"decide-header\">\n  <div  class=\"layout-row\" *ngIf=\"firstOpp\">\n    <div  class=\"decide-card-item  has-pd-vert-extra-small has-pd-right-extra-small\"><p class=\"has-bd-bottom  bd-light bd-secondary\">Product</p></div>\n    <div *ngFor=\"let column of firstOpp.rowInfo\"\n       class=\"decide-card-item   has-pd-vert-extra-small has-pd-right-extra-small\"><p class=\"has-bd-bottom  bd-light bd-secondary\">{{column.title | capitalize}}</p></div>\n\n  </div>\n</div> -->\n\n\n<!-- dynamic cards start | can be split into other components - used mock data -->\n\n<!-- cards header start -->\n<!-- <div class=\"card-header\" (mouseover)=\"resetContextualState()\">\n  <div class=\"context\">\n    Context\n  </div>\n  <div class=\"forecast\">\n    Forecast\n  </div>\n  <div class=\"outcome\">\n    Potential Outcome\n  </div>\n</div> -->\n<!-- cards header end -->\n\n<!-- line start -->\n<div id=\"cards-container\" class=\"cards-container\" (scroll)=\"didScroll($event)\">\n  <div id=\"{{ line.Identifyer }}\" class=\"card-line\" *ngFor=\"let line of data.Sections; let i = index\"\n       (mouseover)=\"checkContextualState(i,'over')\" (click)=\"getBox(line.Identifyer)\">\n\n    <!-- building the collapse state of the line -->\n    <!-- defining and adding card types -->\n\n    <!-- defining line frame -->\n    <div>\n      <!-- adding header elements -->\n      <div class=\"line-icon\" (click)=\"panelOpen = true\">\n        <i class=\"di-chevron-down\"></i>\n      </div>\n      <div class=\"options-icon\">\n        <!-- placeholder icon until the way the icon is sent will be decided -->\n        <i class=\"di-check\" *ngIf=\"!accordionState[i]['Ask_Icon']\"></i>\n        <!-- <i class=\"di-microphone\" *ngIf=\"accordionState[i]['Ask_Icon']\" (click)=\"activateAsk(accordionState[i].Identifyer)\"></i> -->\n\n        <!-- diwo circle -->\n\n        <div [diwoCircleDirective]=\"diwoPosition\" class=\"is-relative\" *ngIf=\"accordionState[i]['Ask_Icon']\"\n\n             [diwoCircleActions]=\"{ clip: 'true', case: 'true',narrate: 'true',volume: 'true',pin: 'true', help: 'global', share: 'true'}\"\n             [diwoCircleTriggeredBy]=\"'hover'\"\n             [diwoCircleAllow]=\"!isMyDiwoOpen() && isMicroserviceOpen()\"\n             [diwoCircleClickAction]=\"openMyDiwo\"\n             [diwoCircleSize]=\"34\"\n             [diwoCircleDisableExtraNav]=\"true\"\n             [diwoCircleType]=\"'microphone'\" style=\"min-height: 100%;position:absolute;top:-3px;left:-3px;\">\n\n\n          <div id=\"nav\" [hidden]=\"!(!isMyDiwoOpen() && isMicroserviceOpen() || (showDock | async)) \"\n\n               class=\"card layout-row right-none with-mg-small layout--start-center  top-none left-none has-pd-hori-large has-pd-top-large\">\n            <!--<div id=\"nav-overlay\" class=\"is-absolute top-none left-none bottom-none right-none\" *ngIf=\"isWatchOpen()\"></div>-->\n            <div #diwoHolder class=\"logo-holder is-one-whole-tall is-relative layout-item\"\n                 [hidden]=\"(isMyDiwoOpen() || isAskOpen()) && !(showDock | async)\">\n              <button class=\"is-absolute transform-to-center top-one-half left-one-half\" [routerLink]=\"['/mydiwo']\">\n                <img class=\"is-absolute transform-to-center top-one-half left-one-half\" width=\"20\"\n                     src=\"./assets/images/diwoLogo-2x.png\"/>\n              </button>\n            </div>\n\n          </div>\n\n        </div>\n\n        <!-- end diwo circle -->\n\n      </div>\n      <span class=\"line-header-elements\">\n        <span *ngFor=\"let info of line.Header.Text; let j = index\"\n              [ngClass]=\"{'header-info-separator': j < (line.Header.Text.length-1) }\">{{ info }}</span>\n      </span>\n\n      <!-- defining and displaying cards -->\n      <div *ngFor=\"let card of line.Collapsed.Cards; let j = index\" class=\"line-card col-25\">\n\n        <!-- image card -->\n        <div *ngIf=\"card.Type == 'image'\"\n             [ngClass]=\"{ 'gray': card.Style.Background == 'gray', 'white': card.Style.Background == 'white' }\"\n             class=\"card border-card-right\">\n          <div class=\"card-image\"> <!-- the image will be blob or path?! -->\n            <img src=\"{{ card.Content.Image }}\" width=\"60\"/>\n          </div>\n          <div class=\"line-group\">\n            <div class=\"card-content-line\"\n                 [ngClass]=\"{ 'black': card.Content.Text.Style.Colors[0] == 'black', 'pink': card.Content.Text.Style.Colors[0] == 'pink', 'gray': card.Content.Text.Style.Colors[0] == 'gray', 'bold': card.Content.Text.Style.Weights[0] == 'bold', 'normal': card.Content.Text.Style.Weights[0] == 'normal' }\">\n              <div style=\"display: block\">{{ card.Content.Text.Value[0] }}</div>\n            </div>\n            <div class=\"card-content-line\"\n                 [ngClass]=\"{ 'black': card.Content.Text.Style.Colors[1] == 'black', 'pink': card.Content.Text.Style.Colors[1] == 'pink', 'gray': card.Content.Text.Style.Colors[1] == 'gray', 'bold': card.Content.Text.Style.Weights[1] == 'bold', 'normal': card.Content.Text.Style.Weights[1] == 'normal' }\">\n              <div style=\"display: block\">{{ card.Content.Text.Value[1] }}</div>\n            </div>\n          </div>\n        </div>\n\n        <!-- table card -->\n        <div *ngIf=\"card.Type == 'table'\"\n             [ngClass]=\"{ 'gray': card.Style.Background == 'gray', 'white': card.Style.Background == 'white' }\"\n             class=\"border-card-right\">\n          <div class='row-small row-rest-6 pink-background ' style='line-height: 37px'>\n            <div class='left-value pink-text' style='padding-left: 10px; width: 80%'>Revenue impact</div>\n            <div class='right-value ' style='padding-right: 10px; width: 20%'>$1.3M</div>\n          </div>\n          <div class='row-small row-rest-6 pink-background ' style='line-height: 37px'>\n            <div class='left-value pink-text' style='padding-left: 10px; width: 80%'>Profitability impact</div>\n            <div class='right-value ' style='padding-right: 10px; width: 20%'>$820K</div>\n          </div>\n          <div class='row-small row-rest-6 ' style='line-height: 37px'>\n            <div class='left-value red-text dark-pink-background'\n                 style='padding-left: 10px;font-weight: bold; width: 80%'>Confidence score\n            </div>\n            <div class='right-value red-text pink-background'\n                 style='padding-right: 10px; padding-left: 10px; width: 20%'>89%\n            </div>\n            <div class=\"clear\"></div>\n          </div>\n          <!-- iterate lines -->\n          <!--<div *ngFor=\"let tline of card.Content.Text.Value; let k = index\" class=\"\" >-->\n          <!--<div class=\"col-50  label\" [ngClass]=\"{ 'black': tline.Label.Style.Color == 'black', 'pink': tline.Label.Style.Color == 'pink' }\">-->\n          <!--<h3>{{ tline.Label.Text }}</h3>-->\n          <!--</div>-->\n          <!--<div class=\"col-50 pull-right text-right value-small\" [ngClass]=\"{ 'black': tline.Value.Style.Color == 'black', 'pink': tline.Value.Style.Color == 'pink' }\">-->\n          <!--<h3>{{ tline.Value.Text }}</h3>-->\n          <!--</div>-->\n          <!--</div>-->\n        </div>\n\n        <!-- table highlighted_value -->\n        <div *ngIf=\"card.Type == 'highlighted_value'\"\n             [ngClass]=\"{ 'gray': card.Style.Background == 'gray', 'white': card.Style.Background == 'white' }\"\n             class=\"card  border-card-right\">\n          <div class=\"col-100 text-center label\"\n               [ngClass]=\"{ 'black': card.Content.Text.Value[0].Label.Color == 'black', 'pink': card.Content.Text.Value[0].Label.Style.Color == 'pink' }\">\n            {{ card.Content.Text.Value[0].Label.Text }}\n          </div>\n          <div class=\"col-100 text-center value-big\"\n               [ngClass]=\"{ 'black': card.Content.Text.Value[1].Label.Style.Color == 'black', 'pink': card.Content.Text.Value[1].Label.Style.Color == 'pink' }\">\n            {{ card.Content.Text.Value[1].Label.Text }}\n          </div>\n        </div>\n\n        <!-- table rating_stars_down -->\n        <div *ngIf=\"card.Type == 'rating_stars_down'\"\n             [ngClass]=\"{ 'gray': card.Style.Background == 'gray', 'white': card.Style.Background == 'white' }\"\n             class=\"card  border-card-right\">\n          <div class=\"col-100 text-center label\"\n               [ngClass]=\"{ 'black': card.Content.Text.Value[0].Label.Color == 'black', 'pink': card.Content.Text.Value[0].Label.Style.Color == 'pink' }\">\n            {{ card.Content.Text.Value[0].Label.Text }}\n          </div>\n          <div class=\"col-100 text-center  value-big\"\n               [ngClass]=\"{ 'black': card.Content.Text.Value[1].Label.Style.Color == 'black', 'pink': card.Content.Text.Value[1].Label.Style.Color == 'pink' }\">\n            {{ card.Content.Text.Value[1].Label.Text }}\n          </div>\n        </div>\n\n        <!-- add the buttons on bottom of the first card in case they exist -->\n        <div *ngIf=\"j==0 && !accordionState[i].Expanded\" class=\"collapsed card-buttons\">\n          <div *ngIf=\"line.Buttons.Expand\" class=\"card-button  button-expand\"\n               (click)=\"accordionState[i].Expanded = true;accordionState[i].state = 'active';didScroll(event)\">\n            <i class=\"di-arrow-down expand-arrow di-12x sub-icon\"></i>\n          </div>\n          <div *ngIf=\"line.Buttons.New\" class=\"card-button button-new\" (click)=\"newCard()\">\n            New\n            <div class=\"icon-btn-new\">\n              <i class=\"di-check di-12x sub-icon\" style=\"color: black;\"></i>\n            </div>\n          </div>\n        </div>\n      </div>\n      <div class=\"expanded\" [@expanded]=\"accordionState[i].state\">\n        <div class=\"container\">\n          <div class='bordered-heading'><i class=\"di-decide\"></i><span class='red-text'> I sense...</span></div>\n          <div class=\"main-content\"\n               *ngIf=\"line.Expanded.Cards.length==2 && line.Expanded.Cards[0].Type == 'graph' && line.Expanded.Cards[1].Type == 'highlights'\">\n            <div class=\"left-graph\">\n              <div class='image-outer-wrapper'>\n                <div data-id='gViz-visuals-vis-wrapper' class='gViz-visuals-inner-wrapper'>\n                  <div *ngIf=\"!line.Expanded.Cards[0].Content.Graph.Data\">Loading data...</div>\n                  <ng-template *ngIf=\"line.Expanded.Cards[0].Content.Graph.Data\"\n                               [dynamic-component]=\"line.Expanded.Cards[0].Content.Graph.Type\"\n                               [data]=\"line.Expanded.Cards[0].Content.Graph.Data\"></ng-template>\n                </div>\n                <div class='border-rect' data-side='top-left'></div>\n                <div class='border-rect' data-side='top-right'></div>\n                <div class='border-rect' data-side='bottom-left'></div>\n                <div class='border-rect' data-side='bottom-right'></div>\n              </div>\n            </div>\n            <div class=\"right-fields\">\n              <div class=\"top-fields\">\n                <h2 class=\"header\">Highlights</h2>\n                <div class='row'>\n                  <div class='left-value'>Shortage (units)</div>\n                  <div class='right-value'>8450</div>\n                </div>\n                <div class='row'>\n                  <div class='left-value'>Impacted Choice Codes</div>\n                  <div class='right-value'>31</div>\n                </div>\n                <div class='row'>\n                  <div class='left-value'>Revenue Recovery</div>\n                  <div class='right-value'>$800K</div>\n                </div>\n                <div class='row'>\n                  <div class='left-value'>Profitability</div>\n                  <div class='right-value'>$300K</div>\n                </div>\n                <div class='tri-row'>\n                  <div class='left-value'>Most affected</div>\n                  <div class=\"right-rows\">\n                    <div class='row'>\n                      <div class='right-value'>WEW Push-up</div>\n                    </div>\n                    <div class='row'>\n                      <div class='right-value'>Sports Bra Demi LL</div>\n                    </div>\n                  </div>\n                </div>\n              </div>\n              <div class=\"bottom-fields\">\n                <div class='row'>\n                  <div class='left-value'>Surplus (units)</div>\n                  <div class='right-value'>3100</div>\n                </div>\n                <div class='row'>\n                  <div class='left-value'>Impacted Choice Codes</div>\n                  <div class='right-value'>22</div>\n                </div>\n                <div class='row'>\n                  <div class='left-value'>Revenue Recovery</div>\n                  <div class='right-value'>$500k</div>\n                </div>\n                <div class='row'>\n                  <div class='left-value'>Profitability</div>\n                  <div class='right-value'>$470k</div>\n                </div>\n                <div class='row'>\n                  <div class='left-value'>Most affected</div>\n                  <div class='right-value pink-background'>WEW Push-up</div>\n                  <div class='right-value pink-background'>Sports Bra Demi LL</div>\n                </div>\n              </div>\n            </div>\n          </div>\n          <div class=\"main-content\"\n               *ngIf=\"line.Expanded.Cards.length==2 && line.Expanded.Cards[0].Type == 'graph' && line.Expanded.Cards[1].Type == 'related-insights'\">\n            <div class=\"left-graph\">\n              <div class='image-outer-wrapper'>\n                <div data-id='gViz-visuals-vis-wrapper' class='gViz-visuals-inner-wrapper'>\n                  <div *ngIf=\"!line.Expanded.Cards[0].Content.Graph.Data\">Loading data...</div>\n                  <ng-template *ngIf=\"line.Expanded.Cards[0].Content.Graph.Data\"\n                               [dynamic-component]=\"line.Expanded.Cards[0].Content.Graph.Type\"\n                               [data]=\"line.Expanded.Cards[0].Content.Graph.Data\"></ng-template>\n                </div>\n                <div class='border-rect' data-side='top-left'></div>\n                <div class='border-rect' data-side='top-right'></div>\n                <div class='border-rect' data-side='bottom-left'></div>\n                <div class='border-rect' data-side='bottom-right'></div>\n              </div>\n            </div>\n            <div class=\"right-fields\">\n              <div class=\"top-fields\">\n                <h2 class=\"header\">Highlights</h2>\n                <div class='row'>\n                  <div class='left-value'>Shortage (units)</div>\n                  <div class='right-value'>8450</div>\n                </div>\n                <div class='row'>\n                  <div class='left-value'>Impacted Choice Codes</div>\n                  <div class='right-value'>31</div>\n                </div>\n                <div class='row'>\n                  <div class='left-value'>Revenue Recovery</div>\n                  <div class='right-value'>$800K</div>\n                </div>\n                <div class='row'>\n                  <div class='left-value'>Profitability</div>\n                  <div class='right-value'>$300K</div>\n                </div>\n                <div class='tri-row'>\n                  <div class='left-value'>Most affected</div>\n                  <div class=\"right-rows\">\n                    <div class='row'>\n                      <div class='right-value'>WEW Push-up</div>\n                    </div>\n                    <div class='row'>\n                      <div class='right-value'>Sports Bra Demi LL</div>\n                    </div>\n                  </div>\n                </div>\n              </div>\n              <div class=\"bottom-fields\">\n                <div class='row'>\n                  <div class='left-value'>Surplus (units)</div>\n                  <div class='right-value'>3100</div>\n                </div>\n                <div class='row'>\n                  <div class='left-value'>Impacted Choice Codes</div>\n                  <div class='right-value'>22</div>\n                </div>\n                <div class='row'>\n                  <div class='left-value'>Revenue Recovery</div>\n                  <div class='right-value'>$500k</div>\n                </div>\n                <div class='row'>\n                  <div class='left-value'>Profitability</div>\n                  <div class='right-value'>$470k</div>\n                </div>\n                <div class='row'>\n                  <div class='left-value'>Most affected</div>\n                  <div class='right-value pink-background'>WEW Push-up</div>\n                  <div class='right-value pink-background'>Sports Bra Demi LL</div>\n                </div>\n              </div>\n            </div>\n          </div>\n          <div class=\"main-content\"\n               *ngIf=\"line.Expanded.Cards.length==2 && line.Expanded.Cards[0].Type == 'graph' && line.Expanded.Cards[1].Type == 'what-if-analysis'\">\n            <div class=\"left-graph\">\n              <div class='image-outer-wrapper'>\n                <div data-id='gViz-visuals-vis-wrapper' class='gViz-visuals-inner-wrapper'>\n                  <div *ngIf=\"!line.Expanded.Cards[0].Content.Graph.Data\">Loading data...</div>\n                  <ng-template *ngIf=\"line.Expanded.Cards[0].Content.Graph.Data\"\n                               [dynamic-component]=\"line.Expanded.Cards[0].Content.Graph.Type\"\n                               [data]=\"line.Expanded.Cards[0].Content.Graph.Data\"></ng-template>\n                </div>\n                <div class='border-rect' data-side='top-left'></div>\n                <div class='border-rect' data-side='top-right'></div>\n                <div class='border-rect' data-side='bottom-left'></div>\n                <div class='border-rect' data-side='bottom-right'></div>\n              </div>\n            </div>\n            <div class=\"right-fields\">\n              <div class=\"top-fields\">\n                <h2 class=\"header\">Highlights</h2>\n                <div class='row'>\n                  <div class='left-value'>Shortage (units)</div>\n                  <div class='right-value'>8450</div>\n                </div>\n                <div class='row'>\n                  <div class='left-value'>Impacted Choice Codes</div>\n                  <div class='right-value'>31</div>\n                </div>\n                <div class='row'>\n                  <div class='left-value'>Revenue Recovery</div>\n                  <div class='right-value'>$800K</div>\n                </div>\n                <div class='row'>\n                  <div class='left-value'>Profitability</div>\n                  <div class='right-value'>$300K</div>\n                </div>\n                <div class='tri-row'>\n                  <div class='left-value'>Most affected</div>\n                  <div class=\"right-rows\">\n                    <div class='row'>\n                      <div class='right-value'>WEW Push-up</div>\n                    </div>\n                    <div class='row'>\n                      <div class='right-value'>Sports Bra Demi LL</div>\n                    </div>\n                  </div>\n                </div>\n              </div>\n              <div class=\"bottom-fields\">\n                <div class='row'>\n                  <div class='left-value'>Surplus (units)</div>\n                  <div class='right-value'>3100</div>\n                </div>\n                <div class='row'>\n                  <div class='left-value'>Impacted Choice Codes</div>\n                  <div class='right-value'>22</div>\n                </div>\n                <div class='row'>\n                  <div class='left-value'>Revenue Recovery</div>\n                  <div class='right-value'>$500k</div>\n                </div>\n                <div class='row'>\n                  <div class='left-value'>Profitability</div>\n                  <div class='right-value'>$470k</div>\n                </div>\n                <div class='row'>\n                  <div class='left-value'>Most affected</div>\n                  <div class='right-value pink-background'>WEW Push-up</div>\n                  <div class='right-value pink-background'>Sports Bra Demi LL</div>\n                </div>\n              </div>\n            </div>\n          </div>\n\n        <!--<table style='border: 1px solid deeppink;'>-->\n          <!--<tr>-->\n          <!--<td>Shortage (31 Choice Codes)</td>-->\n          <!--<td>8450</td>-->\n          <!--</tr>-->\n          <!--<tr>-->\n          <!--<td>Revenue Recovery</td>-->\n          <!--<td>$800K</td>-->\n          <!--</tr>-->\n          <!--<tr>-->\n          <!--<td>Profitability</td>-->\n          <!--<td>$300K</td>-->\n          <!--</tr>-->\n          <!--<tr>-->\n          <!--<td>Most affected</td>-->\n          <!--<td>WEW Push-up and Sports Bra Demi LL</td>-->\n          <!--</tr>-->\n        <!--</table>-->\n\n        <!--<div class=\"card\" *ngFor=\"let card of line.Expanded.Cards; let j = index\">-->\n          <!--<h3>{{ card.Title }}</h3>-->\n\n\n          <!-- card: text -->\n          <!--<div *ngIf=\"card.Type == 'text'\" class=\"text\">-->\n          <!--{{ card.Content.Text.Value[0].Label.Text }}-->\n          <!--</div>-->\n\n          <!--&lt;!&ndash; card: table &ndash;&gt;-->\n          <!--<div *ngIf=\"card.Type == 'table'\" class=\"text\">-->\n          <!--{{ card.Content?.Text.Value[0].Label.Text }}-->\n          <!--<img src=\"./assets/images/placeholders/placeholder_table.png\" width=\"100%\">-->\n          <!--</div>-->\n\n          <!--&lt;!&ndash; card: graph_map_1 &ndash;&gt;-->\n          <!--<div *ngIf=\"card.Type == 'graph_map_1'\" class=\"text\">-->\n          <!--{{ card.Content?.Text.Value[0].Label.Text }}-->\n          <!--<img src=\"./assets/images/placeholders/placeholder_graph.png\" width=\"100%\">-->\n          <!--</div>-->\n\n          <!-- add the buttons on bottom of the first card in case they exist -->\n          <!--<div *ngIf=\"j==0 && accordionState[i].Expanded\" class=\"card-buttons\">-->\n          <div *ngIf=\"line.Buttons.Expand\" class=\"card-button  button-expand\"\n               (click)=\"accordionState[i].Expanded = false;accordionState[i].state = 'inactive';didScroll(event)\">\n            <i class=\"di-arrow-up expand-arrow di-12x sub-icon\"></i>\n          </div>\n          <div *ngIf=\"line.Buttons.New\" class=\"card-button button-new\" (click)=\"newCard()\">\n            New\n            <div class=\"icon-btn-new\">\n              <i class=\"di-check di-12x sub-icon\" style=\"color: black;\"></i>\n            </div>\n          </div>\n          <!--</div>-->\n        </div>\n        <!--</div>-->\n      </div>\n\n\n\n    </div>\n\n    <!-- building the expanded state of the line -->\n    <!-- defining and adding card types | maps and tables should be predefined templates-->\n\n    </div>\n\n    <!-- building the expanded state of the line -->\n    <!-- defining and adding card types | maps and tables should be predefined templates-->\n\n  </div>\n\n<div class=\"panel-holder\">\n  <decide-panel-layout *ngIf=\"panelOpen\" [@enterAnimation] (panelClose)=\"panelOpen = false\"></decide-panel-layout>\n</div>\n"
 
 /***/ }),
 
@@ -4888,7 +5119,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "/* =============================================================================\n   MEDIA QUERIES\n   ========================================================================== */\n/* Eg.\n    .container{\n        width:1024px;\n\n        @include tablets{\n            width:90%;\n        }\n    }\n*/\n/* =============================================================================\n   Unit transform\n   ========================================================================== */\n:host {\n  display: block; }\n\n#decide-header {\n  z-index: 7000;\n  top: 145px; }\n\n@media screen and (max-width: 1280px) {\n  .cards-container {\n    height: 75vh;\n    width: 100vw;\n    position: fixed;\n    overflow-y: scroll;\n    padding: 2%;\n    margin-top: 70px !important;\n    left: 1%;\n    top: 24%; } }\n\n@media screen and (min-width: 1281px) {\n  .cards-container {\n    height: 75vh;\n    width: 100vw;\n    position: fixed;\n    overflow-y: scroll;\n    padding: 2%;\n    margin-top: 0 !important;\n    left: 1%;\n    top: 15%; } }\n\n.decide-card-item {\n  width: 0; }\n\n.decide-card-item:nth-of-type(1) {\n  -webkit-box-flex: 0.2;\n  box-flex: 0.2;\n  -ms-flex-positive: 0.2;\n      flex-grow: 0.2;\n  -webkit-flex-grow: 0.2;\n  -ms-flex-grow: 0.2;\n  -moz-flex-grow: 0.2; }\n\n.decide-card-item:nth-of-type(1n+2) {\n  -webkit-box-flex: 0.16;\n  box-flex: 0.16;\n  -ms-flex-positive: 0.16;\n      flex-grow: 0.16;\n  -webkit-flex-grow: 0.16;\n  -ms-flex-grow: 0.16;\n  -moz-flex-grow: 0.16; }\n\n#decideClose {\n  z-index: 8000;\n  padding: 10px;\n  padding-top: 0; }\n\n.border-card-right {\n  border-right: 1px solid #d1d1d1; }\n\n.card-header {\n  margin-bottom: 36px;\n  display: -webkit-box; }\n\n.card-header > div {\n  border-bottom: 1px solid #aeaeae;\n  font-size: 19px;\n  padding-bottom: 9px;\n  position: relative;\n  float: left;\n  margin: 10px;\n  box-sizing: initial; }\n\n.card-header .context {\n  width: 47%; }\n\n.card-header .forecast {\n  width: 31%; }\n\n.card-header .outcome {\n  width: 16%; }\n\n.card-line > * {\n  font-weight: thin;\n  white-space: nowrap; }\n\n.card-line {\n  margin: 20px 0;\n  position: relative;\n  clear: both;\n  float: left;\n  width: 100%; }\n\n.card-image {\n  width: 25%;\n  display: inline-block;\n  position: relative;\n  float: left;\n  padding: 10px; }\n  .card-image img {\n    width: 100%;\n    max-width: 70px; }\n\n.card-text {\n  padding: 15px; }\n\n.card-text .row {\n  padding: 5px; }\n\n.line-header-elements {\n  padding: 5px;\n  background: #202121;\n  color: #FFF;\n  font-weight: normal;\n  margin-top: -15px;\n  margin-left: 9px;\n  position: absolute;\n  z-index: 99;\n  font-size: 15px; }\n\n.line-icon {\n  width: 36px;\n  height: 36px;\n  border-radius: 18px;\n  background: #202121;\n  display: inline-block;\n  margin-left: -18px;\n  margin-top: 45px;\n  z-index: 99;\n  position: absolute;\n  cursor: pointer; }\n\n.line-icon i, .options-icon i {\n  color: #FFF;\n  font-size: 20px;\n  padding-left: 8px;\n  padding-top: 9px; }\n\n.options-icon i.di-check {\n  color: #202121; }\n\n.options-icon i.di-microphone {\n  padding-left: 10px;\n  padding-top: 3px;\n  color: #202121; }\n\n.options-icon {\n  width: 36px;\n  height: 36px;\n  border-radius: 18px;\n  background: #FFF;\n  border: 2px solid #202121;\n  display: inline-block;\n  margin-left: -15px;\n  margin-top: -19px;\n  position: absolute;\n  z-index: 100;\n  cursor: pointer; }\n\n.header-info-separator, .header-info-separator-last {\n  padding: 0 5px 0 10px;\n  margin-right: 5px;\n  border-right: 1px solid #FFF;\n  display: inline-block; }\n\n.header-info-separator-last {\n  border: none; }\n\n.card {\n  padding: 18px;\n  line-height: 36px !important;\n  font-size: 18px; }\n\n.line-group {\n  width: 74%;\n  display: inline-block;\n  position: relative;\n  float: left;\n  overflow: hidden; }\n\n.line-card {\n  display: inline-block;\n  width: 25%;\n  float: left;\n  border-top: 2px solid #e7e7e7;\n  border-bottom: 2px solid #e7e7e7; }\n\n.line-card > * {\n  line-height: 24px;\n  position: relative;\n  width: 100%;\n  float: left;\n  height: 110px; }\n\n.card-content-line h2 {\n  font-size: 17px; }\n\n.card .label {\n  font-size: 15px; }\n\n.card h3 {\n  font-size: 15px !important;\n  font-weight: normal !important; }\n\n.card .value-small, .card .value-big {\n  font-family: Bebas;\n  font-weight: bold !important; }\n\n.card .value-big {\n  font-size: 22px !important; }\n\n.col-25 {\n  width: 25%; }\n\n.col-50 {\n  width: 49%;\n  display: inline-block; }\n\n.col-75 {\n  width: 74%; }\n\n.col-100 {\n  width: 100%; }\n\n.col-rest-3 {\n  width: 16.66666667%; }\n\n.row-rest-6 {\n  height: 33.33333333%; }\n\n.pink {\n  color: #e96292; }\n\n.gray {\n  background: #e9e8e8; }\n\n.black {\n  color: #202121; }\n\n.white {\n  background: #f9f9f9; }\n\n.pull-left {\n  float: left; }\n\n.pull-right {\n  float: right; }\n\n.text-left {\n  text-align: left; }\n\n.text-right {\n  text-align: right; }\n\n.text-center {\n  text-align: center; }\n\n.last-card {\n  border: 2px solid #d1d1d1;\n  border-left: none !important;\n  overflow: hidden; }\n\n.bold {\n  font-weight: bold; }\n\n.normal {\n  font-weight: normal !important; }\n\n.collapsed.card-buttons {\n  height: auto !important;\n  margin-left: 7%;\n  margin-right: auto;\n  width: auto !important;\n  position: absolute !important;\n  top: 93px;\n  z-index: 999; }\n\n.card-button {\n  z-index: 999;\n  border-radius: 3px;\n  width: 70px;\n  height: 21px;\n  padding: 0 10px;\n  position: relative;\n  float: left;\n  margin: 5px;\n  font-size: 14px;\n  color: #FFF;\n  line-height: 23px;\n  cursor: pointer; }\n\n.button-expand {\n  background: #202121;\n  text-align: center; }\n\n.button-new {\n  background: #e96292; }\n\n.button-new .icon-btn-new {\n  width: 21px;\n  height: 21px;\n  background: #FFF;\n  position: absolute;\n  float: right;\n  border: 1px solid #202121;\n  border-radius: 3px;\n  bottom: 0;\n  right: 0; }\n\n.expanded {\n  position: relative;\n  float: left;\n  margin-top: 12px;\n  width: 100%;\n  background: #fafafa; }\n\n.expanded .container {\n  padding: 10px 10px 20px 10px;\n  overflow: auto; }\n  .expanded .container .main-content {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-orient: horizontal;\n    -webkit-box-direction: normal;\n        -ms-flex-direction: row;\n            flex-direction: row; }\n    .expanded .container .main-content .left-graph {\n      -webkit-box-flex: 2;\n          -ms-flex: 2;\n              flex: 2; }\n    .expanded .container .main-content .right-fields {\n      -webkit-box-flex: 1;\n          -ms-flex: 1;\n              flex: 1;\n      padding-left: 1%;\n      display: -webkit-box;\n      display: -ms-flexbox;\n      display: flex;\n      -webkit-box-orient: vertical;\n      -webkit-box-direction: normal;\n          -ms-flex-direction: column;\n              flex-direction: column; }\n      .expanded .container .main-content .right-fields .header {\n        border-bottom: 2px solid #E20613;\n        color: #E20613;\n        padding-bottom: 5px;\n        margin-bottom: 10px; }\n      .expanded .container .main-content .right-fields .top-fields {\n        -webkit-box-flex: 1;\n            -ms-flex: 1;\n                flex: 1;\n        padding-right: 10px; }\n      .expanded .container .main-content .right-fields .bottom-fields {\n        margin-top: 28px;\n        padding-right: 10px; }\n\n.expanded .card {\n  width: 32%;\n  margin-right: 1%;\n  background: #fafafa;\n  border: 1px solid #e9e8e8;\n  display: inline-block;\n  white-space: normal;\n  height: 350px; }\n\n.expanded .card {\n  line-height: 24px !important;\n  position: relative;\n  float: left;\n  display: inline-block; }\n\n.expanded .card .text {\n  float: left;\n  font-size: 15px; }\n\n.expanded .card-button {\n  bottom: -15px !important;\n  position: absolute;\n  float: left;\n  z-index: 9999; }\n  .expanded .card-button.button-expand {\n    margin-left: 7%; }\n  .expanded .card-button.button-new {\n    margin-left: calc(7% + 80px); }\n\n.expanded .card h3 {\n  color: #e96292;\n  font-weight: lighter;\n  border-bottom: 2px solid #e96292;\n  padding-bottom: 12px;\n  margin-bottom: 12px;\n  font-size: 17px; }\n\n.diwo-circle--actions .layout-column.diwo-circle--actions-ctn {\n  position: relative; }\n\n.diwo-circle--trigger {\n  z-index: 1; }\n\n.diwo-circle--action-item {\n  -webkit-transform: none !important;\n          transform: none !important; }\n\ntd {\n  background-color: white; }\n\n.w-100, .row, .row-small {\n  width: 100%; }\n\n.row {\n  border: solid 0.3px rgba(203, 87, 126, 0.39);\n  display: table;\n  clear: both;\n  padding: 5px;\n  margin-bottom: 2px;\n  background-color: white; }\n  .row .left-value {\n    padding: 5px; }\n  .row .right-value {\n    padding: 5px;\n    margin-left: 5px; }\n\n.tri-row {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: row;\n          flex-direction: row;\n  margin-bottom: 2px;\n  background-color: white; }\n  .tri-row .left-value {\n    border: solid 0.3px rgba(203, 87, 126, 0.39);\n    padding: 10px;\n    text-align: center;\n    line-height: 3.5em;\n    -webkit-box-flex: 1;\n        -ms-flex: 1;\n            flex: 1; }\n  .tri-row .right-rows {\n    -webkit-box-flex: 4;\n        -ms-flex: 4;\n            flex: 4;\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-orient: vertical;\n    -webkit-box-direction: normal;\n        -ms-flex-direction: column;\n            flex-direction: column; }\n    .tri-row .right-rows .row {\n      margin-bottom: 0; }\n\n.row-small {\n  border: solid 0.3px rgba(203, 87, 126, 0.39);\n  display: table;\n  clear: both;\n  background-color: white;\n  overflow: hidden; }\n\n.right-value {\n  float: right;\n  font-weight: 600;\n  color: #e96292;\n  font-size: 16px;\n  font-family: 'Yantramanav-Light'; }\n\n.left-value {\n  float: left;\n  color: #555;\n  font-size: 15px;\n  font-family: 'Yantramanav-Light'; }\n\n.bordered-heading {\n  font-size: 20px;\n  border-bottom: 3px solid #E20613;\n  display: block;\n  margin-bottom: 15px;\n  padding-bottom: 10px; }\n\n.image-outer-wrapper {\n  height: 100%;\n  position: relative; }\n  .image-outer-wrapper .border-rect {\n    position: absolute;\n    height: 15px;\n    width: 15px; }\n    .image-outer-wrapper .border-rect[data-side='top-left'] {\n      top: 1px;\n      left: 1px;\n      border-top: 2px solid #E20613;\n      border-left: 2px solid #E20613; }\n    .image-outer-wrapper .border-rect[data-side='top-middle'] {\n      top: 1px;\n      left: 50%;\n      width: 20px;\n      border-top: 2px solid #E20613; }\n    .image-outer-wrapper .border-rect[data-side='top-right'] {\n      top: 1px;\n      right: 1px;\n      border-top: 2px solid #E20613;\n      border-right: 2px solid #E20613; }\n    .image-outer-wrapper .border-rect[data-side='middle-left'] {\n      top: 50%;\n      left: 1px;\n      height: 20px;\n      border-left: 2px solid #E20613; }\n    .image-outer-wrapper .border-rect[data-side='middle-right'] {\n      top: 50%;\n      right: 1px;\n      height: 20px;\n      border-right: 2px solid #E20613; }\n    .image-outer-wrapper .border-rect[data-side='bottom-left'] {\n      bottom: 1px;\n      left: 1px;\n      border-bottom: 2px solid #E20613;\n      border-left: 2px solid #E20613; }\n    .image-outer-wrapper .border-rect[data-side='bottom-middle'] {\n      bottom: 1px;\n      left: 50%;\n      width: 20px;\n      border-bottom: 2px solid #E20613; }\n    .image-outer-wrapper .border-rect[data-side='bottom-right'] {\n      bottom: 1px;\n      right: 1px;\n      border-bottom: 2px solid #E20613;\n      border-right: 2px solid #E20613; }\n\n.pink-background {\n  background-color: rgba(203, 87, 126, 0.23) !important;\n  overflow: auto; }\n\n.dark-pink-background {\n  background-color: rgba(203, 80, 99, 0.49) !important; }\n\n.pink-text {\n  color: #e96292; }\n\n.red-text {\n  color: #E20613; }\n\n.clear {\n  clear: both; }\n\n.bold {\n  font-weight: bold; }\n", ""]);
+exports.push([module.i, "/* =============================================================================\n   MEDIA QUERIES\n   ========================================================================== */\n/* Eg.\n    .container{\n        width:1024px;\n\n        @include tablets{\n            width:90%;\n        }\n    }\n*/\n/* =============================================================================\n   Unit transform\n   ========================================================================== */\n:host {\n  display: block;\n  position: relative; }\n\n#decide-header {\n  z-index: 7000;\n  top: 145px; }\n\n@media screen and (max-width: 1280px) {\n  .cards-container {\n    height: 75vh;\n    width: 100vw;\n    position: fixed;\n    overflow-y: scroll;\n    padding: 2%;\n    margin-top: 70px !important;\n    left: 1%;\n    top: 24%; } }\n\n@media screen and (min-width: 1281px) {\n  .cards-container {\n    height: 75vh;\n    width: 100vw;\n    position: fixed;\n    overflow-y: scroll;\n    padding: 2%;\n    margin-top: 0 !important;\n    left: 1%;\n    top: 15%; } }\n\n.decide-card-item {\n  width: 0; }\n\n.decide-card-item:nth-of-type(1) {\n  -webkit-box-flex: 0.2;\n  box-flex: 0.2;\n  -ms-flex-positive: 0.2;\n      flex-grow: 0.2;\n  -webkit-flex-grow: 0.2;\n  -ms-flex-grow: 0.2;\n  -moz-flex-grow: 0.2; }\n\n.decide-card-item:nth-of-type(1n+2) {\n  -webkit-box-flex: 0.16;\n  box-flex: 0.16;\n  -ms-flex-positive: 0.16;\n      flex-grow: 0.16;\n  -webkit-flex-grow: 0.16;\n  -ms-flex-grow: 0.16;\n  -moz-flex-grow: 0.16; }\n\n#decideClose {\n  z-index: 8000;\n  padding: 10px;\n  padding-top: 0; }\n\n.border-card-right {\n  border-right: 1px solid #d1d1d1; }\n\n.card-header {\n  margin-bottom: 36px;\n  display: -webkit-box; }\n\n.card-header > div {\n  border-bottom: 1px solid #aeaeae;\n  font-size: 19px;\n  padding-bottom: 9px;\n  position: relative;\n  float: left;\n  margin: 10px;\n  box-sizing: initial; }\n\n.card-header .context {\n  width: 47%; }\n\n.card-header .forecast {\n  width: 31%; }\n\n.card-header .outcome {\n  width: 16%; }\n\n.card-line > * {\n  font-weight: thin;\n  white-space: nowrap; }\n\n.card-line {\n  margin: 20px 0;\n  position: relative;\n  clear: both;\n  float: left;\n  width: 100%; }\n\n.card-image {\n  width: 25%;\n  display: inline-block;\n  position: relative;\n  float: left;\n  padding: 10px; }\n  .card-image img {\n    width: 100%;\n    max-width: 70px; }\n\n.card-text {\n  padding: 15px; }\n\n.card-text .row {\n  padding: 5px; }\n\n.line-header-elements {\n  padding: 5px;\n  background: #202121;\n  color: #FFF;\n  font-weight: normal;\n  margin-top: -15px;\n  margin-left: 9px;\n  position: absolute;\n  z-index: 99;\n  font-size: 15px; }\n\n.line-icon {\n  width: 36px;\n  height: 36px;\n  border-radius: 18px;\n  background: #202121;\n  display: inline-block;\n  margin-left: -18px;\n  margin-top: 45px;\n  z-index: 99;\n  position: absolute;\n  cursor: pointer; }\n\n.line-icon i, .options-icon i {\n  color: #FFF;\n  font-size: 20px;\n  padding-left: 8px;\n  padding-top: 9px; }\n\n.options-icon i.di-check {\n  color: #202121; }\n\n.options-icon i.di-microphone {\n  padding-left: 10px;\n  padding-top: 3px;\n  color: #202121; }\n\n.options-icon {\n  width: 36px;\n  height: 36px;\n  border-radius: 18px;\n  background: #FFF;\n  border: 2px solid #202121;\n  display: inline-block;\n  margin-left: -15px;\n  margin-top: -19px;\n  position: absolute;\n  z-index: 100;\n  cursor: pointer; }\n\n.header-info-separator, .header-info-separator-last {\n  padding: 0 5px 0 10px;\n  margin-right: 5px;\n  border-right: 1px solid #FFF;\n  display: inline-block; }\n\n.header-info-separator-last {\n  border: none; }\n\n.card {\n  padding: 18px;\n  line-height: 36px !important;\n  font-size: 18px; }\n\n.line-group {\n  width: 74%;\n  display: inline-block;\n  position: relative;\n  float: left;\n  overflow: hidden; }\n\n.line-card {\n  display: inline-block;\n  width: 25%;\n  float: left;\n  border-top: 2px solid #e7e7e7;\n  border-bottom: 2px solid #e7e7e7; }\n\n.line-card > * {\n  line-height: 24px;\n  position: relative;\n  width: 100%;\n  float: left;\n  height: 110px; }\n\n.card-content-line h2 {\n  font-size: 17px; }\n\n.card .label {\n  font-size: 15px; }\n\n.card h3 {\n  font-size: 15px !important;\n  font-weight: normal !important; }\n\n.card .value-small, .card .value-big {\n  font-family: Bebas;\n  font-weight: bold !important; }\n\n.card .value-big {\n  font-size: 22px !important; }\n\n.col-25 {\n  width: 25%; }\n\n.col-50 {\n  width: 49%;\n  display: inline-block; }\n\n.col-75 {\n  width: 74%; }\n\n.col-100 {\n  width: 100%; }\n\n.col-rest-3 {\n  width: 16.66666667%; }\n\n.row-rest-6 {\n  height: 33.33333333%; }\n\n.pink {\n  color: #e96292; }\n\n.gray {\n  background: #e9e8e8; }\n\n.black {\n  color: #202121; }\n\n.white {\n  background: #f9f9f9; }\n\n.pull-left {\n  float: left; }\n\n.pull-right {\n  float: right; }\n\n.text-left {\n  text-align: left; }\n\n.text-right {\n  text-align: right; }\n\n.text-center {\n  text-align: center; }\n\n.last-card {\n  border: 2px solid #d1d1d1;\n  border-left: none !important;\n  overflow: hidden; }\n\n.bold {\n  font-weight: bold; }\n\n.normal {\n  font-weight: normal !important; }\n\n.collapsed.card-buttons {\n  height: auto !important;\n  margin-left: 7%;\n  margin-right: auto;\n  width: auto !important;\n  position: absolute !important;\n  top: 93px;\n  z-index: 999; }\n\n.card-button {\n  z-index: 999;\n  border-radius: 3px;\n  width: 70px;\n  height: 21px;\n  padding: 0 10px;\n  position: relative;\n  float: left;\n  margin: 5px;\n  font-size: 14px;\n  color: #FFF;\n  line-height: 23px;\n  cursor: pointer; }\n\n.button-expand {\n  background: #202121;\n  text-align: center; }\n\n.button-new {\n  background: #e96292; }\n\n.button-new .icon-btn-new {\n  width: 21px;\n  height: 21px;\n  background: #FFF;\n  position: absolute;\n  float: right;\n  border: 1px solid #202121;\n  border-radius: 3px;\n  bottom: 0;\n  right: 0; }\n\n.expanded {\n  position: relative;\n  float: left;\n  margin-top: 12px;\n  width: 100%;\n  background: #fafafa; }\n\n.expanded .container {\n  padding: 10px 10px 20px 10px;\n  overflow: auto; }\n  .expanded .container .main-content {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-orient: horizontal;\n    -webkit-box-direction: normal;\n        -ms-flex-direction: row;\n            flex-direction: row; }\n    .expanded .container .main-content .left-graph {\n      -webkit-box-flex: 2;\n          -ms-flex: 2;\n              flex: 2; }\n    .expanded .container .main-content .right-fields {\n      -webkit-box-flex: 1;\n          -ms-flex: 1;\n              flex: 1;\n      padding-left: 1%;\n      display: -webkit-box;\n      display: -ms-flexbox;\n      display: flex;\n      -webkit-box-orient: vertical;\n      -webkit-box-direction: normal;\n          -ms-flex-direction: column;\n              flex-direction: column; }\n      .expanded .container .main-content .right-fields .header {\n        border-bottom: 2px solid #E20613;\n        color: #E20613;\n        padding-bottom: 5px;\n        margin-bottom: 10px; }\n      .expanded .container .main-content .right-fields .top-fields {\n        -webkit-box-flex: 1;\n            -ms-flex: 1;\n                flex: 1;\n        padding-right: 10px; }\n      .expanded .container .main-content .right-fields .bottom-fields {\n        margin-top: 28px;\n        padding-right: 10px; }\n\n.expanded .card {\n  width: 32%;\n  margin-right: 1%;\n  background: #fafafa;\n  border: 1px solid #e9e8e8;\n  display: inline-block;\n  white-space: normal;\n  height: 350px; }\n\n.expanded .card {\n  line-height: 24px !important;\n  position: relative;\n  float: left;\n  display: inline-block; }\n\n.expanded .card .text {\n  float: left;\n  font-size: 15px; }\n\n.expanded .card-button {\n  bottom: -15px !important;\n  position: absolute;\n  float: left;\n  z-index: 9999; }\n  .expanded .card-button.button-expand {\n    margin-left: 7%; }\n  .expanded .card-button.button-new {\n    margin-left: calc(7% + 80px); }\n\n.expanded .card h3 {\n  color: #e96292;\n  font-weight: lighter;\n  border-bottom: 2px solid #e96292;\n  padding-bottom: 12px;\n  margin-bottom: 12px;\n  font-size: 17px; }\n\n.diwo-circle--actions .layout-column.diwo-circle--actions-ctn {\n  position: relative; }\n\n.diwo-circle--trigger {\n  z-index: 1; }\n\n.diwo-circle--action-item {\n  -webkit-transform: none !important;\n          transform: none !important; }\n\ntd {\n  background-color: white; }\n\n.w-100, .row, .row-small {\n  width: 100%; }\n\n.row {\n  border: solid 0.3px rgba(203, 87, 126, 0.39);\n  display: table;\n  clear: both;\n  padding: 5px;\n  margin-bottom: 2px;\n  background-color: white; }\n  .row .left-value {\n    padding: 5px; }\n  .row .right-value {\n    padding: 5px;\n    margin-left: 5px; }\n\n.tri-row {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: row;\n          flex-direction: row;\n  margin-bottom: 2px;\n  background-color: white; }\n  .tri-row .left-value {\n    border: solid 0.3px rgba(203, 87, 126, 0.39);\n    padding: 10px;\n    text-align: center;\n    line-height: 3.5em;\n    -webkit-box-flex: 1;\n        -ms-flex: 1;\n            flex: 1; }\n  .tri-row .right-rows {\n    -webkit-box-flex: 4;\n        -ms-flex: 4;\n            flex: 4;\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-orient: vertical;\n    -webkit-box-direction: normal;\n        -ms-flex-direction: column;\n            flex-direction: column; }\n    .tri-row .right-rows .row {\n      margin-bottom: 0; }\n\n.row-small {\n  border: solid 0.3px rgba(203, 87, 126, 0.39);\n  display: table;\n  clear: both;\n  background-color: white;\n  overflow: hidden; }\n\n.right-value {\n  float: right;\n  font-weight: 600;\n  color: #e96292;\n  font-size: 16px;\n  font-family: 'Yantramanav-Light'; }\n\n.left-value {\n  float: left;\n  color: #555;\n  font-size: 15px;\n  font-family: 'Yantramanav-Light'; }\n\n.bordered-heading {\n  font-size: 20px;\n  border-bottom: 3px solid #E20613;\n  display: block;\n  margin-bottom: 15px;\n  padding-bottom: 10px; }\n\n.image-outer-wrapper {\n  height: 100%;\n  position: relative; }\n  .image-outer-wrapper .border-rect {\n    position: absolute;\n    height: 15px;\n    width: 15px; }\n    .image-outer-wrapper .border-rect[data-side='top-left'] {\n      top: 1px;\n      left: 1px;\n      border-top: 2px solid #E20613;\n      border-left: 2px solid #E20613; }\n    .image-outer-wrapper .border-rect[data-side='top-middle'] {\n      top: 1px;\n      left: 50%;\n      width: 20px;\n      border-top: 2px solid #E20613; }\n    .image-outer-wrapper .border-rect[data-side='top-right'] {\n      top: 1px;\n      right: 1px;\n      border-top: 2px solid #E20613;\n      border-right: 2px solid #E20613; }\n    .image-outer-wrapper .border-rect[data-side='middle-left'] {\n      top: 50%;\n      left: 1px;\n      height: 20px;\n      border-left: 2px solid #E20613; }\n    .image-outer-wrapper .border-rect[data-side='middle-right'] {\n      top: 50%;\n      right: 1px;\n      height: 20px;\n      border-right: 2px solid #E20613; }\n    .image-outer-wrapper .border-rect[data-side='bottom-left'] {\n      bottom: 1px;\n      left: 1px;\n      border-bottom: 2px solid #E20613;\n      border-left: 2px solid #E20613; }\n    .image-outer-wrapper .border-rect[data-side='bottom-middle'] {\n      bottom: 1px;\n      left: 50%;\n      width: 20px;\n      border-bottom: 2px solid #E20613; }\n    .image-outer-wrapper .border-rect[data-side='bottom-right'] {\n      bottom: 1px;\n      right: 1px;\n      border-bottom: 2px solid #E20613;\n      border-right: 2px solid #E20613; }\n\n.panel-holder {\n  position: absolute;\n  left: 0;\n  top: 0;\n  right: 0;\n  z-index: 100; }\n\n.pink-background {\n  background-color: rgba(203, 87, 126, 0.23) !important;\n  overflow: auto; }\n\n.dark-pink-background {\n  background-color: rgba(203, 80, 99, 0.49) !important; }\n\n.pink-text {\n  color: #e96292; }\n\n.red-text {\n  color: #E20613; }\n\n.clear {\n  clear: both; }\n\n.bold {\n  font-weight: bold; }\n", ""]);
 
 // exports
 
@@ -4911,6 +5142,8 @@ module.exports = module.exports.toString();
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__shared_utils_router_delay_to_ask__ = __webpack_require__("../../../../../src/app/shared/utils/router-delay-to-ask.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__shared_events_app_service__ = __webpack_require__("../../../../../src/app/shared/events/app.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__angular_animations__ = __webpack_require__("../../../animations/@angular/animations.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_d3__ = __webpack_require__("../../../../d3/build/d3.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_d3___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8_d3__);
 var __extends = (this && this.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
     function __() { this.constructor = d; }
@@ -4933,6 +5166,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var DecideComponent = (function (_super) {
     __extends(DecideComponent, _super);
     function DecideComponent(ps, as, companyService, _router, _AppService) {
@@ -4947,6 +5181,8 @@ var DecideComponent = (function (_super) {
         _this.data = {};
         _this.cardsVisibility = [];
         _this.hasContextual = false;
+        _this.panelOpen = true;
+        _this.getd3Data('ontology');
         _this.data = ps.mock;
         // getting accordion state based on the object stream
         _this.data.Sections.forEach(function (line) {
@@ -4989,6 +5225,7 @@ var DecideComponent = (function (_super) {
                 }
                 _this.cardsVisibility.push({ 'Identifyer': line.Identifyer, 'Top': currentBoxVisibility.top, 'Bottom': currentBoxVisibility.bottom });
                 console.log('Visibility STATUS: ', _this.cardsVisibility);
+                _this.ps.cardNavigation = _this.cardsVisibility;
             }
             else {
                 _this.cardsVisibility.push({ 'Identifyer': line.Identifyer, 'Top': 0, 'Bottom': 0 });
@@ -5078,6 +5315,19 @@ var DecideComponent = (function (_super) {
     DecideComponent.prototype.isDecideOpen = function () {
         return this._router.isActive(this._router.createUrlTree(['/decide']), false);
     };
+    // getting D3 data to be used with the cards
+    DecideComponent.prototype.getd3Data = function (graph) {
+        var fileName;
+        switch (graph) {
+            case 'ontology':
+                fileName = 'diwo-visual-ontology-viewer-2.sample.json';
+                break;
+        }
+        __WEBPACK_IMPORTED_MODULE_8_d3__["json"]('../../../../../assets/data/' + fileName, function (err, data) {
+            console.log('Getting D3 data for ' + graph + ': ', data);
+            // return data;
+        });
+    };
     return DecideComponent;
 }(__WEBPACK_IMPORTED_MODULE_5__shared_utils_router_delay_to_ask__["a" /* RouterDelayToAsk */]));
 __decorate([
@@ -5099,14 +5349,24 @@ DecideComponent = __decorate([
             Object(__WEBPACK_IMPORTED_MODULE_7__angular_animations__["j" /* trigger */])('expanded', [
                 Object(__WEBPACK_IMPORTED_MODULE_7__angular_animations__["g" /* state */])('inactive', Object(__WEBPACK_IMPORTED_MODULE_7__angular_animations__["h" /* style */])({
                     height: '0',
-                    opacity: 0
+                    display: 'none'
                 })),
                 Object(__WEBPACK_IMPORTED_MODULE_7__angular_animations__["g" /* state */])('active', Object(__WEBPACK_IMPORTED_MODULE_7__angular_animations__["h" /* style */])({
                     height: '*',
-                    opacity: 1
+                    display: 'block'
                 })),
                 Object(__WEBPACK_IMPORTED_MODULE_7__angular_animations__["i" /* transition */])('inactive => active', Object(__WEBPACK_IMPORTED_MODULE_7__angular_animations__["e" /* animate */])(600, Object(__WEBPACK_IMPORTED_MODULE_7__angular_animations__["h" /* style */])({ height: '*', opacity: '1' }))),
                 Object(__WEBPACK_IMPORTED_MODULE_7__angular_animations__["i" /* transition */])('active => inactive', Object(__WEBPACK_IMPORTED_MODULE_7__angular_animations__["e" /* animate */])(600, Object(__WEBPACK_IMPORTED_MODULE_7__angular_animations__["h" /* style */])({ height: 0, opacity: '0' })))
+            ]),
+            Object(__WEBPACK_IMPORTED_MODULE_7__angular_animations__["j" /* trigger */])('enterAnimation', [
+                Object(__WEBPACK_IMPORTED_MODULE_7__angular_animations__["i" /* transition */])(':enter', [
+                    Object(__WEBPACK_IMPORTED_MODULE_7__angular_animations__["h" /* style */])({ transform: 'translateY(100%)', opacity: 0 }),
+                    Object(__WEBPACK_IMPORTED_MODULE_7__angular_animations__["e" /* animate */])('500ms', Object(__WEBPACK_IMPORTED_MODULE_7__angular_animations__["h" /* style */])({ transform: 'translateY(0)', opacity: 1 }))
+                ]),
+                Object(__WEBPACK_IMPORTED_MODULE_7__angular_animations__["i" /* transition */])(':leave', [
+                    Object(__WEBPACK_IMPORTED_MODULE_7__angular_animations__["h" /* style */])({ transform: 'translateY(0)', opacity: 1 }),
+                    Object(__WEBPACK_IMPORTED_MODULE_7__angular_animations__["e" /* animate */])('500ms', Object(__WEBPACK_IMPORTED_MODULE_7__angular_animations__["h" /* style */])({ transform: 'translateY(100%)', opacity: 0 }))
+                ])
             ])
         ],
         host: Object(__WEBPACK_IMPORTED_MODULE_5__shared_utils_router_delay_to_ask__["c" /* routerDelayHost */])()
@@ -6632,6 +6892,7 @@ var DecideService = (function () {
                 }
             ]
         };
+        this.cardNavigation = [];
     }
     DecideService.prototype.setActivePatient = function (newPatient) {
         this.activePatient.next(newPatient);
@@ -11134,7 +11395,7 @@ var SpeechRecognition = (function () {
                 analyser: equalizerAnalyser
             });
         });
-        this.initWebsocket();
+        // this.initWebsocket();
         this.result.subscribe(function (res) {
             if (checkForVoiceCommands(res)) {
                 _this._sendResults.next(false);
@@ -11204,6 +11465,7 @@ var SpeechRecognition = (function () {
         this.context.addEventListener('statechange', this.toggleWebsocket);
     };
     SpeechRecognition.prototype.newWebsocket = function () {
+        console.log('RECOGNITION LISTENER ON WEBSOCKET.');
         var self = this;
         var websocketPromise = new Promise(function (resolve, reject) {
             self.socket = new WebSocket('wss://' + 'demo.getdiwo.ai:8443' + '/test');
@@ -12274,6 +12536,8 @@ TruncatePipe = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_42__visuals_diwo_visual_grouped_vert_bar_graph_with_range_input_diwo_visual_grouped_vert_bar_graph_with_range_input_component__ = __webpack_require__("../../../../../src/app/shared/shareables/visuals/diwo-visual-grouped-vert-bar-graph-with-range-input/diwo-visual-grouped-vert-bar-graph-with-range-input.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_43__visuals_diwo_visual_data_sample_diwo_visual_data_sample_component__ = __webpack_require__("../../../../../src/app/shared/shareables/visuals/diwo-visual-data-sample/diwo-visual-data-sample.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_44__visuals_diwo_visual_pyramid_hori_graph_diwo_visual_pyramid_hori_graph_component__ = __webpack_require__("../../../../../src/app/shared/shareables/visuals/diwo-visual-pyramid-hori-graph/diwo-visual-pyramid-hori-graph.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_45__visuals_diwo_visual_vs_bar_vert_with_brush_diwo_visual_vs_bar_vert_with_brush_component__ = __webpack_require__("../../../../../src/app/shared/shareables/visuals/diwo-visual-vs-bar-vert-with-brush/diwo-visual-vs-bar-vert-with-brush.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_46__visuals_diwo_visual_vs_line_graph_with_draggable_points_diwo_visual_vs_line_graph_with_draggable_points_component__ = __webpack_require__("../../../../../src/app/shared/shareables/visuals/diwo-visual-vs-line-graph-with-draggable-points/diwo-visual-vs-line-graph-with-draggable-points.component.ts");
 /* unused harmony reexport DiwoVisualDoubleEntryTable */
 /* unused harmony reexport DiwoVisualProductsDonut */
 /* unused harmony reexport DiwoVisualPriceRangesPie */
@@ -12312,6 +12576,8 @@ TruncatePipe = __decorate([
 /* unused harmony reexport DiwoVisualSimpleCardsComponent */
 /* unused harmony reexport DiwoVisualDataSampleComponent */
 /* unused harmony reexport DiwoVisualPyramidHoriGraphComponent */
+/* unused harmony reexport DiwoVisualVsBarVertWithBrushComponent */
+/* unused harmony reexport DiwoVisualVsLineGraphWithDraggablePointsComponent */
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -12325,6 +12591,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 // Visual components
+
+
 
 
 
@@ -12411,7 +12679,9 @@ var VisualList = [
     __WEBPACK_IMPORTED_MODULE_41__visuals_diwo_visual_accordian_list_diwo_visual_accordian_list_component__["a" /* DiwoVisualAccordianListComponent */],
     __WEBPACK_IMPORTED_MODULE_42__visuals_diwo_visual_grouped_vert_bar_graph_with_range_input_diwo_visual_grouped_vert_bar_graph_with_range_input_component__["a" /* DiwoVisualGroupedVertBarGraphWithRangeInputComponent */],
     __WEBPACK_IMPORTED_MODULE_43__visuals_diwo_visual_data_sample_diwo_visual_data_sample_component__["a" /* DiwoVisualDataSampleComponent */],
-    __WEBPACK_IMPORTED_MODULE_44__visuals_diwo_visual_pyramid_hori_graph_diwo_visual_pyramid_hori_graph_component__["a" /* DiwoVisualPyramidHoriGraphComponent */]
+    __WEBPACK_IMPORTED_MODULE_44__visuals_diwo_visual_pyramid_hori_graph_diwo_visual_pyramid_hori_graph_component__["a" /* DiwoVisualPyramidHoriGraphComponent */],
+    __WEBPACK_IMPORTED_MODULE_45__visuals_diwo_visual_vs_bar_vert_with_brush_diwo_visual_vs_bar_vert_with_brush_component__["a" /* DiwoVisualVsBarVertWithBrushComponent */],
+    __WEBPACK_IMPORTED_MODULE_46__visuals_diwo_visual_vs_line_graph_with_draggable_points_diwo_visual_vs_line_graph_with_draggable_points_component__["a" /* DiwoVisualVsLineGraphWithDraggablePointsComponent */]
 ];
 var ShareableModule = ShareableModule_1 = (function () {
     function ShareableModule() {
@@ -12433,6 +12703,8 @@ ShareableModule = ShareableModule_1 = __decorate([
         providers: []
     })
 ], ShareableModule);
+
+
 
 
 
@@ -13863,7 +14135,7 @@ var _a, _b;
 /***/ "../../../../../src/app/shared/shareables/visuals/diwo-visual-bubble-graph/diwo-visual-bubble-graph.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"gViz-outer-wrapper is-one-whole is-one-whole-tall is-absolute has-pd-hori-medium-lg has-pd-vert-medium-lg\" data-gViz-id='diwo-visual-bubble-graph' (resize)=\"resize()\">\n  <div class='gViz-inner-wrapper gViz-relative is-one-whole is-relative'></div>\n</div>\n"
+module.exports = "<div class=\"gViz-outer-wrapper is-one-whole is-one-whole-tall is-absolute has-pd-hori-medium-lg has-pd-vert-medium-lg\" data-gViz-id='diwo-visual-bubble-graph' (resize)=\"resize()\">\n  <div class='gViz-inner-wrapper gViz-relative is-one-whole is-relative bubble-charts-inner-container'></div>\n</div>\n"
 
 /***/ }),
 
@@ -13875,7 +14147,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, ":host {\n  min-height: 300px;\n  display: block; }\n\n.gViz-outer-wrapper[data-gViz-id='diwo-visual-bubble-graph'] {\n  min-height: 60px;\n  min-width: 100px; }\n  .gViz-outer-wrapper[data-gViz-id='diwo-visual-bubble-graph'] .gViz-inner-wrapper {\n    height: calc(100% - 86px);\n    float: left; }\n  .gViz-outer-wrapper[data-gViz-id='diwo-visual-bubble-graph'] .select-wrapper {\n    width: 170px;\n    height: 30px;\n    float: left;\n    text-align: right; }\n    .gViz-outer-wrapper[data-gViz-id='diwo-visual-bubble-graph'] .select-wrapper dropdown-select {\n      float: right; }\n  .gViz-outer-wrapper[data-gViz-id='diwo-visual-bubble-graph'] .legend-wrapper, .gViz-outer-wrapper[data-gViz-id='diwo-visual-bubble-graph'] .legend-wrapper-full {\n    width: calc(100% - 170px);\n    float: left; }\n  .gViz-outer-wrapper[data-gViz-id='diwo-visual-bubble-graph'] .legend-wrapper-full {\n    width: calc(100%); }\n\n[data-id='gViz-bubble-inner-wrapper'] {\n  background-color: #E6E2E9;\n  width: 930px;\n  height: 700px;\n  padding: 20px;\n  overflow: hidden;\n  margin-top: 20px;\n  margin-left: 20px;\n  background-image: url(" + __webpack_require__("../../../../../src/assets/images/gViz/visualizations/bubbles/background.jpg") + "); }\n", ""]);
+exports.push([module.i, ":host {\n  min-height: 300px;\n  display: block; }\n\n.gViz-outer-wrapper[data-gViz-id='diwo-visual-bubble-graph'] {\n  min-height: 600px;\n  min-width: 100px; }\n  .gViz-outer-wrapper[data-gViz-id='diwo-visual-bubble-graph'] .gViz-inner-wrapper {\n    height: calc(100% - 86px);\n    float: left;\n    min-height: 700px; }\n  .gViz-outer-wrapper[data-gViz-id='diwo-visual-bubble-graph'] .select-wrapper {\n    width: 170px;\n    height: 30px;\n    float: left;\n    text-align: right; }\n    .gViz-outer-wrapper[data-gViz-id='diwo-visual-bubble-graph'] .select-wrapper dropdown-select {\n      float: right; }\n  .gViz-outer-wrapper[data-gViz-id='diwo-visual-bubble-graph'] .legend-wrapper, .gViz-outer-wrapper[data-gViz-id='diwo-visual-bubble-graph'] .legend-wrapper-full {\n    width: calc(100% - 170px);\n    float: left; }\n  .gViz-outer-wrapper[data-gViz-id='diwo-visual-bubble-graph'] .legend-wrapper-full {\n    width: calc(100%); }\n\n[data-id='gViz-bubble-inner-wrapper'] {\n  background-color: #E6E2E9;\n  width: 930px;\n  height: 700px;\n  padding: 20px;\n  overflow: hidden;\n  margin-top: 20px;\n  margin-left: 20px;\n  background-image: url(" + __webpack_require__("../../../../../src/assets/images/gViz/visualizations/bubbles/background.jpg") + "); }\n", ""]);
 
 // exports
 
@@ -13952,8 +14224,8 @@ var DiwoVisualBubbleGraphComponent = (function (_super) {
             // Call gViz combined bubble Visualization
             var vis = gViz.vis.bubbleComponents.combined()
                 ._var(self._vis)
-                .container(".gViz-inner-wrapper")
-                .urlLocation('watch')
+                .container(".bubble-charts-inner-container")
+                .urlLocation('ask')
                 .data(self._data)
                 .run();
         }
@@ -17362,7 +17634,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, ":host {\n  min-height: 300px;\n  display: block; }\n\n.gViz-outer-wrapper[data-gViz-id='diwo-visual-price-ranges-pie'] {\n  min-height: 400px;\n  min-width: 350px; }\n  .gViz-outer-wrapper[data-gViz-id='diwo-visual-price-ranges-pie'] .gViz-inner-wrapper {\n    height: calc(100% - 65px);\n    min-height: 600px; }\n\n.tooltip {\n  box-shadow: 1px 7px 18px rgba(0, 0, 0, 0.6);\n  padding: 21px;\n  background-color: #FFB519;\n  color: white;\n  font-size: 22px;\n  font-weight: bold; }\n\n.title-header {\n  font-size: 14px;\n  background: #eee;\n  margin: 10px 0px 10px 0px;\n  height: 40px;\n  line-height: 40px;\n  color: #434343;\n  font-weight: 300;\n  padding: 0px 10px; }\n\n:host {\n  min-height: 300px;\n  display: block; }\n", ""]);
+exports.push([module.i, ":host {\n  min-height: 300px;\n  display: block; }\n\n.gViz-outer-wrapper[data-gViz-id='diwo-visual-price-ranges-pie'] {\n  min-height: 400px;\n  min-width: 350px; }\n  .gViz-outer-wrapper[data-gViz-id='diwo-visual-price-ranges-pie'] .gViz-inner-wrapper {\n    height: calc(100% - 65px);\n    min-height: 600px;\n    min-width: 600px; }\n\n.tooltip {\n  box-shadow: 1px 7px 18px rgba(0, 0, 0, 0.6);\n  padding: 21px;\n  background-color: #FFB519;\n  color: white;\n  font-size: 22px;\n  font-weight: bold; }\n\n.title-header {\n  font-size: 14px;\n  background: #eee;\n  margin: 10px 0px 10px 0px;\n  height: 40px;\n  line-height: 40px;\n  color: #434343;\n  font-weight: 300;\n  padding: 0px 10px; }\n\n:host {\n  min-height: 300px;\n  display: block; }\n", ""]);
 
 // exports
 
@@ -18371,7 +18643,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, ":host {\n  min-height: 300px;\n  display: block; }\n\n.gViz-outer-wrapper[data-gViz-id='diwo-visual-sunburst'] {\n  min-height: 300px;\n  min-width: 350px; }\n  .gViz-outer-wrapper[data-gViz-id='diwo-visual-sunburst'] .gViz-inner-wrapper {\n    height: calc(100% - 65px); }\n", ""]);
+exports.push([module.i, ":host {\n  min-height: 300px;\n  display: block; }\n\n.gViz-outer-wrapper[data-gViz-id='diwo-visual-sunburst'] {\n  min-height: 300px;\n  min-width: 350px; }\n  .gViz-outer-wrapper[data-gViz-id='diwo-visual-sunburst'] .gViz-inner-wrapper {\n    min-height: 500px;\n    height: calc(100% - 65px); }\n", ""]);
 
 // exports
 
@@ -18638,6 +18910,291 @@ DiwoVisualTopChangeList = __decorate([
 ], DiwoVisualTopChangeList);
 
 //# sourceMappingURL=diwo-visual-top-change-list.component.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/shared/shareables/visuals/diwo-visual-vs-bar-vert-with-brush/diwo-visual-vs-bar-vert-with-brush.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"gViz-outer-wrapper is-one-whole is-one-whole-tall is-absolute\" data-gViz-id='diwo-visual-vs-bar-vert-with-brush'  (resize)=\"resize()\">\n  <div class='gViz-inner-wrapper gViz-relative is-one-whole is-relative'></div>\n</div>\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/shared/shareables/visuals/diwo-visual-vs-bar-vert-with-brush/diwo-visual-vs-bar-vert-with-brush.component.scss":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ":host {\n  min-height: 300px;\n  display: block; }\n\n.gViz-outer-wrapper[data-gViz-id='diwo-visual-vs-bar-vert-with-brush'] {\n  min-height: 300px;\n  min-width: 350px; }\n  .gViz-outer-wrapper[data-gViz-id='diwo-visual-vs-bar-vert-with-brush'] .gViz-inner-wrapper {\n    height: 100%;\n    position: absolute;\n    top: 0px;\n    left: 0px; }\n", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/shared/shareables/visuals/diwo-visual-vs-bar-vert-with-brush/diwo-visual-vs-bar-vert-with-brush.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DiwoVisualVsBarVertWithBrushComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common__ = __webpack_require__("../../../common/@angular/common.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__base_visual__ = __webpack_require__("../../../../../src/app/shared/shareables/visuals/base-visual.ts");
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var gViz = __webpack_require__("../../../../../src/assets/js/gViz/_init.js");
+var DiwoVisualVsBarVertWithBrushComponent = (function (_super) {
+    __extends(DiwoVisualVsBarVertWithBrushComponent, _super);
+    // Main constructor
+    function DiwoVisualVsBarVertWithBrushComponent(element, _location) {
+        var _this = _super.call(this) || this;
+        _this.element = element;
+        _this._location = _location;
+        _this._onHover = function (d) { console.log("hover", d); };
+        _this._onClick = function (d) { console.log("click", d); };
+        return _this;
+    }
+    /* Methods */
+    DiwoVisualVsBarVertWithBrushComponent.prototype.update = function () {
+        // Store this
+        var self = this;
+        // Get possible erros
+        try {
+            // // Testing only
+            // d3.json("assets/data/diwo-visual-grouped-vert-bar-graph.sample.json", (err, data) => {
+            //   self._data = data;
+            // Draw visualization
+            self.draw();
+        }
+        catch (err) {
+            console.log(err);
+        }
+    };
+    // Draw visualization
+    DiwoVisualVsBarVertWithBrushComponent.prototype.draw = function () {
+        // Store this
+        var self = this;
+        // Get possible erros
+        try {
+            // gViz Victoria's Secret bar chart vertical with brush
+            self._vis = gViz.vis.vsBarVertWithBrush()
+                ._var(self._vis)
+                .container(self.element.nativeElement.querySelector(".gViz-inner-wrapper"))
+                .data(JSON.parse(JSON.stringify(self._data)))
+                .onHover(self._onHover)
+                .onClick(self._onClick)
+                .run();
+        }
+        catch (err) {
+            console.log(err);
+        }
+    };
+    // When container resizes, redraw visualization
+    DiwoVisualVsBarVertWithBrushComponent.prototype.resize = function () {
+        this.draw();
+    };
+    // On component init
+    DiwoVisualVsBarVertWithBrushComponent.prototype.ngOnInit = function () {
+        this.update();
+    };
+    // On component changes
+    DiwoVisualVsBarVertWithBrushComponent.prototype.ngOnChanges = function () {
+        this.update();
+    };
+    return DiwoVisualVsBarVertWithBrushComponent;
+}(__WEBPACK_IMPORTED_MODULE_2__base_visual__["a" /* BaseVisual */]));
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["F" /* Input */])('onHover'),
+    __metadata("design:type", Object)
+], DiwoVisualVsBarVertWithBrushComponent.prototype, "_onHover", void 0);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["F" /* Input */])('onClick'),
+    __metadata("design:type", Object)
+], DiwoVisualVsBarVertWithBrushComponent.prototype, "_onClick", void 0);
+DiwoVisualVsBarVertWithBrushComponent = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["o" /* Component */])({
+        selector: 'diwo-visual-vs-bar-vert-with-brush',
+        template: __webpack_require__("../../../../../src/app/shared/shareables/visuals/diwo-visual-vs-bar-vert-with-brush/diwo-visual-vs-bar-vert-with-brush.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/shared/shareables/visuals/diwo-visual-vs-bar-vert-with-brush/diwo-visual-vs-bar-vert-with-brush.component.scss")],
+        host: {
+            'class': 'is-relative',
+            'style': 'width: 100%; height: 100%;'
+        }
+    }),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["v" /* ElementRef */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["v" /* ElementRef */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_common__["g" /* Location */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_common__["g" /* Location */]) === "function" && _b || Object])
+], DiwoVisualVsBarVertWithBrushComponent);
+
+var _a, _b;
+//# sourceMappingURL=diwo-visual-vs-bar-vert-with-brush.component.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/shared/shareables/visuals/diwo-visual-vs-line-graph-with-draggable-points/diwo-visual-vs-line-graph-with-draggable-points.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"gViz-outer-wrapper is-one-whole is-one-whole-tall is-absolute\" data-gViz-id='diwo-visual-vs-line-graph-with-draggable-points' (resize)=\"resize()\">\n  <div class='gViz-inner-wrapper gViz-relative is-one-whole is-relative'></div>\n</div>\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/shared/shareables/visuals/diwo-visual-vs-line-graph-with-draggable-points/diwo-visual-vs-line-graph-with-draggable-points.component.scss":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ":host {\n  min-height: 300px;\n  display: block; }\n\n.gViz-outer-wrapper[data-gViz-id='diwo-visual-vs-line-graph-with-draggable-points'] {\n  min-height: 300px;\n  min-width: 350px; }\n  .gViz-outer-wrapper[data-gViz-id='diwo-visual-vs-line-graph-with-draggable-points'] .gViz-inner-wrapper {\n    height: 100%;\n    position: absolute;\n    top: 0px;\n    left: 0px; }\n", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/shared/shareables/visuals/diwo-visual-vs-line-graph-with-draggable-points/diwo-visual-vs-line-graph-with-draggable-points.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DiwoVisualVsLineGraphWithDraggablePointsComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__base_visual__ = __webpack_require__("../../../../../src/app/shared/shareables/visuals/base-visual.ts");
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var gViz = __webpack_require__("../../../../../src/assets/js/gViz/_init.js");
+var DiwoVisualVsLineGraphWithDraggablePointsComponent = (function (_super) {
+    __extends(DiwoVisualVsLineGraphWithDraggablePointsComponent, _super);
+    // Main constructor
+    function DiwoVisualVsLineGraphWithDraggablePointsComponent(element) {
+        var _this = _super.call(this) || this;
+        _this.element = element;
+        _this._onHover = function (d) { console.log("hover", d); };
+        _this._onClick = function (d) { console.log("click", d); };
+        _this._onDragStart = function (d) { console.log("drag start", d); };
+        _this._onDragEnd = function (d) { console.log("drag end", d); };
+        return _this;
+    }
+    /* Methods */
+    DiwoVisualVsLineGraphWithDraggablePointsComponent.prototype.update = function () {
+        // Store this
+        var self = this;
+        // Get possible errors
+        try {
+            // // Testing only
+            // d3.json("assets/data/diwo-visual-vs-line-graph-with-draggable-points.sample.json", (err, data) => {
+            //   self._data = data;
+            // Backup _data.data
+            self._data._data = self._data.data;
+            // Draw visualization
+            self.draw();
+        }
+        catch (err) {
+            console.log(err);
+        }
+    };
+    // Draw visualization
+    DiwoVisualVsLineGraphWithDraggablePointsComponent.prototype.draw = function () {
+        // Store this
+        var self = this;
+        // Get possible errors
+        try {
+            // gViz line chart
+            self._vis = gViz.vis.vsLineGraphWithDraggablePoints()
+                ._var(self._vis)
+                .container(self.element.nativeElement.querySelector(".gViz-inner-wrapper"))
+                .data(JSON.parse(JSON.stringify(self._data)))
+                .onHover(self._onHover)
+                .onClick(self._onClick)
+                .onDragStart(self._onDragStart)
+                .onDragEnd(self._onDragEnd)
+                .run();
+        }
+        catch (err) {
+            console.log(err);
+        }
+    };
+    // When container resizes, re-draw the visualization
+    DiwoVisualVsLineGraphWithDraggablePointsComponent.prototype.resize = function () {
+        this.draw();
+    };
+    // On component init
+    DiwoVisualVsLineGraphWithDraggablePointsComponent.prototype.ngOnInit = function () {
+        this.update();
+    };
+    // On component changes
+    DiwoVisualVsLineGraphWithDraggablePointsComponent.prototype.ngOnChanges = function () {
+        this.update();
+    };
+    return DiwoVisualVsLineGraphWithDraggablePointsComponent;
+}(__WEBPACK_IMPORTED_MODULE_1__base_visual__["a" /* BaseVisual */]));
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["F" /* Input */])('onHover'),
+    __metadata("design:type", Object)
+], DiwoVisualVsLineGraphWithDraggablePointsComponent.prototype, "_onHover", void 0);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["F" /* Input */])('onClick'),
+    __metadata("design:type", Object)
+], DiwoVisualVsLineGraphWithDraggablePointsComponent.prototype, "_onClick", void 0);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["F" /* Input */])('onDragStart'),
+    __metadata("design:type", Object)
+], DiwoVisualVsLineGraphWithDraggablePointsComponent.prototype, "_onDragStart", void 0);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["F" /* Input */])('onDragEnd'),
+    __metadata("design:type", Object)
+], DiwoVisualVsLineGraphWithDraggablePointsComponent.prototype, "_onDragEnd", void 0);
+DiwoVisualVsLineGraphWithDraggablePointsComponent = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["o" /* Component */])({
+        selector: 'diwo-visual-vs-line-graph-with-draggable-points',
+        template: __webpack_require__("../../../../../src/app/shared/shareables/visuals/diwo-visual-vs-line-graph-with-draggable-points/diwo-visual-vs-line-graph-with-draggable-points.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/shared/shareables/visuals/diwo-visual-vs-line-graph-with-draggable-points/diwo-visual-vs-line-graph-with-draggable-points.component.scss")],
+        host: {
+            'class': 'is-relative',
+            'style': 'width: 100%; height: 100%;'
+        }
+    }),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["v" /* ElementRef */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["v" /* ElementRef */]) === "function" && _a || Object])
+], DiwoVisualVsLineGraphWithDraggablePointsComponent);
+
+var _a;
+//# sourceMappingURL=diwo-visual-vs-line-graph-with-draggable-points.component.js.map
 
 /***/ }),
 
@@ -19246,7 +19803,7 @@ var SharedModule_1;
 /***/ "../../../../../src/app/shared/snippets/nav/decide-nav/decide-nav.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"layout-row with-mg-light flex\">\n    \n    <div class=\"layout-item flex has-mg-hori-light\">\n      <div class=\"has-pd-vert-small has-bg-secondary has-c-shade-1 is-relative\">\n        <h3 class=\" has-mg-full-none has-pd-hori-normal\">\n          Decide\n        </h3>\n      </div>\n    </div>\n  </div>\n  <div class=\"cards-icons\">\n    <div class=\"card regular\"></div>\n    <div class=\"card regular\"></div>\n    <div class=\"card regular\"></div>\n    <div class=\"card regular\"></div>\n    <div class=\"card md\"></div>\n    <div class=\"card sm\"></div>\n    <div class=\"card regular\"></div>\n    <div class=\"card regular\"></div>\n    <div class=\"card regular\"></div>\n    <div class=\"card regular\"></div>\n  </div>\n  <div class=\"cards-info\">\n    \n  </div>\n\n<!-- <div class=\"layout-row with-mg-light flex\">\n\n\n\n<div class=\"layout-item flex has-mg-hori-light\">\n\n  <div class=\"has-pd-vert-small has-bg-secondary has-c-shade-1 is-relative\">\n    <h3 class=\" has-mg-full-none\n                  has-pd-hori-normal\">\n      Decide\n    </h3>\n  </div>\n\n  <div class=\"has-mg-top-light is-decide-nav-height has-bg-secondary-light layout-row\">\n\n    <div class=\"has-pd-full-medium layout--no-shrink has-bg-tertiary layout-row layout--start-center\">\n      <button class=\"has-bg-secondary has-c-shade-1 btn-large has-cursor\">\n        <i class=\"di di-16x di-search\"></i>\n      </button>\n      <div class=\"has-mg-left-small\">\n        <p class=\"has-mg-vert-light has-pd-hori-extra-small\">&uarr;A-&darr;Z</p>\n\n        <div class=\"divider has-bg-shade-1\"></div>\n        <p class=\"has-mg-vert-light has-pd-hori-extra-small\">&uarr;Z-&darr;A</p>\n\n      </div>\n    </div>\n    <div class=\"layout-row has-pd-vert-extra-small flex\">\n      <div class=\"has-pd-hori-medium is-one-third has-bd-right bd-light bd-shade-1 layout-column layout--space-around-stretch\">\n        <dropdown [placeholder]=\"'Select Condition'\" class=\"\">\n          <dropdown-item [title]=\"'test'\" value=\"'test'\">\n\n          </dropdown-item>\n        </dropdown>\n        <dropdown [placeholder]=\"'Risk Level'\" class=\"has-mg-top-extra-small\">\n          <dropdown-item [title]=\"'test'\" value=\"'test'\">\n\n          </dropdown-item>\n        </dropdown>\n      </div>\n      <div class=\"has-pd-hori-medium is-one-quarter has-bd-right bd-light bd-shade-1 layout-column layout--space-around-stretch\">\n        <dropdown [placeholder]=\"'Age Range'\" class=\"\">\n          <dropdown-item [title]=\"'test'\" value=\"'test'\">\n\n          </dropdown-item>\n        </dropdown>\n        <dropdown [placeholder]=\"'Discharge Rate'\" class=\"has-mg-top-extra-small\">\n          <dropdown-item [title]=\"'test'\" value=\"'test'\">\n\n          </dropdown-item>\n        </dropdown>\n      </div>\n      <div class=\"has-pd-hori-medium is-one-quarter has-bd-right bd-light bd-shade-1 layout-column layout--space-around-stretch\">\n        <dropdown [placeholder]=\"'Readmission Time'\" class=\"\">\n          <dropdown-item [title]=\"'test'\" value=\"'test'\">\n\n          </dropdown-item>\n        </dropdown>\n        <dropdown [placeholder]=\"'Intervention Time'\" class=\"has-mg-top-extra-small\">\n          <dropdown-item [title]=\"'test'\" value=\"'test'\">\n\n          </dropdown-item>\n        </dropdown>\n      </div>\n      <div class=\"has-pd-hori-medium is-one-fifth layout-column layout--space-around-stretch\">\n        <dropdown [placeholder]=\"'Gender'\" class=\"\">\n          <dropdown-item [title]=\"'test'\" value=\"'test'\">\n\n          </dropdown-item>\n        </dropdown>\n        <dropdown [placeholder]=\"'CAN Score'\" class=\"has-mg-top-extra-small\">\n          <dropdown-item [title]=\"'test'\" value=\"'test'\">\n\n          </dropdown-item>\n        </dropdown>\n      </div>\n    </div>\n\n\n  </div>\n</div>\n\n</div> -->\n"
+module.exports = "<div class=\"layout-row with-mg-light flex\">\n    \n    <div class=\"layout-item flex has-mg-hori-light\">\n      <div class=\"has-pd-vert-small has-bg-secondary has-c-shade-1 is-relative\">\n        <h3 class=\" has-mg-full-none has-pd-hori-normal\">\n          Decide\n        </h3>\n      </div>\n    </div>\n  </div>\n  <div class=\"cards-icons\">\n    <div class=\"card regular\" *ngFor=\"let item of cards\">\n      \n    </div>\n  </div>\n  <div class=\"cards-info\">\n    \n  </div>\n\n<!-- <div class=\"layout-row with-mg-light flex\">\n\n\n\n<div class=\"layout-item flex has-mg-hori-light\">\n\n  <div class=\"has-pd-vert-small has-bg-secondary has-c-shade-1 is-relative\">\n    <h3 class=\" has-mg-full-none\n                  has-pd-hori-normal\">\n      Decide\n    </h3>\n  </div>\n\n  <div class=\"has-mg-top-light is-decide-nav-height has-bg-secondary-light layout-row\">\n\n    <div class=\"has-pd-full-medium layout--no-shrink has-bg-tertiary layout-row layout--start-center\">\n      <button class=\"has-bg-secondary has-c-shade-1 btn-large has-cursor\">\n        <i class=\"di di-16x di-search\"></i>\n      </button>\n      <div class=\"has-mg-left-small\">\n        <p class=\"has-mg-vert-light has-pd-hori-extra-small\">&uarr;A-&darr;Z</p>\n\n        <div class=\"divider has-bg-shade-1\"></div>\n        <p class=\"has-mg-vert-light has-pd-hori-extra-small\">&uarr;Z-&darr;A</p>\n\n      </div>\n    </div>\n    <div class=\"layout-row has-pd-vert-extra-small flex\">\n      <div class=\"has-pd-hori-medium is-one-third has-bd-right bd-light bd-shade-1 layout-column layout--space-around-stretch\">\n        <dropdown [placeholder]=\"'Select Condition'\" class=\"\">\n          <dropdown-item [title]=\"'test'\" value=\"'test'\">\n\n          </dropdown-item>\n        </dropdown>\n        <dropdown [placeholder]=\"'Risk Level'\" class=\"has-mg-top-extra-small\">\n          <dropdown-item [title]=\"'test'\" value=\"'test'\">\n\n          </dropdown-item>\n        </dropdown>\n      </div>\n      <div class=\"has-pd-hori-medium is-one-quarter has-bd-right bd-light bd-shade-1 layout-column layout--space-around-stretch\">\n        <dropdown [placeholder]=\"'Age Range'\" class=\"\">\n          <dropdown-item [title]=\"'test'\" value=\"'test'\">\n\n          </dropdown-item>\n        </dropdown>\n        <dropdown [placeholder]=\"'Discharge Rate'\" class=\"has-mg-top-extra-small\">\n          <dropdown-item [title]=\"'test'\" value=\"'test'\">\n\n          </dropdown-item>\n        </dropdown>\n      </div>\n      <div class=\"has-pd-hori-medium is-one-quarter has-bd-right bd-light bd-shade-1 layout-column layout--space-around-stretch\">\n        <dropdown [placeholder]=\"'Readmission Time'\" class=\"\">\n          <dropdown-item [title]=\"'test'\" value=\"'test'\">\n\n          </dropdown-item>\n        </dropdown>\n        <dropdown [placeholder]=\"'Intervention Time'\" class=\"has-mg-top-extra-small\">\n          <dropdown-item [title]=\"'test'\" value=\"'test'\">\n\n          </dropdown-item>\n        </dropdown>\n      </div>\n      <div class=\"has-pd-hori-medium is-one-fifth layout-column layout--space-around-stretch\">\n        <dropdown [placeholder]=\"'Gender'\" class=\"\">\n          <dropdown-item [title]=\"'test'\" value=\"'test'\">\n\n          </dropdown-item>\n        </dropdown>\n        <dropdown [placeholder]=\"'CAN Score'\" class=\"has-mg-top-extra-small\">\n          <dropdown-item [title]=\"'test'\" value=\"'test'\">\n\n          </dropdown-item>\n        </dropdown>\n      </div>\n    </div>\n\n\n  </div>\n</div>\n\n</div> -->\n"
 
 /***/ }),
 
@@ -19275,6 +19832,7 @@ module.exports = module.exports.toString();
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DecideNavComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__microservices_decide_services_decide_service__ = __webpack_require__("../../../../../src/app/microservices/decide/services/decide.service.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -19286,12 +19844,17 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
+
 var DecideNavComponent = (function () {
-    function DecideNavComponent(router) {
+    function DecideNavComponent(router, decideService) {
         this.router = router;
+        this.decideService = decideService;
         this.popupChange = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["x" /* EventEmitter */]();
     }
     DecideNavComponent.prototype.ngOnInit = function () { };
+    DecideNavComponent.prototype.ngAfterContentChecked = function () {
+        this.cards = this.decideService.cardNavigation;
+    };
     DecideNavComponent.prototype.isWatchOpen = function () {
         return this.router.isActive(this.router.createUrlTree(['/watch']), false);
     };
@@ -19331,10 +19894,10 @@ DecideNavComponent = __decorate([
         template: __webpack_require__("../../../../../src/app/shared/snippets/nav/decide-nav/decide-nav.component.html"),
         styles: [__webpack_require__("../../../../../src/app/shared/snippets/nav/decide-nav/decide-nav.component.scss")],
     }),
-    __metadata("design:paramtypes", [typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["d" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["d" /* Router */]) === "function" && _b || Object])
+    __metadata("design:paramtypes", [typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["d" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["d" /* Router */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__microservices_decide_services_decide_service__["a" /* DecideService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__microservices_decide_services_decide_service__["a" /* DecideService */]) === "function" && _c || Object])
 ], DecideNavComponent);
 
-var _a, _b;
+var _a, _b, _c;
 //# sourceMappingURL=decide-nav.component.js.map
 
 /***/ }),
@@ -20344,31 +20907,33 @@ var AskMessagesList = (function () {
             }
         };
         if (withSpeech && type === __WEBPACK_IMPORTED_MODULE_4__messages_ask_message_ask_message_model__["a" /* AskMessage */]) {
-            reference.runSpeech(function (status) {
-                var opened = false;
-                _this._askContentService._onOpened().first().subscribe(function () {
-                    opened = true;
-                });
-                (status !== 'unfinished' && message.action && message.action !== '') ? setTimeout(function () {
-                    _this._speechSyn.speak(message.action).end.first().subscribe(function () {
-                        if (!opened) {
-                            // if the right side of ask opens before the action/nudge speech is done then don't open the mic
-                            _this._equalizerService.openStream();
-                            var sub = _this._SpeechRecognition.result.first().subscribe(function (res) {
-                                if (res === 'yes' || res === 'yeah') {
-                                    _this.openContent(_this._openedAskMessageRef);
-                                }
-                                if (res === 'no') {
-                                    console.log('no');
-                                    _this.dismissSnackBarMessage();
-                                }
-                            });
-                        }
+            if (this.hasQuestion) {
+                reference.runSpeech(function (status) {
+                    var opened = false;
+                    _this._askContentService._onOpened().first().subscribe(function () {
+                        opened = true;
                     });
-                }, 2000) : '';
-                reference.sequenceDone(true);
-                sequence();
-            });
+                    (status !== 'unfinished' && message.action && message.action !== '') ? setTimeout(function () {
+                        _this._speechSyn.speak(message.action).end.first().subscribe(function () {
+                            if (!opened) {
+                                // if the right side of ask opens before the action/nudge speech is done then don't open the mic
+                                _this._equalizerService.openStream();
+                                var sub = _this._SpeechRecognition.result.first().subscribe(function (res) {
+                                    if (res === 'yes' || res === 'yeah') {
+                                        _this.openContent(_this._openedAskMessageRef);
+                                    }
+                                    if (res === 'no') {
+                                        console.log('no');
+                                        _this.dismissSnackBarMessage();
+                                    }
+                                });
+                            }
+                        });
+                    }, 2000) : '';
+                    reference.sequenceDone(true);
+                    sequence();
+                });
+            }
         }
         var id = '#message-' + message.id;
         var el = document.getElementById(id.substr(1));
@@ -25095,15 +25660,13 @@ var EqualizerComponent = (function () {
         cancelAnimationFrame(this.visualAnimationFrame);
         this._visualDataSub.unsubscribe();
         this._colorsSub.unsubscribe();
-        this._SpeechRecognition.blockResults();
     };
     EqualizerComponent.prototype.ngAfterViewInit = function () {
         var _this = this;
-        this._SpeechRecognition.blockResults();
+        this._SpeechRecognition.initWebsocket();
+        this._SpeechRecognition.newWebsocket();
+        this._SpeechRecognition.allowResults();
         this._visualDataSub = this._SpeechRecognition.visualData.subscribe(function (data) {
-            _this._SpeechRecognition.initWebsocket();
-            _this._SpeechRecognition.newWebsocket();
-            _this._SpeechRecognition.allowResults();
             console.log("audio data");
             _this.visualData = data;
             if (data) {
@@ -31729,6 +32292,7 @@ var DynamicComponentDirective = (function () {
         this.ss = ss;
         this.hasExpand = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["x" /* EventEmitter */](true);
         this.expanded = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["x" /* EventEmitter */](true);
+        this.data = {};
         this.show = true;
     }
     DynamicComponentDirective.prototype.ngOnInit = function () {
@@ -34690,7 +35254,7 @@ module.exports = {
 
         // Limit height or line number
         if(bbox.height > height || numLines >= maxLines) {
-          d3.select(text.node().lastChild).remove();
+          if(numLines >= 1) { d3.select(text.node().lastChild).remove(); }
           if(words.length > 0) { d3.select(text.node().lastChild).text(d3.select(text.node().lastChild).text().slice(0,-1) + '...'); }
           words = [];
         }
@@ -36559,7 +37123,11 @@ module.exports = {
   priceRanges: __webpack_require__("../../../../../src/assets/js/gViz/visualizations/priceRanges/_init.js"),
   doubleEntryTable: __webpack_require__("../../../../../src/assets/js/gViz/visualizations/double-entry-table/_init.js"),
   visualWeeklyProductsPredictionLine: __webpack_require__("../../../../../src/assets/js/gViz/visualizations/weeklyProductsPredictionLine/_init.js"),
-  barPositiveNegativeDeviation: __webpack_require__("../../../../../src/assets/js/gViz/visualizations/bar-positive-negative-deviation/_init.js")
+  barPositiveNegativeDeviation: __webpack_require__("../../../../../src/assets/js/gViz/visualizations/bar-positive-negative-deviation/_init.js"),
+
+  // Victoria's  Secret Visualizations
+  vsBarVertWithBrush: __webpack_require__("../../../../../src/assets/js/gViz/visualizations/vs-bar-vert-with-brush/_init.js"),
+  vsLineGraphWithDraggablePoints: __webpack_require__("../../../../../src/assets/js/gViz/visualizations/vs-line-graph-with-draggable-points/_init.js")
 };
 
 
@@ -78308,7 +78876,7 @@ module.exports = function () {
     marginTop: 100,
     marginBottom: 70,
     marginRight: 100,
-    marginLeft: 130,
+    marginLeft: 90,
     tooltipWidth: 300,
     svgFontFamily: "Helvetica",
     centerCircleRadius: 50,
@@ -78537,7 +79105,7 @@ module.exports = function () {
           var chart = svg.patternify({ selector: 'chart', elementTag: 'g' }).attr('width', calc.chartWidth).attr('height', calc.chartHeight).attr('transform', 'translate(' + (calc.chartLeftMargin) + ',' + calc.chartTopMargin + ')')
 
           // Group which is translated into chart center
-          var centerPoint = svg.patternify({ selector: 'center-point', elementTag: 'g' }).attr('transform', 'translate(' + calc.centerPointX + ',' + calc.centerPointY + ')');
+          var centerPoint = chart.patternify({ selector: 'center-point', elementTag: 'g' }).attr('transform', 'translate(' + calc.centerPointX + ',' + calc.centerPointY + ')');
 
           //################################   FILTERS  &   SHADOWS  ##################################
 
@@ -78897,7 +79465,7 @@ module.exports = function () {
           var companyLegendsWrapper = chart.selectAll('company-legends-wrapper').data(['company-legends-wrapper']);
           companyLegendsWrapper.exit().remove()
           companyLegendsWrapper = companyLegendsWrapper.enter().insert('g', ':first-child').merge(companyLegendsWrapper);
-          companyLegendsWrapper.attr('class', 'company-legends-wrapper').attr('transform', `translate(${-attrs.marginLeft + 20}) scale(${1 / attrs.scale})`);
+          companyLegendsWrapper.attr('class', 'company-legends-wrapper').attr('transform', `translate(${-attrs.marginLeft + 20},70) scale(${1 / attrs.scale})`);
 
           var companyLegends = companyLegendsWrapper.patternify({ selector: 'company-legends', elementTag: 'g', data: attrs.data.companies }).attr('font-size', _var.fontSizes.companyLegendsFontSize)
 
@@ -78923,7 +79491,7 @@ module.exports = function () {
           var legendWrapper = centerPoint.patternify({ selector: 'legend-wrapper', elementTag: 'g' }).attr('pointer-events', 'none').attr('transform', 'translate(' + (-calc.halfWidth) + ',' + (-calc.halfWidth) + ')')
 
           // Legend items
-          var legendItems = legendWrapper.patternify({ selector: 'legend-item', elementTag: 'G', data: attrs.data.priceRanges.slice().reverse() }).attr('transform', function (d, i) { return 'translate(0,' + (((i + 0.5) * calc.eachDonutRadius) + (1 - attrs.circleDecreaseLevel) * calc.halfWidth) + ')' })
+          var legendItems = legendWrapper.patternify({ selector: 'legend-item', elementTag: 'g', data: attrs.data.priceRanges.slice().reverse() }).attr('transform', function (d, i) { return 'translate(0,' + (((i + 0.5) * calc.eachDonutRadius) + (1 - attrs.circleDecreaseLevel) * calc.halfWidth) + ')' })
 
           //Legend rects
           legendItems.patternify({ selector: 'legend-rects', elementTag: 'rect', data: d => [d] }).attr('width', calc.halfWidth).attr('height', 0.3).attr('fill', 'none').attr('stroke', attrs.legendLineFill).attr('stroke-width', 1).attr('stroke-dasharray', '1,2')
@@ -78953,7 +79521,7 @@ module.exports = function () {
           // FIXED REDESIGNED TOOLTIP 
           var width = attrs.tooltipWidth;
           var height = 159 / 6;
-          var fixedTooltip = svg.patternify({ selector: 'fixed-tooltip-wrapper', elementTag: 'g' }).attr('transform', `translate(0)`).attr('display', 'none').attr('pointer-events', 'none')
+          var fixedTooltip = svg.patternify({ selector: 'fixed-tooltip-wrapper', elementTag: 'g' }).attr('transform', `translate(-50)`).attr('display', 'none').attr('pointer-events', 'none')
 
           //TOP
           fixedTooltip.patternify({ selector: 'top-content', elementTag: 'rect' }).attr('class', 'top-content hover-fill hover-stroke').attr('width', width).attr('height', height).attr('fill', 'white').attr('stroke-width', 1)
@@ -78971,10 +79539,10 @@ module.exports = function () {
           fixedTooltip.patternify({ selector: 'value', elementTag: 'text' }).attr('class', 'value hover-fill font-highlight').attr('fill', 'black').attr('y', height + 20).attr('font-weight', 'bold').attr('x', width - 30).attr('text-anchor', 'end').text('20%')
 
           // Fixed tooltip background
-          fixedTooltip.patternify({ selector: 'fixed-tooltip-background-rect', elementTag: 'rect' }).attr('class', 'hover-stroke fixed-tooltip-background-rect').attr("x", 315).attr("y", 60).attr("width", 82).attr("height", 82).attr('fill', 'white').attr('stroke', 'black')
+          fixedTooltip.patternify({ selector: 'fixed-tooltip-background-rect', elementTag: 'rect' }).attr('class', 'hover-stroke fixed-tooltip-background-rect').attr("x", 315).attr("y", 60).attr("width", 82).attr("height", 82).attr('fill', 'white').attr('stroke', 'black').style('transform','translate(80)')
 
           //Fixed tooltip image
-          fixedTooltip.patternify({ selector: 'image', elementTag: 'image' }).attr('class', 'image').attr("xlink:href", "https://www.codeproject.com/KB/GDI-plus/ImageProcessing2/img.jpg").attr("x", 315).attr("y", 60).attr("width", 82).attr("height", 82);
+          fixedTooltip.patternify({ selector: 'image', elementTag: 'image' }).attr('class', 'image').attr("xlink:href", "https://www.codeproject.com/KB/GDI-plus/ImageProcessing2/img.jpg").attr("x", 315).attr("y", 60).attr("width", 82).attr("height", 82).style('transform','translate(80)');
 
           //#######################    TOOLTIP         ######################
 
@@ -79356,13 +79924,13 @@ module.exports = function () {
             fixedTooltip.select('.top-content').attr('width', width)
             fixedTooltip.select('.middle-content').attr('width', width)
             fixedTooltip.select('.value').attr('x', width - 30)
-            width = fixedTooltip.node().getBoundingClientRect().width + 100;
+            width = fixedTooltip.node().getBoundingClientRect().width ;
             width = width > 400 ? width : 400;
             fixedTooltip.select('.top-content').attr('width', width)
             fixedTooltip.select('.middle-content').attr('width', width)
             fixedTooltip.select('.value').attr('x', width - 30)
             fixedTooltip.attr('display', props.display)
-              .attr('transform', `translate(${calc.chartWidth - 80 - (width - 300)},${53})`) //;
+              .attr('transform', `translate(${calc.chartWidth - 80 - (width - 300)-100},${53})`) //;
             showBackBtn(!flag);
             if (attrs.state == 'FULL') showBackBtn(false);
 
@@ -79632,7 +80200,7 @@ module.exports = function () {
           var calc = {};
 
           calc.chartLeftMargin = attrs.marginLeft;
-          calc.chartTopMargin = attrs.marginTop;
+          calc.chartTopMargin = 0//attrs.marginTop;
           calc.chartWidth = attrs.svgWidth - attrs.marginRight - calc.chartLeftMargin;
           calc.chartHeight = attrs.svgHeight - attrs.marginBottom - calc.chartTopMargin;
           calc.halfWidth = Math.min(calc.chartWidth, calc.chartHeight) / 2;
@@ -87432,7 +88000,6 @@ module.exports = function () {
 
           //Chart wrapper - same as _var.g
           var chart = svg
-            .append('g')
             .patternify({ selector: 'chart', elementTag: 'g' })
             .attr('class', 'chart').attr('width', calc.chartWidth).attr('height', calc.chartHeight).attr('transform', 'translate(' + (calc.chartLeftMargin + calc.chartWidth/2) + ',' + (calc.chartHeight/2) + ')').attr('pointer-events', 'none')
 
@@ -89662,6 +90229,4429 @@ module.exports  = function () {
 
 
 
+
+
+/***/ }),
+
+/***/ "../../../../../src/assets/js/gViz/visualizations/vs-bar-vert-with-brush/_init.js":
+/***/ (function(module, exports, __webpack_require__) {
+
+// Imports
+let d3 = __webpack_require__("../../../../d3/build/d3.js");
+var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
+
+// Module declaration
+module.exports = function () {
+  "use strict";
+
+  // Auxiliar Functions
+  let components = {
+    initialize: __webpack_require__("../../../../../src/assets/js/gViz/visualizations/vs-bar-vert-with-brush/initialize.js"),
+    axis: __webpack_require__("../../../../../src/assets/js/gViz/visualizations/vs-bar-vert-with-brush/axis.js"),
+    bars: __webpack_require__("../../../../../src/assets/js/gViz/visualizations/vs-bar-vert-with-brush/bars.js"),
+    brush: __webpack_require__("../../../../../src/assets/js/gViz/visualizations/vs-bar-vert-with-brush/brush.js"),
+    brushAxis: __webpack_require__("../../../../../src/assets/js/gViz/visualizations/vs-bar-vert-with-brush/brush-axis.js"),
+    brushScale: __webpack_require__("../../../../../src/assets/js/gViz/visualizations/vs-bar-vert-with-brush/brush-scale.js"),
+    create: __webpack_require__("../../../../../src/assets/js/gViz/visualizations/vs-bar-vert-with-brush/create.js"),
+    elements: __webpack_require__("../../../../../src/assets/js/gViz/visualizations/vs-bar-vert-with-brush/elements.js"),
+    events: __webpack_require__("../../../../../src/assets/js/gViz/visualizations/vs-bar-vert-with-brush/events.js"),
+    misc: __webpack_require__("../../../../../src/assets/js/gViz/visualizations/vs-bar-vert-with-brush/misc.js"),
+    style: __webpack_require__("../../../../../src/assets/js/gViz/visualizations/vs-bar-vert-with-brush/style.js"),
+    values: __webpack_require__("../../../../../src/assets/js/gViz/visualizations/vs-bar-vert-with-brush/values.js"),
+    xScale: __webpack_require__("../../../../../src/assets/js/gViz/visualizations/vs-bar-vert-with-brush/x-scale.js"),
+    yScale: __webpack_require__("../../../../../src/assets/js/gViz/visualizations/vs-bar-vert-with-brush/y-scale.js"),
+    yScaleSize: __webpack_require__("../../../../../src/assets/js/gViz/visualizations/vs-bar-vert-with-brush/y-scale-size.js"),
+    zoom: __webpack_require__("../../../../../src/assets/js/gViz/visualizations/vs-bar-vert-with-brush/zoom.js")
+  };
+
+  // Get attributes values
+  let _id = `vis-grouped-bar-${Math.floor(Math.random() * ((1000000000 - 5) + 1)) + 5}`;
+  let _var = null;
+  let action = 'build';
+  let animation = 900;
+  let container = null;
+  var colors = { main: shared.helpers.colors.main };
+  let data = [];
+  let margin = { top: 5, right: 0, bottom: 60, left: 70 };
+
+  // Event bindings
+  let onHover = function(d) { console.log(d); };
+  let onClick = function(d) { console.log(d); };
+
+  // Validate attributes
+  let validate = function (step) {
+    switch (step) {
+      case 'build':      return (container != null) && (d3.selectAll(container).size() !== 0 || d3.select(container).size() !== 0);
+      case 'initialize': return true;
+      case 'axis':       return data != null && data.data != null && data.data.length > 0;
+      case 'brush':      return data != null && data.data != null && data.data.length > 0;
+      case 'brushAxis':  return data != null && data.data != null && data.data.length > 0;
+      case 'brushScale': return data != null && data.data != null && data.data.length > 0;
+      case 'create':     return data != null && data.data != null && data.data.length > 0;
+      case 'elements':   return data != null && data.data != null && data.data.length > 0;
+      case 'misc':       return true;
+      case 'style':      return true;
+      case 'values':     return data != null && data.data != null && data.data.length > 0;
+      case 'xScale':     return data != null && data.data != null && data.data.length > 0;
+      case 'yScale':     return data != null && data.data != null && data.data.length > 0;
+      case 'yScaleSize': return data != null && data.data != null && data.data.length > 0;
+      case 'zoom':       return data != null && data.data != null && data.data.length > 0;
+      default:           return false;
+    }
+  };
+
+  // Main function
+  let main = function (step) {
+
+    // Validate attributes if necessary
+    if (validate(step)) {
+
+      switch (step) {
+
+        // Build entire visualizations
+        case 'build':
+
+          main('initialize');
+          main('style');
+          main('misc');
+          main('yScale');
+          main('yScaleSize');
+          main('brushScale');
+          main('create');
+          main('brushAxis');
+          main('brush');
+          main('values');
+          main('xScale');
+          main('axis');
+          main('elements');
+          main('zoom');
+          break;
+
+        // Initialize visualization variable
+        case 'initialize':
+
+          // Initializing
+          if (!_var) { _var = {};  }
+          _var = components.initialize()
+            ._var(_var)
+            ._id((_var._id != null) ? _var._id : _id)
+            .animation(animation)
+            .container(container)
+            .colors(colors)
+            .data(data)
+            .margin(margin)
+            .onHover(onHover)
+            .onClick(onClick)
+            .run();
+
+          break;
+
+        // Setup style functions
+        case 'style':
+
+          // Styling
+          _var = components.style()
+            ._var(_var)
+            .run();
+          break;
+
+        // Create initial elements
+        case 'create':
+
+          // Creating wrappers
+          _var = components.create()
+            ._var(_var)
+            .run();
+          break;
+
+        // Setup x scale top
+        case 'xScale':
+
+          // Creating
+          _var = components.xScale()
+            ._var(_var)
+            .data(_var.data.data)
+            .run();
+          break;
+
+        // Setup y scale
+        case 'yScale':
+
+          // Creating
+          _var = components.yScale()
+            ._var(_var)
+            .data(_var.data.data)
+            .run();
+          break;
+
+        // Setup y scale size
+        case 'yScaleSize':
+
+          // Creating
+          _var = components.yScaleSize()
+            ._var(_var)
+            .data(_var.data.data)
+            .run();
+          break;
+
+        // Setup axis elements
+        case 'axis':
+
+          // Running
+          _var = components.axis()
+            ._var(_var)
+            .action('create')
+            .run();
+          break;
+
+        // Setup brush
+        case 'brush':
+
+          // Running
+          _var = components.brush()
+            ._var(_var)
+            .components(components)
+            .run();
+          break;
+
+        // Setup brush scales
+        case 'brushScale':
+
+          // Running
+          _var = components.brushScale()
+            ._var(_var)
+            .run();
+          break;
+
+        // Setup brush axis elements
+        case 'brushAxis':
+
+          // Running
+          _var = components.brushAxis()
+            ._var(_var)
+            .components(components)
+            .parent(main)
+            .run();
+          break;
+
+        // Setup values
+        case 'values':
+
+          // Draw elements
+          _var = components.values()
+            ._var(_var)
+            .components(components)
+            .run();
+          break;
+
+        // Setup chart elements
+        case 'elements':
+
+          // Running
+          _var = components.elements()
+            ._var(_var)
+            .components(components)
+            .data(_var.data.data)
+            .run();
+          break;
+
+        // Set zoom case
+        case 'zoom':
+
+          // Creating wrappers
+          _var = components.zoom()
+            ._var(_var)
+            .run();
+          break;
+
+        // Show misc
+        case 'misc':
+
+          // Running
+          _var = components.misc()
+            ._var(_var)
+            .components(components)
+            .run();
+          break;
+
+      }
+    }
+
+    return _var;
+  };
+
+  // Expose global variables
+  ['_id', '_var', 'action', 'animation', 'container', 'colors', 'data', 'margin', 'onHover', 'onClick'].forEach(function (key) {
+
+    // Attach variables to validation function
+    validate[key] = function (_) {
+      if (!arguments.length) { eval(`return ${key}`); }
+      eval(`${key} = _`);
+      return validate;
+    };
+
+    // Attach variables to main function
+    return main[key] = function (_) {
+      if (!arguments.length) { eval(`return ${key}`); }
+      eval(`${key} = _`);
+      return main;
+    };
+  });
+
+  // Secondary functions
+  main.run = _ => main("build");
+
+  return main;
+
+}
+
+
+/***/ }),
+
+/***/ "../../../../../src/assets/js/gViz/visualizations/vs-bar-vert-with-brush/axis.js":
+/***/ (function(module, exports, __webpack_require__) {
+
+// Imports
+let d3 = __webpack_require__("../../../../d3/build/d3.js");
+var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
+
+// Module declaration
+module.exports = function () {
+  "use strict";
+
+  // Get attributes values
+  var _var = undefined;
+  var action = 'create';
+
+  // Validate attributes
+  var validate = function validate(step) {
+
+    switch (step) {
+      case 'run':
+        return true;
+      default:
+        return false;
+    }
+  };
+
+  // Main function
+  var main = function main(step) {
+
+    // Validate attributes if necessary
+    if (validate(step)) {
+
+      switch (step) {
+
+        // Build entire visualizations
+        case 'run':
+
+          switch (action) {
+
+            case 'create':
+
+              // Create and update X axis
+              _var.x_axis = _var.g.selectAll(".x.axis").data(['x']);
+              _var.x_axis.exit().remove();
+              _var.x_axis = _var.x_axis.enter().append('g').attr("class", "x axis").merge(_var.x_axis);
+              _var.x_axis.call(_var.xAxis.tickSize(-_var.height)).attr("transform", 'translate(0,' + _var.height + ')')
+              _var.x_axis.selectAll(".tick line").remove()
+              _var.x_axis.selectAll(".tick text").remove()
+
+              // Create and update Y axis
+              _var.y_axis = _var.gClip.selectAll(".y.axis").data(['y']);
+              _var.y_axis.exit().remove();
+              _var.y_axis = _var.y_axis.enter().append('g').attr("class", "y axis").merge(_var.y_axis);
+              _var.y_axis.call(_var.yAxis.tickSize(-_var.width))
+              _var.y_axis.selectAll(".tick line").attr('x1', -3)
+
+              // Remove overlapping tick text
+              _var.y_axis.selectAll(".tick text").filter(function(d) { return d === _var.yTarget; }).remove();
+
+              break;
+
+          }
+          break;
+      }
+    }
+
+    return _var;
+  };
+
+  // Exposicao de variaveis globais
+  ['_var', 'action'].forEach(function (key) {
+
+    // Attach variables to validation function
+    validate[key] = function (_) {
+      if (!arguments.length) {
+        eval('return ' + key);
+      }
+      eval(key + ' = _');
+      return validate;
+    };
+
+    // Attach variables to main function
+    return main[key] = function (_) {
+      if (!arguments.length) {
+        eval('return ' + key);
+      }
+      eval(key + ' = _');
+      return main;
+    };
+  });
+
+  // Executa a funcao chamando o parametro de step
+  main.run = function (_) {
+    return main('run');
+  };
+
+  return main;
+};
+
+function __range__(left, right, inclusive) {
+  var range = [];
+  var ascending = left < right;
+  var end = !inclusive ? right : ascending ? right + 1 : right - 1;
+  for (var i = left; ascending ? i < end : i > end; ascending ? i++ : i--) { range.push(i); }
+  return range;
+}
+
+
+/***/ }),
+
+/***/ "../../../../../src/assets/js/gViz/visualizations/vs-bar-vert-with-brush/bars.js":
+/***/ (function(module, exports, __webpack_require__) {
+
+// Imports
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
+
+// Initialize the visualization class
+module.exports = function() {
+  "use strict";
+
+  // Get attributes values
+  var _var       = null;
+  var animation  = 900;
+  var components = {};
+  var nodeObj    = null;
+  var nodeIndex  = 0;
+  var node       = null;
+
+  // Validate attributes
+  var validate = function(step) {
+    switch (step) {
+      case 'run': return true;
+      default: return false;
+    }
+  };
+
+  // Main function
+  var main = function(step) {
+
+    // Validate attributes if necessary
+    if (validate(step)) {
+
+      switch (step) {
+
+        // Build entire visualizations
+        case 'run':
+
+          // Get parent selection
+          var nodeSel = d3.select(nodeObj);
+
+          // Clean wrap gradients
+          shared.visualComponents.gradient()
+            .action('clean')
+            .run();
+
+          // Draw bars
+          var bars = nodeSel.selectAll("rect.bar").data([node], function(d) { return d.x; });
+          bars.exit().remove();
+          bars = bars.enter().append('rect').attr("class", "bar").merge(bars);
+          bars
+            .style('fill', function(d) { return "url(#gradient-" + shared.helpers.text.removeSpecial(d.x+d.y) + ")"; })
+            .attr("x", function(d) { return _var.x.bandwidth()/2 - _var.barWidth/2; })
+            .attr('width', _var.barWidth)
+            .attr('y', function(d) { return _var.getY(d); })
+            .attr('height', function(d) { return _var.getHeight(d); })
+            .each(function(g) {
+
+              // Set gradient colors
+              var fillColor = +g.y >= 0 ? _var.getColor(g, 'fill') : _var.getColor(g, 'gradient');
+              var gradientColor = +g.y >= 0 ? _var.getColor(g, 'gradient') : _var.getColor(g, 'fill');
+
+              // Set bars gradient
+              shared.visualComponents.gradient()
+                ._var(_var)
+                .id("gradient-"+shared.helpers.text.removeSpecial(g.x+g.y))
+                .colors([
+                  { offset:"0%", color: fillColor },
+                  { offset:"100%", color: gradientColor }
+                ])
+                .direction('vertical')
+                .gType('linear')
+                .wrap(_var.defs)
+                .run();
+
+            });
+
+          // Draw strokes
+          var strokes = nodeSel.selectAll("rect.stroke").data([node], function(d) { return d.x; });
+          strokes.exit().remove();
+          strokes = strokes.enter().append('rect').attr("class", "stroke").merge(strokes);
+          strokes
+            .style('fill', function(d) { return _var.getColor(d, "stroke"); })
+            .attr("x", function(d) { return _var.x.bandwidth()/2 - _var.barWidth/2; })
+            .attr('width', _var.barWidth)
+            .attr('y', function(d) { return _var.y(+d.y); })
+            .attr('height', 2)
+
+          // Draw bar texts
+          var label = (_var.x.bandwidth() - _var.barWidth)/2 > 15 ? [node] : [];
+          var barLabels = nodeSel.selectAll("text.bar-label").data(label, function(d) { return d.x; });
+          barLabels.exit().remove();
+          barLabels = barLabels.enter().append('text').attr("class", "bar-label").merge(barLabels);
+          barLabels
+            .style('fill', function(d) { return _var.getColor(d, "stroke"); })
+            .attr("y", function(d) { return _var.x.bandwidth()/2 + _var.barWidth + 7; })
+            .attr('x', function(d) { return -_var.y(0) + (+d.y >= 0 ? 5 : -5); })
+            .attr('transform', "rotate(-90)")
+            .style('font-size', "11px")
+            .style('text-anchor', function(d) { return +d.y >= 0 ? "start" : "end"; })
+            .text(function(d) { return d.parsedName; })
+            .each(function(d) { shared.helpers.text.wrapBySize(d3.select(this), _var.height/2 - 20, 20, 1); })
+
+
+
+          break;
+      }
+    }
+
+    return _var;
+  };
+
+  // Exposicao de variaveis globais
+  ['_var','animation','components','nodeObj','nodeIndex','node'].forEach(function(key) {
+
+    // Attach variables to validation function
+    validate[key] = function(_) {
+      if (!arguments.length) { eval(`return ${key}`); }
+      eval(`${key} = _`);
+      return validate;
+    };
+
+    // Attach variables to main function
+    return main[key] = function(_) {
+      if (!arguments.length) { eval(`return ${key}`); }
+      eval(`${key} = _`);
+      return main;
+    };
+  });
+
+  // Executa a funcao chamando o parametro de step
+  main.run = _ => main('run');
+
+  return main;
+};
+
+
+/***/ }),
+
+/***/ "../../../../../src/assets/js/gViz/visualizations/vs-bar-vert-with-brush/brush-axis.js":
+/***/ (function(module, exports, __webpack_require__) {
+
+// Imports
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
+
+// Initialize the visualization class
+module.exports = function () {
+  "use strict";
+
+  // Get attributes values
+  var _var = null;
+  var components = null;
+  var parent = null;
+
+  // Validate attributes
+  var validate = function (step) {
+
+    switch (step) {
+      case 'run': return true;
+      default: return false;
+    }
+  };
+
+  // Main function
+  var main = function (step) {
+
+    // Validate attributes if necessary
+    if (validate(step)) {
+
+      switch (step) {
+
+        // Build entire visualizations
+        case 'run':
+
+          // Draw Background rect
+          var bg_rect = _var.gB.selectAll("rect.bg-rect").data(["bg-rect"]);
+          bg_rect.exit().remove();
+          bg_rect = bg_rect.enter().insert('rect', ':first-child').attr("class", "bg-rect").style('fill', '#ccc').merge(bg_rect);
+          bg_rect.style('fill', '#ccc').attr("x", 0).attr('y', 0).attr('width', _var.brushAttrs.width).attr("height", _var.brushAttrs.totalHeight);
+
+          // Draw brush rect
+          var brushRect = _var.gB.selectAll("rect.brush-rect").data(["brush-rect"]);
+          brushRect.exit().remove();
+          brushRect = brushRect.enter().append('rect').attr("class", "brush-rect").style('fill', '#FFF').merge(brushRect);
+          brushRect.style('fill', '#FFF').attr("x", 1).attr('y', 1).attr('width', _var.brushAttrs.width-2).attr("height", _var.brushAttrs.height);
+
+          // Add cells
+          var cells = _var.gB.selectAll("g.node").data(_var.brushAttrs.hRoot.descendants().filter(function(d) { return d.depth !== 0; }));
+          cells.exit().remove();
+          cells = cells.enter().append('g')
+            .attr("class", function(d) { return "node" + (d.children != null && d.children.length > 0 ? " node--internal" : " node--leaf"); })
+            .merge(cells);
+
+          // Update transform and add elements
+          cells
+            .attr("transform", function(d) { return "translate(" + d.x0 + "," + (d.y1 - _var.brushAttrs.height - 1) + ")";})
+            .each(function(c) {
+
+              // Set html object
+              c.data.obj = this;
+
+              // Draw cell rect
+              var nodeRect = d3.select(this).selectAll("rect.node-rect").data([c]);
+              nodeRect.exit().remove();
+              nodeRect = nodeRect.enter().append('rect').attr("class", "node-rect").merge(nodeRect);
+              nodeRect
+                .attr("width", function(d) { return d.x1 - d.x0; })
+                .attr("height", function(d) { return d.y1 - d.y0; })
+                .style("fill", "#FFF")
+
+              // Draw cell text
+              var nodeText = d3.select(this).selectAll("text.node-text").data([c]);
+              nodeText.exit().remove();
+              nodeText = nodeText.enter().append('text').attr("class", "node-text").merge(nodeText);
+              nodeText
+                .attr('text-anchor', 'middle')
+                .attr("x", function(d) { return (d.x1 - d.x0)/2; })
+                .attr("y", function(d) { return (d.y1 - d.y0)/2 + 3; })
+                .style('font-size', function(d) { return d.children == null || d.children.length === 0 ? "9px" : "10px"; })
+                .text(function(d) { return d.data.name; })
+
+            });
+
+            cells.on('click', function(d) {
+
+              // If the brush was created
+              if(_var.brush != null) { _var.gB.select(".brush").call(_var.brush.move, [d.x0, d.x1]); }
+
+            }).on('mouseover', function(d) {
+
+              // If the brush was created
+              if(_var.brush != null) {
+
+                // Mark as hovered
+                d3.select(this).classed('hovered', true);
+
+                // // Get brush snap
+                // _var.brushGetSnap([d.x0, d.x1]);
+
+                // // Update elements
+                // _var.brushUpdate()
+
+              }
+
+            }).on('mouseout', function(d) {
+
+              // If the brush was created
+              if(_var.brush != null) {
+
+                // Mark as hovered
+                d3.select(this).classed('hovered', false);
+
+                // // Get brush snap
+                // _var.brushGetSnap(_var.brushAttrs.pixelBounds);
+
+                // // Update elements
+                // _var.brushUpdate()
+
+              }
+
+            });
+
+            function findNode(id, node) {
+
+              // If the node is the one
+              if(node.id === id) return node;
+
+              // If the node is not the one
+              var result = null;
+              if(node.children != null) {
+                node.children.forEach(function(c) {
+                  var n = findNode(id, c);
+                  if(n != null) { result = n; }
+                });
+              }
+              return result
+            }
+
+          break;
+      }
+    }
+
+    return _var;
+  };
+
+  // Exposicao de variaveis globais
+  ['_var','components','parent'].forEach(function (key) {
+
+    // Attach variables to validation function
+    validate[key] = function (_) {
+      if (!arguments.length) {
+        eval('return ' + key);
+      }
+      eval(key + ' = _');
+      return validate;
+    };
+
+    // Attach variables to main function
+    return main[key] = function (_) {
+      if (!arguments.length) {
+        eval('return ' + key);
+      }
+      eval(key + ' = _');
+      return main;
+    };
+  });
+
+  // Executa a funcao chamando o parametro de step
+  main.run = function (_) {
+    return main('run');
+  };
+
+  return main;
+};
+
+
+/***/ }),
+
+/***/ "../../../../../src/assets/js/gViz/visualizations/vs-bar-vert-with-brush/brush-scale.js":
+/***/ (function(module, exports, __webpack_require__) {
+
+// Imports
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
+
+// Initialize the visualization class
+module.exports = function () {
+  "use strict";
+
+  // Get attributes values
+  var _var = undefined;
+
+  // Validate attributes
+  var validate = function (step) {
+
+    switch (step) {
+      case 'run': return true;
+      default: return false;
+    }
+  };
+
+  // Main function
+  var main = function (step) {
+
+    // Validate attributes if necessary
+    if (validate(step)) {
+
+      switch (step) {
+
+        // Build entire visualizations
+        case 'run':
+
+          // Update brush scale width based on the new calculated width from y scale size
+          _var.brushAttrs.width = _var.width;
+
+          // Initialize root nodes for brush data
+          _var.brushAttrs.root = { id: "Root Node", children: [] };
+
+          // Get brush bins based on number of elements on data array
+          _var.brushAttrs.bins = [[0,10],[10,20],[20,50],[50,100],[100,250],[250,500],[500,1000],[1000, _var.data.data.length]].filter(function(a) { return a[0] < _var.data.data.length; });
+          _var.brushAttrs.bins[_var.brushAttrs.bins.length-1][1] = _var.data.data.length;
+
+          // Map brush bins into root children to draw hierarchy
+          _var.brushAttrs.root.children = _var.brushAttrs.bins.map(function(d, i) {
+            return {
+              id: 'bin-' + i,
+              type: 'bin',
+              label: '',
+              name: 'Top ' + (d[0]+1) + ' - ' + d[1],
+              values: [d[0],d[1]],
+              v: Math.log(d3.min([(d[1] - d[0]), 1000]))
+            };
+          });
+
+          // Set hierarchy layout for root and labels
+          _var.brushAttrs.hRoot = d3.hierarchy(_var.brushAttrs.root).sum(function(d) { return +d.v; });
+
+          // Initialize partition layout
+          var partition = d3.partition()
+              .size([ _var.brushAttrs.width , _var.brushAttrs.totalHeight ])
+              .padding(1);
+
+          // Partition on root nodes
+          partition(_var.brushAttrs.hRoot);
+
+          // Initialize max depth and labels
+          _var.brushAttrs.maxDepth = 0;
+
+          // Iterate over descendants
+          _var.brushAttrs.hRoot.descendants().forEach(function(d, i) {
+
+            // Get tAxis Height
+            if(i === 0) { _var.brushAttrs.height = Math.abs(d.y1 - d.y0); }
+
+            // Update max depth
+            if(_var.brushAttrs.maxDepth < d.depth+1) { _var.brushAttrs.maxDepth = d.depth+1; }
+
+          });
+
+          // Initialize scale
+          _var.brushAttrs.scale = d3.scaleLinear().domain([0, _var.brushAttrs.width]).range([0, _var.brushAttrs.width]);
+
+          break;
+      }
+    }
+
+    return _var;
+  };
+
+  // Exposicao de variaveis globais
+  ['_var'].forEach(function (key) {
+
+    // Attach variables to validation function
+    validate[key] = function (_) {
+      if (!arguments.length) {
+        eval('return ' + key);
+      }
+      eval(key + ' = _');
+      return validate;
+    };
+
+    // Attach variables to main function
+    return main[key] = function (_) {
+      if (!arguments.length) {
+        eval('return ' + key);
+      }
+      eval(key + ' = _');
+      return main;
+    };
+  });
+
+  // Executa a funcao chamando o parametro de step
+  main.run = function (_) {
+    return main('run');
+  };
+
+  return main;
+};
+
+
+/***/ }),
+
+/***/ "../../../../../src/assets/js/gViz/visualizations/vs-bar-vert-with-brush/brush.js":
+/***/ (function(module, exports, __webpack_require__) {
+
+// Imports
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
+
+// Initialize the visualization class
+module.exports = function () {
+  "use strict";
+
+  // Get attributes values
+  var _var = undefined;
+  var components = null;
+
+  // Validate attributes
+  var validate = function (step) {
+
+    switch (step) {
+      case 'run': return true;
+      default: return false;
+    }
+  };
+
+  // Main function
+  var main = function (step) {
+
+    // Validate attributes if necessary
+    if (validate(step)) {
+
+      switch (step) {
+
+        // Build entire visualizations
+        case 'run':
+
+            // Initialize brush
+            _var.brush = d3.brushX()
+              .extent([[0, 0], [_var.brushAttrs.width-1, _var.brushAttrs.height]])
+              .on("start", brushstart)
+              .on("brush", brushing)
+              .on("end", brushended)
+
+            // Initialize pixel bounds
+            _var.brushAttrs.pixelBounds = [0, _var.brushAttrs.width];
+
+            // Insert brush
+            _var.brushText = _var.gB.selectAll(".brush-text").data(["brush-text"]);
+            _var.brushText.exit().remove();
+            _var.brushText = _var.brushText.enter().append('text').attr("class", "brush-text").merge(_var.brushText);
+            _var.brushText
+              .attr("text-anchor", "middle")
+              .attr("x", _var.brushAttrs.width/2)
+              .attr("y", _var.brushAttrs.height/2 + 4)
+              .text("Select the values extent here")
+
+            // Insert brush
+            var brushSel = _var.gB.selectAll(".brush").data(["brush"]);
+            brushSel.exit().remove();
+            brushSel = brushSel.enter().append('g').attr("class", "brush").merge(brushSel);
+            brushSel.call(_var.brush).attr('transform', 'translate(0,1)');
+
+            // Brush custom handles
+            var handle = brushSel.selectAll(".handle--custom").data([{type: "w"}, {type: "e"}]);
+            handle.exit().remove();
+            handle = handle.enter().append("path").attr("class", "handle--custom").merge(handle);
+            handle
+              .attr("display", "none")
+              .attr("fill", "#f06196")
+              .attr("fill-opacity", 0.8)
+              .attr("stroke", "#f06196")
+              .attr("stroke-width", .5)
+              .attr("cursor", "ew-resize")
+              .attr("d", function(d) {
+                var tH = _var.brushAttrs.height, h = 6, p = 3;
+                return `M ${0},${-tH/2} ${0},${tH/2} Z M ${-h/2-p},${0} ${-p},${-h/2} ${-p},${h/2} Z M ${h/2+p},${0} ${p},${-h/2} ${p} ${h/2} Z`;
+              });
+
+            function brushstart() {}
+
+            function brushing() {
+
+              // Only transition after input.
+              if (d3.event == null || d3.event.sourceEvent == null) return;
+
+              // Ignore empty selections.
+              if (d3.event == null || d3.event.selection == null) return;
+
+              // Get brush bounds
+              var d0 = d3.event.selection.map(_var.brushAttrs.scale.invert);
+
+              // Update brush text
+              if(_var.brushText != null) { _var.brushText.attr("x", d3.mean(d0)).text("III"); }
+
+              // Update brush
+              handle.attr("display", null).attr("transform", function(d, i) { return "translate(" + d0[i] + "," + (_var.brushAttrs.height/2) + ")"; });
+
+            }
+
+            function brushended() {
+
+              // Only transition after input.
+              if (d3.event == null || d3.event.sourceEvent == null) return;
+
+              // Reset selected
+              _var.gB.selectAll(".node").classed('selected',false);
+
+              // Ignore empty selections.
+              if (d3.event == null || d3.event.selection == null) {
+
+                // Get snap interval
+                var d1 = _var.brushGetSnap(_var.brushAttrs.pixelBounds);
+
+              } else {
+
+                // Get snap interval
+                var d1 = _var.brushGetSnap(d3.event.selection.map(_var.brushAttrs.scale.invert));
+
+              }
+
+              // Update brush text
+              if(_var.brushText != null) { _var.brushText.attr("x", d3.mean(d1)).text("III"); }
+
+              // Update pixelBounds
+              _var.brushAttrs.pixelBounds = d1;
+
+              // Mark selected
+              markSelected(d1);
+
+              // Snap to borders
+              d3.select(this).transition().call(d3.event.target.move, d1);
+
+              // Update brush
+              handle.attr("display", null).transition()
+                .attr("transform", function(d, i) { return "translate(" + d1[i] + "," + (_var.brushAttrs.height/2) + ")"; });
+
+              // Update elements
+              _var.brushUpdate();
+
+            }
+
+            // Update elements
+            _var.brushUpdate = function () {
+
+              // Draw elements
+              _var = components.values()
+                ._var(_var)
+                .components(components)
+                .run();
+
+              // Creating
+              _var = components.xScale()
+                ._var(_var)
+                .data(_var.values)
+                .run();
+
+              // Running
+              _var = components.axis()
+                ._var(_var)
+                .action('create')
+                .run();
+
+              // Draw elements
+              _var = components.elements()
+                ._var(_var)
+                .components(components)
+                .data(_var.values)
+                .run();
+
+            }
+
+            _var.brushGetSnap = function (d0) {
+
+              // Fix bounds[0]
+              if(d0[0] < 0) { d0[0] = 0; }
+              if(d0[0] > _var.brushAttrs.width) { d0[0] = _var.brushAttrs.width; }
+
+              // Fix bounds[1]
+              if(d0[1] < 0) { d0[1] = 0; }
+              if(d0[1] > _var.brushAttrs.width) { d0[1] = _var.brushAttrs.width; }
+
+              // Set d1
+              var d1 = d0;
+
+              // Get leaves
+              var leaves = _var.brushAttrs.hRoot.leaves();
+
+              // Get bounds
+              var bounds = [];
+              var boundsIndex = [];
+              leaves.forEach(function(n, i) {
+                if((Math.abs(n.x0-d0[0]) <= 1 || n.x0 <= d0[0]) && (Math.abs(n.x1-d0[0]) <= 1 || n.x1 >= d0[0])) { bounds[0] = n; boundsIndex[0] = i; }
+                if((Math.abs(n.x0-d0[1]) <= 1 || n.x0 <= d0[1]) && (Math.abs(n.x1-d0[1]) <= 1 || n.x1 >= d0[1])) { bounds[1] = n; boundsIndex[1] = i; }
+              });
+
+              if(bounds[0] != null && bounds[1] != null) {
+
+                // Get snap
+                _var.brushAttrs.bounds  = [];
+
+                // Get snap and limits for bounds[0]
+                if(bounds[0] != null) {
+                  if(bounds[1] == null) { _var.brushAttrs.bounds = bounds[0].data.values; }
+                  if(d0[0] <= (bounds[0].x1 + bounds[0].x0)/2) {
+                    d1[0] = bounds[0].x0;
+                    _var.brushAttrs.bounds[0] = bounds[0].data.values[0];
+                  } else {
+                    d1[0] = bounds[0].x1;
+                    if(leaves[boundsIndex[0]+1] != null) { _var.brushAttrs.bounds[0] = leaves[boundsIndex[0]+1].data.values[0]; }
+                  }
+                }
+
+                // Get snap and limits for bounds[1]
+                if(bounds[1] != null) {
+                  if(bounds[0] == null) { _var.brushAttrs.bounds = bounds[1].data.values; }
+                  if(d0[1] <= (bounds[1].x1 + bounds[1].x0)/2) {
+                    d1[1] = bounds[1].x0;
+                    if(leaves[boundsIndex[1]-1] != null) { _var.brushAttrs.bounds[1] = leaves[boundsIndex[1]-1].data.values[1]; }
+                  } else {
+                    d1[1] = bounds[1].x1;
+                    _var.brushAttrs.bounds[1] = bounds[1].data.values[1];
+                  }
+                }
+
+                // Fix no interval for left side
+                if(bounds[0] != null && bounds[0].x1 === d1[0] && Math.abs(d1[0] - d1[1]) <= 1 ) {
+                  d1[0] = bounds[0].x0;
+                  _var.brushAttrs.bounds[0] = bounds[0].data.values[0];
+                }
+
+                // Fix no interval for right side
+                if(bounds[1] != null && bounds[1].x0 === d1[1] && Math.abs(d1[0] - d1[1]) <= 1 ) {
+                  d1[1] = bounds[1].x1;
+                  _var.brushAttrs.bounds[1] = bounds[1].data.values[1];
+                }
+
+              }
+
+              return d1;
+
+            }
+
+            function markSelected(d1) {
+
+              // Mark selected
+              var parents = {};
+              _var.brushAttrs.hRoot.leaves().forEach(function(n) {
+
+                // Selected nodes
+                var selected = (n.x0 <= d1[0] && n.x1 > d1[0]) || (n.x0 < d1[1] && n.x1 >= d1[1]) || (n.x0 >= d1[0] && n.x1 <= d1[1]);
+                d3.select(n.data.obj).classed("selected", selected);
+                d3.select(n.parent.data.obj).classed("selected", false);
+                if(selected && n.parent != null) { parents[n.parent.data.id] = n.parent; }
+
+              });
+
+              // Mark parents selected
+              Object.keys(parents).forEach(function(p) {  d3.select(parents[p].data.obj).classed("selected", true); })
+
+            }
+
+          break;
+      }
+    }
+
+    return _var;
+  };
+
+  // Exposicao de variaveis globais
+  ['_var','components'].forEach(function (key) {
+
+    // Attach variables to validation function
+    validate[key] = function (_) {
+      if (!arguments.length) {
+        eval('return ' + key);
+      }
+      eval(key + ' = _');
+      return validate;
+    };
+
+    // Attach variables to main function
+    return main[key] = function (_) {
+      if (!arguments.length) {
+        eval('return ' + key);
+      }
+      eval(key + ' = _');
+      return main;
+    };
+  });
+
+  // Executa a funcao chamando o parametro de step
+  main.run = function (_) {
+    return main('run');
+  };
+
+  return main;
+};
+
+
+/***/ }),
+
+/***/ "../../../../../src/assets/js/gViz/visualizations/vs-bar-vert-with-brush/create.js":
+/***/ (function(module, exports, __webpack_require__) {
+
+// Imports
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
+
+// Initialize the visualization class
+module.exports = function () {
+  "use strict";
+
+  // Get attributes values
+  var _var = undefined;
+  var animation = 900;
+
+  // Validate attributes
+  var validate = function (step) {
+    switch (step) {
+      case 'run': return true;
+      default: return false;
+    }
+  };
+
+  // Main function
+  var main = function (step) {
+
+    // Validate attributes if necessary
+    if (validate(step)) {
+
+      switch (step) {
+
+        // Build entire visualizations
+        case 'run':
+
+          // Draw svg
+          _var.wrap = _var.container.d3.selectAll(`svg.chart-${_var._id}`).data(["chart-svg"], d => d);
+          _var.wrap.exit().remove();
+          _var.wrap = _var.wrap.enter().append("svg").attr('class', `grouped-bar-chart chart-${_var._id}`).merge(_var.wrap); // svg
+
+          // Update outer dimensions
+          _var.wrap
+            .style('overflow','visible')
+            .attr("width", _var.width + _var.margin.left + _var.margin.right)
+            .attr("height", _var.height + _var.margin.top + _var.margin.bottom);
+
+          // Draw g
+          _var.g = _var.wrap.selectAll("g.chart-wrap").data(["chart-wrap"]); // svg:g
+          _var.g.exit().remove();
+          _var.g = _var.g.enter().append('g').attr('class', "chart-wrap").merge(_var.g);
+          _var.g.attr("transform", `translate(${_var.margin.left},${_var.margin.top})`).attr('clip-path', 'url(#clip-path-'+_var._id+')');
+
+          // Draw g
+          _var.gClip = _var.wrap.selectAll("g.chart-wrap-clip").data(["chart-wrap-clip"]); // svg:g
+          _var.gClip.exit().remove();
+          _var.gClip = _var.gClip.enter().insert('g',':first-child').attr('class', "chart-wrap-clip").merge(_var.gClip);
+          _var.gClip.attr("transform", `translate(${_var.margin.left},${_var.margin.top})`);
+
+          // Draw gT for t-axis-wrap
+          _var.gB = _var.wrap.selectAll("g.brush-wrap").data(["brush-wrap"]); // svg:g
+          _var.gB.exit().remove();
+          _var.gB = _var.gB.enter().append('g').attr('class', "brush-wrap").merge(_var.gB);
+          _var.gB.attr("transform", `translate(${_var.margin.left},${_var.height + _var.margin.top + 20})`);
+
+          // Draw defs
+          _var.defs = _var.wrap.selectAll("defs.svg-defs").data(["svg-defs"]);
+          _var.defs.exit().remove();
+          _var.defs = _var.defs.enter().insert('defs',':first-child').attr("class", "svg-defs").merge(_var.defs);
+
+          // Draw shadow
+          shared.visualComponents.shadow()
+            ._var(_var)
+            .wrap(_var.wrap)
+            .id(_var.shadowId)
+            .run();
+
+          break;
+      }
+    }
+
+    return _var;
+  };
+
+  // Exposicao de variaveis globais
+  ['_var', 'animation'].forEach(function (key) {
+
+    // Attach variables to validation function
+    validate[key] = function (_) {
+      if (!arguments.length) { eval(`return ${key}`); }
+      eval(`${key} = _`);
+      return validate;
+    };
+
+    // Attach variables to main function
+    return main[key] = function (_) {
+      if (!arguments.length) { eval(`return ${key}`); }
+      eval(`${key} = _`);
+      return main;
+    };
+  });
+
+  // Executa a funcao chamando o parametro de step
+  main.run = _ => main('run');
+
+  return main;
+};
+
+
+/***/ }),
+
+/***/ "../../../../../src/assets/js/gViz/visualizations/vs-bar-vert-with-brush/elements.js":
+/***/ (function(module, exports, __webpack_require__) {
+
+// Imports
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
+
+// Initialize the visualization class
+module.exports = function () {
+  "use strict";
+
+  // Get attributes values
+  var _var       = null;
+  var components = null;
+  var data       = null;
+
+  // Validate attributes
+  var validate = function (step) {
+    switch (step) {
+      case 'run': return true;
+      default: return false;
+    }
+  };
+
+  // Main function
+  var main = function (step) {
+
+    // Validate attributes if necessary
+    if (validate(step)) {
+
+      switch (step) {
+
+        // Build entire visualizations
+        case 'run':
+
+          // Set data array
+          var _data = (data == null ? _var.data.data : data);
+
+          // Element canvas
+          var elements = _var.g.selectAll(".chart-elements").data(["chart-elements"]);
+          elements.exit().remove();
+          elements = elements.enter().append("g").attr("class", "chart-elements").merge(elements);
+
+          // Create groups
+          var groups = elements.selectAll(".element-group").data(_data, function (d) { return d.x; });
+          groups.exit().remove();
+          groups = groups.enter().append("g").attr("class", "element-group").merge(groups);
+
+          // For each element in group
+          groups.transition().duration(200)
+            .attr("transform", function (d) { return `translate(${_var.x(d.x)},0)`; })
+            .each(function (e, i) {
+
+              // Mouseover event
+              components.bars()
+                ._var(_var)
+                .components(components)
+                .nodeIndex(i)
+                .nodeObj(this)
+                .node(e)
+                .run();
+
+            });
+
+            // Event bindings
+            elements.selectAll('.bar, .stroke').on('mouseover', function(e) {
+
+              // Set hovered node
+              _var.hovered = e;
+
+              // Mouseover event
+              components.events()
+                ._var(_var)
+                .action("mouseover")
+                .components(components)
+                .node(e)
+                .run();
+
+              // Trigger onHover attribute function
+              if(_var.onHover != null && typeof _var.onHover === "function") { _var.onHover(e); }
+
+            }).on('mouseout', function(e) {
+
+              // Reset hovered node
+              _var.hovered = null;
+
+              // Mouseout event
+              components.events()
+                ._var(_var)
+                .action("mouseout")
+                .components(components)
+                .run();
+
+            }).on('click', function(e) {
+
+              // Trigger onClick attribute function
+              if(_var.onClick != null && typeof _var.onClick === "function") { _var.onClick(e); }
+
+            });
+
+          // Draw Background clip Path
+          _var.bgClip = _var.defs.selectAll(".bg-clip").data(["bg-clip"]);
+          _var.bgClip.exit().remove();
+          _var.bgClip = _var.bgClip.enter().insert('clipPath', ':first-child').attr("class", "bg-clip").merge(_var.bgClip);
+          _var.bgClip
+            .attr("id", "clip-path-"+_var._id)
+            .each(function() {
+
+              // Draw Background rect
+              _var.bgClipRect = d3.select(this).selectAll("rect.bg-rect").data(["bg-rect"]);
+              _var.bgClipRect.exit().remove();
+              _var.bgClipRect = _var.bgClipRect.enter().insert('rect', ':first-child').attr("class", "bg-rect").style('fill', 'transparent').merge(_var.bgClipRect);
+              _var.bgClipRect
+                .style('fill', 'transparent')
+                .attr("x", 0)
+                .attr('y', -_var.margin.top)
+                .attr('width', _var.width + _var.margin.right + 1)
+                .attr("height", _var.height + _var.margin.bottom + 2*_var.margin.top);
+
+            });
+
+          break;
+      }
+    }
+
+    return _var;
+  };
+
+  // Exposicao de variaveis globais
+  ['_var','components','data'].forEach(function (key) {
+
+    // Attach variables to validation function
+    validate[key] = function (_) {
+      if (!arguments.length) { eval(`return ${key}`); }
+      eval(`${key} = _`);
+      return validate;
+    };
+
+    // Attach variables to main function
+    return main[key] = function (_) {
+      if (!arguments.length) { eval(`return ${key}`); }
+      eval(`${key} = _`);
+      return main;
+    };
+  });
+
+  // Executa a funcao chamando o parametro de step
+  main.run = _ => main('run');
+
+  return main;
+};
+
+
+/***/ }),
+
+/***/ "../../../../../src/assets/js/gViz/visualizations/vs-bar-vert-with-brush/events.js":
+/***/ (function(module, exports, __webpack_require__) {
+
+// Imports
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
+
+// Initialize the visualization class
+module.exports = function () {
+  "use strict";
+
+  // Get attributes values
+  var _var       = null;
+  var action     = 'mouseover';
+  var components = null;
+  var node       = null;
+
+  // Validate attributes
+  var validate = function (step) {
+
+    switch (step) {
+      case 'run': return true;
+      default: return false;
+    }
+  };
+
+  // Main function
+  var main = function (step) {
+
+    // Validate attributes if necessary
+    if (validate(step)) {
+
+      switch (step) {
+
+        // Run code
+        case 'run':
+
+          // Set strokes and bars
+          var strokes  = _var.g.select('.chart-elements').selectAll('.stroke, .wrapper-stroke')
+          var bars   = _var.g.select('.chart-elements').selectAll('.bar, .wrapper-bar')
+
+          switch (action) {
+
+            case 'mouseover':
+
+              // Fade strokes
+              strokes.transition().style('opacity', function(g) { return g.x === node.x ? 1 : 0.2; })
+
+              // Fade bars
+              bars.transition()
+                .style('opacity', function(g) { return g.x === node.x ? 1 : 0.2; })
+                .style("filter", function(g) { return g === node ? "url(#"+_var.shadowId+")" : ""; })
+
+              // Get x and y values
+              var x = _var.x(node.x) + _var.x.bandwidth()/2;
+              var y = _var.getY(node);
+
+              // Get left and top positions
+              var left = _var.wrap.node().getBoundingClientRect().left + x + _var.zoomTransform.x;
+              var top  = _var.wrap.node().getBoundingClientRect().top + _var.margin.top + y;
+
+              // Set node color
+              var nodeColor = _var.getColor(node, 'stroke');
+
+              // Initialize tooltip object
+              var tooltipObj = { color: nodeColor  };
+
+              // Set node attributes to tooltip obj
+              Object.keys(node).forEach(function(k) { tooltipObj[k] = node[k]; });
+
+              // Set x and y values with format
+              tooltipObj.x = _var.xFormat(node.x);
+              tooltipObj.y = _var.yFormat(node.y);
+
+              // Set bars component
+              shared.visualComponents.tooltip()
+                ._var(_var)
+                .body(_var.data.tooltip != null && _var.data.tooltip.body != null ? _var.data.tooltip.body : "")
+                .muted(_var.data.tooltip != null && _var.data.tooltip.muted != null && _var.data.tooltip.muted === true)
+                .borderColor(nodeColor)
+                .left(left)
+                .hasImg(_var.data.tooltip != null && _var.data.tooltip.hasImg === true)
+                .obj(tooltipObj)
+                .top(top)
+                .title(_var.data.tooltip != null && _var.data.tooltip.title != null ? _var.data.tooltip.title : "")
+                .run();
+
+              break;
+
+            case 'mouseout':
+
+              // Reset opacity and filter
+              strokes.transition().style('opacity', 1)
+              bars.transition().style('opacity', 1).style("filter", "")
+
+              // Set bars component
+              shared.visualComponents.tooltip()
+                ._var(_var)
+                .action("hide")
+                .run();
+
+              break;
+          }
+
+          break;
+      }
+    }
+
+    return _var;
+  };
+
+  // Exposicao de variaveis globais
+  ['_var','action','components','node'].forEach(function (key) {
+
+    // Attach variables to validation function
+    validate[key] = function (_) {
+      if (!arguments.length) {
+        eval('return ' + key);
+      }
+      eval(key + ' = _');
+      return validate;
+    };
+
+    // Attach variables to main function
+    return main[key] = function (_) {
+      if (!arguments.length) {
+        eval('return ' + key);
+      }
+      eval(key + ' = _');
+      return main;
+    };
+  });
+
+  // Executa a funcao chamando o parametro de step
+  main.run = function (_) {
+    return main('run');
+  };
+
+  return main;
+};
+
+
+/***/ }),
+
+/***/ "../../../../../src/assets/js/gViz/visualizations/vs-bar-vert-with-brush/initialize.js":
+/***/ (function(module, exports, __webpack_require__) {
+
+// Imports
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
+
+// Initialize the visualization class
+module.exports = function () {
+  "use strict";
+
+  // Get attributes values
+  let _id = null;
+  let _var = null;
+  let animation = 900;
+  let container = null;
+  var colors = { main: shared.helpers.colors.main, aux: shared.helpers.colors.aux };
+  let data = [];
+  let margin = { top: 10, right: 10, bottom: 10, left: 10 };
+
+  // Events bindings
+  let onHover = function(d) { console.log(d); };
+  let onClick = function(d) { console.log(d); };
+
+  // Specifics
+  let totals = true;
+
+  // Validate attributes
+  let validate = function (step) {
+    switch (step) {
+      case 'run': return true;
+      default: return false;
+    }
+  };
+
+  // Main function
+  let main = function (step) {
+
+    // Validate attributes if necessary
+    if (validate(step)) {
+
+      switch (step) {
+
+        // Build entire visualizations
+        case 'run':
+
+          // Initialize variables
+          if (!_var) { _var = {}; }
+          _var._id = _id;
+          _var.animation = animation;
+          _var.colors = colors;
+          _var.margin = margin;
+          _var.onHover = onHover;
+          _var.onClick = onClick;
+
+          // Id for shadows
+          _var.shadowId = `vis-shadow-${Math.floor(Math.random() * ((1000000000 - 5) + 1)) + 5}`
+
+          // Set zoom transform
+          if(_var.zoomTransform == null) { _var.zoomTransform = { k: 1, x: _var.margin.left, y: _var.margin.top }; }
+
+           // Get container
+          _var.container = {
+            selector: container,
+            d3: d3.select(container),
+            el: ((typeof container === 'string' || container instanceof String) ? container : d3.select(container).node()),
+            outerWrapper: d3.select(container).closest('.gViz-outer-wrapper'),
+            outerWrapperClientRect: d3.select(container).closest('.gViz-outer-wrapper').node().getBoundingClientRect(),
+            dimensions: {}
+          };
+
+          // Store data
+          data.data = data.data.sort(function(a,b) { return d3.descending(Math.abs(+a.y), Math.abs(+b.y)); });
+          _var.data = data;
+
+          // Get bar width from the attrs
+          _var.barWidth = _var.data.attrs != null && _var.data.attrs.barWidth != null && !isNaN(+_var.data.attrs.barWidth) ? +_var.data.attrs.barWidth : 10;
+
+          break;
+      }
+    }
+
+    return _var;
+  };
+
+  // Expose global variables
+  ['_id', '_var', 'animation', 'container', 'colors', 'data', 'onClick', 'onHover', 'margin'].forEach(function (key) {
+
+    // Attach variables to validation function
+    validate[key] = function (_) {
+      if (!arguments.length) { eval(`return ${key}`); }
+      eval(`${key} = _`);
+      return validate;
+    };
+
+    // Attach variables to main function
+    return main[key] = function (_) {
+      if (!arguments.length) { eval(`return ${key}`); }
+      eval(`${key} = _`);
+      return main;
+    };
+  });
+
+  // Execute the specific called function
+  main.run = _ => main('run');
+
+  return main;
+};
+
+
+/***/ }),
+
+/***/ "../../../../../src/assets/js/gViz/visualizations/vs-bar-vert-with-brush/misc.js":
+/***/ (function(module, exports, __webpack_require__) {
+
+// Imports
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
+
+// Initialize the visualization class
+module.exports = function() {
+  "use strict";
+
+  // Get attributes values
+  var _var       = undefined;
+  var action     = "start";
+  var components = {};
+
+  // Validate attributes
+  var validate = function(step) {
+    switch (step) {
+      case 'run': return true;
+      default: return false;
+    }
+  };
+
+  // Main function
+  var main = function(step) {
+
+    // Validate attributes if necessary
+    if (validate(step)) {
+
+      switch (step) {
+
+        // Build entire visualizations
+        case 'run':
+
+          switch (action) {
+
+            // First action to be done
+            case 'start':
+
+              /* -- Visualization Title -- */
+              // Has title flag
+              var hasTitle = _var.data.title != null && _var.data.title !== "";
+              _var.container.dimensions.title = hasTitle ? 35 : 0;
+
+              // Draw title wrapper
+              var titleWrapper = _var.container.outerWrapper.selectAll(".gviz-title-wrapper").data(["gviz-title-wrapper"]);
+              titleWrapper.exit().remove();
+              titleWrapper = titleWrapper.enter().insert('div', ":first-child").attr('class', "gviz-title-wrapper").merge(titleWrapper);
+              titleWrapper
+                .style('width', '100%')
+                .style('height', '30px')
+                .style('line-height', '30px')
+                .style('margin', '0px 0px 5px 0px')
+                .style('padding', '0px 10px')
+                .style('oveflow', 'hidden')
+                .style('white-space', 'nowrap')
+                .style('text-overflow', 'ellipsis')
+                .style('background-color', '#eee')
+                .style('color', '#666')
+                .style('font-size', '15px')
+                .style('font-weight', 'lighter')
+                .style('display', hasTitle ? 'block' : 'none')
+                .html(_var.data.title)
+
+              /* -- Axis and Legend -- */
+              // Set axis string
+              var yTitle = (_var.data.y != null && _var.data.y.title != null && _var.data.y.title !== "" ? "<b>Y - </b>"+_var.data.y.title : "");
+              var xTitle = (_var.data.x != null && _var.data.x.title != null && _var.data.x.title !== "" ? "<b>X - </b>"+_var.data.x.title : "");
+
+              // Set axis title
+              if(yTitle !== "" && xTitle !== "") { _var.axisTitle = yTitle+" / "+xTitle; }
+              else if(yTitle !== "" && xTitle === "") { _var.axisTitle = yTitle; }
+              else if(yTitle === "" && xTitle !== "") { _var.axisTitle = xTitle; }
+              else { _var.axisTitle = ""; }
+
+              // Iterate over data to get legends for positive and negative values
+              var legendDomain = {};
+              var legendDomainNeg = {};
+              var numElements = 0;
+              _var.data.data.forEach(function(d) {
+                numElements += 1;
+                if(+d.y >= 0) { legendDomain[d.x] = d; }
+                else { legendDomainNeg[d.x] = d; }
+              });
+
+              // Initialize string
+              var string = _var.axisTitle === "" ? "" : "<span class='axis-title'>" + _var.axisTitle + "</span>";
+              var stringObj = {};
+
+              // Iterate over legend domains
+              var legendDomain = Object.keys(legendDomain).map(function(k) { return legendDomain[k]; })
+              var legendDomainNeg = Object.keys(legendDomainNeg).map(function(k) { return legendDomainNeg[k]; })
+              legendDomain.concat(legendDomainNeg).forEach(function(d) {
+
+                // Get color
+                var fillColor = d == null || d.fill == null ? "#666" : _var.getColor(d);
+                var strokeColor = d == null || d.stroke == null ? "#333" : _var.getColor(d, 'stroke');
+                var legend = _var.data.legend != null && _var.data.legend.text != null ? _var.data.legend.text : "{{name}}";
+                var legendStr = "";
+
+                // Add rect for objw
+                legendStr += "<span class='legend-content' >";
+                legendStr += "<span class='rect' style='background-color:"+fillColor+" ; border-top: 2px solid "+strokeColor+";'></span><span class='name'>";
+                legendStr += shared.helpers.text.replaceVariables(legend, d);
+                legendStr += "</span>";
+                legendStr += "</span>";
+
+                // If the legend str wasnt computed, add to legend
+                if(stringObj[legendStr] == null) {
+                  stringObj[legendStr] = true;
+                  string += legendStr;
+                }
+
+              });
+
+              // Set margin left and display style
+              var hasLegend = _var.data.legend != null && _var.data.legend.isVisible != null && _var.data.legend.isVisible === true;
+              var legendWrapper = _var.container.outerWrapper.selectAll(".gviz-legend-wrapper").data(["gviz-legend-wrapper"]);
+              legendWrapper.exit().remove();
+              legendWrapper = legendWrapper.enter().append("div").attr('class', "gviz-legend-wrapper").merge(legendWrapper);
+              legendWrapper
+                .style('width', '100%')
+                .style('height', 'auto')
+                .style('max-height', '60px')
+                .style('line-height', '30px')
+                .style('margin', '0px 0px 5px 0px')
+                .style('padding', '0px 10px')
+                .style('overflow', 'hidden')
+                .style('color', '#666')
+                .style('font-size', '13px')
+                .style('z-index', "1005")
+                .style('position', 'absolute')
+                .style('top', hasTitle ? "35px" : "0px")
+                .style('left', "0px")
+                .style('display', hasLegend ? 'block' : 'none')
+                .each(function(d) {
+
+                  // Set margin left and display style
+                  var legend = d3.select(this).selectAll(".gviz-legend").data(hasLegend ? ["gviz-legend"] : []);
+                  legend.exit().remove();
+                  legend = legend.enter().insert('div', ":first-child").attr('class', "gviz-legend").merge(legend);
+                  legend
+                    .html(string);
+
+                });
+
+              legendWrapper
+                .on('mouseover', function() { d3.select(this).classed('gviz-legend-hover', true); })
+                .on('mouseout', function() { d3.select(this).classed('gviz-legend-hover', false); });
+
+              // Set legend dimension
+              _var.container.dimensions.legend = hasLegend ? (legendWrapper.node().getBoundingClientRect().height + 5) : 0;
+
+              // Update container _id, height and client bound rect
+              _var.container.d3
+                .attr('data-vis-id', _var._id)
+                .style('height', (_var.container.outerWrapperClientRect.height - (_var.container.dimensions.title + _var.container.dimensions.legend)) + "px")
+                .style('top', (_var.container.dimensions.title + _var.container.dimensions.legend) + 'px')
+
+              // Update grid background position
+              _var.container.outerWrapper.selectAll('.grid-background')
+                .style('top', (_var.container.dimensions.title + _var.container.dimensions.legend) + 'px')
+
+              // Define height and width
+              var containerClientRect = _var.container.d3.node().getBoundingClientRect();
+              _var.height = containerClientRect.height - (_var.margin.top + _var.margin.bottom);
+              _var.width = containerClientRect.width - (_var.margin.left + _var.margin.right);
+
+              // Initialize brush attributes object
+              _var.brushAttrs = {
+                width: _var.width,
+                height: 20,
+                totalHeight: 40,
+                numElements: numElements
+              };
+
+              // NO DATA AVAILABLE
+              if (_var.data.data == null || _var.data.data.length === 0) {
+                _var.container.d3.html("<h5 style='line-height: "+(containerClientRect.height)+"px; text-align: center;'>NO DATA AVAILABLE</h5>");
+              } else {
+                _var.container.d3.selectAll("h5").remove();
+              }
+
+              break;
+
+            // Last action to be done
+            case 'end':
+
+              break;
+          }
+          break;
+      }
+    }
+
+    return _var;
+  };
+
+  // Exposicao de variaveis globais
+  ['_var','action','components'].forEach(function(key) {
+
+    // Attach variables to validation function
+    validate[key] = function(_) {
+      if (!arguments.length) { eval(`return ${key}`); }
+      eval(`${key} = _`);
+      return validate;
+    };
+
+    // Attach variables to main function
+    return main[key] = function(_) {
+      if (!arguments.length) { eval(`return ${key}`); }
+      eval(`${key} = _`);
+      return main;
+    };
+  });
+
+  // Executa a funcao chamando o parametro de step
+  main.run = _ => main('run');
+
+  return main;
+};
+
+
+/***/ }),
+
+/***/ "../../../../../src/assets/js/gViz/visualizations/vs-bar-vert-with-brush/style.js":
+/***/ (function(module, exports, __webpack_require__) {
+
+// Imports
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
+
+// Initialize the visualization class
+module.exports = function() {
+  "use strict";
+
+  // Get attributes values
+  var _var      = undefined;
+  var components = {};
+
+  // Validate attributes
+  var validate = function(step) {
+    switch (step) {
+      case 'run': return true;
+      default: return false;
+    }
+  };
+
+  // Main function
+  var main = function(step) {
+
+    // Validate attributes if necessary
+    if (validate(step)) {
+
+      switch (step) {
+
+        // Build entire visualizations
+        case 'run':
+
+          // Get color function
+          _var.getColor = function(d, attr="fill") {
+            if(d == null) { return attr === 'stroke' ? "#333" : "#999"; }
+            else if(+d.y >= 0 && d[attr] != null) { return d[attr]; }
+            else if(+d.y >= 0 && d[attr+"-neg"] != null) { return d[attr+"-neg"]; }
+            else if(+d.y < 0  && d[attr+"-neg"] != null) { return d[attr+"-neg"]; }
+            else if(+d.y < 0  && d[attr] != null) { return d[attr]; }
+            else { return attr === 'stroke' ? "#333" : "#999"; }
+          }
+
+          // Get Y function
+          _var.getY = function(d) {
+            if(_var.yBounds[0] >= 0) { return _var.y(+d.y); }
+            else if (_var.yBounds[1] < 0) { return _var.y(_var.yBounds[1]); }
+            else { return +d.y >= 0 ? _var.y(+d.y) : _var.y(0); }
+          }
+
+          // Get Y function
+          _var.getStrokeY = function(d) {
+            if(_var.yBounds[0] >= 0) { return _var.y(+d.y); }
+            else if (_var.yBounds[1] < 0) { return _var.y(_var.yBounds[1]); }
+            else { return _var.y(+d.y); }
+          }
+
+          // Get Height function
+          _var.getHeight = function(d) {
+            if(_var.yBounds[0] >= 0) { return _var.height - _var.y(+d.y); }
+            else if (_var.yBounds[1] < 0) { return _var.y(+d.y); }
+            else { return +d.y >= 0 ? (_var.y(0) - _var.y(+d.y)) : (_var.y(+d.y) - _var.y(0)); }
+          }
+
+          break;
+      }
+    }
+
+    return _var;
+  };
+
+  // Exposicao de variaveis globais
+  ['_var','components'].forEach(function(key) {
+
+    // Attach variables to validation function
+    validate[key] = function(_) {
+      if (!arguments.length) { eval(`return ${key}`); }
+      eval(`${key} = _`);
+      return validate;
+    };
+
+    // Attach variables to main function
+    return main[key] = function(_) {
+      if (!arguments.length) { eval(`return ${key}`); }
+      eval(`${key} = _`);
+      return main;
+    };
+  });
+
+  // Executa a funcao chamando o parametro de step
+  main.run = _ => main('run');
+
+  return main;
+};
+
+
+/***/ }),
+
+/***/ "../../../../../src/assets/js/gViz/visualizations/vs-bar-vert-with-brush/values.js":
+/***/ (function(module, exports, __webpack_require__) {
+
+// Imports
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
+
+// Initialize the visualization class
+module.exports = function () {
+  "use strict";
+
+  // Get attributes values
+  var _var       = null;
+  var action     = 'update'
+  var components = null;
+
+  // Validate attributes
+  var validate = function (step) {
+    switch (step) {
+      case 'run': return true;
+      default: return false;
+    }
+  };
+
+  // Main function
+  var main = function (step) {
+
+    // Validate attributes if necessary
+    if (validate(step)) {
+
+      switch (step) {
+
+        // Build entire visualizations
+        case 'run':
+
+          switch (action) {
+
+            // Update data for the current domain
+            case 'update':
+
+              // Initialize values array to be seen
+              _var.values = [];
+
+              // Update values array
+              if(_var.brushAttrs.bounds == null || _var.brushAttrs.bounds.length === 0) {
+                _var.data.data.forEach(function(d) { _var.values.push(d); });
+              } else {
+                _var.data.data.slice(_var.brushAttrs.bounds[0], _var.brushAttrs.bounds[1]).forEach(function(d) { _var.values.push(d); });
+              }
+
+              break;
+          }
+          break;
+      }
+    }
+
+    return _var;
+  };
+
+  // Exposicao de variaveis globais
+  ['_var','action','components'].forEach(function (key) {
+
+    // Attach variables to validation function
+    validate[key] = function (_) {
+      if (!arguments.length) { eval(`return ${key}`); }
+      eval(`${key} = _`);
+      return validate;
+    };
+
+    // Attach variables to main function
+    return main[key] = function (_) {
+      if (!arguments.length) { eval(`return ${key}`); }
+      eval(`${key} = _`);
+      return main;
+    };
+  });
+
+  // Executa a funcao chamando o parametro de step
+  main.run = _ => main('run');
+
+  return main;
+};
+
+
+/***/ }),
+
+/***/ "../../../../../src/assets/js/gViz/visualizations/vs-bar-vert-with-brush/x-scale.js":
+/***/ (function(module, exports, __webpack_require__) {
+
+// Imports
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
+
+// Initialize the visualization class
+module.exports = function () {
+  "use strict";
+
+  // Get attributes values
+  var _var = undefined;
+  var data = [];
+
+  // Validate attributes
+  var validate = function (step) {
+
+    switch (step) {
+      case 'run': return true;
+      default: return false;
+    }
+  };
+
+  // Main function
+  var main = function (step) {
+
+    // Validate attributes if necessary
+    if (validate(step)) {
+
+      switch (step) {
+
+        // Build entire visualizations
+        case 'run':
+
+          // Set format
+          _var.xIsDate = (_var.data.x != null && _var.data.x.type === 'time' && _var.data.x.inFormat != null && _var.data.x.outFormat != null);
+          _var.xIsNumber = (_var.data.x != null && _var.data.x.type === 'number' && _var.data.x.format != null);
+          var xFmt = _var.xIsDate ? 'date' : (_var.xIsNumber ? 'number' : 'text');
+          _var.xFormat = shared.helpers[xFmt].parseFormat(_var.data == null ? null : _var.data.x);
+
+          // Initialize domains
+          _var.xDomain = {};
+
+          // Initialize text values objects for labels resizing
+          var textValuesObj = {};
+
+          // Initialize count of elements
+          var elementCount = 0;
+
+          // Get domains
+          data.forEach(function(d) {
+
+            // Increment element count
+            elementCount += 1;
+
+            // Parse date value
+            if(_var.xIsDate) {
+              d.parsedName = d3.timeParse(_var.data.x.inFormat)(d.name);
+              if(d.parsedName != null) { d.name = _var.xFormat(d.name); }
+            } else {
+              d.parsedName = d.name;
+            }
+
+            // Add id to xIn domain value
+            _var.xDomain[d.x] = d;
+
+            // Store name for futher use
+            if((d.name == null || d.name === "") && (d.name != null && d.name !== "" && textValuesObj[d.name] == null)) {
+              textValuesObj[d.name] = shared.helpers.text.getSize(d.name);
+            }
+
+          });
+
+          // Calculate height based on data elements
+          _var.calcWidth = 20 + (elementCount*(_var.barWidth+2));
+          _var.calcWidth = _var.width > _var.calcWidth ? _var.width : _var.calcWidth;
+
+          // Define scales
+          _var.x = d3.scaleBand().range([0, _var.calcWidth]).paddingInner(0.05).paddingOuter(0.05);
+
+          // Initialize domains
+          var xDomain = Object.keys(_var.xDomain).sort(function(a,b) { return d3.descending(Math.abs(+_var.xDomain[a].y), Math.abs(+_var.xDomain[b].y)); });
+
+          // Set x and xIn domain
+          _var.x.domain(xDomain);
+
+          // Update barWidth if its not set by the user
+          _var.barWidth = _var.data.attrs != null && _var.data.attrs.barWidth != null && !isNaN(+_var.data.attrs.barWidth) ? +_var.data.attrs.barWidth : _var.xIn.bandwidth();
+
+          // Define axis
+          _var.xAxis = d3.axisBottom(_var.x).tickPadding(17);
+
+          break;
+      }
+    }
+
+    return _var;
+  };
+
+  // Exposicao de variaveis globais
+  ['_var','data'].forEach(function (key) {
+
+    // Attach variables to validation function
+    validate[key] = function (_) {
+      if (!arguments.length) {
+        eval('return ' + key);
+      }
+      eval(key + ' = _');
+      return validate;
+    };
+
+    // Attach variables to main function
+    return main[key] = function (_) {
+      if (!arguments.length) {
+        eval('return ' + key);
+      }
+      eval(key + ' = _');
+      return main;
+    };
+  });
+
+  // Executa a funcao chamando o parametro de step
+  main.run = function (_) {
+    return main('run');
+  };
+
+  return main;
+};
+
+
+/***/ }),
+
+/***/ "../../../../../src/assets/js/gViz/visualizations/vs-bar-vert-with-brush/y-scale-size.js":
+/***/ (function(module, exports, __webpack_require__) {
+
+// Imports
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
+
+// Initialize the visualization class
+module.exports = function () {
+  "use strict";
+
+  // Get attributes values
+  var _var = undefined;
+  var data = [];
+
+  // Validate attributes
+  var validate = function (step) {
+
+    switch (step) {
+      case 'run': return true;
+      default: return false;
+    }
+  };
+
+  // Main function
+  var main = function (step) {
+
+    // Validate attributes if necessary
+    if (validate(step)) {
+
+      switch (step) {
+
+        // Build entire visualizations
+        case 'run':
+
+          // Create scale
+          _var.y = d3.scaleLinear().range([_var.height, 0]);
+          _var.y.domain(_var.yBounds).nice();
+
+          // Set format
+          _var.yFormat = shared.helpers.number.parseFormat(_var.data == null ? null : _var.data.y);
+
+          // Get y axis ticks
+          var bins = d3.max([3, parseInt(_var.height / 40, 10)]);
+
+          // Define y axis
+          _var.yAxis = d3.axisLeft(_var.y).ticks(bins).tickPadding(10).tickFormat(_var.yFormat);
+
+          // Update margin left and width
+          _var.width += _var.margin.left;
+          _var.margin.left = 5 + d3.max(_var.yAxis.scale().ticks().map(function(d) { return shared.helpers.text.getSize(_var.yFormat(d)); }));
+          _var.width -= _var.margin.left;
+
+          // Update x for d3 zoom transform
+          _var.zoomTransform.x = _var.margin.left;
+
+          break;
+      }
+    }
+
+    return _var;
+  };
+
+  // Exposicao de variaveis globais
+  ['_var','data'].forEach(function (key) {
+
+    // Attach variables to validation function
+    validate[key] = function (_) {
+      if (!arguments.length) {
+        eval('return ' + key);
+      }
+      eval(key + ' = _');
+      return validate;
+    };
+
+    // Attach variables to main function
+    return main[key] = function (_) {
+      if (!arguments.length) {
+        eval('return ' + key);
+      }
+      eval(key + ' = _');
+      return main;
+    };
+  });
+
+  // Executa a funcao chamando o parametro de step
+  main.run = function (_) {
+    return main('run');
+  };
+
+  return main;
+};
+
+
+/***/ }),
+
+/***/ "../../../../../src/assets/js/gViz/visualizations/vs-bar-vert-with-brush/y-scale.js":
+/***/ (function(module, exports, __webpack_require__) {
+
+// Imports
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
+
+// Initialize the visualization class
+module.exports = function () {
+  "use strict";
+
+  // Get attributes values
+  var _var = undefined;
+  var data = [];
+
+  // Validate attributes
+  var validate = function (step) {
+
+    switch (step) {
+      case 'run': return true;
+      default: return false;
+    }
+  };
+
+  // Main function
+  var main = function (step) {
+
+    // Validate attributes if necessary
+    if (validate(step)) {
+
+      switch (step) {
+
+        // Build entire visualizations
+        case 'run':
+
+          // Define aux variables
+          var min = null,
+              max = null,
+              diff = null;
+
+          // Get bounds from y values
+          data.forEach(function(d) {
+            if(min == null || min > +d.y) { min = +d.y; }
+            if(max == null || max < +d.y) { max = +d.y; }
+          });
+
+          // Get axis target
+          if(_var.data.y != null && _var.data.y.target != null && !isNaN(+_var.data.y.target)) {
+            _var.yTarget = +_var.data.y.target;
+            if(min == null || min > +_var.data.y.target) { min = +_var.data.y.target; }
+            if(max == null || max < +_var.data.y.target) { max = +_var.data.y.target; }
+          }
+
+          // Check for default values
+          if(isNaN(min)) { min = 0; }
+          if(isNaN(max)) { max = 1; }
+
+          // Get diff
+          var diff = Math.abs(max - min) === 0 ? Math.abs(max * 0.1) : 0;
+
+          // Get axis equal
+          if(Math.abs(max) > Math.abs(min)) { min = -max; }
+          else { max = Math.abs(min); }
+
+          // Set y domain
+          _var.yBounds = [(min == 0 ? min : min - diff), max + diff];
+
+          // Set y domain equally
+          if(Math.abs(_var.yBounds[1]) > Math.abs(_var.yBounds[0])) { _var.yBounds[0] = -_var.yBounds[1]; }
+          else { _var.yBounds[1] = Math.abs(_var.yBounds[0]); }
+
+          break;
+      }
+    }
+
+    return _var;
+  };
+
+  // Exposicao de variaveis globais
+  ['_var','data'].forEach(function (key) {
+
+    // Attach variables to validation function
+    validate[key] = function (_) {
+      if (!arguments.length) {
+        eval('return ' + key);
+      }
+      eval(key + ' = _');
+      return validate;
+    };
+
+    // Attach variables to main function
+    return main[key] = function (_) {
+      if (!arguments.length) {
+        eval('return ' + key);
+      }
+      eval(key + ' = _');
+      return main;
+    };
+  });
+
+  // Executa a funcao chamando o parametro de step
+  main.run = function (_) {
+    return main('run');
+  };
+
+  return main;
+};
+
+
+/***/ }),
+
+/***/ "../../../../../src/assets/js/gViz/visualizations/vs-bar-vert-with-brush/zoom.js":
+/***/ (function(module, exports, __webpack_require__) {
+
+// Imports
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
+
+// Initialize the visualization class
+module.exports = function () {
+  "use strict";
+
+  // Get attributes values
+  var _var = null;
+
+  // Validate attributes
+  var validate = function (step) {
+
+    switch (step) {
+      case 'run': return true;
+      default: return false;
+    }
+  };
+
+  // Main function
+  var main = function (step) {
+
+    // Validate attributes if necessary
+    if (validate(step)) {
+
+      switch (step) {
+
+        // Build entire visualizations
+        case 'run':
+
+          // Zoom functions
+          _var.zoom_actions = function(){
+
+            // Set event transformation only vertically without zoom
+            d3.event.transform.k = 1;
+            d3.event.transform.y = _var.margin.top;
+            d3.event.transform.x = d3.event.transform.x < -_var.calcWidth + _var.width + _var.margin.left ? -_var.calcWidth + _var.width + _var.margin.left  : d3.event.transform.x;
+            d3.event.transform.x = d3.event.transform.x > _var.margin.left ? _var.margin.left : d3.event.transform.x;
+
+            // Update bgClipRect
+            _var.bgClipRect.attr('x', -d3.event.transform.x + _var.margin.left);
+
+            // Transform outer g
+            _var.g.attr("transform", d3.event.transform)
+
+            // Set zoom transform
+            _var.zoomTransform = d3.event.transform;
+
+          }
+
+          // Add zoom capabilities
+          _var.zoom_handler = d3.zoom()
+            .scaleExtent([1,1])
+            .on("zoom", _var.zoom_actions)
+            .on("start", function() { _var.wrap.classed('grabbing', true) })
+            .on("end",   function() { _var.wrap.classed('grabbing', false) });
+
+          // Bind zoom to svg
+          _var.wrap
+            .call(_var.zoom_handler)
+            .call(_var.zoom_handler.transform, d3.zoomIdentity.translate(_var.zoomTransform.x, _var.zoomTransform.y).scale(_var.zoomTransform.k))
+            .on("wheel.zoom", null)
+
+          break;
+      }
+    }
+
+    return _var;
+  };
+
+  // Exposicao de variaveis globais
+  ['_var'].forEach(function (key) {
+
+    // Attach variables to validation function
+    validate[key] = function (_) {
+      if (!arguments.length) { eval(`return ${key}`); }
+      eval(`${key} = _`);
+      return validate;
+    };
+
+    // Attach variables to main function
+    return main[key] = function (_) {
+      if (!arguments.length) { eval(`return ${key}`); }
+      eval(`${key} = _`);
+      return main;
+    };
+  });
+
+  // Executa a funcao chamando o parametro de step
+  main.run = _ => main('run');
+
+  return main;
+};
+
+
+/***/ }),
+
+/***/ "../../../../../src/assets/js/gViz/visualizations/vs-line-graph-with-draggable-points/_init.js":
+/***/ (function(module, exports, __webpack_require__) {
+
+// Imports
+let d3 = __webpack_require__("../../../../d3/build/d3.js");
+var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
+
+// Module declaration
+module.exports = function () {
+  "use strict";
+
+  // Auxiliar Functions
+  let components = {
+    initialize: __webpack_require__("../../../../../src/assets/js/gViz/visualizations/vs-line-graph-with-draggable-points/initialize.js"),
+    axis: __webpack_require__("../../../../../src/assets/js/gViz/visualizations/vs-line-graph-with-draggable-points/axis.js"),
+    create: __webpack_require__("../../../../../src/assets/js/gViz/visualizations/vs-line-graph-with-draggable-points/create.js"),
+    drag: __webpack_require__("../../../../../src/assets/js/gViz/visualizations/vs-line-graph-with-draggable-points/drag.js"),
+    elements: __webpack_require__("../../../../../src/assets/js/gViz/visualizations/vs-line-graph-with-draggable-points/elements.js"),
+    events: __webpack_require__("../../../../../src/assets/js/gViz/visualizations/vs-line-graph-with-draggable-points/events.js"),
+    misc: __webpack_require__("../../../../../src/assets/js/gViz/visualizations/vs-line-graph-with-draggable-points/misc.js"),
+    style: __webpack_require__("../../../../../src/assets/js/gViz/visualizations/vs-line-graph-with-draggable-points/style.js"),
+    xScale: __webpack_require__("../../../../../src/assets/js/gViz/visualizations/vs-line-graph-with-draggable-points/x-scale.js"),
+    yScale: __webpack_require__("../../../../../src/assets/js/gViz/visualizations/vs-line-graph-with-draggable-points/y-scale.js")
+  };
+
+  // Get attributes values
+  let _id = `vis-line-graph-${Math.floor(Math.random() * ((1000000000 - 5) + 1)) + 5}`;
+  let _var = null;
+  let action = 'build';
+  let animation = 900;
+  let container = null;
+  var colors = { main: shared.helpers.colors.main };
+  let data = [];
+  let margin = { top: 10, right: 10, bottom: 35, left: 0 };
+
+  // Events bindings
+  let onHover = function(d) { console.log(d); };
+  let onClick = function(d) { console.log(d); };
+  let onDragStart = function(d) { console.log(d); };
+  let onDragEnd = function(d) { console.log(d); };
+
+  // Validate attributes
+  let validate = function (step) {
+    switch (step) {
+      case 'build':      return (container != null) && (d3.selectAll(container).size() !== 0 || d3.select(container).size() !== 0);
+      case 'initialize': return true;
+      case 'axis':       return data != null && data.data != null && data.data.length > 0;
+      case 'create':     return data != null && data.data != null && data.data.length > 0;
+      case 'drag':       return data != null && data.data != null && data.data.length > 0;
+      case 'elements':   return data != null && data.data != null && data.data.length > 0;
+      case 'misc':       return true;
+      case 'style':      return true;
+      case 'xScale':     return data != null && data.data != null && data.data.length > 0;
+      case 'yScale':     return data != null && data.data != null && data.data.length > 0;
+      default: return false;
+    }
+  };
+
+  // Main function
+  var main = function (step) {
+
+    // Validate attributes if necessary
+    if (validate(step)) {
+
+      switch (step) {
+
+        // Build entire visualizations
+        case 'build':
+
+          main('initialize');
+          main('style');
+          main('drag');
+          main('misc');
+          main('yScale');
+          main('xScale');
+          main('create');
+          main('axis');
+          main('elements');
+          break;
+
+        // Initialize visualization variable
+        case 'initialize':
+
+          // Initializing
+          if (!_var) { _var = {};  }
+          _var = components.initialize()
+            ._var(_var)
+            ._id((_var._id != null) ? _var._id : _id)
+            .animation(animation)
+            .container(container)
+            .colors(colors)
+            .data(data)
+            .margin(margin)
+            .onHover(onHover)
+            .onClick(onClick)
+            .onDragStart(onDragStart)
+            .onDragEnd(onDragEnd)
+            .run();
+          break;
+
+        // Setup style functions
+        case 'style':
+
+          // Setting styles
+          _var = components.style()
+            ._var(_var)
+            .run();
+          break;
+
+        // Drag fucntions
+        case 'drag':
+
+          // Initializing drag
+          _var = components.drag()
+            ._var(_var)
+            .components(components)
+            .run();
+          break;
+
+        // Create initial elements
+        case 'create':
+
+          // Creating wrappers
+          _var = components.create()
+            ._var(_var)
+            .run();
+          break;
+
+        // Setup X scale
+        case 'xScale':
+
+          // Creating
+          _var = components.xScale()
+            ._var(_var)
+            .data(_var.data.data)
+            .run();
+          break;
+
+        // Setup Y scale
+        case 'yScale':
+
+          // Creating
+          _var = components.yScale()
+            ._var(_var)
+            .data(_var.data.data)
+            .run();
+          break;
+
+        // Setup axis elements
+        case 'axis':
+
+          // Running
+          _var = components.axis()
+            ._var(_var)
+            .action('create')
+            .run();
+          break;
+
+        // Setup elements
+        case 'elements':
+
+          // Running
+          _var = components.elements()
+            ._var(_var)
+            .components(components)
+            .run();
+          break;
+
+        // Show misc
+        case 'misc':
+
+          // Running
+          _var = components.misc()
+            ._var(_var)
+            .components(components)
+            .run();
+          break;
+
+      }
+    }
+
+    return _var;
+  };
+
+  // Expose global variables
+  ['_id', '_var', 'action', 'animation', 'container', 'colors', 'data', 'margin','onHover','onClick','onDragStart','onDragEnd'].forEach(function (key) {
+
+    // Attach variables to validation function
+    validate[key] = function (_) {
+      if (!arguments.length) { eval(`return ${key}`); }
+      eval(`${key} = _`);
+      return validate;
+    };
+
+    // Attach variables to main function
+    return main[key] = function (_) {
+      if (!arguments.length) { eval(`return ${key}`); }
+      eval(`${key} = _`);
+      return main;
+    };
+  });
+
+  // Secondary functions
+  main.run = _ => main("build");
+
+  return main;
+
+}
+
+
+/***/ }),
+
+/***/ "../../../../../src/assets/js/gViz/visualizations/vs-line-graph-with-draggable-points/axis.js":
+/***/ (function(module, exports, __webpack_require__) {
+
+// Imports
+let d3 = __webpack_require__("../../../../d3/build/d3.js");
+var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
+
+// Module declaration
+module.exports = function () {
+  "use strict";
+
+  // Get attributes values
+  var _var = undefined;
+  var action = 'create';
+
+  // Validate attributes
+  var validate = function validate(step) {
+
+    switch (step) {
+      case 'run':
+        return true;
+      default:
+        return false;
+    }
+  };
+
+  // Main function
+  var main = function main(step) {
+
+    // Validate attributes if necessary
+    if (validate(step)) {
+
+      switch (step) {
+
+        // Build entire visualizations
+        case 'run':
+
+          switch (action) {
+
+            case 'create':
+
+              // Create and update X axis
+              _var.x_axis = _var.g.selectAll(".x.axis").data(['x']);
+              _var.x_axis.exit().remove();
+              _var.x_axis = _var.x_axis.enter().append('g').attr("class", "x axis").merge(_var.x_axis);
+              _var.x_axis.call(_var.xAxis.tickSize(-_var.height)).attr("transform", 'translate(0,' + _var.height + ')')
+
+              // Get number of ticks on axis to adjust ticks
+              _var.numXTicks = _var.x_axis.selectAll(".tick line").size();
+
+              _var.x_axis.selectAll(".tick line")
+                .attr('y1', 3)
+                .attr('x1', function(d,i) { return ((_var.width + _var.margin.left + _var.margin.right) / _var.numXTicks) / 2; })
+                .attr('x2', function(d,i) { return ((_var.width + _var.margin.left + _var.margin.right) / _var.numXTicks) / 2; })
+
+              _var.x_axis.selectAll(".tick text")
+                .attr('x', function(d, i) {
+                  if((_var.xIsDate || _var.xIsNumber) && i === _var.x_axis.selectAll(".tick text").size()-1) {
+                    return -(this.getBBox().width/2) + _var.margin.right;
+                  } else { return 0; }
+                })
+
+              // Remove overlapping tick text
+              _var.x_axis.selectAll(".tick text").filter(function(d) { return d === _var.xTarget; }).remove();
+
+              // Create and update Y axis
+              _var.y_axis = _var.g.selectAll(".y.axis").data(['y']);
+              _var.y_axis.exit().remove();
+              _var.y_axis = _var.y_axis.enter().append('g').attr("class", "y axis").merge(_var.y_axis);
+              _var.y_axis.transition().call(_var.yAxis.tickSize(-_var.width))
+              _var.y_axis.selectAll(".tick line").attr('x1', -3)
+
+              // Remove overlapping tick text
+              _var.y_axis.selectAll(".tick text").filter(function(d) { return d === _var.yTarget; }).remove();
+
+              break;
+
+          }
+          break;
+      }
+    }
+
+    return _var;
+  };
+
+  // Exposicao de variaveis globais
+  ['_var', 'action'].forEach(function (key) {
+
+    // Attach variables to validation function
+    validate[key] = function (_) {
+      if (!arguments.length) {
+        eval('return ' + key);
+      }
+      eval(key + ' = _');
+      return validate;
+    };
+
+    // Attach variables to main function
+    return main[key] = function (_) {
+      if (!arguments.length) {
+        eval('return ' + key);
+      }
+      eval(key + ' = _');
+      return main;
+    };
+  });
+
+  // Executa a funcao chamando o parametro de step
+  main.run = function (_) {
+    return main('run');
+  };
+
+  return main;
+};
+
+function __range__(left, right, inclusive) {
+  var range = [];
+  var ascending = left < right;
+  var end = !inclusive ? right : ascending ? right + 1 : right - 1;
+  for (var i = left; ascending ? i < end : i > end; ascending ? i++ : i--) { range.push(i); }
+  return range;
+}
+
+
+/***/ }),
+
+/***/ "../../../../../src/assets/js/gViz/visualizations/vs-line-graph-with-draggable-points/create.js":
+/***/ (function(module, exports, __webpack_require__) {
+
+// Imports
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
+
+// Initialize the visualization class
+module.exports = function () {
+  "use strict";
+
+  // Get attributes values
+  var _var = undefined;
+  var animation = 900;
+
+  // Validate attributes
+  var validate = function (step) {
+
+    switch (step) {
+      case 'run': return true;
+      default: return false;
+    }
+  };
+
+  // Main function
+  var main = function (step) {
+
+    // Validate attributes if necessary
+    if (validate(step)) {
+
+      switch (step) {
+
+        // Build entire visualizations
+        case 'run':
+
+          // Draw svg
+          _var.wrap = _var.container.d3.selectAll(`svg.chart-${_var._id}`).data(["chart-svg"]);
+          _var.wrap.exit().remove();
+          _var.wrap = _var.wrap.enter().append("svg").attr('class', `line-graph chart-${_var._id}`).merge(_var.wrap); // svg
+
+          // Update outer dimensions
+          _var.wrap
+            .attr("width", _var.width + _var.margin.left + _var.margin.right)
+            .attr("height", _var.height + _var.margin.top + _var.margin.bottom);
+
+          // Draw g
+          _var.g = _var.wrap.selectAll("g.chart-wrap").data(["chart-wrap"]); // svg:g
+          _var.g.exit().remove();
+          _var.g = _var.g.enter().append('g').attr('class', "chart-wrap").merge(_var.g);
+          _var.g.attr("transform", `translate(${_var.margin.left},${_var.margin.top})`);
+
+          // Draw shadow
+          shared.visualComponents.shadow()
+            ._var(_var)
+            .wrap(_var.wrap)
+            .id(_var.shadowId)
+            .run();
+
+          break;
+      }
+    }
+
+    return _var;
+  };
+
+  // Exposicao de variaveis globais
+  ['_var', 'animation'].forEach(function (key) {
+
+    // Attach variables to validation function
+    validate[key] = function (_) {
+      if (!arguments.length) { eval(`return ${key}`); }
+      eval(`${key} = _`);
+      return validate;
+    };
+
+    // Attach variables to main function
+    return main[key] = function (_) {
+      if (!arguments.length) { eval(`return ${key}`); }
+      eval(`${key} = _`);
+      return main;
+    };
+  });
+
+  // Executa a funcao chamando o parametro de step
+  main.run = _ => main('run');
+
+  return main;
+};
+
+
+/***/ }),
+
+/***/ "../../../../../src/assets/js/gViz/visualizations/vs-line-graph-with-draggable-points/drag.js":
+/***/ (function(module, exports, __webpack_require__) {
+
+// Imports
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
+
+// Initialize the visualization class
+module.exports = function () {
+  "use strict";
+
+  // Get attributes values
+  var _var = null;
+  var components = {};
+
+  // Validate attributes
+  var validate = function (step) {
+
+    switch (step) {
+      case 'run': return true;
+      default: return false;
+    }
+  };
+
+  // Main function
+  var main = function (step) {
+
+    // Validate attributes if necessary
+    if (validate(step)) {
+
+      switch (step) {
+
+        // Build entire visualizations
+        case 'run':
+
+          // Start the drag action
+          _var.dragstarted = function (d) {
+
+            // Set dragging node to true
+            _var.nodeDragging = true;
+
+            // Remove tooltip while dragging
+            shared.visualComponents.tooltip()
+              ._var(_var)
+              .action("hide")
+              .run();
+
+            // Trigger onDragStart attribute function
+            if(_var.onDragStart != null && typeof _var.onDragStart === "function") { _var.onDragStart(d); }
+
+          }
+
+          // While dragging
+          _var.dragging = function (d) {
+            d.y = _var.y.invert(d3.mouse(this)[1]);
+            d3.select(this).selectAll(".point.element, .bg-point.element").attr("d", function(d) { return _var.pointPath(d, true); });
+            d3.select(this).selectAll(".arrow.element").attr("d", function(d) { return _var.arrowsPath(d); });
+            _var.container.d3.selectAll(".line[data-id='"+d._parentId+"']").attr("d", function (d) { return _var.lineConstructor(d.values); })
+          }
+
+          // End the drag action
+          _var.dragended = function (d) {
+
+            // Set dragging node to true
+            _var.nodeDragging = false;
+
+            // Trigger onDragEnd attribute function
+            if(_var.onDragEnd != null && typeof _var.onDragEnd === "function") { _var.onDragEnd(d); }
+
+          }
+
+          break;
+      }
+    }
+
+    return _var;
+  };
+
+  // Exposicao de variaveis globais
+  ['_var','components'].forEach(function (key) {
+
+    // Attach variables to validation function
+    validate[key] = function (_) {
+      if (!arguments.length) { eval(`return ${key}`); }
+      eval(`${key} = _`);
+      return validate;
+    };
+
+    // Attach variables to main function
+    return main[key] = function (_) {
+      if (!arguments.length) { eval(`return ${key}`); }
+      eval(`${key} = _`);
+      return main;
+    };
+  });
+
+  // Executa a funcao chamando o parametro de step
+  main.run = _ => main('run');
+
+  return main;
+};
+
+
+/***/ }),
+
+/***/ "../../../../../src/assets/js/gViz/visualizations/vs-line-graph-with-draggable-points/elements.js":
+/***/ (function(module, exports, __webpack_require__) {
+
+// Imports
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
+
+// Initialize the visualization class
+module.exports = function () {
+  "use strict";
+
+  // Get attributes values
+  var _var       = null;
+  var components = null;
+  var data       = null;
+
+  // Validate attributes
+  var validate = function (step) {
+    switch (step) {
+      case 'run': return true;
+      default: return false;
+    }
+  };
+
+  // Main function
+  var main = function (step) {
+
+    // Validate attributes if necessary
+    if (validate(step)) {
+
+      switch (step) {
+
+        // Build entire visualizations
+        case 'run':
+
+          // Set data array
+          var _data = (data == null ? _var.data.data : data)
+
+          // Element canvas
+          var elements = _var.g.selectAll(".chart-elements").data(["chart-elements"]);
+          elements.exit().remove();
+          elements = elements.enter().append("g").attr("class", "chart-elements").merge(elements);
+
+          // Create groups
+          var groups = elements.selectAll(".element-group").data(_data, function(d) { return d.id; });
+          groups.exit().remove();
+          groups = groups.enter().append("g").attr("class", "element-group").merge(groups);
+          groups.each(function(g) {
+
+            // Initialize flags
+            var isDraggable = g.draggable != null && g.draggable === true;
+
+            // Create lines
+            var lines = d3.select(this).selectAll(".line").data([g], function(d) { return d.id; });
+            lines.exit().remove();
+            lines = lines.enter().append("path").attr("class", "line").attr('data-id', function(d) { return d.id; }).merge(lines);
+            lines.transition().duration(200)
+              .attr("d", function (d) { return _var.lineConstructor(d.values); })
+              .attr("fill", 'none')
+              .attr("stroke-width", _var.lineWidth)
+              .attr("stroke-dasharray", _var.lineStyle)
+              .attr("stroke", _var.lineColor)
+
+            // Create points/arrows groups
+            var pointGroups = d3.select(this).selectAll(".point-group.element").data(g.pointSize === 0 && !isDraggable ? [] : g.values);
+            pointGroups.exit().remove();
+            pointGroups = pointGroups.enter().append("g").attr("class", "point-group element").merge(pointGroups);
+            pointGroups.each(function(pg) {
+
+              // Set parent id on points values
+              pg._parentId = g.id;
+
+              // Create point
+              var points = d3.select(this).selectAll(".point.element").data(g.pointSize === 0 && !isDraggable ? [] : [pg]);
+              points.exit().remove();
+              points = points.enter().append("path").attr("class", "point element").merge(points);
+              points.transition().duration(200)
+                .attr("d", function(d) { return _var.pointPath(d, isDraggable); })
+                .attr("fill", _var.pointColor)
+
+              // Create point arrows for draggable lines
+              var arrows = d3.select(this).selectAll(".arrow.element").data(isDraggable ? [pg] : []);
+              arrows.exit().remove();
+              arrows = arrows.enter().append("path").attr("class", "arrow element").merge(arrows);
+              arrows.transition().duration(200)
+                .attr("d", function(d) { return _var.arrowsPath(d); })
+                .attr("fill", _var.arrowsColor)
+
+              // Create point
+              var bgPoints = d3.select(this).selectAll(".bg-point.element").data(isDraggable ? [pg] : []);
+              bgPoints.exit().remove();
+              bgPoints = bgPoints.enter().append("path").attr("class", "bg-point element").merge(bgPoints);
+              bgPoints.transition().duration(200)
+                .attr("d", function(d) { return _var.pointPath(d, isDraggable); })
+                .attr("fill", "transparent")
+
+            });
+
+            // Event bindings
+            pointGroups.on('mouseover', function(e) {
+
+              // Set hovered node
+              _var.hovered = e;
+
+              // Mouseover event
+              components.events()
+                ._var(_var)
+                .action("mouseover")
+                .components(components)
+                .node(e)
+                .isDraggable(isDraggable)
+                .run();
+
+              // Trigger onHover attribute function
+              if(_var.nodeDragging !== true && _var.onHover != null && typeof _var.onHover === "function") { _var.onHover(e); }
+
+            }).on('mouseout', function(e) {
+
+              // Reset hovered node
+              _var.hovered = null;
+
+              // Mouseout event
+              components.events()
+                ._var(_var)
+                .action("mouseout")
+                .components(components)
+                .run();
+
+            }).on('click', function(e) {
+
+              // Trigger onClick attribute function
+              if(_var.onClick != null && typeof _var.onClick === "function") { _var.onClick(e); }
+
+            });
+
+            // Bind drag to points groups
+            pointGroups.call(d3.drag()
+              .on("start", _var.dragstarted)
+              .on("drag", _var.dragging)
+              .on("end", _var.dragended));
+
+          });
+
+          // Draw Background rect
+          var bg_rect = elements.selectAll("rect.bg-rect").data(["bg-rect"]);
+          bg_rect.exit().remove();
+          bg_rect = bg_rect.enter().insert('rect', ':first-child').attr("class", "bg-rect").style('fill', 'transparent').merge(bg_rect);
+          bg_rect
+            .style('fill', 'transparent')
+            .attr("x", 0).attr('y', 0)
+            .attr('width', _var.width).attr("height", _var.height)
+
+          // Bind mouse events
+          elements
+            .on('mouseover', function() {
+
+              if(!d3.select(d3.event.target).classed('element')) {
+
+                // Set hovered node
+                _var.hovered = {};
+
+                // Mouseover event
+                components.events()
+                  ._var(_var)
+                  .action("mouseover")
+                  .components(components)
+                  .mouse(this)
+                  .origin('background')
+                  .run();
+
+              }
+
+            }).on('mousemove', function() {
+
+              if(!d3.select(d3.event.target).classed('element')) {
+
+                // Set hovered node
+                _var.hovered = {};
+
+                // Mouseover event
+                components.events()
+                  ._var(_var)
+                  .action("mouseover")
+                  .components(components)
+                  .mouse(this)
+                  .origin('background')
+                  .run();
+
+              }
+
+            }).on('mouseout', function(e) {
+
+              if(!d3.select(d3.event.target).classed('element')) {
+
+                // Reset hovered node
+                _var.hovered = null;
+
+                // Mouseout event
+                components.events()
+                  ._var(_var)
+                  .action("mouseout")
+                  .components(components)
+                  .run();
+
+              }
+
+            });
+
+          break;
+      }
+    }
+
+    return _var;
+  };
+
+  // Exposicao de variaveis globais
+  ['_var','components','data'].forEach(function (key) {
+
+    // Attach variables to validation function
+    validate[key] = function (_) {
+      if (!arguments.length) { eval(`return ${key}`); }
+      eval(`${key} = _`);
+      return validate;
+    };
+
+    // Attach variables to main function
+    return main[key] = function (_) {
+      if (!arguments.length) { eval(`return ${key}`); }
+      eval(`${key} = _`);
+      return main;
+    };
+  });
+
+  // Executa a funcao chamando o parametro de step
+  main.run = _ => main('run');
+
+  return main;
+};
+
+
+/***/ }),
+
+/***/ "../../../../../src/assets/js/gViz/visualizations/vs-line-graph-with-draggable-points/events.js":
+/***/ (function(module, exports, __webpack_require__) {
+
+// Imports
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
+
+// Initialize the visualization class
+module.exports = function () {
+  "use strict";
+
+  // Get attributes values
+  var _var        = null;
+  var action      = 'mouseover';
+  var components  = null;
+  var node        = null;
+  var mouse       = null;
+  var origin      = 'node';
+  var isDraggable = false;
+  var propAttrs   = ['title','body'];
+
+  // Validate attributes
+  var validate = function (step) {
+
+    switch (step) {
+      case 'run': return _var.nodeDragging !== true;
+      default: return false;
+    }
+  };
+
+  // Main function
+  var main = function (step) {
+
+    // Validate attributes if necessary
+    if (validate(step)) {
+
+      switch (step) {
+
+        // Run code
+        case 'run':
+
+          // Set groups and bisect element
+          var groups = _var.g.selectAll(".chart-elements").selectAll(".element-group");
+          var points = _var.g.selectAll(".chart-elements").selectAll(".element-group").selectAll('.point-group');
+          var lines  = _var.g.selectAll(".chart-elements").selectAll(".element-group").selectAll('.line');
+          var bisector = d3.bisector(function (d) { return d.parsedX; }).left;
+
+          switch (action) {
+
+            case 'mouseover':
+
+              if(origin === 'node') {
+
+                // Fade other groups
+                groups.transition()
+                  .style('opacity', function(g) { return g === node || g.id === node._parent.id ? 1 : 0.2; })
+
+                // Add style to lines
+                lines.transition()
+                  .style("filter", function(g) { return g === node || g.id === node._parent.id ? "url(#"+_var.shadowId+")" : ""; })
+                  .style('opacity', function(g) { return g === node || g.id === node._parent.id ? 1 : 0.2; })
+
+                // Add style to points
+                points.transition()
+                  .style("filter", function(g) { return g === node ? "url(#"+_var.shadowId+")" : ""; })
+                  .style('opacity', function(g) { return g.parsedX === node.parsedX || g === node || g._parent.id === node._parent.id ? 1 : 0.2; })
+
+                // Get x and y values
+                var x = _var.x(node.parsedX) + (_var.xIsDate || _var.xIsNumber ? 0 : _var.x.bandwidth()/2)
+                var y = _var.y(+node.y);
+                var z = _var.pointSize(node, isDraggable);
+
+                // Get left and top positions
+                var left = _var.wrap.node().getBoundingClientRect().left +_var.margin.left + x;
+                var top  = _var.wrap.node().getBoundingClientRect().top + _var.margin.top + y - z;
+
+                // Initialize tooltip obj function
+                var _getTooltipObj = function(n) {
+
+                  // Initialize tooltip object
+                  var tooltipObj = {};
+
+                  // Set parent n attributes to tooltip obj
+                  Object.keys(n._parent).forEach(function(k) { tooltipObj[k] = n._parent[k]; });
+
+                  // Set n attributes to tooltip obj
+                  Object.keys(n).forEach(function(k) { tooltipObj[k] = n[k]; });
+
+                  // Set x, y and z values with format
+                  tooltipObj.x = _var.xFormat(n.x);
+                  tooltipObj.y = _var.yFormat(n.y);
+                  tooltipObj.color = _var.pointColor(n);
+
+                  return tooltipObj;
+
+                }
+
+                // Propagate attributes for all values on tooltipValues
+                propAttrs.forEach(function(attr) {
+                  _var.data.tooltip["_"+attr] = [];
+                  _var.data.tooltip[attr].forEach(function(d) { _var.data.tooltip["_"+attr].push(d); });
+                });
+
+                // Check for Propagate attr
+                if(_var.data.tooltip != null && _var.data.tooltip.propagate != null && _var.data.tooltip[_var.data.tooltip.propagate] != null) {
+
+                  // Store propagate attr
+                  _var.data.tooltip[_var.data.tooltip.propagate] = [];
+
+                  // Propagate tooltip over all series
+                  _var.data.data.forEach(function(d) {
+                    d.values.filter(function(v) { return v.parsedX === node.parsedX; }).forEach(function(v) {
+                      _var.data.tooltip["_"+_var.data.tooltip.propagate].forEach(function(p) {
+                        _var.data.tooltip[_var.data.tooltip.propagate].push(shared.helpers.text.replaceVariables(p, _getTooltipObj(v)));
+                      });
+                    });
+                  });
+                }
+
+                // Set tooltip object
+                var tooltipObj = _getTooltipObj(node);
+
+                // Set tooltip header as title
+                if(_var.data.tooltip.header != null) {
+                  _var.data.tooltip.header.forEach(function(p) {
+                    _var.data.tooltip.title.unshift(shared.helpers.text.replaceVariables(p, {}));
+                  });
+                }
+
+                // Set tooltip component
+                shared.visualComponents.tooltip()
+                  ._var(_var)
+                  .body(_var.data.tooltip != null && _var.data.tooltip.body != null ? _var.data.tooltip.body : "")
+                  .borderColor(tooltipObj.color)
+                  .hasImg(_var.data.tooltip != null && _var.data.tooltip.hasImg === true)
+                  .left(left)
+                  .muted(_var.data.tooltip != null && _var.data.tooltip.muted != null && _var.data.tooltip.muted === true)
+                  .obj(tooltipObj)
+                  .top(top)
+                  .title(_var.data.tooltip != null && _var.data.tooltip.title != null ? _var.data.tooltip.title : "")
+                  .run();
+
+                // Reset propagation attrs
+                propAttrs.forEach(function(attr) {
+                  _var.data.tooltip[attr] = [];
+                  _var.data.tooltip["_"+attr].forEach(function(d) { _var.data.tooltip[attr].push(d); });
+                });
+
+              } else if(origin === 'background') {
+
+                // Get valid date
+                var xValue = _var.x.invert(d3.mouse(mouse)[0]);
+                var tooltipValues = [];
+
+                // Get values from each line group to use on the tooltip
+                _var.data.data.forEach(function(lineGroup, i) {
+
+                  // Get most close value to the mouse position
+                  var bisectIndex = bisector(lineGroup.values, xValue);
+                  if (bisectIndex > 0 && bisectIndex < lineGroup.values.length - 1) {
+                    var x0 = _var.x(lineGroup.values[bisectIndex - 1].parsedX);
+                    var x1 = _var.x(lineGroup.values[bisectIndex].parsedX);
+                    bisectIndex = _var.margin.left - x0 >= (x1 - x0) / 2 ? bisectIndex : bisectIndex - 1;
+                  }
+
+                  if(lineGroup.values[bisectIndex]) {
+
+                    // Initialize tooltip object
+                    var tooltipObj = {};
+
+                    // Set parent n attributes to tooltip obj
+                    Object.keys(lineGroup).forEach(function(k) { tooltipObj[k] = lineGroup[k]; });
+
+                    // Set n attributes to tooltip obj
+                    Object.keys(lineGroup.values[bisectIndex]).forEach(function(k) { tooltipObj[k] = lineGroup.values[bisectIndex][k]; });
+
+                    // Set x, color and z values with format
+                    tooltipObj.x = _var.xFormat(lineGroup.values[bisectIndex].x);
+                    tooltipObj.y = _var.yFormat(lineGroup.values[bisectIndex].y);
+                    tooltipObj.color = _var.pointColor(lineGroup.values[bisectIndex]);
+
+                    // Store tooltipObj
+                    tooltipValues.push(tooltipObj);
+
+                  }
+
+                });
+
+                // Get left and top positions
+                var left = _var.wrap.node().getBoundingClientRect().left + _var.margin.left + d3.mouse(mouse)[0];
+                var top  = _var.wrap.node().getBoundingClientRect().top + _var.margin.top;
+
+                // Propagate attributes for all values on tooltipValues
+                propAttrs.forEach(function(attr) {
+
+                  // Backup attr to be used on the propagation function
+                  _var.data.tooltip["_"+attr] = [];
+                  _var.data.tooltip[attr].forEach(function(d) { _var.data.tooltip["_"+attr].push(d); });
+
+                  // Store propagation attrs
+                  _var.data.tooltip[attr] = [];
+
+                  // Propagate tooltip over all series
+                  tooltipValues.forEach(function(d) {
+                    _var.data.tooltip["_"+attr].forEach(function(p) {
+                      _var.data.tooltip[attr].push(shared.helpers.text.replaceVariables(p, d));
+                    });
+                  });
+
+                });
+
+                // Set tooltip header as title
+                if(_var.data.tooltip.header != null) {
+                  _var.data.tooltip.header.forEach(function(p) {
+                    _var.data.tooltip.title.unshift(shared.helpers.text.replaceVariables(p, {}));
+                  });
+                }
+
+                // Set tooltip component
+                shared.visualComponents.tooltip()
+                  ._var(_var)
+                  .body(_var.data.tooltip != null && _var.data.tooltip.body != null ? _var.data.tooltip.body : "")
+                  .borderColor("#999")
+                  .hasImg(_var.data.tooltip != null && _var.data.tooltip.hasImg === true)
+                  .left(left)
+                  .muted(_var.data.tooltip != null && _var.data.tooltip.muted != null && _var.data.tooltip.muted === true)
+                  .obj({ color: "#999" })
+                  .top(top)
+                  .title(_var.data.tooltip != null && _var.data.tooltip.title != null ? _var.data.tooltip.title : "")
+                  .run();
+
+                // Reset propagation attrs
+                propAttrs.forEach(function(attr) {
+                  _var.data.tooltip[attr] = [];
+                  _var.data.tooltip["_"+attr].forEach(function(d) { _var.data.tooltip[attr].push(d); });
+                })
+
+              }
+
+              break;
+
+            case 'mouseout':
+
+              // Fade other groups
+              groups.transition().style('opacity', 1)
+
+              // Add style to lines
+              lines.transition()
+                .style("filter", "")
+                .style('opacity', 1);
+
+              // Add style to points
+              points.transition()
+                .style("filter", '')
+                .style('opacity', 1);
+
+              // Set bars component
+              shared.visualComponents.tooltip()
+                ._var(_var)
+                .action("hide")
+                .run();
+
+              break;
+
+          }
+
+          break;
+      }
+    }
+
+    return _var;
+  };
+
+  // Exposicao de variaveis globais
+  ['_var','action','components','isDraggable','node','mouse','origin'].forEach(function (key) {
+
+    // Attach variables to validation function
+    validate[key] = function (_) {
+      if (!arguments.length) {
+        eval('return ' + key);
+      }
+      eval(key + ' = _');
+      return validate;
+    };
+
+    // Attach variables to main function
+    return main[key] = function (_) {
+      if (!arguments.length) {
+        eval('return ' + key);
+      }
+      eval(key + ' = _');
+      return main;
+    };
+  });
+
+  // Executa a funcao chamando o parametro de step
+  main.run = function (_) {
+    return main('run');
+  };
+
+  return main;
+};
+
+
+/***/ }),
+
+/***/ "../../../../../src/assets/js/gViz/visualizations/vs-line-graph-with-draggable-points/initialize.js":
+/***/ (function(module, exports, __webpack_require__) {
+
+// Imports
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
+
+// Initialize the visualization class
+module.exports = function() {
+  "use strict";
+
+  // Get attributes values
+  let _id       = null;
+  let _var      = null;
+  let animation = 900;
+  let container = null;
+  var colors = { main: shared.helpers.colors.main, aux: shared.helpers.colors.aux };
+  let data      = [];
+  let margin    = { top: 10, right: 10, bottom: 10, left: 10 };
+
+  // Events bindings
+  let onHover = function(d) { console.log(d); };
+  let onClick = function(d) { console.log(d); };
+  let onDragStart = function(d) { console.log(d); };
+  let onDragEnd = function(d) { console.log(d); };
+
+  // Validate attributes
+  let validate = function(step) {
+    switch (step) {
+      case 'run': return true;
+      default: return false;
+    }
+  };
+
+  // Main function
+  let main = function(step) {
+
+    // Validate attributes if necessary
+    if (validate(step)) {
+
+      switch (step) {
+
+        // Build entire visualizations
+        case 'run':
+
+          // Initialize variables
+          if (!_var) { _var = {}; }
+          _var._id = _id;
+          _var.animation = animation;
+          _var.colors = colors;
+          _var.margin = margin;
+          _var.onHover = onHover;
+          _var.onClick = onClick;
+          _var.onDragStart = onDragStart;
+          _var.onDragEnd = onDragEnd;
+
+          // Id for shadows
+          _var.shadowId = `vis-shadow-${Math.floor(Math.random() * ((1000000000 - 5) + 1)) + 5}`
+
+           // Get container
+          _var.container = {
+            selector: container,
+            d3: d3.select(container),
+            el: ((typeof container === 'string' || container instanceof String) ? container : d3.select(container).node()),
+            outerWrapper: d3.select(container).closest('.gViz-outer-wrapper'),
+            outerWrapperClientRect: d3.select(container).closest('.gViz-outer-wrapper').node().getBoundingClientRect(),
+            dimensions: {}
+          };
+
+          // Map data and get labels
+          _var.data = _var._data = data;
+
+          // Initialize tFormat
+          var tFmt = _var.data != null && _var.data.t != null && _var.data.t.type === 'number' ? 'number' : 'date';
+          _var.tFormat = shared.helpers[tFmt].parseFormat(_var.data == null ? null : _var.data.z);
+
+          // Initialize line constructor
+          _var.lineConstructor = d3.line()
+            .x(function (d) { return _var.x(d.parsedX) + (_var.xIsDate || _var.xIsNumber ? 0 : _var.x.bandwidth()/2) ; })
+            .y(function (d) { return _var.y(+d.y); });
+
+          break;
+      }
+    }
+
+    return _var;
+  };
+
+  // Expose global variables
+  ['_id','_var','animation','container','colors','data','margin','onHover','onClick','onDragStart','onDragEnd'].forEach(function(key) {
+
+    // Attach variables to validation function
+    validate[key] = function(_) {
+      if (!arguments.length) { eval(`return ${key}`); }
+      eval(`${key} = _`);
+      return validate;
+    };
+
+    // Attach variables to main function
+    return main[key] = function(_) {
+      if (!arguments.length) { eval(`return ${key}`); }
+      eval(`${key} = _`);
+      return main;
+    };
+  });
+
+  // Execute the specific called function
+  main.run = _ => main('run');
+
+  return main;
+};
+
+
+/***/ }),
+
+/***/ "../../../../../src/assets/js/gViz/visualizations/vs-line-graph-with-draggable-points/misc.js":
+/***/ (function(module, exports, __webpack_require__) {
+
+// Imports
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
+
+// Initialize the visualization class
+module.exports = function() {
+  "use strict";
+
+  // Get attributes values
+  var _var       = undefined;
+  var action     = "start";
+  var components = {};
+
+  // Validate attributes
+  var validate = function(step) {
+    switch (step) {
+      case 'run': return true;
+      default: return false;
+    }
+  };
+
+  // Main function
+  var main = function(step) {
+
+    // Validate attributes if necessary
+    if (validate(step)) {
+
+      switch (step) {
+
+        // Build entire visualizations
+        case 'run':
+
+          switch (action) {
+
+            // First action to be done
+            case 'start':
+
+              /* -- Visualization Title -- */
+              // Has title flag
+              var hasTitle = _var.data.title != null && _var.data.title !== "";
+              _var.container.dimensions.title = hasTitle ? 35 : 0;
+
+              // Draw title wrapper
+              var titleWrapper = _var.container.outerWrapper.selectAll(".gviz-title-wrapper").data(["gviz-title-wrapper"]);
+              titleWrapper.exit().remove();
+              titleWrapper = titleWrapper.enter().insert('div', ":first-child").attr('class', "gviz-title-wrapper").merge(titleWrapper);
+              titleWrapper
+                .style('width', '100%')
+                .style('height', '30px')
+                .style('line-height', '30px')
+                .style('margin', '0px 0px 5px 0px')
+                .style('padding', '0px 10px')
+                .style('oveflow', 'hidden')
+                .style('white-space', 'nowrap')
+                .style('text-overflow', 'ellipsis')
+                .style('background-color', '#eee')
+                .style('color', '#666')
+                .style('font-size', '15px')
+                .style('font-weight', 'lighter')
+                .style('display', hasTitle ? 'block' : 'none')
+                .html(_var.data.title)
+
+              /* -- Select -- */
+              // Move select according to title values
+              var hasSelect = _var.data.select != null && _var.data.select.isVisible != null && _var.data.select.isVisible === true;
+              _var.container.outerWrapper.selectAll(".select-wrapper")
+                .style('position', 'absolute')
+                .style('top', _var.container.dimensions.title + 'px')
+                .style('right', '0px')
+                .style('z-index', '1006')
+                .style('display', hasSelect ? 'block' : 'none')
+
+              /* -- Axis and Legend -- */
+              // Set axis string
+              var yTitle = (_var.data.y != null && _var.data.y.title != null && _var.data.y.title !== "" ? "<b>Y - </b>"+_var.data.y.title : "");
+              var xTitle = (_var.data.x != null && _var.data.x.title != null && _var.data.x.title !== "" ? "<b>X - </b>"+_var.data.x.title : "");
+
+              // Set axis title
+              if(yTitle !== "" && xTitle !== "") { _var.axisTitle = yTitle+" / "+xTitle; }
+              else if(yTitle !== "" && xTitle === "") { _var.axisTitle = yTitle; }
+              else if(yTitle === "" && xTitle !== "") { _var.axisTitle = xTitle; }
+              else { _var.axisTitle = ""; }
+
+              // Get hasAxisTitle flag and add size to dimensions hash
+              var hasAxisTitle = _var.axisTitle !== "";
+              _var.container.dimensions.axisTitle = hasAxisTitle && hasSelect ? 35 : 0;
+
+              // Create axis title elements separately if there is select
+              var axisTitleWrapper = _var.container.outerWrapper.selectAll(".gviz-axis-title-wrapper").data(hasSelect && hasAxisTitle ? [true] : []);
+              axisTitleWrapper.exit().remove();
+              axisTitleWrapper = axisTitleWrapper.enter().append("div").attr('class', "gviz-axis-title-wrapper").merge(axisTitleWrapper);
+              axisTitleWrapper
+                .style('width', 'calc(100% - 165px)')
+                .style('height', '30px')
+                .style('max-height', '30px')
+                .style('line-height', '35px')
+                .style('margin', '0px 0px 5px 0px')
+                .style('padding', '0px 10px')
+                .style('overflow', 'hidden')
+                .style('text-overflow', 'ellipsis')
+                .style('white-space', 'nowrap')
+                .style('color', '#666')
+                .style('font-size', '13px')
+                .style('z-index', "1005")
+                .style('position', 'absolute')
+                .style('top', hasTitle ? "35px" : "0px")
+                .style('left', "0px")
+                .style('display', hasSelect && hasAxisTitle ? 'block' : 'none')
+                .html(_var.axisTitle)
+
+              // Initialize string
+              var string = hasAxisTitle && !hasSelect ? "<span class='axis-title'>" + _var.axisTitle + "</span>" : "";
+              var stringObj = {};
+
+              // Iterate over data to get legend values
+              _var.data.data.forEach(function(d, i) {
+
+                // Get color
+                var fillColor = d.color;
+                var strokeColor = d.color;
+                var legend = _var.data.legend != null && _var.data.legend.text != null ? _var.data.legend.text : "{{name}}";
+                var legendStr = "";
+
+                // Add rect for objw
+                legendStr += "<span class='legend-content' >";
+                legendStr += "<span class='rect' style='background-color:"+fillColor+" ; border-top: 2px solid "+strokeColor+";'></span><span class='name'>";
+                legendStr += shared.helpers.text.replaceVariables(legend, d);
+                legendStr += "</span>";
+                legendStr += "</span>";
+
+                // If the legend str wasnt computed, add to legend
+                if(stringObj[legendStr] == null) {
+                  stringObj[legendStr] = true;
+                  string += legendStr;
+                }
+
+              });
+
+              // Set margin left and display style
+              var hasLegend = _var.data.legend != null && _var.data.legend.isVisible != null && _var.data.legend.isVisible === true;
+              var legendWrapper = _var.container.outerWrapper.selectAll(".gviz-legend-wrapper").data(hasLegend ? [true] : []);
+              legendWrapper.exit().remove();
+              legendWrapper = legendWrapper.enter().append("div").attr('class', "gviz-legend-wrapper").merge(legendWrapper);
+              legendWrapper
+                .style('width', hasSelect && !hasAxisTitle ? 'calc(100% - 165px)' : '100%')
+                .style('height', 'auto')
+                .style('max-height', '60px')
+                .style('line-height', '30px')
+                .style('margin', '0px 0px 5px 0px')
+                .style('padding', '0px 10px')
+                .style('overflow', 'hidden')
+                .style('color', '#666')
+                .style('font-size', '13px')
+                .style('z-index', "1005")
+                .style('position', 'absolute')
+                .style('top', (_var.container.dimensions.title + _var.container.dimensions.axisTitle) + "px")
+                .style('left', "0px")
+                .style('display', hasLegend ? 'block' : 'none')
+                .each(function(d) {
+
+                  // Set margin left and display style
+                  var legend = d3.select(this).selectAll(".gviz-legend").data(hasLegend ? ["gviz-legend"] : []);
+                  legend.exit().remove();
+                  legend = legend.enter().insert('p', ":first-child").attr('class', "gviz-legend").merge(legend);
+                  legend
+                    .style('width', '100%')
+                    .style('height', 'auto')
+                    .html(string);
+
+                });
+
+              legendWrapper
+                .on('mouseover', function() { d3.select(this).classed('gviz-legend-hover', true); })
+                .on('mouseout', function() { d3.select(this).classed('gviz-legend-hover', false); });
+
+              // Set legend dimension
+              _var.container.dimensions.legend = hasLegend ? (legendWrapper.node().getBoundingClientRect().height + 5) : 0;
+
+              // Update container _id, height and client bound rect
+              _var.container.d3
+                .attr('data-vis-id', _var._id)
+                .style('height', (_var.container.outerWrapperClientRect.height - (_var.container.dimensions.title + _var.container.dimensions.axisTitle + _var.container.dimensions.legend)) + "px")
+                .style('top', (_var.container.dimensions.title + _var.container.dimensions.axisTitle + _var.container.dimensions.legend) + 'px')
+
+              // Update grid background position
+              _var.container.outerWrapper.selectAll('.grid-background')
+                .style('top', (_var.container.dimensions.title + _var.container.dimensions.axisTitle + _var.container.dimensions.legend) + 'px')
+
+              // Define height and width
+              var containerClientRect = _var.container.d3.node().getBoundingClientRect();
+              _var.height = containerClientRect.height - (_var.margin.top + _var.margin.bottom);
+              _var.width = containerClientRect.width - (_var.margin.left + _var.margin.right);
+
+              // NO DATA AVAILABLE
+              if (_var.data.data == null || _var.data.data.length === 0) {
+                _var.container.d3.html("<h5 style='line-height: "+(containerClientRect.height)+"px; text-align: center;'>NO DATA AVAILABLE</h5>");
+              } else {
+                _var.container.d3.selectAll("h5").remove();
+              }
+
+              break;
+
+            // Last action to be done
+            case 'end':
+
+              break;
+          }
+          break;
+      }
+    }
+
+    return _var;
+  };
+
+  // Exposicao de variaveis globais
+  ['_var','action','components'].forEach(function(key) {
+
+    // Attach variables to validation function
+    validate[key] = function(_) {
+      if (!arguments.length) { eval(`return ${key}`); }
+      eval(`${key} = _`);
+      return validate;
+    };
+
+    // Attach variables to main function
+    return main[key] = function(_) {
+      if (!arguments.length) { eval(`return ${key}`); }
+      eval(`${key} = _`);
+      return main;
+    };
+  });
+
+  // Executa a funcao chamando o parametro de step
+  main.run = _ => main('run');
+
+  return main;
+};
+
+
+/***/ }),
+
+/***/ "../../../../../src/assets/js/gViz/visualizations/vs-line-graph-with-draggable-points/style.js":
+/***/ (function(module, exports, __webpack_require__) {
+
+// Imports
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
+
+// Initialize the visualization class
+module.exports = function () {
+  "use strict";
+
+  // Get attributes values
+  var _var = undefined;
+  var animation = 900;
+
+  // Validate attributes
+  var validate = function (step) {
+
+    switch (step) {
+      case 'run': return true;
+      default: return false;
+    }
+  };
+
+  // Main function
+  var main = function (step) {
+
+    // Validate attributes if necessary
+    if (validate(step)) {
+
+      switch (step) {
+
+        // Build entire visualizations
+        case 'run':
+
+          // Set line width
+          _var.lineWidth = function(d) {
+            return d.strokeWidth != null && !isNaN(d.strokeWidth) ? d.strokeWidth + "px" : "3px";
+          }
+
+          // Set line color
+          _var.lineColor = function(d) {
+            return d.color != null ? d.color : "#666";
+          }
+
+          // Set stroke style function
+          _var.lineStyle = function(d) {
+            var strokeStyle = d.strokeStyle != null ? d.strokeStyle : "solid";
+            if(strokeStyle === "dotted") { return "2,2"; }
+            else if(strokeStyle === "dashed") { return "7,3"; }
+            else { return "0,0"; }
+          }
+
+          // Set point color
+          _var.pointColor = function(d) {
+            if(d.pointColor != null) { return d.pointColor; }
+            else if(d._parent.pointColor != null) { return d._parent.pointColor; }
+            else if(d._parent.color != null) { return d._parent.color; }
+            else { return "#333"; }
+          }
+
+          // Set point color
+          _var.pointSize = function(d, isDraggable=false) {
+            var size = d.pointSize != null ? d.pointSize : (d._parent.pointSize != null ? d._parent.pointSize : 4);
+            return isDraggable ? d3.max([10,size]) : size;
+          }
+
+          // Set shape path for node
+          _var.pointPath = function(d, isDraggable=false) {
+
+            // Get radius
+            var r = isDraggable ? d3.max([10,_var.pointSize(d)]) : _var.pointSize(d);
+            var dr = r*2;
+            var x  = _var.x(d.parsedX) + (_var.xIsDate || _var.xIsNumber ? 0 : _var.x.bandwidth()/2);
+            var y  = _var.y(+d.y);
+            var shape = d.pointShape != null ? d.pointShape : (d._parent.pointShape != null ? d._parent.pointShape : "circle");
+
+            // For each shape style
+            switch(shape) {
+
+              // Set rect shape
+              case "rect":
+                return "M " + ((x != null ? x : 0) - r) + " " + ((y != null ? y : 0) - r) + " " +
+                       "l " + dr + ", 0 " +
+                       "l 0 , " + dr + " " +
+                       "l " + (-dr) + ", 0 " + "Z";
+                break;
+
+              // Set diamond shape
+              case 'diamond':
+                return "M " + (x != null ? x : 0) + " " + ((y != null ? y : 0) - r) + " " +
+                       "l " + r + ", " + r + " " +
+                       "l " + (-r) + ", " + r + " " +
+                       "l " + (-r) + ", " + (-r) + " " + "Z";
+                break;
+
+              // Set triangle up shape
+              case 'triangle-up':
+                return "M " + (x != null ? x : 0) + " " + ((y != null ? y : 0) - r) + " " +
+                       "l " + r + ", " + dr + " " +
+                       "l " + (-dr) + ", " + 0 + " " + "Z";
+                break;
+
+              // Set triangle down shape
+              case 'triangle-down':
+                return "M " + ((x != null ? x : 0) - r) + " " + ((y != null ? y : 0) - r) + " " +
+                       "l " + dr + ", 0 " +
+                       "l " + (-r) + ", " + dr + " " + "Z";
+                break;
+
+              // Set circle shape
+              default:
+                return "M " + (x != null ? x : 0) + " " + (y != null ? y : 0) + " " +
+                       "m -" + r + ", 0 " +
+                       "a " + r + "," + r + " 0 1,0 " + ( r*2) + ",0 " +
+                       "a " + r + "," + r + " 0 1,0 " + (-r*2) + ",0 ";
+                break;
+            }
+          }
+
+          // Arrwos color function depending on the point color
+          _var.arrowsColor = function(d) {
+            var pointColor = _var.pointColor(d);
+            return shared.helpers.colors.isDark(pointColor) ? "#FFF" : "#333";
+          }
+
+          // Set shape path for node
+          _var.arrowsPath = function(d, isDraggable=false) {
+
+            // Get variables values to be used on the path construction
+            var r = 3;
+            var dr = r*2;
+            var x  = _var.x(d.parsedX) + (_var.xIsDate || _var.xIsNumber ? 0 : _var.x.bandwidth()/2);
+            var y  = _var.y(+d.y);
+            var shape = d.pointShape != null ? d.pointShape : (d._parent.pointShape != null ? d._parent.pointShape : "circle");
+
+            // Draw arrows path
+            var path = "";
+
+            // Arrow up
+            path += "M " + (x != null ? x : 0) + " " + (((y-2) != null ? (y-2) : 0) - r) + " ";
+            path += "l " + r + ", " + (dr*0.7) + " ";
+            path += "l " + (-dr) + ", " + 0 + " " + "Z";
+
+            // Arrow down
+            path += "M " + ((x != null ? x : 0) - r) + " " + (((y+4) != null ? (y+4) : 0) - r) + " ";
+            path += "l " + dr + ", 0 ";
+            path += "l " + (-r) + ", " + (dr*0.7) + " " + "Z";
+
+            return path
+          }
+
+          break;
+      }
+    }
+
+    return _var;
+  };
+
+  // Exposicao de variaveis globais
+  ['_var', 'animation'].forEach(function (key) {
+
+    // Attach variables to validation function
+    validate[key] = function (_) {
+      if (!arguments.length) { eval(`return ${key}`); }
+      eval(`${key} = _`);
+      return validate;
+    };
+
+    // Attach variables to main function
+    return main[key] = function (_) {
+      if (!arguments.length) { eval(`return ${key}`); }
+      eval(`${key} = _`);
+      return main;
+    };
+  });
+
+  // Executa a funcao chamando o parametro de step
+  main.run = _ => main('run');
+
+  return main;
+};
+
+
+/***/ }),
+
+/***/ "../../../../../src/assets/js/gViz/visualizations/vs-line-graph-with-draggable-points/x-scale.js":
+/***/ (function(module, exports, __webpack_require__) {
+
+// Imports
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
+
+// Initialize the visualization class
+module.exports = function () {
+  "use strict";
+
+  // Get attributes values
+  var _var = undefined;
+  var data = [];
+
+  // Validate attributes
+  var validate = function (step) {
+
+    switch (step) {
+      case 'run': return true;
+      default: return false;
+    }
+  };
+
+  // Main function
+  var main = function (step) {
+
+    // Validate attributes if necessary
+    if (validate(step)) {
+
+      switch (step) {
+
+        // Build entire visualizations
+        case 'run':
+
+          // Set format
+          _var.xIsDate = (_var.data.x != null && _var.data.x.type === 'time' && _var.data.x.inFormat != null && _var.data.x.outFormat != null);
+          _var.xIsNumber = (_var.data.x != null && _var.data.x.type === 'number' && _var.data.x.format != null);
+          var xFmt = _var.xIsDate ? 'date' : (_var.xIsNumber ? 'number' : 'text');
+          _var.xFormat = shared.helpers[xFmt].parseFormat(_var.data == null ? null : _var.data.x);
+
+          // Define scales
+          if(_var.xIsDate) { _var.x = d3.scaleTime().range([0, _var.width]); }
+          else if(_var.xIsNumber) { _var.x = d3.scaleLinear().range([0, _var.width]); }
+          else  { _var.x = d3.scaleBand().range([0, _var.width]).padding(0.1); }
+
+          // Define aux variables
+          var min = null, max = null, diff = null;
+
+          // Initialize domains
+          _var.xDomain = {};
+          var xDomain = [];
+
+          // Get domains
+          data.forEach(function(d) {
+            d.values.forEach(function(v) {
+
+              // Set parent
+              v._parent = d;
+
+              // Date value
+              if(_var.xIsDate) {
+
+                // Parse values
+                v.parsedX = d3.timeParse(_var.data.x.inFormat)(v.x);
+                v.formattedX = _var.xFormat(v.x);
+
+                // Set domain
+                if(min == null || min > +v.parsedX) { min = +v.parsedX; }
+                if(max == null || max < +v.parsedX) { max = +v.parsedX; }
+
+              // Number values
+              } else if(_var.xIsNumber) {
+
+                // Parse values
+                v.parsedX = +v.x;
+                v.formattedX = _var.xFormat(v.x);
+
+                // Set domain
+                if(min == null || min > +v.x) { min = +v.x; }
+                if(max == null || max < +v.x) { max = +v.x; }
+
+              // For ordinal scales
+              } else {
+
+                // Get ordinal values
+                v.parsedX = v.x;
+                v.formattedX = v.x;
+
+                // Add id to x domain value
+                if(_var.xDomain[v.x] == null) {
+                  _var.xDomain[v.x] = v;
+                  xDomain.push(v.x);
+                }
+              }
+
+            });
+          });
+
+          // Date or number values
+          if(_var.xIsDate || _var.xIsNumber) {
+
+            // Sort values
+            data.forEach(function(d) { d.values = d.values.sort(function(a,b) { return d3.ascending(a.parsedX, b.parsedX); }); });
+
+            // Check for default values
+            if(isNaN(min)) { min = 0; }
+            if(isNaN(max)) { max = 1; }
+
+            // Get diff
+            var diff = Math.abs(max - min) === 0 ? Math.abs(max * 0.1) : 0;
+
+            // Set x domain
+            _var.x.domain( _var.xIsDate ? [min, max] : [(min == 0 ? min : min - diff), max + diff]).nice();
+
+            // Get x axis ticks
+            var bins = d3.max([3, parseInt(_var.width / 100, 10)]);
+
+            // Define axis
+            _var.xAxis = d3.axisBottom(_var.x).ticks(bins).tickPadding(10).tickFormat(_var.xIsDate ? d3.timeFormat(_var.data.x.outFormat) : _var.xFormat);
+
+          } else {
+
+            // Set x domain
+            _var.x.domain(xDomain);
+
+            // Define axis
+            _var.xAxis = d3.axisBottom(_var.x).tickPadding(10).tickFormat(function(d) { return d; });
+
+          }
+
+          break;
+      }
+    }
+
+    return _var;
+  };
+
+  // Exposicao de variaveis globais
+  ['_var','data'].forEach(function (key) {
+
+    // Attach variables to validation function
+    validate[key] = function (_) {
+      if (!arguments.length) {
+        eval('return ' + key);
+      }
+      eval(key + ' = _');
+      return validate;
+    };
+
+    // Attach variables to main function
+    return main[key] = function (_) {
+      if (!arguments.length) {
+        eval('return ' + key);
+      }
+      eval(key + ' = _');
+      return main;
+    };
+  });
+
+  // Executa a funcao chamando o parametro de step
+  main.run = function (_) {
+    return main('run');
+  };
+
+  return main;
+};
+
+
+/***/ }),
+
+/***/ "../../../../../src/assets/js/gViz/visualizations/vs-line-graph-with-draggable-points/y-scale.js":
+/***/ (function(module, exports, __webpack_require__) {
+
+// Imports
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
+
+// Initialize the visualization class
+module.exports = function () {
+  "use strict";
+
+  // Get attributes values
+  var _var = undefined;
+  var data = [];
+
+  // Validate attributes
+  var validate = function (step) {
+
+    switch (step) {
+      case 'run': return true;
+      default: return false;
+    }
+  };
+
+  // Main function
+  var main = function (step) {
+
+    // Validate attributes if necessary
+    if (validate(step)) {
+
+      switch (step) {
+
+        // Build entire visualizations
+        case 'run':
+
+          // Initialize scale
+          _var.y = d3.scaleLinear().range([_var.height, 0]);
+
+          // Define aux variables
+          var min = null,
+              max = null,
+              diff = null;
+
+          // Get bounds
+          data.forEach(function(d) {
+            d.values.forEach(function(v) {
+              if(min == null || min > +v.y) { min = +v.y; }
+              if(max == null || max < +v.y) { max = +v.y; }
+            });
+          });
+
+          // Get axis target
+          if(_var.data.y != null && _var.data.y.target != null && !isNaN(+_var.data.y.target)) {
+            _var.yTarget = +_var.data.y.target;
+            if(min == null || min > +_var.data.y.target) { min = +_var.data.y.target; }
+            if(max == null || max < +_var.data.y.target) { max = +_var.data.y.target; }
+          }
+
+          // Check for default values
+          if(isNaN(min)) { min = 0; }
+          if(isNaN(max)) { max = 1; }
+
+          // Get diff
+          var diff = Math.abs(max - min) === 0 ? Math.abs(max * 0.1) : Math.abs(max - min) * 0.05;
+
+          // Set x domain
+          _var.yBounds = [min, max];
+          _var.y.domain(_var.yBounds).nice();
+
+          // Set format
+          _var.yFormat = shared.helpers.number.parseFormat(_var.data == null ? null : _var.data.y);
+
+          // Get x axis ticks
+          var bins = d3.max([3, parseInt(_var.height / 25, 10)]);
+
+          // Define y axis
+          _var.yAxis = d3.axisLeft(_var.y).ticks(bins).tickPadding(10).tickFormat(_var.yFormat);
+
+          // Update margin left and width
+          if(data.length > 0) {
+            _var.width += _var.margin.left;
+            _var.margin.left = _var.margin.right + 5 + d3.max(_var.yAxis.scale().ticks().map(function(d) { return shared.helpers.text.getSize(_var.yFormat(d)); }));
+            _var.width -= _var.margin.left;
+          }
+
+          break;
+      }
+    }
+
+    return _var;
+  };
+
+  // Exposicao de variaveis globais
+  ['_var','data'].forEach(function (key) {
+
+    // Attach variables to validation function
+    validate[key] = function (_) {
+      if (!arguments.length) {
+        eval('return ' + key);
+      }
+      eval(key + ' = _');
+      return validate;
+    };
+
+    // Attach variables to main function
+    return main[key] = function (_) {
+      if (!arguments.length) {
+        eval('return ' + key);
+      }
+      eval(key + ' = _');
+      return main;
+    };
+  });
+
+  // Executa a funcao chamando o parametro de step
+  main.run = function (_) {
+    return main('run');
+  };
+
+  return main;
+};
 
 
 /***/ }),

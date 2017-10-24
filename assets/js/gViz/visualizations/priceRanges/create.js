@@ -48,7 +48,7 @@ module.exports = function () {
           var chart = svg.patternify({ selector: 'chart', elementTag: 'g' }).attr('width', calc.chartWidth).attr('height', calc.chartHeight).attr('transform', 'translate(' + (calc.chartLeftMargin) + ',' + calc.chartTopMargin + ')')
 
           // Group which is translated into chart center
-          var centerPoint = svg.patternify({ selector: 'center-point', elementTag: 'g' }).attr('transform', 'translate(' + calc.centerPointX + ',' + calc.centerPointY + ')');
+          var centerPoint = chart.patternify({ selector: 'center-point', elementTag: 'g' }).attr('transform', 'translate(' + calc.centerPointX + ',' + calc.centerPointY + ')');
 
           //################################   FILTERS  &   SHADOWS  ##################################
 

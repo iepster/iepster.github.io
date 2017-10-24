@@ -54,7 +54,7 @@ module.exports = function () {
           var calc = {};
 
           calc.chartLeftMargin = attrs.marginLeft;
-          calc.chartTopMargin = attrs.marginTop;
+          calc.chartTopMargin = 0//attrs.marginTop;
           calc.chartWidth = attrs.svgWidth - attrs.marginRight - calc.chartLeftMargin;
           calc.chartHeight = attrs.svgHeight - attrs.marginBottom - calc.chartTopMargin;
           calc.halfWidth = Math.min(calc.chartWidth, calc.chartHeight) / 2;

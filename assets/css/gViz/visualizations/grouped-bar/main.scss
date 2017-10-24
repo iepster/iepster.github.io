@@ -19,6 +19,30 @@ svg.grouped-bar-chart, svg.stacked-bar-chart {
   .element-group { cursor: pointer; }
   .name { font-size: 10px; font-weight: 300; letter-spacing: 1px;  fill: #afa5b7; fill-opacity: 0.75; }
 
+  .brush-text { font-size: 8px; font-weight: normal; letter-spacing: 1px;  fill: #f16b9c; }
+  .brush {
+    .selection {
+      fill: #f06196;
+      stroke: none;
+    }
+  }
+
+  .node {
+    cursor:pointer;
+    text { fill: #ccc; }
+    &.selected {
+      text { fill: #f16b9c; }
+    }
+
+    &.hovered {
+      .node-rect { fill: #f16b9c !important; }
+      .node-text { fill: #FFF; }
+    }
+    .node-circle { fill-opacity: 0.5; }
+  }
+
+
+
 }
 
 [data-gViz-id='diwo-visual-bar-positive-negative-deviation'] {

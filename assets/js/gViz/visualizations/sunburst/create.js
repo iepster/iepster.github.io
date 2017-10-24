@@ -45,7 +45,6 @@ module.exports = function () {
 
           //Chart wrapper - same as _var.g
           var chart = svg
-            .append('g')
             .patternify({ selector: 'chart', elementTag: 'g' })
             .attr('class', 'chart').attr('width', calc.chartWidth).attr('height', calc.chartHeight).attr('transform', 'translate(' + (calc.chartLeftMargin + calc.chartWidth/2) + ',' + (calc.chartHeight/2) + ')').attr('pointer-events', 'none')
 

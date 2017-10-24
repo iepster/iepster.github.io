@@ -47,5 +47,9 @@ module.exports = {
   priceRanges: require('./priceRanges/_init.js'),
   doubleEntryTable: require('./double-entry-table/_init.js'),
   visualWeeklyProductsPredictionLine: require('./weeklyProductsPredictionLine/_init.js'),
-  barPositiveNegativeDeviation: require('./bar-positive-negative-deviation/_init.js')
+  barPositiveNegativeDeviation: require('./bar-positive-negative-deviation/_init.js'),
+
+  // Victoria's  Secret Visualizations
+  vsBarVertWithBrush: require('./vs-bar-vert-with-brush/_init.js'),
+  vsLineGraphWithDraggablePoints: require('./vs-line-graph-with-draggable-points/_init.js')
 };

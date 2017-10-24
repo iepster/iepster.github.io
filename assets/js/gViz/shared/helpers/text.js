@@ -97,7 +97,7 @@ module.exports = {
 
         // Limit height or line number
         if(bbox.height > height || numLines >= maxLines) {
-          d3.select(text.node().lastChild).remove();
+          if(numLines >= 1) { d3.select(text.node().lastChild).remove(); }
           if(words.length > 0) { d3.select(text.node().lastChild).text(d3.select(text.node().lastChild).text().slice(0,-1) + '...'); }
           words = [];
         }

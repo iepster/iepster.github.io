@@ -314,13 +314,13 @@ module.exports = function () {
             fixedTooltip.select('.top-content').attr('width', width)
             fixedTooltip.select('.middle-content').attr('width', width)
             fixedTooltip.select('.value').attr('x', width - 30)
-            width = fixedTooltip.node().getBoundingClientRect().width + 100;
+            width = fixedTooltip.node().getBoundingClientRect().width ;
             width = width > 400 ? width : 400;
             fixedTooltip.select('.top-content').attr('width', width)
             fixedTooltip.select('.middle-content').attr('width', width)
             fixedTooltip.select('.value').attr('x', width - 30)
             fixedTooltip.attr('display', props.display)
-              .attr('transform', `translate(${calc.chartWidth - 80 - (width - 300)},${53})`) //;
+              .attr('transform', `translate(${calc.chartWidth - 80 - (width - 300)-100},${53})`) //;
             showBackBtn(!flag);
             if (attrs.state == 'FULL') showBackBtn(false);
 
