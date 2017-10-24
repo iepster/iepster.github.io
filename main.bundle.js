@@ -4905,7 +4905,7 @@ var DecideModule_1;
 /***/ "../../../../../src/app/microservices/decide/decide/decide-panel-layout/decide-panel-layout.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"panel-container gray\">\n  <div class=\"top-buttons\">\n    <div class=\"circle-button diwo-button\"></div>\n    <div class=\"line-header-elements\">\n      <span class=\"header-info-separator\">Optimize Assortment</span>\n      <span>Opp #135</span>\n    </div>\n    <div class=\"line-header-button\">\n      <div class=\"graph-button\"></div>\n      <div class=\"check-button\">\n        <i class=\"di-check di-12x sub-icon\"></i>\n      </div>\n    </div>\n    <div class=\"side-buttons\">\n      <div class=\"circle-button\">\n        <i class=\"di-view-list di-20x sub-icon\"></i>\n      </div>\n      <div class=\"circle-button\" (click)=\"state = 'trends'\">\n        <i class=\"di-write di-20x sub-icon\"></i>\n      </div>\n      <div class=\"circle-button\" (click)=\"state = 'what-if-analysis'\">\n        <i class=\"di-write di-20x sub-icon\"></i>\n      </div>\n    </div>\n  </div>\n  <div class=\"main-content\">\n     <!--Inside this should be placed the d3 components-->\n    <div class=\"left-graph\">\n      <img *ngIf=\"state === 'trends'\" src=\"./assets/images/placeholders/placeholder_graph_3.png\">\n      <img *ngIf=\"state === 'what-if-analysis'\" src=\"./assets/images/placeholders/placeholder_graph_4.png\">\n    </div>\n    <div class=\"right-fields\">\n      <div class=\"row\">\n        <div class='left-value'>Revenue impact</div>\n        <div class='right-value'>$1.3M</div>\n      </div>\n\n      <div class=\"row\">\n        <div class='left-value'>Confidence Score</div>\n        <div class='right-value'>89%</div>\n      </div>\n\n       <!--Inside this should be placed the details components-->\n      <div class=\"graph-details\">\n        <decide-trends-panel *ngIf=\"state === 'trends'\"></decide-trends-panel>\n        <decide-what-if-analysis-panel *ngIf=\"state === 'what-if-analysis'\"></decide-what-if-analysis-panel>\n      </div>\n    </div>\n  </div>\n</div>\n"
+module.exports = "<div class=\"panel-container gray\">\n  <div class=\"top-buttons\">\n    <div class=\"circle-button diwo-button\"></div>\n    <div class=\"line-header-elements\">\n      <span class=\"header-info-separator\">Optimize Assortment</span>\n      <span>Opp #135</span>\n    </div>\n    <div class=\"line-header-button\">\n      <div class=\"graph-button\"></div>\n      <div class=\"check-button\">\n        <i class=\"di-check di-12x sub-icon\"></i>\n      </div>\n    </div>\n    <div class=\"side-buttons\">\n      <div class=\"circle-button\">\n        <i class=\"di-view-list di-20x sub-icon\"></i>\n      </div>\n      <div class=\"circle-button\" (click)=\"state = 'trends'\">\n        <i class=\"di-write di-20x sub-icon\"></i>\n      </div>\n      <div class=\"circle-button\" (click)=\"state = 'what-if-analysis'\">\n        <i class=\"di-write di-20x sub-icon\"></i>\n      </div>\n    </div>\n  </div>\n  <div class=\"main-content\">\n     <!--Inside this should be placed the d3 components-->\n    <div class=\"left-graph\">\n      <div *ngIf=\"state === 'trends'\" data-id='gViz-visuals-vis-wrapper' class='gViz-visuals-inner-wrapper' style=\"width: 100%;height:800px\">\n        <div *ngIf=\"!data[0].Graph.Data\">Loading data...</div>\n        <ng-template *ngIf=\"data[0].Graph.Data\"\n                     [dynamic-component]=\"data[0].Graph.Type\"\n                     [data]=\"data[0].Graph.Data\"></ng-template>\n      </div>\n      <div *ngIf=\"state === 'what-if-analysis'\" data-id='gViz-visuals-vis-wrapper' class='gViz-visuals-inner-wrapper' style=\"width: 100%;height:800px\">\n        <div *ngIf=\"!data[1].Graph.Data\">Loading data...</div>\n        <ng-template *ngIf=\"data[1].Graph.Data\"\n                     [dynamic-component]=\"data[1].Graph.Type\"\n                     [data]=\"data[1].Graph.Data\"></ng-template>\n      </div>\n    </div>\n    <div class=\"right-fields\">\n      <div class=\"row\">\n        <div class='left-value'>Revenue impact</div>\n        <div class='right-value'>$1.3M</div>\n      </div>\n\n      <div class=\"row\">\n        <div class='left-value'>Confidence Score</div>\n        <div class='right-value'>89%</div>\n      </div>\n\n       <!--Inside this should be placed the details components-->\n      <div class=\"graph-details\">\n        <decide-trends-panel *ngIf=\"state === 'trends'\" [data]=\"data\"></decide-trends-panel>\n        <decide-what-if-analysis-panel *ngIf=\"state === 'what-if-analysis'\"></decide-what-if-analysis-panel>\n      </div>\n    </div>\n  </div>\n</div>\n"
 
 /***/ }),
 
@@ -4958,6 +4958,10 @@ var DecidePanelLayoutComponent = (function () {
     };
     return DecidePanelLayoutComponent;
 }());
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["F" /* Input */])(),
+    __metadata("design:type", Object)
+], DecidePanelLayoutComponent.prototype, "data", void 0);
 __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["U" /* Output */])(),
     __metadata("design:type", typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["x" /* EventEmitter */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["x" /* EventEmitter */]) === "function" && _a || Object)
@@ -5030,6 +5034,10 @@ var DecideTrendsPanelComponent = (function () {
     };
     return DecideTrendsPanelComponent;
 }());
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["F" /* Input */])(),
+    __metadata("design:type", Object)
+], DecideTrendsPanelComponent.prototype, "data", void 0);
 DecideTrendsPanelComponent = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["o" /* Component */])({
         selector: 'decide-trends-panel',
@@ -5107,7 +5115,7 @@ DecideWhatIfAnalysisPanelComponent = __decorate([
 /***/ "../../../../../src/app/microservices/decide/decide/decide.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<button id=\"decideClose\" (click)=\"navigateHome()\" class=\"has-pd-light is-fixed right-large top-large has-c-shade-9\"><i\n  class=\"di-close di-14x\"></i></button>\n<!-- <div  class=\"has-bg-shade-1 is-fixed left-large right-large has-pd-top-normal has-pd-bottom-small\" id=\"decide-header\">\n  <div  class=\"layout-row\" *ngIf=\"firstOpp\">\n    <div  class=\"decide-card-item  has-pd-vert-extra-small has-pd-right-extra-small\"><p class=\"has-bd-bottom  bd-light bd-secondary\">Product</p></div>\n    <div *ngFor=\"let column of firstOpp.rowInfo\"\n       class=\"decide-card-item   has-pd-vert-extra-small has-pd-right-extra-small\"><p class=\"has-bd-bottom  bd-light bd-secondary\">{{column.title | capitalize}}</p></div>\n\n  </div>\n</div> -->\n\n\n<!-- dynamic cards start | can be split into other components - used mock data -->\n\n<!-- cards header start -->\n<!-- <div class=\"card-header\" (mouseover)=\"resetContextualState()\">\n  <div class=\"context\">\n    Context\n  </div>\n  <div class=\"forecast\">\n    Forecast\n  </div>\n  <div class=\"outcome\">\n    Potential Outcome\n  </div>\n</div> -->\n<!-- cards header end -->\n\n<!-- line start -->\n<div id=\"cards-container\" class=\"cards-container\" (scroll)=\"didScroll($event)\">\n  <div id=\"{{ line.Identifyer }}\" class=\"card-line\" *ngFor=\"let line of data.Sections; let i = index\"\n       (mouseover)=\"checkContextualState(i,'over')\" (click)=\"getBox(line.Identifyer)\">\n\n    <!-- building the collapse state of the line -->\n    <!-- defining and adding card types -->\n\n    <!-- defining line frame -->\n    <div>\n      <!-- adding header elements -->\n      <div class=\"line-icon\" (click)=\"panelOpen = true\">\n        <i class=\"di-chevron-down\"></i>\n      </div>\n      <div class=\"options-icon\">\n        <!-- placeholder icon until the way the icon is sent will be decided -->\n        <i class=\"di-check\" *ngIf=\"!accordionState[i]['Ask_Icon']\"></i>\n        <!-- <i class=\"di-microphone\" *ngIf=\"accordionState[i]['Ask_Icon']\" (click)=\"activateAsk(accordionState[i].Identifyer)\"></i> -->\n\n        <!-- diwo circle -->\n\n        <div [diwoCircleDirective]=\"diwoPosition\" class=\"is-relative\" *ngIf=\"accordionState[i]['Ask_Icon']\"\n\n             [diwoCircleActions]=\"{ clip: 'true', case: 'true',narrate: 'true',volume: 'true',pin: 'true', help: 'global', share: 'true'}\"\n             [diwoCircleTriggeredBy]=\"'hover'\"\n             [diwoCircleAllow]=\"!isMyDiwoOpen() && isMicroserviceOpen()\"\n             [diwoCircleClickAction]=\"openMyDiwo\"\n             [diwoCircleSize]=\"34\"\n             [diwoCircleDisableExtraNav]=\"true\"\n             [diwoCircleType]=\"'microphone'\" style=\"min-height: 100%;position:absolute;top:-3px;left:-3px;\">\n\n\n          <div id=\"nav\" [hidden]=\"!(!isMyDiwoOpen() && isMicroserviceOpen() || (showDock | async)) \"\n\n               class=\"card layout-row right-none with-mg-small layout--start-center  top-none left-none has-pd-hori-large has-pd-top-large\">\n            <!--<div id=\"nav-overlay\" class=\"is-absolute top-none left-none bottom-none right-none\" *ngIf=\"isWatchOpen()\"></div>-->\n            <div #diwoHolder class=\"logo-holder is-one-whole-tall is-relative layout-item\"\n                 [hidden]=\"(isMyDiwoOpen() || isAskOpen()) && !(showDock | async)\">\n              <button class=\"is-absolute transform-to-center top-one-half left-one-half\" [routerLink]=\"['/mydiwo']\">\n                <img class=\"is-absolute transform-to-center top-one-half left-one-half\" width=\"20\"\n                     src=\"./assets/images/diwoLogo-2x.png\"/>\n              </button>\n            </div>\n\n          </div>\n\n        </div>\n\n        <!-- end diwo circle -->\n\n      </div>\n      <span class=\"line-header-elements\">\n        <span *ngFor=\"let info of line.Header.Text; let j = index\"\n              [ngClass]=\"{'header-info-separator': j < (line.Header.Text.length-1) }\">{{ info }}</span>\n      </span>\n\n      <!-- defining and displaying cards -->\n      <div *ngFor=\"let card of line.Collapsed.Cards; let j = index\" class=\"line-card col-25\">\n\n        <!-- image card -->\n        <div *ngIf=\"card.Type == 'image'\"\n             [ngClass]=\"{ 'gray': card.Style.Background == 'gray', 'white': card.Style.Background == 'white' }\"\n             class=\"card border-card-right\">\n          <div class=\"card-image\"> <!-- the image will be blob or path?! -->\n            <img src=\"{{ card.Content.Image }}\" width=\"60\"/>\n          </div>\n          <div class=\"line-group\">\n            <div class=\"card-content-line\"\n                 [ngClass]=\"{ 'black': card.Content.Text.Style.Colors[0] == 'black', 'pink': card.Content.Text.Style.Colors[0] == 'pink', 'gray': card.Content.Text.Style.Colors[0] == 'gray', 'bold': card.Content.Text.Style.Weights[0] == 'bold', 'normal': card.Content.Text.Style.Weights[0] == 'normal' }\">\n              <div style=\"display: block\">{{ card.Content.Text.Value[0] }}</div>\n            </div>\n            <div class=\"card-content-line\"\n                 [ngClass]=\"{ 'black': card.Content.Text.Style.Colors[1] == 'black', 'pink': card.Content.Text.Style.Colors[1] == 'pink', 'gray': card.Content.Text.Style.Colors[1] == 'gray', 'bold': card.Content.Text.Style.Weights[1] == 'bold', 'normal': card.Content.Text.Style.Weights[1] == 'normal' }\">\n              <div style=\"display: block\">{{ card.Content.Text.Value[1] }}</div>\n            </div>\n          </div>\n        </div>\n\n        <!-- table card -->\n        <div *ngIf=\"card.Type == 'table'\"\n             [ngClass]=\"{ 'gray': card.Style.Background == 'gray', 'white': card.Style.Background == 'white' }\"\n             class=\"border-card-right\">\n          <div class='row-small row-rest-6 pink-background ' style='line-height: 37px'>\n            <div class='left-value pink-text' style='padding-left: 10px; width: 80%'>Revenue impact</div>\n            <div class='right-value ' style='padding-right: 10px; width: 20%'>$1.3M</div>\n          </div>\n          <div class='row-small row-rest-6 pink-background ' style='line-height: 37px'>\n            <div class='left-value pink-text' style='padding-left: 10px; width: 80%'>Profitability impact</div>\n            <div class='right-value ' style='padding-right: 10px; width: 20%'>$820K</div>\n          </div>\n          <div class='row-small row-rest-6 ' style='line-height: 37px'>\n            <div class='left-value red-text dark-pink-background'\n                 style='padding-left: 10px;font-weight: bold; width: 80%'>Confidence score\n            </div>\n            <div class='right-value red-text pink-background'\n                 style='padding-right: 10px; padding-left: 10px; width: 20%'>89%\n            </div>\n            <div class=\"clear\"></div>\n          </div>\n          <!-- iterate lines -->\n          <!--<div *ngFor=\"let tline of card.Content.Text.Value; let k = index\" class=\"\" >-->\n          <!--<div class=\"col-50  label\" [ngClass]=\"{ 'black': tline.Label.Style.Color == 'black', 'pink': tline.Label.Style.Color == 'pink' }\">-->\n          <!--<h3>{{ tline.Label.Text }}</h3>-->\n          <!--</div>-->\n          <!--<div class=\"col-50 pull-right text-right value-small\" [ngClass]=\"{ 'black': tline.Value.Style.Color == 'black', 'pink': tline.Value.Style.Color == 'pink' }\">-->\n          <!--<h3>{{ tline.Value.Text }}</h3>-->\n          <!--</div>-->\n          <!--</div>-->\n        </div>\n\n        <!-- table highlighted_value -->\n        <div *ngIf=\"card.Type == 'highlighted_value'\"\n             [ngClass]=\"{ 'gray': card.Style.Background == 'gray', 'white': card.Style.Background == 'white' }\"\n             class=\"card  border-card-right\">\n          <div class=\"col-100 text-center label\"\n               [ngClass]=\"{ 'black': card.Content.Text.Value[0].Label.Color == 'black', 'pink': card.Content.Text.Value[0].Label.Style.Color == 'pink' }\">\n            {{ card.Content.Text.Value[0].Label.Text }}\n          </div>\n          <div class=\"col-100 text-center value-big\"\n               [ngClass]=\"{ 'black': card.Content.Text.Value[1].Label.Style.Color == 'black', 'pink': card.Content.Text.Value[1].Label.Style.Color == 'pink' }\">\n            {{ card.Content.Text.Value[1].Label.Text }}\n          </div>\n        </div>\n\n        <!-- table rating_stars_down -->\n        <div *ngIf=\"card.Type == 'rating_stars_down'\"\n             [ngClass]=\"{ 'gray': card.Style.Background == 'gray', 'white': card.Style.Background == 'white' }\"\n             class=\"card  border-card-right\">\n          <div class=\"col-100 text-center label\"\n               [ngClass]=\"{ 'black': card.Content.Text.Value[0].Label.Color == 'black', 'pink': card.Content.Text.Value[0].Label.Style.Color == 'pink' }\">\n            {{ card.Content.Text.Value[0].Label.Text }}\n          </div>\n          <div class=\"col-100 text-center  value-big\"\n               [ngClass]=\"{ 'black': card.Content.Text.Value[1].Label.Style.Color == 'black', 'pink': card.Content.Text.Value[1].Label.Style.Color == 'pink' }\">\n            {{ card.Content.Text.Value[1].Label.Text }}\n          </div>\n        </div>\n\n        <!-- add the buttons on bottom of the first card in case they exist -->\n        <div *ngIf=\"j==0 && !accordionState[i].Expanded\" class=\"collapsed card-buttons\">\n          <div *ngIf=\"line.Buttons.Expand\" class=\"card-button  button-expand\"\n               (click)=\"accordionState[i].Expanded = true;accordionState[i].state = 'active';didScroll(event)\">\n            <i class=\"di-arrow-down expand-arrow di-12x sub-icon\"></i>\n          </div>\n          <div *ngIf=\"line.Buttons.New\" class=\"card-button button-new\" (click)=\"newCard()\">\n            New\n            <div class=\"icon-btn-new\">\n              <i class=\"di-check di-12x sub-icon\" style=\"color: black;\"></i>\n            </div>\n          </div>\n        </div>\n      </div>\n      <div class=\"expanded\" [@expanded]=\"accordionState[i].state\">\n        <div class=\"container\">\n          <div class='bordered-heading'><i class=\"di-decide\"></i><span class='red-text'> I sense...</span></div>\n          <div class=\"main-content\"\n               *ngIf=\"line.Expanded.Cards.length==2 && line.Expanded.Cards[0].Type == 'graph' && line.Expanded.Cards[1].Type == 'highlights'\">\n            <div class=\"left-graph\">\n              <div class='image-outer-wrapper'>\n                <div data-id='gViz-visuals-vis-wrapper' class='gViz-visuals-inner-wrapper'>\n                  <div *ngIf=\"!line.Expanded.Cards[0].Content.Graph.Data\">Loading data...</div>\n                  <ng-template *ngIf=\"line.Expanded.Cards[0].Content.Graph.Data\"\n                               [dynamic-component]=\"line.Expanded.Cards[0].Content.Graph.Type\"\n                               [data]=\"line.Expanded.Cards[0].Content.Graph.Data\"></ng-template>\n                </div>\n                <div class='border-rect' data-side='top-left'></div>\n                <div class='border-rect' data-side='top-right'></div>\n                <div class='border-rect' data-side='bottom-left'></div>\n                <div class='border-rect' data-side='bottom-right'></div>\n              </div>\n            </div>\n            <div class=\"right-fields\">\n              <div class=\"top-fields\">\n                <h2 class=\"header\">Highlights</h2>\n                <div class='row'>\n                  <div class='left-value'>Shortage (units)</div>\n                  <div class='right-value'>8450</div>\n                </div>\n                <div class='row'>\n                  <div class='left-value'>Impacted Choice Codes</div>\n                  <div class='right-value'>31</div>\n                </div>\n                <div class='row'>\n                  <div class='left-value'>Revenue Recovery</div>\n                  <div class='right-value'>$800K</div>\n                </div>\n                <div class='row'>\n                  <div class='left-value'>Profitability</div>\n                  <div class='right-value'>$300K</div>\n                </div>\n                <div class='tri-row'>\n                  <div class='left-value'>Most affected</div>\n                  <div class=\"right-rows\">\n                    <div class='row'>\n                      <div class='right-value'>WEW Push-up</div>\n                    </div>\n                    <div class='row'>\n                      <div class='right-value'>Sports Bra Demi LL</div>\n                    </div>\n                  </div>\n                </div>\n              </div>\n              <div class=\"bottom-fields\">\n                <div class='row'>\n                  <div class='left-value'>Surplus (units)</div>\n                  <div class='right-value'>3100</div>\n                </div>\n                <div class='row'>\n                  <div class='left-value'>Impacted Choice Codes</div>\n                  <div class='right-value'>22</div>\n                </div>\n                <div class='row'>\n                  <div class='left-value'>Revenue Recovery</div>\n                  <div class='right-value'>$500k</div>\n                </div>\n                <div class='row'>\n                  <div class='left-value'>Profitability</div>\n                  <div class='right-value'>$470k</div>\n                </div>\n                <div class='row'>\n                  <div class='left-value'>Most affected</div>\n                  <div class='right-value pink-background'>WEW Push-up</div>\n                  <div class='right-value pink-background'>Sports Bra Demi LL</div>\n                </div>\n              </div>\n            </div>\n          </div>\n          <div class=\"main-content\"\n               *ngIf=\"line.Expanded.Cards.length==2 && line.Expanded.Cards[0].Type == 'graph' && line.Expanded.Cards[1].Type == 'related-insights'\">\n            <div class=\"left-graph\">\n              <div class='image-outer-wrapper'>\n                <div data-id='gViz-visuals-vis-wrapper' class='gViz-visuals-inner-wrapper'>\n                  <div *ngIf=\"!line.Expanded.Cards[0].Content.Graph.Data\">Loading data...</div>\n                  <ng-template *ngIf=\"line.Expanded.Cards[0].Content.Graph.Data\"\n                               [dynamic-component]=\"line.Expanded.Cards[0].Content.Graph.Type\"\n                               [data]=\"line.Expanded.Cards[0].Content.Graph.Data\"></ng-template>\n                </div>\n                <div class='border-rect' data-side='top-left'></div>\n                <div class='border-rect' data-side='top-right'></div>\n                <div class='border-rect' data-side='bottom-left'></div>\n                <div class='border-rect' data-side='bottom-right'></div>\n              </div>\n            </div>\n            <div class=\"right-fields\">\n              <div class=\"top-fields\">\n                <h2 class=\"header\">Highlights</h2>\n                <div class='row'>\n                  <div class='left-value'>Shortage (units)</div>\n                  <div class='right-value'>8450</div>\n                </div>\n                <div class='row'>\n                  <div class='left-value'>Impacted Choice Codes</div>\n                  <div class='right-value'>31</div>\n                </div>\n                <div class='row'>\n                  <div class='left-value'>Revenue Recovery</div>\n                  <div class='right-value'>$800K</div>\n                </div>\n                <div class='row'>\n                  <div class='left-value'>Profitability</div>\n                  <div class='right-value'>$300K</div>\n                </div>\n                <div class='tri-row'>\n                  <div class='left-value'>Most affected</div>\n                  <div class=\"right-rows\">\n                    <div class='row'>\n                      <div class='right-value'>WEW Push-up</div>\n                    </div>\n                    <div class='row'>\n                      <div class='right-value'>Sports Bra Demi LL</div>\n                    </div>\n                  </div>\n                </div>\n              </div>\n              <div class=\"bottom-fields\">\n                <div class='row'>\n                  <div class='left-value'>Surplus (units)</div>\n                  <div class='right-value'>3100</div>\n                </div>\n                <div class='row'>\n                  <div class='left-value'>Impacted Choice Codes</div>\n                  <div class='right-value'>22</div>\n                </div>\n                <div class='row'>\n                  <div class='left-value'>Revenue Recovery</div>\n                  <div class='right-value'>$500k</div>\n                </div>\n                <div class='row'>\n                  <div class='left-value'>Profitability</div>\n                  <div class='right-value'>$470k</div>\n                </div>\n                <div class='row'>\n                  <div class='left-value'>Most affected</div>\n                  <div class='right-value pink-background'>WEW Push-up</div>\n                  <div class='right-value pink-background'>Sports Bra Demi LL</div>\n                </div>\n              </div>\n            </div>\n          </div>\n          <div class=\"main-content\"\n               *ngIf=\"line.Expanded.Cards.length==2 && line.Expanded.Cards[0].Type == 'graph' && line.Expanded.Cards[1].Type == 'what-if-analysis'\">\n            <div class=\"left-graph\">\n              <div class='image-outer-wrapper'>\n                <div data-id='gViz-visuals-vis-wrapper' class='gViz-visuals-inner-wrapper'>\n                  <div *ngIf=\"!line.Expanded.Cards[0].Content.Graph.Data\">Loading data...</div>\n                  <ng-template *ngIf=\"line.Expanded.Cards[0].Content.Graph.Data\"\n                               [dynamic-component]=\"line.Expanded.Cards[0].Content.Graph.Type\"\n                               [data]=\"line.Expanded.Cards[0].Content.Graph.Data\"></ng-template>\n                </div>\n                <div class='border-rect' data-side='top-left'></div>\n                <div class='border-rect' data-side='top-right'></div>\n                <div class='border-rect' data-side='bottom-left'></div>\n                <div class='border-rect' data-side='bottom-right'></div>\n              </div>\n            </div>\n            <div class=\"right-fields\">\n              <div class=\"top-fields\">\n                <h2 class=\"header\">Highlights</h2>\n                <div class='row'>\n                  <div class='left-value'>Shortage (units)</div>\n                  <div class='right-value'>8450</div>\n                </div>\n                <div class='row'>\n                  <div class='left-value'>Impacted Choice Codes</div>\n                  <div class='right-value'>31</div>\n                </div>\n                <div class='row'>\n                  <div class='left-value'>Revenue Recovery</div>\n                  <div class='right-value'>$800K</div>\n                </div>\n                <div class='row'>\n                  <div class='left-value'>Profitability</div>\n                  <div class='right-value'>$300K</div>\n                </div>\n                <div class='tri-row'>\n                  <div class='left-value'>Most affected</div>\n                  <div class=\"right-rows\">\n                    <div class='row'>\n                      <div class='right-value'>WEW Push-up</div>\n                    </div>\n                    <div class='row'>\n                      <div class='right-value'>Sports Bra Demi LL</div>\n                    </div>\n                  </div>\n                </div>\n              </div>\n              <div class=\"bottom-fields\">\n                <div class='row'>\n                  <div class='left-value'>Surplus (units)</div>\n                  <div class='right-value'>3100</div>\n                </div>\n                <div class='row'>\n                  <div class='left-value'>Impacted Choice Codes</div>\n                  <div class='right-value'>22</div>\n                </div>\n                <div class='row'>\n                  <div class='left-value'>Revenue Recovery</div>\n                  <div class='right-value'>$500k</div>\n                </div>\n                <div class='row'>\n                  <div class='left-value'>Profitability</div>\n                  <div class='right-value'>$470k</div>\n                </div>\n                <div class='row'>\n                  <div class='left-value'>Most affected</div>\n                  <div class='right-value pink-background'>WEW Push-up</div>\n                  <div class='right-value pink-background'>Sports Bra Demi LL</div>\n                </div>\n              </div>\n            </div>\n          </div>\n\n        <!--<table style='border: 1px solid deeppink;'>-->\n          <!--<tr>-->\n          <!--<td>Shortage (31 Choice Codes)</td>-->\n          <!--<td>8450</td>-->\n          <!--</tr>-->\n          <!--<tr>-->\n          <!--<td>Revenue Recovery</td>-->\n          <!--<td>$800K</td>-->\n          <!--</tr>-->\n          <!--<tr>-->\n          <!--<td>Profitability</td>-->\n          <!--<td>$300K</td>-->\n          <!--</tr>-->\n          <!--<tr>-->\n          <!--<td>Most affected</td>-->\n          <!--<td>WEW Push-up and Sports Bra Demi LL</td>-->\n          <!--</tr>-->\n        <!--</table>-->\n\n        <!--<div class=\"card\" *ngFor=\"let card of line.Expanded.Cards; let j = index\">-->\n          <!--<h3>{{ card.Title }}</h3>-->\n\n\n          <!-- card: text -->\n          <!--<div *ngIf=\"card.Type == 'text'\" class=\"text\">-->\n          <!--{{ card.Content.Text.Value[0].Label.Text }}-->\n          <!--</div>-->\n\n          <!--&lt;!&ndash; card: table &ndash;&gt;-->\n          <!--<div *ngIf=\"card.Type == 'table'\" class=\"text\">-->\n          <!--{{ card.Content?.Text.Value[0].Label.Text }}-->\n          <!--<img src=\"./assets/images/placeholders/placeholder_table.png\" width=\"100%\">-->\n          <!--</div>-->\n\n          <!--&lt;!&ndash; card: graph_map_1 &ndash;&gt;-->\n          <!--<div *ngIf=\"card.Type == 'graph_map_1'\" class=\"text\">-->\n          <!--{{ card.Content?.Text.Value[0].Label.Text }}-->\n          <!--<img src=\"./assets/images/placeholders/placeholder_graph.png\" width=\"100%\">-->\n          <!--</div>-->\n\n          <!-- add the buttons on bottom of the first card in case they exist -->\n          <!--<div *ngIf=\"j==0 && accordionState[i].Expanded\" class=\"card-buttons\">-->\n          <div *ngIf=\"line.Buttons.Expand\" class=\"card-button  button-expand\"\n               (click)=\"accordionState[i].Expanded = false;accordionState[i].state = 'inactive';didScroll(event)\">\n            <i class=\"di-arrow-up expand-arrow di-12x sub-icon\"></i>\n          </div>\n          <div *ngIf=\"line.Buttons.New\" class=\"card-button button-new\" (click)=\"newCard()\">\n            New\n            <div class=\"icon-btn-new\">\n              <i class=\"di-check di-12x sub-icon\" style=\"color: black;\"></i>\n            </div>\n          </div>\n          <!--</div>-->\n        </div>\n        <!--</div>-->\n      </div>\n\n\n\n    </div>\n\n    <!-- building the expanded state of the line -->\n    <!-- defining and adding card types | maps and tables should be predefined templates-->\n\n    </div>\n\n    <!-- building the expanded state of the line -->\n    <!-- defining and adding card types | maps and tables should be predefined templates-->\n\n  </div>\n\n<div class=\"panel-holder\">\n  <decide-panel-layout *ngIf=\"panelOpen\" [@enterAnimation] (panelClose)=\"panelOpen = false\"></decide-panel-layout>\n</div>\n"
+module.exports = "<button id=\"decideClose\" (click)=\"navigateHome()\" class=\"has-pd-light is-fixed right-large top-large has-c-shade-9\"><i\n  class=\"di-close di-14x\"></i></button>\n<!-- <div  class=\"has-bg-shade-1 is-fixed left-large right-large has-pd-top-normal has-pd-bottom-small\" id=\"decide-header\">\n  <div  class=\"layout-row\" *ngIf=\"firstOpp\">\n    <div  class=\"decide-card-item  has-pd-vert-extra-small has-pd-right-extra-small\"><p class=\"has-bd-bottom  bd-light bd-secondary\">Product</p></div>\n    <div *ngFor=\"let column of firstOpp.rowInfo\"\n       class=\"decide-card-item   has-pd-vert-extra-small has-pd-right-extra-small\"><p class=\"has-bd-bottom  bd-light bd-secondary\">{{column.title | capitalize}}</p></div>\n\n  </div>\n</div> -->\n\n\n<!-- dynamic cards start | can be split into other components - used mock data -->\n\n<!-- cards header start -->\n<!-- <div class=\"card-header\" (mouseover)=\"resetContextualState()\">\n  <div class=\"context\">\n    Context\n  </div>\n  <div class=\"forecast\">\n    Forecast\n  </div>\n  <div class=\"outcome\">\n    Potential Outcome\n  </div>\n</div> -->\n<!-- cards header end -->\n\n<!-- line start -->\n<div id=\"cards-container\" class=\"cards-container\" (scroll)=\"didScroll($event)\">\n  <div id=\"{{ line.Identifyer }}\" class=\"card-line\" *ngFor=\"let line of data.Sections; let i = index\"\n       (mouseover)=\"checkContextualState(i,'over')\" (click)=\"getBox(line.Identifyer)\">\n\n    <!-- building the collapse state of the line -->\n    <!-- defining and adding card types -->\n\n    <!-- defining line frame -->\n    <div>\n      <!-- adding header elements -->\n      <div class=\"line-icon\" (click)=\"panelOpen = true; selectedLineData = line.Details.Cards\">\n        <i class=\"di-chevron-down\"></i>\n      </div>\n      <div class=\"options-icon\">\n        <!-- placeholder icon until the way the icon is sent will be decided -->\n        <i class=\"di-check\" *ngIf=\"!accordionState[i]['Ask_Icon']\"></i>\n        <!-- <i class=\"di-microphone\" *ngIf=\"accordionState[i]['Ask_Icon']\" (click)=\"activateAsk(accordionState[i].Identifyer)\"></i> -->\n\n        <!-- diwo circle -->\n\n        <div [diwoCircleDirective]=\"diwoPosition\" class=\"is-relative\" *ngIf=\"accordionState[i]['Ask_Icon']\"\n\n             [diwoCircleActions]=\"{ clip: 'true', case: 'true',narrate: 'true',volume: 'true',pin: 'true', help: 'global', share: 'true'}\"\n             [diwoCircleTriggeredBy]=\"'hover'\"\n             [diwoCircleAllow]=\"!isMyDiwoOpen() && isMicroserviceOpen()\"\n             [diwoCircleClickAction]=\"openMyDiwo\"\n             [diwoCircleSize]=\"34\"\n             [diwoCircleDisableExtraNav]=\"true\"\n             [diwoCircleType]=\"'microphone'\" style=\"min-height: 100%;position:absolute;top:-3px;left:-3px;\">\n\n\n          <div id=\"nav\" [hidden]=\"!(!isMyDiwoOpen() && isMicroserviceOpen() || (showDock | async)) \"\n\n               class=\"card layout-row right-none with-mg-small layout--start-center  top-none left-none has-pd-hori-large has-pd-top-large\">\n            <!--<div id=\"nav-overlay\" class=\"is-absolute top-none left-none bottom-none right-none\" *ngIf=\"isWatchOpen()\"></div>-->\n            <div #diwoHolder class=\"logo-holder is-one-whole-tall is-relative layout-item\"\n                 [hidden]=\"(isMyDiwoOpen() || isAskOpen()) && !(showDock | async)\">\n              <button class=\"is-absolute transform-to-center top-one-half left-one-half\" [routerLink]=\"['/mydiwo']\">\n                <img class=\"is-absolute transform-to-center top-one-half left-one-half\" width=\"20\"\n                     src=\"./assets/images/diwoLogo-2x.png\"/>\n              </button>\n            </div>\n\n          </div>\n\n        </div>\n\n        <!-- end diwo circle -->\n\n      </div>\n      <span class=\"line-header-elements\">\n        <span *ngFor=\"let info of line.Header.Text; let j = index\"\n              [ngClass]=\"{'header-info-separator': j < (line.Header.Text.length-1) }\">{{ info }}</span>\n      </span>\n\n      <!-- defining and displaying cards -->\n      <div *ngFor=\"let card of line.Collapsed.Cards; let j = index\" class=\"line-card col-25\">\n\n        <!-- image card -->\n        <div *ngIf=\"card.Type == 'image'\"\n             [ngClass]=\"{ 'gray': card.Style.Background == 'gray', 'white': card.Style.Background == 'white' }\"\n             class=\"card border-card-right\">\n          <div class=\"card-image\"> <!-- the image will be blob or path?! -->\n            <img src=\"{{ card.Content.Image }}\" width=\"60\"/>\n          </div>\n          <div class=\"line-group\">\n            <div class=\"card-content-line\"\n                 [ngClass]=\"{ 'black': card.Content.Text.Style.Colors[0] == 'black', 'pink': card.Content.Text.Style.Colors[0] == 'pink', 'gray': card.Content.Text.Style.Colors[0] == 'gray', 'bold': card.Content.Text.Style.Weights[0] == 'bold', 'normal': card.Content.Text.Style.Weights[0] == 'normal' }\">\n              <div style=\"display: block\">{{ card.Content.Text.Value[0] }}</div>\n            </div>\n            <div class=\"card-content-line\"\n                 [ngClass]=\"{ 'black': card.Content.Text.Style.Colors[1] == 'black', 'pink': card.Content.Text.Style.Colors[1] == 'pink', 'gray': card.Content.Text.Style.Colors[1] == 'gray', 'bold': card.Content.Text.Style.Weights[1] == 'bold', 'normal': card.Content.Text.Style.Weights[1] == 'normal' }\">\n              <div style=\"display: block\">{{ card.Content.Text.Value[1] }}</div>\n            </div>\n          </div>\n        </div>\n\n        <!-- table card -->\n        <div *ngIf=\"card.Type == 'table'\"\n             [ngClass]=\"{ 'gray': card.Style.Background == 'gray', 'white': card.Style.Background == 'white' }\"\n             class=\"border-card-right\">\n          <div class='row-small row-rest-6 pink-background ' style='line-height: 37px'>\n            <div class='left-value pink-text' style='padding-left: 10px; width: 80%'>Revenue impact</div>\n            <div class='right-value ' style='padding-right: 10px; width: 20%'>$1.3M</div>\n          </div>\n          <div class='row-small row-rest-6 pink-background ' style='line-height: 37px'>\n            <div class='left-value pink-text' style='padding-left: 10px; width: 80%'>Profitability impact</div>\n            <div class='right-value ' style='padding-right: 10px; width: 20%'>$820K</div>\n          </div>\n          <div class='row-small row-rest-6 ' style='line-height: 37px'>\n            <div class='left-value red-text dark-pink-background'\n                 style='padding-left: 10px;font-weight: bold; width: 80%'>Confidence score\n            </div>\n            <div class='right-value red-text pink-background'\n                 style='padding-right: 10px; padding-left: 10px; width: 20%'>89%\n            </div>\n            <div class=\"clear\"></div>\n          </div>\n          <!-- iterate lines -->\n          <!--<div *ngFor=\"let tline of card.Content.Text.Value; let k = index\" class=\"\" >-->\n          <!--<div class=\"col-50  label\" [ngClass]=\"{ 'black': tline.Label.Style.Color == 'black', 'pink': tline.Label.Style.Color == 'pink' }\">-->\n          <!--<h3>{{ tline.Label.Text }}</h3>-->\n          <!--</div>-->\n          <!--<div class=\"col-50 pull-right text-right value-small\" [ngClass]=\"{ 'black': tline.Value.Style.Color == 'black', 'pink': tline.Value.Style.Color == 'pink' }\">-->\n          <!--<h3>{{ tline.Value.Text }}</h3>-->\n          <!--</div>-->\n          <!--</div>-->\n        </div>\n\n        <!-- table highlighted_value -->\n        <div *ngIf=\"card.Type == 'highlighted_value'\"\n             [ngClass]=\"{ 'gray': card.Style.Background == 'gray', 'white': card.Style.Background == 'white' }\"\n             class=\"card  border-card-right\">\n          <div class=\"col-100 text-center label\"\n               [ngClass]=\"{ 'black': card.Content.Text.Value[0].Label.Color == 'black', 'pink': card.Content.Text.Value[0].Label.Style.Color == 'pink' }\">\n            {{ card.Content.Text.Value[0].Label.Text }}\n          </div>\n          <div class=\"col-100 text-center value-big\"\n               [ngClass]=\"{ 'black': card.Content.Text.Value[1].Label.Style.Color == 'black', 'pink': card.Content.Text.Value[1].Label.Style.Color == 'pink' }\">\n            {{ card.Content.Text.Value[1].Label.Text }}\n          </div>\n        </div>\n\n        <!-- table rating_stars_down -->\n        <div *ngIf=\"card.Type == 'rating_stars_down'\"\n             [ngClass]=\"{ 'gray': card.Style.Background == 'gray', 'white': card.Style.Background == 'white' }\"\n             class=\"card  border-card-right\">\n          <div class=\"col-100 text-center label\"\n               [ngClass]=\"{ 'black': card.Content.Text.Value[0].Label.Color == 'black', 'pink': card.Content.Text.Value[0].Label.Style.Color == 'pink' }\">\n            {{ card.Content.Text.Value[0].Label.Text }}\n          </div>\n          <div class=\"col-100 text-center  value-big\"\n               [ngClass]=\"{ 'black': card.Content.Text.Value[1].Label.Style.Color == 'black', 'pink': card.Content.Text.Value[1].Label.Style.Color == 'pink' }\">\n            {{ card.Content.Text.Value[1].Label.Text }}\n          </div>\n        </div>\n\n        <!-- add the buttons on bottom of the first card in case they exist -->\n        <div *ngIf=\"j==0 && !accordionState[i].Expanded\" class=\"collapsed card-buttons\">\n          <div *ngIf=\"line.Buttons.Expand\" class=\"card-button  button-expand\"\n               (click)=\"accordionState[i].Expanded = true;accordionState[i].state = 'active';didScroll(event)\">\n            <i class=\"di-arrow-down expand-arrow di-12x sub-icon\"></i>\n          </div>\n          <div *ngIf=\"line.Buttons.New\" class=\"card-button button-new\" (click)=\"newCard()\">\n            New\n            <div class=\"icon-btn-new\">\n              <i class=\"di-check di-12x sub-icon\" style=\"color: black;\"></i>\n            </div>\n          </div>\n        </div>\n      </div>\n      <div class=\"expanded\" [@expanded]=\"accordionState[i].state\">\n        <div class=\"container\">\n          <div class='bordered-heading'><i class=\"di-decide\"></i><span class='red-text'> I sense...</span></div>\n          <div class=\"main-content\"\n               *ngIf=\"line.Expanded.Cards.length==2 && line.Expanded.Cards[0].Type == 'graph' && line.Expanded.Cards[1].Type == 'highlights'\">\n            <div class=\"left-graph\">\n              <div class='image-outer-wrapper'>\n                <div data-id='gViz-visuals-vis-wrapper' class='gViz-visuals-inner-wrapper'>\n                  <div *ngIf=\"!line.Expanded.Cards[0].Content.Graph.Data\">Loading data...</div>\n                  <ng-template *ngIf=\"line.Expanded.Cards[0].Content.Graph.Data\"\n                               [dynamic-component]=\"line.Expanded.Cards[0].Content.Graph.Type\"\n                               [data]=\"line.Expanded.Cards[0].Content.Graph.Data\"></ng-template>\n                </div>\n                <div class='border-rect' data-side='top-left'></div>\n                <div class='border-rect' data-side='top-right'></div>\n                <div class='border-rect' data-side='bottom-left'></div>\n                <div class='border-rect' data-side='bottom-right'></div>\n              </div>\n            </div>\n            <div class=\"right-fields\">\n              <div class=\"top-fields\">\n                <h2 class=\"header\">Highlights</h2>\n                <div class='row'>\n                  <div class='left-value'>Shortage (units)</div>\n                  <div class='right-value'>8450</div>\n                </div>\n                <div class='row'>\n                  <div class='left-value'>Impacted Choice Codes</div>\n                  <div class='right-value'>31</div>\n                </div>\n                <div class='row'>\n                  <div class='left-value'>Revenue Recovery</div>\n                  <div class='right-value'>$800K</div>\n                </div>\n                <div class='row'>\n                  <div class='left-value'>Profitability</div>\n                  <div class='right-value'>$300K</div>\n                </div>\n                <div class='tri-row'>\n                  <div class='left-value'>Most affected</div>\n                  <div class=\"right-rows\">\n                    <div class='row'>\n                      <div class='right-value'>WEW Push-up</div>\n                    </div>\n                    <div class='row'>\n                      <div class='right-value'>Sports Bra Demi LL</div>\n                    </div>\n                  </div>\n                </div>\n              </div>\n              <div class=\"bottom-fields\">\n                <div class='row'>\n                  <div class='left-value'>Surplus (units)</div>\n                  <div class='right-value'>3100</div>\n                </div>\n                <div class='row'>\n                  <div class='left-value'>Impacted Choice Codes</div>\n                  <div class='right-value'>22</div>\n                </div>\n                <div class='row'>\n                  <div class='left-value'>Revenue Recovery</div>\n                  <div class='right-value'>$500k</div>\n                </div>\n                <div class='row'>\n                  <div class='left-value'>Profitability</div>\n                  <div class='right-value'>$470k</div>\n                </div>\n                <div class='row'>\n                  <div class='left-value'>Most affected</div>\n                  <div class='right-value pink-background'>WEW Push-up</div>\n                  <div class='right-value pink-background'>Sports Bra Demi LL</div>\n                </div>\n              </div>\n            </div>\n          </div>\n          <div class=\"main-content\"\n               *ngIf=\"line.Expanded.Cards.length==2 && line.Expanded.Cards[0].Type == 'graph' && line.Expanded.Cards[1].Type == 'related-insights'\">\n            <div class=\"left-graph\">\n              <div class='image-outer-wrapper'>\n                <div data-id='gViz-visuals-vis-wrapper' class='gViz-visuals-inner-wrapper'>\n                  <div *ngIf=\"!line.Expanded.Cards[0].Content.Graph.Data\">Loading data...</div>\n                  <ng-template *ngIf=\"line.Expanded.Cards[0].Content.Graph.Data\"\n                               [dynamic-component]=\"line.Expanded.Cards[0].Content.Graph.Type\"\n                               [data]=\"line.Expanded.Cards[0].Content.Graph.Data\"></ng-template>\n                </div>\n                <div class='border-rect' data-side='top-left'></div>\n                <div class='border-rect' data-side='top-right'></div>\n                <div class='border-rect' data-side='bottom-left'></div>\n                <div class='border-rect' data-side='bottom-right'></div>\n              </div>\n            </div>\n            <div class=\"right-fields\">\n              <div class=\"top-fields\">\n                <h2 class=\"header\">Highlights</h2>\n                <div class='row'>\n                  <div class='left-value'>Shortage (units)</div>\n                  <div class='right-value'>8450</div>\n                </div>\n                <div class='row'>\n                  <div class='left-value'>Impacted Choice Codes</div>\n                  <div class='right-value'>31</div>\n                </div>\n                <div class='row'>\n                  <div class='left-value'>Revenue Recovery</div>\n                  <div class='right-value'>$800K</div>\n                </div>\n                <div class='row'>\n                  <div class='left-value'>Profitability</div>\n                  <div class='right-value'>$300K</div>\n                </div>\n                <div class='tri-row'>\n                  <div class='left-value'>Most affected</div>\n                  <div class=\"right-rows\">\n                    <div class='row'>\n                      <div class='right-value'>WEW Push-up</div>\n                    </div>\n                    <div class='row'>\n                      <div class='right-value'>Sports Bra Demi LL</div>\n                    </div>\n                  </div>\n                </div>\n              </div>\n              <div class=\"bottom-fields\">\n                <div class='row'>\n                  <div class='left-value'>Surplus (units)</div>\n                  <div class='right-value'>3100</div>\n                </div>\n                <div class='row'>\n                  <div class='left-value'>Impacted Choice Codes</div>\n                  <div class='right-value'>22</div>\n                </div>\n                <div class='row'>\n                  <div class='left-value'>Revenue Recovery</div>\n                  <div class='right-value'>$500k</div>\n                </div>\n                <div class='row'>\n                  <div class='left-value'>Profitability</div>\n                  <div class='right-value'>$470k</div>\n                </div>\n                <div class='row'>\n                  <div class='left-value'>Most affected</div>\n                  <div class='right-value pink-background'>WEW Push-up</div>\n                  <div class='right-value pink-background'>Sports Bra Demi LL</div>\n                </div>\n              </div>\n            </div>\n          </div>\n          <div class=\"main-content\"\n               *ngIf=\"line.Expanded.Cards.length==2 && line.Expanded.Cards[0].Type == 'graph' && line.Expanded.Cards[1].Type == 'what-if-analysis'\">\n            <div class=\"left-graph\">\n              <div class='image-outer-wrapper'>\n                <div data-id='gViz-visuals-vis-wrapper' class='gViz-visuals-inner-wrapper'>\n                  <div *ngIf=\"!line.Expanded.Cards[0].Content.Graph.Data\">Loading data...</div>\n                  <ng-template *ngIf=\"line.Expanded.Cards[0].Content.Graph.Data\"\n                               [dynamic-component]=\"line.Expanded.Cards[0].Content.Graph.Type\"\n                               [data]=\"line.Expanded.Cards[0].Content.Graph.Data\"></ng-template>\n                </div>\n                <div class='border-rect' data-side='top-left'></div>\n                <div class='border-rect' data-side='top-right'></div>\n                <div class='border-rect' data-side='bottom-left'></div>\n                <div class='border-rect' data-side='bottom-right'></div>\n              </div>\n            </div>\n            <div class=\"right-fields\">\n              <div class=\"top-fields\">\n                <h2 class=\"header\">Highlights</h2>\n                <div class='row'>\n                  <div class='left-value'>Shortage (units)</div>\n                  <div class='right-value'>8450</div>\n                </div>\n                <div class='row'>\n                  <div class='left-value'>Impacted Choice Codes</div>\n                  <div class='right-value'>31</div>\n                </div>\n                <div class='row'>\n                  <div class='left-value'>Revenue Recovery</div>\n                  <div class='right-value'>$800K</div>\n                </div>\n                <div class='row'>\n                  <div class='left-value'>Profitability</div>\n                  <div class='right-value'>$300K</div>\n                </div>\n                <div class='tri-row'>\n                  <div class='left-value'>Most affected</div>\n                  <div class=\"right-rows\">\n                    <div class='row'>\n                      <div class='right-value'>WEW Push-up</div>\n                    </div>\n                    <div class='row'>\n                      <div class='right-value'>Sports Bra Demi LL</div>\n                    </div>\n                  </div>\n                </div>\n              </div>\n              <div class=\"bottom-fields\">\n                <div class='row'>\n                  <div class='left-value'>Surplus (units)</div>\n                  <div class='right-value'>3100</div>\n                </div>\n                <div class='row'>\n                  <div class='left-value'>Impacted Choice Codes</div>\n                  <div class='right-value'>22</div>\n                </div>\n                <div class='row'>\n                  <div class='left-value'>Revenue Recovery</div>\n                  <div class='right-value'>$500k</div>\n                </div>\n                <div class='row'>\n                  <div class='left-value'>Profitability</div>\n                  <div class='right-value'>$470k</div>\n                </div>\n                <div class='row'>\n                  <div class='left-value'>Most affected</div>\n                  <div class='right-value pink-background'>WEW Push-up</div>\n                  <div class='right-value pink-background'>Sports Bra Demi LL</div>\n                </div>\n              </div>\n            </div>\n          </div>\n\n        <!--<table style='border: 1px solid deeppink;'>-->\n          <!--<tr>-->\n          <!--<td>Shortage (31 Choice Codes)</td>-->\n          <!--<td>8450</td>-->\n          <!--</tr>-->\n          <!--<tr>-->\n          <!--<td>Revenue Recovery</td>-->\n          <!--<td>$800K</td>-->\n          <!--</tr>-->\n          <!--<tr>-->\n          <!--<td>Profitability</td>-->\n          <!--<td>$300K</td>-->\n          <!--</tr>-->\n          <!--<tr>-->\n          <!--<td>Most affected</td>-->\n          <!--<td>WEW Push-up and Sports Bra Demi LL</td>-->\n          <!--</tr>-->\n        <!--</table>-->\n\n        <!--<div class=\"card\" *ngFor=\"let card of line.Expanded.Cards; let j = index\">-->\n          <!--<h3>{{ card.Title }}</h3>-->\n\n\n          <!-- card: text -->\n          <!--<div *ngIf=\"card.Type == 'text'\" class=\"text\">-->\n          <!--{{ card.Content.Text.Value[0].Label.Text }}-->\n          <!--</div>-->\n\n          <!--&lt;!&ndash; card: table &ndash;&gt;-->\n          <!--<div *ngIf=\"card.Type == 'table'\" class=\"text\">-->\n          <!--{{ card.Content?.Text.Value[0].Label.Text }}-->\n          <!--<img src=\"./assets/images/placeholders/placeholder_table.png\" width=\"100%\">-->\n          <!--</div>-->\n\n          <!--&lt;!&ndash; card: graph_map_1 &ndash;&gt;-->\n          <!--<div *ngIf=\"card.Type == 'graph_map_1'\" class=\"text\">-->\n          <!--{{ card.Content?.Text.Value[0].Label.Text }}-->\n          <!--<img src=\"./assets/images/placeholders/placeholder_graph.png\" width=\"100%\">-->\n          <!--</div>-->\n\n          <!-- add the buttons on bottom of the first card in case they exist -->\n          <!--<div *ngIf=\"j==0 && accordionState[i].Expanded\" class=\"card-buttons\">-->\n          <div *ngIf=\"line.Buttons.Expand\" class=\"card-button  button-expand\"\n               (click)=\"accordionState[i].Expanded = false;accordionState[i].state = 'inactive';didScroll(event)\">\n            <i class=\"di-arrow-up expand-arrow di-12x sub-icon\"></i>\n          </div>\n          <div *ngIf=\"line.Buttons.New\" class=\"card-button button-new\" (click)=\"newCard()\">\n            New\n            <div class=\"icon-btn-new\">\n              <i class=\"di-check di-12x sub-icon\" style=\"color: black;\"></i>\n            </div>\n          </div>\n          <!--</div>-->\n        </div>\n        <!--</div>-->\n      </div>\n\n\n\n    </div>\n\n    <!-- building the expanded state of the line -->\n    <!-- defining and adding card types | maps and tables should be predefined templates-->\n\n    </div>\n\n    <!-- building the expanded state of the line -->\n    <!-- defining and adding card types | maps and tables should be predefined templates-->\n\n  </div>\n\n<div class=\"panel-holder\">\n  <decide-panel-layout *ngIf=\"panelOpen\" [@enterAnimation] (panelClose)=\"panelOpen = false\" [data]=\"selectedLineData\"></decide-panel-layout>\n</div>\n"
 
 /***/ }),
 
@@ -5181,7 +5189,8 @@ var DecideComponent = (function (_super) {
         _this.data = {};
         _this.cardsVisibility = [];
         _this.hasContextual = false;
-        _this.panelOpen = true;
+        _this.panelOpen = false;
+        _this.selectedLineData = null;
         _this.getd3Data('ontology');
         _this.data = ps.mock;
         // getting accordion state based on the object stream
@@ -5225,7 +5234,6 @@ var DecideComponent = (function (_super) {
                 }
                 _this.cardsVisibility.push({ 'Identifyer': line.Identifyer, 'Top': currentBoxVisibility.top, 'Bottom': currentBoxVisibility.bottom });
                 console.log('Visibility STATUS: ', _this.cardsVisibility);
-                _this.ps.cardNavigation = _this.cardsVisibility;
             }
             else {
                 _this.cardsVisibility.push({ 'Identifyer': line.Identifyer, 'Top': 0, 'Bottom': 0 });
@@ -6064,6 +6072,306 @@ var DecideService = (function () {
                                 'Title': 'Highlights',
                             }
                         ]
+                    },
+                    'Details': {
+                        'Cards': [
+                            {
+                                'Graph': {
+                                    'Type': 'DiwoVisualVsBarVertWithBrushComponent',
+                                    'Data': {
+                                        'title': 'Victoria\'s Secret - Bar Vertical with Brush',
+                                        'legend': {
+                                            'isVisible': true,
+                                            'text': '{{group}}'
+                                        },
+                                        'tooltip': {
+                                            'hasImg': false,
+                                            'title': [
+                                                '{{name}}',
+                                                '<span class="metric">Contribution</span><span class="number">{{x}}</span>',
+                                                '<span class="metric">Deviation</span><span class="number">{{y}}</span>'
+                                            ],
+                                            'body': []
+                                        },
+                                        'x': {
+                                            'title': 'Class - Master Style',
+                                            'prefix': '',
+                                            'sufix': '%',
+                                            'type': 'string',
+                                            'format': ''
+                                        },
+                                        'y': {
+                                            'title': '%',
+                                            'prefix': '',
+                                            'sufix': '%',
+                                            'type': 'number',
+                                            'format': ''
+                                        },
+                                        'attrs': {
+                                            'barWidth': 8,
+                                            'wrapText': false
+                                        },
+                                        'data': [
+                                            {
+                                                'x': '5',
+                                                'name': 'Date Bra PU',
+                                                'group': 'Shortage',
+                                                'y': 5,
+                                                'fill': '#e85e8f',
+                                                'gradient': '#fd9e83',
+                                                'stroke': '#b45276'
+                                            },
+                                            {
+                                                'x': '19',
+                                                'name': 'PK LACE HIGH NECK PU',
+                                                'group': 'Shortage',
+                                                'y': 19,
+                                                'fill': '#e85e8f',
+                                                'gradient': '#fd9e83',
+                                                'stroke': '#b45276'
+                                            },
+                                            {
+                                                'x': '25',
+                                                'name': 'Sp18724 Ultimate UL Halter',
+                                                'group': 'Shortage',
+                                                'y': 25,
+                                                'fill': '#e85e8f',
+                                                'gradient': '#fd9e83',
+                                                'stroke': '#b45276'
+                                            },
+                                            {
+                                                'x': '35',
+                                                'name': '19329 Exploded Floral Lace LL Bralette',
+                                                'group': 'Shortage',
+                                                'y': 35,
+                                                'fill': '#e85e8f',
+                                                'gradient': '#fd9e83',
+                                                'stroke': '#b45276'
+                                            },
+                                            {
+                                                'x': '45',
+                                                'name': 'Sports Bra Demi LL',
+                                                'group': 'Shortage',
+                                                'y': 45,
+                                                'fill': '#e85e8f',
+                                                'gradient': '#fd9e83',
+                                                'stroke': '#b45276'
+                                            },
+                                            {
+                                                'x': '50',
+                                                'name': 'WEW T-shirt and Cool',
+                                                'group': 'Shortage',
+                                                'y': 50,
+                                                'fill': '#e85e8f',
+                                                'gradient': '#fd9e83',
+                                                'stroke': '#b45276'
+                                            },
+                                            {
+                                                'x': '-51',
+                                                'name': '18789 Bonded Triangle Banded Bracelets',
+                                                'group': 'Negative Gap',
+                                                'y': -51,
+                                                'fill': '#7d6e8f',
+                                                'gradient': '#bc97cd',
+                                                'stroke': '#706784'
+                                            },
+                                            {
+                                                'x': '-47',
+                                                'name': '19328_DATE V-WIRE PU W/ VWIRE',
+                                                'group': 'Negative Gap',
+                                                'y': -47,
+                                                'fill': '#7d6e8f',
+                                                'gradient': '#bc97cd',
+                                                'stroke': '#706784'
+                                            },
+                                            {
+                                                'x': '-31',
+                                                'name': '18854_DATE EYELASH OPEN BACK',
+                                                'group': 'Negative Gap',
+                                                'y': -31,
+                                                'fill': '#7d6e8f',
+                                                'gradient': '#bc97cd',
+                                                'stroke': '#706784'
+                                            },
+                                            {
+                                                'x': '-21',
+                                                'name': '18453 Strappy Racerback UL Sport',
+                                                'group': 'Negative Gap',
+                                                'y': -21,
+                                                'fill': '#7d6e8f',
+                                                'gradient': '#bc97cd',
+                                                'stroke': '#706784'
+                                            },
+                                            {
+                                                'x': '-13',
+                                                'name': '18453 Strappy Racerback UL Sport',
+                                                'group': 'Negative Gap',
+                                                'y': -13,
+                                                'fill': '#7d6e8f',
+                                                'gradient': '#bc97cd',
+                                                'stroke': '#706784'
+                                            },
+                                            {
+                                                'x': '-3',
+                                                'name': '18453 Strappy Racerback UL Sport',
+                                                'group': 'Negative Gap',
+                                                'y': -3,
+                                                'fill': '#7d6e8f',
+                                                'gradient': '#bc97cd',
+                                                'stroke': '#706784'
+                                            },
+                                            {
+                                                'x': '-22',
+                                                'name': '18453 Strappy Racerback UL Sport',
+                                                'group': 'Negative Gap',
+                                                'y': -3,
+                                                'fill': '#7d6e8f',
+                                                'gradient': '#bc97cd',
+                                                'stroke': '#706784'
+                                            },
+                                            {
+                                                'x': '-2',
+                                                'name': '18453 Strappy Racerback UL Sport',
+                                                'group': 'Negative Gap',
+                                                'y': -2,
+                                                'fill': '#7d6e8f',
+                                                'gradient': '#bc97cd',
+                                                'stroke': '#706784'
+                                            },
+                                            {
+                                                'x': '-23',
+                                                'name': '18453 Strappy Racerback UL Sport',
+                                                'group': 'Negative Gap',
+                                                'y': -3,
+                                                'fill': '#7d6e8f',
+                                                'gradient': '#bc97cd',
+                                                'stroke': '#706784'
+                                            },
+                                            {
+                                                'x': '-24',
+                                                'name': '18453 Strappy Racerback UL Sport',
+                                                'group': 'Negative Gap',
+                                                'y': -3,
+                                                'fill': '#7d6e8f',
+                                                'gradient': '#bc97cd',
+                                                'stroke': '#706784'
+                                            },
+                                            {
+                                                'x': '-25',
+                                                'name': '18453 Strappy Racerback UL Sport',
+                                                'group': 'Negative Gap',
+                                                'y': -3,
+                                                'fill': '#7d6e8f',
+                                                'gradient': '#bc97cd',
+                                                'stroke': '#706784'
+                                            }
+                                        ]
+                                    }
+                                }
+                            },
+                            {
+                                'Graph': {
+                                    'Type': 'DiwoVisualVsLineGraphWithDraggablePointsComponent',
+                                    'Data': {
+                                        'title': 'Line Graph with Draggable Points',
+                                        'legend': {
+                                            'isVisible': true,
+                                            'text': '{{name}}'
+                                        },
+                                        'tooltip': {
+                                            'hasImg': true,
+                                            'muted': true,
+                                            'propagate': 'title',
+                                            'header': ['This is a main header'],
+                                            'title': ['<span class="metric">{{name}} ({{x}})</span><span class="number">{{y}}</span>'],
+                                            'body': []
+                                        },
+                                        'y': {
+                                            'title': 'This is a sample title',
+                                            'prefix': '',
+                                            'sufix': '%',
+                                            'format': ''
+                                        },
+                                        'x': {
+                                            'title': 'This is a sample title',
+                                            'type': 'number',
+                                            'prefix': 'Week ',
+                                            'sufix': '',
+                                            'format': ''
+                                        },
+                                        'data': [{
+                                                'id': 'planned',
+                                                'name': 'Planned',
+                                                'color': '#57a6a1',
+                                                'pointColor': '#166961',
+                                                'draggable': true,
+                                                'values': [
+                                                    {
+                                                        'x': '30',
+                                                        'y': 1
+                                                    }, {
+                                                        'x': '31',
+                                                        'y': 4
+                                                    }, {
+                                                        'x': '32',
+                                                        'y': 5
+                                                    }, {
+                                                        'x': '33',
+                                                        'y': 9
+                                                    }, {
+                                                        'x': '34',
+                                                        'y': 7
+                                                    }, {
+                                                        'x': '35',
+                                                        'y': 1
+                                                    }, {
+                                                        'x': '36',
+                                                        'y': 1
+                                                    }, {
+                                                        'x': '37',
+                                                        'y': 7
+                                                    }
+                                                ]
+                                            }, {
+                                                'id': 'diwo-recommendation',
+                                                'name': 'Diwo Recommendation',
+                                                'color': '#e52e2e',
+                                                'strokeStyle': 'dashed',
+                                                'strokeWidth': 1,
+                                                'pointColor': '#e30d12',
+                                                'pointSize': 3,
+                                                'values': [{
+                                                        'x': '30',
+                                                        'y': 4
+                                                    }, {
+                                                        'x': '31',
+                                                        'y': 3
+                                                    }, {
+                                                        'x': '32',
+                                                        'y': 2
+                                                    }, {
+                                                        'x': '33',
+                                                        'y': 14
+                                                    }, {
+                                                        'x': '34',
+                                                        'y': 9
+                                                    }, {
+                                                        'x': '35',
+                                                        'y': 7
+                                                    }, {
+                                                        'x': '36',
+                                                        'y': 9
+                                                    }, {
+                                                        'x': '37',
+                                                        'y': 3
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                }
+                            }
+                        ]
                     }
                 },
                 {
@@ -6892,7 +7200,6 @@ var DecideService = (function () {
                 }
             ]
         };
-        this.cardNavigation = [];
     }
     DecideService.prototype.setActivePatient = function (newPatient) {
         this.activePatient.next(newPatient);
@@ -9185,13 +9492,13 @@ var PopupApi = (function () {
         ];
     }
     PopupApi.prototype.getAbbreviations = function () {
-        return this.http.get('https://ec2-52-70-82-178.compute-1.amazonaws.com:9444/api/diwousers/abbreviations', {});
+        return this.http.get('https://ec2-52-70-82-178.compute-1.amazonaws.com:9443/api/diwousers/abbreviations', {});
     };
     //   setAbbreviations(content: any) {
     //     let headers = new Headers();
     //     headers.append('Accept', 'application/json, text/plain, */*');
     //     headers.append('X-Requested-With', 'XMLHttpRequest');
-    //     return this.http.post('https://ec2-52-70-82-178.compute-1.amazonaws.com:9444/api/diwousers/settings/set',
+    //     return this.http.post('https://ec2-52-70-82-178.compute-1.amazonaws.com:9443/api/diwousers/settings/set',
     //       JSON.stringify(content), {
     //         headers: headers
     //       });
@@ -9256,7 +9563,7 @@ var QuestionApi = (function () {
         }).catch(function (error) { return __WEBPACK_IMPORTED_MODULE_2_rxjs__["Observable"].throw(error.json().error || 'Server error'); });
     };
     QuestionApi.prototype.askQuestion = function (messageId, text) {
-        //this.http.get('https://ec2-52-70-82-178.compute-1.amazonaws.com:9444/api/pdf/-607027142').map((res)=>{
+        //this.http.get('https://ec2-52-70-82-178.compute-1.amazonaws.com:9443/api/pdf/-607027142').map((res)=>{
         //  console.log("IT MAKE IT", res);
         //}).catch((err)=>{console.log(err); return err}).first().subscribe();
         text = text.replace("$", "").trim();
@@ -9438,13 +9745,13 @@ var SettingsApi = (function () {
         });
     }
     SettingsApi.prototype.getSettings = function (userId) {
-        return this.http.get('https://ec2-52-70-82-178.compute-1.amazonaws.com:9444/api/diwousers/settings?UserId=' + userId, {});
+        return this.http.get('https://ec2-52-70-82-178.compute-1.amazonaws.com:9443/api/diwousers/settings?UserId=' + userId, {});
     };
     SettingsApi.prototype.setSettings = function (content) {
         var headers = new __WEBPACK_IMPORTED_MODULE_2__angular_http__["a" /* Headers */]();
         headers.append('Accept', 'application/json, text/plain, */*');
         headers.append('X-Requested-With', 'XMLHttpRequest');
-        return this.http.post('https://ec2-52-70-82-178.compute-1.amazonaws.com:9444/api/diwousers/settings/set', JSON.stringify(content), {
+        return this.http.post('https://ec2-52-70-82-178.compute-1.amazonaws.com:9443/api/diwousers/settings/set', JSON.stringify(content), {
             headers: headers
         });
     };
@@ -10104,7 +10411,7 @@ var AskContentService = (function () {
         var headers = new __WEBPACK_IMPORTED_MODULE_4__angular_http__["a" /* Headers */]();
         headers.append('Accept', 'application/json, text/plain, */*');
         headers.append('X-Requested-With', 'XMLHttpRequest');
-        return this.http.post('https://ec2-52-70-82-178.compute-1.amazonaws.com:9444/api/history', JSON.stringify(content), {
+        return this.http.post('https://ec2-52-70-82-178.compute-1.amazonaws.com:9443/api/history', JSON.stringify(content), {
             headers: headers
         });
     };
@@ -11395,7 +11702,7 @@ var SpeechRecognition = (function () {
                 analyser: equalizerAnalyser
             });
         });
-        // this.initWebsocket();
+        this.initWebsocket();
         this.result.subscribe(function (res) {
             if (checkForVoiceCommands(res)) {
                 _this._sendResults.next(false);
@@ -11465,7 +11772,6 @@ var SpeechRecognition = (function () {
         this.context.addEventListener('statechange', this.toggleWebsocket);
     };
     SpeechRecognition.prototype.newWebsocket = function () {
-        console.log('RECOGNITION LISTENER ON WEBSOCKET.');
         var self = this;
         var websocketPromise = new Promise(function (resolve, reject) {
             self.socket = new WebSocket('wss://' + 'demo.getdiwo.ai:8443' + '/test');
@@ -11512,6 +11818,15 @@ var SpeechRecognition = (function () {
                     self._anyResults = true;
                     self._ngZone.run(function () {
                         if (self._sendResults.getValue()) {
+                            if (localStorage.getItem('pleaseClear') !== 'true') {
+                                localStorage.setItem('length', '0');
+                            }
+                            if (localStorage.getItem('pleaseClear') === 'true') {
+                                var length = newResult.length;
+                                if (length > 10) {
+                                    localStorage.setItem('length', length.toString());
+                                }
+                            }
                             if (self.resultTimer) {
                                 clearTimeout(self.resultTimer);
                             }
@@ -11519,7 +11834,7 @@ var SpeechRecognition = (function () {
                                 self._speechDone.next(self._anyResults);
                             }, 2000);
                             console.log('send speech');
-                            self._result.next(newResult);
+                            self._result.next(newResult.substring(+localStorage.getItem('length')));
                         }
                         else {
                         }
@@ -19803,7 +20118,7 @@ var SharedModule_1;
 /***/ "../../../../../src/app/shared/snippets/nav/decide-nav/decide-nav.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"layout-row with-mg-light flex\">\n    \n    <div class=\"layout-item flex has-mg-hori-light\">\n      <div class=\"has-pd-vert-small has-bg-secondary has-c-shade-1 is-relative\">\n        <h3 class=\" has-mg-full-none has-pd-hori-normal\">\n          Decide\n        </h3>\n      </div>\n    </div>\n  </div>\n  <div class=\"cards-icons\">\n    <div class=\"card regular\" *ngFor=\"let item of cards\">\n      \n    </div>\n  </div>\n  <div class=\"cards-info\">\n    \n  </div>\n\n<!-- <div class=\"layout-row with-mg-light flex\">\n\n\n\n<div class=\"layout-item flex has-mg-hori-light\">\n\n  <div class=\"has-pd-vert-small has-bg-secondary has-c-shade-1 is-relative\">\n    <h3 class=\" has-mg-full-none\n                  has-pd-hori-normal\">\n      Decide\n    </h3>\n  </div>\n\n  <div class=\"has-mg-top-light is-decide-nav-height has-bg-secondary-light layout-row\">\n\n    <div class=\"has-pd-full-medium layout--no-shrink has-bg-tertiary layout-row layout--start-center\">\n      <button class=\"has-bg-secondary has-c-shade-1 btn-large has-cursor\">\n        <i class=\"di di-16x di-search\"></i>\n      </button>\n      <div class=\"has-mg-left-small\">\n        <p class=\"has-mg-vert-light has-pd-hori-extra-small\">&uarr;A-&darr;Z</p>\n\n        <div class=\"divider has-bg-shade-1\"></div>\n        <p class=\"has-mg-vert-light has-pd-hori-extra-small\">&uarr;Z-&darr;A</p>\n\n      </div>\n    </div>\n    <div class=\"layout-row has-pd-vert-extra-small flex\">\n      <div class=\"has-pd-hori-medium is-one-third has-bd-right bd-light bd-shade-1 layout-column layout--space-around-stretch\">\n        <dropdown [placeholder]=\"'Select Condition'\" class=\"\">\n          <dropdown-item [title]=\"'test'\" value=\"'test'\">\n\n          </dropdown-item>\n        </dropdown>\n        <dropdown [placeholder]=\"'Risk Level'\" class=\"has-mg-top-extra-small\">\n          <dropdown-item [title]=\"'test'\" value=\"'test'\">\n\n          </dropdown-item>\n        </dropdown>\n      </div>\n      <div class=\"has-pd-hori-medium is-one-quarter has-bd-right bd-light bd-shade-1 layout-column layout--space-around-stretch\">\n        <dropdown [placeholder]=\"'Age Range'\" class=\"\">\n          <dropdown-item [title]=\"'test'\" value=\"'test'\">\n\n          </dropdown-item>\n        </dropdown>\n        <dropdown [placeholder]=\"'Discharge Rate'\" class=\"has-mg-top-extra-small\">\n          <dropdown-item [title]=\"'test'\" value=\"'test'\">\n\n          </dropdown-item>\n        </dropdown>\n      </div>\n      <div class=\"has-pd-hori-medium is-one-quarter has-bd-right bd-light bd-shade-1 layout-column layout--space-around-stretch\">\n        <dropdown [placeholder]=\"'Readmission Time'\" class=\"\">\n          <dropdown-item [title]=\"'test'\" value=\"'test'\">\n\n          </dropdown-item>\n        </dropdown>\n        <dropdown [placeholder]=\"'Intervention Time'\" class=\"has-mg-top-extra-small\">\n          <dropdown-item [title]=\"'test'\" value=\"'test'\">\n\n          </dropdown-item>\n        </dropdown>\n      </div>\n      <div class=\"has-pd-hori-medium is-one-fifth layout-column layout--space-around-stretch\">\n        <dropdown [placeholder]=\"'Gender'\" class=\"\">\n          <dropdown-item [title]=\"'test'\" value=\"'test'\">\n\n          </dropdown-item>\n        </dropdown>\n        <dropdown [placeholder]=\"'CAN Score'\" class=\"has-mg-top-extra-small\">\n          <dropdown-item [title]=\"'test'\" value=\"'test'\">\n\n          </dropdown-item>\n        </dropdown>\n      </div>\n    </div>\n\n\n  </div>\n</div>\n\n</div> -->\n"
+module.exports = "<div class=\"layout-row with-mg-light flex\">\n    \n    <div class=\"layout-item flex has-mg-hori-light\">\n      <div class=\"has-pd-vert-small has-bg-secondary has-c-shade-1 is-relative\">\n        <h3 class=\" has-mg-full-none has-pd-hori-normal\">\n          Decide\n        </h3>\n      </div>\n    </div>\n  </div>\n  <div class=\"cards-icons\">\n    <div class=\"card regular\"></div>\n    <div class=\"card regular\"></div>\n    <div class=\"card regular\"></div>\n    <div class=\"card regular\"></div>\n    <div class=\"card md\"></div>\n    <div class=\"card sm\"></div>\n    <div class=\"card regular\"></div>\n    <div class=\"card regular\"></div>\n    <div class=\"card regular\"></div>\n    <div class=\"card regular\"></div>\n  </div>\n  <div class=\"cards-info\">\n    \n  </div>\n\n<!-- <div class=\"layout-row with-mg-light flex\">\n\n\n\n<div class=\"layout-item flex has-mg-hori-light\">\n\n  <div class=\"has-pd-vert-small has-bg-secondary has-c-shade-1 is-relative\">\n    <h3 class=\" has-mg-full-none\n                  has-pd-hori-normal\">\n      Decide\n    </h3>\n  </div>\n\n  <div class=\"has-mg-top-light is-decide-nav-height has-bg-secondary-light layout-row\">\n\n    <div class=\"has-pd-full-medium layout--no-shrink has-bg-tertiary layout-row layout--start-center\">\n      <button class=\"has-bg-secondary has-c-shade-1 btn-large has-cursor\">\n        <i class=\"di di-16x di-search\"></i>\n      </button>\n      <div class=\"has-mg-left-small\">\n        <p class=\"has-mg-vert-light has-pd-hori-extra-small\">&uarr;A-&darr;Z</p>\n\n        <div class=\"divider has-bg-shade-1\"></div>\n        <p class=\"has-mg-vert-light has-pd-hori-extra-small\">&uarr;Z-&darr;A</p>\n\n      </div>\n    </div>\n    <div class=\"layout-row has-pd-vert-extra-small flex\">\n      <div class=\"has-pd-hori-medium is-one-third has-bd-right bd-light bd-shade-1 layout-column layout--space-around-stretch\">\n        <dropdown [placeholder]=\"'Select Condition'\" class=\"\">\n          <dropdown-item [title]=\"'test'\" value=\"'test'\">\n\n          </dropdown-item>\n        </dropdown>\n        <dropdown [placeholder]=\"'Risk Level'\" class=\"has-mg-top-extra-small\">\n          <dropdown-item [title]=\"'test'\" value=\"'test'\">\n\n          </dropdown-item>\n        </dropdown>\n      </div>\n      <div class=\"has-pd-hori-medium is-one-quarter has-bd-right bd-light bd-shade-1 layout-column layout--space-around-stretch\">\n        <dropdown [placeholder]=\"'Age Range'\" class=\"\">\n          <dropdown-item [title]=\"'test'\" value=\"'test'\">\n\n          </dropdown-item>\n        </dropdown>\n        <dropdown [placeholder]=\"'Discharge Rate'\" class=\"has-mg-top-extra-small\">\n          <dropdown-item [title]=\"'test'\" value=\"'test'\">\n\n          </dropdown-item>\n        </dropdown>\n      </div>\n      <div class=\"has-pd-hori-medium is-one-quarter has-bd-right bd-light bd-shade-1 layout-column layout--space-around-stretch\">\n        <dropdown [placeholder]=\"'Readmission Time'\" class=\"\">\n          <dropdown-item [title]=\"'test'\" value=\"'test'\">\n\n          </dropdown-item>\n        </dropdown>\n        <dropdown [placeholder]=\"'Intervention Time'\" class=\"has-mg-top-extra-small\">\n          <dropdown-item [title]=\"'test'\" value=\"'test'\">\n\n          </dropdown-item>\n        </dropdown>\n      </div>\n      <div class=\"has-pd-hori-medium is-one-fifth layout-column layout--space-around-stretch\">\n        <dropdown [placeholder]=\"'Gender'\" class=\"\">\n          <dropdown-item [title]=\"'test'\" value=\"'test'\">\n\n          </dropdown-item>\n        </dropdown>\n        <dropdown [placeholder]=\"'CAN Score'\" class=\"has-mg-top-extra-small\">\n          <dropdown-item [title]=\"'test'\" value=\"'test'\">\n\n          </dropdown-item>\n        </dropdown>\n      </div>\n    </div>\n\n\n  </div>\n</div>\n\n</div> -->\n"
 
 /***/ }),
 
@@ -19832,7 +20147,6 @@ module.exports = module.exports.toString();
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DecideNavComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__microservices_decide_services_decide_service__ = __webpack_require__("../../../../../src/app/microservices/decide/services/decide.service.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -19844,17 +20158,12 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
-
 var DecideNavComponent = (function () {
-    function DecideNavComponent(router, decideService) {
+    function DecideNavComponent(router) {
         this.router = router;
-        this.decideService = decideService;
         this.popupChange = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["x" /* EventEmitter */]();
     }
     DecideNavComponent.prototype.ngOnInit = function () { };
-    DecideNavComponent.prototype.ngAfterContentChecked = function () {
-        this.cards = this.decideService.cardNavigation;
-    };
     DecideNavComponent.prototype.isWatchOpen = function () {
         return this.router.isActive(this.router.createUrlTree(['/watch']), false);
     };
@@ -19894,10 +20203,10 @@ DecideNavComponent = __decorate([
         template: __webpack_require__("../../../../../src/app/shared/snippets/nav/decide-nav/decide-nav.component.html"),
         styles: [__webpack_require__("../../../../../src/app/shared/snippets/nav/decide-nav/decide-nav.component.scss")],
     }),
-    __metadata("design:paramtypes", [typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["d" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["d" /* Router */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__microservices_decide_services_decide_service__["a" /* DecideService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__microservices_decide_services_decide_service__["a" /* DecideService */]) === "function" && _c || Object])
+    __metadata("design:paramtypes", [typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["d" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["d" /* Router */]) === "function" && _b || Object])
 ], DecideNavComponent);
 
-var _a, _b, _c;
+var _a, _b;
 //# sourceMappingURL=decide-nav.component.js.map
 
 /***/ }),
@@ -20019,7 +20328,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 var AskInputComponent = (function () {
-    function AskInputComponent(r, visualService, _askMessagesList, _AnswerApi, _RunCommand, _cdRef, _speechRec) {
+    function AskInputComponent(r, visualService, _askMessagesList, _AnswerApi, _RunCommand, _cdRef, _speechRec, _eq) {
         var _this = this;
         this.r = r;
         this.visualService = visualService;
@@ -20028,6 +20337,7 @@ var AskInputComponent = (function () {
         this._RunCommand = _RunCommand;
         this._cdRef = _cdRef;
         this._speechRec = _speechRec;
+        this._eq = _eq;
         this.isCommand = false;
         this.context = null;
         this.size = 'medium';
@@ -20077,8 +20387,16 @@ var AskInputComponent = (function () {
             }
             else {
                 console.log(res);
-                _this.tags.nativeElement.textContent = res;
-                _this.messageText = res;
+                if (localStorage.getItem('pleaseClear') === 'true') {
+                    console.log('this is true, I should stop');
+                    localStorage.setItem('pleaseClear', 'false');
+                    _this.tags.nativeElement.textContent = '';
+                    _this.messageText = '';
+                }
+                else {
+                    _this.tags.nativeElement.textContent = res;
+                    _this.messageText = res;
+                }
             }
         });
         //this.hintsObs = this.searchWords.asObservable().switchMap(term => {
@@ -20434,10 +20752,10 @@ AskInputComponent = __decorate([
             "(document:click)": "clickOutside($event)"
         }
     }),
-    __metadata("design:paramtypes", [typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["_2" /* Renderer */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["_2" /* Renderer */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1__equalizer_equalizer_service__["a" /* EqualizerService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__equalizer_equalizer_service__["a" /* EqualizerService */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_3__ask_message_list__["a" /* AskMessagesList */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__ask_message_list__["a" /* AskMessagesList */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_4__api_answer_service__["a" /* AnswerApi */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__api_answer_service__["a" /* AnswerApi */]) === "function" && _f || Object, typeof (_g = typeof __WEBPACK_IMPORTED_MODULE_9__events_run_command_service__["a" /* RunCommand */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_9__events_run_command_service__["a" /* RunCommand */]) === "function" && _g || Object, typeof (_h = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["l" /* ChangeDetectorRef */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["l" /* ChangeDetectorRef */]) === "function" && _h || Object, typeof (_j = typeof __WEBPACK_IMPORTED_MODULE_2__events_speech_recognition_service__["a" /* SpeechRecognition */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__events_speech_recognition_service__["a" /* SpeechRecognition */]) === "function" && _j || Object])
+    __metadata("design:paramtypes", [typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["_2" /* Renderer */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["_2" /* Renderer */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1__equalizer_equalizer_service__["a" /* EqualizerService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__equalizer_equalizer_service__["a" /* EqualizerService */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_3__ask_message_list__["a" /* AskMessagesList */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__ask_message_list__["a" /* AskMessagesList */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_4__api_answer_service__["a" /* AnswerApi */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__api_answer_service__["a" /* AnswerApi */]) === "function" && _f || Object, typeof (_g = typeof __WEBPACK_IMPORTED_MODULE_9__events_run_command_service__["a" /* RunCommand */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_9__events_run_command_service__["a" /* RunCommand */]) === "function" && _g || Object, typeof (_h = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["l" /* ChangeDetectorRef */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["l" /* ChangeDetectorRef */]) === "function" && _h || Object, typeof (_j = typeof __WEBPACK_IMPORTED_MODULE_2__events_speech_recognition_service__["a" /* SpeechRecognition */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__events_speech_recognition_service__["a" /* SpeechRecognition */]) === "function" && _j || Object, typeof (_k = typeof __WEBPACK_IMPORTED_MODULE_1__equalizer_equalizer_service__["a" /* EqualizerService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__equalizer_equalizer_service__["a" /* EqualizerService */]) === "function" && _k || Object])
 ], AskInputComponent);
 
-var _a, _b, _c, _d, _e, _f, _g, _h, _j;
+var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
 //# sourceMappingURL=ask-input.component.js.map
 
 /***/ }),
@@ -25663,9 +25981,6 @@ var EqualizerComponent = (function () {
     };
     EqualizerComponent.prototype.ngAfterViewInit = function () {
         var _this = this;
-        this._SpeechRecognition.initWebsocket();
-        this._SpeechRecognition.newWebsocket();
-        this._SpeechRecognition.allowResults();
         this._visualDataSub = this._SpeechRecognition.visualData.subscribe(function (data) {
             console.log("audio data");
             _this.visualData = data;
@@ -25879,6 +26194,8 @@ var EqualizerService = (function () {
     };
     EqualizerService.prototype.openStream = function () {
         if (this._isSupported) {
+            localStorage.setItem('pleaseClear', 'true');
+            localStorage.setItem('position', 'true');
             this.isStreaming.next(true);
             this._speechRec.allowResults();
             this.closeWhenSpeechIsDone();
@@ -95854,7 +96171,7 @@ module.exports = function() {
 // The file contents for the current environment will overwrite these during build.
 var environment = {
     production: false,
-    baseApi: "https://ec2-52-70-82-178.compute-1.amazonaws.com:9444/api/"
+    baseApi: "https://ec2-52-70-82-178.compute-1.amazonaws.com:9443/api/"
 };
 //# sourceMappingURL=environment.js.map
 
