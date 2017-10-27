@@ -112,7 +112,7 @@ $flexAlignList: baseline baseline, center center, end flex-end, start flex-start
 .is-scrollable-y {
   overflow-y: auto;
   &::-webkit-scrollbar {
-    width: 11px;
+    width: 0px;
   }
 
   &::-webkit-scrollbar-thumb {
