@@ -44,7 +44,7 @@ module.exports = function () {
           // Update outer dimensions
           gridBg
             .style("top",  (top) + 'px')
-            .style("height", (left) + 'px')
+            .style("left", (left) + 'px')
             .style("width",  (width) + 'px')
             .style("height", (height) + 'px');
 

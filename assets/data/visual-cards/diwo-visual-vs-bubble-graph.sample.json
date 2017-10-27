@@ -1,0 +1,330 @@
+{
+  "data": {
+    "topLeft": {
+      "text": "Demand Signals",
+      "image": "/assets/images/gViz/visualizations/diwo-visual-vs-bubble-graph/user-signal.png",
+      "chartData": {
+        "data": [
+          {
+            "label": "Color:",
+            "text": "Floral Pink"
+          },
+          {
+            "label": "Style:",
+            "text": "Push-up"
+          },
+          {
+            "label": "Size:",
+            "text": "Small"
+          },
+          {
+            "label": "Class:",
+            "text": "WEW"
+          },
+          {
+            "label": "Store:",
+            "text": "#100684 | Uplift: 16%"
+          }
+        ]
+      }
+    },
+    "bottomLeft": {
+      "text": "Demand vs Planned Curve",
+      "image": "/assets/images/gViz/visualizations/diwo-visual-vs-bubble-graph/line-chart.png",
+      "chartData": {
+        "legend": {
+          "isVisible": true,
+          "text": "{{name}}"
+        },
+        "tooltip": {
+          "hasImg": true,
+          "muted": true,
+          "propagate": "title",
+          "header": [ "This is a main header" ],
+          "title": [  "<span class='metric'>{{name}} ({{x}})</span><span class='number'>{{y}}</span>"],
+          "body": []
+        },
+        "y": {
+          "title": "This is a sample title",
+          "prefix": "",
+          "sufix": "%",
+          "format": ""
+        },
+        "x": {
+          "title": "This is a sample title",
+          "type": "number",
+          "prefix": "Week ",
+          "sufix": "",
+          "format": ""
+        },
+        "data": [{
+            "id": "planned",
+            "name": "Planned",
+            "color": "#57a6a1",
+            "pointColor": "#166961",
+            "values": [
+              {
+                "x": "30",
+                "y": 1
+              }, {
+                "x": "31",
+                "y": 4
+              }, {
+                "x": "32",
+                "y": 5
+              }, {
+                "x": "33",
+                "y": 9
+              }, {
+                "x": "34",
+                "y": 7
+              }, {
+                "x": "35",
+                "y": 1
+              }, {
+                "x": "36",
+                "y": 1
+              }, {
+                "x": "37",
+                "y": 7
+              }
+            ]
+          }, {
+            "id": "diwo-recommendation",
+            "name": "Diwo Recommendation",
+            "color": "#e52e2e",
+            "strokeStyle": "dashed",
+            "strokeWidth": 1,
+            "pointColor": "#e30d12",
+            "pointSize": 3,
+            "values": [{
+                "x": "30",
+                "y": 4
+              }, {
+                "x": "31",
+                "y": 3
+              }, {
+                "x": "32",
+                "y": 2
+              }, {
+                "x": "33",
+                "y": 14
+              }, {
+                "x": "34",
+                "y": 9
+              }, {
+                "x": "35",
+                "y": 7
+              }, {
+                "x": "36",
+                "y": 9
+              }, {
+                "x": "37",
+                "y": 3
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "center": {
+      "topTitle": "Assortment Optimization of",
+      "topValue": "21%",
+      "image": "/assets/images/gViz/visualizations/diwo-visual-vs-bubble-graph/bra.png",
+      "bottomTitle": "Revenue Impact",
+      "bottomValue": "$1.3M"
+    },
+    "right": {
+      "text": "Top Variations",
+      "image": "/assets/images/gViz/visualizations/diwo-visual-vs-bubble-graph/bar-chart.png",
+      "chartData": {
+        "legend": {
+          "isVisible": true,
+          "text": "{{group}}"
+        },
+        "tooltip": {
+          "hasImg": false,
+          "title": [
+            "{{name}}",
+            "<span class='metric'>Contribution</span><span class='number'>{{x}}</span>",
+            "<span class='metric'>Deviation</span><span class='number'>{{y}}</span>"
+          ],
+          "body": []
+        },
+        "x": {
+          "title": "Class - Master Style",
+          "prefix": "",
+          "sufix": "%",
+          "type": "string",
+          "format": ""
+        },
+        "y": {
+          "title": "%",
+          "prefix": "",
+          "sufix": "%",
+          "type": "number",
+          "format": ""
+        },
+        "attrs": {
+          "barWidth": 8,
+          "wrapText": false
+        },
+        "data": [
+          {
+            "x": "5",
+            "name": "Date Bra PU",
+            "group": "Shortage",
+            "y": 5,
+            "fill": "#e85e8f",
+            "gradient": "#fd9e83",
+            "stroke": "#b45276"
+          },
+          {
+            "x": "19",
+            "name": "PK LACE HIGH NECK PU",
+            "group": "Shortage",
+            "y": 19,
+            "fill": "#e85e8f",
+            "gradient": "#fd9e83",
+            "stroke": "#b45276"
+          },
+          {
+            "x": "25",
+            "name": "Sp18724 Ultimate UL Halter",
+            "group": "Shortage",
+            "y": 25,
+            "fill": "#e85e8f",
+            "gradient": "#fd9e83",
+            "stroke": "#b45276"
+          },
+          {
+            "x": "35",
+            "name": "19329 Exploded Floral Lace LL Bralette",
+            "group": "Shortage",
+            "y": 35,
+            "fill": "#e85e8f",
+            "gradient": "#fd9e83",
+            "stroke": "#b45276"
+          },
+          {
+            "x": "45",
+            "name": "Sports Bra Demi LL",
+            "group": "Shortage",
+            "y": 45,
+            "fill": "#e85e8f",
+            "gradient": "#fd9e83",
+            "stroke": "#b45276"
+          },
+          {
+            "x": "50",
+            "name": "WEW T-shirt and Cool",
+            "group": "Shortage",
+            "y": 50,
+            "fill": "#e85e8f",
+            "gradient": "#fd9e83",
+            "stroke": "#b45276"
+          },
+          {
+            "x": "-51",
+            "name": "18789 Bonded Triangle Banded Bracelets",
+            "group": "Negative Gap",
+            "y": -51,
+            "fill": "#7d6e8f",
+            "gradient": "#bc97cd",
+            "stroke": "#706784"
+          },
+          {
+            "x": "-47",
+            "name": "19328_DATE V-WIRE PU W/ VWIRE",
+            "group": "Negative Gap",
+            "y": -47,
+            "fill": "#7d6e8f",
+            "gradient": "#bc97cd",
+            "stroke": "#706784"
+          },
+          {
+            "x": "-31",
+            "name": "18854_DATE EYELASH OPEN BACK",
+            "group": "Negative Gap",
+            "y": -31,
+            "fill": "#7d6e8f",
+            "gradient": "#bc97cd",
+            "stroke": "#706784"
+          },
+          {
+            "x": "-21",
+            "name": "18453 Strappy Racerback UL Sport",
+            "group": "Negative Gap",
+            "y": -21,
+            "fill": "#7d6e8f",
+            "gradient": "#bc97cd",
+            "stroke": "#706784"
+          },
+          {
+            "x": "-13",
+            "name": "18453 Strappy Racerback UL Sport",
+            "group": "Negative Gap",
+            "y": -13,
+            "fill": "#7d6e8f",
+            "gradient": "#bc97cd",
+            "stroke": "#706784"
+          },
+          {
+            "x": "-3",
+            "name": "18453 Strappy Racerback UL Sport",
+            "group": "Negative Gap",
+            "y": -3,
+            "fill": "#7d6e8f",
+            "gradient": "#bc97cd",
+            "stroke": "#706784"
+          },
+          {
+            "x": "-22",
+            "name": "18453 Strappy Racerback UL Sport",
+            "group": "Negative Gap",
+            "y": -3,
+            "fill": "#7d6e8f",
+            "gradient": "#bc97cd",
+            "stroke": "#706784"
+          },
+          {
+            "x": "-2",
+            "name": "18453 Strappy Racerback UL Sport",
+            "group": "Negative Gap",
+            "y": -2,
+            "fill": "#7d6e8f",
+            "gradient": "#bc97cd",
+            "stroke": "#706784"
+          },
+          {
+            "x": "-23",
+            "name": "18453 Strappy Racerback UL Sport",
+            "group": "Negative Gap",
+            "y": -3,
+            "fill": "#7d6e8f",
+            "gradient": "#bc97cd",
+            "stroke": "#706784"
+          },
+          {
+            "x": "-24",
+            "name": "18453 Strappy Racerback UL Sport",
+            "group": "Negative Gap",
+            "y": -3,
+            "fill": "#7d6e8f",
+            "gradient": "#bc97cd",
+            "stroke": "#706784"
+          },
+          {
+            "x": "-25",
+            "name": "18453 Strappy Racerback UL Sport",
+            "group": "Negative Gap",
+            "y": -3,
+            "fill": "#7d6e8f",
+            "gradient": "#bc97cd",
+            "stroke": "#706784"
+          }
+        ]
+      }
+    }
+  }
+}

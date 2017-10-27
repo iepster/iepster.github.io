@@ -135,7 +135,6 @@
 
 // Background grid
 .grid-background {
-  background-image: url('/assets/images/transparent_grid_rect.png');
   background-repeat: repeat;
   position: absolute;
   z-index: 10;
@@ -143,6 +142,9 @@
   left: 0px;
   border: 1px solid #f8f8f8;
   background-position: 9px 9px;
+
+  background-image: url('/assets/images/transparent_grid_rect.png');
+  &.pink { background-image: url('/assets/images/pink_grid_rect.png'); }
 }
 
 // Background grid with cover

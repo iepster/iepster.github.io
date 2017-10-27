@@ -1057,7 +1057,7 @@ AdminComponent = __decorate([
 /***/ "../../../../../src/app/features/admin/login/login.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"sign-in-ctn diwo-open layout-row layout--start-center\">\n\n\n  <img *ngIf=\"isAnimationStart\" id=\"diwo-animation\" [src]=\"animationGifPath\" [@loaderAnimate]=\"isAnimationStart.toString()\"\n    [ngClass]=\"{'animatedLogo': isAnimationSet, 'staticLogo': !isAnimationSet}\">\n\n  <button *ngIf=\"isAnimationEnd\" class=\"btn-diwo is-circle has-bd-full bd-diwo-red bd-normal btn-medium has-bg-shade-1 is-relative\"\n    [@loaderAnimate]=\"isAnimationEnd.toString()\" type=\"button\" (click)=\"formOpen = !formOpen\">\n  </button>\n\n  <div class=\"diwo-si-btn \" [@formTransition]=\"(formOpen && isAnimationEnd).toString()\">\n    <login-form></login-form>\n  </div>\n\n\n</div>\n<img src=\"./assets/images/diwoLogo-login.svg\" width=\"206\" class=\"is-absolute right-extra-large bottom-extra-large\">\n<router-outlet></router-outlet>\n\n"
+module.exports = "<div class=\"sign-in-ctn diwo-open layout-row layout--start-center\">\n\n\n  <img *ngIf=\"isAnimationStart\" id=\"diwo-animation\" [src]=\"animationGifPath\" [@loaderAnimate]=\"isAnimationStart.toString()\"\n    [ngClass]=\"{'animatedLogo': isAnimationSet, 'staticLogo': !isAnimationSet}\">\n\n  <button *ngIf=\"isAnimationEnd\" class=\"btn-diwo is-circle has-bd-full bd-diwo-red bd-normal btn-medium has-bg-shade-1 is-relative\"\n    [@loaderAnimate]=\"isAnimationEnd.toString()\" type=\"button\" (click)=\"formOpen = !formOpen\">\n  </button>\n\n  <div class=\"diwo-si-btn \" [@formTransition]=\"(formOpen && isAnimationEnd).toString()\">\n    <login-form></login-form>\n  </div>\n\n\n</div>\n<img src=\"./assets/images/diwoLogo-login.svg\" width=\"206\" class=\"is-absolute right-extra-large bottom-extra-large\">\n<router-outlet></router-outlet>\n"
 
 /***/ }),
 
@@ -2429,6 +2429,13 @@ var VISUALS = [
                 "datafile": "diwo-visual-image-cards.sample.json",
             },
             {
+                "imgPath": "diwo-visual-image-cards-with-multiple-kpis",
+                "name": "Image Cards With Multiple KPIs",
+                "component": "DiwoVisualImageCardsWithMultipleKpisComponent",
+                "path": "assets/data/visual-cards",
+                "datafile": "diwo-visual-image-cards-with-multiple-kpis.sample.json",
+            },
+            {
                 "imgPath": "diwo-visual-simple-cards",
                 "name": "Simple Cards",
                 "component": "DiwoVisualSimpleCardsComponent",
@@ -2632,6 +2639,13 @@ var VISUALS = [
                 "component": "DiwoVisualVsLineGraphWithDraggablePointsComponent",
                 "path": "assets/data/visual-cards",
                 "datafile": "diwo-visual-vs-line-graph-with-draggable-points.sample.json",
+            },
+            {
+                "imgPath": "diwo-visual-vs-bubble-graph",
+                "name": "Bubble Graph",
+                "component": "DiwoVisualVsBubbleGraphComponent",
+                "path": "assets/data/visual-cards",
+                "datafile": "diwo-visual-vs-bubble-graph.sample.json",
             }
         ]
     }
@@ -4908,7 +4922,7 @@ var DecideModule_1;
 /***/ "../../../../../src/app/microservices/decide/decide/decide-panel-layout/decide-panel-layout.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"panel-container gray\">\n  <div class=\"top-buttons\">\n    <div class=\"circle-button diwo-button\"></div>\n    <div class=\"line-header-elements\">\n      <span class=\"header-info-separator\">Optimize Assortment</span>\n      <span>Opp #135</span>\n    </div>\n    <div class=\"line-header-button\">\n      <img src=\"./assets/images/temp_icons/icon_3.svg\"/>\n    </div>\n    <div class=\"side-buttons\">\n      <div class=\"circle-button\" (click)=\"close()\">\n        <img src=\"./assets/images/temp_icons/icon_2.svg\"/>\n      </div>\n      <div class=\"circle-button\" (click)=\"state = 'what-if-analysis'\" >\n        <img src=\"./assets/images/temp_icons/icon_7.svg\" onmouseover=\"this.src='./assets/images/temp_icons/icon_7_hover.svg'\"\n             onmouseout=\"this.src='./assets/images/temp_icons/icon_7.svg'\"/>\n      </div>\n      <div class=\"circle-button\" (click)=\"state = 'trends'\">\n        <img src=\"./assets/images/temp_icons/icon_1.svg\"/>\n      </div>\n      <div class=\"circle-button\" (click)=\"state = 'suggested-combinations'\">\n        <img src=\"./assets/images/temp_icons/icon_9.svg\"/>\n      </div>\n    </div>\n  </div>\n  <div class=\"main-content\">\n     <!--Inside this should be placed the d3 components-->\n    <div class=\"left-graph\">\n      <div *ngIf=\"state === 'trends'\" data-id='gViz-visuals-vis-wrapper' class='gViz-visuals-inner-wrapper graph'>\n        <div *ngIf=\"!data[0].Graph.Data\">Loading data...</div>\n        <ng-template *ngIf=\"data[0].Graph.Data\"\n                     [dynamic-component]=\"data[0].Graph.Type\"\n                     [data]=\"data[0].Graph.Data\"></ng-template>\n      </div>\n      <div *ngIf=\"state === 'what-if-analysis'\" data-id='gViz-visuals-vis-wrapper' class='gViz-visuals-inner-wrapper graph'>\n        <div *ngIf=\"!data[1].Graph.Data\">Loading data...</div>\n        <ng-template *ngIf=\"data[1].Graph.Data\"\n                     [dynamic-component]=\"data[1].Graph.Type\"\n                     [data]=\"data[1].Graph.Data\"></ng-template>\n      </div>\n      <decide-suggested-combinations *ngIf=\"state === 'suggested-combinations'\"></decide-suggested-combinations>\n    </div>\n    <div class=\"right-fields\">\n      <div class=\"row\">\n        <div class='left-value'>Revenue impact</div>\n        <div class='right-value'>$1.3M</div>\n      </div>\n\n      <div class=\"row\">\n        <div class='left-value'>Confidence Score</div>\n        <div class='right-value'>89%</div>\n      </div>\n\n       <!--Inside this should be placed the details components-->\n      <div class=\"graph-details\">\n        <decide-trends-panel *ngIf=\"state === 'trends'\"></decide-trends-panel>\n        <decide-what-if-analysis-panel *ngIf=\"state === 'what-if-analysis'\"></decide-what-if-analysis-panel>\n      </div>\n    </div>\n  </div>\n</div>\n"
+module.exports = "<div class=\"panel-container gray\">\n  <div class=\"top-buttons\">\n    <div class=\"circle-button diwo-button\"></div>\n    <div class=\"line-header-elements\">\n      <span class=\"header-info-separator\">Optimize Assortment</span>\n      <span>Opp #135</span>\n    </div>\n    <div class=\"line-header-button\">\n      <img src=\"./assets/images/temp_icons/icon_3.svg\"/>\n    </div>\n    <div class=\"side-buttons\">\n      <div class=\"circle-button\" (click)=\"close()\">\n        <img src=\"./assets/images/temp_icons/icon_2.svg\"/>\n      </div>\n      <div class=\"circle-button\" (click)=\"state = 'what-if-analysis'\">\n        <img src=\"./assets/images/temp_icons/icon_7.svg\"\n             onmouseover=\"this.src='./assets/images/temp_icons/icon_7_hover.svg'\"\n             onmouseout=\"this.src='./assets/images/temp_icons/icon_7.svg'\"/>\n      </div>\n      <div class=\"circle-button\" (click)=\"state = 'trends'\">\n        <img src=\"./assets/images/temp_icons/icon_1.svg\"/>\n      </div>\n      <div class=\"circle-button\" (click)=\"state = 'suggested-combinations'\">\n        <img src=\"./assets/images/temp_icons/icon_9.svg\"/>\n      </div>\n    </div>\n  </div>\n  <div class=\"main-content\">\n    <!--Inside this should be placed the d3 components-->\n    <div class=\"left-graph\">\n      <div class=\"graph-container\">\n        <div class=\"graph-header\">\n          <div class=\"name\">Category: Bra </div>\n          <div class=\"separator\">\n            <i class=\"di-chevron-right di-18x\"></i>\n          </div>\n          <dropdown-input [placeholder]=\"'Class'\" [value]=\"class\" (valueChange)=\"console.log($event)\">\n            <div>asdsad</div>\n            <div>asdsad</div>\n          </dropdown-input>\n          <div class=\"separator\">\n            <i class=\"di-chevron-right di-18x\"></i>\n          </div>\n          <dropdown-input [placeholder]=\"'Style'\" [value]=\"class\" (valueChange)=\"console.log($event)\">\n            <div>asdsad</div>\n            <div>asdsad</div>\n          </dropdown-input>\n          <div class=\"separator\">\n            <i class=\"di-chevron-right di-18x\"></i>\n          </div>\n          <dropdown-input [placeholder]=\"'Choice'\" [value]=\"class\" (valueChange)=\"console.log($event)\">\n            <div>asdsad</div>\n            <div>asdsad</div>\n          </dropdown-input>\n        </div>\n        <div *ngIf=\"state === 'trends'\" data-id='gViz-visuals-vis-wrapper' class='gViz-visuals-inner-wrapper graph'>\n          <div *ngIf=\"!data[0].Graph.Data\">Loading data...</div>\n          <ng-template *ngIf=\"data[0].Graph.Data\"\n                       [dynamic-component]=\"data[0].Graph.Type\"\n                       [data]=\"data[0].Graph.Data\"></ng-template>\n        </div>\n        <div *ngIf=\"state === 'what-if-analysis'\" data-id='gViz-visuals-vis-wrapper'\n             class='gViz-visuals-inner-wrapper graph'>\n          <div *ngIf=\"!data[1].Graph.Data\">Loading data...</div>\n          <ng-template *ngIf=\"data[1].Graph.Data\"\n                       [dynamic-component]=\"data[1].Graph.Type\"\n                       [data]=\"data[1].Graph.Data\"></ng-template>\n        </div>\n        <decide-suggested-combinations *ngIf=\"state === 'suggested-combinations'\"></decide-suggested-combinations>\n      </div>\n    </div>\n    <div class=\"right-fields\">\n      <div class=\"row\">\n        <div class='left-value'>Revenue impact</div>\n        <div class='right-value'>$1.3M</div>\n      </div>\n\n      <div class=\"row\">\n        <div class='left-value'>Confidence Score</div>\n        <div class='right-value'>89%</div>\n      </div>\n\n      <!--Inside this should be placed the details components-->\n      <div class=\"graph-details\">\n        <decide-trends-panel *ngIf=\"state === 'trends'\"></decide-trends-panel>\n        <decide-what-if-analysis-panel *ngIf=\"state === 'what-if-analysis'\"></decide-what-if-analysis-panel>\n      </div>\n    </div>\n  </div>\n</div>\n"
 
 /***/ }),
 
@@ -4920,7 +4934,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "/* =============================================================================\n   MEDIA QUERIES\n   ========================================================================== */\n/* Eg.\n    .container{\n        width:1024px;\n\n        @include tablets{\n            width:90%;\n        }\n    }\n*/\n/* =============================================================================\n   Unit transform\n   ========================================================================== */\n:host {\n  display: block; }\n\n#decide-header {\n  z-index: 7000;\n  top: 145px; }\n\n@media screen and (max-width: 1280px) {\n  .cards-container {\n    height: 75vh;\n    width: 100vw;\n    position: fixed;\n    overflow-y: scroll;\n    padding: 0 2%;\n    margin-top: 15px !important;\n    left: 1%;\n    z-index: 9000; } }\n\n@media screen and (min-width: 1281px) {\n  .cards-container {\n    height: 75vh;\n    width: 100vw;\n    position: fixed;\n    overflow-y: scroll;\n    padding: 0 2%;\n    margin-top: 50px !important;\n    left: 1%;\n    top: 15%;\n    z-index: 9000; } }\n\n.decide-card-item {\n  width: 0; }\n\n.decide-card-item:nth-of-type(1) {\n  -webkit-box-flex: 0.2;\n  box-flex: 0.2;\n  -ms-flex-positive: 0.2;\n      flex-grow: 0.2;\n  -webkit-flex-grow: 0.2;\n  -ms-flex-grow: 0.2;\n  -moz-flex-grow: 0.2; }\n\n.decide-card-item:nth-of-type(1n+2) {\n  -webkit-box-flex: 0.16;\n  box-flex: 0.16;\n  -ms-flex-positive: 0.16;\n      flex-grow: 0.16;\n  -webkit-flex-grow: 0.16;\n  -ms-flex-grow: 0.16;\n  -moz-flex-grow: 0.16; }\n\n#decideClose {\n  z-index: 8000;\n  padding: 10px;\n  padding-top: 0; }\n\n.border-card-right {\n  border-right: 0.3px solid #d1d1d1;\n  padding: 10px 0 !important; }\n  .border-card-right.no-border {\n    border: 0;\n    padding: 0 !important; }\n\n.border-card-right.table {\n  padding-top: 0 !important; }\n\n.card-header {\n  margin-bottom: 36px;\n  display: -webkit-box; }\n\n.card-header > div {\n  border-bottom: 0.3px solid #aeaeae;\n  font-size: 19px;\n  padding-bottom: 9px;\n  position: relative;\n  float: left;\n  margin: 10px;\n  box-sizing: initial; }\n\n.card-header .context {\n  width: 47%; }\n\n.card-header .forecast {\n  width: 31%; }\n\n.card-header .outcome {\n  width: 16%; }\n\n.card-line > * {\n  font-weight: thin;\n  white-space: nowrap; }\n\n.card-line {\n  margin: 20px 0;\n  position: relative;\n  clear: both;\n  float: left;\n  width: 100%; }\n\n.card-image {\n  width: 25%;\n  display: inline-block;\n  position: relative;\n  float: left;\n  padding: 10px;\n  max-width: 80px; }\n  .card-image img {\n    width: 100%;\n    max-width: 55px; }\n\n.card-text {\n  padding: 15px; }\n\n.card-text .row {\n  padding: 5px; }\n\n.line-header-elements {\n  background: #222323;\n  color: #FFF;\n  font-weight: normal;\n  margin-top: -12px;\n  margin-left: 5px;\n  position: absolute;\n  z-index: 99;\n  font-size: 14px;\n  font-weight: 100;\n  padding: 4px 10px 4px 5px; }\n\n.line-icon {\n  width: 30px;\n  height: 30px;\n  border-radius: 18px;\n  background: #202121;\n  display: inline-block;\n  margin-left: -18px;\n  margin-top: 30px;\n  z-index: 99;\n  position: absolute;\n  cursor: pointer; }\n\n.line-icon i, .options-icon i {\n  color: #FFF;\n  font-size: 16px;\n  padding-left: 7px;\n  padding-top: 7px; }\n\n.options-icon i.di-check {\n  color: #202121; }\n\n.options-icon i.di-microphone {\n  padding-left: 10px;\n  padding-top: 3px;\n  color: #202121; }\n\n.options-icon {\n  width: 30px;\n  height: 30px;\n  border-radius: 18px;\n  background: #FFF;\n  border: 2px solid #202121;\n  display: inline-block;\n  margin-left: -15px;\n  margin-top: -15px;\n  position: absolute;\n  z-index: 100;\n  cursor: pointer; }\n\n.header-info-separator, .header-info-separator-last {\n  padding: 0 10px 0 10px;\n  margin-right: 10px;\n  border-right: 0.3px solid #FFF;\n  display: inline-block;\n  font-weight: 100; }\n\n.header-info-separator-last {\n  border: none; }\n\n.card {\n  padding: 15px;\n  line-height: 28px !important;\n  font-size: 18px; }\n\n.line-group {\n  width: 74%;\n  display: inline-block;\n  position: relative;\n  float: left;\n  overflow: hidden;\n  padding: 15px; }\n\n.line-card {\n  display: inline-block;\n  width: 25%;\n  float: left;\n  border-top: 2px solid #e7e7e7;\n  border-bottom: 2px solid #e7e7e7; }\n\n.line-card > * {\n  line-height: 24px;\n  position: relative;\n  width: 100%;\n  float: left;\n  height: 90px; }\n\n.card-content-line h2 {\n  font-size: 17px; }\n\n.card-content-line {\n  font-size: 17px !important;\n  font-family: 'Yantramanav' !important;\n  font-weight: 400 !important;\n  line-height: 20px; }\n\n.card .label {\n  font-size: 15px;\n  font-family: 'Yantramanav-Light';\n  margin-top: 5px; }\n\n.card h3 {\n  font-size: 15px !important;\n  font-weight: normal !important; }\n\n.card .value-small, .card .value-big {\n  font-family: Bebas !important;\n  font-weight: 400 !important; }\n\n.card .value-big {\n  font-size: 22px !important; }\n\n.col-25 {\n  width: 25%; }\n\n.col-50 {\n  width: 49%;\n  display: inline-block; }\n\n.col-75 {\n  width: 74%; }\n\n.col-100 {\n  width: 100%; }\n\n.col-rest-3 {\n  width: 16.66666667%; }\n\n.row-rest-6 {\n  height: 33.33333333%; }\n\n.pink {\n  color: #ea6193; }\n\n.gray {\n  background: #e9e8e8; }\n\n.black {\n  color: #202121; }\n\n.white {\n  background: #f9f9f9; }\n\n.light-gray {\n  background: #f2f2f2; }\n\n.pull-left {\n  float: left; }\n\n.pull-right {\n  float: right; }\n\n.text-left {\n  text-align: left; }\n\n.text-right {\n  text-align: right; }\n\n.text-center {\n  text-align: center; }\n\n.last-card {\n  border: 2px solid #d1d1d1;\n  border-left: none !important;\n  overflow: hidden; }\n\n.bold {\n  font-weight: 400 !important; }\n\n.normal {\n  font-weight: 100 !important; }\n\n.collapsed.card-buttons {\n  height: auto !important;\n  margin-left: 7.5%;\n  margin-right: auto;\n  width: auto !important;\n  position: absolute !important;\n  top: 80px;\n  z-index: 999; }\n\n.card-button {\n  z-index: 999;\n  border-radius: 3px;\n  width: 45px;\n  height: 15px;\n  padding: 0 5px;\n  position: relative;\n  float: left;\n  margin: 5px;\n  font-size: 12px;\n  color: #FFF;\n  line-height: 16px;\n  cursor: pointer; }\n\n.button-expand {\n  background: #202121;\n  text-align: center; }\n\n.button-new {\n  background: #e10b17; }\n\n.button-new .icon-btn-new {\n  width: 15px;\n  height: 15px;\n  background: #FFF;\n  position: absolute;\n  float: right;\n  border: 1px solid #202121;\n  border-radius: 0 3px 3px 0;\n  bottom: 0;\n  right: 0; }\n\n.expanded {\n  position: relative;\n  float: left;\n  margin-top: 12px;\n  width: 100%;\n  background: #fafafa; }\n\n.expanded .container {\n  padding: 10px 10px 20px 10px;\n  overflow: hidden;\n  height: 100%;\n  border: 0.3px solid #e7e7e7 !important; }\n  .expanded .container .main-content {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-orient: horizontal;\n    -webkit-box-direction: normal;\n        -ms-flex-direction: row;\n            flex-direction: row; }\n    .expanded .container .main-content .left-graph {\n      -webkit-box-flex: 2;\n          -ms-flex: 2;\n              flex: 2;\n      overflow: hidden; }\n    .expanded .container .main-content .right-fields {\n      -webkit-box-flex: 1;\n          -ms-flex: 1;\n              flex: 1;\n      padding-left: 1%;\n      display: -webkit-box;\n      display: -ms-flexbox;\n      display: flex;\n      -webkit-box-orient: vertical;\n      -webkit-box-direction: normal;\n          -ms-flex-direction: column;\n              flex-direction: column; }\n      .expanded .container .main-content .right-fields .header {\n        border-bottom: 1px solid #e10b17;\n        color: #e10b17;\n        padding-bottom: 0;\n        margin-bottom: 0;\n        font-weight: 400;\n        font-size: 17px; }\n      .expanded .container .main-content .right-fields .header span {\n        top: -5px;\n        left: 5px;\n        position: relative; }\n      .expanded .container .main-content .right-fields .top-fields {\n        -webkit-box-flex: 1;\n            -ms-flex: 1;\n                flex: 1;\n        padding-right: 0px; }\n      .expanded .container .main-content .right-fields .bottom-fields {\n        margin-top: 28px;\n        padding-right: 0px; }\n\n.expanded .card {\n  width: 32%;\n  margin-right: 1%;\n  background: #fafafa;\n  border: 1px solid #e9e8e8;\n  display: inline-block;\n  white-space: normal;\n  height: 350px; }\n\n.expanded .card {\n  line-height: 24px !important;\n  position: relative;\n  float: left;\n  display: inline-block; }\n\n.expanded .card .text {\n  float: left;\n  font-size: 15px; }\n\n.expanded .card-button {\n  bottom: -11px !important;\n  position: absolute;\n  float: left;\n  z-index: 9999; }\n  .expanded .card-button.button-expand {\n    margin-left: 7%; }\n  .expanded .card-button.button-new {\n    margin-left: calc(7% + 55px); }\n\n.expanded .card h3 {\n  color: #e96292;\n  font-weight: lighter;\n  border-bottom: 2px solid #e96292;\n  padding-bottom: 12px;\n  margin-bottom: 12px;\n  font-size: 17px; }\n\n.diwo-circle--actions .layout-column.diwo-circle--actions-ctn {\n  position: relative; }\n\n.diwo-circle--trigger {\n  z-index: 1; }\n\n.diwo-circle--action-item {\n  -webkit-transform: none !important;\n          transform: none !important; }\n\ntd {\n  background-color: white; }\n\n.w-100, .row, .row-small {\n  width: 100%; }\n\n.row {\n  border: solid 0.3px rgba(203, 87, 126, 0.39);\n  display: table;\n  clear: both;\n  padding: 5px;\n  margin-bottom: 2px;\n  background-color: white; }\n  .row .left-value {\n    padding: 5px; }\n  .row .right-value {\n    padding: 5px;\n    margin-left: 5px;\n    text-align: right !important; }\n\n.tri-row {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: row;\n          flex-direction: row;\n  margin-bottom: 2px;\n  background-color: white; }\n  .tri-row .left-value {\n    border: solid 0.3px rgba(203, 87, 126, 0.39);\n    padding: 10px;\n    text-align: center;\n    line-height: 3.5em;\n    -webkit-box-flex: 1;\n        -ms-flex: 1;\n            flex: 1; }\n  .tri-row .right-rows {\n    -webkit-box-flex: 4;\n        -ms-flex: 4;\n            flex: 4;\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-orient: vertical;\n    -webkit-box-direction: normal;\n        -ms-flex-direction: column;\n            flex-direction: column; }\n    .tri-row .right-rows .row {\n      margin-bottom: 0; }\n\n.row-small {\n  border-bottom: solid 0.5px rgba(203, 87, 126, 0.39);\n  display: table;\n  clear: both;\n  background-color: white;\n  overflow: hidden;\n  line-height: 30px !important; }\n\n.pink-color {\n  color: #e96292; }\n\n.right-value-left {\n  color: #e96292 !important;\n  font-weight: 400;\n  font-size: 16px;\n  font-family: 'Bebas' !important;\n  text-align: left !important; }\n\n.right-value {\n  float: right;\n  font-weight: 400;\n  color: #e96292;\n  font-size: 16px;\n  font-family: 'Bebas' !important;\n  text-align: right !important; }\n\n.left-value {\n  float: left;\n  color: #555;\n  font-size: 15px;\n  font-family: 'Yantramanav';\n  font-weight: 200; }\n\n.bordered-heading {\n  font-size: 20px;\n  border-bottom: 3px solid #e10b17;\n  display: block;\n  margin-bottom: 15px;\n  padding-bottom: 10px; }\n\n.image-outer-wrapper {\n  height: 100%;\n  position: relative; }\n  .image-outer-wrapper .border-rect {\n    position: absolute;\n    height: 15px;\n    width: 15px; }\n    .image-outer-wrapper .border-rect[data-side='top-left'] {\n      top: 1px;\n      left: 1px;\n      border-top: 2px solid #e10b17;\n      border-left: 2px solid #e10b17; }\n    .image-outer-wrapper .border-rect[data-side='top-middle'] {\n      top: 1px;\n      left: 50%;\n      width: 20px;\n      border-top: 2px solid #e10b17; }\n    .image-outer-wrapper .border-rect[data-side='top-right'] {\n      top: 1px;\n      right: 1px;\n      border-top: 2px solid #e10b17;\n      border-right: 2px solid #e10b17; }\n    .image-outer-wrapper .border-rect[data-side='middle-left'] {\n      top: 50%;\n      left: 1px;\n      height: 20px;\n      border-left: 2px solid #e10b17; }\n    .image-outer-wrapper .border-rect[data-side='middle-right'] {\n      top: 50%;\n      right: 1px;\n      height: 20px;\n      border-right: 2px solid #e10b17; }\n    .image-outer-wrapper .border-rect[data-side='bottom-left'] {\n      bottom: 1px;\n      left: 1px;\n      border-bottom: 2px solid #e10b17;\n      border-left: 2px solid #e10b17; }\n    .image-outer-wrapper .border-rect[data-side='bottom-middle'] {\n      bottom: 1px;\n      left: 50%;\n      width: 20px;\n      border-bottom: 2px solid #e10b17; }\n    .image-outer-wrapper .border-rect[data-side='bottom-right'] {\n      bottom: 1px;\n      right: 1px;\n      border-bottom: 2px solid #e10b17;\n      border-right: 2px solid #e10b17; }\n\n.panel-holder {\n  position: absolute;\n  left: 1vw;\n  top: 3vh;\n  right: 1vw;\n  z-index: 9999; }\n\n.pink-background {\n  background-color: rgba(203, 87, 126, 0.23) !important;\n  overflow: auto; }\n\n.dark-pink-background {\n  background-color: rgba(203, 80, 99, 0.49) !important; }\n\n.pink-text {\n  color: #e96292; }\n\n.red-text {\n  color: #e10b17;\n  font-weight: 100; }\n\n.clear {\n  clear: both; }\n\n.bold {\n  font-weight: bold; }\n\n.sub-icon {\n  margin-top: -4px; }\n\n.di-arrow-down {\n  margin-top: 0; }\n\n.di-arrow-up {\n  margin-top: -2px; }\n\n.row-set-white-linear {\n  background: #FFF;\n  border: none !important;\n  padding-top: 0;\n  padding: 5px 0;\n  margin: 5px 0;\n  margin-top: 0; }\n\n.row-set-white-linear .row {\n  border: none;\n  border-bottom: 1px solid #e10b17;\n  white-space: initial; }\n\n.row-set-white {\n  background: #FFF;\n  border: solid 0.3px rgba(203, 87, 126, 0.39);\n  padding: 5px;\n  margin: 5px 0; }\n\n.row-set-white .row {\n  border: none;\n  border-bottom: solid 0.3px rgba(203, 87, 126, 0.39);\n  width: 97%;\n  margin: 0 5px; }\n\n.row-set-white .row:last-child {\n  border: none; }\n\n.icon-globe {\n  position: relative;\n  float: left;\n  width: 26px;\n  margin: 0 5px; }\n\n:host {\n  z-index: 999; }\n  :host .panel-container {\n    padding: 30px 0 0 30px;\n    top: 0;\n    position: relative;\n    min-height: 75vh; }\n    :host .panel-container .top-buttons .circle-button {\n      background-color: white;\n      border-radius: 50%;\n      width: 30px;\n      height: 30px;\n      z-index: 100; }\n      :host .panel-container .top-buttons .circle-button:hover {\n        cursor: pointer; }\n      :host .panel-container .top-buttons .circle-button img {\n        width: 30px;\n        height: 30px; }\n    :host .panel-container .top-buttons .diwo-button {\n      position: absolute;\n      top: -15px;\n      left: -15px;\n      border: 2px solid red; }\n    :host .panel-container .top-buttons .side-buttons {\n      position: absolute;\n      left: -15px;\n      top: 100px;\n      z-index: 100; }\n      :host .panel-container .top-buttons .side-buttons .circle-button {\n        border: 0;\n        background-color: #202121;\n        display: -webkit-box;\n        display: -ms-flexbox;\n        display: flex;\n        -webkit-box-pack: center;\n            -ms-flex-pack: center;\n                justify-content: center;\n        -webkit-box-align: center;\n            -ms-flex-align: center;\n                align-items: center; }\n      :host .panel-container .top-buttons .side-buttons > div {\n        margin-bottom: 30px; }\n    :host .panel-container .top-buttons .line-header-elements {\n      top: -10px;\n      left: 0;\n      margin-top: 0; }\n      :host .panel-container .top-buttons .line-header-elements span {\n        padding-right: 10px; }\n    :host .panel-container .top-buttons .line-header-button {\n      position: absolute;\n      top: -7px;\n      left: 250px;\n      height: 15px;\n      width: 45px; }\n    :host .panel-container .main-content {\n      display: -webkit-box;\n      display: -ms-flexbox;\n      display: flex;\n      -webkit-box-orient: horizontal;\n      -webkit-box-direction: normal;\n          -ms-flex-direction: row;\n              flex-direction: row; }\n      :host .panel-container .main-content .left-graph {\n        -webkit-box-flex: 5;\n            -ms-flex: 5;\n                flex: 5; }\n        :host .panel-container .main-content .left-graph .graph {\n          width: 100%;\n          height: 75vh;\n          background: white; }\n      :host .panel-container .main-content .right-fields {\n        padding-left: 15px;\n        -webkit-box-flex: 3;\n            -ms-flex: 3;\n                flex: 3; }\n        :host .panel-container .main-content .right-fields .graph-details {\n          margin-top: 15px; }\n          :host .panel-container .main-content .right-fields .graph-details img {\n            width: 100%; }\n      :host .panel-container .main-content .row {\n        background-color: #b3b3b3;\n        border: 0;\n        padding: 10px; }\n        :host .panel-container .main-content .row .left-value {\n          color: black;\n          font-size: 16px; }\n        :host .panel-container .main-content .row .right-value {\n          color: black;\n          font-size: 16px; }\n", ""]);
+exports.push([module.i, "/* =============================================================================\n   MEDIA QUERIES\n   ========================================================================== */\n/* Eg.\n    .container{\n        width:1024px;\n\n        @include tablets{\n            width:90%;\n        }\n    }\n*/\n/* =============================================================================\n   Unit transform\n   ========================================================================== */\n:host {\n  display: block; }\n\n#decide-header {\n  z-index: 7000;\n  top: 145px; }\n\n@media screen and (max-width: 1280px) {\n  .cards-container {\n    height: 75vh;\n    width: 100vw;\n    position: fixed;\n    overflow-y: scroll;\n    padding: 0 2%;\n    margin-top: 15px !important;\n    left: 1%;\n    z-index: 9000; } }\n\n@media screen and (min-width: 1281px) {\n  .cards-container {\n    height: 75vh;\n    width: 100vw;\n    position: fixed;\n    overflow-y: scroll;\n    padding: 0 2%;\n    margin-top: 50px !important;\n    left: 1%;\n    top: 15%;\n    z-index: 9000; } }\n\n.decide-card-item {\n  width: 0; }\n\n.decide-card-item:nth-of-type(1) {\n  -webkit-box-flex: 0.2;\n  box-flex: 0.2;\n  -ms-flex-positive: 0.2;\n      flex-grow: 0.2;\n  -webkit-flex-grow: 0.2;\n  -ms-flex-grow: 0.2;\n  -moz-flex-grow: 0.2; }\n\n.decide-card-item:nth-of-type(1n+2) {\n  -webkit-box-flex: 0.16;\n  box-flex: 0.16;\n  -ms-flex-positive: 0.16;\n      flex-grow: 0.16;\n  -webkit-flex-grow: 0.16;\n  -ms-flex-grow: 0.16;\n  -moz-flex-grow: 0.16; }\n\n#decideClose {\n  z-index: 8000;\n  padding: 10px;\n  padding-top: 0; }\n\n.border-card-right {\n  border-right: 0.3px solid #d1d1d1;\n  padding: 10px 0 !important; }\n  .border-card-right.no-border {\n    border: 0;\n    padding: 0 !important; }\n\n.border-card-right.table {\n  padding-top: 0 !important; }\n\n.card-header {\n  margin-bottom: 36px;\n  display: -webkit-box; }\n\n.card-header > div {\n  border-bottom: 0.3px solid #aeaeae;\n  font-size: 19px;\n  padding-bottom: 9px;\n  position: relative;\n  float: left;\n  margin: 10px;\n  box-sizing: initial; }\n\n.card-header .context {\n  width: 47%; }\n\n.card-header .forecast {\n  width: 31%; }\n\n.card-header .outcome {\n  width: 16%; }\n\n.card-line > * {\n  font-weight: thin;\n  white-space: nowrap; }\n\n.card-line {\n  margin: 20px 0;\n  position: relative;\n  clear: both;\n  float: left;\n  width: 100%; }\n\n.card-image {\n  width: 25%;\n  display: inline-block;\n  position: relative;\n  float: left;\n  padding: 10px;\n  max-width: 80px; }\n  .card-image img {\n    width: 100%;\n    max-width: 55px; }\n\n.card-text {\n  padding: 15px; }\n\n.card-text .row {\n  padding: 5px; }\n\n.line-header-elements {\n  background: #222323;\n  color: #FFF;\n  font-weight: normal;\n  margin-top: -12px;\n  margin-left: 5px;\n  position: absolute;\n  z-index: 99;\n  font-size: 14px;\n  font-weight: 100;\n  padding: 4px 10px 4px 5px; }\n\n.line-icon {\n  width: 30px;\n  height: 30px;\n  border-radius: 18px;\n  background: #202121;\n  display: inline-block;\n  margin-left: -18px;\n  margin-top: 30px;\n  z-index: 99;\n  position: absolute;\n  cursor: pointer; }\n\n.line-icon i, .options-icon i {\n  color: #FFF;\n  font-size: 16px;\n  padding-left: 7px;\n  padding-top: 7px; }\n\n.options-icon i.di-check {\n  color: #202121; }\n\n.options-icon i.di-microphone {\n  padding-left: 10px;\n  padding-top: 3px;\n  color: #202121; }\n\n.options-icon {\n  width: 30px;\n  height: 30px;\n  border-radius: 18px;\n  background: #FFF;\n  border: 2px solid #202121;\n  display: inline-block;\n  margin-left: -15px;\n  margin-top: -15px;\n  position: absolute;\n  z-index: 100;\n  cursor: pointer; }\n\n.header-info-separator, .header-info-separator-last {\n  padding: 0 10px 0 10px;\n  margin-right: 10px;\n  border-right: 0.3px solid #FFF;\n  display: inline-block;\n  font-weight: 100; }\n\n.header-info-separator-last {\n  border: none; }\n\n.card {\n  padding: 15px;\n  line-height: 28px !important;\n  font-size: 18px; }\n\n.line-group {\n  width: 74%;\n  display: inline-block;\n  position: relative;\n  float: left;\n  overflow: hidden;\n  padding: 15px; }\n\n.line-card {\n  display: inline-block;\n  width: 25%;\n  float: left;\n  border-top: 2px solid #e7e7e7;\n  border-bottom: 2px solid #e7e7e7; }\n\n.line-card > * {\n  line-height: 24px;\n  position: relative;\n  width: 100%;\n  float: left;\n  height: 90px; }\n\n.card-content-line h2 {\n  font-size: 17px; }\n\n.card-content-line {\n  font-size: 17px !important;\n  font-family: 'Yantramanav' !important;\n  font-weight: 400 !important;\n  line-height: 20px; }\n\n.card .label {\n  font-size: 15px;\n  font-family: 'Yantramanav-Light';\n  margin-top: 5px; }\n\n.card h3 {\n  font-size: 15px !important;\n  font-weight: normal !important; }\n\n.card .value-small, .card .value-big {\n  font-family: Bebas !important;\n  font-weight: 400 !important; }\n\n.card .value-big {\n  font-size: 22px !important; }\n\n.col-25 {\n  width: 25%; }\n\n.col-50 {\n  width: 49%;\n  display: inline-block; }\n\n.col-75 {\n  width: 74%; }\n\n.col-100 {\n  width: 100%; }\n\n.col-rest-3 {\n  width: 16.66666667%; }\n\n.row-rest-6 {\n  height: 33.33333333%; }\n\n.pink {\n  color: #ea6193; }\n\n.gray {\n  background: #e9e8e8; }\n\n.black {\n  color: #202121; }\n\n.white {\n  background: #f9f9f9; }\n\n.light-gray {\n  background: #f2f2f2; }\n\n.pull-left {\n  float: left; }\n\n.pull-right {\n  float: right; }\n\n.text-left {\n  text-align: left; }\n\n.text-right {\n  text-align: right; }\n\n.text-center {\n  text-align: center; }\n\n.last-card {\n  border: 2px solid #d1d1d1;\n  border-left: none !important;\n  overflow: hidden; }\n\n.bold {\n  font-weight: 400 !important; }\n\n.normal {\n  font-weight: 100 !important; }\n\n.collapsed.card-buttons {\n  height: auto !important;\n  margin-left: 7.5%;\n  margin-right: auto;\n  width: auto !important;\n  position: absolute !important;\n  top: 80px;\n  z-index: 999; }\n\n.card-button {\n  z-index: 999;\n  border-radius: 3px;\n  width: 45px;\n  height: 15px;\n  padding: 0 5px;\n  position: relative;\n  float: left;\n  margin: 5px;\n  font-size: 12px;\n  color: #FFF;\n  line-height: 16px;\n  cursor: pointer; }\n\n.button-expand {\n  background: #202121;\n  text-align: center; }\n\n.button-new {\n  background: #e10b17; }\n\n.button-new .icon-btn-new {\n  width: 15px;\n  height: 15px;\n  background: #FFF;\n  position: absolute;\n  float: right;\n  border: 1px solid #202121;\n  border-radius: 0 3px 3px 0;\n  bottom: 0;\n  right: 0; }\n\n.expanded {\n  position: relative;\n  float: left;\n  margin-top: 12px;\n  width: 100%;\n  background: #fafafa; }\n\n.expanded .container {\n  padding: 10px 10px 20px 10px;\n  overflow: hidden;\n  height: 100%;\n  border: 0.3px solid #e7e7e7 !important; }\n  .expanded .container .main-content {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-orient: horizontal;\n    -webkit-box-direction: normal;\n        -ms-flex-direction: row;\n            flex-direction: row; }\n    .expanded .container .main-content .left-graph {\n      -webkit-box-flex: 2;\n          -ms-flex: 2;\n              flex: 2;\n      overflow: hidden; }\n      .expanded .container .main-content .left-graph .gViz-visuals-inner-wrapper {\n        height: 100%; }\n    .expanded .container .main-content .right-fields {\n      -webkit-box-flex: 1;\n          -ms-flex: 1;\n              flex: 1;\n      padding-left: 1%;\n      display: -webkit-box;\n      display: -ms-flexbox;\n      display: flex;\n      -webkit-box-orient: vertical;\n      -webkit-box-direction: normal;\n          -ms-flex-direction: column;\n              flex-direction: column; }\n      .expanded .container .main-content .right-fields .header {\n        border-bottom: 1px solid #e10b17;\n        color: #e10b17;\n        padding-bottom: 0;\n        margin-bottom: 0;\n        font-weight: 400;\n        font-size: 17px; }\n      .expanded .container .main-content .right-fields .header span {\n        top: -5px;\n        left: 5px;\n        position: relative; }\n      .expanded .container .main-content .right-fields .top-fields {\n        -webkit-box-flex: 1;\n            -ms-flex: 1;\n                flex: 1;\n        padding-right: 0px; }\n      .expanded .container .main-content .right-fields .bottom-fields {\n        margin-top: 28px;\n        padding-right: 0px; }\n\n.expanded .card {\n  width: 32%;\n  margin-right: 1%;\n  background: #fafafa;\n  border: 1px solid #e9e8e8;\n  display: inline-block;\n  white-space: normal;\n  height: 350px; }\n\n.expanded .card {\n  line-height: 24px !important;\n  position: relative;\n  float: left;\n  display: inline-block; }\n\n.expanded .card .text {\n  float: left;\n  font-size: 15px; }\n\n.expanded .card-button {\n  bottom: -11px !important;\n  position: absolute;\n  float: left;\n  z-index: 9999; }\n  .expanded .card-button.button-expand {\n    margin-left: 7%; }\n  .expanded .card-button.button-new {\n    margin-left: calc(7% + 55px); }\n\n.expanded .card h3 {\n  color: #e96292;\n  font-weight: lighter;\n  border-bottom: 2px solid #e96292;\n  padding-bottom: 12px;\n  margin-bottom: 12px;\n  font-size: 17px; }\n\n.diwo-circle--actions .layout-column.diwo-circle--actions-ctn {\n  position: relative; }\n\n.diwo-circle--trigger {\n  z-index: 1; }\n\n.diwo-circle--action-item {\n  -webkit-transform: none !important;\n          transform: none !important; }\n\ntd {\n  background-color: white; }\n\n.w-100, .row, .row-small {\n  width: 100%; }\n\n.row {\n  border: solid 0.3px rgba(203, 87, 126, 0.39);\n  display: table;\n  clear: both;\n  padding: 5px;\n  margin-bottom: 2px;\n  background-color: white; }\n  .row .left-value {\n    padding: 5px; }\n  .row .right-value {\n    padding: 5px;\n    margin-left: 5px;\n    text-align: right !important; }\n\n.tri-row {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: row;\n          flex-direction: row;\n  margin-bottom: 2px;\n  background-color: white; }\n  .tri-row .left-value {\n    border: solid 0.3px rgba(203, 87, 126, 0.39);\n    padding: 10px;\n    text-align: center;\n    line-height: 3.5em;\n    -webkit-box-flex: 1;\n        -ms-flex: 1;\n            flex: 1; }\n  .tri-row .right-rows {\n    -webkit-box-flex: 4;\n        -ms-flex: 4;\n            flex: 4;\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-orient: vertical;\n    -webkit-box-direction: normal;\n        -ms-flex-direction: column;\n            flex-direction: column; }\n    .tri-row .right-rows .row {\n      margin-bottom: 0; }\n\n.row-small {\n  border-bottom: solid 0.5px rgba(203, 87, 126, 0.39);\n  display: table;\n  clear: both;\n  background-color: white;\n  overflow: hidden;\n  line-height: 30px !important; }\n\n.pink-color {\n  color: #e96292; }\n\n.right-value-left {\n  color: #e96292 !important;\n  font-weight: 400;\n  font-size: 16px;\n  font-family: 'Bebas' !important;\n  text-align: left !important; }\n\n.right-value {\n  float: right;\n  font-weight: 400;\n  color: #e96292;\n  font-size: 16px;\n  font-family: 'Bebas' !important;\n  text-align: right !important; }\n\n.left-value {\n  float: left;\n  color: #555;\n  font-size: 15px;\n  font-family: 'Yantramanav';\n  font-weight: 200; }\n\n.bordered-heading {\n  font-size: 20px;\n  border-bottom: 3px solid #e10b17;\n  display: block;\n  margin-bottom: 15px;\n  padding-bottom: 10px; }\n\n.image-outer-wrapper {\n  height: 100%;\n  position: relative; }\n  .image-outer-wrapper .border-rect {\n    position: absolute;\n    height: 15px;\n    width: 15px;\n    z-index: 100; }\n    .image-outer-wrapper .border-rect[data-side='top-left'] {\n      top: 1px;\n      left: 1px;\n      border-top: 2px solid #e10b17;\n      border-left: 2px solid #e10b17; }\n    .image-outer-wrapper .border-rect[data-side='top-middle'] {\n      top: 1px;\n      left: 50%;\n      width: 20px;\n      border-top: 2px solid #e10b17; }\n    .image-outer-wrapper .border-rect[data-side='top-right'] {\n      top: 1px;\n      right: 1px;\n      border-top: 2px solid #e10b17;\n      border-right: 2px solid #e10b17; }\n    .image-outer-wrapper .border-rect[data-side='middle-left'] {\n      top: 50%;\n      left: 1px;\n      height: 20px;\n      border-left: 2px solid #e10b17; }\n    .image-outer-wrapper .border-rect[data-side='middle-right'] {\n      top: 50%;\n      right: 1px;\n      height: 20px;\n      border-right: 2px solid #e10b17; }\n    .image-outer-wrapper .border-rect[data-side='bottom-left'] {\n      bottom: 1px;\n      left: 1px;\n      border-bottom: 2px solid #e10b17;\n      border-left: 2px solid #e10b17; }\n    .image-outer-wrapper .border-rect[data-side='bottom-middle'] {\n      bottom: 1px;\n      left: 50%;\n      width: 20px;\n      border-bottom: 2px solid #e10b17; }\n    .image-outer-wrapper .border-rect[data-side='bottom-right'] {\n      bottom: 1px;\n      right: 1px;\n      border-bottom: 2px solid #e10b17;\n      border-right: 2px solid #e10b17; }\n\n.panel-holder {\n  position: absolute;\n  left: 1vw;\n  top: 3vh;\n  right: 1vw;\n  z-index: 9999; }\n\n.pink-background {\n  background-color: rgba(203, 87, 126, 0.23) !important;\n  overflow: auto; }\n\n.dark-pink-background {\n  background-color: rgba(203, 80, 99, 0.49) !important; }\n\n.pink-text {\n  color: #e96292; }\n\n.red-text {\n  color: #e10b17;\n  font-weight: 100; }\n\n.clear {\n  clear: both; }\n\n.bold {\n  font-weight: bold; }\n\n.sub-icon {\n  margin-top: -4px; }\n\n.di-arrow-down {\n  margin-top: 0; }\n\n.di-arrow-up {\n  margin-top: -2px; }\n\n.row-set-white-linear {\n  background: #FFF;\n  border: none !important;\n  padding-top: 0;\n  padding: 5px 0;\n  margin: 5px 0;\n  margin-top: 0; }\n\n.row-set-white-linear .row {\n  border: none;\n  border-bottom: 1px solid #e10b17;\n  white-space: initial; }\n\n.row-set-white {\n  background: #FFF;\n  border: solid 0.3px rgba(203, 87, 126, 0.39);\n  padding: 5px;\n  margin: 5px 0; }\n\n.row-set-white .row {\n  border: none;\n  border-bottom: solid 0.3px rgba(203, 87, 126, 0.39);\n  width: 97%;\n  margin: 0 5px; }\n\n.row-set-white .row:last-child {\n  border: none; }\n\n.icon-globe {\n  position: relative;\n  float: left;\n  width: 26px;\n  margin: 0 5px; }\n\n:host {\n  z-index: 999; }\n  :host .panel-container {\n    padding: 30px 0 0 30px;\n    top: 0;\n    position: relative;\n    min-height: 75vh; }\n    :host .panel-container .top-buttons .circle-button {\n      background-color: white;\n      border-radius: 50%;\n      width: 30px;\n      height: 30px;\n      z-index: 100; }\n      :host .panel-container .top-buttons .circle-button:hover {\n        cursor: pointer; }\n      :host .panel-container .top-buttons .circle-button img {\n        width: 30px;\n        height: 30px; }\n    :host .panel-container .top-buttons .diwo-button {\n      position: absolute;\n      top: -15px;\n      left: -15px;\n      border: 2px solid red; }\n    :host .panel-container .top-buttons .side-buttons {\n      position: absolute;\n      left: -15px;\n      top: 100px;\n      z-index: 100; }\n      :host .panel-container .top-buttons .side-buttons .circle-button {\n        border: 0;\n        background-color: #202121;\n        display: -webkit-box;\n        display: -ms-flexbox;\n        display: flex;\n        -webkit-box-pack: center;\n            -ms-flex-pack: center;\n                justify-content: center;\n        -webkit-box-align: center;\n            -ms-flex-align: center;\n                align-items: center; }\n      :host .panel-container .top-buttons .side-buttons > div {\n        margin-bottom: 30px; }\n    :host .panel-container .top-buttons .line-header-elements {\n      top: -10px;\n      left: 0;\n      margin-top: 0; }\n      :host .panel-container .top-buttons .line-header-elements span {\n        padding-right: 10px; }\n    :host .panel-container .top-buttons .line-header-button {\n      position: absolute;\n      top: -7px;\n      left: 250px;\n      height: 15px;\n      width: 45px; }\n    :host .panel-container .main-content {\n      display: -webkit-box;\n      display: -ms-flexbox;\n      display: flex;\n      -webkit-box-orient: horizontal;\n      -webkit-box-direction: normal;\n          -ms-flex-direction: row;\n              flex-direction: row; }\n      :host .panel-container .main-content .left-graph {\n        -webkit-box-flex: 5;\n            -ms-flex: 5;\n                flex: 5; }\n        :host .panel-container .main-content .left-graph .graph-container {\n          background: white;\n          padding: 10px; }\n          :host .panel-container .main-content .left-graph .graph-container .graph-header {\n            display: -webkit-box;\n            display: -ms-flexbox;\n            display: flex;\n            -webkit-box-orient: horizontal;\n            -webkit-box-direction: normal;\n                -ms-flex-direction: row;\n                    flex-direction: row;\n            margin-bottom: 10px; }\n            :host .panel-container .main-content .left-graph .graph-container .graph-header dropdown-input {\n              -webkit-box-flex: 1;\n                  -ms-flex: 1;\n                      flex: 1; }\n            :host .panel-container .main-content .left-graph .graph-container .graph-header .name {\n              -webkit-box-flex: 1;\n                  -ms-flex: 1;\n                      flex: 1;\n              background: black;\n              color: white;\n              line-height: 28px;\n              padding-left: 10px;\n              font-weight: 100; }\n            :host .panel-container .main-content .left-graph .graph-container .graph-header .separator {\n              margin: 0 10px;\n              color: #ea6193;\n              padding-top: 7px; }\n          :host .panel-container .main-content .left-graph .graph-container .graph {\n            width: 100%;\n            height: 75vh; }\n      :host .panel-container .main-content .right-fields {\n        padding-left: 15px;\n        -webkit-box-flex: 3;\n            -ms-flex: 3;\n                flex: 3; }\n        :host .panel-container .main-content .right-fields .graph-details {\n          margin-top: 15px; }\n          :host .panel-container .main-content .right-fields .graph-details img {\n            width: 100%; }\n      :host .panel-container .main-content .row {\n        background-color: #b3b3b3;\n        border: 0;\n        padding: 10px; }\n        :host .panel-container .main-content .row .left-value {\n          color: black;\n          font-size: 16px; }\n        :host .panel-container .main-content .row .right-value {\n          color: black;\n          font-size: 16px; }\n", ""]);
 
 // exports
 
@@ -5185,7 +5199,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "/* =============================================================================\n   MEDIA QUERIES\n   ========================================================================== */\n/* Eg.\n    .container{\n        width:1024px;\n\n        @include tablets{\n            width:90%;\n        }\n    }\n*/\n/* =============================================================================\n   Unit transform\n   ========================================================================== */\n:host {\n  display: block; }\n\n#decide-header {\n  z-index: 7000;\n  top: 145px; }\n\n@media screen and (max-width: 1280px) {\n  .cards-container {\n    height: 75vh;\n    width: 100vw;\n    position: fixed;\n    overflow-y: scroll;\n    padding: 0 2%;\n    margin-top: 15px !important;\n    left: 1%;\n    z-index: 9000; } }\n\n@media screen and (min-width: 1281px) {\n  .cards-container {\n    height: 75vh;\n    width: 100vw;\n    position: fixed;\n    overflow-y: scroll;\n    padding: 0 2%;\n    margin-top: 50px !important;\n    left: 1%;\n    top: 15%;\n    z-index: 9000; } }\n\n.decide-card-item {\n  width: 0; }\n\n.decide-card-item:nth-of-type(1) {\n  -webkit-box-flex: 0.2;\n  box-flex: 0.2;\n  -ms-flex-positive: 0.2;\n      flex-grow: 0.2;\n  -webkit-flex-grow: 0.2;\n  -ms-flex-grow: 0.2;\n  -moz-flex-grow: 0.2; }\n\n.decide-card-item:nth-of-type(1n+2) {\n  -webkit-box-flex: 0.16;\n  box-flex: 0.16;\n  -ms-flex-positive: 0.16;\n      flex-grow: 0.16;\n  -webkit-flex-grow: 0.16;\n  -ms-flex-grow: 0.16;\n  -moz-flex-grow: 0.16; }\n\n#decideClose {\n  z-index: 8000;\n  padding: 10px;\n  padding-top: 0; }\n\n.border-card-right {\n  border-right: 0.3px solid #d1d1d1;\n  padding: 10px 0 !important; }\n  .border-card-right.no-border {\n    border: 0;\n    padding: 0 !important; }\n\n.border-card-right.table {\n  padding-top: 0 !important; }\n\n.card-header {\n  margin-bottom: 36px;\n  display: -webkit-box; }\n\n.card-header > div {\n  border-bottom: 0.3px solid #aeaeae;\n  font-size: 19px;\n  padding-bottom: 9px;\n  position: relative;\n  float: left;\n  margin: 10px;\n  box-sizing: initial; }\n\n.card-header .context {\n  width: 47%; }\n\n.card-header .forecast {\n  width: 31%; }\n\n.card-header .outcome {\n  width: 16%; }\n\n.card-line > * {\n  font-weight: thin;\n  white-space: nowrap; }\n\n.card-line {\n  margin: 20px 0;\n  position: relative;\n  clear: both;\n  float: left;\n  width: 100%; }\n\n.card-image {\n  width: 25%;\n  display: inline-block;\n  position: relative;\n  float: left;\n  padding: 10px;\n  max-width: 80px; }\n  .card-image img {\n    width: 100%;\n    max-width: 55px; }\n\n.card-text {\n  padding: 15px; }\n\n.card-text .row {\n  padding: 5px; }\n\n.line-header-elements {\n  background: #222323;\n  color: #FFF;\n  font-weight: normal;\n  margin-top: -12px;\n  margin-left: 5px;\n  position: absolute;\n  z-index: 99;\n  font-size: 14px;\n  font-weight: 100;\n  padding: 4px 10px 4px 5px; }\n\n.line-icon {\n  width: 30px;\n  height: 30px;\n  border-radius: 18px;\n  background: #202121;\n  display: inline-block;\n  margin-left: -18px;\n  margin-top: 30px;\n  z-index: 99;\n  position: absolute;\n  cursor: pointer; }\n\n.line-icon i, .options-icon i {\n  color: #FFF;\n  font-size: 16px;\n  padding-left: 7px;\n  padding-top: 7px; }\n\n.options-icon i.di-check {\n  color: #202121; }\n\n.options-icon i.di-microphone {\n  padding-left: 10px;\n  padding-top: 3px;\n  color: #202121; }\n\n.options-icon {\n  width: 30px;\n  height: 30px;\n  border-radius: 18px;\n  background: #FFF;\n  border: 2px solid #202121;\n  display: inline-block;\n  margin-left: -15px;\n  margin-top: -15px;\n  position: absolute;\n  z-index: 100;\n  cursor: pointer; }\n\n.header-info-separator, .header-info-separator-last {\n  padding: 0 10px 0 10px;\n  margin-right: 10px;\n  border-right: 0.3px solid #FFF;\n  display: inline-block;\n  font-weight: 100; }\n\n.header-info-separator-last {\n  border: none; }\n\n.card {\n  padding: 15px;\n  line-height: 28px !important;\n  font-size: 18px; }\n\n.line-group {\n  width: 74%;\n  display: inline-block;\n  position: relative;\n  float: left;\n  overflow: hidden;\n  padding: 15px; }\n\n.line-card {\n  display: inline-block;\n  width: 25%;\n  float: left;\n  border-top: 2px solid #e7e7e7;\n  border-bottom: 2px solid #e7e7e7; }\n\n.line-card > * {\n  line-height: 24px;\n  position: relative;\n  width: 100%;\n  float: left;\n  height: 90px; }\n\n.card-content-line h2 {\n  font-size: 17px; }\n\n.card-content-line {\n  font-size: 17px !important;\n  font-family: 'Yantramanav' !important;\n  font-weight: 400 !important;\n  line-height: 20px; }\n\n.card .label {\n  font-size: 15px;\n  font-family: 'Yantramanav-Light';\n  margin-top: 5px; }\n\n.card h3 {\n  font-size: 15px !important;\n  font-weight: normal !important; }\n\n.card .value-small, .card .value-big {\n  font-family: Bebas !important;\n  font-weight: 400 !important; }\n\n.card .value-big {\n  font-size: 22px !important; }\n\n.col-25 {\n  width: 25%; }\n\n.col-50 {\n  width: 49%;\n  display: inline-block; }\n\n.col-75 {\n  width: 74%; }\n\n.col-100 {\n  width: 100%; }\n\n.col-rest-3 {\n  width: 16.66666667%; }\n\n.row-rest-6 {\n  height: 33.33333333%; }\n\n.pink {\n  color: #ea6193; }\n\n.gray {\n  background: #e9e8e8; }\n\n.black {\n  color: #202121; }\n\n.white {\n  background: #f9f9f9; }\n\n.light-gray {\n  background: #f2f2f2; }\n\n.pull-left {\n  float: left; }\n\n.pull-right {\n  float: right; }\n\n.text-left {\n  text-align: left; }\n\n.text-right {\n  text-align: right; }\n\n.text-center {\n  text-align: center; }\n\n.last-card {\n  border: 2px solid #d1d1d1;\n  border-left: none !important;\n  overflow: hidden; }\n\n.bold {\n  font-weight: 400 !important; }\n\n.normal {\n  font-weight: 100 !important; }\n\n.collapsed.card-buttons {\n  height: auto !important;\n  margin-left: 7.5%;\n  margin-right: auto;\n  width: auto !important;\n  position: absolute !important;\n  top: 80px;\n  z-index: 999; }\n\n.card-button {\n  z-index: 999;\n  border-radius: 3px;\n  width: 45px;\n  height: 15px;\n  padding: 0 5px;\n  position: relative;\n  float: left;\n  margin: 5px;\n  font-size: 12px;\n  color: #FFF;\n  line-height: 16px;\n  cursor: pointer; }\n\n.button-expand {\n  background: #202121;\n  text-align: center; }\n\n.button-new {\n  background: #e10b17; }\n\n.button-new .icon-btn-new {\n  width: 15px;\n  height: 15px;\n  background: #FFF;\n  position: absolute;\n  float: right;\n  border: 1px solid #202121;\n  border-radius: 0 3px 3px 0;\n  bottom: 0;\n  right: 0; }\n\n.expanded {\n  position: relative;\n  float: left;\n  margin-top: 12px;\n  width: 100%;\n  background: #fafafa; }\n\n.expanded .container {\n  padding: 10px 10px 20px 10px;\n  overflow: hidden;\n  height: 100%;\n  border: 0.3px solid #e7e7e7 !important; }\n  .expanded .container .main-content {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-orient: horizontal;\n    -webkit-box-direction: normal;\n        -ms-flex-direction: row;\n            flex-direction: row; }\n    .expanded .container .main-content .left-graph {\n      -webkit-box-flex: 2;\n          -ms-flex: 2;\n              flex: 2;\n      overflow: hidden; }\n    .expanded .container .main-content .right-fields {\n      -webkit-box-flex: 1;\n          -ms-flex: 1;\n              flex: 1;\n      padding-left: 1%;\n      display: -webkit-box;\n      display: -ms-flexbox;\n      display: flex;\n      -webkit-box-orient: vertical;\n      -webkit-box-direction: normal;\n          -ms-flex-direction: column;\n              flex-direction: column; }\n      .expanded .container .main-content .right-fields .header {\n        border-bottom: 1px solid #e10b17;\n        color: #e10b17;\n        padding-bottom: 0;\n        margin-bottom: 0;\n        font-weight: 400;\n        font-size: 17px; }\n      .expanded .container .main-content .right-fields .header span {\n        top: -5px;\n        left: 5px;\n        position: relative; }\n      .expanded .container .main-content .right-fields .top-fields {\n        -webkit-box-flex: 1;\n            -ms-flex: 1;\n                flex: 1;\n        padding-right: 0px; }\n      .expanded .container .main-content .right-fields .bottom-fields {\n        margin-top: 28px;\n        padding-right: 0px; }\n\n.expanded .card {\n  width: 32%;\n  margin-right: 1%;\n  background: #fafafa;\n  border: 1px solid #e9e8e8;\n  display: inline-block;\n  white-space: normal;\n  height: 350px; }\n\n.expanded .card {\n  line-height: 24px !important;\n  position: relative;\n  float: left;\n  display: inline-block; }\n\n.expanded .card .text {\n  float: left;\n  font-size: 15px; }\n\n.expanded .card-button {\n  bottom: -11px !important;\n  position: absolute;\n  float: left;\n  z-index: 9999; }\n  .expanded .card-button.button-expand {\n    margin-left: 7%; }\n  .expanded .card-button.button-new {\n    margin-left: calc(7% + 55px); }\n\n.expanded .card h3 {\n  color: #e96292;\n  font-weight: lighter;\n  border-bottom: 2px solid #e96292;\n  padding-bottom: 12px;\n  margin-bottom: 12px;\n  font-size: 17px; }\n\n.diwo-circle--actions .layout-column.diwo-circle--actions-ctn {\n  position: relative; }\n\n.diwo-circle--trigger {\n  z-index: 1; }\n\n.diwo-circle--action-item {\n  -webkit-transform: none !important;\n          transform: none !important; }\n\ntd {\n  background-color: white; }\n\n.w-100, .row, .row-small {\n  width: 100%; }\n\n.row {\n  border: solid 0.3px rgba(203, 87, 126, 0.39);\n  display: table;\n  clear: both;\n  padding: 5px;\n  margin-bottom: 2px;\n  background-color: white; }\n  .row .left-value {\n    padding: 5px; }\n  .row .right-value {\n    padding: 5px;\n    margin-left: 5px;\n    text-align: right !important; }\n\n.tri-row {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: row;\n          flex-direction: row;\n  margin-bottom: 2px;\n  background-color: white; }\n  .tri-row .left-value {\n    border: solid 0.3px rgba(203, 87, 126, 0.39);\n    padding: 10px;\n    text-align: center;\n    line-height: 3.5em;\n    -webkit-box-flex: 1;\n        -ms-flex: 1;\n            flex: 1; }\n  .tri-row .right-rows {\n    -webkit-box-flex: 4;\n        -ms-flex: 4;\n            flex: 4;\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-orient: vertical;\n    -webkit-box-direction: normal;\n        -ms-flex-direction: column;\n            flex-direction: column; }\n    .tri-row .right-rows .row {\n      margin-bottom: 0; }\n\n.row-small {\n  border-bottom: solid 0.5px rgba(203, 87, 126, 0.39);\n  display: table;\n  clear: both;\n  background-color: white;\n  overflow: hidden;\n  line-height: 30px !important; }\n\n.pink-color {\n  color: #e96292; }\n\n.right-value-left {\n  color: #e96292 !important;\n  font-weight: 400;\n  font-size: 16px;\n  font-family: 'Bebas' !important;\n  text-align: left !important; }\n\n.right-value {\n  float: right;\n  font-weight: 400;\n  color: #e96292;\n  font-size: 16px;\n  font-family: 'Bebas' !important;\n  text-align: right !important; }\n\n.left-value {\n  float: left;\n  color: #555;\n  font-size: 15px;\n  font-family: 'Yantramanav';\n  font-weight: 200; }\n\n.bordered-heading {\n  font-size: 20px;\n  border-bottom: 3px solid #e10b17;\n  display: block;\n  margin-bottom: 15px;\n  padding-bottom: 10px; }\n\n.image-outer-wrapper {\n  height: 100%;\n  position: relative; }\n  .image-outer-wrapper .border-rect {\n    position: absolute;\n    height: 15px;\n    width: 15px; }\n    .image-outer-wrapper .border-rect[data-side='top-left'] {\n      top: 1px;\n      left: 1px;\n      border-top: 2px solid #e10b17;\n      border-left: 2px solid #e10b17; }\n    .image-outer-wrapper .border-rect[data-side='top-middle'] {\n      top: 1px;\n      left: 50%;\n      width: 20px;\n      border-top: 2px solid #e10b17; }\n    .image-outer-wrapper .border-rect[data-side='top-right'] {\n      top: 1px;\n      right: 1px;\n      border-top: 2px solid #e10b17;\n      border-right: 2px solid #e10b17; }\n    .image-outer-wrapper .border-rect[data-side='middle-left'] {\n      top: 50%;\n      left: 1px;\n      height: 20px;\n      border-left: 2px solid #e10b17; }\n    .image-outer-wrapper .border-rect[data-side='middle-right'] {\n      top: 50%;\n      right: 1px;\n      height: 20px;\n      border-right: 2px solid #e10b17; }\n    .image-outer-wrapper .border-rect[data-side='bottom-left'] {\n      bottom: 1px;\n      left: 1px;\n      border-bottom: 2px solid #e10b17;\n      border-left: 2px solid #e10b17; }\n    .image-outer-wrapper .border-rect[data-side='bottom-middle'] {\n      bottom: 1px;\n      left: 50%;\n      width: 20px;\n      border-bottom: 2px solid #e10b17; }\n    .image-outer-wrapper .border-rect[data-side='bottom-right'] {\n      bottom: 1px;\n      right: 1px;\n      border-bottom: 2px solid #e10b17;\n      border-right: 2px solid #e10b17; }\n\n.panel-holder {\n  position: absolute;\n  left: 1vw;\n  top: 3vh;\n  right: 1vw;\n  z-index: 9999; }\n\n.pink-background {\n  background-color: rgba(203, 87, 126, 0.23) !important;\n  overflow: auto; }\n\n.dark-pink-background {\n  background-color: rgba(203, 80, 99, 0.49) !important; }\n\n.pink-text {\n  color: #e96292; }\n\n.red-text {\n  color: #e10b17;\n  font-weight: 100; }\n\n.clear {\n  clear: both; }\n\n.bold {\n  font-weight: bold; }\n\n.sub-icon {\n  margin-top: -4px; }\n\n.di-arrow-down {\n  margin-top: 0; }\n\n.di-arrow-up {\n  margin-top: -2px; }\n\n.row-set-white-linear {\n  background: #FFF;\n  border: none !important;\n  padding-top: 0;\n  padding: 5px 0;\n  margin: 5px 0;\n  margin-top: 0; }\n\n.row-set-white-linear .row {\n  border: none;\n  border-bottom: 1px solid #e10b17;\n  white-space: initial; }\n\n.row-set-white {\n  background: #FFF;\n  border: solid 0.3px rgba(203, 87, 126, 0.39);\n  padding: 5px;\n  margin: 5px 0; }\n\n.row-set-white .row {\n  border: none;\n  border-bottom: solid 0.3px rgba(203, 87, 126, 0.39);\n  width: 97%;\n  margin: 0 5px; }\n\n.row-set-white .row:last-child {\n  border: none; }\n\n.icon-globe {\n  position: relative;\n  float: left;\n  width: 26px;\n  margin: 0 5px; }\n", ""]);
+exports.push([module.i, "/* =============================================================================\n   MEDIA QUERIES\n   ========================================================================== */\n/* Eg.\n    .container{\n        width:1024px;\n\n        @include tablets{\n            width:90%;\n        }\n    }\n*/\n/* =============================================================================\n   Unit transform\n   ========================================================================== */\n:host {\n  display: block; }\n\n#decide-header {\n  z-index: 7000;\n  top: 145px; }\n\n@media screen and (max-width: 1280px) {\n  .cards-container {\n    height: 75vh;\n    width: 100vw;\n    position: fixed;\n    overflow-y: scroll;\n    padding: 0 2%;\n    margin-top: 15px !important;\n    left: 1%;\n    z-index: 9000; } }\n\n@media screen and (min-width: 1281px) {\n  .cards-container {\n    height: 75vh;\n    width: 100vw;\n    position: fixed;\n    overflow-y: scroll;\n    padding: 0 2%;\n    margin-top: 50px !important;\n    left: 1%;\n    top: 15%;\n    z-index: 9000; } }\n\n.decide-card-item {\n  width: 0; }\n\n.decide-card-item:nth-of-type(1) {\n  -webkit-box-flex: 0.2;\n  box-flex: 0.2;\n  -ms-flex-positive: 0.2;\n      flex-grow: 0.2;\n  -webkit-flex-grow: 0.2;\n  -ms-flex-grow: 0.2;\n  -moz-flex-grow: 0.2; }\n\n.decide-card-item:nth-of-type(1n+2) {\n  -webkit-box-flex: 0.16;\n  box-flex: 0.16;\n  -ms-flex-positive: 0.16;\n      flex-grow: 0.16;\n  -webkit-flex-grow: 0.16;\n  -ms-flex-grow: 0.16;\n  -moz-flex-grow: 0.16; }\n\n#decideClose {\n  z-index: 8000;\n  padding: 10px;\n  padding-top: 0; }\n\n.border-card-right {\n  border-right: 0.3px solid #d1d1d1;\n  padding: 10px 0 !important; }\n  .border-card-right.no-border {\n    border: 0;\n    padding: 0 !important; }\n\n.border-card-right.table {\n  padding-top: 0 !important; }\n\n.card-header {\n  margin-bottom: 36px;\n  display: -webkit-box; }\n\n.card-header > div {\n  border-bottom: 0.3px solid #aeaeae;\n  font-size: 19px;\n  padding-bottom: 9px;\n  position: relative;\n  float: left;\n  margin: 10px;\n  box-sizing: initial; }\n\n.card-header .context {\n  width: 47%; }\n\n.card-header .forecast {\n  width: 31%; }\n\n.card-header .outcome {\n  width: 16%; }\n\n.card-line > * {\n  font-weight: thin;\n  white-space: nowrap; }\n\n.card-line {\n  margin: 20px 0;\n  position: relative;\n  clear: both;\n  float: left;\n  width: 100%; }\n\n.card-image {\n  width: 25%;\n  display: inline-block;\n  position: relative;\n  float: left;\n  padding: 10px;\n  max-width: 80px; }\n  .card-image img {\n    width: 100%;\n    max-width: 55px; }\n\n.card-text {\n  padding: 15px; }\n\n.card-text .row {\n  padding: 5px; }\n\n.line-header-elements {\n  background: #222323;\n  color: #FFF;\n  font-weight: normal;\n  margin-top: -12px;\n  margin-left: 5px;\n  position: absolute;\n  z-index: 99;\n  font-size: 14px;\n  font-weight: 100;\n  padding: 4px 10px 4px 5px; }\n\n.line-icon {\n  width: 30px;\n  height: 30px;\n  border-radius: 18px;\n  background: #202121;\n  display: inline-block;\n  margin-left: -18px;\n  margin-top: 30px;\n  z-index: 99;\n  position: absolute;\n  cursor: pointer; }\n\n.line-icon i, .options-icon i {\n  color: #FFF;\n  font-size: 16px;\n  padding-left: 7px;\n  padding-top: 7px; }\n\n.options-icon i.di-check {\n  color: #202121; }\n\n.options-icon i.di-microphone {\n  padding-left: 10px;\n  padding-top: 3px;\n  color: #202121; }\n\n.options-icon {\n  width: 30px;\n  height: 30px;\n  border-radius: 18px;\n  background: #FFF;\n  border: 2px solid #202121;\n  display: inline-block;\n  margin-left: -15px;\n  margin-top: -15px;\n  position: absolute;\n  z-index: 100;\n  cursor: pointer; }\n\n.header-info-separator, .header-info-separator-last {\n  padding: 0 10px 0 10px;\n  margin-right: 10px;\n  border-right: 0.3px solid #FFF;\n  display: inline-block;\n  font-weight: 100; }\n\n.header-info-separator-last {\n  border: none; }\n\n.card {\n  padding: 15px;\n  line-height: 28px !important;\n  font-size: 18px; }\n\n.line-group {\n  width: 74%;\n  display: inline-block;\n  position: relative;\n  float: left;\n  overflow: hidden;\n  padding: 15px; }\n\n.line-card {\n  display: inline-block;\n  width: 25%;\n  float: left;\n  border-top: 2px solid #e7e7e7;\n  border-bottom: 2px solid #e7e7e7; }\n\n.line-card > * {\n  line-height: 24px;\n  position: relative;\n  width: 100%;\n  float: left;\n  height: 90px; }\n\n.card-content-line h2 {\n  font-size: 17px; }\n\n.card-content-line {\n  font-size: 17px !important;\n  font-family: 'Yantramanav' !important;\n  font-weight: 400 !important;\n  line-height: 20px; }\n\n.card .label {\n  font-size: 15px;\n  font-family: 'Yantramanav-Light';\n  margin-top: 5px; }\n\n.card h3 {\n  font-size: 15px !important;\n  font-weight: normal !important; }\n\n.card .value-small, .card .value-big {\n  font-family: Bebas !important;\n  font-weight: 400 !important; }\n\n.card .value-big {\n  font-size: 22px !important; }\n\n.col-25 {\n  width: 25%; }\n\n.col-50 {\n  width: 49%;\n  display: inline-block; }\n\n.col-75 {\n  width: 74%; }\n\n.col-100 {\n  width: 100%; }\n\n.col-rest-3 {\n  width: 16.66666667%; }\n\n.row-rest-6 {\n  height: 33.33333333%; }\n\n.pink {\n  color: #ea6193; }\n\n.gray {\n  background: #e9e8e8; }\n\n.black {\n  color: #202121; }\n\n.white {\n  background: #f9f9f9; }\n\n.light-gray {\n  background: #f2f2f2; }\n\n.pull-left {\n  float: left; }\n\n.pull-right {\n  float: right; }\n\n.text-left {\n  text-align: left; }\n\n.text-right {\n  text-align: right; }\n\n.text-center {\n  text-align: center; }\n\n.last-card {\n  border: 2px solid #d1d1d1;\n  border-left: none !important;\n  overflow: hidden; }\n\n.bold {\n  font-weight: 400 !important; }\n\n.normal {\n  font-weight: 100 !important; }\n\n.collapsed.card-buttons {\n  height: auto !important;\n  margin-left: 7.5%;\n  margin-right: auto;\n  width: auto !important;\n  position: absolute !important;\n  top: 80px;\n  z-index: 999; }\n\n.card-button {\n  z-index: 999;\n  border-radius: 3px;\n  width: 45px;\n  height: 15px;\n  padding: 0 5px;\n  position: relative;\n  float: left;\n  margin: 5px;\n  font-size: 12px;\n  color: #FFF;\n  line-height: 16px;\n  cursor: pointer; }\n\n.button-expand {\n  background: #202121;\n  text-align: center; }\n\n.button-new {\n  background: #e10b17; }\n\n.button-new .icon-btn-new {\n  width: 15px;\n  height: 15px;\n  background: #FFF;\n  position: absolute;\n  float: right;\n  border: 1px solid #202121;\n  border-radius: 0 3px 3px 0;\n  bottom: 0;\n  right: 0; }\n\n.expanded {\n  position: relative;\n  float: left;\n  margin-top: 12px;\n  width: 100%;\n  background: #fafafa; }\n\n.expanded .container {\n  padding: 10px 10px 20px 10px;\n  overflow: hidden;\n  height: 100%;\n  border: 0.3px solid #e7e7e7 !important; }\n  .expanded .container .main-content {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-orient: horizontal;\n    -webkit-box-direction: normal;\n        -ms-flex-direction: row;\n            flex-direction: row; }\n    .expanded .container .main-content .left-graph {\n      -webkit-box-flex: 2;\n          -ms-flex: 2;\n              flex: 2;\n      overflow: hidden; }\n      .expanded .container .main-content .left-graph .gViz-visuals-inner-wrapper {\n        height: 100%; }\n    .expanded .container .main-content .right-fields {\n      -webkit-box-flex: 1;\n          -ms-flex: 1;\n              flex: 1;\n      padding-left: 1%;\n      display: -webkit-box;\n      display: -ms-flexbox;\n      display: flex;\n      -webkit-box-orient: vertical;\n      -webkit-box-direction: normal;\n          -ms-flex-direction: column;\n              flex-direction: column; }\n      .expanded .container .main-content .right-fields .header {\n        border-bottom: 1px solid #e10b17;\n        color: #e10b17;\n        padding-bottom: 0;\n        margin-bottom: 0;\n        font-weight: 400;\n        font-size: 17px; }\n      .expanded .container .main-content .right-fields .header span {\n        top: -5px;\n        left: 5px;\n        position: relative; }\n      .expanded .container .main-content .right-fields .top-fields {\n        -webkit-box-flex: 1;\n            -ms-flex: 1;\n                flex: 1;\n        padding-right: 0px; }\n      .expanded .container .main-content .right-fields .bottom-fields {\n        margin-top: 28px;\n        padding-right: 0px; }\n\n.expanded .card {\n  width: 32%;\n  margin-right: 1%;\n  background: #fafafa;\n  border: 1px solid #e9e8e8;\n  display: inline-block;\n  white-space: normal;\n  height: 350px; }\n\n.expanded .card {\n  line-height: 24px !important;\n  position: relative;\n  float: left;\n  display: inline-block; }\n\n.expanded .card .text {\n  float: left;\n  font-size: 15px; }\n\n.expanded .card-button {\n  bottom: -11px !important;\n  position: absolute;\n  float: left;\n  z-index: 9999; }\n  .expanded .card-button.button-expand {\n    margin-left: 7%; }\n  .expanded .card-button.button-new {\n    margin-left: calc(7% + 55px); }\n\n.expanded .card h3 {\n  color: #e96292;\n  font-weight: lighter;\n  border-bottom: 2px solid #e96292;\n  padding-bottom: 12px;\n  margin-bottom: 12px;\n  font-size: 17px; }\n\n.diwo-circle--actions .layout-column.diwo-circle--actions-ctn {\n  position: relative; }\n\n.diwo-circle--trigger {\n  z-index: 1; }\n\n.diwo-circle--action-item {\n  -webkit-transform: none !important;\n          transform: none !important; }\n\ntd {\n  background-color: white; }\n\n.w-100, .row, .row-small {\n  width: 100%; }\n\n.row {\n  border: solid 0.3px rgba(203, 87, 126, 0.39);\n  display: table;\n  clear: both;\n  padding: 5px;\n  margin-bottom: 2px;\n  background-color: white; }\n  .row .left-value {\n    padding: 5px; }\n  .row .right-value {\n    padding: 5px;\n    margin-left: 5px;\n    text-align: right !important; }\n\n.tri-row {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: row;\n          flex-direction: row;\n  margin-bottom: 2px;\n  background-color: white; }\n  .tri-row .left-value {\n    border: solid 0.3px rgba(203, 87, 126, 0.39);\n    padding: 10px;\n    text-align: center;\n    line-height: 3.5em;\n    -webkit-box-flex: 1;\n        -ms-flex: 1;\n            flex: 1; }\n  .tri-row .right-rows {\n    -webkit-box-flex: 4;\n        -ms-flex: 4;\n            flex: 4;\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-orient: vertical;\n    -webkit-box-direction: normal;\n        -ms-flex-direction: column;\n            flex-direction: column; }\n    .tri-row .right-rows .row {\n      margin-bottom: 0; }\n\n.row-small {\n  border-bottom: solid 0.5px rgba(203, 87, 126, 0.39);\n  display: table;\n  clear: both;\n  background-color: white;\n  overflow: hidden;\n  line-height: 30px !important; }\n\n.pink-color {\n  color: #e96292; }\n\n.right-value-left {\n  color: #e96292 !important;\n  font-weight: 400;\n  font-size: 16px;\n  font-family: 'Bebas' !important;\n  text-align: left !important; }\n\n.right-value {\n  float: right;\n  font-weight: 400;\n  color: #e96292;\n  font-size: 16px;\n  font-family: 'Bebas' !important;\n  text-align: right !important; }\n\n.left-value {\n  float: left;\n  color: #555;\n  font-size: 15px;\n  font-family: 'Yantramanav';\n  font-weight: 200; }\n\n.bordered-heading {\n  font-size: 20px;\n  border-bottom: 3px solid #e10b17;\n  display: block;\n  margin-bottom: 15px;\n  padding-bottom: 10px; }\n\n.image-outer-wrapper {\n  height: 100%;\n  position: relative; }\n  .image-outer-wrapper .border-rect {\n    position: absolute;\n    height: 15px;\n    width: 15px;\n    z-index: 100; }\n    .image-outer-wrapper .border-rect[data-side='top-left'] {\n      top: 1px;\n      left: 1px;\n      border-top: 2px solid #e10b17;\n      border-left: 2px solid #e10b17; }\n    .image-outer-wrapper .border-rect[data-side='top-middle'] {\n      top: 1px;\n      left: 50%;\n      width: 20px;\n      border-top: 2px solid #e10b17; }\n    .image-outer-wrapper .border-rect[data-side='top-right'] {\n      top: 1px;\n      right: 1px;\n      border-top: 2px solid #e10b17;\n      border-right: 2px solid #e10b17; }\n    .image-outer-wrapper .border-rect[data-side='middle-left'] {\n      top: 50%;\n      left: 1px;\n      height: 20px;\n      border-left: 2px solid #e10b17; }\n    .image-outer-wrapper .border-rect[data-side='middle-right'] {\n      top: 50%;\n      right: 1px;\n      height: 20px;\n      border-right: 2px solid #e10b17; }\n    .image-outer-wrapper .border-rect[data-side='bottom-left'] {\n      bottom: 1px;\n      left: 1px;\n      border-bottom: 2px solid #e10b17;\n      border-left: 2px solid #e10b17; }\n    .image-outer-wrapper .border-rect[data-side='bottom-middle'] {\n      bottom: 1px;\n      left: 50%;\n      width: 20px;\n      border-bottom: 2px solid #e10b17; }\n    .image-outer-wrapper .border-rect[data-side='bottom-right'] {\n      bottom: 1px;\n      right: 1px;\n      border-bottom: 2px solid #e10b17;\n      border-right: 2px solid #e10b17; }\n\n.panel-holder {\n  position: absolute;\n  left: 1vw;\n  top: 3vh;\n  right: 1vw;\n  z-index: 9999; }\n\n.pink-background {\n  background-color: rgba(203, 87, 126, 0.23) !important;\n  overflow: auto; }\n\n.dark-pink-background {\n  background-color: rgba(203, 80, 99, 0.49) !important; }\n\n.pink-text {\n  color: #e96292; }\n\n.red-text {\n  color: #e10b17;\n  font-weight: 100; }\n\n.clear {\n  clear: both; }\n\n.bold {\n  font-weight: bold; }\n\n.sub-icon {\n  margin-top: -4px; }\n\n.di-arrow-down {\n  margin-top: 0; }\n\n.di-arrow-up {\n  margin-top: -2px; }\n\n.row-set-white-linear {\n  background: #FFF;\n  border: none !important;\n  padding-top: 0;\n  padding: 5px 0;\n  margin: 5px 0;\n  margin-top: 0; }\n\n.row-set-white-linear .row {\n  border: none;\n  border-bottom: 1px solid #e10b17;\n  white-space: initial; }\n\n.row-set-white {\n  background: #FFF;\n  border: solid 0.3px rgba(203, 87, 126, 0.39);\n  padding: 5px;\n  margin: 5px 0; }\n\n.row-set-white .row {\n  border: none;\n  border-bottom: solid 0.3px rgba(203, 87, 126, 0.39);\n  width: 97%;\n  margin: 0 5px; }\n\n.row-set-white .row:last-child {\n  border: none; }\n\n.icon-globe {\n  position: relative;\n  float: left;\n  width: 26px;\n  margin: 0 5px; }\n", ""]);
 
 // exports
 
@@ -5739,413 +5753,335 @@ var DecideService = (function () {
                                         ]
                                     },
                                     'Graph': {
-                                        'Type': 'DiwoVisualBubbleGraphComponent',
+                                        'Type': 'DiwoVisualVsBubbleGraphComponent',
                                         'Data': {
-                                            'data': {
-                                                'pricePointAnalysis': {
-                                                    'title': 'PricePointAnalysis',
-                                                    'name': 'Top Price Point',
-                                                    'rangeMin': 35,
-                                                    'rangeMax': 45,
-                                                    'percent': 38
+                                            "data": {
+                                                "topLeft": {
+                                                    "text": "Demand Signals",
+                                                    "image": "/assets/images/gViz/visualizations/diwo-visual-vs-bubble-graph/user-signal.png"
                                                 },
-                                                'pricePointAnalysisHover': {
-                                                    'name': 'Sales Mix %',
-                                                    'values': [
-                                                        {
-                                                            'priceRange': '$61-$95',
-                                                            'value': 4
+                                                "bottomLeft": {
+                                                    "text": "Demand vs Planned Curve",
+                                                    "image": "/assets/images/gViz/visualizations/diwo-visual-vs-bubble-graph/line-chart.png",
+                                                    "chartData": {
+                                                        "title": "Line Graph with Draggable Points",
+                                                        "legend": {
+                                                            "isVisible": true,
+                                                            "text": "{{name}}"
                                                         },
-                                                        {
-                                                            'priceRange': '$35-$45',
-                                                            'value': 38
-                                                        },
-                                                        {
-                                                            'priceRange': '$18-$25',
-                                                            'value': 23
-                                                        },
-                                                        {
-                                                            'priceRange': '$45-$60',
-                                                            'value': 18
-                                                        },
-                                                        {
-                                                            'priceRange': '$25-$35',
-                                                            'value': 17
-                                                        }
-                                                    ]
-                                                },
-                                                'attributeAnalysisHover': {
-                                                    'title': 'Attribute Analysis',
-                                                    'name': 'Attribute Sales Mix',
-                                                    'value': '23',
-                                                    'oldbarColor': '#A37095',
-                                                    'currentBarColor': '#A47196',
-                                                    'legends': [
-                                                        {
-                                                            'id': 1,
-                                                            'color': '#F0BBD0',
-                                                            'label': 'W40 (PW)'
-                                                        },
-                                                        {
-                                                            'id': 2,
-                                                            'color': '#A47196',
-                                                            'label': 'W41 (CW)'
-                                                        }
-                                                    ],
-                                                    'attributes': [
-                                                        {
-                                                            'name': 'Teal (8Q)',
-                                                            'values': [
-                                                                {
-                                                                    'value': 25,
-                                                                    'legendId': 1
-                                                                },
-                                                                {
-                                                                    'value': 28,
-                                                                    'legendId': 2
-                                                                }
+                                                        "tooltip": {
+                                                            "hasImg": true,
+                                                            "muted": true,
+                                                            "propagate": "title",
+                                                            "header": [
+                                                                "This is a main header"
                                                             ],
-                                                            'symbol': 'circle',
-                                                            'symbolColor': '#7FB9AF'
-                                                        },
-                                                        {
-                                                            'name': 'Size',
-                                                            'values': [
-                                                                {
-                                                                    'value': 35,
-                                                                    'legendId': 1
-                                                                },
-                                                                {
-                                                                    'value': 41,
-                                                                    'legendId': 2
-                                                                }
+                                                            "title": [
+                                                                "<span class='metric'>{{name}} ({{x}})</span><span class='number'>{{y}}</span>"
                                                             ],
-                                                            'symbol': '34'
+                                                            "body": []
                                                         },
-                                                        {
-                                                            'name': 'Cup Size',
-                                                            'values': [
-                                                                {
-                                                                    'value': 30,
-                                                                    'legendId': 1
-                                                                },
-                                                                {
-                                                                    'value': 37,
-                                                                    'legendId': 2
-                                                                }
-                                                            ],
-                                                            'symbol': 'D'
-                                                        }
-                                                    ]
-                                                },
-                                                'salesStockAnalysis': {
-                                                    'Stock1': {
-                                                        'title': 'Sales & Stock Analysis',
-                                                        'name': 'Top',
-                                                        'value': 'Stock mix',
-                                                        'image': './assets/images/gViz/visualizations/bubbles/sportbrawhite.png',
-                                                        'number': '1'
-                                                    },
-                                                    'Stock2': {
-                                                        'title': 'Sales & Stock Analysis',
-                                                        'name': 'Top',
-                                                        'value': 'Stock mix',
-                                                        'image': './assets/images/gViz/visualizations/bubbles/sportbrawhite.png',
-                                                        'number': '2'
-                                                    },
-                                                    'Stock3': {
-                                                        'title': 'Sales & Stock Analysis',
-                                                        'name': 'Top',
-                                                        'value': 'Stock mix',
-                                                        'image': './assets/images/gViz/visualizations/bubbles/sportbrawhite.png',
-                                                        'number': '3'
-                                                    },
-                                                    'Sell1': {
-                                                        'title': 'Sales & Stock Analysis',
-                                                        'name': 'Top',
-                                                        'value': 'Sell Thru',
-                                                        'image': './assets/images/gViz/visualizations/bubbles/sportbrawhite.png',
-                                                        'number': '1'
-                                                    },
-                                                    'Sell2': {
-                                                        'title': 'Sales & Stock Analysis',
-                                                        'name': 'Top',
-                                                        'value': 'Sell Thru',
-                                                        'image': './assets/images/gViz/visualizations/bubbles/sportbrawhite.png',
-                                                        'number': '2'
-                                                    },
-                                                    'Sell3': {
-                                                        'title': 'Sales & Stock Analysis',
-                                                        'name': 'Top',
-                                                        'value': 'Sell Thru',
-                                                        'image': './assets/images/gViz/visualizations/bubbles/sportbrawhite.png',
-                                                        'number': '3'
+                                                        "y": {
+                                                            "title": "This is a sample title",
+                                                            "prefix": "",
+                                                            "sufix": "%",
+                                                            "format": ""
+                                                        },
+                                                        "x": {
+                                                            "title": "This is a sample title",
+                                                            "type": "number",
+                                                            "prefix": "Week ",
+                                                            "sufix": "",
+                                                            "format": ""
+                                                        },
+                                                        "data": [
+                                                            {
+                                                                "id": "planned",
+                                                                "name": "Planned",
+                                                                "color": "#57a6a1",
+                                                                "pointColor": "#166961",
+                                                                "values": [
+                                                                    {
+                                                                        "x": "30",
+                                                                        "y": 1
+                                                                    },
+                                                                    {
+                                                                        "x": "31",
+                                                                        "y": 4
+                                                                    },
+                                                                    {
+                                                                        "x": "32",
+                                                                        "y": 5
+                                                                    },
+                                                                    {
+                                                                        "x": "33",
+                                                                        "y": 9
+                                                                    },
+                                                                    {
+                                                                        "x": "34",
+                                                                        "y": 7
+                                                                    },
+                                                                    {
+                                                                        "x": "35",
+                                                                        "y": 1
+                                                                    },
+                                                                    {
+                                                                        "x": "36",
+                                                                        "y": 1
+                                                                    },
+                                                                    {
+                                                                        "x": "37",
+                                                                        "y": 7
+                                                                    }
+                                                                ]
+                                                            },
+                                                            {
+                                                                "id": "diwo-recommendation",
+                                                                "name": "Diwo Recommendation",
+                                                                "color": "#e52e2e",
+                                                                "strokeStyle": "dashed",
+                                                                "strokeWidth": 1,
+                                                                "pointColor": "#e30d12",
+                                                                "pointSize": 3,
+                                                                "values": [
+                                                                    {
+                                                                        "x": "30",
+                                                                        "y": 4
+                                                                    },
+                                                                    {
+                                                                        "x": "31",
+                                                                        "y": 3
+                                                                    },
+                                                                    {
+                                                                        "x": "32",
+                                                                        "y": 2
+                                                                    },
+                                                                    {
+                                                                        "x": "33",
+                                                                        "y": 14
+                                                                    },
+                                                                    {
+                                                                        "x": "34",
+                                                                        "y": 9
+                                                                    },
+                                                                    {
+                                                                        "x": "35",
+                                                                        "y": 7
+                                                                    },
+                                                                    {
+                                                                        "x": "36",
+                                                                        "y": 9
+                                                                    },
+                                                                    {
+                                                                        "x": "37",
+                                                                        "y": 3
+                                                                    }
+                                                                ]
+                                                            }
+                                                        ]
                                                     }
                                                 },
-                                                'mainProductBubble': {
-                                                    'image': './assets/images/gViz/visualizations/bubbles/sportbra.png',
-                                                    'title': 'Sport Bra',
-                                                    'name': 'Week 40'
+                                                "center": {
+                                                    "topTitle": "Assortment Optimization of",
+                                                    "topValue": "21%",
+                                                    "image": "/assets/images/gViz/visualizations/diwo-visual-vs-bubble-graph/bra.png",
+                                                    "bottomTitle": "Revenue Impact",
+                                                    "bottomValue": "$1.3M"
                                                 },
-                                                'attributeAnalysis': {
-                                                    'title': 'Attribute Analysis',
-                                                    'name': 'Top Trending',
-                                                    'image': './assets/images/gViz/visualizations/bubbles/arrow.png',
-                                                    'attrAnalysIco': './assets/images/gViz/visualizations/bubbles/attribute_analysis_icon-01.png',
-                                                    'attrLineUrl': './assets/images/gViz/visualizations/bubbles/attribute_analysis_lines.png',
-                                                    'attributes': [
-                                                        {
-                                                            'name': 'Teal (8Q)',
-                                                            'percent': 28,
-                                                            'symbol': 'circle',
-                                                            'color': '#7FB9AF'
+                                                "right": {
+                                                    "text": "Top Variations",
+                                                    "image": "/assets/images/gViz/visualizations/diwo-visual-vs-bubble-graph/bar-chart.png",
+                                                    "chartData": {
+                                                        "title": "Victoria's Secret - Bar Vertical with Brush",
+                                                        "legend": {
+                                                            "isVisible": true,
+                                                            "text": "{{group}}"
                                                         },
-                                                        {
-                                                            'name': 'Size',
-                                                            'percent': 41,
-                                                            'symbol': '34'
+                                                        "tooltip": {
+                                                            "hasImg": false,
+                                                            "title": [
+                                                                "{{name}}",
+                                                                "<span class='metric'>Contribution</span><span class='number'>{{x}}</span>",
+                                                                "<span class='metric'>Deviation</span><span class='number'>{{y}}</span>"
+                                                            ],
+                                                            "body": []
                                                         },
-                                                        {
-                                                            'name': 'Cup Size',
-                                                            'percent': 37,
-                                                            'symbol': 'D'
-                                                        }
-                                                    ]
-                                                },
-                                                'customerAnalysis': {
-                                                    'title': 'Customer Analysis',
-                                                    'name': 'Top Customer Base',
-                                                    'rangeMin': 35,
-                                                    'rangeMax': 45,
-                                                    'percent': 38,
-                                                    'map': null,
-                                                    'image': './assets/images/gViz/visualizations/bubbles/profile.png',
-                                                    'insights': {
-                                                        'endPos': {
-                                                            'value': '23-28',
-                                                            'title': 'Age'
+                                                        "x": {
+                                                            "title": "Class - Master Style",
+                                                            "prefix": "",
+                                                            "sufix": "%",
+                                                            "type": "string",
+                                                            "format": ""
                                                         },
-                                                        'midPos': {
-                                                            'value': '$80K-$110K',
-                                                            'title': 'Income'
+                                                        "y": {
+                                                            "title": "%",
+                                                            "prefix": "",
+                                                            "sufix": "%",
+                                                            "type": "number",
+                                                            "format": ""
                                                         },
-                                                        'startPos': {
-                                                            'title': 'Lifestyle',
-                                                            'values': [
-                                                                {
-                                                                    'name': 'Athletic'
-                                                                },
-                                                                {
-                                                                    'name': 'Fitness'
-                                                                }
-                                                            ]
-                                                        }
-                                                    },
-                                                    'values': [
-                                                        {
-                                                            'abbr': 'al',
-                                                            'value': 30
+                                                        "attrs": {
+                                                            "barWidth": 8,
+                                                            "wrapText": false
                                                         },
-                                                        {
-                                                            'abbr': 'az',
-                                                            'value': 5
-                                                        },
-                                                        {
-                                                            'abbr': 'ar',
-                                                            'value': 15
-                                                        },
-                                                        {
-                                                            'abbr': 'ca',
-                                                            'value': 24
-                                                        },
-                                                        {
-                                                            'abbr': 'co',
-                                                            'value': 13
-                                                        },
-                                                        {
-                                                            'abbr': 'ct',
-                                                            'value': 0
-                                                        },
-                                                        {
-                                                            'abbr': 'de',
-                                                            'value': 39
-                                                        },
-                                                        {
-                                                            'abbr': 'dc',
-                                                            'value': 28
-                                                        },
-                                                        {
-                                                            'abbr': 'fl',
-                                                            'value': 4
-                                                        },
-                                                        {
-                                                            'abbr': 'ga',
-                                                            'value': 29
-                                                        },
-                                                        {
-                                                            'abbr': 'hi',
-                                                            'value': 34
-                                                        },
-                                                        {
-                                                            'abbr': 'id',
-                                                            'value': 36
-                                                        },
-                                                        {
-                                                            'abbr': 'il',
-                                                            'value': 6
-                                                        },
-                                                        {
-                                                            'abbr': 'in',
-                                                            'value': 14
-                                                        },
-                                                        {
-                                                            'abbr': 'ia',
-                                                            'value': 5
-                                                        },
-                                                        {
-                                                            'abbr': 'ks',
-                                                            'value': 15
-                                                        },
-                                                        {
-                                                            'abbr': 'ky',
-                                                            'value': 0
-                                                        },
-                                                        {
-                                                            'abbr': 'la',
-                                                            'value': 36
-                                                        },
-                                                        {
-                                                            'abbr': 'me',
-                                                            'value': 2
-                                                        },
-                                                        {
-                                                            'abbr': 'md',
-                                                            'value': 27
-                                                        },
-                                                        {
-                                                            'abbr': 'ma',
-                                                            'value': 26
-                                                        },
-                                                        {
-                                                            'abbr': 'mi',
-                                                            'value': 38
-                                                        },
-                                                        {
-                                                            'abbr': 'mn',
-                                                            'value': 15
-                                                        },
-                                                        {
-                                                            'abbr': 'ms',
-                                                            'value': 36
-                                                        },
-                                                        {
-                                                            'abbr': 'mo',
-                                                            'value': 16
-                                                        },
-                                                        {
-                                                            'abbr': 'mt',
-                                                            'value': 15
-                                                        },
-                                                        {
-                                                            'abbr': 'ne',
-                                                            'value': 39
-                                                        },
-                                                        {
-                                                            'abbr': 'nv',
-                                                            'value': 18
-                                                        },
-                                                        {
-                                                            'abbr': 'nh',
-                                                            'value': 0
-                                                        },
-                                                        {
-                                                            'abbr': 'nj',
-                                                            'value': 20
-                                                        },
-                                                        {
-                                                            'abbr': 'nm',
-                                                            'value': 11
-                                                        },
-                                                        {
-                                                            'abbr': 'ny',
-                                                            'value': 39
-                                                        },
-                                                        {
-                                                            'abbr': 'nc',
-                                                            'value': 16
-                                                        },
-                                                        {
-                                                            'abbr': 'nd',
-                                                            'value': 17
-                                                        },
-                                                        {
-                                                            'abbr': 'oh',
-                                                            'value': 14
-                                                        },
-                                                        {
-                                                            'abbr': 'ok',
-                                                            'value': 15
-                                                        },
-                                                        {
-                                                            'abbr': 'or',
-                                                            'value': 31
-                                                        },
-                                                        {
-                                                            'abbr': 'pa',
-                                                            'value': 13
-                                                        },
-                                                        {
-                                                            'abbr': 'ri',
-                                                            'value': 14
-                                                        },
-                                                        {
-                                                            'abbr': 'sc',
-                                                            'value': 31
-                                                        },
-                                                        {
-                                                            'abbr': 'sd',
-                                                            'value': 10
-                                                        },
-                                                        {
-                                                            'abbr': 'tn',
-                                                            'value': 14
-                                                        },
-                                                        {
-                                                            'abbr': 'tx',
-                                                            'value': 11
-                                                        },
-                                                        {
-                                                            'abbr': 'ut',
-                                                            'value': 34
-                                                        },
-                                                        {
-                                                            'abbr': 'vt',
-                                                            'value': 23
-                                                        },
-                                                        {
-                                                            'abbr': 'va',
-                                                            'value': 34
-                                                        },
-                                                        {
-                                                            'abbr': 'wa',
-                                                            'value': 30
-                                                        },
-                                                        {
-                                                            'abbr': 'wv',
-                                                            'value': 7
-                                                        },
-                                                        {
-                                                            'abbr': 'wi',
-                                                            'value': 28
-                                                        },
-                                                        {
-                                                            'abbr': 'wy',
-                                                            'value': 10
-                                                        }
-                                                    ]
+                                                        "data": [
+                                                            {
+                                                                "x": "5",
+                                                                "name": "Date Bra PU",
+                                                                "group": "Shortage",
+                                                                "y": 5,
+                                                                "fill": "#e85e8f",
+                                                                "gradient": "#fd9e83",
+                                                                "stroke": "#b45276"
+                                                            },
+                                                            {
+                                                                "x": "19",
+                                                                "name": "PK LACE HIGH NECK PU",
+                                                                "group": "Shortage",
+                                                                "y": 19,
+                                                                "fill": "#e85e8f",
+                                                                "gradient": "#fd9e83",
+                                                                "stroke": "#b45276"
+                                                            },
+                                                            {
+                                                                "x": "25",
+                                                                "name": "Sp18724 Ultimate UL Halter",
+                                                                "group": "Shortage",
+                                                                "y": 25,
+                                                                "fill": "#e85e8f",
+                                                                "gradient": "#fd9e83",
+                                                                "stroke": "#b45276"
+                                                            },
+                                                            {
+                                                                "x": "35",
+                                                                "name": "19329 Exploded Floral Lace LL Bralette",
+                                                                "group": "Shortage",
+                                                                "y": 35,
+                                                                "fill": "#e85e8f",
+                                                                "gradient": "#fd9e83",
+                                                                "stroke": "#b45276"
+                                                            },
+                                                            {
+                                                                "x": "45",
+                                                                "name": "Sports Bra Demi LL",
+                                                                "group": "Shortage",
+                                                                "y": 45,
+                                                                "fill": "#e85e8f",
+                                                                "gradient": "#fd9e83",
+                                                                "stroke": "#b45276"
+                                                            },
+                                                            {
+                                                                "x": "50",
+                                                                "name": "WEW T-shirt and Cool",
+                                                                "group": "Shortage",
+                                                                "y": 50,
+                                                                "fill": "#e85e8f",
+                                                                "gradient": "#fd9e83",
+                                                                "stroke": "#b45276"
+                                                            },
+                                                            {
+                                                                "x": "-51",
+                                                                "name": "18789 Bonded Triangle Banded Bracelets",
+                                                                "group": "Negative Gap",
+                                                                "y": -51,
+                                                                "fill": "#7d6e8f",
+                                                                "gradient": "#bc97cd",
+                                                                "stroke": "#706784"
+                                                            },
+                                                            {
+                                                                "x": "-47",
+                                                                "name": "19328_DATE V-WIRE PU W/ VWIRE",
+                                                                "group": "Negative Gap",
+                                                                "y": -47,
+                                                                "fill": "#7d6e8f",
+                                                                "gradient": "#bc97cd",
+                                                                "stroke": "#706784"
+                                                            },
+                                                            {
+                                                                "x": "-31",
+                                                                "name": "18854_DATE EYELASH OPEN BACK",
+                                                                "group": "Negative Gap",
+                                                                "y": -31,
+                                                                "fill": "#7d6e8f",
+                                                                "gradient": "#bc97cd",
+                                                                "stroke": "#706784"
+                                                            },
+                                                            {
+                                                                "x": "-21",
+                                                                "name": "18453 Strappy Racerback UL Sport",
+                                                                "group": "Negative Gap",
+                                                                "y": -21,
+                                                                "fill": "#7d6e8f",
+                                                                "gradient": "#bc97cd",
+                                                                "stroke": "#706784"
+                                                            },
+                                                            {
+                                                                "x": "-13",
+                                                                "name": "18453 Strappy Racerback UL Sport",
+                                                                "group": "Negative Gap",
+                                                                "y": -13,
+                                                                "fill": "#7d6e8f",
+                                                                "gradient": "#bc97cd",
+                                                                "stroke": "#706784"
+                                                            },
+                                                            {
+                                                                "x": "-3",
+                                                                "name": "18453 Strappy Racerback UL Sport",
+                                                                "group": "Negative Gap",
+                                                                "y": -3,
+                                                                "fill": "#7d6e8f",
+                                                                "gradient": "#bc97cd",
+                                                                "stroke": "#706784"
+                                                            },
+                                                            {
+                                                                "x": "-22",
+                                                                "name": "18453 Strappy Racerback UL Sport",
+                                                                "group": "Negative Gap",
+                                                                "y": -3,
+                                                                "fill": "#7d6e8f",
+                                                                "gradient": "#bc97cd",
+                                                                "stroke": "#706784"
+                                                            },
+                                                            {
+                                                                "x": "-2",
+                                                                "name": "18453 Strappy Racerback UL Sport",
+                                                                "group": "Negative Gap",
+                                                                "y": -2,
+                                                                "fill": "#7d6e8f",
+                                                                "gradient": "#bc97cd",
+                                                                "stroke": "#706784"
+                                                            },
+                                                            {
+                                                                "x": "-23",
+                                                                "name": "18453 Strappy Racerback UL Sport",
+                                                                "group": "Negative Gap",
+                                                                "y": -3,
+                                                                "fill": "#7d6e8f",
+                                                                "gradient": "#bc97cd",
+                                                                "stroke": "#706784"
+                                                            },
+                                                            {
+                                                                "x": "-24",
+                                                                "name": "18453 Strappy Racerback UL Sport",
+                                                                "group": "Negative Gap",
+                                                                "y": -3,
+                                                                "fill": "#7d6e8f",
+                                                                "gradient": "#bc97cd",
+                                                                "stroke": "#706784"
+                                                            },
+                                                            {
+                                                                "x": "-25",
+                                                                "name": "18453 Strappy Racerback UL Sport",
+                                                                "group": "Negative Gap",
+                                                                "y": -3,
+                                                                "fill": "#7d6e8f",
+                                                                "gradient": "#bc97cd",
+                                                                "stroke": "#706784"
+                                                            }
+                                                        ]
+                                                    }
                                                 }
-                                            },
-                                            'layoutType': 'INITIAL'
+                                            }
                                         }
                                     }
                                 }
@@ -12952,11 +12888,14 @@ TruncatePipe = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_39__visuals_diwo_visual_image_cards_diwo_visual_image_cards_component__ = __webpack_require__("../../../../../src/app/shared/shareables/visuals/diwo-visual-image-cards/diwo-visual-image-cards.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_40__visuals_diwo_visual_simple_cards_diwo_visual_simple_cards_component__ = __webpack_require__("../../../../../src/app/shared/shareables/visuals/diwo-visual-simple-cards/diwo-visual-simple-cards.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_41__visuals_diwo_visual_accordian_list_diwo_visual_accordian_list_component__ = __webpack_require__("../../../../../src/app/shared/shareables/visuals/diwo-visual-accordian-list/diwo-visual-accordian-list.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_42__visuals_diwo_visual_grouped_vert_bar_graph_with_range_input_diwo_visual_grouped_vert_bar_graph_with_range_input_component__ = __webpack_require__("../../../../../src/app/shared/shareables/visuals/diwo-visual-grouped-vert-bar-graph-with-range-input/diwo-visual-grouped-vert-bar-graph-with-range-input.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_43__visuals_diwo_visual_data_sample_diwo_visual_data_sample_component__ = __webpack_require__("../../../../../src/app/shared/shareables/visuals/diwo-visual-data-sample/diwo-visual-data-sample.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_44__visuals_diwo_visual_pyramid_hori_graph_diwo_visual_pyramid_hori_graph_component__ = __webpack_require__("../../../../../src/app/shared/shareables/visuals/diwo-visual-pyramid-hori-graph/diwo-visual-pyramid-hori-graph.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_45__visuals_diwo_visual_vs_bar_vert_with_brush_diwo_visual_vs_bar_vert_with_brush_component__ = __webpack_require__("../../../../../src/app/shared/shareables/visuals/diwo-visual-vs-bar-vert-with-brush/diwo-visual-vs-bar-vert-with-brush.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_46__visuals_diwo_visual_vs_line_graph_with_draggable_points_diwo_visual_vs_line_graph_with_draggable_points_component__ = __webpack_require__("../../../../../src/app/shared/shareables/visuals/diwo-visual-vs-line-graph-with-draggable-points/diwo-visual-vs-line-graph-with-draggable-points.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_42__visuals_diwo_visual_top_three_list_diwo_visual_top_three_list_component__ = __webpack_require__("../../../../../src/app/shared/shareables/visuals/diwo-visual-top-three-list/diwo-visual-top-three-list.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_43__visuals_diwo_visual_grouped_vert_bar_graph_with_range_input_diwo_visual_grouped_vert_bar_graph_with_range_input_component__ = __webpack_require__("../../../../../src/app/shared/shareables/visuals/diwo-visual-grouped-vert-bar-graph-with-range-input/diwo-visual-grouped-vert-bar-graph-with-range-input.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_44__visuals_diwo_visual_data_sample_diwo_visual_data_sample_component__ = __webpack_require__("../../../../../src/app/shared/shareables/visuals/diwo-visual-data-sample/diwo-visual-data-sample.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_45__visuals_diwo_visual_pyramid_hori_graph_diwo_visual_pyramid_hori_graph_component__ = __webpack_require__("../../../../../src/app/shared/shareables/visuals/diwo-visual-pyramid-hori-graph/diwo-visual-pyramid-hori-graph.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_46__visuals_diwo_visual_vs_bar_vert_with_brush_diwo_visual_vs_bar_vert_with_brush_component__ = __webpack_require__("../../../../../src/app/shared/shareables/visuals/diwo-visual-vs-bar-vert-with-brush/diwo-visual-vs-bar-vert-with-brush.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_47__visuals_diwo_visual_vs_line_graph_with_draggable_points_diwo_visual_vs_line_graph_with_draggable_points_component__ = __webpack_require__("../../../../../src/app/shared/shareables/visuals/diwo-visual-vs-line-graph-with-draggable-points/diwo-visual-vs-line-graph-with-draggable-points.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_48__visuals_diwo_visual_image_cards_with_multiple_kpis_diwo_visual_image_cards_with_multiple_kpis_component__ = __webpack_require__("../../../../../src/app/shared/shareables/visuals/diwo-visual-image-cards-with-multiple-kpis/diwo-visual-image-cards-with-multiple-kpis.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_49__visuals_diwo_visual_vs_bubble_graph_diwo_visual_vs_bubble_graph_component__ = __webpack_require__("../../../../../src/app/shared/shareables/visuals/diwo-visual-vs-bubble-graph/diwo-visual-vs-bubble-graph.component.ts");
 /* unused harmony reexport DiwoVisualDoubleEntryTable */
 /* unused harmony reexport DiwoVisualProductsDonut */
 /* unused harmony reexport DiwoVisualPriceRangesPie */
@@ -12997,6 +12936,8 @@ TruncatePipe = __decorate([
 /* unused harmony reexport DiwoVisualPyramidHoriGraphComponent */
 /* unused harmony reexport DiwoVisualVsBarVertWithBrushComponent */
 /* unused harmony reexport DiwoVisualVsLineGraphWithDraggablePointsComponent */
+/* unused harmony reexport DiwoVisualImageCardsWithMultipleKpisComponent */
+/* unused harmony reexport DiwoVisualVsBubbleGraphComponent */
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -13010,6 +12951,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 // Visual components
+
+
+
 
 
 
@@ -13096,11 +13040,14 @@ var VisualList = [
     __WEBPACK_IMPORTED_MODULE_39__visuals_diwo_visual_image_cards_diwo_visual_image_cards_component__["a" /* DiwoVisualImageCardsComponent */],
     __WEBPACK_IMPORTED_MODULE_40__visuals_diwo_visual_simple_cards_diwo_visual_simple_cards_component__["a" /* DiwoVisualSimpleCardsComponent */],
     __WEBPACK_IMPORTED_MODULE_41__visuals_diwo_visual_accordian_list_diwo_visual_accordian_list_component__["a" /* DiwoVisualAccordianListComponent */],
-    __WEBPACK_IMPORTED_MODULE_42__visuals_diwo_visual_grouped_vert_bar_graph_with_range_input_diwo_visual_grouped_vert_bar_graph_with_range_input_component__["a" /* DiwoVisualGroupedVertBarGraphWithRangeInputComponent */],
-    __WEBPACK_IMPORTED_MODULE_43__visuals_diwo_visual_data_sample_diwo_visual_data_sample_component__["a" /* DiwoVisualDataSampleComponent */],
-    __WEBPACK_IMPORTED_MODULE_44__visuals_diwo_visual_pyramid_hori_graph_diwo_visual_pyramid_hori_graph_component__["a" /* DiwoVisualPyramidHoriGraphComponent */],
-    __WEBPACK_IMPORTED_MODULE_45__visuals_diwo_visual_vs_bar_vert_with_brush_diwo_visual_vs_bar_vert_with_brush_component__["a" /* DiwoVisualVsBarVertWithBrushComponent */],
-    __WEBPACK_IMPORTED_MODULE_46__visuals_diwo_visual_vs_line_graph_with_draggable_points_diwo_visual_vs_line_graph_with_draggable_points_component__["a" /* DiwoVisualVsLineGraphWithDraggablePointsComponent */]
+    __WEBPACK_IMPORTED_MODULE_42__visuals_diwo_visual_top_three_list_diwo_visual_top_three_list_component__["a" /* DiwoVisualTopThreeListComponent */],
+    __WEBPACK_IMPORTED_MODULE_43__visuals_diwo_visual_grouped_vert_bar_graph_with_range_input_diwo_visual_grouped_vert_bar_graph_with_range_input_component__["a" /* DiwoVisualGroupedVertBarGraphWithRangeInputComponent */],
+    __WEBPACK_IMPORTED_MODULE_44__visuals_diwo_visual_data_sample_diwo_visual_data_sample_component__["a" /* DiwoVisualDataSampleComponent */],
+    __WEBPACK_IMPORTED_MODULE_45__visuals_diwo_visual_pyramid_hori_graph_diwo_visual_pyramid_hori_graph_component__["a" /* DiwoVisualPyramidHoriGraphComponent */],
+    __WEBPACK_IMPORTED_MODULE_46__visuals_diwo_visual_vs_bar_vert_with_brush_diwo_visual_vs_bar_vert_with_brush_component__["a" /* DiwoVisualVsBarVertWithBrushComponent */],
+    __WEBPACK_IMPORTED_MODULE_47__visuals_diwo_visual_vs_line_graph_with_draggable_points_diwo_visual_vs_line_graph_with_draggable_points_component__["a" /* DiwoVisualVsLineGraphWithDraggablePointsComponent */],
+    __WEBPACK_IMPORTED_MODULE_48__visuals_diwo_visual_image_cards_with_multiple_kpis_diwo_visual_image_cards_with_multiple_kpis_component__["a" /* DiwoVisualImageCardsWithMultipleKpisComponent */],
+    __WEBPACK_IMPORTED_MODULE_49__visuals_diwo_visual_vs_bubble_graph_diwo_visual_vs_bubble_graph_component__["a" /* DiwoVisualVsBubbleGraphComponent */]
 ];
 var ShareableModule = ShareableModule_1 = (function () {
     function ShareableModule() {
@@ -13122,6 +13069,8 @@ ShareableModule = ShareableModule_1 = __decorate([
         providers: []
     })
 ], ShareableModule);
+
+
 
 
 
@@ -15709,10 +15658,137 @@ var _a, _b;
 
 /***/ }),
 
+/***/ "../../../../../src/app/shared/shareables/visuals/diwo-visual-image-cards-with-multiple-kpis/diwo-visual-image-cards-with-multiple-kpis.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"is-one-whole diwo-visual-image-cards-wrapper-with-multiple-kpis\" data-gViz-id='diwo-visual-image-cards-with-multiple-kpis'>\n  <div class=\"is-one-whole diwo-visual-image-cards-inner-wrapper\">\n    <div class=\"diwo-visual-image-cards-card\" *ngFor=\"let card of _data.data; let i = index;\">\n      <div class=\"card-number\" *ngIf=\"_data.index\">{{i+1}}</div>\n      <div class=\"card-image\" *ngIf=\"card.image && card.image.href && card.image.href !== ''\"\n        [style.background-color]=\"card.image.backgroundColor ? card.image.backgroundColor : '#FFF' \"\n        >\n        <img [src]=\"card.image.href\" />\n      </div>\n      <div class=\"card-title\" *ngIf=\"card.title\"\n        [style.background-color]=\"card.title.backgroundColor ? card.title.backgroundColor : '#FFF' \"\n        [style.color]=\"card.title.color ? card.title.color : '#FFF' \" >\n        {{card.title.text}}\n      </div>\n      <div class=\"card-body\" *ngFor=\"let cardBody of card.body;\"\n        [style.background-color]=\"cardBody.backgroundColor ? cardBody.backgroundColor : '#FFF' \"\n        [style.color]=\"cardBody.color ? cardBody.color : '#FFF' \"\n      >\n        <span *ngIf=\"cardBody.text\" class='card-body-text'>{{cardBody.text}}</span>\n        <span *ngIf=\"cardBody.value\" class='card-body-value'>{{cardBody.value}}</span>\n      </div>\n    </div>\n  </div>\n</div>\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/shared/shareables/visuals/diwo-visual-image-cards-with-multiple-kpis/diwo-visual-image-cards-with-multiple-kpis.component.scss":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".diwo-visual-image-cards-wrapper-with-multiple-kpis[data-gViz-id='diwo-visual-image-cards-with-multiple-kpis'] {\n  font-family: 'Yantramanav', sans-serif;\n  width: 100%;\n  height: auto;\n  background-color: #f4f4f4;\n  overflow-x: auto;\n  overflow-y: hidden;\n  padding-bottom: 20px; }\n  .diwo-visual-image-cards-wrapper-with-multiple-kpis[data-gViz-id='diwo-visual-image-cards-with-multiple-kpis'] .diwo-visual-image-cards-inner-wrapper {\n    height: auto;\n    padding: 0px 20px 20px;\n    margin: 0px auto; }\n    .diwo-visual-image-cards-wrapper-with-multiple-kpis[data-gViz-id='diwo-visual-image-cards-with-multiple-kpis'] .diwo-visual-image-cards-inner-wrapper .diwo-visual-image-cards-card {\n      width: 156px;\n      height: auto;\n      position: relative;\n      float: left;\n      margin-top: 20px;\n      margin-right: 20px; }\n      .diwo-visual-image-cards-wrapper-with-multiple-kpis[data-gViz-id='diwo-visual-image-cards-with-multiple-kpis'] .diwo-visual-image-cards-inner-wrapper .diwo-visual-image-cards-card:last-child {\n        margin-right: 0px; }\n      .diwo-visual-image-cards-wrapper-with-multiple-kpis[data-gViz-id='diwo-visual-image-cards-with-multiple-kpis'] .diwo-visual-image-cards-inner-wrapper .diwo-visual-image-cards-card .card-number {\n        position: absolute;\n        top: 0px;\n        left: 0px;\n        width: auto;\n        height: 16px;\n        font-size: 12px;\n        background-color: #6e6d6d;\n        color: #FFF;\n        padding: 2px 6px; }\n      .diwo-visual-image-cards-wrapper-with-multiple-kpis[data-gViz-id='diwo-visual-image-cards-with-multiple-kpis'] .diwo-visual-image-cards-inner-wrapper .diwo-visual-image-cards-card .card-image {\n        width: 100%;\n        height: auto;\n        padding: 5px 10px;\n        text-align: center; }\n        .diwo-visual-image-cards-wrapper-with-multiple-kpis[data-gViz-id='diwo-visual-image-cards-with-multiple-kpis'] .diwo-visual-image-cards-inner-wrapper .diwo-visual-image-cards-card .card-image img {\n          margin: 0px auto;\n          max-width: 70px; }\n      .diwo-visual-image-cards-wrapper-with-multiple-kpis[data-gViz-id='diwo-visual-image-cards-with-multiple-kpis'] .diwo-visual-image-cards-inner-wrapper .diwo-visual-image-cards-card .card-title {\n        width: 100%;\n        height: auto;\n        padding: 10px 15px;\n        text-align: center;\n        font-weight: lighter;\n        font-size: 12px; }\n      .diwo-visual-image-cards-wrapper-with-multiple-kpis[data-gViz-id='diwo-visual-image-cards-with-multiple-kpis'] .diwo-visual-image-cards-inner-wrapper .diwo-visual-image-cards-card .card-body {\n        width: 100%;\n        height: 30px;\n        padding: 0px 15px;\n        text-align: center;\n        text-transform: uppercase; }\n        .diwo-visual-image-cards-wrapper-with-multiple-kpis[data-gViz-id='diwo-visual-image-cards-with-multiple-kpis'] .diwo-visual-image-cards-inner-wrapper .diwo-visual-image-cards-card .card-body .card-body-text {\n          height: 30px;\n          line-height: 32px;\n          float: left;\n          font-size: 10px;\n          max-width: 60%;\n          white-space: nowrap;\n          overflow: hidden;\n          text-overflow: ellipsis;\n          display: block;\n          font-weight: lighter; }\n        .diwo-visual-image-cards-wrapper-with-multiple-kpis[data-gViz-id='diwo-visual-image-cards-with-multiple-kpis'] .diwo-visual-image-cards-inner-wrapper .diwo-visual-image-cards-card .card-body .card-body-value {\n          height: 30px;\n          line-height: 30px;\n          float: right;\n          text-weight: bold;\n          font-family: 'Bebas';\n          letter-spacing: 0.7px;\n          word-spacing: 2px;\n          font-size: 11px;\n          max-width: 30%;\n          white-space: nowrap;\n          overflow: hidden;\n          text-overflow: ellipsis;\n          display: block;\n          text-align: right; }\n", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/shared/shareables/visuals/diwo-visual-image-cards-with-multiple-kpis/diwo-visual-image-cards-with-multiple-kpis.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DiwoVisualImageCardsWithMultipleKpisComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__("../../../platform-browser/@angular/platform-browser.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_common__ = __webpack_require__("../../../common/@angular/common.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__base_visual__ = __webpack_require__("../../../../../src/app/shared/shareables/visuals/base-visual.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_d3__ = __webpack_require__("../../../../d3/build/d3.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_d3___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_d3__);
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+// gViz Library
+
+var gViz = __webpack_require__("../../../../../src/assets/js/gViz/_init.js");
+var DiwoVisualImageCardsWithMultipleKpisComponent = (function (_super) {
+    __extends(DiwoVisualImageCardsWithMultipleKpisComponent, _super);
+    // Main constructor
+    function DiwoVisualImageCardsWithMultipleKpisComponent(element, _location, _sanitizer) {
+        var _this = _super.call(this) || this;
+        _this.element = element;
+        _this._location = _location;
+        _this._sanitizer = _sanitizer;
+        return _this;
+    }
+    /* Methods */
+    DiwoVisualImageCardsWithMultipleKpisComponent.prototype.update = function () {
+        // Store this
+        var self = this;
+        // Get possible erros
+        try {
+            // // Testing only
+            // d3.json("assets/data/diwo-visual-image-cards-with-multiple-kpis.sample.json", (err, data) => {
+            //   self._data = data;
+            // Draw visualization
+            self.draw();
+        }
+        catch (err) {
+            console.log(err);
+        }
+    };
+    // When container resizes, redraw visualization
+    DiwoVisualImageCardsWithMultipleKpisComponent.prototype.resize = function () {
+        this.draw();
+    };
+    DiwoVisualImageCardsWithMultipleKpisComponent.prototype.draw = function () {
+        // Store this
+        var self = this;
+        // Get possible erros
+        try {
+            // If there is data
+            if (self._data != null && self._data.data != null) {
+                // Set inner wrapper width
+                __WEBPACK_IMPORTED_MODULE_4_d3__["select"](self.element.nativeElement.querySelector(".diwo-visual-image-cards-inner-wrapper"))
+                    .style('width', (22 + self._data.data.length * 177) + "px");
+            }
+        }
+        catch (err) {
+            console.log(err);
+        }
+    };
+    // On component init
+    DiwoVisualImageCardsWithMultipleKpisComponent.prototype.ngOnInit = function () {
+        this.update();
+    };
+    // On component changes
+    DiwoVisualImageCardsWithMultipleKpisComponent.prototype.ngOnChanges = function () {
+        this.update();
+    };
+    return DiwoVisualImageCardsWithMultipleKpisComponent;
+}(__WEBPACK_IMPORTED_MODULE_3__base_visual__["a" /* BaseVisual */]));
+DiwoVisualImageCardsWithMultipleKpisComponent = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["o" /* Component */])({
+        selector: 'diwo-visual-image-cards-with-multiple-kpis',
+        template: __webpack_require__("../../../../../src/app/shared/shareables/visuals/diwo-visual-image-cards-with-multiple-kpis/diwo-visual-image-cards-with-multiple-kpis.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/shared/shareables/visuals/diwo-visual-image-cards-with-multiple-kpis/diwo-visual-image-cards-with-multiple-kpis.component.scss")]
+    }),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["v" /* ElementRef */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["v" /* ElementRef */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__angular_common__["g" /* Location */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_common__["g" /* Location */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["c" /* DomSanitizer */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["c" /* DomSanitizer */]) === "function" && _c || Object])
+], DiwoVisualImageCardsWithMultipleKpisComponent);
+
+var _a, _b, _c;
+//# sourceMappingURL=diwo-visual-image-cards-with-multiple-kpis.component.js.map
+
+/***/ }),
+
 /***/ "../../../../../src/app/shared/shareables/visuals/diwo-visual-image-cards/diwo-visual-image-cards.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"is-one-whole diwo-visual-image-cards-wrapper\" data-gViz-id='diwo-visual-image-cards'>\n  <div class=\"is-one-whole diwo-visual-image-cards-inner-wrapper\">\n    <div class=\"diwo-visual-image-cards-card\" *ngFor=\"let card of _data.data; let i = index;\">\n      <div class=\"card-number\" *ngIf=\"_data.index\">{{i}}</div>\n      <div class=\"card-image\" *ngIf=\"card.image && card.image.href && card.image.href !== ''\"\n        [style.background-color]=\"card.image.backgroundColor ? card.image.backgroundColor : '#FFF' \"\n        >\n        <img [src]=\"card.image.href\" />\n      </div>\n      <div class=\"card-title\" *ngIf=\"card.title\"\n        [style.background-color]=\"card.title.backgroundColor ? card.title.backgroundColor : '#FFF' \"\n        [style.color]=\"card.title.color ? card.title.color : '#FFF' \" >\n        {{card.title.text}}\n      </div>\n      <div class=\"card-body\" *ngIf=\"card.body\"\n        [style.background-color]=\"card.body.backgroundColor ? card.body.backgroundColor : '#FFF' \"\n        [style.color]=\"card.body.color ? card.body.color : '#FFF' \"\n      >\n        {{card.body.text}}\n      </div>\n    </div>\n  </div>\n</div>\n"
+module.exports = "<div class=\"is-one-whole diwo-visual-image-cards-wrapper\" data-gViz-id='diwo-visual-image-cards'>\n  <div class=\"is-one-whole diwo-visual-image-cards-inner-wrapper\">\n    <div class=\"diwo-visual-image-cards-card\" *ngFor=\"let card of _data.data; let i = index;\">\n      <div class=\"card-number\" *ngIf=\"_data.index\">{{i+1}}</div>\n      <div class=\"card-image\" *ngIf=\"card.image && card.image.href && card.image.href !== ''\"\n        [style.background-color]=\"card.image.backgroundColor ? card.image.backgroundColor : '#FFF' \"\n        >\n        <img [src]=\"card.image.href\" />\n      </div>\n      <div class=\"card-title\" *ngIf=\"card.title\"\n        [style.background-color]=\"card.title.backgroundColor ? card.title.backgroundColor : '#FFF' \"\n        [style.color]=\"card.title.color ? card.title.color : '#FFF' \" >\n        {{card.title.text}}\n      </div>\n      <div class=\"card-body\" *ngIf=\"card.body\"\n        [style.background-color]=\"card.body.backgroundColor ? card.body.backgroundColor : '#FFF' \"\n        [style.color]=\"card.body.color ? card.body.color : '#FFF' \"\n      >\n        {{card.body.text}}\n      </div>\n    </div>\n  </div>\n</div>\n"
 
 /***/ }),
 
@@ -19332,6 +19408,104 @@ DiwoVisualTopChangeList = __decorate([
 
 /***/ }),
 
+/***/ "../../../../../src/app/shared/shareables/visuals/diwo-visual-top-three-list/diwo-visual-top-three-list.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div *ngIf=\"_data\" class=\"gViz-outer-wrapper is-one-whole is-one-whole-tall\" data-gViz-id='diwo-visual-top-three-list' (resize)=\"resize()\">\n  <div class=' is-one-whole is-relative'>\n      <p class=\"has-pd-hori-normal has-pd-vert-normal-large layout-row layout--space-between-center\">{{_data.data.title}} </p>\n      <div>\n        <p (click)=\"ask(item.text)\" class=\"bd-light bd-shade-2 has-pd-hori-normal has-bg-shade-1 has-pd-vert-extra-small pink-background-on-hover has-cursor {{!last ? 'has-bd-bottom' : ''}} {{first ? 'has-bd-top' : ''}}\" *ngFor=\"let item of _data.data.items; let i = index; let first = first; let last=last;\">\n          {{ (_data.showNumbers || _data.showNumbers === null ? i + 1 + '. ': '') + item.text}}</p>\n      </div>\n  </div>\n</div>\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/shared/shareables/visuals/diwo-visual-top-three-list/diwo-visual-top-three-list.component.scss":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "[data-gViz-id='diwo-visual-top-three-list'] .accordian-wrapper {\n  overflow: hidden; }\n\n.pink-background-on-hover:hover {\n  background-color: rgba(241, 213, 224, 0.73); }\n", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/shared/shareables/visuals/diwo-visual-top-three-list/diwo-visual-top-three-list.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DiwoVisualTopThreeListComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ui_ask_messages_ask_message_list__ = __webpack_require__("../../../../../src/app/shared/ui/ask-messages/ask-message-list.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__base_visual__ = __webpack_require__("../../../../../src/app/shared/shareables/visuals/base-visual.ts");
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var DiwoVisualTopThreeListComponent = (function (_super) {
+    __extends(DiwoVisualTopThreeListComponent, _super);
+    function DiwoVisualTopThreeListComponent(_AskMessagesList) {
+        var _this = _super.call(this) || this;
+        _this._AskMessagesList = _AskMessagesList;
+        return _this;
+    }
+    DiwoVisualTopThreeListComponent.prototype.update = function () {
+        var self = this;
+        try {
+            // // Testing only
+            // d3.json("assets/data/diwo-visual-top-three-list.sample.json", (err, data) => {
+            //   self._data = data;
+            self.draw();
+        }
+        catch (err) {
+            console.log(err);
+        }
+    };
+    DiwoVisualTopThreeListComponent.prototype.draw = function () { };
+    DiwoVisualTopThreeListComponent.prototype.resize = function () {
+        this.draw();
+    };
+    DiwoVisualTopThreeListComponent.prototype.ngOnInit = function () {
+        this.update();
+    };
+    DiwoVisualTopThreeListComponent.prototype.ngOnChanges = function () {
+        this.update();
+    };
+    DiwoVisualTopThreeListComponent.prototype.ask = function (text) {
+        this._AskMessagesList.postMessage(text);
+    };
+    return DiwoVisualTopThreeListComponent;
+}(__WEBPACK_IMPORTED_MODULE_2__base_visual__["a" /* BaseVisual */]));
+DiwoVisualTopThreeListComponent = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["o" /* Component */])({
+        selector: 'diwo-visual-top-three-list',
+        template: __webpack_require__("../../../../../src/app/shared/shareables/visuals/diwo-visual-top-three-list/diwo-visual-top-three-list.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/shared/shareables/visuals/diwo-visual-top-three-list/diwo-visual-top-three-list.component.scss")],
+    }),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__ui_ask_messages_ask_message_list__["a" /* AskMessagesList */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__ui_ask_messages_ask_message_list__["a" /* AskMessagesList */]) === "function" && _a || Object])
+], DiwoVisualTopThreeListComponent);
+
+var _a;
+//# sourceMappingURL=diwo-visual-top-three-list.component.js.map
+
+/***/ }),
+
 /***/ "../../../../../src/app/shared/shareables/visuals/diwo-visual-vs-bar-vert-with-brush/diwo-visual-vs-bar-vert-with-brush.component.html":
 /***/ (function(module, exports) {
 
@@ -19347,7 +19521,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, ":host {\n  min-height: 300px;\n  display: block; }\n\n.gViz-outer-wrapper[data-gViz-id='diwo-visual-vs-bar-vert-with-brush'] {\n  min-height: 300px;\n  min-width: 350px; }\n  .gViz-outer-wrapper[data-gViz-id='diwo-visual-vs-bar-vert-with-brush'] .gViz-inner-wrapper {\n    height: 100%;\n    position: absolute;\n    top: 0px;\n    left: 0px; }\n", ""]);
+exports.push([module.i, ":host {\n  min-height: 200px;\n  display: block; }\n\n.gViz-outer-wrapper[data-gViz-id='diwo-visual-vs-bar-vert-with-brush'] {\n  min-height: 200px;\n  min-width: 350px; }\n  .gViz-outer-wrapper[data-gViz-id='diwo-visual-vs-bar-vert-with-brush'] .gViz-inner-wrapper {\n    height: 100%;\n    position: absolute;\n    top: 0px;\n    left: 0px; }\n", ""]);
 
 // exports
 
@@ -19390,10 +19564,18 @@ var DiwoVisualVsBarVertWithBrushComponent = (function (_super) {
         var _this = _super.call(this) || this;
         _this.element = element;
         _this._location = _location;
-        _this._onHover = function (d) { console.log("hover", d); };
-        _this._onClick = function (d) { console.log("click", d); };
+        /* Output Event emitters */
+        _this.onHovered = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["x" /* EventEmitter */]();
+        _this.onClicked = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["x" /* EventEmitter */]();
         return _this;
     }
+    Object.defineProperty(DiwoVisualVsBarVertWithBrushComponent.prototype, "data", {
+        // Inputs
+        set: function (value) { this._data = value; },
+        enumerable: true,
+        configurable: true
+    });
+    ;
     /* Methods */
     DiwoVisualVsBarVertWithBrushComponent.prototype.update = function () {
         // Store this
@@ -19421,8 +19603,8 @@ var DiwoVisualVsBarVertWithBrushComponent = (function (_super) {
                 ._var(self._vis)
                 .container(self.element.nativeElement.querySelector(".gViz-inner-wrapper"))
                 .data(JSON.parse(JSON.stringify(self._data)))
-                .onHover(self._onHover)
-                .onClick(self._onClick)
+                .onHover(function (d) { self.onHovered.next({ component: self, target: d }); })
+                .onClick(function (d) { self.onClicked.next({ component: self, target: d }); })
                 .run();
         }
         catch (err) {
@@ -19444,13 +19626,18 @@ var DiwoVisualVsBarVertWithBrushComponent = (function (_super) {
     return DiwoVisualVsBarVertWithBrushComponent;
 }(__WEBPACK_IMPORTED_MODULE_2__base_visual__["a" /* BaseVisual */]));
 __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["F" /* Input */])('onHover'),
-    __metadata("design:type", Object)
-], DiwoVisualVsBarVertWithBrushComponent.prototype, "_onHover", void 0);
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["F" /* Input */])('data'),
+    __metadata("design:type", Object),
+    __metadata("design:paramtypes", [Object])
+], DiwoVisualVsBarVertWithBrushComponent.prototype, "data", null);
 __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["F" /* Input */])('onClick'),
-    __metadata("design:type", Object)
-], DiwoVisualVsBarVertWithBrushComponent.prototype, "_onClick", void 0);
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["U" /* Output */])(),
+    __metadata("design:type", typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["x" /* EventEmitter */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["x" /* EventEmitter */]) === "function" && _a || Object)
+], DiwoVisualVsBarVertWithBrushComponent.prototype, "onHovered", void 0);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["U" /* Output */])(),
+    __metadata("design:type", typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["x" /* EventEmitter */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["x" /* EventEmitter */]) === "function" && _b || Object)
+], DiwoVisualVsBarVertWithBrushComponent.prototype, "onClicked", void 0);
 DiwoVisualVsBarVertWithBrushComponent = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["o" /* Component */])({
         selector: 'diwo-visual-vs-bar-vert-with-brush',
@@ -19461,11 +19648,146 @@ DiwoVisualVsBarVertWithBrushComponent = __decorate([
             'style': 'width: 100%; height: 100%;'
         }
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["v" /* ElementRef */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["v" /* ElementRef */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_common__["g" /* Location */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_common__["g" /* Location */]) === "function" && _b || Object])
+    __metadata("design:paramtypes", [typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["v" /* ElementRef */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["v" /* ElementRef */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1__angular_common__["g" /* Location */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_common__["g" /* Location */]) === "function" && _d || Object])
 ], DiwoVisualVsBarVertWithBrushComponent);
 
-var _a, _b;
+var _a, _b, _c, _d;
 //# sourceMappingURL=diwo-visual-vs-bar-vert-with-brush.component.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/shared/shareables/visuals/diwo-visual-vs-bubble-graph/diwo-visual-vs-bubble-graph.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"gViz-outer-wrapper is-one-whole is-one-whole-tall is-absolute\" data-gViz-id='diwo-visual-vs-bubble-graph' (resize)=\"resize()\">\n\n  <!-- Bubbles -->\n  <div class=\"bubble-element center-bubble\">\n    <div class='top-title'>{{_data.data.center.topTitle}}</div>\n    <div class='top-value'>{{_data.data.center.topValue}}</div>\n    <div class='center-image'><img src=\"{{_data.data.center.image}}\" /></div>\n    <div class='bottom-title'>{{_data.data.center.bottomTitle}}</div>\n    <div class='bottom-value'>{{_data.data.center.bottomValue}}</div>\n  </div>\n  <div class=\"bubble-element right-bubble\" (mouseenter)=\"mouseEnter('right-bubble')\" (mouseleave)=\"mouseEnter(null)\">\n    <div class='text'>{{_data.data.right.text}}</div>\n    <div *ngIf=\"_isExpanded != 'right-bubble'\" class='image'><img src=\"{{_data.data.right.image}}\" /></div>\n    <div class='chart'>\n      <span class='loading' *ngIf=\"_isVisualExpanded != 'right-bubble'\">Loading visualization...</span>\n      <diwo-visual-vs-bar-vert-with-brush *ngIf=\"_isVisualExpanded == 'right-bubble'\" [data]=\"_data.data.right.chartData\"></diwo-visual-vs-bar-vert-with-brush>\n    </div>\n    <div class='note'>Click to view details</div>\n  </div>\n  <div class=\"bubble-element left-top-bubble\" (mouseenter)=\"mouseEnter('left-top-bubble')\" (mouseleave)=\"mouseEnter(null)\">\n    <div class='text'>{{_data.data.topLeft.text}}</div>\n    <div *ngIf=\"_isExpanded != 'left-top-bubble'\" class='image'><img src=\"{{_data.data.topLeft.image}}\" /></div>\n    <div class='chart'  *ngIf=\"_isVisualExpanded == 'left-top-bubble'\">\n      <div class='chart-row' *ngFor=\"let item of _data.data.topLeft.chartData.data;\">\n        <span class=\"chart-label\">{{item.label}}</span>\n        <span class=\"chart-text\">{{item.text}}</span>\n      </div>\n    </div>\n  </div>\n  <div class=\"bubble-element left-bottom-bubble\" (mouseenter)=\"mouseEnter('left-bottom-bubble')\" (mouseleave)=\"mouseEnter(null)\">\n    <div class='text'>{{_data.data.bottomLeft.text}}</div>\n    <div *ngIf=\"_isExpanded != 'left-bottom-bubble'\" class='image'><img src=\"{{_data.data.bottomLeft.image}}\" /></div>\n    <div class='chart'>\n      <span class='loading' *ngIf=\"_isVisualExpanded != 'left-bottom-bubble'\">Loading visualization...</span>\n      <diwo-visual-vs-line-graph-with-draggable-points *ngIf=\"_isVisualExpanded == 'left-bottom-bubble'\" [data]=\"_data.data.bottomLeft.chartData\"></diwo-visual-vs-line-graph-with-draggable-points>\n    </div>\n  </div>\n\n  <!-- Bubbles connectors (lines) -->\n  <div class='bubble-element center-right-line'></div>\n  <div class='bubble-element left-top-line'></div>\n  <div class='bubble-element left-bottom-line'></div>\n\n  <!-- Background grid and bubbles -->\n  <div class='grid-background pink'></div>\n  <div class=\"background-bubble\" data-id='1'></div>\n  <div class=\"background-bubble\" data-id='2'></div>\n  <div class=\"background-bubble\" data-id='3'></div>\n  <div class=\"background-bubble\" data-id='4'></div>\n  <div class=\"background-bubble\" data-id='5'></div>\n  <div class=\"background-bubble\" data-id='6'></div>\n  <div class=\"background-bubble\" data-id='7'></div>\n  <div class=\"background-bubble\" data-id='8'></div>\n  <div class=\"background-bubble\" data-id='9'></div>\n  <div class=\"background-bubble\" data-id='10'></div>\n</div>\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/shared/shareables/visuals/diwo-visual-vs-bubble-graph/diwo-visual-vs-bubble-graph.component.scss":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ":host {\n  min-height: 300px;\n  display: block; }\n\n.gViz-outer-wrapper[data-gViz-id='diwo-visual-vs-bubble-graph'] {\n  font-family: 'Yantramanav', sans-serif;\n  min-height: 300px;\n  min-width: 350px;\n  overflow: hidden; }\n  .gViz-outer-wrapper[data-gViz-id='diwo-visual-vs-bubble-graph'] .gViz-inner-wrapper {\n    height: 100%;\n    position: absolute;\n    top: 0px;\n    left: 0px; }\n  .gViz-outer-wrapper[data-gViz-id='diwo-visual-vs-bubble-graph'] .grid-background {\n    top: 0px;\n    left: 0px;\n    width: 100%;\n    height: 100%; }\n  .gViz-outer-wrapper[data-gViz-id='diwo-visual-vs-bubble-graph'] .background-bubble {\n    background: #fdf5f9;\n    opacity: 0.7;\n    position: absolute;\n    z-index: 1002; }\n    .gViz-outer-wrapper[data-gViz-id='diwo-visual-vs-bubble-graph'] .background-bubble[data-id='1'] {\n      width: 70px;\n      height: 70px;\n      border-radius: 35px;\n      top: calc(50% - 125px);\n      left: calc(50% - 60px); }\n    .gViz-outer-wrapper[data-gViz-id='diwo-visual-vs-bubble-graph'] .background-bubble[data-id='2'] {\n      width: 45px;\n      height: 45px;\n      border-radius: 25px;\n      top: calc(50% - 105px);\n      left: calc(50% + 70px); }\n    .gViz-outer-wrapper[data-gViz-id='diwo-visual-vs-bubble-graph'] .background-bubble[data-id='3'] {\n      width: 70px;\n      height: 70px;\n      border-radius: 35px;\n      top: calc(50% - 40px);\n      left: calc(50% + 50px); }\n    .gViz-outer-wrapper[data-gViz-id='diwo-visual-vs-bubble-graph'] .background-bubble[data-id='4'] {\n      width: 45px;\n      height: 45px;\n      border-radius: 25px;\n      top: calc(50% + 30px);\n      left: calc(50% + 125px); }\n    .gViz-outer-wrapper[data-gViz-id='diwo-visual-vs-bubble-graph'] .background-bubble[data-id='5'] {\n      width: 45px;\n      height: 45px;\n      border-radius: 25px;\n      top: calc(50% + 75px);\n      left: calc(50% + 65px); }\n    .gViz-outer-wrapper[data-gViz-id='diwo-visual-vs-bubble-graph'] .background-bubble[data-id='6'] {\n      width: 45px;\n      height: 45px;\n      border-radius: 25px;\n      top: calc(50% + 65px);\n      left: calc(50% - 35px); }\n    .gViz-outer-wrapper[data-gViz-id='diwo-visual-vs-bubble-graph'] .background-bubble[data-id='7'] {\n      width: 70px;\n      height: 70px;\n      border-radius: 35px;\n      top: calc(50% + 30px);\n      left: calc(50% - 125px); }\n    .gViz-outer-wrapper[data-gViz-id='diwo-visual-vs-bubble-graph'] .background-bubble[data-id='8'] {\n      width: 60px;\n      height: 60px;\n      border-radius: 30px;\n      top: calc(50% - 3px);\n      left: calc(50% - 170px); }\n    .gViz-outer-wrapper[data-gViz-id='diwo-visual-vs-bubble-graph'] .background-bubble[data-id='9'] {\n      width: 30px;\n      height: 30px;\n      border-radius: 15px;\n      top: calc(50% - 40px);\n      left: calc(50% - 230px); }\n    .gViz-outer-wrapper[data-gViz-id='diwo-visual-vs-bubble-graph'] .background-bubble[data-id='10'] {\n      width: 45px;\n      height: 45px;\n      border-radius: 25px;\n      top: calc(50% - 85px);\n      left: calc(50% - 145px); }\n  .gViz-outer-wrapper[data-gViz-id='diwo-visual-vs-bubble-graph'] .center-bubble {\n    background: #F6B7D0;\n    position: absolute;\n    top: calc(50% - 85px);\n    left: calc(50% - 85px);\n    z-index: 1004;\n    width: 170px;\n    height: 170px;\n    border-radius: 85px; }\n    .gViz-outer-wrapper[data-gViz-id='diwo-visual-vs-bubble-graph'] .center-bubble .top-title, .gViz-outer-wrapper[data-gViz-id='diwo-visual-vs-bubble-graph'] .center-bubble .bottom-title {\n      width: 90px;\n      height: 30px;\n      margin: 15px auto 0px;\n      font-size: 11px;\n      font-weight: lighter;\n      color: #fdf9fb;\n      overflow: hidden;\n      text-align: center; }\n    .gViz-outer-wrapper[data-gViz-id='diwo-visual-vs-bubble-graph'] .center-bubble .top-value, .gViz-outer-wrapper[data-gViz-id='diwo-visual-vs-bubble-graph'] .center-bubble .bottom-value {\n      width: 90px;\n      height: auto;\n      margin: 0px auto;\n      text-align: center;\n      color: #FFF;\n      font-size: 15px;\n      font-weight: normal;\n      overflow: hidden;\n      text-overflow: ellipsis;\n      white-space: nowrap;\n      font-family: 'Bebas'; }\n    .gViz-outer-wrapper[data-gViz-id='diwo-visual-vs-bubble-graph'] .center-bubble .center-image {\n      width: 90px;\n      height: 45px;\n      border-top: 1px solid #fceaf2;\n      border-bottom: 1px solid #fceaf2;\n      margin: 7px auto;\n      padding-top: 6px;\n      text-align: center; }\n      .gViz-outer-wrapper[data-gViz-id='diwo-visual-vs-bubble-graph'] .center-bubble .center-image img {\n        max-width: 90px;\n        height: 30px; }\n    .gViz-outer-wrapper[data-gViz-id='diwo-visual-vs-bubble-graph'] .center-bubble .bottom-title {\n      margin: 8px auto 2px;\n      height: auto;\n      overflow: hidden;\n      text-overflow: ellipsis;\n      white-space: nowrap; }\n  .gViz-outer-wrapper[data-gViz-id='diwo-visual-vs-bubble-graph'] .right-bubble {\n    padding-top: 20px;\n    background: #FFF;\n    position: absolute;\n    top: calc(50% - 53px);\n    left: calc(50% + 120px);\n    z-index: 1005;\n    width: 106px;\n    height: 106px;\n    border-radius: 53px;\n    border: 1px solid #e52134; }\n  .gViz-outer-wrapper[data-gViz-id='diwo-visual-vs-bubble-graph'] .left-top-bubble {\n    padding-top: 15px;\n    background: #FFF;\n    position: absolute;\n    top: calc(50% - 110px);\n    left: calc(50% - 200px);\n    z-index: 1005;\n    width: 80px;\n    height: 80px;\n    border-radius: 40px;\n    border: 1px solid #e52134; }\n  .gViz-outer-wrapper[data-gViz-id='diwo-visual-vs-bubble-graph'] .left-bottom-bubble {\n    padding-top: 20px;\n    background: #FFF;\n    position: absolute;\n    top: calc(50% + 20px);\n    left: calc(50% - 210px);\n    z-index: 1005;\n    width: 100px;\n    height: 100px;\n    border-radius: 50px;\n    border: 1px solid #e52134; }\n  .gViz-outer-wrapper[data-gViz-id='diwo-visual-vs-bubble-graph'] .left-top-bubble, .gViz-outer-wrapper[data-gViz-id='diwo-visual-vs-bubble-graph'] .left-bottom-bubble, .gViz-outer-wrapper[data-gViz-id='diwo-visual-vs-bubble-graph'] .right-bubble {\n    transition: all 0.7s; }\n    .gViz-outer-wrapper[data-gViz-id='diwo-visual-vs-bubble-graph'] .left-top-bubble .text, .gViz-outer-wrapper[data-gViz-id='diwo-visual-vs-bubble-graph'] .left-top-bubble .note, .gViz-outer-wrapper[data-gViz-id='diwo-visual-vs-bubble-graph'] .left-bottom-bubble .text, .gViz-outer-wrapper[data-gViz-id='diwo-visual-vs-bubble-graph'] .left-bottom-bubble .note, .gViz-outer-wrapper[data-gViz-id='diwo-visual-vs-bubble-graph'] .right-bubble .text, .gViz-outer-wrapper[data-gViz-id='diwo-visual-vs-bubble-graph'] .right-bubble .note {\n      transition: all 0.7s;\n      width: 50px;\n      max-height: 25px;\n      margin: 0px auto;\n      font-size: 10px;\n      font-weight: lighter;\n      color: #fa6ec6;\n      overflow: hidden;\n      text-align: center; }\n    .gViz-outer-wrapper[data-gViz-id='diwo-visual-vs-bubble-graph'] .left-top-bubble .note, .gViz-outer-wrapper[data-gViz-id='diwo-visual-vs-bubble-graph'] .left-bottom-bubble .note, .gViz-outer-wrapper[data-gViz-id='diwo-visual-vs-bubble-graph'] .right-bubble .note {\n      opacity: 0; }\n    .gViz-outer-wrapper[data-gViz-id='diwo-visual-vs-bubble-graph'] .left-top-bubble .image, .gViz-outer-wrapper[data-gViz-id='diwo-visual-vs-bubble-graph'] .left-bottom-bubble .image, .gViz-outer-wrapper[data-gViz-id='diwo-visual-vs-bubble-graph'] .right-bubble .image {\n      transition: all 0.7s;\n      height: 30px;\n      width: 30px;\n      margin: 0px auto;\n      margin-top: 5px;\n      text-align: center; }\n      .gViz-outer-wrapper[data-gViz-id='diwo-visual-vs-bubble-graph'] .left-top-bubble .image img, .gViz-outer-wrapper[data-gViz-id='diwo-visual-vs-bubble-graph'] .left-bottom-bubble .image img, .gViz-outer-wrapper[data-gViz-id='diwo-visual-vs-bubble-graph'] .right-bubble .image img {\n        margin: 0px auto;\n        text-align: center;\n        max-height: 30px;\n        max-width: 30px; }\n    .gViz-outer-wrapper[data-gViz-id='diwo-visual-vs-bubble-graph'] .left-top-bubble .chart, .gViz-outer-wrapper[data-gViz-id='diwo-visual-vs-bubble-graph'] .left-bottom-bubble .chart, .gViz-outer-wrapper[data-gViz-id='diwo-visual-vs-bubble-graph'] .right-bubble .chart {\n      transition: all 0.7s;\n      display: none;\n      height: 200px;\n      width: 400px;\n      margin: 0px auto;\n      text-align: center; }\n      .gViz-outer-wrapper[data-gViz-id='diwo-visual-vs-bubble-graph'] .left-top-bubble .chart .loading, .gViz-outer-wrapper[data-gViz-id='diwo-visual-vs-bubble-graph'] .left-bottom-bubble .chart .loading, .gViz-outer-wrapper[data-gViz-id='diwo-visual-vs-bubble-graph'] .right-bubble .chart .loading {\n        transition: opacity 0.7s;\n        transition-delay: 0.7s;\n        line-height: 100%;\n        font-size: 12px;\n        font-weight: lighter;\n        color: #fa6ec6;\n        opacity: 0; }\n  .gViz-outer-wrapper[data-gViz-id='diwo-visual-vs-bubble-graph'] .left-top-bubble:hover {\n    z-index: 1010;\n    width: 240px;\n    height: 240px;\n    border-radius: 120px;\n    left: calc(50% - 290px);\n    top: calc(50% - 125px); }\n    .gViz-outer-wrapper[data-gViz-id='diwo-visual-vs-bubble-graph'] .left-top-bubble:hover .text {\n      transition-delay: 0.7s;\n      font-weight: normal;\n      font-size: 15px;\n      width: 140px;\n      padding-bottom: 15px;\n      border-bottom: 1px solid #C2BBCD;\n      margin: 20px auto 0px; }\n    .gViz-outer-wrapper[data-gViz-id='diwo-visual-vs-bubble-graph'] .left-top-bubble:hover .chart {\n      height: 115px;\n      width: 140px;\n      overflow-y: auto;\n      transition-delay: 0.3s;\n      display: block;\n      padding-top: 10px; }\n      .gViz-outer-wrapper[data-gViz-id='diwo-visual-vs-bubble-graph'] .left-top-bubble:hover .chart .chart-row {\n        width: 140px;\n        marging: 0px auto;\n        height: 20px; }\n        .gViz-outer-wrapper[data-gViz-id='diwo-visual-vs-bubble-graph'] .left-top-bubble:hover .chart .chart-row .chart-label, .gViz-outer-wrapper[data-gViz-id='diwo-visual-vs-bubble-graph'] .left-top-bubble:hover .chart .chart-row .chart-text {\n          width: calc(50% - 10px);\n          display: block;\n          overflow: hidden;\n          text-overflow: ellipsis;\n          white-space: nowrap;\n          height: 20px;\n          line-height: 20px;\n          font-size: 10px; }\n        .gViz-outer-wrapper[data-gViz-id='diwo-visual-vs-bubble-graph'] .left-top-bubble:hover .chart .chart-row .chart-label {\n          float: left;\n          color: #e7424d;\n          margin-right: 5px; }\n        .gViz-outer-wrapper[data-gViz-id='diwo-visual-vs-bubble-graph'] .left-top-bubble:hover .chart .chart-row .chart-text {\n          float: right;\n          color: #666;\n          margin-left: 5px; }\n  .gViz-outer-wrapper[data-gViz-id='diwo-visual-vs-bubble-graph'] .left-bottom-bubble .text {\n    height: auto;\n    width: 70px; }\n  .gViz-outer-wrapper[data-gViz-id='diwo-visual-vs-bubble-graph'] .left-bottom-bubble .image {\n    margin-top: 15px; }\n  .gViz-outer-wrapper[data-gViz-id='diwo-visual-vs-bubble-graph'] .left-bottom-bubble:hover {\n    z-index: 1010;\n    width: 480px;\n    height: 480px;\n    border-radius: 240px;\n    left: calc(50% - 330px);\n    top: calc(50% - 240px); }\n    .gViz-outer-wrapper[data-gViz-id='diwo-visual-vs-bubble-graph'] .left-bottom-bubble:hover .text {\n      transition-delay: 0.7s;\n      font-weight: normal;\n      font-size: 15px;\n      width: 400px;\n      padding-bottom: 20px;\n      border-bottom: 1px solid #C2BBCD;\n      margin: 100px auto 0px; }\n    .gViz-outer-wrapper[data-gViz-id='diwo-visual-vs-bubble-graph'] .left-bottom-bubble:hover .note {\n      transition-delay: 0.7s;\n      font-size: 12px;\n      width: 400px;\n      margin: 20px auto 0px;\n      opacity: 1; }\n    .gViz-outer-wrapper[data-gViz-id='diwo-visual-vs-bubble-graph'] .left-bottom-bubble:hover .chart {\n      transition-delay: 0.3s;\n      display: block;\n      padding-top: 10px; }\n  .gViz-outer-wrapper[data-gViz-id='diwo-visual-vs-bubble-graph'] .right-bubble .text {\n    height: auto;\n    width: 45px; }\n  .gViz-outer-wrapper[data-gViz-id='diwo-visual-vs-bubble-graph'] .right-bubble .image {\n    margin-top: 15px; }\n  .gViz-outer-wrapper[data-gViz-id='diwo-visual-vs-bubble-graph'] .right-bubble:hover {\n    z-index: 1010;\n    width: 480px;\n    height: 480px;\n    border-radius: 240px;\n    left: calc(50% - 200px);\n    top: calc(50% - 240px); }\n    .gViz-outer-wrapper[data-gViz-id='diwo-visual-vs-bubble-graph'] .right-bubble:hover .text {\n      transition-delay: 0.7s;\n      font-weight: normal;\n      font-size: 15px;\n      width: 400px;\n      padding-bottom: 20px;\n      border-bottom: 1px solid #C2BBCD;\n      margin: 100px auto 0px; }\n    .gViz-outer-wrapper[data-gViz-id='diwo-visual-vs-bubble-graph'] .right-bubble:hover .note {\n      transition-delay: 0.7s;\n      font-size: 12px;\n      width: 400px;\n      margin: 20px auto 0px;\n      opacity: 1; }\n    .gViz-outer-wrapper[data-gViz-id='diwo-visual-vs-bubble-graph'] .right-bubble:hover .chart {\n      transition-delay: 0.7s;\n      display: block;\n      padding-top: 10px; }\n      .gViz-outer-wrapper[data-gViz-id='diwo-visual-vs-bubble-graph'] .right-bubble:hover .chart .loading {\n        opacity: 1; }\n  .gViz-outer-wrapper[data-gViz-id='diwo-visual-vs-bubble-graph'] .center-right-line, .gViz-outer-wrapper[data-gViz-id='diwo-visual-vs-bubble-graph'] .left-top-line, .gViz-outer-wrapper[data-gViz-id='diwo-visual-vs-bubble-graph'] .left-bottom-line {\n    position: absolute;\n    top: 50%;\n    left: calc(50% + 85px);\n    width: 35px;\n    height: 1px;\n    border-top: 1px solid #f963c1;\n    z-index: 1004; }\n  .gViz-outer-wrapper[data-gViz-id='diwo-visual-vs-bubble-graph'] .left-top-line {\n    -webkit-transform: rotate(24deg);\n            transform: rotate(24deg);\n    top: calc(50% - 45px);\n    left: calc(50% - 126px);\n    width: 51px; }\n  .gViz-outer-wrapper[data-gViz-id='diwo-visual-vs-bubble-graph'] .left-bottom-line {\n    -webkit-transform: rotate(-24deg);\n            transform: rotate(-24deg);\n    top: calc(50% + 45px);\n    left: calc(50% - 116px);\n    width: 41px; }\n", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/shared/shareables/visuals/diwo-visual-vs-bubble-graph/diwo-visual-vs-bubble-graph.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DiwoVisualVsBubbleGraphComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common__ = __webpack_require__("../../../common/@angular/common.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__base_visual__ = __webpack_require__("../../../../../src/app/shared/shareables/visuals/base-visual.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_d3__ = __webpack_require__("../../../../d3/build/d3.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_d3___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_d3__);
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+// gViz Library
+
+var gViz = __webpack_require__("../../../../../src/assets/js/gViz/_init.js");
+var DiwoVisualVsBubbleGraphComponent = (function (_super) {
+    __extends(DiwoVisualVsBubbleGraphComponent, _super);
+    // Main constructor
+    function DiwoVisualVsBubbleGraphComponent(element, _location) {
+        var _this = _super.call(this) || this;
+        _this.element = element;
+        _this._location = _location;
+        return _this;
+    }
+    Object.defineProperty(DiwoVisualVsBubbleGraphComponent.prototype, "data", {
+        // Inputs
+        set: function (value) { this._data = value; },
+        enumerable: true,
+        configurable: true
+    });
+    ;
+    /* Methods */
+    DiwoVisualVsBubbleGraphComponent.prototype.update = function () {
+        // Store this
+        var self = this;
+        // Get possible erros
+        try {
+        }
+        catch (err) {
+            console.log(err);
+        }
+    };
+    // When container resizes, redraw visualization
+    DiwoVisualVsBubbleGraphComponent.prototype.resize = function () {
+    };
+    // On component init
+    DiwoVisualVsBubbleGraphComponent.prototype.ngOnInit = function () {
+        this.update();
+    };
+    // On component changes
+    DiwoVisualVsBubbleGraphComponent.prototype.ngOnChanges = function () {
+        this.update();
+    };
+    DiwoVisualVsBubbleGraphComponent.prototype.mouseEnter = function (id) {
+        // Store this to be used inside functions
+        var self = this;
+        if (id == null) {
+            self._isExpanded = id;
+        }
+        else {
+            setTimeout(function () { self._isExpanded = id; }, 700);
+        }
+        if (id == null) {
+            self._isVisualExpanded = id;
+        }
+        else {
+            setTimeout(function () { self._isVisualExpanded = id; }, 1400);
+        }
+        __WEBPACK_IMPORTED_MODULE_3_d3__["select"](self.element.nativeElement).selectAll(".bubble-element:not(." + id).style('opacity', id == null ? 1 : 0.3);
+    };
+    return DiwoVisualVsBubbleGraphComponent;
+}(__WEBPACK_IMPORTED_MODULE_2__base_visual__["a" /* BaseVisual */]));
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["F" /* Input */])('data'),
+    __metadata("design:type", Object),
+    __metadata("design:paramtypes", [Object])
+], DiwoVisualVsBubbleGraphComponent.prototype, "data", null);
+DiwoVisualVsBubbleGraphComponent = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["o" /* Component */])({
+        selector: 'diwo-visual-vs-bubble-graph',
+        template: __webpack_require__("../../../../../src/app/shared/shareables/visuals/diwo-visual-vs-bubble-graph/diwo-visual-vs-bubble-graph.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/shared/shareables/visuals/diwo-visual-vs-bubble-graph/diwo-visual-vs-bubble-graph.component.scss")],
+        host: {
+            'class': 'is-relative',
+            'style': 'width: 100%; height: 100%;'
+        }
+    }),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["v" /* ElementRef */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["v" /* ElementRef */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_common__["g" /* Location */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_common__["g" /* Location */]) === "function" && _b || Object])
+], DiwoVisualVsBubbleGraphComponent);
+
+var _a, _b;
+//# sourceMappingURL=diwo-visual-vs-bubble-graph.component.js.map
 
 /***/ }),
 
@@ -19484,7 +19806,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, ":host {\n  min-height: 300px;\n  display: block; }\n\n.gViz-outer-wrapper[data-gViz-id='diwo-visual-vs-line-graph-with-draggable-points'] {\n  min-height: 300px;\n  min-width: 350px; }\n  .gViz-outer-wrapper[data-gViz-id='diwo-visual-vs-line-graph-with-draggable-points'] .gViz-inner-wrapper {\n    height: 100%;\n    position: absolute;\n    top: 0px;\n    left: 0px; }\n", ""]);
+exports.push([module.i, ":host {\n  min-height: 200px;\n  display: block; }\n\n.gViz-outer-wrapper[data-gViz-id='diwo-visual-vs-line-graph-with-draggable-points'] {\n  min-height: 200px;\n  min-width: 350px; }\n  .gViz-outer-wrapper[data-gViz-id='diwo-visual-vs-line-graph-with-draggable-points'] .gViz-inner-wrapper {\n    height: 100%;\n    position: absolute;\n    top: 0px;\n    left: 0px; }\n", ""]);
 
 // exports
 
@@ -19524,12 +19846,20 @@ var DiwoVisualVsLineGraphWithDraggablePointsComponent = (function (_super) {
     function DiwoVisualVsLineGraphWithDraggablePointsComponent(element) {
         var _this = _super.call(this) || this;
         _this.element = element;
-        _this._onHover = function (d) { console.log("hover", d); };
-        _this._onClick = function (d) { console.log("click", d); };
-        _this._onDragStart = function (d) { console.log("drag start", d); };
-        _this._onDragEnd = function (d) { console.log("drag end", d); };
+        /* Output Event emitters */
+        _this.onHovered = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["x" /* EventEmitter */]();
+        _this.onClicked = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["x" /* EventEmitter */]();
+        _this.onDragStarted = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["x" /* EventEmitter */]();
+        _this.onDragEnded = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["x" /* EventEmitter */]();
         return _this;
     }
+    Object.defineProperty(DiwoVisualVsLineGraphWithDraggablePointsComponent.prototype, "data", {
+        // Inputs
+        set: function (value) { this._data = value; },
+        enumerable: true,
+        configurable: true
+    });
+    ;
     /* Methods */
     DiwoVisualVsLineGraphWithDraggablePointsComponent.prototype.update = function () {
         // Store this
@@ -19537,7 +19867,7 @@ var DiwoVisualVsLineGraphWithDraggablePointsComponent = (function (_super) {
         // Get possible errors
         try {
             // // Testing only
-            // d3.json("assets/data/diwo-visual-vs-line-graph-with-draggable-points.sample.json", (err, data) => {
+            // d3.json("assets/data/visual-cards/diwo-visual-vs-line-graph-with-draggable-points.sample.json", (err, data) => {
             //   self._data = data;
             // Backup _data.data
             self._data._data = self._data.data;
@@ -19559,10 +19889,10 @@ var DiwoVisualVsLineGraphWithDraggablePointsComponent = (function (_super) {
                 ._var(self._vis)
                 .container(self.element.nativeElement.querySelector(".gViz-inner-wrapper"))
                 .data(JSON.parse(JSON.stringify(self._data)))
-                .onHover(self._onHover)
-                .onClick(self._onClick)
-                .onDragStart(self._onDragStart)
-                .onDragEnd(self._onDragEnd)
+                .onHover(function (d) { self.onHovered.next({ component: self, target: d }); })
+                .onClick(function (d) { self.onClicked.next({ component: self, target: d }); })
+                .onDragStart(function (d) { self.onDragStarted.next({ component: self, target: d }); })
+                .onDragEnd(function (d) { self.onDragEnded.next({ component: self, target: d }); })
                 .run();
         }
         catch (err) {
@@ -19584,21 +19914,26 @@ var DiwoVisualVsLineGraphWithDraggablePointsComponent = (function (_super) {
     return DiwoVisualVsLineGraphWithDraggablePointsComponent;
 }(__WEBPACK_IMPORTED_MODULE_1__base_visual__["a" /* BaseVisual */]));
 __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["F" /* Input */])('onHover'),
-    __metadata("design:type", Object)
-], DiwoVisualVsLineGraphWithDraggablePointsComponent.prototype, "_onHover", void 0);
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["F" /* Input */])('data'),
+    __metadata("design:type", Object),
+    __metadata("design:paramtypes", [Object])
+], DiwoVisualVsLineGraphWithDraggablePointsComponent.prototype, "data", null);
 __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["F" /* Input */])('onClick'),
-    __metadata("design:type", Object)
-], DiwoVisualVsLineGraphWithDraggablePointsComponent.prototype, "_onClick", void 0);
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["U" /* Output */])(),
+    __metadata("design:type", typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["x" /* EventEmitter */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["x" /* EventEmitter */]) === "function" && _a || Object)
+], DiwoVisualVsLineGraphWithDraggablePointsComponent.prototype, "onHovered", void 0);
 __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["F" /* Input */])('onDragStart'),
-    __metadata("design:type", Object)
-], DiwoVisualVsLineGraphWithDraggablePointsComponent.prototype, "_onDragStart", void 0);
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["U" /* Output */])(),
+    __metadata("design:type", typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["x" /* EventEmitter */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["x" /* EventEmitter */]) === "function" && _b || Object)
+], DiwoVisualVsLineGraphWithDraggablePointsComponent.prototype, "onClicked", void 0);
 __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["F" /* Input */])('onDragEnd'),
-    __metadata("design:type", Object)
-], DiwoVisualVsLineGraphWithDraggablePointsComponent.prototype, "_onDragEnd", void 0);
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["U" /* Output */])(),
+    __metadata("design:type", typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["x" /* EventEmitter */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["x" /* EventEmitter */]) === "function" && _c || Object)
+], DiwoVisualVsLineGraphWithDraggablePointsComponent.prototype, "onDragStarted", void 0);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["U" /* Output */])(),
+    __metadata("design:type", typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["x" /* EventEmitter */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["x" /* EventEmitter */]) === "function" && _d || Object)
+], DiwoVisualVsLineGraphWithDraggablePointsComponent.prototype, "onDragEnded", void 0);
 DiwoVisualVsLineGraphWithDraggablePointsComponent = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["o" /* Component */])({
         selector: 'diwo-visual-vs-line-graph-with-draggable-points',
@@ -19609,10 +19944,10 @@ DiwoVisualVsLineGraphWithDraggablePointsComponent = __decorate([
             'style': 'width: 100%; height: 100%;'
         }
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["v" /* ElementRef */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["v" /* ElementRef */]) === "function" && _a || Object])
+    __metadata("design:paramtypes", [typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["v" /* ElementRef */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["v" /* ElementRef */]) === "function" && _e || Object])
 ], DiwoVisualVsLineGraphWithDraggablePointsComponent);
 
-var _a;
+var _a, _b, _c, _d, _e;
 //# sourceMappingURL=diwo-visual-vs-line-graph-with-draggable-points.component.js.map
 
 /***/ }),
@@ -22172,7 +22507,7 @@ var AskMessageComponent = (function (_super) {
         configurable: true
     });
     AskMessageComponent.prototype.checkToFill = function (visualComponentNameString) {
-        var fillContainer = ['DiwoVisualAccordianListComponent'];
+        var fillContainer = ['DiwoVisualAccordianListComponent', 'DiwoVisualTopThreeListComponent'];
         return fillContainer.indexOf(visualComponentNameString) !== -1;
     };
     return AskMessageComponent;
@@ -22373,7 +22708,7 @@ var UserMessageRef = (function () {
 /***/ "../../../../../src/app/shared/ui/ask-messages/messages/user-message/user-message.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<!-- selection with dropdown -->\n<!-- <div class=\"history-navigation\">\n    <select [(ngModel)]=\"selectedNavigation\">\n      <option *ngFor=\"let item of dataNavigation\" [ngValue]=\"item.name\">{{item.Name || item.Date}}</option>\n    </select>\n</div>\n-->\n<!-- selection with emulated dropdown -->\n\n\n<div class=\"timestamp-roll\" id=\"nav-{{message.id}}\">\n  {{ getTimeRoll(message.createdAt) }}\n</div>\n\n<div [id]=\"'message-' + message.id \"  class=\"{{userRef.size}} ask-message-wrapper is-relative\" (click)=\"addToShare(userRef)\" [class.clickable]=\"shareIsOpen\"\n     [ngClass]=\"{'has-bg-shade-7-trans-20':isInShared(userRef) && shareIsOpen}\">\n\n  <!--<div class=\"is-absolute has-neg-mg-bottom-normal  has-bg-shade-1 related-connector\" *ngIf=\"isRelated \"></div>-->\n  <div  class=\" ask-message-ctn is-relative    is-relative message-left has-pd-vert-normal\">\n\n    <div (click)=\"setSelectedQuestion()\"\n         [class.arrow_box-left]=\"userRef.size !== 'small'\"\n      [ngClass]=\"{' arrow-bd-light bd-light arrow-bd-highlight has-bd-left bd-highlight':contentOpen, 'clickable': showAction === 'open' && questionExists, 'has-bd-left bd-highlight bd-light': userRef.size === 'small'  || !commandStyle && contentOpen}\"\n         class=\" ask-message has-bg-primary-trans-15 is-relative arrow-16px  has-c-shade-17 has-mg-left  arrow-bg-primary-trans-15\">\n      <i class=\"di-insight di-12x has-c-diwo-red is-absolute top-one-half right-neg-large\" *ngIf=\"rightSideAvailable\"></i>\n      <div class=\"{{userRef.size === 'small' ? 'has-pd-full-normal' : 'has-pd-full-medium'}}\">\n        <p  class=\"ask-message--text has-c-shade-17\"\n           [innerHtml]=\"message.innerHtml || message.text\"></p>\n\n      </div>\n\n    </div>\n    <p *ngIf=\"userRef.size !== 'small'\" class=\"ask-message-date is-absolute small has-c-shade-5\">{{message.createdAt | date: 'h:mm a' | lowercase}}</p>\n  </div>\n</div>\n"
+module.exports = "<!-- selection with dropdown -->\n<!-- <div class=\"history-navigation\">\n    <select [(ngModel)]=\"selectedNavigation\">\n      <option *ngFor=\"let item of dataNavigation\" [ngValue]=\"item.name\">{{item.Name || item.Date}}</option>\n    </select>\n</div>\n-->\n<!-- selection with emulated dropdown -->\n\n\n<div class=\"timestamp-roll\" id=\"nav-{{message.id}}\">\n  {{ getTimeRoll(message.createdAt) }}\n</div>\n\n<div [id]=\"'message-' + message.id \"  class=\"{{userRef.size}} ask-message-wrapper is-relative\" (click)=\"addToShare(userRef)\" [class.clickable]=\"shareIsOpen\"\n     [ngClass]=\"{'has-bg-shade-7-trans-20':isInShared(userRef) && shareIsOpen}\">\n\n  <!--<div class=\"is-absolute has-neg-mg-bottom-normal  has-bg-shade-1 related-connector\" *ngIf=\"isRelated \"></div>-->\n  <div  class=\" ask-message-ctn is-relative    is-relative message-left has-pd-vert-normal\">\n\n    <div (click)=\"setSelectedQuestion()\"\n         [class.arrow_box-left]=\"userRef.size !== 'small'\"\n      [ngClass]=\"{' arrow-bd-light bd-light arrow-bd-highlight has-bd-left bd-highlight':contentOpen, 'clickable': showAction === 'open' && questionExists, 'has-bd-left bd-highlight bd-light': userRef.size === 'small'  || !commandStyle && contentOpen}\"\n         class=\" ask-message has-bg-primary-light is-relative arrow-16px  has-c-shade-17 has-mg-left  arrow-bg-primary-light\">\n      <i class=\"di-insight di-12x has-c-diwo-red is-absolute top-one-half right-neg-large\" *ngIf=\"rightSideAvailable\"></i>\n      <div class=\"{{userRef.size === 'small' ? 'has-pd-full-normal' : 'has-pd-full-medium'}}\">\n        <p  class=\"ask-message--text has-c-shade-17\"\n           [innerHtml]=\"message.innerHtml || message.text\"></p>\n\n      </div>\n\n    </div>\n    <p *ngIf=\"userRef.size !== 'small'\" class=\"ask-message-date is-absolute small has-c-shade-5\">{{message.createdAt | date: 'h:mm a' | lowercase}}</p>\n  </div>\n</div>\n"
 
 /***/ }),
 
@@ -22781,6 +23116,112 @@ CheckboxComponent = __decorate([
 
 var _a;
 //# sourceMappingURL=checkbox.component.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/shared/ui/components/dropdown-input/dropdown-input.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"input\">\n  <input [placeholder]=\"placeholder\" [ngModel]=\"value\" (ngModelChange)=\"valueChange.emit($event)\">\n  <div class=\"action-button\">\n    <i class=\"di-search di-12x\" *ngIf=\"!valueSelected\" (click)=\"open = true\"></i>\n    <i class=\"di-close di-12x\" *ngIf=\"valueSelected\" (click)=\"removeSelected()\"></i>\n  </div>\n</div>\n<div class=\"dropdown-body\" *ngIf=\"open\" (click)=\"open = false; valueSelected = true\">\n  <ng-content></ng-content>\n</div>\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/shared/ui/components/dropdown-input/dropdown-input.component.scss":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ":host {\n  position: relative; }\n\n.input {\n  position: relative;\n  height: 30px;\n  color: #b3b3b3; }\n  .input input {\n    width: 100%;\n    height: 100%;\n    border: 2px solid rgba(222, 222, 222, 0.6);\n    padding-left: 5px;\n    color: #8c8c8c; }\n    .input input::-webkit-input-placeholder {\n      color: #b3b3b3; }\n    .input input:-ms-input-placeholder {\n      color: #b3b3b3; }\n    .input input::placeholder {\n      color: #b3b3b3; }\n  .input .action-button {\n    position: absolute;\n    right: 10px;\n    top: 8px;\n    cursor: pointer; }\n    .input .action-button:hover {\n      color: #8c8c8c; }\n\n.dropdown-body {\n  position: absolute;\n  top: 32px;\n  z-index: 9100;\n  background: white;\n  width: 100%;\n  color: #b3b3b3;\n  border: 2px solid rgba(222, 222, 222, 0.6);\n  border-top: 0; }\n  .dropdown-body /deep/ > * {\n    margin-top: 2px;\n    margin-bottom: 2px;\n    padding: 5px; }\n    .dropdown-body /deep/ > *:hover {\n      cursor: pointer;\n      color: #8c8c8c; }\n  .dropdown-body /deep/ > * + * {\n    border-top: 1px solid rgba(222, 222, 222, 0.6); }\n", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/shared/ui/components/dropdown-input/dropdown-input.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DropdownInputComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var DropdownInputComponent = (function () {
+    function DropdownInputComponent(_eref) {
+        this._eref = _eref;
+        this.open = false;
+        this.valueSelected = false;
+        this.valueChange = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["x" /* EventEmitter */]();
+        this.removedSelected = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["x" /* EventEmitter */]();
+    }
+    DropdownInputComponent.prototype.ngOnInit = function () {
+    };
+    DropdownInputComponent.prototype.clickedOutside = function ($event) {
+        if (!this._eref.nativeElement.contains($event.target)) {
+            this.open = false;
+        }
+    };
+    DropdownInputComponent.prototype.removeSelected = function () {
+        this.removedSelected.emit();
+        this.valueSelected = false;
+    };
+    return DropdownInputComponent;
+}());
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["F" /* Input */])(),
+    __metadata("design:type", Object)
+], DropdownInputComponent.prototype, "value", void 0);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["F" /* Input */])(),
+    __metadata("design:type", Object)
+], DropdownInputComponent.prototype, "placeholder", void 0);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["F" /* Input */])(),
+    __metadata("design:type", Object)
+], DropdownInputComponent.prototype, "open", void 0);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["F" /* Input */])(),
+    __metadata("design:type", Object)
+], DropdownInputComponent.prototype, "valueSelected", void 0);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["U" /* Output */])(),
+    __metadata("design:type", typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["x" /* EventEmitter */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["x" /* EventEmitter */]) === "function" && _a || Object)
+], DropdownInputComponent.prototype, "valueChange", void 0);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["U" /* Output */])(),
+    __metadata("design:type", typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["x" /* EventEmitter */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["x" /* EventEmitter */]) === "function" && _b || Object)
+], DropdownInputComponent.prototype, "removedSelected", void 0);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["A" /* HostListener */])('document:click', ['$event']),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Object]),
+    __metadata("design:returntype", void 0)
+], DropdownInputComponent.prototype, "clickedOutside", null);
+DropdownInputComponent = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["o" /* Component */])({
+        selector: 'dropdown-input',
+        template: __webpack_require__("../../../../../src/app/shared/ui/components/dropdown-input/dropdown-input.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/shared/ui/components/dropdown-input/dropdown-input.component.scss")]
+    }),
+    __metadata("design:paramtypes", [typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["v" /* ElementRef */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["v" /* ElementRef */]) === "function" && _c || Object])
+], DropdownInputComponent);
+
+var _a, _b, _c;
+//# sourceMappingURL=dropdown-input.component.js.map
 
 /***/ }),
 
@@ -23309,6 +23750,7 @@ EmailInputsComponent = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__toggle_toggle_component__ = __webpack_require__("../../../../../src/app/shared/ui/components/toggle/toggle.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__events_events_module__ = __webpack_require__("../../../../../src/app/shared/events/events.module.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__vertical_range_input_vertical_range_input_component__ = __webpack_require__("../../../../../src/app/shared/ui/components/vertical-range-input/vertical-range-input.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_app_shared_ui_components_dropdown_input_dropdown_input_component__ = __webpack_require__("../../../../../src/app/shared/ui/components/dropdown-input/dropdown-input.component.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -23326,10 +23768,12 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
+
 var DECL_EXPORTS = [
     __WEBPACK_IMPORTED_MODULE_3__dropdown_dropdown_component__["a" /* DropdownComponent */],
     __WEBPACK_IMPORTED_MODULE_4__dropdown_item_dropdown_item_component__["a" /* DropdownItemComponent */],
     __WEBPACK_IMPORTED_MODULE_5__dropdown_select_dropdown_select_component__["a" /* DropdownSelectComponent */],
+    __WEBPACK_IMPORTED_MODULE_11_app_shared_ui_components_dropdown_input_dropdown_input_component__["a" /* DropdownInputComponent */],
     __WEBPACK_IMPORTED_MODULE_6__email_inputs_email_inputs_component__["a" /* EmailInputsComponent */],
     __WEBPACK_IMPORTED_MODULE_7__show_loader_show_loader_component__["a" /* ShowLoaderComponent */],
     __WEBPACK_IMPORTED_MODULE_8__toggle_toggle_component__["a" /* ToggleComponent */],
@@ -35909,7 +36353,7 @@ module.exports = function () {
           // Update outer dimensions
           gridBg
             .style("top",  (top) + 'px')
-            .style("height", (left) + 'px')
+            .style("left", (left) + 'px')
             .style("width",  (width) + 'px')
             .style("height", (height) + 'px');
 
