@@ -1,19 +1,15 @@
 webpackJsonp(["main"],{
 
-/***/ "../../../../../src/$$_gendir lazy recursive":
+/***/ "../../../../../src lazy recursive":
 /***/ (function(module, exports) {
 
 function webpackEmptyAsyncContext(req) {
-	// Here Promise.resolve().then() is used instead of new Promise() to prevent
-	// uncatched exception popping up in devtools
-	return Promise.resolve().then(function() {
-		throw new Error("Cannot find module '" + req + "'.");
-	});
+	return new Promise(function(resolve, reject) { reject(new Error("Cannot find module '" + req + "'.")); });
 }
 webpackEmptyAsyncContext.keys = function() { return []; };
 webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
 module.exports = webpackEmptyAsyncContext;
-webpackEmptyAsyncContext.id = "../../../../../src/$$_gendir lazy recursive";
+webpackEmptyAsyncContext.id = "../../../../../src lazy recursive";
 
 /***/ }),
 
@@ -64,7 +60,7 @@ AppRoutingModule = __decorate([
 /***/ "../../../../../src/app/app.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"is-one-whole-tall wrapper \" [ngStyle]=\"{'font-size': fontSize + 'em'}\" (mousemove)=\"toggleMouseMove()\">\n  <div id=\"navBar\" style=\"z-index: 10000\" *ngIf=\"(loggedInObs | async)\"\n       class=\"is-fixed top-none left-none bottom-none has-bg-shade-4 has-c-shade-4 has-pd-hori-normal has-pd-vert-medium\">\n\n    <div *ngFor=\"let icon of svg;let i = index;\" class=\"has-mg-bottom-normal\">\n      <button #hover [routerLink]=\"[icon.url]\" (click)=\"toggleNav()\"\n              class=\" is-circle material-hover has-bg-shade-1 btn-large  is-relative {{ currentpath === icon.url || currentHover === i ? 'has-c-diwo-red' : ''}}\"\n              (mouseenter)=\"currentHover = i\" (mouseleave)=\"currentHover= -1\">\n        <i class=\"{{icon.class}} di-20x\"></i>\n\n        <!--<p *ngIf=\"currentHover === i\"-->\n           <!--class=\"nav-title left-one-whole is-absolute top-one-half has-line-height-1 has-c-diwo-red\">-->\n          <!--{{icon.title}}</p>-->\n      </button>\n    </div>\n  </div>\n  <button *ngIf=\"(loggedInObs | async)\" (click)=\"toggleNav()\" id=\"navButton\" class=\"is-fixed has-bg-diwo-red top-large left-none has-cursor  has-pd-vert-normal has-pd-hori-light\">\n    <i  class=\" {{ navOpen ? 'di-chevron-left':'di-chevron-right' }} has-c-shade-1\"></i>\n  </button>\n\n  <div  [diwoCircleDirective]=\"diwoPosition\" class=\"is-relative\"\n\n        [diwoCircleActions]=\"{ clip: 'true', case: 'true',narrate: 'true',volume: 'true',pin: 'true', help: 'global', share: 'true'}\"\n        [diwoCircleTriggeredBy]=\"'hover'\"\n        [diwoCircleAllow]=\"!isMyDiwoOpen() && isMicroserviceOpen()\"\n        [diwoCircleClickAction]=\"openMyDiwo\"\n        [diwoCircleSize]=\"62\"\n        [diwoCircleDisableExtraNav]=\"true\"\n        [diwoCircleType]=\"'microphone'\" style=\"min-height: 100%;\">\n\n\n\n    <div id=\"nav\" [hidden]=\"!(!isMyDiwoOpen() && isMicroserviceOpen() || (showDock | async)) \"\n\n         class=\"layout-row right-none with-mg-small layout--start-center  top-none is-fixed  left-none has-pd-hori-large has-pd-top-large\">\n      <!--<div id=\"nav-overlay\" class=\"is-absolute top-none left-none bottom-none right-none\" *ngIf=\"isWatchOpen()\"></div>-->\n      <div #diwoHolder class=\"logo-holder is-one-whole-tall is-relative layout-item\"\n           [hidden]=\"(isMyDiwoOpen() || isAskOpen()) && !(showDock | async)\">\n        <button class=\"is-absolute transform-to-center top-one-half left-one-half\" [routerLink]=\"['/mydiwo']\">\n          <img class=\"is-absolute transform-to-center top-one-half left-one-half\" width=\"20\"\n               src=\"./assets/images/diwoLogo-2x.png\"/>\n        </button>\n      </div>\n\n\n      <decide-nav [(popup)]=\"popup\" id=\"decide-nav\" class=\"flex layout-item\"\n                  *ngIf=\"isDecideOpen() || (showDock | async)\"></decide-nav>\n    </div>\n\n    <div\n      id=\"main-content\" class=\"is-one-whole-tall has-pd-hori-large\"\n      [ngClass]=\"{'decide-open': isDecideOpen() || (showDock | async) }\">\n\n      <!--<div dynamic-component *ngFor=\"let comp of ss.compListWVar \" [model]=\"comp\" [show]=\"comp.show\"></div>-->\n      <!--<decide class=\"is-one-whole\"></decide>-->\n      <router-outlet></router-outlet>\n      <router-outlet (activate)=\"testActivate($event)\" name=\"drawer\"></router-outlet>\n    </div>\n\n\n    <!--<div id=\"overlay\" class=\"is-fixed top-none left-none bottom-none right-none\" *ngIf=\"isWatchOpen()\"></div>-->\n    <!--<div style=\"position:fixed;top: -9999999999px; left:-9999999px\">-->\n      <!--<img src=\"./assets/tempImages/plotted-bar-graph.png\" style=\"width:2px;\"/>-->\n      <!--<img src=\"./assets/tempImages/bra1.png\" style=\"width:2px;\"/>-->\n      <!--<img src=\"./assets/tempImages/bra2.png\" style=\"width:2px;\"/>-->\n      <!--<img src=\"./assets/tempImages/bra3.png\" style=\"width:2px;\"/>-->\n      <!--<img src=\"./assets/tempImages/bra4.png\" style=\"width:2px;\"/>-->\n      <!--<img src=\"./assets/tempImages/bra5.png\" style=\"width:2px;\"/>-->\n      <!--<img src=\"./assets/images/loading.gif\" style=\"width:2px;\"/>-->\n      <!--<img src=\"./assets/images/loading-flash.gif\" style=\"width:2px;\"/>-->\n    <!--</div>-->\n\n\n\n\n  </div>\n\n</div>\n"
+module.exports = "<div class=\"is-one-whole-tall wrapper \" [ngStyle]=\"{'font-size': fontSize + 'em'}\" (mousemove)=\"toggleMouseMove()\">\n  <div [@navState] id=\"navBar\"\n       *ngIf=\"(navOpen && (loggedInObs | async))\"\n       (mouseleave)=\"closeNav();\"\n       class=\"is-fixed top-none left-none bottom-none has-bg-shade-7-trans-50 has-c-shade-4 has-pd-hori-normal has-pd-vert-medium\">\n    <div class='centered-icons'>\n      <div *ngFor=\"let icon of svg;let i = index;\" class=\"has-mg-bottom-normal\">\n        <button #hover [routerLink]=\"[icon.url]\" (click)=\"toggleNav()\"\n                class=\" is-circle material-hover has-bg-shade-1 btn-large  is-relative {{ currentpath === icon.url || currentHover === i ? 'has-c-diwo-red' : ''}}\"\n                (mouseenter)=\"currentHover = i\" (mouseleave)=\"currentHover= -1;\">\n          <i class=\"{{icon.class}} di-20x\"></i>\n\n          <!--<p *ngIf=\"currentHover === i\"-->\n          <!--class=\"nav-title left-one-whole is-absolute top-one-half has-line-height-1 has-c-diwo-red\">-->\n          <!--{{icon.title}}</p>-->\n        </button>\n      </div>\n    </div>\n  </div>\n  <button *ngIf=\"(loggedInObs | async)\" (mouseenter)='openNav()' id=\"navButton\"\n          class=\"is-fixed left-none has-cursor  has-pd-vert-normal has-pd-hori-light\">\n    <i *ngIf='!navOpen' class='di-chevron-right has-c-diwo-red'></i>\n  </button>\n\n  <div [diwoCircleDirective]=\"diwoPosition\" class=\"is-relative\"\n\n       [diwoCircleActions]=\"{ clip: 'true', case: 'true',narrate: 'true',volume: 'true',pin: 'true', help: 'global', share: 'true'}\"\n       [diwoCircleTriggeredBy]=\"'hover'\"\n       [diwoCircleAllow]=\"!isMyDiwoOpen() && isMicroserviceOpen()\"\n       [diwoCircleClickAction]=\"openMyDiwo\"\n       [diwoCircleSize]=\"62\"\n       [diwoCircleDisableExtraNav]=\"true\"\n       [diwoCircleType]=\"'microphone'\" style=\"min-height: 100%;\">\n\n\n    <div id=\"nav\" [hidden]=\"!(!isMyDiwoOpen() && isMicroserviceOpen() || (showDock | async)) \"\n\n         class=\"layout-row right-none with-mg-small layout--start-center  top-none is-fixed  left-none has-pd-hori-large has-pd-top-large\">\n      <!--<div id=\"nav-overlay\" class=\"is-absolute top-none left-none bottom-none right-none\" *ngIf=\"isWatchOpen()\"></div>-->\n      <div #diwoHolder class=\"logo-holder is-one-whole-tall is-relative layout-item\"\n           [hidden]=\"(isMyDiwoOpen() || isAskOpen()) && !(showDock | async)\">\n        <button class=\"is-absolute transform-to-center top-one-half left-one-half\" [routerLink]=\"['/mydiwo']\">\n          <img class=\"is-absolute transform-to-center top-one-half left-one-half\" width=\"20\"\n               src=\"./assets/images/diwoLogo-2x.png\"/>\n        </button>\n      </div>\n\n\n      <decide-nav [(popup)]=\"popup\" id=\"decide-nav\" class=\"flex layout-item\"\n                  *ngIf=\"isDecideOpen() || (showDock | async)\"></decide-nav>\n    </div>\n\n    <div\n      id=\"main-content\" class=\"is-one-whole-tall has-pd-hori-large\"\n      [ngClass]=\"{'decide-open': isDecideOpen() || (showDock | async) }\">\n\n      <!--<div dynamic-component *ngFor=\"let comp of ss.compListWVar \" [model]=\"comp\" [show]=\"comp.show\"></div>-->\n      <!--<decide class=\"is-one-whole\"></decide>-->\n      <router-outlet></router-outlet>\n      <router-outlet (activate)=\"testActivate($event)\" name=\"drawer\"></router-outlet>\n    </div>\n\n\n    <!--<div id=\"overlay\" class=\"is-fixed top-none left-none bottom-none right-none\" *ngIf=\"isWatchOpen()\"></div>-->\n    <!--<div style=\"position:fixed;top: -9999999999px; left:-9999999px\">-->\n    <!--<img src=\"./assets/tempImages/plotted-bar-graph.png\" style=\"width:2px;\"/>-->\n    <!--<img src=\"./assets/tempImages/bra1.png\" style=\"width:2px;\"/>-->\n    <!--<img src=\"./assets/tempImages/bra2.png\" style=\"width:2px;\"/>-->\n    <!--<img src=\"./assets/tempImages/bra3.png\" style=\"width:2px;\"/>-->\n    <!--<img src=\"./assets/tempImages/bra4.png\" style=\"width:2px;\"/>-->\n    <!--<img src=\"./assets/tempImages/bra5.png\" style=\"width:2px;\"/>-->\n    <!--<img src=\"./assets/images/loading.gif\" style=\"width:2px;\"/>-->\n    <!--<img src=\"./assets/images/loading-flash.gif\" style=\"width:2px;\"/>-->\n    <!--</div>-->\n\n\n  </div>\n\n</div>\n"
 
 /***/ }),
 
@@ -76,7 +72,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "/* =============================================================================\n   MEDIA QUERIES\n   ========================================================================== */\n/* Eg.\n    .container{\n        width:1024px;\n\n        @include tablets{\n            width:90%;\n        }\n    }\n*/\n/* =============================================================================\n   Unit transform\n   ========================================================================== */\n:host {\n  display: block;\n  height: 100%; }\n\n/deep/ html {\n  overflow-x: hidden; }\n\n/deep/ body {\n  transition: -webkit-transform 0.3s ease;\n  transition: transform 0.3s ease;\n  transition: transform 0.3s ease, -webkit-transform 0.3s ease; }\n  /deep/ body.nav-open {\n    transform: translateX(54px);\n    -webkit-transform: translateX(54px);\n    -moz-transform: translateX(54px);\n    -ms-transform: translateX(54px); }\n\n.wrapper {\n  transition: all 0.3s ease; }\n\n#main {\n  margin: 0 auto; }\n\n#overlay {\n  z-index: 7000;\n  background: rgba(255, 255, 255, 0.8); }\n\n#nav-overlay {\n  background: rgba(255, 255, 255, 0.8);\n  z-index: 1; }\n\n/*=========================\n============ COMMON\n=========================*/\n[hidden] {\n  display: none !important; }\n\n#main-content.decide-open {\n  padding-top: 193px; }\n\n#nav {\n  box-sizing: content-box;\n  height: 121px; }\n  #nav.is-fixed {\n    z-index: 8000; }\n\n.nav-list, .nav-list-ctn, .nav-list-holder {\n  height: 121px;\n  width: 36px; }\n\n.logo-holder, #home_logo {\n  width: 124px; }\n\n.logo-holder img {\n  outline: 0;\n  border: 0; }\n\n.logo-holder img.active {\n  transform: translateY(-52%);\n  -webkit-transform: translateY(-52%);\n  -moz-transform: translateY(-52%);\n  -ms-transform: translateY(-52%);\n  z-index: 9001; }\n\n.data-lines-chart {\n  position: relative;\n  width: 100%;\n  height: 30px; }\n\n/deep/ .has-bg-grade-gradient {\n  background: -ms-linear-gradient(0deg, #f04e53 0%, #ff7d64 27.39%, #feab71 42.49%, #fdc578 52.44%, #f7c57b 55.35%, #e5c583 59.4%, #c7c590 64.11%, #9ec4a2 69.33%, #6ac4b8 74.89%, #5bc4bf 76.35%, #19b4a6 93.76%, #00ae9d 100%);\n  -ms-filter: \"progid:DXImageTransform.Microsoft.gradient(startColorstr='#F04E53', endColorstr='#00AE9D' ,GradientType=0)\";\n  background: linear-gradient(90deg, #f04e53 0%, #ff7d64 27.39%, #feab71 42.49%, #fdc578 52.44%, #f7c57b 55.35%, #e5c583 59.4%, #c7c590 64.11%, #9ec4a2 69.33%, #6ac4b8 74.89%, #5bc4bf 76.35%, #19b4a6 93.76%, #00ae9d 100%);\n  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#F04E53', endColorstr='#00AE9D', GradientType=1); }\n\n/deep/ .cdk-overlay-pane {\n  position: fixed; }\n\n/deep/ .diwo--dialog-pane {\n  max-height: 100%; }\n\n/deep/ .diwo--snack-bar {\n  position: fixed;\n  z-index: 3; }\n\n/deep/ .cdk-overlay-pane.diwo-circle--overlay {\n  pointer-events: none !important; }\n\n/deep/ .cdk-global-overlay-wrapper {\n  top: 0;\n  right: 0;\n  left: 0;\n  bottom: 0;\n  position: fixed;\n  z-index: 9010; }\n\n/deep/ .cdk-overlay-backdrop {\n  top: 0;\n  bottom: 0;\n  left: 0;\n  right: 0;\n  transition: opacity 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);\n  opacity: 0;\n  position: absolute;\n  background-color: rgba(0, 0, 0, 0.7);\n  z-index: 1; }\n\n/deep/ .cdk-overlay-backdrop.cdk-overlay-backdrop-showing {\n  opacity: 0.75;\n  pointer-events: auto; }\n\n/deep/ .cdk-overlay-container {\n  pointer-events: none;\n  top: 0;\n  left: 0; }\n\n/deep/ .cdk-global-overlay-wrapper {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  height: 100%;\n  width: 100%; }\n  /deep/ .cdk-global-overlay-wrapper .cdk-overlay-pane {\n    z-index: 1; }\n\n/deep/ .diwo-circle--overlay {\n  z-index: 9001; }\n\n/deep/ .diwo-circle--overlay.diwo-circle--above-overlay {\n  z-index: 9010; }\n\n#navBar {\n  box-shadow: inset -9px 0 8px -6px grey;\n  transform: translateX(-100%);\n  -webkit-transform: translateX(-100%);\n  -moz-transform: translateX(-100%);\n  -ms-transform: translateX(-100%); }\n\n.nav-title {\n  transform: translateY(-50%) translateX(15px);\n  -webkit-transform: translateY(-50%) translateX(15px);\n  -moz-transform: translateY(-50%) translateX(15px);\n  -ms-transform: translateY(-50%) translateX(15px); }\n\n#navButton {\n  z-index: 9010;\n  border-radius: 0 4px 4px 0;\n  top: 54px;\n  height: 40px; }\n", ""]);
+exports.push([module.i, "/* =============================================================================\n   MEDIA QUERIES\n   ========================================================================== */\n/* Eg.\n    .container{\n        width:1024px;\n\n        @include tablets{\n            width:90%;\n        }\n    }\n*/\n/* =============================================================================\n   Unit transform\n   ========================================================================== */\n:host {\n  display: block;\n  height: 100%; }\n\n/deep/ html {\n  overflow-x: hidden; }\n\n/deep/ body {\n  transition: -webkit-transform 0.3s ease;\n  transition: transform 0.3s ease;\n  transition: transform 0.3s ease, -webkit-transform 0.3s ease; }\n  /deep/ body.nav-open {\n    transform: translateX(54px);\n    -webkit-transform: translateX(54px);\n    -moz-transform: translateX(54px);\n    -ms-transform: translateX(54px); }\n\n.wrapper {\n  transition: all 0.3s ease; }\n\n#main {\n  margin: 0 auto; }\n\n#overlay {\n  z-index: 7000;\n  background: rgba(255, 255, 255, 0.8); }\n\n#nav-overlay {\n  background: rgba(255, 255, 255, 0.8);\n  z-index: 1; }\n\n/*=========================\n============ COMMON\n=========================*/\n[hidden] {\n  display: none !important; }\n\n#main-content.decide-open {\n  padding-top: 193px;\n  padding-top: 155px !important; }\n\n#nav {\n  box-sizing: content-box;\n  height: 121px; }\n  #nav.is-fixed {\n    z-index: 8000; }\n\n.nav-list, .nav-list-ctn, .nav-list-holder {\n  height: 121px;\n  width: 36px; }\n\n.logo-holder, #home_logo {\n  width: 124px; }\n\n.logo-holder img {\n  outline: 0;\n  border: 0; }\n\n.logo-holder img.active {\n  transform: translateY(-52%);\n  -webkit-transform: translateY(-52%);\n  -moz-transform: translateY(-52%);\n  -ms-transform: translateY(-52%);\n  z-index: 9001; }\n\n.data-lines-chart {\n  position: relative;\n  width: 100%;\n  height: 30px; }\n\n/deep/ .has-bg-grade-gradient {\n  background: -ms-linear-gradient(0deg, #f04e53 0%, #ff7d64 27.39%, #feab71 42.49%, #fdc578 52.44%, #f7c57b 55.35%, #e5c583 59.4%, #c7c590 64.11%, #9ec4a2 69.33%, #6ac4b8 74.89%, #5bc4bf 76.35%, #19b4a6 93.76%, #00ae9d 100%);\n  -ms-filter: \"progid:DXImageTransform.Microsoft.gradient(startColorstr='#F04E53', endColorstr='#00AE9D' ,GradientType=0)\";\n  background: linear-gradient(90deg, #f04e53 0%, #ff7d64 27.39%, #feab71 42.49%, #fdc578 52.44%, #f7c57b 55.35%, #e5c583 59.4%, #c7c590 64.11%, #9ec4a2 69.33%, #6ac4b8 74.89%, #5bc4bf 76.35%, #19b4a6 93.76%, #00ae9d 100%);\n  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#F04E53', endColorstr='#00AE9D', GradientType=1); }\n\n/deep/ .cdk-overlay-pane {\n  position: fixed; }\n\n/deep/ .diwo--dialog-pane {\n  max-height: 100%; }\n\n/deep/ .diwo--snack-bar {\n  position: fixed;\n  z-index: 3; }\n\n/deep/ .cdk-overlay-pane.diwo-circle--overlay {\n  pointer-events: none !important; }\n\n/deep/ .cdk-global-overlay-wrapper {\n  top: 0;\n  right: 0;\n  left: 0;\n  bottom: 0;\n  position: fixed;\n  z-index: 9010; }\n\n/deep/ .cdk-overlay-backdrop {\n  top: 0;\n  bottom: 0;\n  left: 0;\n  right: 0;\n  transition: opacity 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);\n  opacity: 0;\n  position: absolute;\n  background-color: rgba(0, 0, 0, 0.7);\n  z-index: 1; }\n\n/deep/ .cdk-overlay-backdrop.cdk-overlay-backdrop-showing {\n  opacity: 0.75;\n  pointer-events: auto; }\n\n/deep/ .cdk-overlay-container {\n  pointer-events: none;\n  top: 0;\n  left: 0; }\n\n/deep/ .cdk-global-overlay-wrapper {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  height: 100%;\n  width: 100%; }\n  /deep/ .cdk-global-overlay-wrapper .cdk-overlay-pane {\n    z-index: 1; }\n\n/deep/ .diwo-circle--overlay {\n  z-index: 9001; }\n\n/deep/ .diwo-circle--overlay.diwo-circle--above-overlay {\n  z-index: 9010; }\n\n#navBar {\n  box-shadow: inset -9px 0 8px -6px grey;\n  z-index: 10000; }\n\n.nav-title {\n  transform: translateY(-50%) translateX(15px);\n  -webkit-transform: translateY(-50%) translateX(15px);\n  -moz-transform: translateY(-50%) translateX(15px);\n  -ms-transform: translateY(-50%) translateX(15px); }\n\n#navButton {\n  z-index: 9010;\n  border-radius: 0 4px 4px 0;\n  top: calc(50% - 30px);\n  height: 40px; }\n\n.centered-icons {\n  position: relative;\n  top: 50%;\n  -webkit-transform: translateY(-50%);\n          transform: translateY(-50%); }\n", ""]);
 
 // exports
 
@@ -266,19 +262,27 @@ var AppComponent = (function () {
         this._auth.currentUserSub.subscribe(function (user) {
         });
     }
+    AppComponent.prototype.openNav = function () {
+        if (this.navOpen === false) {
+            this.toggleNav();
+        }
+    };
+    AppComponent.prototype.closeNav = function () {
+        if (this.navOpen === true) {
+            this.toggleNav();
+        }
+    };
     AppComponent.prototype.toggleNav = function (state) {
         if (state === void 0) { state = null; }
         if (state === false) {
             if (this.navOpen !== false) {
                 this.navOpen = false;
-                document.body.classList.remove('nav-open');
                 this._App.navTransitioning = true;
             }
         }
         else if (state === true) {
             if (this.navOpen !== true) {
                 this.navOpen = true;
-                document.body.classList.add('nav-open');
                 this._App.navTransitioning = true;
             }
         }
@@ -414,6 +418,15 @@ AppComponent = __decorate([
         styles: [__webpack_require__("../../../../../src/app/app.component.scss")],
         host: {},
         animations: [
+            Object(__WEBPACK_IMPORTED_MODULE_2__angular_animations__["j" /* trigger */])('navState', [
+                Object(__WEBPACK_IMPORTED_MODULE_2__angular_animations__["g" /* state */])('closed, void', Object(__WEBPACK_IMPORTED_MODULE_2__angular_animations__["h" /* style */])({
+                    transform: 'translateX(-54px)'
+                })),
+                Object(__WEBPACK_IMPORTED_MODULE_2__angular_animations__["g" /* state */])('open', Object(__WEBPACK_IMPORTED_MODULE_2__angular_animations__["h" /* style */])({
+                    transform: 'translateX(0px)'
+                })),
+                Object(__WEBPACK_IMPORTED_MODULE_2__angular_animations__["i" /* transition */])('* => *', Object(__WEBPACK_IMPORTED_MODULE_2__angular_animations__["e" /* animate */])('200ms ease-in'))
+            ]),
             Object(__WEBPACK_IMPORTED_MODULE_2__angular_animations__["j" /* trigger */])('navPush', [
                 Object(__WEBPACK_IMPORTED_MODULE_2__angular_animations__["g" /* state */])('void, false', Object(__WEBPACK_IMPORTED_MODULE_2__angular_animations__["h" /* style */])({})),
                 Object(__WEBPACK_IMPORTED_MODULE_2__angular_animations__["g" /* state */])('true', Object(__WEBPACK_IMPORTED_MODULE_2__angular_animations__["h" /* style */])({
@@ -1533,7 +1546,7 @@ DrawerRoutingModule = __decorate([
 /***/ "../../../../../src/app/features/notification/notification-wrapper/notification-wrapper.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "\n<div *ngIf=\"loggedIn \" class=\"is-one-whole-tall is-one-whole has-pd-top-large has-pd-bottom-large has-pd-right-large is-relative\">\n  <div   (click)=\"toggleState()\" [class.open]=\"isOpen\" id=\"notification-button\"\n       class=\"is-absolute top-large has-cursor has-bg-shade-3 has-pd-vert-normal has-pd-hori-light layout-row layout--start-center\">\n    <i class=\"di-chevron-left has-c-shade-5\"></i>\n    <button class=\"noti-number has-bg-diwo-red has-c-shade-1 is-circle p small\"\n            *ngIf=\"(unread | async).length > 0\">{{(unread | async).length < 100 ? (unread | async).length : '99+'}}\n    </button>\n  </div>\n  <div id=\"notifications\"\n       class=\" is-relative is-one-whole-tall is-one-whole has-bg-shade-3 has-pd-hori-large has-pd-vert-medium \">\n    <div class=\"layout-row layout--center-center has-c-diwo-red has-mg-bottom-medium is-relative\">\n\n      <div class=\"layout-row\">\n        <div class=\"has-bd-left bd-light bd-shade-4 has-pd-hori-medium-lg has-pd-vert-normal-large notification-nav-btn\">\n          <button (mouseover)=\"activeButton = 0\" (mouseleave)=\"activeButton = -1\" [routerLink]=\"['/',{outlets: {'drawer': ['notifications','']}}]\"><i class=\"{{activeButton === 0 || activeTab === 'notifications' ? 'has-c-diwo-red' : 'has-c-shade-4'}} di-notification di-24x\"></i></button>\n        </div>\n        <div class=\"has-bd-left bd-light bd-shade-4 has-pd-hori-medium-lg has-pd-vert-normal-large notification-nav-btn\">\n          <button (mouseover)=\"activeButton = 1\" (mouseleave)=\"activeButton = -1\" [routerLink]=\"['/',{outlets: {'drawer': ['cases']}}]\"><i class=\"{{activeButton === 1 || activeTab === 'cases' ? 'has-c-diwo-red' : 'has-c-shade-4'}} di-case di-24x\"></i></button>\n        </div>\n        <div class=\"has-bd-left has-bd-right bd-light bd-shade-4 has-pd-hori-medium-lg has-pd-vert-normal-large notification-nav-btn\">\n          <button (mouseover)=\"activeButton = 2\" (mouseleave)=\"activeButton = -1\" [routerLink]=\"['/',{outlets: {'drawer': ['settings']}}]\"><i class=\"{{activeButton === 2 || activeTab === 'settings' ? 'has-c-diwo-red' : 'has-c-shade-4'}} di-settings di-24x\"></i></button>\n        </div>\n      </div>\n\n      <div class=\"layout-row layout--start-center is-absolute top-none right-none\">\n        <p class=\"light\">Hi, {{username}}!</p>\n        <button class=\"has-line-height-1 has-mg-left-small\" (click)=\"logout()\"><i class=\"di-logout\"></i></button>\n      </div>\n    </div>\n    <div class=\"calc-height is-scrollable-y scroll-thumb-diwo-red\">\n      <router-outlet  (activate)='onActivate($event)'></router-outlet>\n    </div>\n\n  </div>\n</div>\n"
+module.exports = "<div *ngIf=\"loggedIn \" class=\"is-one-whole-tall is-one-whole is-relative\">\n  <div *ngIf=\"!((unread | async).length > 0)\"\n       (click)=\"toggleState()\"\n       [class.open]=\"isOpen\"\n       class=\"is-absolute top-large has-cursor has-bg-shade-3 has-pd-vert-normal has-pd-hori-light layout-row layout--start-center notification-button\">\n    <i class=\"di-chevron-left has-c-diwo-red\"></i>\n  </div>\n  <div *ngIf=\"((unread | async).length > 0)\"\n       (click)=\"toggleState()\"\n       [class.open]=\"isOpen\"\n       class=\"is-absolute top-large has-cursor has-bg-shade-3 layout-row notification-button overflow-hidden\">\n    <i *ngIf='isOpen'\n       class=\"di-chevron-left has-c-diwo-red has-pd-vert-normal-large has-pd-vert-normal-large has-pd-hori-extra-small\"></i>\n    <button class=\"has-bg-diwo-red has-c-shade-1 p small\"\n            [style.width]=\"(unread | async).length > 100 ? '60px' : ((unread | async).length > 10 ? '50px' : '25px')\"\n    >{{(unread | async).length < 100 ? (unread | async).length : '99+'}}\n    </button>\n  </div>\n  <div id=\"notifications\"\n       class=\" is-relative is-one-whole-tall is-one-whole has-bg-shade-3 has-pd-hori-large has-pd-vert-medium \">\n    <div class=\"layout-row layout--center-center has-c-diwo-red has-mg-bottom-medium is-relative\">\n\n      <div class=\"layout-row\">\n        <div\n          class=\"has-bd-left bd-light bd-shade-4 has-pd-hori-medium-lg has-pd-vert-normal-large notification-nav-btn\">\n          <button (mouseover)=\"activeButton = 0\" (mouseleave)=\"activeButton = -1\"\n                  [routerLink]=\"['/',{outlets: {'drawer': ['notifications','']}}]\"><i\n            class=\"{{activeButton === 0 || activeTab === 'notifications' ? 'has-c-diwo-red' : 'has-c-shade-4'}} di-notification di-24x\"></i>\n          </button>\n        </div>\n        <div\n          class=\"has-bd-left bd-light bd-shade-4 has-pd-hori-medium-lg has-pd-vert-normal-large notification-nav-btn\">\n          <button (mouseover)=\"activeButton = 1\" (mouseleave)=\"activeButton = -1\"\n                  [routerLink]=\"['/',{outlets: {'drawer': ['cases']}}]\"><i\n            class=\"{{activeButton === 1 || activeTab === 'cases' ? 'has-c-diwo-red' : 'has-c-shade-4'}} di-case di-24x\"></i>\n          </button>\n        </div>\n        <div\n          class=\"has-bd-left has-bd-right bd-light bd-shade-4 has-pd-hori-medium-lg has-pd-vert-normal-large notification-nav-btn\">\n          <button (mouseover)=\"activeButton = 2\" (mouseleave)=\"activeButton = -1\"\n                  [routerLink]=\"['/',{outlets: {'drawer': ['settings']}}]\"><i\n            class=\"{{activeButton === 2 || activeTab === 'settings' ? 'has-c-diwo-red' : 'has-c-shade-4'}} di-settings di-24x\"></i>\n          </button>\n        </div>\n      </div>\n\n      <div class=\"layout-row layout--start-center is-absolute top-none right-none\">\n        <p class=\"light\">Hi, {{username}}!</p>\n        <button class=\"has-line-height-1 has-mg-left-small\" (click)=\"logout()\"><i class=\"di-logout\"></i></button>\n      </div>\n    </div>\n    <div class=\"calc-height is-scrollable-y scroll-thumb-diwo-red\">\n      <router-outlet (activate)='onActivate($event)'></router-outlet>\n    </div>\n\n  </div>\n</div>\n"
 
 /***/ }),
 
@@ -1545,7 +1558,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "/* =============================================================================\n   MEDIA QUERIES\n   ========================================================================== */\n/* Eg.\n    .container{\n        width:1024px;\n\n        @include tablets{\n            width:90%;\n        }\n    }\n*/\n/* =============================================================================\n   Unit transform\n   ========================================================================== */\n:host {\n  z-index: 9010;\n  display: block;\n  top: 30px; }\n  :host .calc-height {\n    height: calc(100% - 63px); }\n\n#notifications {\n  box-shadow: 1px 4px 17px 0px rgba(0, 0, 0, 0.4);\n  border-radius: 0 5px 5px 5px; }\n\n#notification-button {\n  width: 46px;\n  height: 40px;\n  z-index: 1;\n  border-radius: 4px 0 0 4px;\n  transform: translateX(-100%);\n  -webkit-transform: translateX(-100%);\n  -moz-transform: translateX(-100%);\n  -ms-transform: translateX(-100%);\n  box-shadow: -3px 2px 7px -2px rgba(0, 0, 0, 0.4); }\n  #notification-button i {\n    transition:  200ms cubic-bezier(0.25, 0.8, 0.25, 1); }\n  #notification-button.open i {\n    transform: rotate(180deg);\n    -webkit-transform: rotate(180deg);\n    -moz-transform: rotate(180deg);\n    -ms-transform: rotate(180deg); }\n\n.noti-number {\n  height: 22px;\n  width: 22px; }\n", ""]);
+exports.push([module.i, "/* =============================================================================\n   MEDIA QUERIES\n   ========================================================================== */\n/* Eg.\n    .container{\n        width:1024px;\n\n        @include tablets{\n            width:90%;\n        }\n    }\n*/\n/* =============================================================================\n   Unit transform\n   ========================================================================== */\n:host {\n  z-index: 9010;\n  display: block;\n  top: 30px; }\n  :host .calc-height {\n    height: calc(100% - 63px); }\n\n#notifications {\n  box-shadow: 1px 4px 17px 0px rgba(0, 0, 0, 0.4);\n  border-radius: 0 5px 5px 5px; }\n\n.overflow-hidden {\n  overflow: hidden; }\n\n.notification-button {\n  height: 40px;\n  z-index: 1;\n  border-radius: 7px 0 0 7px;\n  transform: translateX(-100%);\n  -webkit-transform: translateX(-100%);\n  -moz-transform: translateX(-100%);\n  -ms-transform: translateX(-100%);\n  box-shadow: -3px 2px 7px -2px rgba(0, 0, 0, 0.4); }\n  .notification-button i {\n    transition:  200ms cubic-bezier(0.25, 0.8, 0.25, 1); }\n  .notification-button.open i {\n    transform: rotate(180deg);\n    -webkit-transform: rotate(180deg);\n    -moz-transform: rotate(180deg);\n    -ms-transform: rotate(180deg); }\n\n.noti-number {\n  height: 22px;\n  width: 22px; }\n", ""]);
 
 // exports
 
@@ -2692,7 +2705,8 @@ module.exports = module.exports.toString();
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__shared_utils_dynamic_component_shareable_service__ = __webpack_require__("../../../../../src/app/shared/utils/dynamic-component/shareable.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__visuals_service__ = __webpack_require__("../../../../../src/app/features/superuser/dashboard/visuals/visuals.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_d3__ = __webpack_require__("../../../../d3/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_d3__ = __webpack_require__("../../../../d3/build/d3.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_d3___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_d3__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -3987,7 +4001,8 @@ module.exports = module.exports.toString();
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DecideCardInterveneChartComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__config_service__ = __webpack_require__("../../../../../src/app/config.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_d3__ = __webpack_require__("../../../../d3/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_d3__ = __webpack_require__("../../../../d3/build/d3.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_d3___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_d3__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -4179,7 +4194,8 @@ module.exports = module.exports.toString();
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DecideCardReadmissionChartComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__config_service__ = __webpack_require__("../../../../../src/app/config.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_d3__ = __webpack_require__("../../../../d3/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_d3__ = __webpack_require__("../../../../d3/build/d3.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_d3___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_d3__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -4923,7 +4939,7 @@ var DecideModule_1;
 /***/ "../../../../../src/app/microservices/decide/decide/decide-panel-layout/decide-panel-layout.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"panel-container gray\">\n  <div class=\"top-buttons\">\n    <div class=\"circle-button diwo-button\"></div>\n    <div class=\"line-header-elements\">\n      <span class=\"header-info-separator\">Optimize Assortment</span>\n      <span>Opp #135</span>\n    </div>\n    <div class=\"line-header-button\">\n      <img src=\"./assets/images/temp_icons/icon_3.svg\"/>\n    </div>\n    <div class=\"side-buttons\">\n      <div class=\"circle-button\" (click)=\"close()\">\n        <img src=\"./assets/images/temp_icons/icon_2.svg\"/>\n      </div>\n      <div class=\"circle-button\" (click)=\"state = 'what-if-analysis'\">\n        <img src=\"./assets/images/temp_icons/icon_7.svg\"\n             onmouseover=\"this.src='./assets/images/temp_icons/icon_7_hover.svg'\"\n             onmouseout=\"this.src='./assets/images/temp_icons/icon_7.svg'\"/>\n      </div>\n      <div class=\"circle-button\" (click)=\"state = 'trends'\">\n        <img src=\"./assets/images/temp_icons/icon_1.svg\"/>\n      </div>\n      <div class=\"circle-button\" (click)=\"state = 'suggested-combinations'\">\n        <img src=\"./assets/images/temp_icons/icon_9.svg\"/>\n      </div>\n    </div>\n  </div>\n  <div class=\"main-content\">\n    <!--Inside this should be placed the d3 components-->\n    <div class=\"left-graph\">\n      <div class=\"graph-container\">\n        <div class=\"graph-header\">\n          <div class=\"name\">Category: Bra </div>\n          <div class=\"separator\">\n            <i class=\"di-chevron-right di-18x\"></i>\n          </div>\n          <dropdown-input [placeholder]=\"'Class'\" [value]=\"class\" (valueChange)=\"console.log($event)\">\n            <div>asdsad</div>\n            <div>asdsad</div>\n          </dropdown-input>\n          <div class=\"separator\">\n            <i class=\"di-chevron-right di-18x\"></i>\n          </div>\n          <dropdown-input [placeholder]=\"'Style'\" [value]=\"class\" (valueChange)=\"console.log($event)\">\n            <div>asdsad</div>\n            <div>asdsad</div>\n          </dropdown-input>\n          <div class=\"separator\">\n            <i class=\"di-chevron-right di-18x\"></i>\n          </div>\n          <dropdown-input [placeholder]=\"'Choice'\" [value]=\"class\" (valueChange)=\"console.log($event)\">\n            <div>asdsad</div>\n            <div>asdsad</div>\n          </dropdown-input>\n        </div>\n        <div *ngIf=\"state === 'trends'\" data-id='gViz-visuals-vis-wrapper' class='gViz-visuals-inner-wrapper graph'>\n          <div *ngIf=\"!data[0].Graph.Data\">Loading data...</div>\n          <ng-template *ngIf=\"data[0].Graph.Data\"\n                       [dynamic-component]=\"data[0].Graph.Type\"\n                       [data]=\"data[0].Graph.Data\"></ng-template>\n        </div>\n        <div *ngIf=\"state === 'what-if-analysis'\" data-id='gViz-visuals-vis-wrapper'\n             class='gViz-visuals-inner-wrapper graph'>\n          <div *ngIf=\"!data[1].Graph.Data\">Loading data...</div>\n          <ng-template *ngIf=\"data[1].Graph.Data\"\n                       [dynamic-component]=\"data[1].Graph.Type\"\n                       [data]=\"data[1].Graph.Data\"></ng-template>\n        </div>\n        <decide-suggested-combinations *ngIf=\"state === 'suggested-combinations'\"></decide-suggested-combinations>\n      </div>\n    </div>\n    <div class=\"right-fields\">\n      <div class=\"row\">\n        <div class='left-value'>Revenue impact</div>\n        <div class='right-value'>$1.3M</div>\n      </div>\n\n      <div class=\"row\">\n        <div class='left-value'>Confidence Score</div>\n        <div class='right-value'>89%</div>\n      </div>\n\n      <!--Inside this should be placed the details components-->\n      <div class=\"graph-details\">\n        <decide-trends-panel *ngIf=\"state === 'trends'\"></decide-trends-panel>\n        <decide-what-if-analysis-panel *ngIf=\"state === 'what-if-analysis'\"></decide-what-if-analysis-panel>\n      </div>\n    </div>\n  </div>\n</div>\n"
+module.exports = "<div class=\"panel-container gray\">\n  <div class=\"top-buttons\">\n    <div class=\"circle-button diwo-button\"></div>\n    <div class=\"line-header-elements\">\n      <span class=\"\">Optimize Assortment</span>\n      <span class=\"header-info-separator over\">&nbsp;</span>\n      <span>Opp #135</span>\n    </div>\n    <div class=\"line-header-button\">\n      <img src=\"./assets/images/temp_icons/icon_3.svg\"/>\n    </div>\n    <div class=\"side-buttons\">\n      <div class=\"circle-button\" (click)=\"close()\">\n        <img src=\"./assets/images/temp_icons/icon_2.svg\"/>\n      </div>\n      <div class=\"circle-button\" (click)=\"state = 'what-if-analysis'\">\n        <img src=\"./assets/images/temp_icons/icon_7.svg\"\n             onmouseover=\"this.src='./assets/images/temp_icons/icon_7_hover.svg'\"\n             onmouseout=\"this.src='./assets/images/temp_icons/icon_7.svg'\"/>\n      </div>\n      <div class=\"circle-button\" (click)=\"state = 'trends'\">\n        <img src=\"./assets/images/temp_icons/icon_1.svg\"/>\n      </div>\n      <div class=\"circle-button\" (click)=\"state = 'suggested-combinations'\">\n        <img src=\"./assets/images/temp_icons/icon_9.svg\"/>\n      </div>\n    </div>\n  </div>\n  <div class=\"main-content\">\n    <!--Inside this should be placed the d3 components-->\n    <div class=\"left-graph\">\n      <div class=\"graph-container\">\n        <div class=\"graph-header\">\n          <div class=\"name\">Category: Bra </div>\n          <div class=\"separator\">\n            <i class=\"di-chevron-right di-18x\"></i>\n          </div>\n          <dropdown-input [placeholder]=\"'Class'\" [value]=\"class\" (valueChange)=\"console.log($event)\">\n            <div>asdsad</div>\n            <div>asdsad</div>\n          </dropdown-input>\n          <div class=\"separator\">\n            <i class=\"di-chevron-right di-18x\"></i>\n          </div>\n          <dropdown-input [placeholder]=\"'Style'\" [value]=\"class\" (valueChange)=\"console.log($event)\">\n            <div>asdsad</div>\n            <div>asdsad</div>\n          </dropdown-input>\n          <div class=\"separator\">\n            <i class=\"di-chevron-right di-18x\"></i>\n          </div>\n          <dropdown-input [placeholder]=\"'Choice'\" [value]=\"class\" (valueChange)=\"console.log($event)\">\n            <div>asdsad</div>\n            <div>asdsad</div>\n          </dropdown-input>\n        </div>\n        <div *ngIf=\"state === 'trends'\" data-id='gViz-visuals-vis-wrapper' class='gViz-visuals-inner-wrapper graph'>\n          <div *ngIf=\"!data[0].Graph.Data\">Loading data...</div>\n          <ng-template *ngIf=\"data[0].Graph.Data\"\n                       [dynamic-component]=\"data[0].Graph.Type\"\n                       [data]=\"data[0].Graph.Data\"></ng-template>\n        </div>\n        <div *ngIf=\"state === 'what-if-analysis'\" data-id='gViz-visuals-vis-wrapper'\n             class='gViz-visuals-inner-wrapper graph'>\n          <div *ngIf=\"!data[1].Graph.Data\">Loading data...</div>\n          <ng-template *ngIf=\"data[1].Graph.Data\"\n                       [dynamic-component]=\"data[1].Graph.Type\"\n                       [data]=\"data[1].Graph.Data\"></ng-template>\n        </div>\n        <decide-suggested-combinations *ngIf=\"state === 'suggested-combinations'\"></decide-suggested-combinations>\n      </div>\n    </div>\n    <div class=\"right-fields\">\n      <div class=\"row\">\n        <div class='left-value'>Revenue impact</div>\n        <div class='right-value'>$1.3M</div>\n      </div>\n\n      <div class=\"row\">\n        <div class='left-value'>Confidence Score</div>\n        <div class='right-value'>89%</div>\n      </div>\n\n      <!--Inside this should be placed the details components-->\n      <div class=\"graph-details\">\n        <decide-trends-panel *ngIf=\"state === 'trends'\"></decide-trends-panel>\n        <decide-what-if-analysis-panel *ngIf=\"state === 'what-if-analysis'\"></decide-what-if-analysis-panel>\n      </div>\n    </div>\n  </div>\n</div>\n"
 
 /***/ }),
 
@@ -4935,7 +4951,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "/* =============================================================================\n   MEDIA QUERIES\n   ========================================================================== */\n/* Eg.\n    .container{\n        width:1024px;\n\n        @include tablets{\n            width:90%;\n        }\n    }\n*/\n/* =============================================================================\n   Unit transform\n   ========================================================================== */\n:host {\n  display: block; }\n\n#decide-header {\n  z-index: 7000;\n  top: 145px; }\n\n@media screen and (max-width: 1280px) {\n  .cards-container {\n    height: 75vh;\n    width: 100vw;\n    position: fixed;\n    overflow-y: scroll;\n    padding: 0 2%;\n    margin-top: 15px !important;\n    left: 1%;\n    z-index: 9000; } }\n\n@media screen and (min-width: 1281px) {\n  .cards-container {\n    height: 75vh;\n    width: 100vw;\n    position: fixed;\n    overflow-y: scroll;\n    padding: 0 2%;\n    margin-top: 50px !important;\n    left: 1%;\n    top: 15%;\n    z-index: 9000; } }\n\n.decide-card-item {\n  width: 0; }\n\n.decide-card-item:nth-of-type(1) {\n  -webkit-box-flex: 0.2;\n  box-flex: 0.2;\n  -ms-flex-positive: 0.2;\n      flex-grow: 0.2;\n  -webkit-flex-grow: 0.2;\n  -ms-flex-grow: 0.2;\n  -moz-flex-grow: 0.2; }\n\n.decide-card-item:nth-of-type(1n+2) {\n  -webkit-box-flex: 0.16;\n  box-flex: 0.16;\n  -ms-flex-positive: 0.16;\n      flex-grow: 0.16;\n  -webkit-flex-grow: 0.16;\n  -ms-flex-grow: 0.16;\n  -moz-flex-grow: 0.16; }\n\n#decideClose {\n  z-index: 8000;\n  padding: 10px;\n  padding-top: 0; }\n\n.border-card-right {\n  border-right: 0.3px solid #d1d1d1;\n  padding: 10px 0 !important; }\n  .border-card-right.no-border {\n    border: 0;\n    padding: 0 !important; }\n\n.border-card-right.table {\n  padding-top: 0 !important; }\n\n.card-header {\n  margin-bottom: 36px;\n  display: -webkit-box; }\n\n.card-header > div {\n  border-bottom: 0.3px solid #aeaeae;\n  font-size: 19px;\n  padding-bottom: 9px;\n  position: relative;\n  float: left;\n  margin: 10px;\n  box-sizing: initial; }\n\n.card-header .context {\n  width: 47%; }\n\n.card-header .forecast {\n  width: 31%; }\n\n.card-header .outcome {\n  width: 16%; }\n\n.card-line > * {\n  font-weight: thin;\n  white-space: nowrap; }\n\n.card-line {\n  margin: 20px 0;\n  position: relative;\n  clear: both;\n  float: left;\n  width: 100%; }\n\n.card-image {\n  width: 25%;\n  display: inline-block;\n  position: relative;\n  float: left;\n  padding: 10px;\n  max-width: 80px; }\n  .card-image img {\n    width: 100%;\n    max-width: 55px; }\n\n.card-text {\n  padding: 15px; }\n\n.card-text .row {\n  padding: 5px; }\n\n.line-header-elements {\n  background: #222323;\n  color: #FFF;\n  font-weight: normal;\n  margin-top: -12px;\n  margin-left: 5px;\n  position: absolute;\n  z-index: 99;\n  font-size: 14px;\n  font-weight: 100;\n  padding: 4px 10px 4px 5px; }\n\n.line-icon {\n  width: 30px;\n  height: 30px;\n  border-radius: 18px;\n  background: #202121;\n  display: inline-block;\n  margin-left: -18px;\n  margin-top: 30px;\n  z-index: 99;\n  position: absolute;\n  cursor: pointer; }\n\n.line-icon i, .options-icon i {\n  color: #FFF;\n  font-size: 16px;\n  padding-left: 7px;\n  padding-top: 7px; }\n\n.options-icon i.di-check {\n  color: #202121; }\n\n.options-icon i.di-microphone {\n  padding-left: 10px;\n  padding-top: 3px;\n  color: #202121; }\n\n.options-icon {\n  width: 30px;\n  height: 30px;\n  border-radius: 18px;\n  background: #FFF;\n  border: 2px solid #202121;\n  display: inline-block;\n  margin-left: -15px;\n  margin-top: -15px;\n  position: absolute;\n  z-index: 100;\n  cursor: pointer; }\n\n.header-info-separator, .header-info-separator-last {\n  padding: 0 10px 0 10px;\n  margin-right: 10px;\n  border-right: 0.3px solid #FFF;\n  display: inline-block;\n  font-weight: 100; }\n\n.header-info-separator-last {\n  border: none; }\n\n.card {\n  padding: 15px;\n  line-height: 28px !important;\n  font-size: 18px; }\n\n.line-group {\n  width: 74%;\n  display: inline-block;\n  position: relative;\n  float: left;\n  overflow: hidden;\n  padding: 15px; }\n\n.line-card {\n  display: inline-block;\n  width: 25%;\n  float: left;\n  border-top: 2px solid #e7e7e7;\n  border-bottom: 2px solid #e7e7e7; }\n\n.line-card > * {\n  line-height: 24px;\n  position: relative;\n  width: 100%;\n  float: left;\n  height: 90px; }\n\n.card-content-line h2 {\n  font-size: 17px; }\n\n.card-content-line {\n  font-size: 17px !important;\n  font-family: 'Yantramanav' !important;\n  font-weight: 400 !important;\n  line-height: 20px; }\n\n.card .label {\n  font-size: 15px;\n  font-family: 'Yantramanav-Light';\n  margin-top: 5px; }\n\n.card h3 {\n  font-size: 15px !important;\n  font-weight: normal !important; }\n\n.card .value-small, .card .value-big {\n  font-family: Bebas !important;\n  font-weight: 400 !important; }\n\n.card .value-big {\n  font-size: 22px !important; }\n\n.col-25 {\n  width: 25%; }\n\n.col-50 {\n  width: 49%;\n  display: inline-block; }\n\n.col-75 {\n  width: 74%; }\n\n.col-100 {\n  width: 100%; }\n\n.col-rest-3 {\n  width: 16.66666667%; }\n\n.row-rest-6 {\n  height: 33.33333333%; }\n\n.pink {\n  color: #ea6193; }\n\n.gray {\n  background: #e9e8e8; }\n\n.black {\n  color: #202121; }\n\n.white {\n  background: #f9f9f9; }\n\n.light-gray {\n  background: #f2f2f2; }\n\n.pull-left {\n  float: left; }\n\n.pull-right {\n  float: right; }\n\n.text-left {\n  text-align: left; }\n\n.text-right {\n  text-align: right; }\n\n.text-center {\n  text-align: center; }\n\n.last-card {\n  border: 2px solid #d1d1d1;\n  border-left: none !important;\n  overflow: hidden; }\n\n.bold {\n  font-weight: 400 !important; }\n\n.normal {\n  font-weight: 100 !important; }\n\n.collapsed.card-buttons {\n  height: auto !important;\n  margin-left: 7.5%;\n  margin-right: auto;\n  width: auto !important;\n  position: absolute !important;\n  top: 80px;\n  z-index: 999; }\n\n.card-button {\n  z-index: 999;\n  border-radius: 3px;\n  width: 45px;\n  height: 15px;\n  padding: 0 5px;\n  position: relative;\n  float: left;\n  margin: 5px;\n  font-size: 12px;\n  color: #FFF;\n  line-height: 16px;\n  cursor: pointer; }\n\n.button-expand {\n  background: #202121;\n  text-align: center; }\n\n.button-new {\n  background: #e10b17; }\n\n.button-new .icon-btn-new {\n  width: 15px;\n  height: 15px;\n  background: #FFF;\n  position: absolute;\n  float: right;\n  border: 1px solid #202121;\n  border-radius: 0 3px 3px 0;\n  bottom: 0;\n  right: 0; }\n\n.expanded {\n  position: relative;\n  float: left;\n  margin-top: 12px;\n  width: 100%;\n  background: #fafafa; }\n\n.expanded .container {\n  padding: 10px 10px 20px 10px;\n  overflow: hidden;\n  height: 100%;\n  border: 0.3px solid #e7e7e7 !important; }\n  .expanded .container .main-content {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-orient: horizontal;\n    -webkit-box-direction: normal;\n        -ms-flex-direction: row;\n            flex-direction: row; }\n    .expanded .container .main-content .left-graph {\n      -webkit-box-flex: 2;\n          -ms-flex: 2;\n              flex: 2;\n      overflow: hidden; }\n      .expanded .container .main-content .left-graph .gViz-visuals-inner-wrapper {\n        height: 100%; }\n    .expanded .container .main-content .right-fields {\n      -webkit-box-flex: 1;\n          -ms-flex: 1;\n              flex: 1;\n      padding-left: 1%;\n      display: -webkit-box;\n      display: -ms-flexbox;\n      display: flex;\n      -webkit-box-orient: vertical;\n      -webkit-box-direction: normal;\n          -ms-flex-direction: column;\n              flex-direction: column; }\n      .expanded .container .main-content .right-fields .header {\n        border-bottom: 1px solid #e10b17;\n        color: #e10b17;\n        padding-bottom: 0;\n        margin-bottom: 0;\n        font-weight: 400;\n        font-size: 17px; }\n      .expanded .container .main-content .right-fields .header span {\n        top: -5px;\n        left: 5px;\n        position: relative; }\n      .expanded .container .main-content .right-fields .top-fields {\n        -webkit-box-flex: 1;\n            -ms-flex: 1;\n                flex: 1;\n        padding-right: 0px; }\n      .expanded .container .main-content .right-fields .bottom-fields {\n        margin-top: 28px;\n        padding-right: 0px; }\n\n.expanded .card {\n  width: 32%;\n  margin-right: 1%;\n  background: #fafafa;\n  border: 1px solid #e9e8e8;\n  display: inline-block;\n  white-space: normal;\n  height: 350px; }\n\n.expanded .card {\n  line-height: 24px !important;\n  position: relative;\n  float: left;\n  display: inline-block; }\n\n.expanded .card .text {\n  float: left;\n  font-size: 15px; }\n\n.expanded .card-button {\n  bottom: -11px !important;\n  position: absolute;\n  float: left;\n  z-index: 9999; }\n  .expanded .card-button.button-expand {\n    margin-left: 7%; }\n  .expanded .card-button.button-new {\n    margin-left: calc(7% + 55px); }\n\n.expanded .card h3 {\n  color: #e96292;\n  font-weight: lighter;\n  border-bottom: 2px solid #e96292;\n  padding-bottom: 12px;\n  margin-bottom: 12px;\n  font-size: 17px; }\n\n.diwo-circle--actions .layout-column.diwo-circle--actions-ctn {\n  position: relative; }\n\n.diwo-circle--trigger {\n  z-index: 1; }\n\n.diwo-circle--action-item {\n  -webkit-transform: none !important;\n          transform: none !important; }\n\ntd {\n  background-color: white; }\n\n.w-100, .row, .row-small {\n  width: 100%; }\n\n.row {\n  border: solid 0.3px rgba(203, 87, 126, 0.39);\n  display: table;\n  clear: both;\n  padding: 5px;\n  margin-bottom: 2px;\n  background-color: white; }\n  .row .left-value {\n    padding: 5px; }\n  .row .right-value {\n    padding: 5px;\n    margin-left: 5px;\n    text-align: right !important; }\n\n.tri-row {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: row;\n          flex-direction: row;\n  margin-bottom: 2px;\n  background-color: white; }\n  .tri-row .left-value {\n    border: solid 0.3px rgba(203, 87, 126, 0.39);\n    padding: 10px;\n    text-align: center;\n    line-height: 3.5em;\n    -webkit-box-flex: 1;\n        -ms-flex: 1;\n            flex: 1; }\n  .tri-row .right-rows {\n    -webkit-box-flex: 4;\n        -ms-flex: 4;\n            flex: 4;\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-orient: vertical;\n    -webkit-box-direction: normal;\n        -ms-flex-direction: column;\n            flex-direction: column; }\n    .tri-row .right-rows .row {\n      margin-bottom: 0; }\n\n.row-small {\n  border-bottom: solid 0.5px rgba(203, 87, 126, 0.39);\n  display: table;\n  clear: both;\n  background-color: white;\n  overflow: hidden;\n  line-height: 30px !important; }\n\n.pink-color {\n  color: #e96292; }\n\n.right-value-left {\n  color: #e96292 !important;\n  font-weight: 400;\n  font-size: 16px;\n  font-family: 'Bebas' !important;\n  text-align: left !important; }\n\n.right-value {\n  float: right;\n  font-weight: 400;\n  color: #e96292;\n  font-size: 16px;\n  font-family: 'Bebas' !important;\n  text-align: right !important; }\n\n.left-value {\n  float: left;\n  color: #555;\n  font-size: 15px;\n  font-family: 'Yantramanav';\n  font-weight: 200; }\n\n.bordered-heading {\n  font-size: 20px;\n  border-bottom: 3px solid #e10b17;\n  display: block;\n  margin-bottom: 15px;\n  padding-bottom: 10px; }\n\n.image-outer-wrapper {\n  height: 100%;\n  position: relative; }\n  .image-outer-wrapper .border-rect {\n    position: absolute;\n    height: 15px;\n    width: 15px;\n    z-index: 100; }\n    .image-outer-wrapper .border-rect[data-side='top-left'] {\n      top: 1px;\n      left: 1px;\n      border-top: 2px solid #e10b17;\n      border-left: 2px solid #e10b17; }\n    .image-outer-wrapper .border-rect[data-side='top-middle'] {\n      top: 1px;\n      left: 50%;\n      width: 20px;\n      border-top: 2px solid #e10b17; }\n    .image-outer-wrapper .border-rect[data-side='top-right'] {\n      top: 1px;\n      right: 1px;\n      border-top: 2px solid #e10b17;\n      border-right: 2px solid #e10b17; }\n    .image-outer-wrapper .border-rect[data-side='middle-left'] {\n      top: 50%;\n      left: 1px;\n      height: 20px;\n      border-left: 2px solid #e10b17; }\n    .image-outer-wrapper .border-rect[data-side='middle-right'] {\n      top: 50%;\n      right: 1px;\n      height: 20px;\n      border-right: 2px solid #e10b17; }\n    .image-outer-wrapper .border-rect[data-side='bottom-left'] {\n      bottom: 1px;\n      left: 1px;\n      border-bottom: 2px solid #e10b17;\n      border-left: 2px solid #e10b17; }\n    .image-outer-wrapper .border-rect[data-side='bottom-middle'] {\n      bottom: 1px;\n      left: 50%;\n      width: 20px;\n      border-bottom: 2px solid #e10b17; }\n    .image-outer-wrapper .border-rect[data-side='bottom-right'] {\n      bottom: 1px;\n      right: 1px;\n      border-bottom: 2px solid #e10b17;\n      border-right: 2px solid #e10b17; }\n\n.panel-holder {\n  position: absolute;\n  left: 1vw;\n  top: 3vh;\n  right: 1vw;\n  z-index: 9999; }\n\n.pink-background {\n  background-color: rgba(203, 87, 126, 0.23) !important;\n  overflow: auto; }\n\n.dark-pink-background {\n  background-color: rgba(203, 80, 99, 0.49) !important; }\n\n.pink-text {\n  color: #e96292; }\n\n.red-text {\n  color: #e10b17;\n  font-weight: 100; }\n\n.clear {\n  clear: both; }\n\n.bold {\n  font-weight: bold; }\n\n.sub-icon {\n  margin-top: -4px; }\n\n.di-arrow-down {\n  margin-top: 0; }\n\n.di-arrow-up {\n  margin-top: -2px; }\n\n.row-set-white-linear {\n  background: #FFF;\n  border: none !important;\n  padding-top: 0;\n  padding: 5px 0;\n  margin: 5px 0;\n  margin-top: 0; }\n\n.row-set-white-linear .row {\n  border: none;\n  border-bottom: 1px solid #e10b17;\n  white-space: initial; }\n\n.row-set-white {\n  background: #FFF;\n  border: solid 0.3px rgba(203, 87, 126, 0.39);\n  padding: 5px;\n  margin: 5px 0; }\n\n.row-set-white .row {\n  border: none;\n  border-bottom: solid 0.3px rgba(203, 87, 126, 0.39);\n  width: 97%;\n  margin: 0 5px; }\n\n.row-set-white .row:last-child {\n  border: none; }\n\n.icon-globe {\n  position: relative;\n  float: left;\n  width: 26px;\n  margin: 0 5px; }\n\n:host {\n  z-index: 999; }\n  :host .panel-container {\n    padding: 30px 0 0 30px;\n    top: 0;\n    position: relative;\n    min-height: 75vh; }\n    :host .panel-container .top-buttons .circle-button {\n      background-color: white;\n      border-radius: 50%;\n      width: 30px;\n      height: 30px;\n      z-index: 100; }\n      :host .panel-container .top-buttons .circle-button:hover {\n        cursor: pointer; }\n      :host .panel-container .top-buttons .circle-button img {\n        width: 30px;\n        height: 30px; }\n    :host .panel-container .top-buttons .diwo-button {\n      position: absolute;\n      top: -15px;\n      left: -15px;\n      border: 2px solid red; }\n    :host .panel-container .top-buttons .side-buttons {\n      position: absolute;\n      left: -15px;\n      top: 100px;\n      z-index: 100; }\n      :host .panel-container .top-buttons .side-buttons .circle-button {\n        border: 0;\n        background-color: #202121;\n        display: -webkit-box;\n        display: -ms-flexbox;\n        display: flex;\n        -webkit-box-pack: center;\n            -ms-flex-pack: center;\n                justify-content: center;\n        -webkit-box-align: center;\n            -ms-flex-align: center;\n                align-items: center; }\n      :host .panel-container .top-buttons .side-buttons > div {\n        margin-bottom: 30px; }\n    :host .panel-container .top-buttons .line-header-elements {\n      top: -10px;\n      left: 0;\n      margin-top: 0; }\n      :host .panel-container .top-buttons .line-header-elements span {\n        padding-right: 10px; }\n    :host .panel-container .top-buttons .line-header-button {\n      position: absolute;\n      top: -7px;\n      left: 250px;\n      height: 15px;\n      width: 45px; }\n    :host .panel-container .main-content {\n      display: -webkit-box;\n      display: -ms-flexbox;\n      display: flex;\n      -webkit-box-orient: horizontal;\n      -webkit-box-direction: normal;\n          -ms-flex-direction: row;\n              flex-direction: row; }\n      :host .panel-container .main-content .left-graph {\n        -webkit-box-flex: 5;\n            -ms-flex: 5;\n                flex: 5; }\n        :host .panel-container .main-content .left-graph .graph-container {\n          background: white;\n          padding: 10px; }\n          :host .panel-container .main-content .left-graph .graph-container .graph-header {\n            display: -webkit-box;\n            display: -ms-flexbox;\n            display: flex;\n            -webkit-box-orient: horizontal;\n            -webkit-box-direction: normal;\n                -ms-flex-direction: row;\n                    flex-direction: row;\n            margin-bottom: 10px; }\n            :host .panel-container .main-content .left-graph .graph-container .graph-header dropdown-input {\n              -webkit-box-flex: 1;\n                  -ms-flex: 1;\n                      flex: 1; }\n            :host .panel-container .main-content .left-graph .graph-container .graph-header .name {\n              -webkit-box-flex: 1;\n                  -ms-flex: 1;\n                      flex: 1;\n              background: black;\n              color: white;\n              line-height: 28px;\n              padding-left: 10px;\n              font-weight: 100; }\n            :host .panel-container .main-content .left-graph .graph-container .graph-header .separator {\n              margin: 0 10px;\n              color: #ea6193;\n              padding-top: 7px; }\n          :host .panel-container .main-content .left-graph .graph-container .graph {\n            width: 100%;\n            height: 75vh; }\n      :host .panel-container .main-content .right-fields {\n        padding-left: 15px;\n        -webkit-box-flex: 3;\n            -ms-flex: 3;\n                flex: 3; }\n        :host .panel-container .main-content .right-fields .graph-details {\n          margin-top: 15px; }\n          :host .panel-container .main-content .right-fields .graph-details img {\n            width: 100%; }\n      :host .panel-container .main-content .row {\n        background-color: #b3b3b3;\n        border: 0;\n        padding: 10px; }\n        :host .panel-container .main-content .row .left-value {\n          color: black;\n          font-size: 16px; }\n        :host .panel-container .main-content .row .right-value {\n          color: black;\n          font-size: 16px; }\n", ""]);
+exports.push([module.i, "/* =============================================================================\n   MEDIA QUERIES\n   ========================================================================== */\n/* Eg.\n    .container{\n        width:1024px;\n\n        @include tablets{\n            width:90%;\n        }\n    }\n*/\n/* =============================================================================\n   Unit transform\n   ========================================================================== */\n:host {\n  display: block; }\n\n#decide-header {\n  z-index: 7000;\n  top: 145px; }\n\n@media screen and (max-width: 1280px) {\n  .cards-container {\n    height: 83vh;\n    width: 98vw;\n    position: fixed;\n    overflow-y: scroll;\n    padding: 0 10px 0 2%;\n    margin-top: 15px !important;\n    left: 1%;\n    z-index: 9000; } }\n\n@media screen and (min-width: 1281px) {\n  .cards-container {\n    height: 83vh;\n    width: 98vw;\n    position: fixed;\n    overflow-y: scroll;\n    padding: 0 10px 0 2%;\n    margin-top: 10px !important;\n    left: 1%;\n    top: 150px;\n    z-index: 9000; } }\n\n.decide-card-item {\n  width: 0; }\n\n.decide-card-item:nth-of-type(1) {\n  -webkit-box-flex: 0.2;\n  box-flex: 0.2;\n  -ms-flex-positive: 0.2;\n      flex-grow: 0.2;\n  -webkit-flex-grow: 0.2;\n  -ms-flex-grow: 0.2;\n  -moz-flex-grow: 0.2; }\n\n.decide-card-item:nth-of-type(1n+2) {\n  -webkit-box-flex: 0.16;\n  box-flex: 0.16;\n  -ms-flex-positive: 0.16;\n      flex-grow: 0.16;\n  -webkit-flex-grow: 0.16;\n  -ms-flex-grow: 0.16;\n  -moz-flex-grow: 0.16; }\n\n#decideClose {\n  z-index: 8000;\n  padding: 10px;\n  padding-top: 0; }\n\n.border-card-right {\n  border-right: 0.3px solid #d1d1d1;\n  padding: 10px 0 !important; }\n  .border-card-right.no-border {\n    border: 0;\n    padding: 0 !important; }\n\n.border-card-right.table {\n  padding-top: 0 !important; }\n\n.card-header {\n  margin-bottom: 36px;\n  display: -webkit-box; }\n\n.card-header > div {\n  border-bottom: 0.3px solid #aeaeae;\n  font-size: 19px;\n  padding-bottom: 9px;\n  position: relative;\n  float: left;\n  margin: 10px;\n  box-sizing: initial; }\n\n.card-header .context {\n  width: 47%; }\n\n.card-header .forecast {\n  width: 31%; }\n\n.card-header .outcome {\n  width: 16%; }\n\n.card-line > * {\n  font-weight: thin;\n  white-space: nowrap; }\n\n.card-line {\n  margin: 20px 0;\n  position: relative;\n  clear: both;\n  float: left;\n  width: 100%; }\n\n.card-image {\n  width: 25%;\n  display: inline-block;\n  position: relative;\n  float: left;\n  padding: 10px;\n  max-width: 80px; }\n  .card-image img {\n    width: 100%;\n    max-width: 55px; }\n\n.card-text {\n  padding: 15px; }\n\n.card-text .row {\n  padding: 5px; }\n\n.line-header-elements {\n  background: #222323;\n  color: #FFF;\n  font-weight: normal;\n  margin-top: -12px;\n  margin-left: 5px;\n  position: absolute;\n  z-index: 99;\n  font-size: 14px;\n  font-weight: 100;\n  padding: 4px 10px 4px 5px; }\n\n.line-header-elements span {\n  margin-left: 10px; }\n\n.line-icon {\n  width: 30px;\n  height: 30px;\n  border-radius: 18px;\n  background: #202121;\n  display: inline-block;\n  margin-left: -18px;\n  margin-top: 30px;\n  z-index: 99;\n  position: absolute;\n  cursor: pointer; }\n\n.line-icon i, .options-icon i {\n  color: #FFF;\n  font-size: 16px;\n  padding-left: 7px;\n  padding-top: 7px; }\n\n.options-icon i {\n  padding-left: 0 !important; }\n\n.options-icon i.di-check {\n  color: #202121; }\n\n.options-icon i.di-microphone {\n  padding-left: 10px;\n  padding-top: 3px;\n  color: #202121; }\n\n.options-icon {\n  width: 30px;\n  height: 30px;\n  border-radius: 18px;\n  background: #FFF;\n  border: 2px solid #202121;\n  display: inline-block;\n  margin-left: -15px;\n  margin-top: -15px;\n  position: absolute;\n  z-index: 100;\n  cursor: pointer; }\n\n.header-info-separator, .header-info-separator-last {\n  padding: 0;\n  border-right: 0.3px solid #FFF;\n  display: inline-block;\n  height: 24px;\n  position: absolute;\n  top: 0px;\n  margin-left: 0px !important; }\n\n.header-info-separator.over {\n  margin-left: -15px !important; }\n\n.header-info-separator-last {\n  border: none; }\n\n.card {\n  padding: 15px;\n  line-height: 28px !important;\n  font-size: 18px; }\n\n.line-group {\n  width: 74%;\n  display: inline-block;\n  position: relative;\n  float: left;\n  overflow: hidden;\n  padding: 15px; }\n\n.line-card {\n  display: inline-block;\n  width: 25%;\n  float: left;\n  border-top: 2px solid #e7e7e7;\n  border-bottom: 2px solid #e7e7e7; }\n\n.line-card > * {\n  line-height: 24px;\n  position: relative;\n  width: 100%;\n  float: left;\n  height: 90px; }\n\n.card-content-line h2 {\n  font-size: 17px; }\n\n.card-content-line {\n  font-size: 17px !important;\n  font-family: 'Yantramanav' !important;\n  font-weight: 400 !important;\n  line-height: 20px; }\n\n.card .label {\n  font-size: 15px;\n  font-family: 'Yantramanav-Light';\n  margin-top: 5px; }\n\n.card h3 {\n  font-size: 15px !important;\n  font-weight: normal !important; }\n\n.card .value-small, .card .value-big {\n  font-family: Bebas !important;\n  font-weight: 400 !important; }\n\n.card .value-big {\n  font-size: 22px !important; }\n\n.col-25 {\n  width: 25%; }\n\n.col-50 {\n  width: 49%;\n  display: inline-block; }\n\n.col-75 {\n  width: 74%; }\n\n.col-100 {\n  width: 100%; }\n\n.col-rest-3 {\n  width: 16.66666667%; }\n\n.row-rest-6 {\n  height: 33.33333333%; }\n\n.pink {\n  color: #ea6193; }\n\n.gray {\n  background: #e9e8e8; }\n\n.black {\n  color: #202121; }\n\n.white {\n  background: #f9f9f9; }\n\n.light-gray {\n  background: #f2f2f2; }\n\n.pull-left {\n  float: left; }\n\n.pull-right {\n  float: right; }\n\n.text-left {\n  text-align: left; }\n\n.text-right {\n  text-align: right; }\n\n.text-center {\n  text-align: center; }\n\n.last-card {\n  border: 2px solid #d1d1d1;\n  border-left: none !important;\n  overflow: hidden; }\n\n.bold {\n  font-weight: 400 !important; }\n\n.normal {\n  font-weight: 100 !important; }\n\n.collapsed.card-buttons {\n  height: auto !important;\n  margin-left: 7.5%;\n  margin-right: auto;\n  width: auto !important;\n  position: absolute !important;\n  top: 80px;\n  z-index: 999; }\n\n.card-button {\n  z-index: 999;\n  border-radius: 3px;\n  width: 45px;\n  height: 15px;\n  padding: 0 5px;\n  position: relative;\n  float: left;\n  margin: 5px;\n  font-size: 12px;\n  color: #FFF;\n  line-height: 16px;\n  cursor: pointer; }\n\n.button-expand {\n  background: #202121;\n  text-align: center; }\n\n.button-new {\n  background: #e10b17; }\n\n.button-new .icon-btn-new {\n  width: 15px;\n  height: 15px;\n  background: #FFF;\n  position: absolute;\n  float: right;\n  border: 1px solid #202121;\n  border-radius: 0 3px 3px 0;\n  bottom: 0;\n  right: 0; }\n\n.expanded {\n  position: relative;\n  float: left;\n  margin-top: 12px;\n  width: 100%;\n  background: #fafafa; }\n\n.expanded .container {\n  padding: 10px 10px 20px 10px;\n  overflow: hidden;\n  height: 100%;\n  border: 0.3px solid #e7e7e7 !important; }\n  .expanded .container .main-content {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-orient: horizontal;\n    -webkit-box-direction: normal;\n        -ms-flex-direction: row;\n            flex-direction: row; }\n    .expanded .container .main-content .left-graph {\n      -webkit-box-flex: 2;\n          -ms-flex: 2;\n              flex: 2;\n      overflow: hidden; }\n      .expanded .container .main-content .left-graph .gViz-visuals-inner-wrapper {\n        height: 100%; }\n    .expanded .container .main-content .right-fields {\n      -webkit-box-flex: 1;\n          -ms-flex: 1;\n              flex: 1;\n      padding-left: 1%;\n      display: -webkit-box;\n      display: -ms-flexbox;\n      display: flex;\n      -webkit-box-orient: vertical;\n      -webkit-box-direction: normal;\n          -ms-flex-direction: column;\n              flex-direction: column; }\n      .expanded .container .main-content .right-fields .header {\n        border-bottom: 1px solid #e10b17;\n        color: #e10b17;\n        padding-bottom: 0;\n        margin-bottom: 0;\n        font-weight: 400;\n        font-size: 17px; }\n      .expanded .container .main-content .right-fields .header span {\n        top: -5px;\n        left: 5px;\n        position: relative; }\n      .expanded .container .main-content .right-fields .top-fields {\n        -webkit-box-flex: 1;\n            -ms-flex: 1;\n                flex: 1;\n        padding-right: 0px; }\n      .expanded .container .main-content .right-fields .bottom-fields {\n        margin-top: 28px;\n        padding-right: 0px; }\n\n.expanded .card {\n  width: 32%;\n  margin-right: 1%;\n  background: #fafafa;\n  border: 1px solid #e9e8e8;\n  display: inline-block;\n  white-space: normal;\n  height: 350px; }\n\n.expanded .card {\n  line-height: 24px !important;\n  position: relative;\n  float: left;\n  display: inline-block; }\n\n.expanded .card .text {\n  float: left;\n  font-size: 15px; }\n\n.expanded .card-button {\n  bottom: -11px !important;\n  position: absolute;\n  float: left;\n  z-index: 9999; }\n  .expanded .card-button.button-expand {\n    margin-left: 7%; }\n  .expanded .card-button.button-new {\n    margin-left: calc(7% + 55px); }\n\n.expanded .card h3 {\n  color: #e96292;\n  font-weight: lighter;\n  border-bottom: 2px solid #e96292;\n  padding-bottom: 12px;\n  margin-bottom: 12px;\n  font-size: 17px; }\n\n.diwo-circle--actions .layout-column.diwo-circle--actions-ctn {\n  position: relative; }\n\n.diwo-circle--trigger {\n  z-index: 1; }\n\n.diwo-circle--action-item {\n  -webkit-transform: none !important;\n          transform: none !important; }\n\ntd {\n  background-color: white; }\n\n.w-100, .row, .row-small {\n  width: 100%; }\n\n.row {\n  border: solid 0.3px rgba(203, 87, 126, 0.39);\n  display: table;\n  clear: both;\n  padding: 5px;\n  margin-bottom: 2px;\n  background-color: white; }\n  .row .left-value {\n    padding: 5px; }\n  .row .right-value {\n    padding: 5px;\n    margin-left: 5px;\n    text-align: right !important; }\n\n.tri-row {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: row;\n          flex-direction: row;\n  margin-bottom: 2px;\n  background-color: white; }\n  .tri-row .left-value {\n    border: solid 0.3px rgba(203, 87, 126, 0.39);\n    padding: 10px;\n    text-align: center;\n    line-height: 3.5em;\n    -webkit-box-flex: 1;\n        -ms-flex: 1;\n            flex: 1; }\n  .tri-row .right-rows {\n    -webkit-box-flex: 4;\n        -ms-flex: 4;\n            flex: 4;\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-orient: vertical;\n    -webkit-box-direction: normal;\n        -ms-flex-direction: column;\n            flex-direction: column; }\n    .tri-row .right-rows .row {\n      margin-bottom: 0; }\n\n.row-small {\n  border-bottom: solid 0.5px rgba(203, 87, 126, 0.39);\n  display: table;\n  clear: both;\n  background-color: white;\n  overflow: hidden;\n  line-height: 30px !important; }\n\n.pink-color {\n  color: #e96292; }\n\n.right-value-left {\n  color: #e96292 !important;\n  font-weight: 400;\n  font-size: 16px;\n  font-family: 'Yantramanav', sans-serif;\n  text-align: left !important; }\n\n.right-value {\n  float: right;\n  font-weight: 800;\n  color: #e96292;\n  font-size: 18px;\n  font-family: 'Yantramanav', sans-serif;\n  text-align: right !important; }\n\n.left-value {\n  float: left;\n  color: #555;\n  font-size: 15px;\n  font-family: 'Yantramanav';\n  font-weight: 200; }\n\n.bordered-heading {\n  font-size: 20px;\n  border-bottom: 3px solid #e10b17;\n  display: block;\n  margin-bottom: 15px;\n  padding-bottom: 10px; }\n\n.image-outer-wrapper {\n  height: 100%;\n  position: relative; }\n  .image-outer-wrapper .border-rect {\n    position: absolute;\n    height: 15px;\n    width: 15px;\n    z-index: 100; }\n    .image-outer-wrapper .border-rect[data-side='top-left'] {\n      top: 1px;\n      left: 1px;\n      border-top: 2px solid #e10b17;\n      border-left: 2px solid #e10b17; }\n    .image-outer-wrapper .border-rect[data-side='top-middle'] {\n      top: 1px;\n      left: 50%;\n      width: 20px;\n      border-top: 2px solid #e10b17; }\n    .image-outer-wrapper .border-rect[data-side='top-right'] {\n      top: 1px;\n      right: 1px;\n      border-top: 2px solid #e10b17;\n      border-right: 2px solid #e10b17; }\n    .image-outer-wrapper .border-rect[data-side='middle-left'] {\n      top: 50%;\n      left: 1px;\n      height: 20px;\n      border-left: 2px solid #e10b17; }\n    .image-outer-wrapper .border-rect[data-side='middle-right'] {\n      top: 50%;\n      right: 1px;\n      height: 20px;\n      border-right: 2px solid #e10b17; }\n    .image-outer-wrapper .border-rect[data-side='bottom-left'] {\n      bottom: 1px;\n      left: 1px;\n      border-bottom: 2px solid #e10b17;\n      border-left: 2px solid #e10b17; }\n    .image-outer-wrapper .border-rect[data-side='bottom-middle'] {\n      bottom: 1px;\n      left: 50%;\n      width: 20px;\n      border-bottom: 2px solid #e10b17; }\n    .image-outer-wrapper .border-rect[data-side='bottom-right'] {\n      bottom: 1px;\n      right: 1px;\n      border-bottom: 2px solid #e10b17;\n      border-right: 2px solid #e10b17; }\n\n.panel-holder {\n  position: absolute;\n  left: 1vw;\n  top: 3vh;\n  right: 1vw;\n  z-index: 9999; }\n\n.pink-background {\n  background-color: rgba(203, 87, 126, 0.23) !important;\n  overflow: auto; }\n\n.dark-pink-background {\n  background-color: rgba(203, 80, 99, 0.49) !important; }\n\n.pink-text {\n  color: #e96292; }\n\n.red-text {\n  color: #e10b17; }\n\n.clear {\n  clear: both; }\n\n.bold {\n  font-weight: bold; }\n\n.sub-icon {\n  margin-top: -3px; }\n\n.di-arrow-down {\n  margin-top: 0; }\n\n.di-arrow-up {\n  margin-top: -2px; }\n\n.row-set-white-linear {\n  background: #FFF;\n  border: none !important;\n  padding-top: 0;\n  margin: 5px 0;\n  margin-top: 0; }\n\n.row-set-white-linear .row {\n  border: none;\n  border-bottom: 1px solid #e10b17;\n  white-space: initial; }\n\n.row-set-white {\n  background: #FFF;\n  border: solid 0.3px rgba(203, 87, 126, 0.39);\n  padding: 5px;\n  margin: 5px 0; }\n\n.row-set-white .row {\n  border: none;\n  border-bottom: solid 0.3px rgba(203, 87, 126, 0.39);\n  width: 97%;\n  margin: 0 5px; }\n\n.row-set-white .row:last-child {\n  border: none; }\n\n.icon-globe {\n  position: relative;\n  float: left;\n  width: 26px;\n  margin: 0 5px; }\n\n.di-8x {\n  font-size: 8px; }\n\n:host {\n  z-index: 999; }\n  :host .panel-container {\n    padding: 30px 30px 0 30px;\n    top: 0;\n    position: relative;\n    min-height: 75vh;\n    left: 10px;\n    max-width: 95.5vw; }\n    :host .panel-container .top-buttons .circle-button {\n      background-color: white;\n      border-radius: 50%;\n      width: 30px;\n      height: 30px;\n      z-index: 100; }\n      :host .panel-container .top-buttons .circle-button:hover {\n        cursor: pointer; }\n      :host .panel-container .top-buttons .circle-button img {\n        width: 30px;\n        height: 30px; }\n    :host .panel-container .top-buttons .diwo-button {\n      position: absolute;\n      top: -15px;\n      left: -15px;\n      border: 2px solid red; }\n    :host .panel-container .top-buttons .side-buttons {\n      position: absolute;\n      left: -15px;\n      top: 100px;\n      z-index: 100; }\n      :host .panel-container .top-buttons .side-buttons .circle-button {\n        border: 0;\n        background-color: #202121;\n        display: -webkit-box;\n        display: -ms-flexbox;\n        display: flex;\n        -webkit-box-pack: center;\n            -ms-flex-pack: center;\n                justify-content: center;\n        -webkit-box-align: center;\n            -ms-flex-align: center;\n                align-items: center; }\n      :host .panel-container .top-buttons .side-buttons > div {\n        margin-bottom: 30px; }\n    :host .panel-container .top-buttons .line-header-elements {\n      top: -10px;\n      left: 0;\n      margin-top: 0; }\n      :host .panel-container .top-buttons .line-header-elements span {\n        padding-right: 10px; }\n    :host .panel-container .top-buttons .line-header-button {\n      position: absolute;\n      top: -7px;\n      left: 250px;\n      height: 15px;\n      width: 45px; }\n    :host .panel-container .main-content {\n      display: -webkit-box;\n      display: -ms-flexbox;\n      display: flex;\n      -webkit-box-orient: horizontal;\n      -webkit-box-direction: normal;\n          -ms-flex-direction: row;\n              flex-direction: row; }\n      :host .panel-container .main-content .left-graph {\n        -webkit-box-flex: 5;\n            -ms-flex: 5;\n                flex: 5; }\n        :host .panel-container .main-content .left-graph .graph-container {\n          background: white;\n          padding: 10px; }\n          :host .panel-container .main-content .left-graph .graph-container .graph-header {\n            display: -webkit-box;\n            display: -ms-flexbox;\n            display: flex;\n            -webkit-box-orient: horizontal;\n            -webkit-box-direction: normal;\n                -ms-flex-direction: row;\n                    flex-direction: row;\n            margin-bottom: 10px; }\n            :host .panel-container .main-content .left-graph .graph-container .graph-header dropdown-input {\n              -webkit-box-flex: 1;\n                  -ms-flex: 1;\n                      flex: 1; }\n            :host .panel-container .main-content .left-graph .graph-container .graph-header .name {\n              -webkit-box-flex: 1;\n                  -ms-flex: 1;\n                      flex: 1;\n              background: black;\n              color: white;\n              line-height: 28px;\n              padding-left: 10px;\n              font-weight: 100; }\n            :host .panel-container .main-content .left-graph .graph-container .graph-header .separator {\n              margin: 0 10px;\n              color: #ea6193;\n              padding-top: 7px; }\n          :host .panel-container .main-content .left-graph .graph-container .graph {\n            width: 100%;\n            height: 75vh; }\n      :host .panel-container .main-content .right-fields {\n        padding-left: 15px;\n        -webkit-box-flex: 3;\n            -ms-flex: 3;\n                flex: 3; }\n        :host .panel-container .main-content .right-fields .graph-details {\n          margin-top: 15px; }\n          :host .panel-container .main-content .right-fields .graph-details img {\n            width: 100%; }\n      :host .panel-container .main-content .row {\n        background-color: #b3b3b3;\n        border: 0;\n        padding: 10px; }\n        :host .panel-container .main-content .row .left-value {\n          color: black;\n          font-size: 16px; }\n        :host .panel-container .main-content .row .right-value {\n          color: black;\n          font-size: 16px; }\n", ""]);
 
 // exports
 
@@ -5188,7 +5204,7 @@ DecideWhatIfAnalysisPanelComponent = __decorate([
 /***/ "../../../../../src/app/microservices/decide/decide/decide.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<button id=\"decideClose\" (click)=\"navigateHome()\" class=\"has-pd-light is-fixed right-large top-large has-c-shade-9\"><i\n  class=\"di-close di-14x\"></i></button>\n<!-- <div  class=\"has-bg-shade-1 is-fixed left-large right-large has-pd-top-normal has-pd-bottom-small\" id=\"decide-header\">\n  <div  class=\"layout-row\" *ngIf=\"firstOpp\">\n    <div  class=\"decide-card-item  has-pd-vert-extra-small has-pd-right-extra-small\"><p class=\"has-bd-bottom  bd-light bd-secondary\">Product</p></div>\n    <div *ngFor=\"let column of firstOpp.rowInfo\"\n       class=\"decide-card-item   has-pd-vert-extra-small has-pd-right-extra-small\"><p class=\"has-bd-bottom  bd-light bd-secondary\">{{column.title | capitalize}}</p></div>\n\n  </div>\n</div> -->\n\n\n<!-- dynamic cards start | can be split into other components - used mock data -->\n\n<!-- cards header start -->\n<!-- <div class=\"card-header\" (mouseover)=\"resetContextualState()\">\n  <div class=\"context\">\n    Context\n  </div>\n  <div class=\"forecast\">\n    Forecast\n  </div>\n  <div class=\"outcome\">\n    Potential Outcome\n  </div>\n</div> -->\n<!-- cards header end -->\n\n<!-- line start -->\n<div id=\"cards-container\" class=\"cards-container\" (scroll)=\"didScroll($event)\">\n  <div id=\"{{ line.Identifyer }}\" class=\"card-line\" *ngFor=\"let line of data.Sections; let i = index\"\n       (mouseover)=\"checkContextualState(i,'over')\" (click)=\"getBox(line.Identifyer)\" [@hideCards]=\"panelOpen\">\n\n    <!-- building the collapse state of the line -->\n    <!-- defining and adding card types -->\n\n    <!-- defining line frame -->\n    <div>\n      <!-- adding header elements -->\n      <div class=\"line-icon\" (click)=\"panelOpen = true; selectedLineData = line.Details.Cards\">\n        <i class=\"di-chevron-down\"></i>\n      </div>\n      <div class=\"options-icon\">\n        <!-- placeholder icon until the way the icon is sent will be decided -->\n        <i class=\"di-check\" *ngIf=\"!accordionState[i]['Ask_Icon']\"></i>\n        <!-- <i class=\"di-microphone\" *ngIf=\"accordionState[i]['Ask_Icon']\" (click)=\"activateAsk(accordionState[i].Identifyer)\"></i> -->\n\n        <!-- diwo circle -->\n\n        <div [diwoCircleDirective]=\"diwoPosition\" class=\"is-relative\" *ngIf=\"accordionState[i]['Ask_Icon']\"\n\n             [diwoCircleActions]=\"{ clip: 'true', case: 'true',narrate: 'true',volume: 'true',pin: 'true', help: 'global', share: 'true'}\"\n             [diwoCircleTriggeredBy]=\"'hover'\"\n             [diwoCircleAllow]=\"!isMyDiwoOpen() && isMicroserviceOpen()\"\n             [diwoCircleClickAction]=\"openMyDiwo\"\n             [diwoCircleSize]=\"34\"\n             [diwoCircleDisableExtraNav]=\"true\"\n             [diwoCircleType]=\"'microphone'\" style=\"min-height: 100%;position:absolute;top:-3px;left:-3px;\">\n\n\n          <div id=\"nav\" [hidden]=\"!(!isMyDiwoOpen() && isMicroserviceOpen() || (showDock | async)) \"\n\n               class=\"card layout-row right-none with-mg-small layout--start-center  top-none left-none has-pd-hori-large has-pd-top-large\">\n            <!--<div id=\"nav-overlay\" class=\"is-absolute top-none left-none bottom-none right-none\" *ngIf=\"isWatchOpen()\"></div>-->\n            <div #diwoHolder class=\"logo-holder is-one-whole-tall is-relative layout-item\"\n                 [hidden]=\"(isMyDiwoOpen() || isAskOpen()) && !(showDock | async)\">\n              <button class=\"is-absolute transform-to-center top-one-half left-one-half\" [routerLink]=\"['/mydiwo']\">\n                <img class=\"is-absolute transform-to-center top-one-half left-one-half\" width=\"20\"\n                     src=\"./assets/images/diwoLogo-2x.png\"/>\n              </button>\n            </div>\n\n          </div>\n\n        </div>\n\n        <!-- end diwo circle -->\n\n      </div>\n      <span class=\"line-header-elements\">\n        <span *ngFor=\"let info of line.Header.Text; let j = index\"\n              [ngClass]=\"{'header-info-separator': j < (line.Header.Text.length-1) }\">{{ info }}</span>\n      </span>\n\n      <!-- defining and displaying cards -->\n      <div *ngFor=\"let card of line.Collapsed.Cards; let j = index\" class=\"line-card col-25\">\n\n        <!-- image card -->\n        <div *ngIf=\"card.Type == 'image'\"\n             [ngClass]=\"{ 'gray': card.Style.Background == 'gray', 'white': card.Style.Background == 'white' }\"\n             class=\"card\">\n          <div class=\"card-image\"> <!-- the image will be blob or path?! -->\n            <img src=\"{{ card.Content.Image }}\" width=\"60\"/>\n          </div>\n          <div class=\"line-group\">\n            <div class=\"card-content-line\"\n                 [ngClass]=\"{ 'black': card.Content.Text.Style.Colors[0] == 'black', 'pink': card.Content.Text.Style.Colors[0] == 'pink', 'gray': card.Content.Text.Style.Colors[0] == 'gray', 'bold': card.Content.Text.Style.Weights[0] == 'bold', 'normal': card.Content.Text.Style.Weights[0] == 'normal' }\">\n              <div style=\"display: block\">{{ card.Content.Text.Value[0] }}</div>\n            </div>\n            <div class=\"card-content-line\"\n                 [ngClass]=\"{ 'black': card.Content.Text.Style.Colors[1] == 'black', 'pink': card.Content.Text.Style.Colors[1] == 'pink', 'gray': card.Content.Text.Style.Colors[1] == 'gray', 'bold': card.Content.Text.Style.Weights[1] == 'bold', 'normal': card.Content.Text.Style.Weights[1] == 'normal' }\">\n              <div style=\"display: block\">{{ card.Content.Text.Value[1] }}</div>\n            </div>\n          </div>\n        </div>\n\n        <!-- table card -->\n        <div *ngIf=\"card.Type == 'table'\"\n             [ngClass]=\"{ 'gray': card.Style.Background == 'gray', 'white': card.Style.Background == 'white' }\"\n             class=\"border-card-right table  no-border\">\n          <div class='row-small row-rest-6 pink-background ' style='line-height: 37px'>\n            <div class='left-value pink-text' style='padding-left: 10px; width: 80%'>Revenue impact</div>\n            <div class='right-value ' style='padding-right: 10px; width: 20%'>$1.3M</div>\n          </div>\n          <div class='row-small row-rest-6 pink-background ' style='line-height: 37px'>\n            <div class='left-value pink-text' style='padding-left: 10px; width: 80%'>Profitability impact</div>\n            <div class='right-value ' style='padding-right: 10px; width: 20%'>$820K</div>\n          </div>\n          <div class='row-small row-rest-6 ' style='line-height: 37px'>\n            <div class='left-value red-text dark-pink-background'\n                 style='padding-left: 10px;font-weight: 600; width: 80%'>Confidence score\n            </div>\n            <div class='right-value red-text pink-background'\n                 style='padding-right: 10px; padding-left: 10px; width: 20%'>89%\n            </div>\n            <div class=\"clear\"></div>\n          </div>\n          <!-- iterate lines -->\n          <!--<div *ngFor=\"let tline of card.Content.Text.Value; let k = index\" class=\"\" >-->\n          <!--<div class=\"col-50  label\" [ngClass]=\"{ 'black': tline.Label.Style.Color == 'black', 'pink': tline.Label.Style.Color == 'pink' }\">-->\n          <!--<h3>{{ tline.Label.Text }}</h3>-->\n          <!--</div>-->\n          <!--<div class=\"col-50 pull-right text-right value-small\" [ngClass]=\"{ 'black': tline.Value.Style.Color == 'black', 'pink': tline.Value.Style.Color == 'pink' }\">-->\n          <!--<h3>{{ tline.Value.Text }}</h3>-->\n          <!--</div>-->\n          <!--</div>-->\n        </div>\n\n        <!-- table highlighted_value -->\n        <div *ngIf=\"card.Type == 'highlighted_value'\"\n             [ngClass]=\"{ 'gray': card.Style.Background == 'gray', 'white': card.Style.Background == 'white', 'light-gray': card.Style.Background == 'light-gray' }\"\n             class=\"card  border-card-right\">\n          <div class=\"col-100 text-center label\"\n               [ngClass]=\"{ 'black': card.Content.Text.Value[0].Label.Color == 'black', 'pink': card.Content.Text.Value[0].Label.Style.Color == 'pink' }\">\n            {{ card.Content.Text.Value[0].Label.Text }}\n          </div>\n          <div class=\"col-100 text-center value-big\"\n               [ngClass]=\"{ 'black': card.Content.Text.Value[1].Label.Style.Color == 'black', 'pink': card.Content.Text.Value[1].Label.Style.Color == 'pink' }\">\n            {{ card.Content.Text.Value[1].Label.Text }}\n          </div>\n        </div>\n\n        <!-- table rating_stars_down -->\n        <div *ngIf=\"card.Type == 'rating_stars_down'\"\n             [ngClass]=\"{ 'gray': card.Style.Background == 'gray', 'white': card.Style.Background == 'white' }\"\n             class=\"card  border-card-right\">\n          <div class=\"col-100 text-center label\"\n               [ngClass]=\"{ 'black': card.Content.Text.Value[0].Label.Color == 'black', 'pink': card.Content.Text.Value[0].Label.Style.Color == 'pink' }\">\n            {{ card.Content.Text.Value[0].Label.Text }}\n          </div>\n          <div class=\"col-100 text-center  value-big\"\n               [ngClass]=\"{ 'black': card.Content.Text.Value[1].Label.Style.Color == 'black', 'pink': card.Content.Text.Value[1].Label.Style.Color == 'pink' }\">\n            {{ card.Content.Text.Value[1].Label.Text }}\n          </div>\n        </div>\n\n        <!-- add the buttons on bottom of the first card in case they exist -->\n        <div *ngIf=\"j==0 && !accordionState[i].Expanded\" class=\"collapsed card-buttons\">\n          <div *ngIf=\"line.Buttons.Expand\" class=\"card-button  button-expand\"\n               (click)=\"accordionState[i].Expanded = true;accordionState[i].state = 'active';didScroll(event)\">\n            <i class=\"di-arrow-down expand-arrow di-8x sub-icon\"></i>\n          </div>\n          <div *ngIf=\"line.Buttons.New\" class=\"card-button button-new\" (click)=\"newCard()\">\n            New\n            <div class=\"icon-btn-new\">\n              <i class=\"di-check di-10x sub-icon\" style=\"color: black;\"></i>\n            </div>\n          </div>\n        </div>\n      </div>\n      <div class=\"expanded\" [@expanded]=\"accordionState[i].state\">\n        <div class=\"container light-gray\">\n          <div class='bordered-heading'><i class=\"di-decide red-text\"></i><span class='red-text'> I sense...</span></div>\n          <div class=\"main-content\"\n               *ngIf=\"line.Expanded.Cards.length==2 && line.Expanded.Cards[0].Type == 'graph' && line.Expanded.Cards[1].Type == 'highlights'\">\n            <div class=\"left-graph\">\n              <div class='image-outer-wrapper'>\n                <div data-id='gViz-visuals-vis-wrapper' class='gViz-visuals-inner-wrapper'>\n                  <div *ngIf=\"!line.Expanded.Cards[0].Content.Graph.Data\">Loading data...</div>\n                  <ng-template *ngIf=\"line.Expanded.Cards[0].Content.Graph.Data\"\n                               [dynamic-component]=\"line.Expanded.Cards[0].Content.Graph.Type\"\n                               [data]=\"line.Expanded.Cards[0].Content.Graph.Data\"></ng-template>\n                </div>\n                <div class='border-rect' data-side='top-left'></div>\n                <div class='border-rect' data-side='top-right'></div>\n                <div class='border-rect' data-side='bottom-left'></div>\n                <div class='border-rect' data-side='bottom-right'></div>\n              </div>\n            </div>\n            <div class=\"right-fields\">\n\n\n              <!-- start right -->\n\n              <div class=\"top-fields\">\n                <h2 class=\"header\"><img src=\"./assets/images/temp_icons/icon_4.svg\" width=\"21\"/>\n                  <span>Related Insights</span>\n                </h2>\n\n               <div class=\"row-set-white-linear\">\n                <div class='row'>\n                  <div class='left-value'>\n                    <!-- <div class=\"icon-globe\">\n                      &nbsp;\n                    </div> -->\n                    Some of the latest fashion trends I've noticed in the 18-21 age group are the color Pink and Satin textures.</div>\n                </div>\n                <div class='row'>\n                  <div class='left-value'>Push-up LL WEW is your top selling style in Bra Category</div>\n                </div>\n                <div class='row'>\n                  <div class='left-value'>76% of Angel Card Members prefer Black, 90& of those buy Cotton.</div>\n                </div>\n              </div>\n\n               <div class=\"row-set-white\">\n                <div class='row'>\n                  <div class='left-value'>Top Combination</div>\n                  <div class='right-value pink-background'>WEW Push-up Laced Triangular Pink</div>\n                </div>\n                <div class='row'>\n                  <div class='left-value'>Projected Units</div>\n                  <div class='right-value'>92K</div>\n                </div>\n                <div class='row'>\n                  <div class='left-value'>Revenue Impact</div>\n                  <div class='right-value'>$2.3M</div>\n                </div>\n                <div class='row'>\n                  <div class='left-value'>Profitability</div>\n                  <div class='right-value'>$800K</div>\n                </div>\n              </div>\n\n              <div class=\"row-set-white\">\n                <div class='row'>\n                  <div class='left-value'>Top 3 Combinations</div>\n                  <div class='right-value pink-background'>WEW Push-up Laced Triangular Pink</div>\n                </div>\n                <div class='row'>\n                  <div class='left-value right-value-left pink-background'>Date Super PU LL Floral Pink</div>\n                  <div class='right-value pink-background'>WEW PU T-Back Strappy Blue</div>\n                </div>\n              </div>\n\n              <!-- end right -->\n\n            </div>\n          </div>\n          <div class=\"main-content\"\n               *ngIf=\"line.Expanded.Cards.length==2 && line.Expanded.Cards[0].Type == 'graph' && line.Expanded.Cards[1].Type == 'related-insights'\">\n            <div class=\"left-graph\">\n              <div class='image-outer-wrapper'>\n                <div data-id='gViz-visuals-vis-wrapper' class='gViz-visuals-inner-wrapper'>\n                  <div *ngIf=\"!line.Expanded.Cards[0].Content.Graph.Data\">Loading data...</div>\n                  <ng-template *ngIf=\"line.Expanded.Cards[0].Content.Graph.Data\"\n                               [dynamic-component]=\"line.Expanded.Cards[0].Content.Graph.Type\"\n                               [data]=\"line.Expanded.Cards[0].Content.Graph.Data\"></ng-template>\n                </div>\n                <div class='border-rect' data-side='top-left'></div>\n                <div class='border-rect' data-side='top-right'></div>\n                <div class='border-rect' data-side='bottom-left'></div>\n                <div class='border-rect' data-side='bottom-right'></div>\n              </div>\n            </div>\n            <div class=\"right-fields\">\n              <div class=\"top-fields\">\n                <h2 class=\"header\">Highlights</h2>\n                <div class='row'>\n                  <div class='left-value'>Shortage (units)</div>\n                  <div class='right-value'>8450</div>\n                </div>\n                <div class='row'>\n                  <div class='left-value'>Impacted Choice Codes</div>\n                  <div class='right-value'>31</div>\n                </div>\n                <div class='row'>\n                  <div class='left-value'>Revenue Recovery</div>\n                  <div class='right-value'>$800K</div>\n                </div>\n                <div class='row'>\n                  <div class='left-value'>Profitability</div>\n                  <div class='right-value'>$300K</div>\n                </div>\n                <div class='tri-row'>\n                  <div class='left-value'>Most affected</div>\n                  <div class=\"right-rows\">\n                    <div class='row'>\n                      <div class='right-value'>WEW Push-up</div>\n                    </div>\n                    <div class='row'>\n                      <div class='right-value'>Sports Bra Demi LL</div>\n                    </div>\n                  </div>\n                </div>\n              </div>\n              <div class=\"bottom-fields\">\n                <div class='row'>\n                  <div class='left-value'>Surplus (units)</div>\n                  <div class='right-value'>3100</div>\n                </div>\n                <div class='row'>\n                  <div class='left-value'>Impacted Choice Codes</div>\n                  <div class='right-value'>22</div>\n                </div>\n                <div class='row'>\n                  <div class='left-value'>Revenue Recovery</div>\n                  <div class='right-value'>$500k</div>\n                </div>\n                <div class='row'>\n                  <div class='left-value'>Profitability</div>\n                  <div class='right-value'>$470k</div>\n                </div>\n                <div class='row'>\n                  <div class='left-value'>Most affected</div>\n                  <div class='right-value pink-background'>WEW Push-up</div>\n                  <div class='right-value pink-background'>Sports Bra Demi LL</div>\n                </div>\n              </div>\n            </div>\n          </div>\n          <div class=\"main-content\"\n               *ngIf=\"line.Expanded.Cards.length==2 && line.Expanded.Cards[0].Type == 'graph' && line.Expanded.Cards[1].Type == 'what-if-analysis'\">\n            <div class=\"left-graph\">\n              <div class='image-outer-wrapper'>\n                <div data-id='gViz-visuals-vis-wrapper' class='gViz-visuals-inner-wrapper'>\n                  <div *ngIf=\"!line.Expanded.Cards[0].Content.Graph.Data\">Loading data...</div>\n                  <ng-template *ngIf=\"line.Expanded.Cards[0].Content.Graph.Data\"\n                               [dynamic-component]=\"line.Expanded.Cards[0].Content.Graph.Type\"\n                               [data]=\"line.Expanded.Cards[0].Content.Graph.Data\"></ng-template>\n                </div>\n                <div class='border-rect' data-side='top-left'></div>\n                <div class='border-rect' data-side='top-right'></div>\n                <div class='border-rect' data-side='bottom-left'></div>\n                <div class='border-rect' data-side='bottom-right'></div>\n              </div>\n            </div>\n            <div class=\"right-fields\">\n              <div class=\"top-fields\">\n                <h2 class=\"header\">Highlights</h2>\n                <div class='row'>\n                  <div class='left-value'>Shortage (units)</div>\n                  <div class='right-value'>8450</div>\n                </div>\n                <div class='row'>\n                  <div class='left-value'>Impacted Choice Codes</div>\n                  <div class='right-value'>31</div>\n                </div>\n                <div class='row'>\n                  <div class='left-value'>Revenue Recovery</div>\n                  <div class='right-value'>$800K</div>\n                </div>\n                <div class='row'>\n                  <div class='left-value'>Profitability</div>\n                  <div class='right-value'>$300K</div>\n                </div>\n                <div class='tri-row'>\n                  <div class='left-value'>Most affected</div>\n                  <div class=\"right-rows\">\n                    <div class='row'>\n                      <div class='right-value'>WEW Push-up</div>\n                    </div>\n                    <div class='row'>\n                      <div class='right-value'>Sports Bra Demi LL</div>\n                    </div>\n                  </div>\n                </div>\n              </div>\n              <div class=\"bottom-fields\">\n                <div class='row'>\n                  <div class='left-value'>Surplus (units)</div>\n                  <div class='right-value'>3100</div>\n                </div>\n                <div class='row'>\n                  <div class='left-value'>Impacted Choice Codes</div>\n                  <div class='right-value'>22</div>\n                </div>\n                <div class='row'>\n                  <div class='left-value'>Revenue Recovery</div>\n                  <div class='right-value'>$500k</div>\n                </div>\n                <div class='row'>\n                  <div class='left-value'>Profitability</div>\n                  <div class='right-value'>$470k</div>\n                </div>\n                <div class='row'>\n                  <div class='left-value'>Most affected</div>\n                  <div class='right-value pink-background'>WEW Push-up</div>\n                  <div class='right-value pink-background'>Sports Bra Demi LL</div>\n                </div>\n              </div>\n            </div>\n          </div>\n\n        <!--<table style='border: 1px solid deeppink;'>-->\n          <!--<tr>-->\n          <!--<td>Shortage (31 Choice Codes)</td>-->\n          <!--<td>8450</td>-->\n          <!--</tr>-->\n          <!--<tr>-->\n          <!--<td>Revenue Recovery</td>-->\n          <!--<td>$800K</td>-->\n          <!--</tr>-->\n          <!--<tr>-->\n          <!--<td>Profitability</td>-->\n          <!--<td>$300K</td>-->\n          <!--</tr>-->\n          <!--<tr>-->\n          <!--<td>Most affected</td>-->\n          <!--<td>WEW Push-up and Sports Bra Demi LL</td>-->\n          <!--</tr>-->\n        <!--</table>-->\n\n        <!--<div class=\"card\" *ngFor=\"let card of line.Expanded.Cards; let j = index\">-->\n          <!--<h3>{{ card.Title }}</h3>-->\n\n\n          <!-- card: text -->\n          <!--<div *ngIf=\"card.Type == 'text'\" class=\"text\">-->\n          <!--{{ card.Content.Text.Value[0].Label.Text }}-->\n          <!--</div>-->\n\n          <!--&lt;!&ndash; card: table &ndash;&gt;-->\n          <!--<div *ngIf=\"card.Type == 'table'\" class=\"text\">-->\n          <!--{{ card.Content?.Text.Value[0].Label.Text }}-->\n          <!--<img src=\"./assets/images/placeholders/placeholder_table.png\" width=\"100%\">-->\n          <!--</div>-->\n\n          <!--&lt;!&ndash; card: graph_map_1 &ndash;&gt;-->\n          <!--<div *ngIf=\"card.Type == 'graph_map_1'\" class=\"text\">-->\n          <!--{{ card.Content?.Text.Value[0].Label.Text }}-->\n          <!--<img src=\"./assets/images/placeholders/placeholder_graph.png\" width=\"100%\">-->\n          <!--</div>-->\n\n          <!-- add the buttons on bottom of the first card in case they exist -->\n          <!--<div *ngIf=\"j==0 && accordionState[i].Expanded\" class=\"card-buttons\">-->\n          <div *ngIf=\"line.Buttons.Expand\" class=\"card-button  button-expand\"\n               (click)=\"accordionState[i].Expanded = false;accordionState[i].state = 'inactive';didScroll(event)\">\n            <i class=\"di-arrow-up expand-arrow di-8x sub-icon\"></i>\n          </div>\n          <div *ngIf=\"line.Buttons.New\" class=\"card-button button-new\" (click)=\"newCard()\">\n            New\n            <div class=\"icon-btn-new\">\n              <i class=\"di-check di-10x sub-icon\" style=\"color: black;\"></i>\n            </div>\n          </div>\n          <!--</div>-->\n        </div>\n        <!--</div>-->\n      </div>\n\n\n\n    </div>\n\n    <!-- building the expanded state of the line -->\n    <!-- defining and adding card types | maps and tables should be predefined templates-->\n\n    </div>\n\n    <!-- building the expanded state of the line -->\n    <!-- defining and adding card types | maps and tables should be predefined templates-->\n\n  </div>\n\n<div class=\"panel-holder\">\n  <decide-panel-layout *ngIf=\"panelOpen\" [@enterAnimation] (panelClose)=\"panelOpen = false\" [data]=\"selectedLineData\"></decide-panel-layout>\n</div>\n"
+module.exports = "<button id=\"decideClose\" (click)=\"navigateHome()\" class=\"has-pd-light is-fixed right-large top-large has-c-shade-9\"><i\n  class=\"di-close di-14x\"></i></button>\n<!-- <div  class=\"has-bg-shade-1 is-fixed left-large right-large has-pd-top-normal has-pd-bottom-small\" id=\"decide-header\">\n  <div  class=\"layout-row\" *ngIf=\"firstOpp\">\n    <div  class=\"decide-card-item  has-pd-vert-extra-small has-pd-right-extra-small\"><p class=\"has-bd-bottom  bd-light bd-secondary\">Product</p></div>\n    <div *ngFor=\"let column of firstOpp.rowInfo\"\n       class=\"decide-card-item   has-pd-vert-extra-small has-pd-right-extra-small\"><p class=\"has-bd-bottom  bd-light bd-secondary\">{{column.title | capitalize}}</p></div>\n\n  </div>\n</div> -->\n\n\n<!-- dynamic cards start | can be split into other components - used mock data -->\n\n<!-- cards header start -->\n<!-- <div class=\"card-header\" (mouseover)=\"resetContextualState()\">\n  <div class=\"context\">\n    Context\n  </div>\n  <div class=\"forecast\">\n    Forecast\n  </div>\n  <div class=\"outcome\">\n    Potential Outcome\n  </div>\n</div> -->\n<!-- cards header end -->\n\n<!-- line start -->\n<div id=\"cards-container\" class=\"cards-container\" (scroll)=\"didScroll($event)\">\n  <div id=\"{{ line.Identifyer }}\" class=\"card-line\" *ngFor=\"let line of data.Sections; let i = index\"\n       (mouseover)=\"checkContextualState(i,'over')\" (click)=\"getBox(line.Identifyer)\" [@hideCards]=\"panelOpen\">\n\n    <!-- building the collapse state of the line -->\n    <!-- defining and adding card types -->\n\n    <!-- defining line frame -->\n    <div>\n      <!-- adding header elements -->\n      <div class=\"line-icon\" (click)=\"panelOpen = true; selectedLineData = line.Details.Cards\">\n        <i class=\"di-chevron-down\"></i>\n      </div>\n      <div class=\"options-icon\">\n        <!-- placeholder icon until the way the icon is sent will be decided -->\n        <i *ngIf=\"!accordionState[i]['Ask_Icon']\">\n          <img src=\"/assets/images/decide/{{ line.Header.Icon }}\" width=\"25\" />\n        </i>\n        <!-- <i class=\"di-microphone\" *ngIf=\"accordionState[i]['Ask_Icon']\" (click)=\"activateAsk(accordionState[i].Identifyer)\"></i> -->\n\n        <!-- diwo circle -->\n\n        <div [diwoCircleDirective]=\"diwoPosition\" class=\"is-relative\" *ngIf=\"accordionState[i]['Ask_Icon']\"\n\n             [diwoCircleActions]=\"{ clip: 'true', case: 'true',narrate: 'true',volume: 'true',pin: 'true', help: 'global', share: 'true'}\"\n             [diwoCircleTriggeredBy]=\"'hover'\"\n             [diwoCircleAllow]=\"!isMyDiwoOpen() && isMicroserviceOpen()\"\n             [diwoCircleClickAction]=\"openMyDiwo\"\n             [diwoCircleSize]=\"34\"\n             [diwoCircleDisableExtraNav]=\"true\"\n             [diwoCircleType]=\"'microphone'\" style=\"min-height: 100%;position:absolute;top:-3px;left:-3px;\">\n\n\n          <div id=\"nav\" [hidden]=\"!(!isMyDiwoOpen() && isMicroserviceOpen() || (showDock | async)) \"\n\n               class=\"card layout-row right-none with-mg-small layout--start-center  top-none left-none has-pd-hori-large has-pd-top-large\">\n            <!--<div id=\"nav-overlay\" class=\"is-absolute top-none left-none bottom-none right-none\" *ngIf=\"isWatchOpen()\"></div>-->\n            <div #diwoHolder class=\"logo-holder is-one-whole-tall is-relative layout-item\"\n                 [hidden]=\"(isMyDiwoOpen() || isAskOpen()) && !(showDock | async)\">\n              <button class=\"is-absolute transform-to-center top-one-half left-one-half\" [routerLink]=\"['/mydiwo']\">\n                <img class=\"is-absolute transform-to-center top-one-half left-one-half\" width=\"20\"\n                     src=\"./assets/images/diwoLogo-2x.png\"/>\n              </button>\n            </div>\n\n          </div>\n\n        </div>\n\n        <!-- end diwo circle -->\n\n      </div>\n      <span class=\"line-header-elements\">\n        <span *ngFor=\"let info of line.Header.Text; let j = index\">\n            {{ info }}\n            <span class=\"header-info-separator\" *ngIf=\"j < (line.Header.Text.length-1) \">&nbsp;</span>\n          </span>\n      </span>\n\n      <!-- defining and displaying cards -->\n      <div *ngFor=\"let card of line.Collapsed.Cards; let j = index\" class=\"line-card col-25\">\n\n        <!-- image card -->\n        <div *ngIf=\"card.Type == 'image'\"\n             [ngClass]=\"{ 'gray': card.Style.Background == 'gray', 'white': card.Style.Background == 'white' }\"\n             class=\"card\">\n          <div class=\"card-image\"> <!-- the image will be blob or path?! -->\n            <img src=\"{{ card.Content.Image }}\" width=\"60\"/>\n          </div>\n          <div class=\"line-group\">\n            <div class=\"card-content-line\"\n                 [ngClass]=\"{ 'black': card.Content.Text.Style.Colors[0] == 'black', 'pink': card.Content.Text.Style.Colors[0] == 'pink', 'gray': card.Content.Text.Style.Colors[0] == 'gray', 'bold': card.Content.Text.Style.Weights[0] == 'bold', 'normal': card.Content.Text.Style.Weights[0] == 'normal' }\">\n              <div style=\"display: block\">{{ card.Content.Text.Value[0] }}</div>\n            </div>\n            <div class=\"card-content-line\"\n                 [ngClass]=\"{ 'black': card.Content.Text.Style.Colors[1] == 'black', 'pink': card.Content.Text.Style.Colors[1] == 'pink', 'gray': card.Content.Text.Style.Colors[1] == 'gray', 'bold': card.Content.Text.Style.Weights[1] == 'bold', 'normal': card.Content.Text.Style.Weights[1] == 'normal' }\">\n              <div style=\"display: block\">{{ card.Content.Text.Value[1] }}</div>\n            </div>\n          </div>\n        </div>\n\n        <!-- table card -->\n        <div *ngIf=\"card.Type == 'table'\"\n             [ngClass]=\"{ 'gray': card.Style.Background == 'gray', 'white': card.Style.Background == 'white' }\"\n             class=\"border-card-right table  no-border\">\n          <div class='row-small row-rest-6 pink-background ' style='line-height: 37px'>\n            <div class='left-value pink-text' style='padding-left: 10px; width: 80%'>Revenue impact</div>\n            <div class='right-value ' style='padding-right: 10px; width: 20%'>$1.3M</div>\n          </div>\n          <div class='row-small row-rest-6 pink-background ' style='line-height: 37px'>\n            <div class='left-value pink-text' style='padding-left: 10px; width: 80%'>Profitability impact</div>\n            <div class='right-value ' style='padding-right: 10px; width: 20%'>$820K</div>\n          </div>\n          <div class='row-small row-rest-6 ' style='line-height: 37px'>\n            <div class='left-value red-text dark-pink-background'\n                 style='padding-left: 10px;font-weight: 600; width: 80%'>Confidence score\n            </div>\n            <div class='right-value red-text pink-background'\n                 style='padding-right: 10px; padding-left: 10px; width: 20%'>89%\n            </div>\n            <div class=\"clear\"></div>\n          </div>\n          <!-- iterate lines -->\n          <!--<div *ngFor=\"let tline of card.Content.Text.Value; let k = index\" class=\"\" >-->\n          <!--<div class=\"col-50  label\" [ngClass]=\"{ 'black': tline.Label.Style.Color == 'black', 'pink': tline.Label.Style.Color == 'pink' }\">-->\n          <!--<h3>{{ tline.Label.Text }}</h3>-->\n          <!--</div>-->\n          <!--<div class=\"col-50 pull-right text-right value-small\" [ngClass]=\"{ 'black': tline.Value.Style.Color == 'black', 'pink': tline.Value.Style.Color == 'pink' }\">-->\n          <!--<h3>{{ tline.Value.Text }}</h3>-->\n          <!--</div>-->\n          <!--</div>-->\n        </div>\n\n        <!-- table highlighted_value -->\n        <div *ngIf=\"card.Type == 'highlighted_value'\"\n             [ngClass]=\"{ 'gray': card.Style.Background == 'gray', 'white': card.Style.Background == 'white', 'light-gray': card.Style.Background == 'light-gray' }\"\n             class=\"card  border-card-right\">\n          <div class=\"col-100 text-center label\"\n               [ngClass]=\"{ 'black': card.Content.Text.Value[0].Label.Color == 'black', 'pink': card.Content.Text.Value[0].Label.Style.Color == 'pink' }\">\n            {{ card.Content.Text.Value[0].Label.Text }}\n          </div>\n          <div class=\"col-100 text-center value-big\"\n               [ngClass]=\"{ 'black': card.Content.Text.Value[1].Label.Style.Color == 'black', 'pink': card.Content.Text.Value[1].Label.Style.Color == 'pink' }\">\n            {{ card.Content.Text.Value[1].Label.Text }}\n          </div>\n        </div>\n\n        <!-- table rating_stars_down -->\n        <div *ngIf=\"card.Type == 'rating_stars_down'\"\n             [ngClass]=\"{ 'gray': card.Style.Background == 'gray', 'white': card.Style.Background == 'white' }\"\n             class=\"card  border-card-right\">\n          <div class=\"col-100 text-center label\"\n               [ngClass]=\"{ 'black': card.Content.Text.Value[0].Label.Color == 'black', 'pink': card.Content.Text.Value[0].Label.Style.Color == 'pink' }\">\n            {{ card.Content.Text.Value[0].Label.Text }}\n          </div>\n          <div class=\"col-100 text-center  value-big\"\n               [ngClass]=\"{ 'black': card.Content.Text.Value[1].Label.Style.Color == 'black', 'pink': card.Content.Text.Value[1].Label.Style.Color == 'pink' }\">\n            {{ card.Content.Text.Value[1].Label.Text }}\n          </div>\n        </div>\n\n        <!-- add the buttons on bottom of the first card in case they exist -->\n        <div *ngIf=\"j==0 && !accordionState[i].Expanded\" class=\"collapsed card-buttons\">\n          <div *ngIf=\"line.Buttons.Expand\" class=\"card-button  button-expand\"\n               (click)=\"accordionState[i].Expanded = true;accordionState[i].state = 'active';didScroll(event)\">\n            <i class=\"di-arrow-down expand-arrow di-8x sub-icon\"></i>\n          </div>\n          <div *ngIf=\"line.Buttons.New\" class=\"card-button button-new\" (click)=\"newCard()\">\n            New\n            <div class=\"icon-btn-new\">\n              <i class=\"di-check di-8x sub-icon\" style=\"color: black;\"></i>\n            </div>\n          </div>\n        </div>\n      </div>\n      <div class=\"expanded\" [@expanded]=\"accordionState[i].state\">\n        <div class=\"container light-gray\">\n          <div class='bordered-heading'><i class=\"di-decide red-text\"></i><span class='red-text'> I sense...</span></div>\n          <div class=\"main-content\"\n               *ngIf=\"line.Expanded.Cards.length==2 && line.Expanded.Cards[0].Type == 'graph' && line.Expanded.Cards[1].Type == 'highlights'\">\n            <div class=\"left-graph\">\n              <div class='image-outer-wrapper'>\n                <div data-id='gViz-visuals-vis-wrapper' class='gViz-visuals-inner-wrapper'>\n                  <div *ngIf=\"!line.Expanded.Cards[0].Content.Graph.Data\">Loading data...</div>\n                  <ng-template *ngIf=\"line.Expanded.Cards[0].Content.Graph.Data\"\n                               [dynamic-component]=\"line.Expanded.Cards[0].Content.Graph.Type\"\n                               [data]=\"line.Expanded.Cards[0].Content.Graph.Data\"></ng-template>\n                </div>\n                <div class='border-rect' data-side='top-left'></div>\n                <div class='border-rect' data-side='top-right'></div>\n                <div class='border-rect' data-side='bottom-left'></div>\n                <div class='border-rect' data-side='bottom-right'></div>\n              </div>\n            </div>\n            <div class=\"right-fields\">\n\n\n              <!-- start right -->\n\n              <div class=\"top-fields\">\n                <h2 class=\"header\"><img src=\"./assets/images/temp_icons/icon_4.svg\" width=\"21\"/>\n                  <span>Related Insights</span>\n                </h2>\n\n               <div class=\"row-set-white-linear\">\n                <div class='row'>\n                  <div class='left-value'>\n                    <!-- <div class=\"icon-globe\">\n                      &nbsp;\n                    </div> -->\n                    Some of the latest fashion trends I've noticed in the 18-21 age group are the color Pink and Satin textures.</div>\n                </div>\n                <div class='row'>\n                  <div class='left-value'>Push-up LL WEW is your top selling style in Bra Category</div>\n                </div>\n                <div class='row'>\n                  <div class='left-value'>76% of Angel Card Members prefer Black, 90& of those buy Cotton.</div>\n                </div>\n              </div>\n\n               <div class=\"row-set-white\">\n                <div class='row'>\n                  <div class='left-value'>Top Combination</div>\n                  <div class='right-value pink-background'>WEW Push-up Laced Triangular Pink</div>\n                </div>\n                <div class='row'>\n                  <div class='left-value'>Projected Units</div>\n                  <div class='right-value'>92K</div>\n                </div>\n                <div class='row'>\n                  <div class='left-value'>Revenue Impact</div>\n                  <div class='right-value'>$2.3M</div>\n                </div>\n                <div class='row'>\n                  <div class='left-value'>Profitability</div>\n                  <div class='right-value'>$800K</div>\n                </div>\n              </div>\n\n              <div class=\"row-set-white\">\n                <div class='row'>\n                  <div class='left-value'>Top 3 Combinations</div>\n                  <div class='right-value pink-background'>WEW Push-up Laced Triangular Pink</div>\n                </div>\n                <div class='row'>\n                  <div class='left-value right-value-left pink-background'>Date Super PU LL Floral Pink</div>\n                  <div class='right-value pink-background'>WEW PU T-Back Strappy Blue</div>\n                </div>\n              </div>\n\n              <!-- end right -->\n\n            </div>\n          </div>\n          <div class=\"main-content\"\n               *ngIf=\"line.Expanded.Cards.length==2 && line.Expanded.Cards[0].Type == 'graph' && line.Expanded.Cards[1].Type == 'related-insights'\">\n            <div class=\"left-graph\">\n              <div class='image-outer-wrapper'>\n                <div data-id='gViz-visuals-vis-wrapper' class='gViz-visuals-inner-wrapper'>\n                  <div *ngIf=\"!line.Expanded.Cards[0].Content.Graph.Data\">Loading data...</div>\n                  <ng-template *ngIf=\"line.Expanded.Cards[0].Content.Graph.Data\"\n                               [dynamic-component]=\"line.Expanded.Cards[0].Content.Graph.Type\"\n                               [data]=\"line.Expanded.Cards[0].Content.Graph.Data\"></ng-template>\n                </div>\n                <div class='border-rect' data-side='top-left'></div>\n                <div class='border-rect' data-side='top-right'></div>\n                <div class='border-rect' data-side='bottom-left'></div>\n                <div class='border-rect' data-side='bottom-right'></div>\n              </div>\n            </div>\n            <div class=\"right-fields\">\n              <div class=\"top-fields\">\n                <h2 class=\"header\">Highlights</h2>\n                <div class='row'>\n                  <div class='left-value'>Shortage (units)</div>\n                  <div class='right-value'>8450</div>\n                </div>\n                <div class='row'>\n                  <div class='left-value'>Impacted Choice Codes</div>\n                  <div class='right-value'>31</div>\n                </div>\n                <div class='row'>\n                  <div class='left-value'>Revenue Recovery</div>\n                  <div class='right-value'>$800K</div>\n                </div>\n                <div class='row'>\n                  <div class='left-value'>Profitability</div>\n                  <div class='right-value'>$300K</div>\n                </div>\n                <div class='tri-row'>\n                  <div class='left-value'>Most affected</div>\n                  <div class=\"right-rows\">\n                    <div class='row'>\n                      <div class='right-value'>WEW Push-up</div>\n                    </div>\n                    <div class='row'>\n                      <div class='right-value'>Sports Bra Demi LL</div>\n                    </div>\n                  </div>\n                </div>\n              </div>\n              <div class=\"bottom-fields\">\n                <div class='row'>\n                  <div class='left-value'>Surplus (units)</div>\n                  <div class='right-value'>3100</div>\n                </div>\n                <div class='row'>\n                  <div class='left-value'>Impacted Choice Codes</div>\n                  <div class='right-value'>22</div>\n                </div>\n                <div class='row'>\n                  <div class='left-value'>Revenue Recovery</div>\n                  <div class='right-value'>$500k</div>\n                </div>\n                <div class='row'>\n                  <div class='left-value'>Profitability</div>\n                  <div class='right-value'>$470k</div>\n                </div>\n                <div class='row'>\n                  <div class='left-value'>Most affected</div>\n                  <div class='right-value pink-background'>WEW Push-up</div>\n                  <div class='right-value pink-background'>Sports Bra Demi LL</div>\n                </div>\n              </div>\n            </div>\n          </div>\n          <div class=\"main-content\"\n               *ngIf=\"line.Expanded.Cards.length==2 && line.Expanded.Cards[0].Type == 'graph' && line.Expanded.Cards[1].Type == 'what-if-analysis'\">\n            <div class=\"left-graph\">\n              <div class='image-outer-wrapper'>\n                <div data-id='gViz-visuals-vis-wrapper' class='gViz-visuals-inner-wrapper'>\n                  <div *ngIf=\"!line.Expanded.Cards[0].Content.Graph.Data\">Loading data...</div>\n                  <ng-template *ngIf=\"line.Expanded.Cards[0].Content.Graph.Data\"\n                               [dynamic-component]=\"line.Expanded.Cards[0].Content.Graph.Type\"\n                               [data]=\"line.Expanded.Cards[0].Content.Graph.Data\"></ng-template>\n                </div>\n                <div class='border-rect' data-side='top-left'></div>\n                <div class='border-rect' data-side='top-right'></div>\n                <div class='border-rect' data-side='bottom-left'></div>\n                <div class='border-rect' data-side='bottom-right'></div>\n              </div>\n            </div>\n            <div class=\"right-fields\">\n              <div class=\"top-fields\">\n                <h2 class=\"header\">Highlights</h2>\n                <div class='row'>\n                  <div class='left-value'>Shortage (units)</div>\n                  <div class='right-value'>8450</div>\n                </div>\n                <div class='row'>\n                  <div class='left-value'>Impacted Choice Codes</div>\n                  <div class='right-value'>31</div>\n                </div>\n                <div class='row'>\n                  <div class='left-value'>Revenue Recovery</div>\n                  <div class='right-value'>$800K</div>\n                </div>\n                <div class='row'>\n                  <div class='left-value'>Profitability</div>\n                  <div class='right-value'>$300K</div>\n                </div>\n                <div class='tri-row'>\n                  <div class='left-value'>Most affected</div>\n                  <div class=\"right-rows\">\n                    <div class='row'>\n                      <div class='right-value'>WEW Push-up</div>\n                    </div>\n                    <div class='row'>\n                      <div class='right-value'>Sports Bra Demi LL</div>\n                    </div>\n                  </div>\n                </div>\n              </div>\n              <div class=\"bottom-fields\">\n                <div class='row'>\n                  <div class='left-value'>Surplus (units)</div>\n                  <div class='right-value'>3100</div>\n                </div>\n                <div class='row'>\n                  <div class='left-value'>Impacted Choice Codes</div>\n                  <div class='right-value'>22</div>\n                </div>\n                <div class='row'>\n                  <div class='left-value'>Revenue Recovery</div>\n                  <div class='right-value'>$500k</div>\n                </div>\n                <div class='row'>\n                  <div class='left-value'>Profitability</div>\n                  <div class='right-value'>$470k</div>\n                </div>\n                <div class='row'>\n                  <div class='left-value'>Most affected</div>\n                  <div class='right-value pink-background'>WEW Push-up</div>\n                  <div class='right-value pink-background'>Sports Bra Demi LL</div>\n                </div>\n              </div>\n            </div>\n          </div>\n\n        <!--<table style='border: 1px solid deeppink;'>-->\n          <!--<tr>-->\n          <!--<td>Shortage (31 Choice Codes)</td>-->\n          <!--<td>8450</td>-->\n          <!--</tr>-->\n          <!--<tr>-->\n          <!--<td>Revenue Recovery</td>-->\n          <!--<td>$800K</td>-->\n          <!--</tr>-->\n          <!--<tr>-->\n          <!--<td>Profitability</td>-->\n          <!--<td>$300K</td>-->\n          <!--</tr>-->\n          <!--<tr>-->\n          <!--<td>Most affected</td>-->\n          <!--<td>WEW Push-up and Sports Bra Demi LL</td>-->\n          <!--</tr>-->\n        <!--</table>-->\n\n        <!--<div class=\"card\" *ngFor=\"let card of line.Expanded.Cards; let j = index\">-->\n          <!--<h3>{{ card.Title }}</h3>-->\n\n\n          <!-- card: text -->\n          <!--<div *ngIf=\"card.Type == 'text'\" class=\"text\">-->\n          <!--{{ card.Content.Text.Value[0].Label.Text }}-->\n          <!--</div>-->\n\n          <!--&lt;!&ndash; card: table &ndash;&gt;-->\n          <!--<div *ngIf=\"card.Type == 'table'\" class=\"text\">-->\n          <!--{{ card.Content?.Text.Value[0].Label.Text }}-->\n          <!--<img src=\"./assets/images/placeholders/placeholder_table.png\" width=\"100%\">-->\n          <!--</div>-->\n\n          <!--&lt;!&ndash; card: graph_map_1 &ndash;&gt;-->\n          <!--<div *ngIf=\"card.Type == 'graph_map_1'\" class=\"text\">-->\n          <!--{{ card.Content?.Text.Value[0].Label.Text }}-->\n          <!--<img src=\"./assets/images/placeholders/placeholder_graph.png\" width=\"100%\">-->\n          <!--</div>-->\n\n          <!-- add the buttons on bottom of the first card in case they exist -->\n          <!--<div *ngIf=\"j==0 && accordionState[i].Expanded\" class=\"card-buttons\">-->\n          <div *ngIf=\"line.Buttons.Expand\" class=\"card-button  button-expand\"\n               (click)=\"accordionState[i].Expanded = false;accordionState[i].state = 'inactive';didScroll(event)\" [class.hidden]=\"!accordionState[i].Expanded\">\n            <i class=\"di-arrow-up expand-arrow di-8x sub-icon\"></i>\n          </div>\n          <div *ngIf=\"line.Buttons.New\" class=\"card-button button-new\" (click)=\"newCard()\">\n            New\n            <div class=\"icon-btn-new\">\n              <i class=\"di-check di-8x sub-icon\" style=\"color: black;\"></i>\n            </div>\n          </div>\n          <!--</div>-->\n        </div>\n        <!--</div>-->\n      </div>\n\n\n\n    </div>\n\n    <!-- building the expanded state of the line -->\n    <!-- defining and adding card types | maps and tables should be predefined templates-->\n\n    </div>\n\n    <!-- building the expanded state of the line -->\n    <!-- defining and adding card types | maps and tables should be predefined templates-->\n\n  </div>\n\n<div class=\"panel-holder\">\n  <decide-panel-layout *ngIf=\"panelOpen\" [@enterAnimation] (panelClose)=\"panelOpen = false\" [data]=\"selectedLineData\"></decide-panel-layout>\n</div>\n"
 
 /***/ }),
 
@@ -5200,7 +5216,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "/* =============================================================================\n   MEDIA QUERIES\n   ========================================================================== */\n/* Eg.\n    .container{\n        width:1024px;\n\n        @include tablets{\n            width:90%;\n        }\n    }\n*/\n/* =============================================================================\n   Unit transform\n   ========================================================================== */\n:host {\n  display: block; }\n\n#decide-header {\n  z-index: 7000;\n  top: 145px; }\n\n@media screen and (max-width: 1280px) {\n  .cards-container {\n    height: 75vh;\n    width: 100vw;\n    position: fixed;\n    overflow-y: scroll;\n    padding: 0 2%;\n    margin-top: 15px !important;\n    left: 1%;\n    z-index: 9000; } }\n\n@media screen and (min-width: 1281px) {\n  .cards-container {\n    height: 75vh;\n    width: 100vw;\n    position: fixed;\n    overflow-y: scroll;\n    padding: 0 2%;\n    margin-top: 50px !important;\n    left: 1%;\n    top: 15%;\n    z-index: 9000; } }\n\n.decide-card-item {\n  width: 0; }\n\n.decide-card-item:nth-of-type(1) {\n  -webkit-box-flex: 0.2;\n  box-flex: 0.2;\n  -ms-flex-positive: 0.2;\n      flex-grow: 0.2;\n  -webkit-flex-grow: 0.2;\n  -ms-flex-grow: 0.2;\n  -moz-flex-grow: 0.2; }\n\n.decide-card-item:nth-of-type(1n+2) {\n  -webkit-box-flex: 0.16;\n  box-flex: 0.16;\n  -ms-flex-positive: 0.16;\n      flex-grow: 0.16;\n  -webkit-flex-grow: 0.16;\n  -ms-flex-grow: 0.16;\n  -moz-flex-grow: 0.16; }\n\n#decideClose {\n  z-index: 8000;\n  padding: 10px;\n  padding-top: 0; }\n\n.border-card-right {\n  border-right: 0.3px solid #d1d1d1;\n  padding: 10px 0 !important; }\n  .border-card-right.no-border {\n    border: 0;\n    padding: 0 !important; }\n\n.border-card-right.table {\n  padding-top: 0 !important; }\n\n.card-header {\n  margin-bottom: 36px;\n  display: -webkit-box; }\n\n.card-header > div {\n  border-bottom: 0.3px solid #aeaeae;\n  font-size: 19px;\n  padding-bottom: 9px;\n  position: relative;\n  float: left;\n  margin: 10px;\n  box-sizing: initial; }\n\n.card-header .context {\n  width: 47%; }\n\n.card-header .forecast {\n  width: 31%; }\n\n.card-header .outcome {\n  width: 16%; }\n\n.card-line > * {\n  font-weight: thin;\n  white-space: nowrap; }\n\n.card-line {\n  margin: 20px 0;\n  position: relative;\n  clear: both;\n  float: left;\n  width: 100%; }\n\n.card-image {\n  width: 25%;\n  display: inline-block;\n  position: relative;\n  float: left;\n  padding: 10px;\n  max-width: 80px; }\n  .card-image img {\n    width: 100%;\n    max-width: 55px; }\n\n.card-text {\n  padding: 15px; }\n\n.card-text .row {\n  padding: 5px; }\n\n.line-header-elements {\n  background: #222323;\n  color: #FFF;\n  font-weight: normal;\n  margin-top: -12px;\n  margin-left: 5px;\n  position: absolute;\n  z-index: 99;\n  font-size: 14px;\n  font-weight: 100;\n  padding: 4px 10px 4px 5px; }\n\n.line-icon {\n  width: 30px;\n  height: 30px;\n  border-radius: 18px;\n  background: #202121;\n  display: inline-block;\n  margin-left: -18px;\n  margin-top: 30px;\n  z-index: 99;\n  position: absolute;\n  cursor: pointer; }\n\n.line-icon i, .options-icon i {\n  color: #FFF;\n  font-size: 16px;\n  padding-left: 7px;\n  padding-top: 7px; }\n\n.options-icon i.di-check {\n  color: #202121; }\n\n.options-icon i.di-microphone {\n  padding-left: 10px;\n  padding-top: 3px;\n  color: #202121; }\n\n.options-icon {\n  width: 30px;\n  height: 30px;\n  border-radius: 18px;\n  background: #FFF;\n  border: 2px solid #202121;\n  display: inline-block;\n  margin-left: -15px;\n  margin-top: -15px;\n  position: absolute;\n  z-index: 100;\n  cursor: pointer; }\n\n.header-info-separator, .header-info-separator-last {\n  padding: 0 10px 0 10px;\n  margin-right: 10px;\n  border-right: 0.3px solid #FFF;\n  display: inline-block;\n  font-weight: 100; }\n\n.header-info-separator-last {\n  border: none; }\n\n.card {\n  padding: 15px;\n  line-height: 28px !important;\n  font-size: 18px; }\n\n.line-group {\n  width: 74%;\n  display: inline-block;\n  position: relative;\n  float: left;\n  overflow: hidden;\n  padding: 15px; }\n\n.line-card {\n  display: inline-block;\n  width: 25%;\n  float: left;\n  border-top: 2px solid #e7e7e7;\n  border-bottom: 2px solid #e7e7e7; }\n\n.line-card > * {\n  line-height: 24px;\n  position: relative;\n  width: 100%;\n  float: left;\n  height: 90px; }\n\n.card-content-line h2 {\n  font-size: 17px; }\n\n.card-content-line {\n  font-size: 17px !important;\n  font-family: 'Yantramanav' !important;\n  font-weight: 400 !important;\n  line-height: 20px; }\n\n.card .label {\n  font-size: 15px;\n  font-family: 'Yantramanav-Light';\n  margin-top: 5px; }\n\n.card h3 {\n  font-size: 15px !important;\n  font-weight: normal !important; }\n\n.card .value-small, .card .value-big {\n  font-family: Bebas !important;\n  font-weight: 400 !important; }\n\n.card .value-big {\n  font-size: 22px !important; }\n\n.col-25 {\n  width: 25%; }\n\n.col-50 {\n  width: 49%;\n  display: inline-block; }\n\n.col-75 {\n  width: 74%; }\n\n.col-100 {\n  width: 100%; }\n\n.col-rest-3 {\n  width: 16.66666667%; }\n\n.row-rest-6 {\n  height: 33.33333333%; }\n\n.pink {\n  color: #ea6193; }\n\n.gray {\n  background: #e9e8e8; }\n\n.black {\n  color: #202121; }\n\n.white {\n  background: #f9f9f9; }\n\n.light-gray {\n  background: #f2f2f2; }\n\n.pull-left {\n  float: left; }\n\n.pull-right {\n  float: right; }\n\n.text-left {\n  text-align: left; }\n\n.text-right {\n  text-align: right; }\n\n.text-center {\n  text-align: center; }\n\n.last-card {\n  border: 2px solid #d1d1d1;\n  border-left: none !important;\n  overflow: hidden; }\n\n.bold {\n  font-weight: 400 !important; }\n\n.normal {\n  font-weight: 100 !important; }\n\n.collapsed.card-buttons {\n  height: auto !important;\n  margin-left: 7.5%;\n  margin-right: auto;\n  width: auto !important;\n  position: absolute !important;\n  top: 80px;\n  z-index: 999; }\n\n.card-button {\n  z-index: 999;\n  border-radius: 3px;\n  width: 45px;\n  height: 15px;\n  padding: 0 5px;\n  position: relative;\n  float: left;\n  margin: 5px;\n  font-size: 12px;\n  color: #FFF;\n  line-height: 16px;\n  cursor: pointer; }\n\n.button-expand {\n  background: #202121;\n  text-align: center; }\n\n.button-new {\n  background: #e10b17; }\n\n.button-new .icon-btn-new {\n  width: 15px;\n  height: 15px;\n  background: #FFF;\n  position: absolute;\n  float: right;\n  border: 1px solid #202121;\n  border-radius: 0 3px 3px 0;\n  bottom: 0;\n  right: 0; }\n\n.expanded {\n  position: relative;\n  float: left;\n  margin-top: 12px;\n  width: 100%;\n  background: #fafafa; }\n\n.expanded .container {\n  padding: 10px 10px 20px 10px;\n  overflow: hidden;\n  height: 100%;\n  border: 0.3px solid #e7e7e7 !important; }\n  .expanded .container .main-content {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-orient: horizontal;\n    -webkit-box-direction: normal;\n        -ms-flex-direction: row;\n            flex-direction: row; }\n    .expanded .container .main-content .left-graph {\n      -webkit-box-flex: 2;\n          -ms-flex: 2;\n              flex: 2;\n      overflow: hidden; }\n      .expanded .container .main-content .left-graph .gViz-visuals-inner-wrapper {\n        height: 100%; }\n    .expanded .container .main-content .right-fields {\n      -webkit-box-flex: 1;\n          -ms-flex: 1;\n              flex: 1;\n      padding-left: 1%;\n      display: -webkit-box;\n      display: -ms-flexbox;\n      display: flex;\n      -webkit-box-orient: vertical;\n      -webkit-box-direction: normal;\n          -ms-flex-direction: column;\n              flex-direction: column; }\n      .expanded .container .main-content .right-fields .header {\n        border-bottom: 1px solid #e10b17;\n        color: #e10b17;\n        padding-bottom: 0;\n        margin-bottom: 0;\n        font-weight: 400;\n        font-size: 17px; }\n      .expanded .container .main-content .right-fields .header span {\n        top: -5px;\n        left: 5px;\n        position: relative; }\n      .expanded .container .main-content .right-fields .top-fields {\n        -webkit-box-flex: 1;\n            -ms-flex: 1;\n                flex: 1;\n        padding-right: 0px; }\n      .expanded .container .main-content .right-fields .bottom-fields {\n        margin-top: 28px;\n        padding-right: 0px; }\n\n.expanded .card {\n  width: 32%;\n  margin-right: 1%;\n  background: #fafafa;\n  border: 1px solid #e9e8e8;\n  display: inline-block;\n  white-space: normal;\n  height: 350px; }\n\n.expanded .card {\n  line-height: 24px !important;\n  position: relative;\n  float: left;\n  display: inline-block; }\n\n.expanded .card .text {\n  float: left;\n  font-size: 15px; }\n\n.expanded .card-button {\n  bottom: -11px !important;\n  position: absolute;\n  float: left;\n  z-index: 9999; }\n  .expanded .card-button.button-expand {\n    margin-left: 7%; }\n  .expanded .card-button.button-new {\n    margin-left: calc(7% + 55px); }\n\n.expanded .card h3 {\n  color: #e96292;\n  font-weight: lighter;\n  border-bottom: 2px solid #e96292;\n  padding-bottom: 12px;\n  margin-bottom: 12px;\n  font-size: 17px; }\n\n.diwo-circle--actions .layout-column.diwo-circle--actions-ctn {\n  position: relative; }\n\n.diwo-circle--trigger {\n  z-index: 1; }\n\n.diwo-circle--action-item {\n  -webkit-transform: none !important;\n          transform: none !important; }\n\ntd {\n  background-color: white; }\n\n.w-100, .row, .row-small {\n  width: 100%; }\n\n.row {\n  border: solid 0.3px rgba(203, 87, 126, 0.39);\n  display: table;\n  clear: both;\n  padding: 5px;\n  margin-bottom: 2px;\n  background-color: white; }\n  .row .left-value {\n    padding: 5px; }\n  .row .right-value {\n    padding: 5px;\n    margin-left: 5px;\n    text-align: right !important; }\n\n.tri-row {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: row;\n          flex-direction: row;\n  margin-bottom: 2px;\n  background-color: white; }\n  .tri-row .left-value {\n    border: solid 0.3px rgba(203, 87, 126, 0.39);\n    padding: 10px;\n    text-align: center;\n    line-height: 3.5em;\n    -webkit-box-flex: 1;\n        -ms-flex: 1;\n            flex: 1; }\n  .tri-row .right-rows {\n    -webkit-box-flex: 4;\n        -ms-flex: 4;\n            flex: 4;\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-orient: vertical;\n    -webkit-box-direction: normal;\n        -ms-flex-direction: column;\n            flex-direction: column; }\n    .tri-row .right-rows .row {\n      margin-bottom: 0; }\n\n.row-small {\n  border-bottom: solid 0.5px rgba(203, 87, 126, 0.39);\n  display: table;\n  clear: both;\n  background-color: white;\n  overflow: hidden;\n  line-height: 30px !important; }\n\n.pink-color {\n  color: #e96292; }\n\n.right-value-left {\n  color: #e96292 !important;\n  font-weight: 400;\n  font-size: 16px;\n  font-family: 'Bebas' !important;\n  text-align: left !important; }\n\n.right-value {\n  float: right;\n  font-weight: 400;\n  color: #e96292;\n  font-size: 16px;\n  font-family: 'Bebas' !important;\n  text-align: right !important; }\n\n.left-value {\n  float: left;\n  color: #555;\n  font-size: 15px;\n  font-family: 'Yantramanav';\n  font-weight: 200; }\n\n.bordered-heading {\n  font-size: 20px;\n  border-bottom: 3px solid #e10b17;\n  display: block;\n  margin-bottom: 15px;\n  padding-bottom: 10px; }\n\n.image-outer-wrapper {\n  height: 100%;\n  position: relative; }\n  .image-outer-wrapper .border-rect {\n    position: absolute;\n    height: 15px;\n    width: 15px;\n    z-index: 100; }\n    .image-outer-wrapper .border-rect[data-side='top-left'] {\n      top: 1px;\n      left: 1px;\n      border-top: 2px solid #e10b17;\n      border-left: 2px solid #e10b17; }\n    .image-outer-wrapper .border-rect[data-side='top-middle'] {\n      top: 1px;\n      left: 50%;\n      width: 20px;\n      border-top: 2px solid #e10b17; }\n    .image-outer-wrapper .border-rect[data-side='top-right'] {\n      top: 1px;\n      right: 1px;\n      border-top: 2px solid #e10b17;\n      border-right: 2px solid #e10b17; }\n    .image-outer-wrapper .border-rect[data-side='middle-left'] {\n      top: 50%;\n      left: 1px;\n      height: 20px;\n      border-left: 2px solid #e10b17; }\n    .image-outer-wrapper .border-rect[data-side='middle-right'] {\n      top: 50%;\n      right: 1px;\n      height: 20px;\n      border-right: 2px solid #e10b17; }\n    .image-outer-wrapper .border-rect[data-side='bottom-left'] {\n      bottom: 1px;\n      left: 1px;\n      border-bottom: 2px solid #e10b17;\n      border-left: 2px solid #e10b17; }\n    .image-outer-wrapper .border-rect[data-side='bottom-middle'] {\n      bottom: 1px;\n      left: 50%;\n      width: 20px;\n      border-bottom: 2px solid #e10b17; }\n    .image-outer-wrapper .border-rect[data-side='bottom-right'] {\n      bottom: 1px;\n      right: 1px;\n      border-bottom: 2px solid #e10b17;\n      border-right: 2px solid #e10b17; }\n\n.panel-holder {\n  position: absolute;\n  left: 1vw;\n  top: 3vh;\n  right: 1vw;\n  z-index: 9999; }\n\n.pink-background {\n  background-color: rgba(203, 87, 126, 0.23) !important;\n  overflow: auto; }\n\n.dark-pink-background {\n  background-color: rgba(203, 80, 99, 0.49) !important; }\n\n.pink-text {\n  color: #e96292; }\n\n.red-text {\n  color: #e10b17;\n  font-weight: 100; }\n\n.clear {\n  clear: both; }\n\n.bold {\n  font-weight: bold; }\n\n.sub-icon {\n  margin-top: -4px; }\n\n.di-arrow-down {\n  margin-top: 0; }\n\n.di-arrow-up {\n  margin-top: -2px; }\n\n.row-set-white-linear {\n  background: #FFF;\n  border: none !important;\n  padding-top: 0;\n  padding: 5px 0;\n  margin: 5px 0;\n  margin-top: 0; }\n\n.row-set-white-linear .row {\n  border: none;\n  border-bottom: 1px solid #e10b17;\n  white-space: initial; }\n\n.row-set-white {\n  background: #FFF;\n  border: solid 0.3px rgba(203, 87, 126, 0.39);\n  padding: 5px;\n  margin: 5px 0; }\n\n.row-set-white .row {\n  border: none;\n  border-bottom: solid 0.3px rgba(203, 87, 126, 0.39);\n  width: 97%;\n  margin: 0 5px; }\n\n.row-set-white .row:last-child {\n  border: none; }\n\n.icon-globe {\n  position: relative;\n  float: left;\n  width: 26px;\n  margin: 0 5px; }\n", ""]);
+exports.push([module.i, "/* =============================================================================\n   MEDIA QUERIES\n   ========================================================================== */\n/* Eg.\n    .container{\n        width:1024px;\n\n        @include tablets{\n            width:90%;\n        }\n    }\n*/\n/* =============================================================================\n   Unit transform\n   ========================================================================== */\n:host {\n  display: block; }\n\n#decide-header {\n  z-index: 7000;\n  top: 145px; }\n\n@media screen and (max-width: 1280px) {\n  .cards-container {\n    height: 83vh;\n    width: 98vw;\n    position: fixed;\n    overflow-y: scroll;\n    padding: 0 10px 0 2%;\n    margin-top: 15px !important;\n    left: 1%;\n    z-index: 9000; } }\n\n@media screen and (min-width: 1281px) {\n  .cards-container {\n    height: 83vh;\n    width: 98vw;\n    position: fixed;\n    overflow-y: scroll;\n    padding: 0 10px 0 2%;\n    margin-top: 10px !important;\n    left: 1%;\n    top: 150px;\n    z-index: 9000; } }\n\n.decide-card-item {\n  width: 0; }\n\n.decide-card-item:nth-of-type(1) {\n  -webkit-box-flex: 0.2;\n  box-flex: 0.2;\n  -ms-flex-positive: 0.2;\n      flex-grow: 0.2;\n  -webkit-flex-grow: 0.2;\n  -ms-flex-grow: 0.2;\n  -moz-flex-grow: 0.2; }\n\n.decide-card-item:nth-of-type(1n+2) {\n  -webkit-box-flex: 0.16;\n  box-flex: 0.16;\n  -ms-flex-positive: 0.16;\n      flex-grow: 0.16;\n  -webkit-flex-grow: 0.16;\n  -ms-flex-grow: 0.16;\n  -moz-flex-grow: 0.16; }\n\n#decideClose {\n  z-index: 8000;\n  padding: 10px;\n  padding-top: 0; }\n\n.border-card-right {\n  border-right: 0.3px solid #d1d1d1;\n  padding: 10px 0 !important; }\n  .border-card-right.no-border {\n    border: 0;\n    padding: 0 !important; }\n\n.border-card-right.table {\n  padding-top: 0 !important; }\n\n.card-header {\n  margin-bottom: 36px;\n  display: -webkit-box; }\n\n.card-header > div {\n  border-bottom: 0.3px solid #aeaeae;\n  font-size: 19px;\n  padding-bottom: 9px;\n  position: relative;\n  float: left;\n  margin: 10px;\n  box-sizing: initial; }\n\n.card-header .context {\n  width: 47%; }\n\n.card-header .forecast {\n  width: 31%; }\n\n.card-header .outcome {\n  width: 16%; }\n\n.card-line > * {\n  font-weight: thin;\n  white-space: nowrap; }\n\n.card-line {\n  margin: 20px 0;\n  position: relative;\n  clear: both;\n  float: left;\n  width: 100%; }\n\n.card-image {\n  width: 25%;\n  display: inline-block;\n  position: relative;\n  float: left;\n  padding: 10px;\n  max-width: 80px; }\n  .card-image img {\n    width: 100%;\n    max-width: 55px; }\n\n.card-text {\n  padding: 15px; }\n\n.card-text .row {\n  padding: 5px; }\n\n.line-header-elements {\n  background: #222323;\n  color: #FFF;\n  font-weight: normal;\n  margin-top: -12px;\n  margin-left: 5px;\n  position: absolute;\n  z-index: 99;\n  font-size: 14px;\n  font-weight: 100;\n  padding: 4px 10px 4px 5px; }\n\n.line-header-elements span {\n  margin-left: 10px; }\n\n.line-icon {\n  width: 30px;\n  height: 30px;\n  border-radius: 18px;\n  background: #202121;\n  display: inline-block;\n  margin-left: -18px;\n  margin-top: 30px;\n  z-index: 99;\n  position: absolute;\n  cursor: pointer; }\n\n.line-icon i, .options-icon i {\n  color: #FFF;\n  font-size: 16px;\n  padding-left: 7px;\n  padding-top: 7px; }\n\n.options-icon i {\n  padding-left: 0 !important; }\n\n.options-icon i.di-check {\n  color: #202121; }\n\n.options-icon i.di-microphone {\n  padding-left: 10px;\n  padding-top: 3px;\n  color: #202121; }\n\n.options-icon {\n  width: 30px;\n  height: 30px;\n  border-radius: 18px;\n  background: #FFF;\n  border: 2px solid #202121;\n  display: inline-block;\n  margin-left: -15px;\n  margin-top: -15px;\n  position: absolute;\n  z-index: 100;\n  cursor: pointer; }\n\n.header-info-separator, .header-info-separator-last {\n  padding: 0;\n  border-right: 0.3px solid #FFF;\n  display: inline-block;\n  height: 24px;\n  position: absolute;\n  top: 0px;\n  margin-left: 0px !important; }\n\n.header-info-separator.over {\n  margin-left: -15px !important; }\n\n.header-info-separator-last {\n  border: none; }\n\n.card {\n  padding: 15px;\n  line-height: 28px !important;\n  font-size: 18px; }\n\n.line-group {\n  width: 74%;\n  display: inline-block;\n  position: relative;\n  float: left;\n  overflow: hidden;\n  padding: 15px; }\n\n.line-card {\n  display: inline-block;\n  width: 25%;\n  float: left;\n  border-top: 2px solid #e7e7e7;\n  border-bottom: 2px solid #e7e7e7; }\n\n.line-card > * {\n  line-height: 24px;\n  position: relative;\n  width: 100%;\n  float: left;\n  height: 90px; }\n\n.card-content-line h2 {\n  font-size: 17px; }\n\n.card-content-line {\n  font-size: 17px !important;\n  font-family: 'Yantramanav' !important;\n  font-weight: 400 !important;\n  line-height: 20px; }\n\n.card .label {\n  font-size: 15px;\n  font-family: 'Yantramanav-Light';\n  margin-top: 5px; }\n\n.card h3 {\n  font-size: 15px !important;\n  font-weight: normal !important; }\n\n.card .value-small, .card .value-big {\n  font-family: Bebas !important;\n  font-weight: 400 !important; }\n\n.card .value-big {\n  font-size: 22px !important; }\n\n.col-25 {\n  width: 25%; }\n\n.col-50 {\n  width: 49%;\n  display: inline-block; }\n\n.col-75 {\n  width: 74%; }\n\n.col-100 {\n  width: 100%; }\n\n.col-rest-3 {\n  width: 16.66666667%; }\n\n.row-rest-6 {\n  height: 33.33333333%; }\n\n.pink {\n  color: #ea6193; }\n\n.gray {\n  background: #e9e8e8; }\n\n.black {\n  color: #202121; }\n\n.white {\n  background: #f9f9f9; }\n\n.light-gray {\n  background: #f2f2f2; }\n\n.pull-left {\n  float: left; }\n\n.pull-right {\n  float: right; }\n\n.text-left {\n  text-align: left; }\n\n.text-right {\n  text-align: right; }\n\n.text-center {\n  text-align: center; }\n\n.last-card {\n  border: 2px solid #d1d1d1;\n  border-left: none !important;\n  overflow: hidden; }\n\n.bold {\n  font-weight: 400 !important; }\n\n.normal {\n  font-weight: 100 !important; }\n\n.collapsed.card-buttons {\n  height: auto !important;\n  margin-left: 7.5%;\n  margin-right: auto;\n  width: auto !important;\n  position: absolute !important;\n  top: 80px;\n  z-index: 999; }\n\n.card-button {\n  z-index: 999;\n  border-radius: 3px;\n  width: 45px;\n  height: 15px;\n  padding: 0 5px;\n  position: relative;\n  float: left;\n  margin: 5px;\n  font-size: 12px;\n  color: #FFF;\n  line-height: 16px;\n  cursor: pointer; }\n\n.button-expand {\n  background: #202121;\n  text-align: center; }\n\n.button-new {\n  background: #e10b17; }\n\n.button-new .icon-btn-new {\n  width: 15px;\n  height: 15px;\n  background: #FFF;\n  position: absolute;\n  float: right;\n  border: 1px solid #202121;\n  border-radius: 0 3px 3px 0;\n  bottom: 0;\n  right: 0; }\n\n.expanded {\n  position: relative;\n  float: left;\n  margin-top: 12px;\n  width: 100%;\n  background: #fafafa; }\n\n.expanded .container {\n  padding: 10px 10px 20px 10px;\n  overflow: hidden;\n  height: 100%;\n  border: 0.3px solid #e7e7e7 !important; }\n  .expanded .container .main-content {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-orient: horizontal;\n    -webkit-box-direction: normal;\n        -ms-flex-direction: row;\n            flex-direction: row; }\n    .expanded .container .main-content .left-graph {\n      -webkit-box-flex: 2;\n          -ms-flex: 2;\n              flex: 2;\n      overflow: hidden; }\n      .expanded .container .main-content .left-graph .gViz-visuals-inner-wrapper {\n        height: 100%; }\n    .expanded .container .main-content .right-fields {\n      -webkit-box-flex: 1;\n          -ms-flex: 1;\n              flex: 1;\n      padding-left: 1%;\n      display: -webkit-box;\n      display: -ms-flexbox;\n      display: flex;\n      -webkit-box-orient: vertical;\n      -webkit-box-direction: normal;\n          -ms-flex-direction: column;\n              flex-direction: column; }\n      .expanded .container .main-content .right-fields .header {\n        border-bottom: 1px solid #e10b17;\n        color: #e10b17;\n        padding-bottom: 0;\n        margin-bottom: 0;\n        font-weight: 400;\n        font-size: 17px; }\n      .expanded .container .main-content .right-fields .header span {\n        top: -5px;\n        left: 5px;\n        position: relative; }\n      .expanded .container .main-content .right-fields .top-fields {\n        -webkit-box-flex: 1;\n            -ms-flex: 1;\n                flex: 1;\n        padding-right: 0px; }\n      .expanded .container .main-content .right-fields .bottom-fields {\n        margin-top: 28px;\n        padding-right: 0px; }\n\n.expanded .card {\n  width: 32%;\n  margin-right: 1%;\n  background: #fafafa;\n  border: 1px solid #e9e8e8;\n  display: inline-block;\n  white-space: normal;\n  height: 350px; }\n\n.expanded .card {\n  line-height: 24px !important;\n  position: relative;\n  float: left;\n  display: inline-block; }\n\n.expanded .card .text {\n  float: left;\n  font-size: 15px; }\n\n.expanded .card-button {\n  bottom: -11px !important;\n  position: absolute;\n  float: left;\n  z-index: 9999; }\n  .expanded .card-button.button-expand {\n    margin-left: 7%; }\n  .expanded .card-button.button-new {\n    margin-left: calc(7% + 55px); }\n\n.expanded .card h3 {\n  color: #e96292;\n  font-weight: lighter;\n  border-bottom: 2px solid #e96292;\n  padding-bottom: 12px;\n  margin-bottom: 12px;\n  font-size: 17px; }\n\n.diwo-circle--actions .layout-column.diwo-circle--actions-ctn {\n  position: relative; }\n\n.diwo-circle--trigger {\n  z-index: 1; }\n\n.diwo-circle--action-item {\n  -webkit-transform: none !important;\n          transform: none !important; }\n\ntd {\n  background-color: white; }\n\n.w-100, .row, .row-small {\n  width: 100%; }\n\n.row {\n  border: solid 0.3px rgba(203, 87, 126, 0.39);\n  display: table;\n  clear: both;\n  padding: 5px;\n  margin-bottom: 2px;\n  background-color: white; }\n  .row .left-value {\n    padding: 5px; }\n  .row .right-value {\n    padding: 5px;\n    margin-left: 5px;\n    text-align: right !important; }\n\n.tri-row {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: row;\n          flex-direction: row;\n  margin-bottom: 2px;\n  background-color: white; }\n  .tri-row .left-value {\n    border: solid 0.3px rgba(203, 87, 126, 0.39);\n    padding: 10px;\n    text-align: center;\n    line-height: 3.5em;\n    -webkit-box-flex: 1;\n        -ms-flex: 1;\n            flex: 1; }\n  .tri-row .right-rows {\n    -webkit-box-flex: 4;\n        -ms-flex: 4;\n            flex: 4;\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-orient: vertical;\n    -webkit-box-direction: normal;\n        -ms-flex-direction: column;\n            flex-direction: column; }\n    .tri-row .right-rows .row {\n      margin-bottom: 0; }\n\n.row-small {\n  border-bottom: solid 0.5px rgba(203, 87, 126, 0.39);\n  display: table;\n  clear: both;\n  background-color: white;\n  overflow: hidden;\n  line-height: 30px !important; }\n\n.pink-color {\n  color: #e96292; }\n\n.right-value-left {\n  color: #e96292 !important;\n  font-weight: 400;\n  font-size: 16px;\n  font-family: 'Yantramanav', sans-serif;\n  text-align: left !important; }\n\n.right-value {\n  float: right;\n  font-weight: 800;\n  color: #e96292;\n  font-size: 18px;\n  font-family: 'Yantramanav', sans-serif;\n  text-align: right !important; }\n\n.left-value {\n  float: left;\n  color: #555;\n  font-size: 15px;\n  font-family: 'Yantramanav';\n  font-weight: 200; }\n\n.bordered-heading {\n  font-size: 20px;\n  border-bottom: 3px solid #e10b17;\n  display: block;\n  margin-bottom: 15px;\n  padding-bottom: 10px; }\n\n.image-outer-wrapper {\n  height: 100%;\n  position: relative; }\n  .image-outer-wrapper .border-rect {\n    position: absolute;\n    height: 15px;\n    width: 15px;\n    z-index: 100; }\n    .image-outer-wrapper .border-rect[data-side='top-left'] {\n      top: 1px;\n      left: 1px;\n      border-top: 2px solid #e10b17;\n      border-left: 2px solid #e10b17; }\n    .image-outer-wrapper .border-rect[data-side='top-middle'] {\n      top: 1px;\n      left: 50%;\n      width: 20px;\n      border-top: 2px solid #e10b17; }\n    .image-outer-wrapper .border-rect[data-side='top-right'] {\n      top: 1px;\n      right: 1px;\n      border-top: 2px solid #e10b17;\n      border-right: 2px solid #e10b17; }\n    .image-outer-wrapper .border-rect[data-side='middle-left'] {\n      top: 50%;\n      left: 1px;\n      height: 20px;\n      border-left: 2px solid #e10b17; }\n    .image-outer-wrapper .border-rect[data-side='middle-right'] {\n      top: 50%;\n      right: 1px;\n      height: 20px;\n      border-right: 2px solid #e10b17; }\n    .image-outer-wrapper .border-rect[data-side='bottom-left'] {\n      bottom: 1px;\n      left: 1px;\n      border-bottom: 2px solid #e10b17;\n      border-left: 2px solid #e10b17; }\n    .image-outer-wrapper .border-rect[data-side='bottom-middle'] {\n      bottom: 1px;\n      left: 50%;\n      width: 20px;\n      border-bottom: 2px solid #e10b17; }\n    .image-outer-wrapper .border-rect[data-side='bottom-right'] {\n      bottom: 1px;\n      right: 1px;\n      border-bottom: 2px solid #e10b17;\n      border-right: 2px solid #e10b17; }\n\n.panel-holder {\n  position: absolute;\n  left: 1vw;\n  top: 3vh;\n  right: 1vw;\n  z-index: 9999; }\n\n.pink-background {\n  background-color: rgba(203, 87, 126, 0.23) !important;\n  overflow: auto; }\n\n.dark-pink-background {\n  background-color: rgba(203, 80, 99, 0.49) !important; }\n\n.pink-text {\n  color: #e96292; }\n\n.red-text {\n  color: #e10b17; }\n\n.clear {\n  clear: both; }\n\n.bold {\n  font-weight: bold; }\n\n.sub-icon {\n  margin-top: -3px; }\n\n.di-arrow-down {\n  margin-top: 0; }\n\n.di-arrow-up {\n  margin-top: -2px; }\n\n.row-set-white-linear {\n  background: #FFF;\n  border: none !important;\n  padding-top: 0;\n  margin: 5px 0;\n  margin-top: 0; }\n\n.row-set-white-linear .row {\n  border: none;\n  border-bottom: 1px solid #e10b17;\n  white-space: initial; }\n\n.row-set-white {\n  background: #FFF;\n  border: solid 0.3px rgba(203, 87, 126, 0.39);\n  padding: 5px;\n  margin: 5px 0; }\n\n.row-set-white .row {\n  border: none;\n  border-bottom: solid 0.3px rgba(203, 87, 126, 0.39);\n  width: 97%;\n  margin: 0 5px; }\n\n.row-set-white .row:last-child {\n  border: none; }\n\n.icon-globe {\n  position: relative;\n  float: left;\n  width: 26px;\n  margin: 0 5px; }\n\n.di-8x {\n  font-size: 8px; }\n", ""]);
 
 // exports
 
@@ -5223,7 +5239,8 @@ module.exports = module.exports.toString();
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__shared_utils_router_delay_to_ask__ = __webpack_require__("../../../../../src/app/shared/utils/router-delay-to-ask.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__shared_events_app_service__ = __webpack_require__("../../../../../src/app/shared/events/app.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__angular_animations__ = __webpack_require__("../../../animations/@angular/animations.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_d3__ = __webpack_require__("../../../../d3/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_d3__ = __webpack_require__("../../../../d3/build/d3.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_d3___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8_d3__);
 var __extends = (this && this.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
     function __() { this.constructor = d; }
@@ -5562,7 +5579,8 @@ var _a, _b;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs__ = __webpack_require__("../../../../rxjs/Rx.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_rxjs__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__tempData_decide_temp__ = __webpack_require__("../../../../../src/app/tempData/decide.temp.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_d3__ = __webpack_require__("../../../../d3/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_d3__ = __webpack_require__("../../../../d3/build/d3.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_d3___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_d3__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -5616,7 +5634,7 @@ var DecideService = (function () {
                         'New': true
                     },
                     'Header': {
-                        'Icon': 'money_chart.png',
+                        'Icon': 'Assortment_Optimization_Big.png',
                         'Text': ['Optimize Assortment', '#638']
                     },
                     'Collapsed': {
@@ -6430,7 +6448,7 @@ var DecideService = (function () {
                         'New': true
                     },
                     'Header': {
-                        'Icon': 'money_chart.png',
+                        'Icon': 'Category_Expansion_Big.png',
                         'Text': ['Optimize Assortment', '#638']
                     },
                     'Collapsed': {
@@ -6896,7 +6914,7 @@ var DecideService = (function () {
                         'New': true
                     },
                     'Header': {
-                        'Icon': 'money_chart.png',
+                        'Icon': 'Cross-Sell_Up-Sell_Big.png',
                         'Text': ['Optimize Assortment', '#638']
                     },
                     'Collapsed': {
@@ -8132,7 +8150,8 @@ module.exports = module.exports.toString();
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_watch_service__ = __webpack_require__("../../../../../src/app/microservices/watch/services/watch.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_d3__ = __webpack_require__("../../../../d3/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_d3__ = __webpack_require__("../../../../d3/build/d3.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_d3___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_d3__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__shared_utils_router_delay_to_ask__ = __webpack_require__("../../../../../src/app/shared/utils/router-delay-to-ask.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__shared_events_app_service__ = __webpack_require__("../../../../../src/app/shared/events/app.service.ts");
 var __extends = (this && this.__extends) || function (d, b) {
@@ -13841,7 +13860,8 @@ module.exports = module.exports.toString();
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common__ = __webpack_require__("../../../common/@angular/common.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__base_visual__ = __webpack_require__("../../../../../src/app/shared/shareables/visuals/base-visual.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_d3__ = __webpack_require__("../../../../d3/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_d3__ = __webpack_require__("../../../../d3/build/d3.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_d3___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_d3__);
 var __extends = (this && this.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
     function __() { this.constructor = d; }
@@ -14062,7 +14082,8 @@ module.exports = module.exports.toString();
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common__ = __webpack_require__("../../../common/@angular/common.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__base_visual__ = __webpack_require__("../../../../../src/app/shared/shareables/visuals/base-visual.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_d3__ = __webpack_require__("../../../../d3/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_d3__ = __webpack_require__("../../../../d3/build/d3.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_d3___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_d3__);
 var __extends = (this && this.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
     function __() { this.constructor = d; }
@@ -14557,7 +14578,8 @@ module.exports = module.exports.toString();
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DiwoVisualBubbleGraphComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__base_visual__ = __webpack_require__("../../../../../src/app/shared/shareables/visuals/base-visual.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_d3__ = __webpack_require__("../../../../d3/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_d3__ = __webpack_require__("../../../../d3/build/d3.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_d3___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_d3__);
 var __extends = (this && this.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
     function __() { this.constructor = d; }
@@ -15716,7 +15738,8 @@ module.exports = module.exports.toString();
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__("../../../platform-browser/@angular/platform-browser.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_common__ = __webpack_require__("../../../common/@angular/common.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__base_visual__ = __webpack_require__("../../../../../src/app/shared/shareables/visuals/base-visual.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_d3__ = __webpack_require__("../../../../d3/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_d3__ = __webpack_require__("../../../../d3/build/d3.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_d3___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_d3__);
 var __extends = (this && this.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
     function __() { this.constructor = d; }
@@ -15842,7 +15865,8 @@ module.exports = module.exports.toString();
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__("../../../platform-browser/@angular/platform-browser.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_common__ = __webpack_require__("../../../common/@angular/common.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__base_visual__ = __webpack_require__("../../../../../src/app/shared/shareables/visuals/base-visual.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_d3__ = __webpack_require__("../../../../d3/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_d3__ = __webpack_require__("../../../../d3/build/d3.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_d3___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_d3__);
 var __extends = (this && this.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
     function __() { this.constructor = d; }
@@ -16353,7 +16377,8 @@ module.exports = module.exports.toString();
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DiwoVisualMapHeatBarsComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__base_visual__ = __webpack_require__("../../../../../src/app/shared/shareables/visuals/base-visual.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_d3__ = __webpack_require__("../../../../d3/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_d3__ = __webpack_require__("../../../../d3/build/d3.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_d3___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_d3__);
 var __extends = (this && this.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
     function __() { this.constructor = d; }
@@ -16961,7 +16986,8 @@ module.exports = module.exports.toString();
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__base_visual__ = __webpack_require__("../../../../../src/app/shared/shareables/visuals/base-visual.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ui_help_help_ontology_help_ontology_component__ = __webpack_require__("../../../../../src/app/shared/ui/help/help-ontology/help-ontology.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_d3__ = __webpack_require__("../../../../d3/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_d3__ = __webpack_require__("../../../../d3/build/d3.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_d3___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_d3__);
 var __extends = (this && this.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
     function __() { this.constructor = d; }
@@ -18277,7 +18303,8 @@ module.exports = module.exports.toString();
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DiwoVisualProductsDonut; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common__ = __webpack_require__("../../../common/@angular/common.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_d3__ = __webpack_require__("../../../../d3/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_d3__ = __webpack_require__("../../../../d3/build/d3.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_d3___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_d3__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__base_visual__ = __webpack_require__("../../../../../src/app/shared/shareables/visuals/base-visual.ts");
 var __extends = (this && this.__extends) || function (d, b) {
@@ -18632,7 +18659,8 @@ module.exports = module.exports.toString();
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__("../../../platform-browser/@angular/platform-browser.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_common__ = __webpack_require__("../../../common/@angular/common.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__base_visual__ = __webpack_require__("../../../../../src/app/shared/shareables/visuals/base-visual.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_d3__ = __webpack_require__("../../../../d3/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_d3__ = __webpack_require__("../../../../d3/build/d3.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_d3___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_d3__);
 var __extends = (this && this.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
     function __() { this.constructor = d; }
@@ -18986,7 +19014,8 @@ module.exports = module.exports.toString();
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DiwoVisualStoresMap; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common__ = __webpack_require__("../../../common/@angular/common.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_d3__ = __webpack_require__("../../../../d3/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_d3__ = __webpack_require__("../../../../d3/build/d3.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_d3___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_d3__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__base_visual__ = __webpack_require__("../../../../../src/app/shared/shareables/visuals/base-visual.ts");
 var __extends = (this && this.__extends) || function (d, b) {
@@ -19706,7 +19735,8 @@ module.exports = module.exports.toString();
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common__ = __webpack_require__("../../../common/@angular/common.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__base_visual__ = __webpack_require__("../../../../../src/app/shared/shareables/visuals/base-visual.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_d3__ = __webpack_require__("../../../../d3/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_d3__ = __webpack_require__("../../../../d3/build/d3.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_d3___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_d3__);
 var __extends = (this && this.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
     function __() { this.constructor = d; }
@@ -20006,7 +20036,8 @@ module.exports = module.exports.toString();
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common__ = __webpack_require__("../../../common/@angular/common.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__base_visual__ = __webpack_require__("../../../../../src/app/shared/shareables/visuals/base-visual.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_d3__ = __webpack_require__("../../../../d3/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_d3__ = __webpack_require__("../../../../d3/build/d3.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_d3___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_d3__);
 var __extends = (this && this.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
     function __() { this.constructor = d; }
@@ -20322,7 +20353,8 @@ module.exports = module.exports.toString();
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HierarchicalHorizontalBarsComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__base_visual__ = __webpack_require__("../../../../../src/app/shared/shareables/visuals/base-visual.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_d3__ = __webpack_require__("../../../../d3/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_d3__ = __webpack_require__("../../../../d3/build/d3.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_d3___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_d3__);
 var __extends = (this && this.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
     function __() { this.constructor = d; }
@@ -20575,7 +20607,7 @@ var SharedModule_1;
 /***/ "../../../../../src/app/shared/snippets/nav/decide-nav/decide-nav.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"layout-row with-mg-light flex\">\n    \n    <div class=\"layout-item flex has-mg-hori-light\">\n      <div class=\"has-pd-vert-small has-bg-secondary has-c-shade-1 is-relative\">\n        <h3 class=\" has-mg-full-none has-pd-hori-normal\">\n          Decide\n        </h3>\n      </div>\n    </div>\n  </div>\n  <div class=\"cards-icons\">\n    <!-- this is the pink overlay of the navigation ~ underlay actually -->\n    <div class=\"selection\" [ngStyle]=\"{'width': selectionOffset.Width + 'px', 'margin-left': selectionOffset.Margin + 'px'}\"></div> \n\n    <!-- actual circle with the card image -->\n    <div class=\"card regular\" *ngFor=\"let card of cards\">\n      <!-- uncomment when images will be sent for good -->\n      <!-- <img src=\"{{ card.Icon }}\" width=\"60\" /> -->\n    </div>\n    <!-- <div class=\"card regular\"></div>\n    <div class=\"card regular\"></div>\n    <div class=\"card regular\"></div>\n    <div class=\"card md\"></div>\n    <div class=\"card sm\"></div>\n    <div class=\"card regular\"></div>\n    <div class=\"card regular\"></div>\n    <div class=\"card regular\"></div>\n    <div class=\"card regular\"></div> -->\n  </div>\n  <div class=\"cards-info\">\n    \n  </div>\n\n<!-- <div class=\"layout-row with-mg-light flex\">\n\n\n\n<div class=\"layout-item flex has-mg-hori-light\">\n\n  <div class=\"has-pd-vert-small has-bg-secondary has-c-shade-1 is-relative\">\n    <h3 class=\" has-mg-full-none\n                  has-pd-hori-normal\">\n      Decide\n    </h3>\n  </div>\n\n  <div class=\"has-mg-top-light is-decide-nav-height has-bg-secondary-light layout-row\">\n\n    <div class=\"has-pd-full-medium layout--no-shrink has-bg-tertiary layout-row layout--start-center\">\n      <button class=\"has-bg-secondary has-c-shade-1 btn-large has-cursor\">\n        <i class=\"di di-16x di-search\"></i>\n      </button>\n      <div class=\"has-mg-left-small\">\n        <p class=\"has-mg-vert-light has-pd-hori-extra-small\">&uarr;A-&darr;Z</p>\n\n        <div class=\"divider has-bg-shade-1\"></div>\n        <p class=\"has-mg-vert-light has-pd-hori-extra-small\">&uarr;Z-&darr;A</p>\n\n      </div>\n    </div>\n    <div class=\"layout-row has-pd-vert-extra-small flex\">\n      <div class=\"has-pd-hori-medium is-one-third has-bd-right bd-light bd-shade-1 layout-column layout--space-around-stretch\">\n        <dropdown [placeholder]=\"'Select Condition'\" class=\"\">\n          <dropdown-item [title]=\"'test'\" value=\"'test'\">\n\n          </dropdown-item>\n        </dropdown>\n        <dropdown [placeholder]=\"'Risk Level'\" class=\"has-mg-top-extra-small\">\n          <dropdown-item [title]=\"'test'\" value=\"'test'\">\n\n          </dropdown-item>\n        </dropdown>\n      </div>\n      <div class=\"has-pd-hori-medium is-one-quarter has-bd-right bd-light bd-shade-1 layout-column layout--space-around-stretch\">\n        <dropdown [placeholder]=\"'Age Range'\" class=\"\">\n          <dropdown-item [title]=\"'test'\" value=\"'test'\">\n\n          </dropdown-item>\n        </dropdown>\n        <dropdown [placeholder]=\"'Discharge Rate'\" class=\"has-mg-top-extra-small\">\n          <dropdown-item [title]=\"'test'\" value=\"'test'\">\n\n          </dropdown-item>\n        </dropdown>\n      </div>\n      <div class=\"has-pd-hori-medium is-one-quarter has-bd-right bd-light bd-shade-1 layout-column layout--space-around-stretch\">\n        <dropdown [placeholder]=\"'Readmission Time'\" class=\"\">\n          <dropdown-item [title]=\"'test'\" value=\"'test'\">\n\n          </dropdown-item>\n        </dropdown>\n        <dropdown [placeholder]=\"'Intervention Time'\" class=\"has-mg-top-extra-small\">\n          <dropdown-item [title]=\"'test'\" value=\"'test'\">\n\n          </dropdown-item>\n        </dropdown>\n      </div>\n      <div class=\"has-pd-hori-medium is-one-fifth layout-column layout--space-around-stretch\">\n        <dropdown [placeholder]=\"'Gender'\" class=\"\">\n          <dropdown-item [title]=\"'test'\" value=\"'test'\">\n\n          </dropdown-item>\n        </dropdown>\n        <dropdown [placeholder]=\"'CAN Score'\" class=\"has-mg-top-extra-small\">\n          <dropdown-item [title]=\"'test'\" value=\"'test'\">\n\n          </dropdown-item>\n        </dropdown>\n      </div>\n    </div>\n\n\n  </div>\n</div>\n\n</div> -->\n"
+module.exports = "<div class=\"layout-row with-mg-light flex\">\n    \n    <div class=\"layout-item flex has-mg-hori-light\">\n      <div class=\"has-pd-vert-small has-bg-secondary has-c-shade-1 is-relative\">\n        <h3 class=\" has-mg-full-none has-pd-hori-normal\">\n          Decide\n        </h3>\n      </div>\n    </div>\n  </div>\n  <div class=\"cards-icons\">\n    <!-- this is the pink overlay of the navigation ~ underlay actually -->\n    <div class=\"selection\" [ngStyle]=\"{'width': selectionOffset.Width + 'px', 'margin-left': selectionOffset.Margin + 'px'}\"></div> \n\n    <!-- actual circle with the card image -->\n    <div class=\"card regular\" *ngFor=\"let card of cards\">\n      <!-- uncomment when images will be sent for good -->\n      <img src=\"/assets/images/decide/{{ card.Icon }}\" width=\"80\" />\n    </div>\n    <!-- <div class=\"card regular\"></div>\n    <div class=\"card regular\"></div>\n    <div class=\"card regular\"></div>\n    <div class=\"card md\"></div>\n    <div class=\"card sm\"></div>\n    <div class=\"card regular\"></div>\n    <div class=\"card regular\"></div>\n    <div class=\"card regular\"></div>\n    <div class=\"card regular\"></div> -->\n  </div>\n  <div class=\"cards-info\">\n    \n  </div>\n\n<!-- <div class=\"layout-row with-mg-light flex\">\n\n\n\n<div class=\"layout-item flex has-mg-hori-light\">\n\n  <div class=\"has-pd-vert-small has-bg-secondary has-c-shade-1 is-relative\">\n    <h3 class=\" has-mg-full-none\n                  has-pd-hori-normal\">\n      Decide\n    </h3>\n  </div>\n\n  <div class=\"has-mg-top-light is-decide-nav-height has-bg-secondary-light layout-row\">\n\n    <div class=\"has-pd-full-medium layout--no-shrink has-bg-tertiary layout-row layout--start-center\">\n      <button class=\"has-bg-secondary has-c-shade-1 btn-large has-cursor\">\n        <i class=\"di di-16x di-search\"></i>\n      </button>\n      <div class=\"has-mg-left-small\">\n        <p class=\"has-mg-vert-light has-pd-hori-extra-small\">&uarr;A-&darr;Z</p>\n\n        <div class=\"divider has-bg-shade-1\"></div>\n        <p class=\"has-mg-vert-light has-pd-hori-extra-small\">&uarr;Z-&darr;A</p>\n\n      </div>\n    </div>\n    <div class=\"layout-row has-pd-vert-extra-small flex\">\n      <div class=\"has-pd-hori-medium is-one-third has-bd-right bd-light bd-shade-1 layout-column layout--space-around-stretch\">\n        <dropdown [placeholder]=\"'Select Condition'\" class=\"\">\n          <dropdown-item [title]=\"'test'\" value=\"'test'\">\n\n          </dropdown-item>\n        </dropdown>\n        <dropdown [placeholder]=\"'Risk Level'\" class=\"has-mg-top-extra-small\">\n          <dropdown-item [title]=\"'test'\" value=\"'test'\">\n\n          </dropdown-item>\n        </dropdown>\n      </div>\n      <div class=\"has-pd-hori-medium is-one-quarter has-bd-right bd-light bd-shade-1 layout-column layout--space-around-stretch\">\n        <dropdown [placeholder]=\"'Age Range'\" class=\"\">\n          <dropdown-item [title]=\"'test'\" value=\"'test'\">\n\n          </dropdown-item>\n        </dropdown>\n        <dropdown [placeholder]=\"'Discharge Rate'\" class=\"has-mg-top-extra-small\">\n          <dropdown-item [title]=\"'test'\" value=\"'test'\">\n\n          </dropdown-item>\n        </dropdown>\n      </div>\n      <div class=\"has-pd-hori-medium is-one-quarter has-bd-right bd-light bd-shade-1 layout-column layout--space-around-stretch\">\n        <dropdown [placeholder]=\"'Readmission Time'\" class=\"\">\n          <dropdown-item [title]=\"'test'\" value=\"'test'\">\n\n          </dropdown-item>\n        </dropdown>\n        <dropdown [placeholder]=\"'Intervention Time'\" class=\"has-mg-top-extra-small\">\n          <dropdown-item [title]=\"'test'\" value=\"'test'\">\n\n          </dropdown-item>\n        </dropdown>\n      </div>\n      <div class=\"has-pd-hori-medium is-one-fifth layout-column layout--space-around-stretch\">\n        <dropdown [placeholder]=\"'Gender'\" class=\"\">\n          <dropdown-item [title]=\"'test'\" value=\"'test'\">\n\n          </dropdown-item>\n        </dropdown>\n        <dropdown [placeholder]=\"'CAN Score'\" class=\"has-mg-top-extra-small\">\n          <dropdown-item [title]=\"'test'\" value=\"'test'\">\n\n          </dropdown-item>\n        </dropdown>\n      </div>\n    </div>\n\n\n  </div>\n</div>\n\n</div> -->\n"
 
 /***/ }),
 
@@ -20587,7 +20619,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "/* =============================================================================\n   MEDIA QUERIES\n   ========================================================================== */\n/* Eg.\n    .container{\n        width:1024px;\n\n        @include tablets{\n            width:90%;\n        }\n    }\n*/\n/* =============================================================================\n   Unit transform\n   ========================================================================== */\n/*=========================\n============ DECIDE SECTION\n=========================*/\n.is-decide-nav-width {\n  width: 68px; }\n\n.is-decide-nav-height {\n  height: 85px; }\n\n#logout {\n  position: absolute;\n  top: 0;\n  right: 0;\n  height: 100%;\n  width: 88px; }\n  #logout /deep/ .dw-dropdown-display {\n    background: transparent; }\n\n.decide-open.active {\n  z-index: 9001; }\n  .decide-open.active:after {\n    content: \"\";\n    display: block;\n    position: absolute;\n    transform: translateX(-50%);\n    -webkit-transform: translateX(-50%);\n    -moz-transform: translateX(-50%);\n    -ms-transform: translateX(-50%);\n    left: 50%;\n    bottom: -9px;\n    width: 0;\n    height: 0;\n    border-style: solid;\n    border-width: 0 10px 10px 10px;\n    border-color: transparent transparent transparent; }\n\n.cards-icons .selection {\n  background: #e96292;\n  width: 100%;\n  height: 100%;\n  opacity: 0.3;\n  z-index: 1;\n  position: absolute; }\n\n.cards-icons, .cards-info {\n  position: relative;\n  float: left;\n  background: none;\n  border-bottom: 1px solid #aeaeae;\n  width: 100%;\n  height: 90px;\n  overflow-x: scroll; }\n\n.cards-info {\n  height: 21px; }\n\n.cards-icons .card {\n  width: 80px;\n  height: 80px;\n  margin: 5px 10px;\n  background: #aeaeae;\n  border-radius: 40px;\n  float: left; }\n\n.card img {\n  width: 60px;\n  height: 60px;\n  padding: 10px; }\n\n.cards-icons .card.regular {\n  width: 80px;\n  height: 80px;\n  margin: 5px 10px;\n  border-radius: 40px;\n  z-index: 1;\n  position: relative; }\n\n.cards-icons .card.md {\n  width: 60px;\n  height: 60px;\n  border-radius: 30px;\n  margin: 15px 15px; }\n\n.cards-icons .card.sm {\n  width: 40px;\n  height: 40px;\n  border-radius: 20px;\n  margin: 25px 20px; }\n\n.cards-icons .active-viewport {\n  position: absolute;\n  background: red;\n  opacity: 0.5; }\n", ""]);
+exports.push([module.i, "/* =============================================================================\n   MEDIA QUERIES\n   ========================================================================== */\n/* Eg.\n    .container{\n        width:1024px;\n\n        @include tablets{\n            width:90%;\n        }\n    }\n*/\n/* =============================================================================\n   Unit transform\n   ========================================================================== */\n/*=========================\n============ DECIDE SECTION\n=========================*/\n.is-decide-nav-width {\n  width: 68px; }\n\n.is-decide-nav-height {\n  height: 85px; }\n\n#logout {\n  position: absolute;\n  top: 0;\n  right: 0;\n  height: 100%;\n  width: 88px; }\n  #logout /deep/ .dw-dropdown-display {\n    background: transparent; }\n\n.decide-open.active {\n  z-index: 9001; }\n  .decide-open.active:after {\n    content: \"\";\n    display: block;\n    position: absolute;\n    transform: translateX(-50%);\n    -webkit-transform: translateX(-50%);\n    -moz-transform: translateX(-50%);\n    -ms-transform: translateX(-50%);\n    left: 50%;\n    bottom: -9px;\n    width: 0;\n    height: 0;\n    border-style: solid;\n    border-width: 0 10px 10px 10px;\n    border-color: transparent transparent transparent; }\n\n.cards-icons .selection {\n  background: #e96292;\n  width: 100%;\n  height: 100%;\n  opacity: 0.3;\n  z-index: 1;\n  position: absolute; }\n\n.cards-icons, .cards-info {\n  position: relative;\n  float: left;\n  background: none;\n  border-bottom: 1px solid #aeaeae;\n  width: 100%;\n  height: 90px;\n  overflow-x: scroll; }\n\n.cards-info {\n  height: 21px; }\n\n.cards-icons .card {\n  width: 80px;\n  height: 80px;\n  margin: 5px 10px;\n  background: #aeaeae;\n  border-radius: 40px;\n  float: left; }\n\n.card img {\n  width: 80px;\n  height: 80px;\n  padding: 10px; }\n\n.cards-icons .card.regular {\n  width: 80px;\n  height: 80px;\n  margin: 5px 10px;\n  border-radius: 40px;\n  z-index: 1;\n  position: relative; }\n\n.cards-icons .card.md {\n  width: 60px;\n  height: 60px;\n  border-radius: 30px;\n  margin: 15px 15px; }\n\n.cards-icons .card.sm {\n  width: 40px;\n  height: 40px;\n  border-radius: 20px;\n  margin: 25px 20px; }\n\n.cards-icons .active-viewport {\n  position: absolute;\n  background: red;\n  opacity: 0.5; }\n", ""]);
 
 // exports
 
@@ -23020,7 +23052,8 @@ module.exports = module.exports.toString();
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return BtnHideShowComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_d3__ = __webpack_require__("../../../../d3/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_d3__ = __webpack_require__("../../../../d3/build/d3.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_d3___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_d3__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -25139,9 +25172,6 @@ var DiwoCircleContainer = (function (_super) {
         return _this;
     }
     DiwoCircleContainer.prototype.updatePosition = function () {
-        console.log('updateupdate');
-        this.transform = (document.body.classList.contains('nav-open') && this._App.navTransitioning === false) ||
-            (!document.body.classList.contains('nav-open') && this._App.navTransitioning === true) ? 54 : 0;
     };
     /** Attach a component portal as content to this diwo container. */
     DiwoCircleContainer.prototype.attachComponentPortal = function (portal) {
@@ -35629,7 +35659,7 @@ module.exports = {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 
 // Module declaration
 module.exports = function() {
@@ -35687,7 +35717,7 @@ module.exports = {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 
 //Function to convert hex format to a rgb color
 function rgb2hex(rgb){
@@ -35756,7 +35786,7 @@ module.exports = {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 
 // Extend date object to increase number of days
 Date.prototype.addDays = function(days) {
@@ -35879,7 +35909,7 @@ module.exports = function() {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 
 // Module declaration
 module.exports = function() {
@@ -35929,7 +35959,7 @@ module.exports = function() {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 
 // Module declaration
 module.exports = function() {
@@ -36021,7 +36051,7 @@ module.exports = function() {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 
 // https://github.com/wbkd/d3-extended
 d3.selection.prototype.moveToFront = function () { return this.each(function () { return this.parentNode.appendChild(this); }); };
@@ -36069,7 +36099,7 @@ module.exports = {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 
 // Module declaration
 module.exports = {
@@ -36098,7 +36128,7 @@ module.exports = {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 
 // Module declaration
 module.exports = {
@@ -36254,7 +36284,7 @@ module.exports = {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var helpers = __webpack_require__("../../../../../src/assets/js/gViz/shared/helpers/_init.js");
 
 // Initialize the visualization class
@@ -36384,7 +36414,7 @@ module.exports = function() {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var helpers = __webpack_require__("../../../../../src/assets/js/gViz/shared/helpers/_init.js");
 
 // Module declaration
@@ -36485,7 +36515,7 @@ function __range__(left, right, inclusive) {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var helpers = __webpack_require__("../../../../../src/assets/js/gViz/shared/helpers/_init.js");
 
 // Initialize the visualization class
@@ -36619,7 +36649,7 @@ module.exports = function() {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var helpers = __webpack_require__("../../../../../src/assets/js/gViz/shared/helpers/_init.js");
 
 // Initialize the visualization class
@@ -36732,7 +36762,7 @@ module.exports = function() {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var helpers = __webpack_require__("../../../../../src/assets/js/gViz/shared/helpers/_init.js");
 
 // Module declaration
@@ -36889,7 +36919,7 @@ function __range__(left, right, inclusive) {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var helpers = __webpack_require__("../../../../../src/assets/js/gViz/shared/helpers/_init.js");
 
 // Initialize the visualization class
@@ -37009,7 +37039,7 @@ module.exports = function() {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var helpers = __webpack_require__("../../../../../src/assets/js/gViz/shared/helpers/_init.js");
 
 // Initialize the visualization class
@@ -37198,7 +37228,7 @@ module.exports = {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-let d3 = __webpack_require__("../../../../d3/index.js");
+let d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Module declaration
@@ -37373,7 +37403,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-let d3 = __webpack_require__("../../../../d3/index.js");
+let d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Module declaration
@@ -37474,7 +37504,7 @@ function __range__(left, right, inclusive) {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -37561,7 +37591,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -37688,7 +37718,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -37816,7 +37846,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -37927,7 +37957,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -38079,7 +38109,7 @@ module.exports = {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-let d3 = __webpack_require__("../../../../d3/index.js");
+let d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Module declaration
@@ -38265,7 +38295,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-let d3 = __webpack_require__("../../../../d3/index.js");
+let d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Module declaration
@@ -38393,7 +38423,7 @@ function __range__(left, right, inclusive) {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -38520,7 +38550,7 @@ module.exports = function() {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -38619,7 +38649,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -38757,7 +38787,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -38910,7 +38940,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -39042,7 +39072,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -39148,7 +39178,7 @@ module.exports = function() {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-let d3 = __webpack_require__("../../../../d3/index.js");
+let d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Module declaration
@@ -39271,7 +39301,7 @@ function __range__(left, right, inclusive) {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -39434,7 +39464,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -39560,7 +39590,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-let d3 = __webpack_require__("../../../../d3/index.js");
+let d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Module declaration
@@ -39794,7 +39824,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-let d3 = __webpack_require__("../../../../d3/index.js");
+let d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Module declaration
@@ -39914,7 +39944,7 @@ function __range__(left, right, inclusive) {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -40036,7 +40066,7 @@ module.exports = function() {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -40143,7 +40173,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -40298,7 +40328,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -40442,7 +40472,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -40548,7 +40578,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -40763,7 +40793,7 @@ module.exports = function() {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -40862,7 +40892,7 @@ module.exports = function() {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -41016,7 +41046,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -41170,7 +41200,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -41266,7 +41296,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -41377,7 +41407,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -41478,7 +41508,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-let d3 = __webpack_require__("../../../../d3/index.js");
+let d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Module declaration
@@ -41659,7 +41689,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -41788,7 +41818,7 @@ module.exports = function() {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-let d3 = __webpack_require__("../../../../d3/index.js");
+let d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Module declaration
@@ -41945,7 +41975,7 @@ function __range__(left, right, inclusive) {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -42061,7 +42091,7 @@ module.exports = function() {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -42163,7 +42193,7 @@ module.exports = function() {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -42250,7 +42280,7 @@ module.exports = function() {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -42371,7 +42401,7 @@ module.exports = function() {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -42527,7 +42557,7 @@ module.exports = function() {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -42654,7 +42684,7 @@ module.exports = function() {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-let d3 = __webpack_require__("../../../../d3/index.js");
+let d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Module declaration
@@ -42794,7 +42824,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -42893,7 +42923,7 @@ module.exports = function() {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-let d3 = __webpack_require__("../../../../d3/index.js");
+let d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Module declaration
@@ -43092,7 +43122,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -43220,7 +43250,7 @@ module.exports = function() {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-let d3 = __webpack_require__("../../../../d3/index.js");
+let d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Module declaration
@@ -43375,7 +43405,7 @@ function __range__(left, right, inclusive) {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -43492,7 +43522,7 @@ module.exports = function() {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -43606,7 +43636,7 @@ module.exports = function() {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -43693,7 +43723,7 @@ module.exports = function() {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -43816,7 +43846,7 @@ module.exports = function() {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -43970,7 +44000,7 @@ module.exports = function() {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -44067,7 +44097,7 @@ module.exports = function() {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -44195,7 +44225,7 @@ module.exports = function() {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-let d3 = __webpack_require__("../../../../d3/index.js");
+let d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Module declaration
@@ -44340,7 +44370,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -44444,7 +44474,7 @@ module.exports = function() {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-let d3 = __webpack_require__("../../../../d3/index.js");
+let d3 = __webpack_require__("../../../../d3/build/d3.js");
 var common = __webpack_require__("../../../../../src/assets/js/gViz/visualizations/bubbles/common.js");
 
 // Module declaration
@@ -44642,7 +44672,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 
 // Initialize the visualization class
 module.exports = function () {
@@ -44735,7 +44765,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -44922,7 +44952,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var common = __webpack_require__("../../../../../src/assets/js/gViz/visualizations/bubbles/common.js");
 
 // Initialize the visualization class
@@ -45069,7 +45099,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var common = __webpack_require__("../../../../../src/assets/js/gViz/visualizations/bubbles/common.js");
 
 // Initialize the visualization class
@@ -45181,7 +45211,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-let d3 = __webpack_require__("../../../../d3/index.js");
+let d3 = __webpack_require__("../../../../d3/build/d3.js");
 var common = __webpack_require__("../../../../../src/assets/js/gViz/visualizations/bubbles/common.js");
 
 // Module declaration
@@ -45385,7 +45415,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 
 // Initialize the visualization class
 module.exports = function () {
@@ -45480,7 +45510,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -45699,7 +45729,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var common = __webpack_require__("../../../../../src/assets/js/gViz/visualizations/bubbles/common.js");
 
 // Initialize the visualization class
@@ -45821,7 +45851,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var common = __webpack_require__("../../../../../src/assets/js/gViz/visualizations/bubbles/common.js");
 
 // Initialize the visualization class
@@ -45930,7 +45960,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-let d3 = __webpack_require__("../../../../d3/index.js");
+let d3 = __webpack_require__("../../../../d3/build/d3.js");
 var common = __webpack_require__("../../../../../src/assets/js/gViz/visualizations/bubbles/common.js");
 
 // Module declaration
@@ -46078,7 +46108,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var common = __webpack_require__("../../../../../src/assets/js/gViz/visualizations/bubbles/common.js");
 var bubbleComponents = __webpack_require__("../../../../../src/assets/js/gViz/visualizations/_init.js").bubbleComponents;
 
@@ -46234,7 +46264,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var common = __webpack_require__("../../../../../src/assets/js/gViz/visualizations/bubbles/common.js");
 
 // Initialize the visualization class
@@ -46342,7 +46372,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var common = __webpack_require__("../../../../../src/assets/js/gViz/visualizations/bubbles/common.js");
 
 // Initialize the visualization class
@@ -46420,7 +46450,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 
 module.exports = {
   STATES: {
@@ -46881,7 +46911,7 @@ module.exports = {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-let d3 = __webpack_require__("../../../../d3/index.js");
+let d3 = __webpack_require__("../../../../d3/build/d3.js");
 var common = __webpack_require__("../../../../../src/assets/js/gViz/visualizations/bubbles/common.js");
 
 // Module declaration
@@ -47100,7 +47130,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 
 // Initialize the visualization class
 module.exports = function () {
@@ -47211,7 +47241,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -47549,7 +47579,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var common = __webpack_require__("../../../../../src/assets/js/gViz/visualizations/bubbles/common.js");
 
 // Initialize the visualization class
@@ -47689,7 +47719,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var common = __webpack_require__("../../../../../src/assets/js/gViz/visualizations/bubbles/common.js");
 
 // Initialize the visualization class
@@ -47799,7 +47829,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-let d3 = __webpack_require__("../../../../d3/index.js");
+let d3 = __webpack_require__("../../../../d3/build/d3.js");
 var common = __webpack_require__("../../../../../src/assets/js/gViz/visualizations/bubbles/common.js");
 
 // Module declaration
@@ -47975,7 +48005,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 
 // Initialize the visualization class
 module.exports = function () {
@@ -48068,7 +48098,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -48166,7 +48196,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var common = __webpack_require__("../../../../../src/assets/js/gViz/visualizations/bubbles/common.js");
 
 // Initialize the visualization class
@@ -48272,7 +48302,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var common = __webpack_require__("../../../../../src/assets/js/gViz/visualizations/bubbles/common.js");
 
 // Initialize the visualization class
@@ -48358,7 +48388,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-let d3 = __webpack_require__("../../../../d3/index.js");
+let d3 = __webpack_require__("../../../../d3/build/d3.js");
 var common = __webpack_require__("../../../../../src/assets/js/gViz/visualizations/bubbles/common.js");
 
 // Module declaration
@@ -48557,7 +48587,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 
 // Initialize the visualization class
 module.exports = function () {
@@ -48649,7 +48679,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -48824,7 +48854,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var common = __webpack_require__("../../../../../src/assets/js/gViz/visualizations/bubbles/common.js");
 
 // Initialize the visualization class
@@ -48952,7 +48982,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var common = __webpack_require__("../../../../../src/assets/js/gViz/visualizations/bubbles/common.js");
 
 // Initialize the visualization class
@@ -49048,7 +49078,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-let d3 = __webpack_require__("../../../../d3/index.js");
+let d3 = __webpack_require__("../../../../d3/build/d3.js");
 var common = __webpack_require__("../../../../../src/assets/js/gViz/visualizations/bubbles/common.js");
 
 // Module declaration
@@ -49236,7 +49266,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 
 // Initialize the visualization class
 module.exports = function () {
@@ -49329,7 +49359,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -49492,7 +49522,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var common = __webpack_require__("../../../../../src/assets/js/gViz/visualizations/bubbles/common.js");
 
 // Initialize the visualization class
@@ -49598,7 +49628,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var common = __webpack_require__("../../../../../src/assets/js/gViz/visualizations/bubbles/common.js");
 
 // Initialize the visualization class
@@ -49696,7 +49726,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-let d3 = __webpack_require__("../../../../d3/index.js");
+let d3 = __webpack_require__("../../../../d3/build/d3.js");
 var common = __webpack_require__("../../../../../src/assets/js/gViz/visualizations/bubbles/common.js");
 
 // Module declaration
@@ -49884,7 +49914,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 
 // Initialize the visualization class
 module.exports = function () {
@@ -49975,7 +50005,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -50147,7 +50177,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var common = __webpack_require__("../../../../../src/assets/js/gViz/visualizations/bubbles/common.js");
 
 // Initialize the visualization class
@@ -50275,7 +50305,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var common = __webpack_require__("../../../../../src/assets/js/gViz/visualizations/bubbles/common.js");
 
 // Initialize the visualization class
@@ -50363,7 +50393,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-let d3 = __webpack_require__("../../../../d3/index.js");
+let d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Module declaration
@@ -50570,7 +50600,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-let d3 = __webpack_require__("../../../../d3/index.js");
+let d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Module declaration
@@ -50690,7 +50720,7 @@ function __range__(left, right, inclusive) {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -50810,7 +50840,7 @@ module.exports = function() {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -50909,7 +50939,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -51090,7 +51120,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -51250,7 +51280,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -51374,7 +51404,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -51613,7 +51643,7 @@ module.exports = function() {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -51758,7 +51788,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -51877,7 +51907,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -52000,7 +52030,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -52139,7 +52169,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-let d3 = __webpack_require__("../../../../d3/index.js");
+let d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Module declaration
@@ -52341,7 +52371,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -52423,7 +52453,7 @@ module.exports = function() {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -52665,7 +52695,7 @@ module.exports = function() {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -52752,7 +52782,7 @@ module.exports = function() {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -52900,7 +52930,7 @@ module.exports = function() {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -52996,7 +53026,7 @@ module.exports = function() {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -53329,7 +53359,7 @@ module.exports = function() {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -53428,7 +53458,7 @@ module.exports = function() {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -53565,7 +53595,7 @@ module.exports = function() {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -53691,7 +53721,7 @@ module.exports = function() {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -54017,7 +54047,7 @@ module.exports = function() {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -54154,7 +54184,7 @@ module.exports = function() {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -54406,7 +54436,7 @@ module.exports = function() {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -54617,7 +54647,7 @@ module.exports = function() {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-let d3 = __webpack_require__("../../../../d3/index.js");
+let d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Module declaration
@@ -54771,7 +54801,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -54876,7 +54906,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -55049,7 +55079,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -55271,7 +55301,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -55383,7 +55413,7 @@ module.exports = function() {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -55587,7 +55617,7 @@ module.exports = function() {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -55678,7 +55708,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-let d3 = __webpack_require__("../../../../d3/index.js");
+let d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Module declaration
@@ -55835,7 +55865,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -55974,7 +56004,7 @@ module.exports = function() {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -56111,7 +56141,7 @@ module.exports = function() {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -56216,7 +56246,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -56302,7 +56332,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -56420,7 +56450,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -56550,7 +56580,7 @@ module.exports = function() {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -56658,7 +56688,7 @@ module.exports = function() {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -56806,7 +56836,7 @@ module.exports = function() {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Module declaration
@@ -56949,7 +56979,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -57042,7 +57072,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -57516,7 +57546,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -57644,7 +57674,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -57769,7 +57799,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-let d3 = __webpack_require__("../../../../d3/index.js");
+let d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Module declaration
@@ -57975,7 +58005,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-let d3 = __webpack_require__("../../../../d3/index.js");
+let d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Module declaration
@@ -58091,7 +58121,7 @@ function __range__(left, right, inclusive) {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -58279,7 +58309,7 @@ module.exports = function() {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -58386,7 +58416,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -58533,7 +58563,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -58677,7 +58707,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -58787,7 +58817,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -59013,7 +59043,7 @@ module.exports = function() {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -59116,7 +59146,7 @@ module.exports = function() {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -59257,7 +59287,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -59431,7 +59461,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -59532,7 +59562,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-let d3 = __webpack_require__("../../../../d3/index.js");
+let d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Module declaration
@@ -59752,7 +59782,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-let d3 = __webpack_require__("../../../../d3/index.js");
+let d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Module declaration
@@ -59864,7 +59894,7 @@ function __range__(left, right, inclusive) {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -60040,7 +60070,7 @@ module.exports = function() {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -60147,7 +60177,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -60294,7 +60324,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -60438,7 +60468,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -60545,7 +60575,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -60771,7 +60801,7 @@ module.exports = function() {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -60882,7 +60912,7 @@ module.exports = function() {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -61068,7 +61098,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -61164,7 +61194,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -61288,7 +61318,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -61389,7 +61419,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-let d3 = __webpack_require__("../../../../d3/index.js");
+let d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Module declaration
@@ -61570,7 +61600,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -61699,7 +61729,7 @@ module.exports = function() {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-let d3 = __webpack_require__("../../../../d3/index.js");
+let d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Module declaration
@@ -61868,7 +61898,7 @@ function __range__(left, right, inclusive) {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -61984,7 +62014,7 @@ module.exports = function() {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -62086,7 +62116,7 @@ module.exports = function() {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -62173,7 +62203,7 @@ module.exports = function() {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -62322,7 +62352,7 @@ module.exports = function() {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -62478,7 +62508,7 @@ module.exports = function() {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -62608,7 +62638,7 @@ module.exports = function() {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-let d3 = __webpack_require__("../../../../d3/index.js");
+let d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Module declaration
@@ -62751,7 +62781,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -62850,7 +62880,7 @@ module.exports = function() {
 /***/ (function(module, exports, __webpack_require__) {
 
 //Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 
 // Module declaration
 module.exports = function () {
@@ -63014,7 +63044,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 
 // Initialize the visualization class
 module.exports = function () {
@@ -63120,7 +63150,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 
 // Initialize the visualization class
 module.exports = function () {
@@ -63479,7 +63509,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 
 // Initialize the visualization class
 module.exports = function () {
@@ -63622,7 +63652,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-let d3 = __webpack_require__("../../../../d3/index.js");
+let d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Module declaration
@@ -63811,7 +63841,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-let d3 = __webpack_require__("../../../../d3/index.js");
+let d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Module declaration
@@ -63929,7 +63959,7 @@ function __range__(left, right, inclusive) {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -64021,7 +64051,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -64218,7 +64248,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -64523,7 +64553,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -64628,7 +64658,7 @@ module.exports = function() {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -64872,7 +64902,7 @@ module.exports = function() {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -65025,7 +65055,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -65196,7 +65226,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -65321,7 +65351,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-let d3 = __webpack_require__("../../../../d3/index.js");
+let d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Module declaration
@@ -65499,7 +65529,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-let d3 = __webpack_require__("../../../../d3/index.js");
+let d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Module declaration
@@ -65678,7 +65708,7 @@ function __range__(left, right, inclusive) {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -65822,7 +65852,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -66404,7 +66434,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -66569,7 +66599,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-let d3 = __webpack_require__("../../../../d3/index.js");
+let d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Module declaration
@@ -66703,7 +66733,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Module declaration
@@ -66899,7 +66929,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -67006,7 +67036,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -67111,7 +67141,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -67331,7 +67361,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -67492,7 +67522,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -67618,7 +67648,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -67736,7 +67766,7 @@ module.exports = function() {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -67818,7 +67848,7 @@ module.exports = function() {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -67953,7 +67983,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -68071,7 +68101,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var L = __webpack_require__("../../../../leaflet/dist/leaflet-src.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
@@ -68307,7 +68337,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -68414,7 +68444,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -68513,7 +68543,7 @@ module.exports = function() {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -68680,7 +68710,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -68826,7 +68856,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 var HeatmapOverlay = __webpack_require__("../../../../leaflet-heatmap/leaflet-heatmap.js");
 
@@ -68950,7 +68980,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -69087,7 +69117,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -69215,7 +69245,7 @@ module.exports = function() {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -69298,7 +69328,7 @@ module.exports = function() {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var L  = __webpack_require__("../../../../leaflet/dist/leaflet-src.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
@@ -69442,7 +69472,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -69580,7 +69610,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 module.exports = function() {
@@ -69659,7 +69689,7 @@ module.exports = function() {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -69742,7 +69772,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var L = __webpack_require__("../../../../leaflet/dist/leaflet-src.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
@@ -69978,7 +70008,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -70106,7 +70136,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -70205,7 +70235,7 @@ module.exports = function() {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -70370,7 +70400,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -70516,7 +70546,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 var HeatmapOverlay = __webpack_require__("../../../../leaflet-heatmap/leaflet-heatmap.js");
 
@@ -70640,7 +70670,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -70777,7 +70807,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -70905,7 +70935,7 @@ module.exports = function() {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -71027,7 +71057,7 @@ module.exports = function() {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var L  = __webpack_require__("../../../../leaflet/dist/leaflet-src.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
@@ -71158,7 +71188,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -71296,7 +71326,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 module.exports = function() {
@@ -71375,7 +71405,7 @@ module.exports = function() {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -71458,7 +71488,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-let d3 = __webpack_require__("../../../../d3/index.js");
+let d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Module declaration
@@ -71684,7 +71714,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -71789,7 +71819,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -71894,7 +71924,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -72178,7 +72208,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -72491,7 +72521,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -72604,7 +72634,7 @@ module.exports = function() {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -72808,7 +72838,7 @@ module.exports = function() {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -72950,7 +72980,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -73064,7 +73094,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -73183,7 +73213,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -73433,7 +73463,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -73545,7 +73575,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -73712,7 +73742,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-let d3 = __webpack_require__("../../../../d3/index.js");
+let d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Module declaration
@@ -73991,7 +74021,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-let d3 = __webpack_require__("../../../../d3/index.js");
+let d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Module declaration
@@ -74108,7 +74138,7 @@ function __range__(left, right, inclusive) {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -74395,7 +74425,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -74499,7 +74529,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -74688,7 +74718,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -74853,7 +74883,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -74959,7 +74989,7 @@ module.exports = function() {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -75216,7 +75246,7 @@ module.exports = function() {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -75426,7 +75456,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -75729,7 +75759,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -75846,7 +75876,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -76012,7 +76042,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -76120,7 +76150,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -76265,7 +76295,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -76416,7 +76446,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -76544,7 +76574,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-let d3 = __webpack_require__("../../../../d3/index.js");
+let d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Module declaration
@@ -76747,7 +76777,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-let d3 = __webpack_require__("../../../../d3/index.js");
+let d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Module declaration
@@ -76864,7 +76894,7 @@ function __range__(left, right, inclusive) {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -76967,7 +76997,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -77171,7 +77201,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -77362,7 +77392,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -77462,7 +77492,7 @@ module.exports = function() {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -77719,7 +77749,7 @@ module.exports = function() {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -77832,7 +77862,7 @@ module.exports = function() {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -78006,7 +78036,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -78136,7 +78166,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -78241,7 +78271,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-let d3 = __webpack_require__("../../../../d3/index.js");
+let d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Module declaration
@@ -78430,7 +78460,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -78535,7 +78565,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -78623,7 +78653,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -78792,7 +78822,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -79028,7 +79058,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -79143,7 +79173,7 @@ module.exports = function() {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -79344,7 +79374,7 @@ module.exports = function() {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -79455,7 +79485,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -79551,7 +79581,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -79663,7 +79693,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -79791,7 +79821,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 
 // Module declaration
 module.exports = function () {
@@ -79998,7 +80028,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 
 // Initialize the visualization class
 module.exports = function () {
@@ -80149,7 +80179,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 
 // Initialize the visualization class
 module.exports = function () {
@@ -80551,7 +80581,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 
 // Initialize the visualization class
 module.exports = function () {
@@ -81087,7 +81117,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 
 // Initialize the visualization class
 module.exports = function () {
@@ -81299,7 +81329,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 
 // Module declaration
 module.exports = function () {
@@ -81532,7 +81562,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 
 // Initialize the visualization class
 module.exports = function () {
@@ -81681,7 +81711,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 
 // Initialize the visualization class
 module.exports = function () {
@@ -81975,7 +82005,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 
 
 // Initialize the visualization class
@@ -82228,7 +82258,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 
 // Initialize the visualization class
 module.exports = function () {
@@ -82379,7 +82409,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-let d3 = __webpack_require__("../../../../d3/index.js");
+let d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Module declaration
@@ -82599,7 +82629,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-let d3 = __webpack_require__("../../../../d3/index.js");
+let d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Module declaration
@@ -82760,7 +82790,7 @@ function __range__(left, right, inclusive) {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -82907,7 +82937,7 @@ module.exports = function() {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -83014,7 +83044,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -83182,7 +83212,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -83342,7 +83372,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -83449,7 +83479,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -83707,7 +83737,7 @@ module.exports = function() {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -83826,7 +83856,7 @@ module.exports = function() {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -83959,7 +83989,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -84092,7 +84122,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -84249,7 +84279,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -84350,7 +84380,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-let d3 = __webpack_require__("../../../../d3/index.js");
+let d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Module declaration
@@ -84544,7 +84574,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-let d3 = __webpack_require__("../../../../d3/index.js");
+let d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Module declaration
@@ -84654,7 +84684,7 @@ function __range__(left, right, inclusive) {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -84779,7 +84809,7 @@ module.exports = function() {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -84878,7 +84908,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -85010,7 +85040,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -85154,7 +85184,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -85255,7 +85285,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -85472,7 +85502,7 @@ module.exports = function() {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -85577,7 +85607,7 @@ module.exports = function() {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -85703,7 +85733,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -85866,7 +85896,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 
 // Module declaration
 module.exports = function () {
@@ -86106,7 +86136,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 
 // Initialize the visualization class
 module.exports = function () {
@@ -86320,7 +86350,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 
 // Initialize the visualization class
 module.exports = function () {
@@ -86714,7 +86744,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 
 
 // Initialize the visualization class
@@ -87286,7 +87316,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 
 // Initialize the visualization class
 module.exports = function () {
@@ -87483,7 +87513,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 //Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 
 // Module declaration
 module.exports = function () {
@@ -87697,7 +87727,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 
 // Initialize the visualization class
 module.exports = function () {
@@ -87835,7 +87865,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 
 // Initialize the visualization class
 module.exports = function () {
@@ -87963,7 +87993,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 
 
 // Initialize the visualization class
@@ -88430,7 +88460,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 
 // Initialize the visualization class
 module.exports = function () {
@@ -88600,7 +88630,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 //Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 
 // Module declaration
 module.exports = function () {
@@ -88896,7 +88926,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 
 // Initialize the visualization class
 module.exports = function () {
@@ -89017,7 +89047,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 
 // Initialize the visualization class
 module.exports = function () {
@@ -89528,7 +89558,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 //Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var line = __webpack_require__("../../../../../src/assets/js/gViz/visualizations/sunburst/sunburst.line/_init.js");
 
 
@@ -90265,7 +90295,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -90492,7 +90522,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 //Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 
 // Module declaration
 module.exports = function () {
@@ -90693,7 +90723,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 
 // Initialize the visualization class
 module.exports = function () {
@@ -90794,7 +90824,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 
 // Initialize the visualization class
 module.exports  = function () {
@@ -90933,7 +90963,7 @@ module.exports  = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 
 
 // Initialize the visualization class
@@ -91045,7 +91075,7 @@ module.exports  = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 
 // Initialize the visualization class
 module.exports  = function () {
@@ -91179,7 +91209,7 @@ module.exports  = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-let d3 = __webpack_require__("../../../../d3/index.js");
+let d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Module declaration
@@ -91454,7 +91484,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-let d3 = __webpack_require__("../../../../d3/index.js");
+let d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Module declaration
@@ -91564,7 +91594,7 @@ function __range__(left, right, inclusive) {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -91703,7 +91733,7 @@ module.exports = function() {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -91883,7 +91913,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -92007,7 +92037,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -92307,7 +92337,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -92416,7 +92446,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -92571,7 +92601,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -92715,7 +92745,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -92827,7 +92857,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -93052,7 +93082,7 @@ module.exports = function() {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -93151,7 +93181,7 @@ module.exports = function() {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -93237,7 +93267,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -93370,7 +93400,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -93466,7 +93496,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -93577,7 +93607,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -93678,7 +93708,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-let d3 = __webpack_require__("../../../../d3/index.js");
+let d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Module declaration
@@ -93890,7 +93920,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-let d3 = __webpack_require__("../../../../d3/index.js");
+let d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Module declaration
@@ -94016,7 +94046,7 @@ function __range__(left, right, inclusive) {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -94108,7 +94138,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -94213,7 +94243,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -94455,7 +94485,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -94761,7 +94791,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -94876,7 +94906,7 @@ module.exports = function() {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -95120,7 +95150,7 @@ module.exports = function() {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -95306,7 +95336,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -95477,7 +95507,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -95602,7 +95632,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-let d3 = __webpack_require__("../../../../d3/index.js");
+let d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Module declaration
@@ -95778,7 +95808,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-let d3 = __webpack_require__("../../../../d3/index.js");
+let d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Module declaration
@@ -95953,7 +95983,7 @@ function __range__(left, right, inclusive) {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -96060,7 +96090,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-let d3 = __webpack_require__("../../../../d3/index.js");
+let d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -96430,7 +96460,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -96570,7 +96600,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-let d3 = __webpack_require__("../../../../d3/index.js");
+let d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Module declaration
@@ -96660,7 +96690,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/index.js");
+var d3 = __webpack_require__("../../../../d3/build/d3.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
