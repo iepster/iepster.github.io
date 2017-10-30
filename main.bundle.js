@@ -1,15 +1,19 @@
 webpackJsonp(["main"],{
 
-/***/ "../../../../../src lazy recursive":
+/***/ "../../../../../src/$$_gendir lazy recursive":
 /***/ (function(module, exports) {
 
 function webpackEmptyAsyncContext(req) {
-	return new Promise(function(resolve, reject) { reject(new Error("Cannot find module '" + req + "'.")); });
+	// Here Promise.resolve().then() is used instead of new Promise() to prevent
+	// uncatched exception popping up in devtools
+	return Promise.resolve().then(function() {
+		throw new Error("Cannot find module '" + req + "'.");
+	});
 }
 webpackEmptyAsyncContext.keys = function() { return []; };
 webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
 module.exports = webpackEmptyAsyncContext;
-webpackEmptyAsyncContext.id = "../../../../../src lazy recursive";
+webpackEmptyAsyncContext.id = "../../../../../src/$$_gendir lazy recursive";
 
 /***/ }),
 
@@ -2688,8 +2692,7 @@ module.exports = module.exports.toString();
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__shared_utils_dynamic_component_shareable_service__ = __webpack_require__("../../../../../src/app/shared/utils/dynamic-component/shareable.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__visuals_service__ = __webpack_require__("../../../../../src/app/features/superuser/dashboard/visuals/visuals.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_d3__ = __webpack_require__("../../../../d3/build/d3.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_d3___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_d3__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_d3__ = __webpack_require__("../../../../d3/index.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -3984,8 +3987,7 @@ module.exports = module.exports.toString();
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DecideCardInterveneChartComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__config_service__ = __webpack_require__("../../../../../src/app/config.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_d3__ = __webpack_require__("../../../../d3/build/d3.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_d3___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_d3__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_d3__ = __webpack_require__("../../../../d3/index.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -4177,8 +4179,7 @@ module.exports = module.exports.toString();
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DecideCardReadmissionChartComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__config_service__ = __webpack_require__("../../../../../src/app/config.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_d3__ = __webpack_require__("../../../../d3/build/d3.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_d3___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_d3__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_d3__ = __webpack_require__("../../../../d3/index.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -5222,8 +5223,7 @@ module.exports = module.exports.toString();
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__shared_utils_router_delay_to_ask__ = __webpack_require__("../../../../../src/app/shared/utils/router-delay-to-ask.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__shared_events_app_service__ = __webpack_require__("../../../../../src/app/shared/events/app.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__angular_animations__ = __webpack_require__("../../../animations/@angular/animations.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_d3__ = __webpack_require__("../../../../d3/build/d3.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_d3___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8_d3__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_d3__ = __webpack_require__("../../../../d3/index.js");
 var __extends = (this && this.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
     function __() { this.constructor = d; }
@@ -5562,8 +5562,7 @@ var _a, _b;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs__ = __webpack_require__("../../../../rxjs/Rx.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_rxjs__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__tempData_decide_temp__ = __webpack_require__("../../../../../src/app/tempData/decide.temp.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_d3__ = __webpack_require__("../../../../d3/build/d3.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_d3___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_d3__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_d3__ = __webpack_require__("../../../../d3/index.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -8133,8 +8132,7 @@ module.exports = module.exports.toString();
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_watch_service__ = __webpack_require__("../../../../../src/app/microservices/watch/services/watch.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_d3__ = __webpack_require__("../../../../d3/build/d3.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_d3___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_d3__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_d3__ = __webpack_require__("../../../../d3/index.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__shared_utils_router_delay_to_ask__ = __webpack_require__("../../../../../src/app/shared/utils/router-delay-to-ask.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__shared_events_app_service__ = __webpack_require__("../../../../../src/app/shared/events/app.service.ts");
 var __extends = (this && this.__extends) || function (d, b) {
@@ -13843,8 +13841,7 @@ module.exports = module.exports.toString();
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common__ = __webpack_require__("../../../common/@angular/common.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__base_visual__ = __webpack_require__("../../../../../src/app/shared/shareables/visuals/base-visual.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_d3__ = __webpack_require__("../../../../d3/build/d3.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_d3___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_d3__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_d3__ = __webpack_require__("../../../../d3/index.js");
 var __extends = (this && this.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
     function __() { this.constructor = d; }
@@ -14065,8 +14062,7 @@ module.exports = module.exports.toString();
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common__ = __webpack_require__("../../../common/@angular/common.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__base_visual__ = __webpack_require__("../../../../../src/app/shared/shareables/visuals/base-visual.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_d3__ = __webpack_require__("../../../../d3/build/d3.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_d3___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_d3__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_d3__ = __webpack_require__("../../../../d3/index.js");
 var __extends = (this && this.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
     function __() { this.constructor = d; }
@@ -14561,8 +14557,7 @@ module.exports = module.exports.toString();
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DiwoVisualBubbleGraphComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__base_visual__ = __webpack_require__("../../../../../src/app/shared/shareables/visuals/base-visual.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_d3__ = __webpack_require__("../../../../d3/build/d3.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_d3___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_d3__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_d3__ = __webpack_require__("../../../../d3/index.js");
 var __extends = (this && this.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
     function __() { this.constructor = d; }
@@ -15721,8 +15716,7 @@ module.exports = module.exports.toString();
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__("../../../platform-browser/@angular/platform-browser.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_common__ = __webpack_require__("../../../common/@angular/common.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__base_visual__ = __webpack_require__("../../../../../src/app/shared/shareables/visuals/base-visual.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_d3__ = __webpack_require__("../../../../d3/build/d3.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_d3___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_d3__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_d3__ = __webpack_require__("../../../../d3/index.js");
 var __extends = (this && this.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
     function __() { this.constructor = d; }
@@ -15848,8 +15842,7 @@ module.exports = module.exports.toString();
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__("../../../platform-browser/@angular/platform-browser.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_common__ = __webpack_require__("../../../common/@angular/common.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__base_visual__ = __webpack_require__("../../../../../src/app/shared/shareables/visuals/base-visual.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_d3__ = __webpack_require__("../../../../d3/build/d3.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_d3___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_d3__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_d3__ = __webpack_require__("../../../../d3/index.js");
 var __extends = (this && this.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
     function __() { this.constructor = d; }
@@ -16360,8 +16353,7 @@ module.exports = module.exports.toString();
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DiwoVisualMapHeatBarsComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__base_visual__ = __webpack_require__("../../../../../src/app/shared/shareables/visuals/base-visual.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_d3__ = __webpack_require__("../../../../d3/build/d3.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_d3___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_d3__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_d3__ = __webpack_require__("../../../../d3/index.js");
 var __extends = (this && this.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
     function __() { this.constructor = d; }
@@ -16969,8 +16961,7 @@ module.exports = module.exports.toString();
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__base_visual__ = __webpack_require__("../../../../../src/app/shared/shareables/visuals/base-visual.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ui_help_help_ontology_help_ontology_component__ = __webpack_require__("../../../../../src/app/shared/ui/help/help-ontology/help-ontology.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_d3__ = __webpack_require__("../../../../d3/build/d3.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_d3___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_d3__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_d3__ = __webpack_require__("../../../../d3/index.js");
 var __extends = (this && this.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
     function __() { this.constructor = d; }
@@ -18286,8 +18277,7 @@ module.exports = module.exports.toString();
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DiwoVisualProductsDonut; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common__ = __webpack_require__("../../../common/@angular/common.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_d3__ = __webpack_require__("../../../../d3/build/d3.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_d3___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_d3__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_d3__ = __webpack_require__("../../../../d3/index.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__base_visual__ = __webpack_require__("../../../../../src/app/shared/shareables/visuals/base-visual.ts");
 var __extends = (this && this.__extends) || function (d, b) {
@@ -18642,8 +18632,7 @@ module.exports = module.exports.toString();
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__("../../../platform-browser/@angular/platform-browser.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_common__ = __webpack_require__("../../../common/@angular/common.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__base_visual__ = __webpack_require__("../../../../../src/app/shared/shareables/visuals/base-visual.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_d3__ = __webpack_require__("../../../../d3/build/d3.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_d3___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_d3__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_d3__ = __webpack_require__("../../../../d3/index.js");
 var __extends = (this && this.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
     function __() { this.constructor = d; }
@@ -18997,8 +18986,7 @@ module.exports = module.exports.toString();
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DiwoVisualStoresMap; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common__ = __webpack_require__("../../../common/@angular/common.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_d3__ = __webpack_require__("../../../../d3/build/d3.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_d3___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_d3__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_d3__ = __webpack_require__("../../../../d3/index.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__base_visual__ = __webpack_require__("../../../../../src/app/shared/shareables/visuals/base-visual.ts");
 var __extends = (this && this.__extends) || function (d, b) {
@@ -19718,8 +19706,7 @@ module.exports = module.exports.toString();
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common__ = __webpack_require__("../../../common/@angular/common.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__base_visual__ = __webpack_require__("../../../../../src/app/shared/shareables/visuals/base-visual.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_d3__ = __webpack_require__("../../../../d3/build/d3.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_d3___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_d3__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_d3__ = __webpack_require__("../../../../d3/index.js");
 var __extends = (this && this.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
     function __() { this.constructor = d; }
@@ -20019,8 +20006,7 @@ module.exports = module.exports.toString();
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common__ = __webpack_require__("../../../common/@angular/common.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__base_visual__ = __webpack_require__("../../../../../src/app/shared/shareables/visuals/base-visual.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_d3__ = __webpack_require__("../../../../d3/build/d3.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_d3___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_d3__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_d3__ = __webpack_require__("../../../../d3/index.js");
 var __extends = (this && this.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
     function __() { this.constructor = d; }
@@ -20336,8 +20322,7 @@ module.exports = module.exports.toString();
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HierarchicalHorizontalBarsComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__base_visual__ = __webpack_require__("../../../../../src/app/shared/shareables/visuals/base-visual.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_d3__ = __webpack_require__("../../../../d3/build/d3.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_d3___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_d3__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_d3__ = __webpack_require__("../../../../d3/index.js");
 var __extends = (this && this.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
     function __() { this.constructor = d; }
@@ -23035,8 +23020,7 @@ module.exports = module.exports.toString();
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return BtnHideShowComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_d3__ = __webpack_require__("../../../../d3/build/d3.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_d3___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_d3__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_d3__ = __webpack_require__("../../../../d3/index.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -35645,7 +35629,7 @@ module.exports = {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 
 // Module declaration
 module.exports = function() {
@@ -35703,7 +35687,7 @@ module.exports = {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 
 //Function to convert hex format to a rgb color
 function rgb2hex(rgb){
@@ -35772,7 +35756,7 @@ module.exports = {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 
 // Extend date object to increase number of days
 Date.prototype.addDays = function(days) {
@@ -35895,7 +35879,7 @@ module.exports = function() {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 
 // Module declaration
 module.exports = function() {
@@ -35945,7 +35929,7 @@ module.exports = function() {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 
 // Module declaration
 module.exports = function() {
@@ -36037,7 +36021,7 @@ module.exports = function() {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 
 // https://github.com/wbkd/d3-extended
 d3.selection.prototype.moveToFront = function () { return this.each(function () { return this.parentNode.appendChild(this); }); };
@@ -36085,7 +36069,7 @@ module.exports = {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 
 // Module declaration
 module.exports = {
@@ -36114,7 +36098,7 @@ module.exports = {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 
 // Module declaration
 module.exports = {
@@ -36270,7 +36254,7 @@ module.exports = {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var helpers = __webpack_require__("../../../../../src/assets/js/gViz/shared/helpers/_init.js");
 
 // Initialize the visualization class
@@ -36400,7 +36384,7 @@ module.exports = function() {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var helpers = __webpack_require__("../../../../../src/assets/js/gViz/shared/helpers/_init.js");
 
 // Module declaration
@@ -36501,7 +36485,7 @@ function __range__(left, right, inclusive) {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var helpers = __webpack_require__("../../../../../src/assets/js/gViz/shared/helpers/_init.js");
 
 // Initialize the visualization class
@@ -36635,7 +36619,7 @@ module.exports = function() {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var helpers = __webpack_require__("../../../../../src/assets/js/gViz/shared/helpers/_init.js");
 
 // Initialize the visualization class
@@ -36748,7 +36732,7 @@ module.exports = function() {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var helpers = __webpack_require__("../../../../../src/assets/js/gViz/shared/helpers/_init.js");
 
 // Module declaration
@@ -36905,7 +36889,7 @@ function __range__(left, right, inclusive) {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var helpers = __webpack_require__("../../../../../src/assets/js/gViz/shared/helpers/_init.js");
 
 // Initialize the visualization class
@@ -37025,7 +37009,7 @@ module.exports = function() {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var helpers = __webpack_require__("../../../../../src/assets/js/gViz/shared/helpers/_init.js");
 
 // Initialize the visualization class
@@ -37214,7 +37198,7 @@ module.exports = {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-let d3 = __webpack_require__("../../../../d3/build/d3.js");
+let d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Module declaration
@@ -37389,7 +37373,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-let d3 = __webpack_require__("../../../../d3/build/d3.js");
+let d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Module declaration
@@ -37490,7 +37474,7 @@ function __range__(left, right, inclusive) {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -37577,7 +37561,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -37704,7 +37688,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -37832,7 +37816,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -37943,7 +37927,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -38095,7 +38079,7 @@ module.exports = {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-let d3 = __webpack_require__("../../../../d3/build/d3.js");
+let d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Module declaration
@@ -38281,7 +38265,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-let d3 = __webpack_require__("../../../../d3/build/d3.js");
+let d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Module declaration
@@ -38409,7 +38393,7 @@ function __range__(left, right, inclusive) {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -38536,7 +38520,7 @@ module.exports = function() {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -38635,7 +38619,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -38773,7 +38757,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -38926,7 +38910,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -39058,7 +39042,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -39164,7 +39148,7 @@ module.exports = function() {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-let d3 = __webpack_require__("../../../../d3/build/d3.js");
+let d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Module declaration
@@ -39287,7 +39271,7 @@ function __range__(left, right, inclusive) {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -39450,7 +39434,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -39576,7 +39560,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-let d3 = __webpack_require__("../../../../d3/build/d3.js");
+let d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Module declaration
@@ -39810,7 +39794,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-let d3 = __webpack_require__("../../../../d3/build/d3.js");
+let d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Module declaration
@@ -39930,7 +39914,7 @@ function __range__(left, right, inclusive) {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -40052,7 +40036,7 @@ module.exports = function() {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -40159,7 +40143,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -40314,7 +40298,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -40458,7 +40442,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -40564,7 +40548,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -40779,7 +40763,7 @@ module.exports = function() {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -40878,7 +40862,7 @@ module.exports = function() {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -41032,7 +41016,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -41186,7 +41170,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -41282,7 +41266,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -41393,7 +41377,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -41494,7 +41478,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-let d3 = __webpack_require__("../../../../d3/build/d3.js");
+let d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Module declaration
@@ -41675,7 +41659,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -41804,7 +41788,7 @@ module.exports = function() {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-let d3 = __webpack_require__("../../../../d3/build/d3.js");
+let d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Module declaration
@@ -41961,7 +41945,7 @@ function __range__(left, right, inclusive) {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -42077,7 +42061,7 @@ module.exports = function() {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -42179,7 +42163,7 @@ module.exports = function() {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -42266,7 +42250,7 @@ module.exports = function() {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -42387,7 +42371,7 @@ module.exports = function() {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -42543,7 +42527,7 @@ module.exports = function() {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -42670,7 +42654,7 @@ module.exports = function() {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-let d3 = __webpack_require__("../../../../d3/build/d3.js");
+let d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Module declaration
@@ -42810,7 +42794,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -42909,7 +42893,7 @@ module.exports = function() {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-let d3 = __webpack_require__("../../../../d3/build/d3.js");
+let d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Module declaration
@@ -43108,7 +43092,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -43236,7 +43220,7 @@ module.exports = function() {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-let d3 = __webpack_require__("../../../../d3/build/d3.js");
+let d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Module declaration
@@ -43391,7 +43375,7 @@ function __range__(left, right, inclusive) {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -43508,7 +43492,7 @@ module.exports = function() {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -43622,7 +43606,7 @@ module.exports = function() {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -43709,7 +43693,7 @@ module.exports = function() {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -43832,7 +43816,7 @@ module.exports = function() {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -43986,7 +43970,7 @@ module.exports = function() {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -44083,7 +44067,7 @@ module.exports = function() {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -44211,7 +44195,7 @@ module.exports = function() {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-let d3 = __webpack_require__("../../../../d3/build/d3.js");
+let d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Module declaration
@@ -44356,7 +44340,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -44460,7 +44444,7 @@ module.exports = function() {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-let d3 = __webpack_require__("../../../../d3/build/d3.js");
+let d3 = __webpack_require__("../../../../d3/index.js");
 var common = __webpack_require__("../../../../../src/assets/js/gViz/visualizations/bubbles/common.js");
 
 // Module declaration
@@ -44658,7 +44642,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 
 // Initialize the visualization class
 module.exports = function () {
@@ -44751,7 +44735,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -44938,7 +44922,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var common = __webpack_require__("../../../../../src/assets/js/gViz/visualizations/bubbles/common.js");
 
 // Initialize the visualization class
@@ -45085,7 +45069,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var common = __webpack_require__("../../../../../src/assets/js/gViz/visualizations/bubbles/common.js");
 
 // Initialize the visualization class
@@ -45197,7 +45181,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-let d3 = __webpack_require__("../../../../d3/build/d3.js");
+let d3 = __webpack_require__("../../../../d3/index.js");
 var common = __webpack_require__("../../../../../src/assets/js/gViz/visualizations/bubbles/common.js");
 
 // Module declaration
@@ -45401,7 +45385,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 
 // Initialize the visualization class
 module.exports = function () {
@@ -45496,7 +45480,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -45715,7 +45699,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var common = __webpack_require__("../../../../../src/assets/js/gViz/visualizations/bubbles/common.js");
 
 // Initialize the visualization class
@@ -45837,7 +45821,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var common = __webpack_require__("../../../../../src/assets/js/gViz/visualizations/bubbles/common.js");
 
 // Initialize the visualization class
@@ -45946,7 +45930,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-let d3 = __webpack_require__("../../../../d3/build/d3.js");
+let d3 = __webpack_require__("../../../../d3/index.js");
 var common = __webpack_require__("../../../../../src/assets/js/gViz/visualizations/bubbles/common.js");
 
 // Module declaration
@@ -46094,7 +46078,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var common = __webpack_require__("../../../../../src/assets/js/gViz/visualizations/bubbles/common.js");
 var bubbleComponents = __webpack_require__("../../../../../src/assets/js/gViz/visualizations/_init.js").bubbleComponents;
 
@@ -46250,7 +46234,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var common = __webpack_require__("../../../../../src/assets/js/gViz/visualizations/bubbles/common.js");
 
 // Initialize the visualization class
@@ -46358,7 +46342,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var common = __webpack_require__("../../../../../src/assets/js/gViz/visualizations/bubbles/common.js");
 
 // Initialize the visualization class
@@ -46436,7 +46420,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 
 module.exports = {
   STATES: {
@@ -46897,7 +46881,7 @@ module.exports = {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-let d3 = __webpack_require__("../../../../d3/build/d3.js");
+let d3 = __webpack_require__("../../../../d3/index.js");
 var common = __webpack_require__("../../../../../src/assets/js/gViz/visualizations/bubbles/common.js");
 
 // Module declaration
@@ -47116,7 +47100,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 
 // Initialize the visualization class
 module.exports = function () {
@@ -47227,7 +47211,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -47565,7 +47549,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var common = __webpack_require__("../../../../../src/assets/js/gViz/visualizations/bubbles/common.js");
 
 // Initialize the visualization class
@@ -47705,7 +47689,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var common = __webpack_require__("../../../../../src/assets/js/gViz/visualizations/bubbles/common.js");
 
 // Initialize the visualization class
@@ -47815,7 +47799,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-let d3 = __webpack_require__("../../../../d3/build/d3.js");
+let d3 = __webpack_require__("../../../../d3/index.js");
 var common = __webpack_require__("../../../../../src/assets/js/gViz/visualizations/bubbles/common.js");
 
 // Module declaration
@@ -47991,7 +47975,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 
 // Initialize the visualization class
 module.exports = function () {
@@ -48084,7 +48068,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -48182,7 +48166,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var common = __webpack_require__("../../../../../src/assets/js/gViz/visualizations/bubbles/common.js");
 
 // Initialize the visualization class
@@ -48288,7 +48272,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var common = __webpack_require__("../../../../../src/assets/js/gViz/visualizations/bubbles/common.js");
 
 // Initialize the visualization class
@@ -48374,7 +48358,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-let d3 = __webpack_require__("../../../../d3/build/d3.js");
+let d3 = __webpack_require__("../../../../d3/index.js");
 var common = __webpack_require__("../../../../../src/assets/js/gViz/visualizations/bubbles/common.js");
 
 // Module declaration
@@ -48573,7 +48557,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 
 // Initialize the visualization class
 module.exports = function () {
@@ -48665,7 +48649,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -48840,7 +48824,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var common = __webpack_require__("../../../../../src/assets/js/gViz/visualizations/bubbles/common.js");
 
 // Initialize the visualization class
@@ -48968,7 +48952,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var common = __webpack_require__("../../../../../src/assets/js/gViz/visualizations/bubbles/common.js");
 
 // Initialize the visualization class
@@ -49064,7 +49048,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-let d3 = __webpack_require__("../../../../d3/build/d3.js");
+let d3 = __webpack_require__("../../../../d3/index.js");
 var common = __webpack_require__("../../../../../src/assets/js/gViz/visualizations/bubbles/common.js");
 
 // Module declaration
@@ -49252,7 +49236,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 
 // Initialize the visualization class
 module.exports = function () {
@@ -49345,7 +49329,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -49508,7 +49492,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var common = __webpack_require__("../../../../../src/assets/js/gViz/visualizations/bubbles/common.js");
 
 // Initialize the visualization class
@@ -49614,7 +49598,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var common = __webpack_require__("../../../../../src/assets/js/gViz/visualizations/bubbles/common.js");
 
 // Initialize the visualization class
@@ -49712,7 +49696,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-let d3 = __webpack_require__("../../../../d3/build/d3.js");
+let d3 = __webpack_require__("../../../../d3/index.js");
 var common = __webpack_require__("../../../../../src/assets/js/gViz/visualizations/bubbles/common.js");
 
 // Module declaration
@@ -49900,7 +49884,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 
 // Initialize the visualization class
 module.exports = function () {
@@ -49991,7 +49975,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -50163,7 +50147,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var common = __webpack_require__("../../../../../src/assets/js/gViz/visualizations/bubbles/common.js");
 
 // Initialize the visualization class
@@ -50291,7 +50275,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var common = __webpack_require__("../../../../../src/assets/js/gViz/visualizations/bubbles/common.js");
 
 // Initialize the visualization class
@@ -50379,7 +50363,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-let d3 = __webpack_require__("../../../../d3/build/d3.js");
+let d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Module declaration
@@ -50586,7 +50570,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-let d3 = __webpack_require__("../../../../d3/build/d3.js");
+let d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Module declaration
@@ -50706,7 +50690,7 @@ function __range__(left, right, inclusive) {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -50826,7 +50810,7 @@ module.exports = function() {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -50925,7 +50909,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -51106,7 +51090,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -51266,7 +51250,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -51390,7 +51374,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -51629,7 +51613,7 @@ module.exports = function() {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -51774,7 +51758,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -51893,7 +51877,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -52016,7 +52000,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -52155,7 +52139,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-let d3 = __webpack_require__("../../../../d3/build/d3.js");
+let d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Module declaration
@@ -52357,7 +52341,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -52439,7 +52423,7 @@ module.exports = function() {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -52681,7 +52665,7 @@ module.exports = function() {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -52768,7 +52752,7 @@ module.exports = function() {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -52916,7 +52900,7 @@ module.exports = function() {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -53012,7 +52996,7 @@ module.exports = function() {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -53345,7 +53329,7 @@ module.exports = function() {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -53444,7 +53428,7 @@ module.exports = function() {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -53581,7 +53565,7 @@ module.exports = function() {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -53707,7 +53691,7 @@ module.exports = function() {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -54033,7 +54017,7 @@ module.exports = function() {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -54170,7 +54154,7 @@ module.exports = function() {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -54422,7 +54406,7 @@ module.exports = function() {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -54633,7 +54617,7 @@ module.exports = function() {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-let d3 = __webpack_require__("../../../../d3/build/d3.js");
+let d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Module declaration
@@ -54787,7 +54771,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -54892,7 +54876,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -55065,7 +55049,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -55287,7 +55271,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -55399,7 +55383,7 @@ module.exports = function() {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -55603,7 +55587,7 @@ module.exports = function() {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -55694,7 +55678,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-let d3 = __webpack_require__("../../../../d3/build/d3.js");
+let d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Module declaration
@@ -55851,7 +55835,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -55990,7 +55974,7 @@ module.exports = function() {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -56127,7 +56111,7 @@ module.exports = function() {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -56232,7 +56216,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -56318,7 +56302,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -56436,7 +56420,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -56566,7 +56550,7 @@ module.exports = function() {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -56674,7 +56658,7 @@ module.exports = function() {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -56822,7 +56806,7 @@ module.exports = function() {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Module declaration
@@ -56965,7 +56949,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -57058,7 +57042,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -57532,7 +57516,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -57660,7 +57644,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -57785,7 +57769,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-let d3 = __webpack_require__("../../../../d3/build/d3.js");
+let d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Module declaration
@@ -57991,7 +57975,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-let d3 = __webpack_require__("../../../../d3/build/d3.js");
+let d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Module declaration
@@ -58107,7 +58091,7 @@ function __range__(left, right, inclusive) {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -58295,7 +58279,7 @@ module.exports = function() {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -58402,7 +58386,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -58549,7 +58533,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -58693,7 +58677,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -58803,7 +58787,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -59029,7 +59013,7 @@ module.exports = function() {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -59132,7 +59116,7 @@ module.exports = function() {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -59273,7 +59257,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -59447,7 +59431,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -59548,7 +59532,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-let d3 = __webpack_require__("../../../../d3/build/d3.js");
+let d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Module declaration
@@ -59768,7 +59752,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-let d3 = __webpack_require__("../../../../d3/build/d3.js");
+let d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Module declaration
@@ -59880,7 +59864,7 @@ function __range__(left, right, inclusive) {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -60056,7 +60040,7 @@ module.exports = function() {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -60163,7 +60147,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -60310,7 +60294,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -60454,7 +60438,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -60561,7 +60545,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -60787,7 +60771,7 @@ module.exports = function() {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -60898,7 +60882,7 @@ module.exports = function() {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -61084,7 +61068,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -61180,7 +61164,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -61304,7 +61288,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -61405,7 +61389,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-let d3 = __webpack_require__("../../../../d3/build/d3.js");
+let d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Module declaration
@@ -61586,7 +61570,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -61715,7 +61699,7 @@ module.exports = function() {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-let d3 = __webpack_require__("../../../../d3/build/d3.js");
+let d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Module declaration
@@ -61884,7 +61868,7 @@ function __range__(left, right, inclusive) {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -62000,7 +61984,7 @@ module.exports = function() {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -62102,7 +62086,7 @@ module.exports = function() {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -62189,7 +62173,7 @@ module.exports = function() {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -62338,7 +62322,7 @@ module.exports = function() {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -62494,7 +62478,7 @@ module.exports = function() {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -62624,7 +62608,7 @@ module.exports = function() {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-let d3 = __webpack_require__("../../../../d3/build/d3.js");
+let d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Module declaration
@@ -62767,7 +62751,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -62866,7 +62850,7 @@ module.exports = function() {
 /***/ (function(module, exports, __webpack_require__) {
 
 //Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 
 // Module declaration
 module.exports = function () {
@@ -63030,7 +63014,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 
 // Initialize the visualization class
 module.exports = function () {
@@ -63136,7 +63120,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 
 // Initialize the visualization class
 module.exports = function () {
@@ -63495,7 +63479,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 
 // Initialize the visualization class
 module.exports = function () {
@@ -63638,7 +63622,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-let d3 = __webpack_require__("../../../../d3/build/d3.js");
+let d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Module declaration
@@ -63827,7 +63811,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-let d3 = __webpack_require__("../../../../d3/build/d3.js");
+let d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Module declaration
@@ -63945,7 +63929,7 @@ function __range__(left, right, inclusive) {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -64037,7 +64021,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -64234,7 +64218,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -64539,7 +64523,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -64644,7 +64628,7 @@ module.exports = function() {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -64888,7 +64872,7 @@ module.exports = function() {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -65041,7 +65025,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -65212,7 +65196,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -65337,7 +65321,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-let d3 = __webpack_require__("../../../../d3/build/d3.js");
+let d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Module declaration
@@ -65515,7 +65499,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-let d3 = __webpack_require__("../../../../d3/build/d3.js");
+let d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Module declaration
@@ -65694,7 +65678,7 @@ function __range__(left, right, inclusive) {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -65838,7 +65822,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -66420,7 +66404,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -66585,7 +66569,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-let d3 = __webpack_require__("../../../../d3/build/d3.js");
+let d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Module declaration
@@ -66719,7 +66703,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Module declaration
@@ -66915,7 +66899,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -67022,7 +67006,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -67127,7 +67111,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -67347,7 +67331,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -67508,7 +67492,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -67634,7 +67618,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -67752,7 +67736,7 @@ module.exports = function() {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -67834,7 +67818,7 @@ module.exports = function() {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -67969,7 +67953,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -68087,7 +68071,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var L = __webpack_require__("../../../../leaflet/dist/leaflet-src.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
@@ -68323,7 +68307,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -68430,7 +68414,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -68529,7 +68513,7 @@ module.exports = function() {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -68696,7 +68680,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -68842,7 +68826,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 var HeatmapOverlay = __webpack_require__("../../../../leaflet-heatmap/leaflet-heatmap.js");
 
@@ -68966,7 +68950,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -69103,7 +69087,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -69231,7 +69215,7 @@ module.exports = function() {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -69314,7 +69298,7 @@ module.exports = function() {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var L  = __webpack_require__("../../../../leaflet/dist/leaflet-src.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
@@ -69458,7 +69442,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -69596,7 +69580,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 module.exports = function() {
@@ -69675,7 +69659,7 @@ module.exports = function() {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -69758,7 +69742,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var L = __webpack_require__("../../../../leaflet/dist/leaflet-src.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
@@ -69994,7 +69978,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -70122,7 +70106,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -70221,7 +70205,7 @@ module.exports = function() {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -70386,7 +70370,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -70532,7 +70516,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 var HeatmapOverlay = __webpack_require__("../../../../leaflet-heatmap/leaflet-heatmap.js");
 
@@ -70656,7 +70640,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -70793,7 +70777,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -70921,7 +70905,7 @@ module.exports = function() {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -71043,7 +71027,7 @@ module.exports = function() {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var L  = __webpack_require__("../../../../leaflet/dist/leaflet-src.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
@@ -71174,7 +71158,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -71312,7 +71296,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 module.exports = function() {
@@ -71391,7 +71375,7 @@ module.exports = function() {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -71474,7 +71458,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-let d3 = __webpack_require__("../../../../d3/build/d3.js");
+let d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Module declaration
@@ -71700,7 +71684,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -71805,7 +71789,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -71910,7 +71894,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -72194,7 +72178,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -72507,7 +72491,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -72620,7 +72604,7 @@ module.exports = function() {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -72824,7 +72808,7 @@ module.exports = function() {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -72966,7 +72950,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -73080,7 +73064,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -73199,7 +73183,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -73449,7 +73433,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -73561,7 +73545,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -73728,7 +73712,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-let d3 = __webpack_require__("../../../../d3/build/d3.js");
+let d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Module declaration
@@ -74007,7 +73991,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-let d3 = __webpack_require__("../../../../d3/build/d3.js");
+let d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Module declaration
@@ -74124,7 +74108,7 @@ function __range__(left, right, inclusive) {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -74411,7 +74395,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -74515,7 +74499,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -74704,7 +74688,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -74869,7 +74853,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -74975,7 +74959,7 @@ module.exports = function() {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -75232,7 +75216,7 @@ module.exports = function() {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -75442,7 +75426,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -75745,7 +75729,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -75862,7 +75846,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -76028,7 +76012,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -76136,7 +76120,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -76281,7 +76265,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -76432,7 +76416,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -76560,7 +76544,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-let d3 = __webpack_require__("../../../../d3/build/d3.js");
+let d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Module declaration
@@ -76763,7 +76747,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-let d3 = __webpack_require__("../../../../d3/build/d3.js");
+let d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Module declaration
@@ -76880,7 +76864,7 @@ function __range__(left, right, inclusive) {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -76983,7 +76967,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -77187,7 +77171,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -77378,7 +77362,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -77478,7 +77462,7 @@ module.exports = function() {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -77735,7 +77719,7 @@ module.exports = function() {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -77848,7 +77832,7 @@ module.exports = function() {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -78022,7 +78006,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -78152,7 +78136,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -78257,7 +78241,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-let d3 = __webpack_require__("../../../../d3/build/d3.js");
+let d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Module declaration
@@ -78446,7 +78430,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -78551,7 +78535,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -78639,7 +78623,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -78808,7 +78792,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -79044,7 +79028,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -79159,7 +79143,7 @@ module.exports = function() {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -79360,7 +79344,7 @@ module.exports = function() {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -79471,7 +79455,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -79567,7 +79551,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -79679,7 +79663,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -79807,7 +79791,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 
 // Module declaration
 module.exports = function () {
@@ -80014,7 +79998,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 
 // Initialize the visualization class
 module.exports = function () {
@@ -80165,7 +80149,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 
 // Initialize the visualization class
 module.exports = function () {
@@ -80567,7 +80551,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 
 // Initialize the visualization class
 module.exports = function () {
@@ -81103,7 +81087,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 
 // Initialize the visualization class
 module.exports = function () {
@@ -81315,7 +81299,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 
 // Module declaration
 module.exports = function () {
@@ -81548,7 +81532,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 
 // Initialize the visualization class
 module.exports = function () {
@@ -81697,7 +81681,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 
 // Initialize the visualization class
 module.exports = function () {
@@ -81991,7 +81975,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 
 
 // Initialize the visualization class
@@ -82244,7 +82228,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 
 // Initialize the visualization class
 module.exports = function () {
@@ -82395,7 +82379,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-let d3 = __webpack_require__("../../../../d3/build/d3.js");
+let d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Module declaration
@@ -82615,7 +82599,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-let d3 = __webpack_require__("../../../../d3/build/d3.js");
+let d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Module declaration
@@ -82776,7 +82760,7 @@ function __range__(left, right, inclusive) {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -82923,7 +82907,7 @@ module.exports = function() {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -83030,7 +83014,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -83198,7 +83182,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -83358,7 +83342,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -83465,7 +83449,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -83723,7 +83707,7 @@ module.exports = function() {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -83842,7 +83826,7 @@ module.exports = function() {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -83975,7 +83959,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -84108,7 +84092,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -84265,7 +84249,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -84366,7 +84350,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-let d3 = __webpack_require__("../../../../d3/build/d3.js");
+let d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Module declaration
@@ -84560,7 +84544,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-let d3 = __webpack_require__("../../../../d3/build/d3.js");
+let d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Module declaration
@@ -84670,7 +84654,7 @@ function __range__(left, right, inclusive) {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -84795,7 +84779,7 @@ module.exports = function() {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -84894,7 +84878,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -85026,7 +85010,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -85170,7 +85154,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -85271,7 +85255,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -85488,7 +85472,7 @@ module.exports = function() {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -85593,7 +85577,7 @@ module.exports = function() {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -85719,7 +85703,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -85882,7 +85866,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 
 // Module declaration
 module.exports = function () {
@@ -86122,7 +86106,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 
 // Initialize the visualization class
 module.exports = function () {
@@ -86336,7 +86320,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 
 // Initialize the visualization class
 module.exports = function () {
@@ -86730,7 +86714,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 
 
 // Initialize the visualization class
@@ -87302,7 +87286,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 
 // Initialize the visualization class
 module.exports = function () {
@@ -87499,7 +87483,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 //Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 
 // Module declaration
 module.exports = function () {
@@ -87713,7 +87697,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 
 // Initialize the visualization class
 module.exports = function () {
@@ -87851,7 +87835,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 
 // Initialize the visualization class
 module.exports = function () {
@@ -87979,7 +87963,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 
 
 // Initialize the visualization class
@@ -88446,7 +88430,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 
 // Initialize the visualization class
 module.exports = function () {
@@ -88616,7 +88600,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 //Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 
 // Module declaration
 module.exports = function () {
@@ -88912,7 +88896,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 
 // Initialize the visualization class
 module.exports = function () {
@@ -89033,7 +89017,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 
 // Initialize the visualization class
 module.exports = function () {
@@ -89544,7 +89528,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 //Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var line = __webpack_require__("../../../../../src/assets/js/gViz/visualizations/sunburst/sunburst.line/_init.js");
 
 
@@ -90281,7 +90265,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -90508,7 +90492,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 //Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 
 // Module declaration
 module.exports = function () {
@@ -90709,7 +90693,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 
 // Initialize the visualization class
 module.exports = function () {
@@ -90810,7 +90794,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 
 // Initialize the visualization class
 module.exports  = function () {
@@ -90949,7 +90933,7 @@ module.exports  = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 
 
 // Initialize the visualization class
@@ -91061,7 +91045,7 @@ module.exports  = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 
 // Initialize the visualization class
 module.exports  = function () {
@@ -91195,7 +91179,7 @@ module.exports  = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-let d3 = __webpack_require__("../../../../d3/build/d3.js");
+let d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Module declaration
@@ -91470,7 +91454,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-let d3 = __webpack_require__("../../../../d3/build/d3.js");
+let d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Module declaration
@@ -91580,7 +91564,7 @@ function __range__(left, right, inclusive) {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -91719,7 +91703,7 @@ module.exports = function() {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -91899,7 +91883,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -92023,7 +92007,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -92323,7 +92307,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -92432,7 +92416,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -92587,7 +92571,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -92731,7 +92715,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -92843,7 +92827,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -93068,7 +93052,7 @@ module.exports = function() {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -93167,7 +93151,7 @@ module.exports = function() {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -93253,7 +93237,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -93386,7 +93370,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -93482,7 +93466,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -93593,7 +93577,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -93694,7 +93678,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-let d3 = __webpack_require__("../../../../d3/build/d3.js");
+let d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Module declaration
@@ -93906,7 +93890,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-let d3 = __webpack_require__("../../../../d3/build/d3.js");
+let d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Module declaration
@@ -94032,7 +94016,7 @@ function __range__(left, right, inclusive) {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -94124,7 +94108,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -94229,7 +94213,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -94471,7 +94455,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -94777,7 +94761,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -94892,7 +94876,7 @@ module.exports = function() {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -95136,7 +95120,7 @@ module.exports = function() {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -95322,7 +95306,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -95493,7 +95477,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -95618,7 +95602,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-let d3 = __webpack_require__("../../../../d3/build/d3.js");
+let d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Module declaration
@@ -95794,7 +95778,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-let d3 = __webpack_require__("../../../../d3/build/d3.js");
+let d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Module declaration
@@ -95969,7 +95953,7 @@ function __range__(left, right, inclusive) {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -96076,7 +96060,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-let d3 = __webpack_require__("../../../../d3/build/d3.js");
+let d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -96446,7 +96430,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
@@ -96586,7 +96570,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-let d3 = __webpack_require__("../../../../d3/build/d3.js");
+let d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Module declaration
@@ -96676,7 +96660,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var d3 = __webpack_require__("../../../../d3/build/d3.js");
+var d3 = __webpack_require__("../../../../d3/index.js");
 var shared = __webpack_require__("../../../../../src/assets/js/gViz/shared/_init.js");
 
 // Initialize the visualization class
