@@ -1,0 +1,390 @@
+{
+  "PK": {
+    "Graph": {
+      "Type": "DiwoVisualVsBubbleGraphComponent",
+      "Data": {
+        "title": "Victoria\"s Secret - PK",
+        "legend": {
+          "isVisible": true,
+          "text": "{{group}}"
+        },
+        "tooltip": {
+          "hasImg": false,
+          "title": [
+            "{{name}}",
+            "<span class='metric'>Contribution</span><span class='number'>{{x}}</span>",
+            "<span class='metric'>Deviation</span><span class='number'>{{y}}</span>"
+          ],
+          "body": []
+        },
+        "x": {
+          "title": "Class - Master Style",
+          "prefix": "",
+          "sufix": "%",
+          "type": "string",
+          "format": ""
+        },
+        "y": {
+          "title": "%",
+          "prefix": "",
+          "sufix": "%",
+          "type": "number",
+          "format": ""
+        },
+        "attrs": {
+          "barWidth": 8,
+          "wrapText": false
+        },
+        "data": [
+          {
+            "x": "5",
+            "name": "Date Bra PU",
+            "group": "Shortage",
+            "y": 5,
+            "fill": "#e85e8f",
+            "gradient": "#fd9e83",
+            "stroke": "#b45276"
+          },
+          {
+            "x": "19",
+            "name": "PK LACE HIGH NECK PU",
+            "group": "Shortage",
+            "y": 39,
+            "fill": "#e85e8f",
+            "gradient": "#fd9e83",
+            "stroke": "#b45276"
+          },
+          {
+            "x": "25",
+            "name": "Sp18724 Ultimate UL Halter",
+            "group": "Shortage",
+            "y": 15,
+            "fill": "#e85e8f",
+            "gradient": "#fd9e83",
+            "stroke": "#b45276"
+          },
+          {
+            "x": "35",
+            "name": "19329 Exploded Floral Lace LL Bralette",
+            "group": "Shortage",
+            "y": 55,
+            "fill": "#e85e8f",
+            "gradient": "#fd9e83",
+            "stroke": "#b45276"
+          },
+          {
+            "x": "45",
+            "name": "Sports Bra Demi LL",
+            "group": "Shortage",
+            "y": 25,
+            "fill": "#e85e8f",
+            "gradient": "#fd9e83",
+            "stroke": "#b45276"
+          },
+          {
+            "x": "50",
+            "name": "WEW T-shirt and Cool",
+            "group": "Shortage",
+            "y": 60,
+            "fill": "#e85e8f",
+            "gradient": "#fd9e83",
+            "stroke": "#b45276"
+          },
+          {
+            "x": "-51",
+            "name": "18789 Bonded Triangle Banded Bracelets",
+            "group": "Negative Gap",
+            "y": -21,
+            "fill": "#7d6e8f",
+            "gradient": "#bc97cd",
+            "stroke": "#706784"
+          },
+          {
+            "x": "-47",
+            "name": "19328_DATE V-WIRE PU W/ VWIRE",
+            "group": "Negative Gap",
+            "y": -57,
+            "fill": "#7d6e8f",
+            "gradient": "#bc97cd",
+            "stroke": "#706784"
+          },
+          {
+            "x": "-31",
+            "name": "18854_DATE EYELASH OPEN BACK",
+            "group": "Negative Gap",
+            "y": 31,
+            "fill": "#7d6e8f",
+            "gradient": "#bc97cd",
+            "stroke": "#706784"
+          },
+          {
+            "x": "-21",
+            "name": "18453 Strappy Racerback UL Sport",
+            "group": "Negative Gap",
+            "y": -41,
+            "fill": "#7d6e8f",
+            "gradient": "#bc97cd",
+            "stroke": "#706784"
+          },
+          {
+            "x": "-13",
+            "name": "18453 Strappy Racerback UL Sport",
+            "group": "Negative Gap",
+            "y": -53,
+            "fill": "#7d6e8f",
+            "gradient": "#bc97cd",
+            "stroke": "#706784"
+          },
+          {
+            "x": "-3",
+            "name": "18453 Strappy Racerback UL Sport",
+            "group": "Negative Gap",
+            "y": -3,
+            "fill": "#7d6e8f",
+            "gradient": "#bc97cd",
+            "stroke": "#706784"
+          },
+          {
+            "x": "-22",
+            "name": "18453 Strappy Racerback UL Sport",
+            "group": "Negative Gap",
+            "y": -3,
+            "fill": "#7d6e8f",
+            "gradient": "#bc97cd",
+            "stroke": "#706784"
+          },
+          {
+            "x": "-2",
+            "name": "18453 Strappy Racerback UL Sport",
+            "group": "Negative Gap",
+            "y": -2,
+            "fill": "#7d6e8f",
+            "gradient": "#bc97cd",
+            "stroke": "#706784"
+          },
+          {
+            "x": "-23",
+            "name": "18453 Strappy Racerback UL Sport",
+            "group": "Negative Gap",
+            "y": -3,
+            "fill": "#7d6e8f",
+            "gradient": "#bc97cd",
+            "stroke": "#706784"
+          },
+          {
+            "x": "-24",
+            "name": "18453 Strappy Racerback UL Sport",
+            "group": "Negative Gap",
+            "y": -3,
+            "fill": "#7d6e8f",
+            "gradient": "#bc97cd",
+            "stroke": "#706784"
+          },
+          {
+            "x": "-25",
+            "name": "18453 Strappy Racerback UL Sport",
+            "group": "Negative Gap",
+            "y": -3,
+            "fill": "#7d6e8f",
+            "gradient": "#bc97cd",
+            "stroke": "#706784"
+          }
+        ]
+      }
+    }
+  },
+  "PKK": {
+    "Graph": {
+      "Type": "DiwoVisualVsBubbleGraphComponent",
+      "Data": {
+        "title": "Victoria\"s Secret - PKK",
+        "legend": {
+          "isVisible": true,
+          "text": "{{group}}"
+        },
+        "tooltip": {
+          "hasImg": false,
+          "title": [
+            "{{name}}",
+            "<span class='metric'>Contribution</span><span class='number'>{{x}}</span>",
+            "<span class='metric'>Deviation</span><span class='number'>{{y}}</span>"
+          ],
+          "body": []
+        },
+        "x": {
+          "title": "Class - Master Style",
+          "prefix": "",
+          "sufix": "%",
+          "type": "string",
+          "format": ""
+        },
+        "y": {
+          "title": "%",
+          "prefix": "",
+          "sufix": "%",
+          "type": "number",
+          "format": ""
+        },
+        "attrs": {
+          "barWidth": 8,
+          "wrapText": false
+        },
+        "data": [
+          {
+            "x": "5",
+            "name": "Date Bra PU",
+            "group": "Shortage",
+            "y": 5,
+            "fill": "#e85e8f",
+            "gradient": "#fd9e83",
+            "stroke": "#b45276"
+          },
+          {
+            "x": "19",
+            "name": "PK LACE HIGH NECK PU",
+            "group": "Shortage",
+            "y": 29,
+            "fill": "#e85e8f",
+            "gradient": "#fd9e83",
+            "stroke": "#b45276"
+          },
+          {
+            "x": "25",
+            "name": "Sp18724 Ultimate UL Halter",
+            "group": "Shortage",
+            "y": 15,
+            "fill": "#e85e8f",
+            "gradient": "#fd9e83",
+            "stroke": "#b45276"
+          },
+          {
+            "x": "35",
+            "name": "19329 Exploded Floral Lace LL Bralette",
+            "group": "Shortage",
+            "y": 55,
+            "fill": "#e85e8f",
+            "gradient": "#fd9e83",
+            "stroke": "#b45276"
+          },
+          {
+            "x": "45",
+            "name": "Sports Bra Demi LL",
+            "group": "Shortage",
+            "y": 15,
+            "fill": "#e85e8f",
+            "gradient": "#fd9e83",
+            "stroke": "#b45276"
+          },
+          {
+            "x": "50",
+            "name": "WEW T-shirt and Cool",
+            "group": "Shortage",
+            "y": 60,
+            "fill": "#e85e8f",
+            "gradient": "#fd9e83",
+            "stroke": "#b45276"
+          },
+          {
+            "x": "-51",
+            "name": "18789 Bonded Triangle Banded Bracelets",
+            "group": "Negative Gap",
+            "y": -21,
+            "fill": "#7d6e8f",
+            "gradient": "#bc97cd",
+            "stroke": "#706784"
+          },
+          {
+            "x": "-47",
+            "name": "19328_DATE V-WIRE PU W/ VWIRE",
+            "group": "Negative Gap",
+            "y": -47,
+            "fill": "#7d6e8f",
+            "gradient": "#bc97cd",
+            "stroke": "#706784"
+          },
+          {
+            "x": "-31",
+            "name": "18854_DATE EYELASH OPEN BACK",
+            "group": "Negative Gap",
+            "y": 31,
+            "fill": "#7d6e8f",
+            "gradient": "#bc97cd",
+            "stroke": "#706784"
+          },
+          {
+            "x": "-21",
+            "name": "18453 Strappy Racerback UL Sport",
+            "group": "Negative Gap",
+            "y": -61,
+            "fill": "#7d6e8f",
+            "gradient": "#bc97cd",
+            "stroke": "#706784"
+          },
+          {
+            "x": "-13",
+            "name": "18453 Strappy Racerback UL Sport",
+            "group": "Negative Gap",
+            "y": -53,
+            "fill": "#7d6e8f",
+            "gradient": "#bc97cd",
+            "stroke": "#706784"
+          },
+          {
+            "x": "-3",
+            "name": "18453 Strappy Racerback UL Sport",
+            "group": "Negative Gap",
+            "y": -3,
+            "fill": "#7d6e8f",
+            "gradient": "#bc97cd",
+            "stroke": "#706784"
+          },
+          {
+            "x": "-22",
+            "name": "18453 Strappy Racerback UL Sport",
+            "group": "Negative Gap",
+            "y": -2,
+            "fill": "#7d6e8f",
+            "gradient": "#bc97cd",
+            "stroke": "#706784"
+          },
+          {
+            "x": "-2",
+            "name": "18453 Strappy Racerback UL Sport",
+            "group": "Negative Gap",
+            "y": -1,
+            "fill": "#7d6e8f",
+            "gradient": "#bc97cd",
+            "stroke": "#706784"
+          },
+          {
+            "x": "-23",
+            "name": "18453 Strappy Racerback UL Sport",
+            "group": "Negative Gap",
+            "y": -6,
+            "fill": "#7d6e8f",
+            "gradient": "#bc97cd",
+            "stroke": "#706784"
+          },
+          {
+            "x": "-24",
+            "name": "18453 Strappy Racerback UL Sport",
+            "group": "Negative Gap",
+            "y": -9,
+            "fill": "#7d6e8f",
+            "gradient": "#bc97cd",
+            "stroke": "#706784"
+          },
+          {
+            "x": "-25",
+            "name": "18453 Strappy Racerback UL Sport",
+            "group": "Negative Gap",
+            "y": -3,
+            "fill": "#7d6e8f",
+            "gradient": "#bc97cd",
+            "stroke": "#706784"
+          }
+        ]
+      }
+    }
+  }
+}
