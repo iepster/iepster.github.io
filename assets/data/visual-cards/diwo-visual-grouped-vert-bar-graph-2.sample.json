@@ -17,8 +17,8 @@
     "prefix": "",
     "sufix": "",
     "type": "time",
-    "outFormat": "%B - %Y",
-    "inFormat": "%m/%d/%Y"
+    "outFormat": "%b, %d - %Y",
+    "inFormat": "%d/%m/%Y"
   },
   "y": {
     "title": "",
