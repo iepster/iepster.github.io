@@ -37,7 +37,25 @@ module.exports = function () {
 
           // Set line color
           _var.lineColor = function(d) {
-            return d.color != null ? d.color : "#666";
+
+            if(d.color != null && d.color !== "") { return d.color; }
+            else if(d.startColor != null && d.startColor !== "" && d.stopColor != null && d.stopColor !== "") {
+
+              // Set wrapper gradient
+              shared.visualComponents.gradient()
+                ._var(_var)
+                .id("gradient-"+shared.helpers.text.removeSpecial(d.id+d.name))
+                .colors([
+                  { offset:"0%", color: d.startColor },
+                  { offset:"100%", color: d.stopColor }
+                ])
+                .direction('horizontal')
+                .gType('linear')
+                .wrap(_var.defs)
+                .run();
+
+              return 'url("' + "#gradient-"+shared.helpers.text.removeSpecial(d.id+d.name) + '")';
+            } else { return "#666"; }
           }
 
           // Set stroke style function

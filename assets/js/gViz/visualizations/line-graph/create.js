@@ -46,6 +46,11 @@ module.exports = function () {
           _var.g = _var.g.enter().append('g').attr('class', "chart-wrap").merge(_var.g);
           _var.g.attr("transform", `translate(${_var.margin.left},${_var.margin.top})`);
 
+          // Draw defs
+          _var.defs = _var.wrap.selectAll("defs.svg-defs").data(["svg-defs"]);
+          _var.defs.exit().remove();
+          _var.defs = _var.defs.enter().insert('defs',':first-child').attr("class", "svg-defs").merge(_var.defs);
+
           // Draw shadow
           shared.visualComponents.shadow()
             ._var(_var)

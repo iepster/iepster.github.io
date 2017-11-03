@@ -30,6 +30,11 @@ module.exports = function () {
         // Build entire visualizations
         case 'run':
 
+          // Clean wrap gradients
+          shared.visualComponents.gradient()
+            .action('clean')
+            .run();
+
           // Set data array
           var _data = (data == null ? _var.data.data : data)
 

@@ -116,8 +116,8 @@ module.exports = function() {
               _var.data.data.forEach(function(d, i) {
 
                 // Get color
-                var fillColor = d.color;
-                var strokeColor = d.color;
+                var fillColor = d.color != null && d.color !== "" ? d.color : (d.stopColor != null && d.stopColor !== "" ? d.stopColor : "#FFF");
+                var strokeColor = d.color != null && d.color !== "" ? d.color : (d.stopColor != null && d.stopColor !== "" ? d.stopColor : "#FFF");
                 var legend = _var.data.legend != null && _var.data.legend.text != null ? _var.data.legend.text : "{{name}}";
                 var legendStr = "";
 

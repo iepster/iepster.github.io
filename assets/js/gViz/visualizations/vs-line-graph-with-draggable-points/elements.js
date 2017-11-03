@@ -130,11 +130,15 @@ module.exports = function () {
 
             });
 
-            // Bind drag to points groups
-            pointGroups.call(d3.drag()
-              .on("start", _var.dragstarted)
-              .on("drag", _var.dragging)
-              .on("end", _var.dragended));
+            if(isDraggable) {
+
+              // Bind drag to points groups
+              pointGroups.call(d3.drag()
+                .on("start", _var.dragstarted)
+                .on("drag", _var.dragging)
+                .on("end", _var.dragended));
+
+            }
 
           });
 
