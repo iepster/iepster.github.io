@@ -40,7 +40,7 @@
             "x": "5",
             "name": "Date Bra PU",
             "group": "Shortage",
-            "y": 5,
+            "y": 9,
             "fill": "#e85e8f",
             "gradient": "#fd9e83",
             "stroke": "#b45276"
@@ -49,7 +49,7 @@
             "x": "19",
             "name": "PK LACE HIGH NECK PU",
             "group": "Shortage",
-            "y": 39,
+            "y": 32,
             "fill": "#e85e8f",
             "gradient": "#fd9e83",
             "stroke": "#b45276"
@@ -58,7 +58,7 @@
             "x": "25",
             "name": "Sp18724 Ultimate UL Halter",
             "group": "Shortage",
-            "y": 15,
+            "y": 75,
             "fill": "#e85e8f",
             "gradient": "#fd9e83",
             "stroke": "#b45276"
@@ -67,7 +67,7 @@
             "x": "35",
             "name": "19329 Exploded Floral Lace LL Bralette",
             "group": "Shortage",
-            "y": 55,
+            "y": 25,
             "fill": "#e85e8f",
             "gradient": "#fd9e83",
             "stroke": "#b45276"
@@ -76,7 +76,7 @@
             "x": "45",
             "name": "Sports Bra Demi LL",
             "group": "Shortage",
-            "y": 25,
+            "y": 47,
             "fill": "#e85e8f",
             "gradient": "#fd9e83",
             "stroke": "#b45276"
@@ -130,7 +130,7 @@
             "x": "-13",
             "name": "18453 Strappy Racerback UL Sport",
             "group": "Negative Gap",
-            "y": -53,
+            "y": -23,
             "fill": "#7d6e8f",
             "gradient": "#bc97cd",
             "stroke": "#706784"
@@ -139,7 +139,7 @@
             "x": "-3",
             "name": "18453 Strappy Racerback UL Sport",
             "group": "Negative Gap",
-            "y": -3,
+            "y": -7,
             "fill": "#7d6e8f",
             "gradient": "#bc97cd",
             "stroke": "#706784"
@@ -148,7 +148,7 @@
             "x": "-22",
             "name": "18453 Strappy Racerback UL Sport",
             "group": "Negative Gap",
-            "y": -3,
+            "y": -44,
             "fill": "#7d6e8f",
             "gradient": "#bc97cd",
             "stroke": "#706784"
@@ -157,7 +157,7 @@
             "x": "-2",
             "name": "18453 Strappy Racerback UL Sport",
             "group": "Negative Gap",
-            "y": -2,
+            "y": -27,
             "fill": "#7d6e8f",
             "gradient": "#bc97cd",
             "stroke": "#706784"
@@ -234,7 +234,7 @@
             "x": "5",
             "name": "Date Bra PU",
             "group": "Shortage",
-            "y": 5,
+            "y": 9,
             "fill": "#e85e8f",
             "gradient": "#fd9e83",
             "stroke": "#b45276"
@@ -333,7 +333,7 @@
             "x": "-3",
             "name": "18453 Strappy Racerback UL Sport",
             "group": "Negative Gap",
-            "y": -3,
+            "y": -6,
             "fill": "#7d6e8f",
             "gradient": "#bc97cd",
             "stroke": "#706784"

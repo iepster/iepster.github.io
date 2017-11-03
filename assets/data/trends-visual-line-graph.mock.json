@@ -30,8 +30,8 @@
   "data": [{
     "id": "actual",
     "name": "Actual",
-    "color": "#fc9f82",
-    "pointColor": "#fc9f82",
+    "color": "#008fb3",
+    "pointColor": "#003d4d",
     "values": [{
       "x": "10",
       "y": 0.6
@@ -70,7 +70,8 @@
   }, {
     "id": "planned",
     "name": "Planned",
-    "color": "#fa271e",
+    "startColor": "#fc9f82",
+    "stopColor": "#fa271e",
     "pointColor": "#fa271e",
     "values": [{
       "x": "10",
