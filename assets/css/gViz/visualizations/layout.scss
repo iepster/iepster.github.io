@@ -144,7 +144,8 @@
   background-position: 9px 9px;
 
   background-image: url('/assets/images/transparent_grid_rect.png');
-  &.pink { background-image: url('/assets/images/pink_grid_rect.png'); }
+  &.pink { background-image: url('/assets/images/pink_grid_rect.png'); border: none; }
+  &.dotted { background-image: url('/assets/images/transparent_grid_dot.png'); border: none; background-position: 4px 4px; }
 }
 
 // Background grid with cover

@@ -1,0 +1,155 @@
+{
+  "data": {
+    "center": {
+      "topTitle": "Sport Bra",
+      "image": "/assets/images/gViz/visualizations/diwo-visual-bubble-poet-context/bra.png",
+      "bottomTitle": "Week 40"
+    },
+    "topLeft": {
+      "text": "Attribute Analysis",
+      "leftMenu": {
+        "title": "Top Trending <img src='/assets/images/top-trending.png' style='float: right; height: 12px; margin-top: 9px;'/>",
+        "items": [
+          { "text": "Cup Size", "value": "D" },
+          { "text": "Size", "value": "34" },
+          { "text": "Color", "value": "<div style='width: 14px; height: 14px; background-color: #85b5aa; border-radius: 7px; margin-top: 8px; float: right;'></div>" }
+        ]
+      },
+      "visualization": {
+        "component": "DiwoVisualLineGraphComponent",
+        "data": {
+          "legend": {
+            "isVisible": true,
+            "text": "{{name}}"
+          },
+          "tooltip": {
+            "hasImg": true,
+            "muted": true,
+            "propagate": "title",
+            "header": [ "This is a main header" ],
+            "title": [  "<span class='metric'>{{name}} ({{x}})</span><span class='number'>{{y}}</span>"],
+            "body": []
+          },
+          "y": {
+            "title": "",
+            "prefix": "",
+            "sufix": "%",
+            "format": ""
+          },
+          "x": {
+            "title": "",
+            "type": "number",
+            "prefix": "W",
+            "sufix": "",
+            "format": ""
+          },
+          "data": [
+            {
+              "id": "Southeast",
+              "name": "Southeast",
+              "startColor": "#fecf87",
+              "stopColor": "#f9882c",
+              "pointColor": "#f9882c",
+              "pointShape": "diamond",
+              "values": [
+                { "x": "01", "y": 1 },
+                { "x": "02", "y": 2 },
+                { "x": "03", "y": 4 },
+                { "x": "04", "y": 8 },
+                { "x": "05", "y": 5 },
+                { "x": "06", "y": 4 },
+                { "x": "07", "y": 6 }
+              ]
+            },
+            {
+              "id": "Northeast",
+              "name": "Northeast",
+              "startColor": "#d3c4f5",
+              "stopColor": "#7d62bb",
+              "pointColor": "#7d62bb",
+              "pointShape": "diamond",
+              "values": [
+                { "x": "01", "y": 2 },
+                { "x": "02", "y": 4 },
+                { "x": "03", "y": 5 },
+                { "x": "04", "y": 3 },
+                { "x": "05", "y": 4 },
+                { "x": "06", "y": 1 },
+                { "x": "07", "y": 2 }
+              ]
+            },
+            {
+              "id": "Midwest",
+              "name": "Midwest",
+              "startColor": "#8ce0d8",
+              "stopColor": "#2a7e76",
+              "pointColor": "#2a7e76",
+              "pointShape": "diamond",
+              "values": [
+                { "x": "01", "y": 6 },
+                { "x": "02", "y": 5 },
+                { "x": "03", "y": 3 },
+                { "x": "04", "y": 1 },
+                { "x": "05", "y": 2 },
+                { "x": "06", "y": 2 },
+                { "x": "07", "y": 4 }
+              ]
+            },
+            {
+              "id": "Mountain",
+              "name": "Mountain",
+              "startColor": "#d1d2d2",
+              "stopColor": "#636f73",
+              "pointColor": "#636f73",
+              "pointShape": "diamond",
+              "values": [
+                { "x": "01", "y": 7 },
+                { "x": "02", "y": 8 },
+                { "x": "03", "y": 6 },
+                { "x": "04", "y": 6 },
+                { "x": "05", "y": 1 },
+                { "x": "06", "y": 4 },
+                { "x": "07", "y": 3 }
+              ]
+            },
+            {
+              "id": "West",
+              "name": "West",
+              "startColor": "#e699a4",
+              "stopColor": "#d0223c",
+              "pointColor": "#d0223c",
+              "pointShape": "diamond",
+              "values": [
+                { "x": "01", "y": 3 },
+                { "x": "02", "y": 1 },
+                { "x": "03", "y": 2 },
+                { "x": "04", "y": 6 },
+                { "x": "05", "y": 7 },
+                { "x": "06", "y": 7 },
+                { "x": "07", "y": 6 }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "bottomLeft": {
+      "text": "Sales & Stock Analysis"
+    },
+    "topRight": {
+      "text": "Customer Analysis"
+    },
+    "bottomRight": {
+      "text": "Price Point Analysis"
+    },
+    "mostTopLeft": {
+      "image": "/assets/images/gViz/visualizations/diwo-visual-bubble-poet-context/wave.png"
+    },
+    "mostTopRight": {
+      "image": "/assets/images/gViz/visualizations/diwo-visual-bubble-poet-context/women.png"
+    },
+    "mostBottomRight": {
+      "image": "/assets/images/gViz/visualizations/diwo-visual-bubble-poet-context/circle.png"
+    }
+  }
+}
