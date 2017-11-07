@@ -12,6 +12,7 @@ module.exports = function () {
     initialize: require('./initialize.js'),
     barScale: require('./bar-scale.js'),
     create: require('./create.js'),
+    drag: require('./drag.js'),
     elements: require('./elements.js'),
     events: require('./events.js'),
     heatScale: require('./heat-scale.js'),
@@ -39,6 +40,12 @@ module.exports = function () {
   var startPoint  = null;
   var zoom        = null;
 
+  // Event bindings
+  let onHover = function(d) { console.log(d); };
+  let onClick = function(d) { console.log(d); };
+  let onDragStart = function(d) { console.log(d); };
+  let onDragEnd = function(d) { console.log(d); };
+
   // Validate attributes
   var validate = function (step) {
     switch (step) {
@@ -46,6 +53,7 @@ module.exports = function () {
       case 'initialize': return true;
       case 'barScale':   return data != null && data.data != null;
       case 'create':     return data != null && data.data != null;
+      case 'drag':       return data != null && data.data != null;
       case 'elements':   return data != null && data.data != null;
       case 'heatScale':  return data != null && data.data != null;
       case 'heatLayer':  return data != null && data.data != null;
@@ -71,6 +79,7 @@ module.exports = function () {
 
           main('initialize');
           main('style');
+          main('drag');
           main('tiles');
           main('map');
           main('barScale');
@@ -101,6 +110,10 @@ module.exports = function () {
             .tile(tile)
             .startPoint(startPoint)
             .zoom(zoom)
+            .onHover(onHover)
+            .onClick(onClick)
+            .onDragStart(onDragStart)
+            .onDragEnd(onDragEnd)
             .run();
           break;
 
@@ -112,6 +125,16 @@ module.exports = function () {
             ._var(_var)
             .run();
 
+          break;
+
+        // Drag fucntions
+        case 'drag':
+
+          // Initializing drag
+          _var = components.drag()
+            ._var(_var)
+            .components(components)
+            .run();
           break;
 
         // Create initial elements
@@ -204,7 +227,7 @@ module.exports = function () {
   };
 
   // Expose global variables
-  ['_id', '_var', 'action', 'animation','container', 'colors', 'data', 'height', 'margin','mode','width', 'tile', 'startPoint', 'zoom'].forEach(function (key) {
+  ['_id', '_var', 'action', 'animation','container', 'colors', 'data', 'height', 'margin','mode','width', 'tile', 'startPoint', 'zoom','onClick','onHover','onDragStart','onDragEnd'].forEach(function (key) {
 
     // Attach variables to validation function
     validate[key] = function (_) {

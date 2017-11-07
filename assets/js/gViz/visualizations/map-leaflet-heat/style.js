@@ -98,6 +98,52 @@ module.exports = function () {
             return _var.data.bars != null && _var.data.bars.bottomBarColor != null ? _var.data.bars.bottomBarColor : "#999";
           }
 
+          // Set shape path for node
+          _var.pointPath = function(d) {
+
+            // Get radius
+            var r = 5;
+            var dr = r*2;
+            var x  = 0;
+            var y  = _var.barY(d);
+
+            return "M " + (x != null ? x : 0) + " " + (y != null ? y : 0) + " " +
+                   "m -" + r + ", 0 " +
+                   "a " + r + "," + r + " 0 1,0 " + ( r*2) + ",0 " +
+                   "a " + r + "," + r + " 0 1,0 " + (-r*2) + ",0 ";
+
+          }
+
+          // Arrwos color function depending on the point color
+          _var.arrowsColor = function(d) {
+            var barColor = _var.barColor(d);
+            return shared.helpers.colors.isDark(barColor) ? "#FFF" : "#333";
+          }
+
+          // Set shape path for node
+          _var.arrowsPath = function(d) {
+
+            // Get variables values to be used on the path construction
+            var r = 2;
+            var dr = r*2;
+            var x  = 0;
+            var y  = _var.barY(d);
+
+            // Draw arrows path
+            var path = "";
+
+            // Arrow up
+            path += "M " + (x != null ? x : 0) + " " + (((y-1) != null ? (y-1) : 0) - r) + " ";
+            path += "l " + r + ", " + (dr*0.7) + " ";
+            path += "l " + (-dr) + ", " + 0 + " " + "Z";
+
+            // Arrow down
+            path += "M " + ((x != null ? x : 0) - r) + " " + (((y+3) != null ? (y+3) : 0) - r) + " ";
+            path += "l " + dr + ", 0 ";
+            path += "l " + (-r) + ", " + (dr*0.7) + " " + "Z";
+
+            return path
+          }
 
           break;
       }

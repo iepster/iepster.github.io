@@ -63,6 +63,9 @@ module.exports = function () {
             .attr('transform', function(d) { return "translate("+_var.map.latLngToLayerPoint(d).x+","+_var.map.latLngToLayerPoint(d).y+")"; })
             .each(function (e, i) {
 
+              // Initialize flags
+              var isDraggable = e.draggable != null && e.draggable === true;
+
               // Draw bottom bars
               _var.bottomBars = d3.select(this).selectAll(".bottom-bar").data([e]);
               _var.bottomBars.exit().remove();
@@ -79,6 +82,7 @@ module.exports = function () {
               _var.bars.exit().remove();
               _var.bars = _var.bars.enter().append("rect").attr("class", "bar").merge(_var.bars);
 
+              // Update bars attributes
               _var.bars.transition()
                 .attr('x', function(d) { return -_var.barWidth(d)/2; })
                 .attr('y', _var.barY)
@@ -86,10 +90,55 @@ module.exports = function () {
                 .attr('height', _var.barHeight)
                 .attr('fill', _var.barColor)
 
+              // Create points/arrows groups
+              var pointEls = d3.select(this).selectAll(".point-element.element").data(isDraggable ? [e] : []);
+              pointEls.exit().remove();
+              pointEls = pointEls.enter().append("g").attr("class", "point-element element").merge(pointEls);
+              pointEls.style('display', 'none').each(function(pg) {
+
+                // Create point
+                var points = d3.select(this).selectAll(".point.element").data([pg]);
+                points.exit().remove();
+                points = points.enter().append("path").attr("class", "point element").merge(points);
+                points.transition().duration(200)
+                  .attr("d", function(d) { return _var.pointPath(d); })
+                  .attr("fill", _var.barColor)
+
+                // Create point arrows for draggable lines
+                var arrows = d3.select(this).selectAll(".arrow.element").data([pg]);
+                arrows.exit().remove();
+                arrows = arrows.enter().append("path").attr("class", "arrow element").merge(arrows);
+                arrows.transition().duration(200)
+                  .attr("d", function(d) { return _var.arrowsPath(d); })
+                  .attr("fill", _var.arrowsColor)
+
+                // Create point
+                var bgPoints = d3.select(this).selectAll(".bg-point.element").data([pg]);
+                bgPoints.exit().remove();
+                bgPoints = bgPoints.enter().append("circle").attr("class", "bg-point element").merge(bgPoints);
+                bgPoints.transition().duration(200)
+                  .attr("cx", 0)
+                  .attr("cy", _var.barY)
+                  .attr("r", 5)
+                  .attr("fill", "transparent")
+
+              });
+
+              if(isDraggable) {
+
+                // Bind drag to points groups
+                pointEls.call(d3.drag()
+                  .on("start", _var.dragstarted)
+                  .on("drag", _var.dragging)
+                  .on("end", _var.dragended));
+
+              }
+
             });
 
           // Hover action
-          barsGroup.on('mouseover', function(e) {
+          barsGroup
+            .on('mouseover', function(e) {
 
               // Set hovered node
               _var.hovered  = e.id;
@@ -101,6 +150,9 @@ module.exports = function () {
                 .components(components)
                 .node(e)
                 .run();
+
+              // Trigger onHover attribute function
+              if(_var.onHover != null && typeof _var.onHover === "function") { _var.onHover(e); }
 
             // Mouseout action
             }).on('mouseout', function(e) {
@@ -115,6 +167,12 @@ module.exports = function () {
                 .components(components)
                 .node(e)
                 .run();
+
+            // Click action
+            }).on('click', function(e) {
+
+              // Trigger onClick attribute function
+              if(_var.onClick != null && typeof _var.onClick === "function") { _var.onClick(e); }
 
             });
 

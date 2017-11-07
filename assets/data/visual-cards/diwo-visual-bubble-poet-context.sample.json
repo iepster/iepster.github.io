@@ -1,13 +1,26 @@
 {
   "data": {
+    "backgroundColor": "#fdebf4",
     "center": {
+      "backgroundColor": "#f7b7d2",
+      "borderColor": "#f7b7d2",
+      "color": "#FFF",
       "topTitle": "Sport Bra",
       "image": "/assets/images/gViz/visualizations/diwo-visual-bubble-poet-context/bra.png",
       "bottomTitle": "Week 40"
     },
     "topLeft": {
+      "backgroundColor": "#FFF",
+      "borderColor": "#e96293",
+      "color": "#fa86ce",
       "text": "Attribute Analysis",
+      "header": {
+        "backgroundColor": "#f6b7d1",
+        "color": "#FFF",
+        "text": "Attribute Analysis"
+      },
       "leftMenu": {
+        "backgroundColor": "#f7f7f7",
         "title": "Top Trending <img src='/assets/images/top-trending.png' style='float: right; height: 12px; margin-top: 9px;'/>",
         "items": [
           { "text": "Cup Size", "value": "D" },
@@ -16,6 +29,7 @@
         ]
       },
       "visualization": {
+        "backgroundColor": "#FFF",
         "component": "DiwoVisualLineGraphComponent",
         "data": {
           "legend": {
@@ -134,22 +148,42 @@
       }
     },
     "bottomLeft": {
+      "backgroundColor": "#FFF",
+      "borderColor": "#e96293",
+      "color": "#fa86ce",
       "text": "Sales & Stock Analysis"
     },
     "topRight": {
+      "backgroundColor": "#FFF",
+      "borderColor": "#e96293",
+      "color": "#fa86ce",
       "text": "Customer Analysis"
     },
     "bottomRight": {
+      "backgroundColor": "#FFF",
+      "borderColor": "#e96293",
+      "color": "#fa86ce",
       "text": "Price Point Analysis"
     },
     "mostTopLeft": {
+      "backgroundColor": "#f2d7e3",
+      "borderColor": "#f2d7e3",
       "image": "/assets/images/gViz/visualizations/diwo-visual-bubble-poet-context/wave.png"
     },
     "mostTopRight": {
+      "backgroundColor": "#f2d7e3",
+      "borderColor": "#f2d7e3",
       "image": "/assets/images/gViz/visualizations/diwo-visual-bubble-poet-context/women.png"
     },
     "mostBottomRight": {
+      "backgroundColor": "#f2d7e3",
+      "borderColor": "#f2d7e3",
       "image": "/assets/images/gViz/visualizations/diwo-visual-bubble-poet-context/circle.png"
+    },
+    "connectors": "#e96293",
+    "smallBubbles": {
+      "backgroundColor": "#f2d7e3",
+      "borderColor": "#f2d7e3"
     }
   }
 }

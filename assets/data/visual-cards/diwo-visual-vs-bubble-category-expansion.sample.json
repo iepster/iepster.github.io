@@ -1,0 +1,84 @@
+{
+  "data": {
+    "backgroundColor": "#fdebf4",
+    "center": {
+      "backgroundColor": "#f7b7d2",
+      "borderColor": "#f7b7d2",
+      "color": "#FFF",
+      "topTitle": "Revenue Impact",
+      "topValue": "$2.3M",
+      "image": "/assets/images/gViz/visualizations/diwo-visual-vs-bubble-category-expansion/bra.png",
+      "imageBorderColor": "#FFF",
+      "bottomTitle": "Profitability Impact",
+      "bottomValue": "$800K"
+    },
+    "left": {
+      "backgroundColor": "#FFF",
+      "borderColor": "#e96293",
+      "color": "#e51c2a",
+      "text": "Customer Choices",
+      "image": "/assets/images/gViz/visualizations/diwo-visual-vs-bubble-category-expansion/customer-choices.png",
+      "expanded": {
+        "header": {
+          "text": "<img style='display: block; float: left; margin-right: 10px; height: 30px;' src='/assets/images/gViz/visualizations/diwo-visual-vs-bubble-category-expansion/customer-choices.png' /><span style='height:30px; line-height: 30px; display: block; width: auto; float: left; '>Customer Choices</span>",
+          "backgroundColor": "#FFF",
+          "color": "#e51c2a"
+        },
+        "visualization": {
+          "backgroundColor": "#FFF",
+          "borderColor": "#dddbdd",
+          "color": "#666",
+          "textAlign": "center",
+          "data": [
+            [
+              "<span style='color:#ea729e;'>Solid Color</span>",
+              "<span style='width: 100%; font-weight: lighter;'>Pure Black (9ZF)</span><span style='display: block; width: 35px; height: 35px; background-color: #000; border-radius: 50%; margin: 5px auto 0px;'></span>",
+              "<span style='width: 100%;font-weight: lighter;'>Beis (B15)</span><span style='display: block; width: 35px; height: 35px; background-color: #edd9cb; border-radius: 50%; margin: 5px auto 0px;'></span>",
+              "<span style='width: 100%;font-weight: lighter;'>Red Pepper (D15)</span><span style='display: block; width: 35px; height: 35px; background-color: #e9032c; border-radius: 50%; margin: 5px auto 0px;'></span>"
+            ],
+            [
+              "<span style='color:#ea729e;'>Prints</span>",
+              "<span style='width: 100%; font-weight: lighter;'>Floral Pink</span><span style='display: block; width: 35px; height: 35px; background-color: #000; border-radius: 50%; margin: 5px auto 0px;'></span>",
+              "<span style='width: 100%;font-weight: lighter;'>Tropical Print Insignia</span><span style='display: block; width: 35px; height: 35px; background-color: #edd9cb; border-radius: 50%; margin: 5px auto 0px;'></span>",
+              "<span style='width: 100%;font-weight: lighter;'>Black (9ZF)</span><span style='display: block; width: 35px; height: 35px; background-color: #e9032c; border-radius: 50%; margin: 5px auto 0px;'></span>"
+            ],
+            ["<span style='color:#ea729e;'>Fabric</span>","<span style='padding: 4px 10px; background-color: #f6d9e9; color: #ea729e;'>Cotton</span>","<span style='padding: 4px 10px; background-color: #f6d9e9; color: #ea729e;'>Nylon</span>","<span style='padding: 4px 10px; background-color: #f6d9e9; color: #ea729e;'>Silk</span>"],
+            ["<span style='color:#ea729e;'>Form</span>","<span style='padding: 4px 10px; background-color: #f6d9e9; color: #ea729e;'>Triangle</span>","<span style='padding: 4px 10px; background-color: #f6d9e9; color: #ea729e;'>Strapless</span>",""]
+          ]
+        }
+      }
+    },
+    "right": {
+      "backgroundColor": "#FFF",
+      "borderColor": "#e96293",
+      "color": "#e51c2a",
+      "text": "New Combination Insights",
+      "image": "/assets/images/gViz/visualizations/diwo-visual-vs-bubble-category-expansion/new-combination-insights.png",
+      "expanded": {
+        "header": {
+          "text": "<img style='display: block; float: left; margin-right: 10px; height: 30px;' src='/assets/images/gViz/visualizations/diwo-visual-vs-bubble-category-expansion/new-combination-insights.png' /><span style='height:30px; line-height: 30px; display: block; width: auto; float: left; '>New Combination Insights</span>",
+          "backgroundColor": "#FFF",
+          "color": "#e51c2a"
+        },
+        "visualization": {
+          "backgroundColor": "#FFF",
+          "borderColor": "#dddbdd",
+          "color": "#666",
+          "textAlign": "left",
+          "data": [
+            ["Most rewarding combination will be Strappy LL Pink Floral in Sports Bra."],
+            ["More than 50% of new combinations belongs to WEW Push-up Triangular Strappy style"],
+            ["55% of new combinations have black color attribute. 80% of the new combinations have cotton fabric attribute."],
+            ["Most impacting stores are located in Mid West and Southeast."]
+          ]
+        }
+      }
+    },
+    "connectors": "#e96293",
+    "backgroundBubbles": {
+      "backgroundColor": "#fef2f8",
+      "borderColor": "#fef2f8",
+      "opacity": 1
+    }
+  }
+}

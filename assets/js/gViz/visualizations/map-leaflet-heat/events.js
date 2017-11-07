@@ -36,6 +36,8 @@ module.exports = function () {
 
           // Set shapes and bars
           var bars   = _var.g.select('.chart-elements').selectAll('.bar, .bottom-bar');
+          var pointEls = _var.g.select('.chart-elements').selectAll('.point-element');
+          var points = _var.g.select('.chart-elements').selectAll('.point');
 
           // Store node
           _node = node;
@@ -51,6 +53,13 @@ module.exports = function () {
                 bars.transition()
                   .style('opacity', function(g) { return g.id === node.id ? 1 : 0.2; })
                   .style("filter", function(g) { return g === node ? "url(#"+_var.shadowId+")" : ""; })
+
+                // Show / Hide point groups
+                pointEls
+                  .style('display', function(g) { return g.id === node.id && node.draggable != null && node.draggable === true ? 'block' : 'none'; })
+
+                // Fade points
+                points.transition().style("filter", function(g) { return g === node ? "url(#"+_var.shadowId+")" : ""; })
 
                 // Set x and y position
                 var y = 70;
@@ -89,6 +98,12 @@ module.exports = function () {
 
               // Reset opacity and filter
               bars.transition().style('opacity', 1).style("filter", "")
+
+              // Show / Hide point groups
+              pointEls.style('display', 'none')
+
+              // Fade points
+              points.transition().style("filter", "")
 
               // Set bars component
               shared.visualComponents.tooltipTable()

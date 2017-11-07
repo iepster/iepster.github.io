@@ -21,6 +21,12 @@ module.exports = function() {
   var startPoint  = null;
   var zoom        = null;
 
+  // Event bindings
+  let onHover = function(d) { console.log(d); };
+  let onClick = function(d) { console.log(d); };
+  let onDragStart = function(d) { console.log(d); };
+  let onDragEnd = function(d) { console.log(d); };
+
   // Validate attributes
   var validate = function(step) {
     switch (step) {
@@ -47,6 +53,10 @@ module.exports = function() {
           _var.colors = colors;
           _var.margin = margin;
           _var.mode  = mode;
+          _var.onHover = onHover;
+          _var.onClick = onClick;
+          _var.onDragStart = onDragStart;
+          _var.onDragEnd = onDragEnd;
 
           // Id for shadows
           _var.shadowId = `vis-shadow-${Math.floor(Math.random() * ((1000000000 - 5) + 1)) + 5}`
@@ -97,7 +107,7 @@ module.exports = function() {
   };
 
   // Expose global variables
-  ['_id','_var','animation','container','colors','data','height','margin','mode','width', 'tile', 'startPoint', 'zoom'].forEach(function(key) {
+  ['_id','_var','animation','container','colors','data','height','margin','mode','width', 'tile', 'startPoint', 'zoom','onClick','onHover','onDragStart','onDragEnd'].forEach(function(key) {
 
     // Attach variables to validation function
     validate[key] = function(_) {
