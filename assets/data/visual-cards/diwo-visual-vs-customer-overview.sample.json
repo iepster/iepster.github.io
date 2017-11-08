@@ -7,7 +7,7 @@
       "color": "#FFF",
       "content": "<img src='/assets/images/gViz/visualizations/diwo-visual-bubble-poet-context/women.png' style='height: 100%; display: block; margin: 0px auto;' />"
     },
-    "right": {
+    "left": {
       "borderColor": "#ee7ca8",
       "items": [
         {
