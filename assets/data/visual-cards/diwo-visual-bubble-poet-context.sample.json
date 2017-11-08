@@ -15,136 +15,66 @@
       "color": "#fa86ce",
       "text": "Attribute Analysis",
       "header": {
-        "backgroundColor": "#f6b7d1",
+        "backgroundColor": "#856089",
         "color": "#FFF",
         "text": "Attribute Analysis"
       },
-      "leftMenu": {
-        "backgroundColor": "#f7f7f7",
-        "title": "Top Trending <img src='/assets/images/top-trending.png' style='float: right; height: 12px; margin-top: 9px;'/>",
-        "items": [
-          { "text": "Cup Size", "value": "D" },
-          { "text": "Size", "value": "34" },
-          { "text": "Color", "value": "<div style='width: 14px; height: 14px; background-color: #85b5aa; border-radius: 7px; margin-top: 8px; float: right;'></div>" }
-        ]
-      },
       "visualization": {
-        "backgroundColor": "#FFF",
-        "component": "DiwoVisualLineGraphComponent",
-        "data": {
-          "legend": {
-            "isVisible": true,
-            "text": "{{name}}"
+        "backgroundColor": "#f9f9f9",
+        "component": "DiwoVisualSimpleTable",
+        "data": [
+          {
+            "title": "Attribute Trends",
+            "inline": true,
+            "titleBackgroundColor": "transparent",
+            "titleBorderColor": "transparent",
+            "backgroundColor": "transparent",
+            "borderColor": "#ececec",
+            "color": "#323232",
+            "rowItems": [
+              { "text": "Color (Solid)", "highlight": false },
+              { "text": "Color (Print)", "highlight": false },
+              { "text": "Size", "highlight": false },
+              { "text": "Fabric", "highlight": false },
+              { "text": "Lining", "highlight": false },
+              { "text": "Lace", "highlight": false }
+            ]
           },
-          "tooltip": {
-            "hasImg": true,
-            "muted": true,
-            "propagate": "title",
-            "header": [ "This is a main header" ],
-            "title": [  "<span class='metric'>{{name}} ({{x}})</span><span class='number'>{{y}}</span>"],
-            "body": []
+          {
+            "title": "Top <img src='/assets/images/top-trending-green.png' style='height: 12px; margin: 4px 0px 0px 10px;'/>",
+            "inline": true,
+            "titleBackgroundColor": "transparent",
+            "titleBorderColor": "#ececec",
+            "backgroundColor": "#e5e5e5",
+            "color": "#323232",
+            "textAlign": "center",
+            "rowItems": [
+              { "text": "Black", "highlight": false },
+              { "text": "Triangles", "highlight": false },
+              { "text": "Medium", "highlight": false },
+              { "text": "Soft Cotton", "highlight": false },
+              { "text": "Light", "highlight": false },
+              { "text": "Embroidery", "highlight": false }
+            ]
           },
-          "y": {
-            "title": "",
-            "prefix": "",
-            "sufix": "%",
-            "format": ""
-          },
-          "x": {
-            "title": "",
-            "type": "number",
-            "prefix": "W",
-            "sufix": "",
-            "format": ""
-          },
-          "data": [
-            {
-              "id": "Southeast",
-              "name": "Southeast",
-              "startColor": "#fecf87",
-              "stopColor": "#f9882c",
-              "pointColor": "#f9882c",
-              "pointShape": "diamond",
-              "values": [
-                { "x": "01", "y": 1 },
-                { "x": "02", "y": 2 },
-                { "x": "03", "y": 4 },
-                { "x": "04", "y": 8 },
-                { "x": "05", "y": 5 },
-                { "x": "06", "y": 4 },
-                { "x": "07", "y": 6 }
-              ]
-            },
-            {
-              "id": "Northeast",
-              "name": "Northeast",
-              "startColor": "#d3c4f5",
-              "stopColor": "#7d62bb",
-              "pointColor": "#7d62bb",
-              "pointShape": "diamond",
-              "values": [
-                { "x": "01", "y": 2 },
-                { "x": "02", "y": 4 },
-                { "x": "03", "y": 5 },
-                { "x": "04", "y": 3 },
-                { "x": "05", "y": 4 },
-                { "x": "06", "y": 1 },
-                { "x": "07", "y": 2 }
-              ]
-            },
-            {
-              "id": "Midwest",
-              "name": "Midwest",
-              "startColor": "#8ce0d8",
-              "stopColor": "#2a7e76",
-              "pointColor": "#2a7e76",
-              "pointShape": "diamond",
-              "values": [
-                { "x": "01", "y": 6 },
-                { "x": "02", "y": 5 },
-                { "x": "03", "y": 3 },
-                { "x": "04", "y": 1 },
-                { "x": "05", "y": 2 },
-                { "x": "06", "y": 2 },
-                { "x": "07", "y": 4 }
-              ]
-            },
-            {
-              "id": "Mountain",
-              "name": "Mountain",
-              "startColor": "#d1d2d2",
-              "stopColor": "#636f73",
-              "pointColor": "#636f73",
-              "pointShape": "diamond",
-              "values": [
-                { "x": "01", "y": 7 },
-                { "x": "02", "y": 8 },
-                { "x": "03", "y": 6 },
-                { "x": "04", "y": 6 },
-                { "x": "05", "y": 1 },
-                { "x": "06", "y": 4 },
-                { "x": "07", "y": 3 }
-              ]
-            },
-            {
-              "id": "West",
-              "name": "West",
-              "startColor": "#e699a4",
-              "stopColor": "#d0223c",
-              "pointColor": "#d0223c",
-              "pointShape": "diamond",
-              "values": [
-                { "x": "01", "y": 3 },
-                { "x": "02", "y": 1 },
-                { "x": "03", "y": 2 },
-                { "x": "04", "y": 6 },
-                { "x": "05", "y": 7 },
-                { "x": "06", "y": 7 },
-                { "x": "07", "y": 6 }
-              ]
-            }
-          ]
-        }
+          {
+            "title": "Bottom <img src='/assets/images/bottom-trending-red.png' style='height: 12px; margin: 4px 0px 0px 10px;'/>",
+            "inline": true,
+            "titleBackgroundColor": "transparent",
+            "titleBorderColor": "#ececec",
+            "backgroundColor": "#e5e5e5",
+            "color": "#323232",
+            "textAlign": "center",
+            "rowItems": [
+              { "text": "Purple", "highlight": false },
+              { "text": "Floral", "highlight": false },
+              { "text": "Small", "highlight": false },
+              { "text": "Nylon", "highlight": false },
+              { "text": "Unlined", "highlight": false },
+              { "text": "Light", "highlight": false }
+            ]
+          }
+        ]
       }
     },
     "bottomLeft": {
@@ -157,13 +87,155 @@
       "backgroundColor": "#FFF",
       "borderColor": "#e96293",
       "color": "#fa86ce",
-      "text": "Customer Analysis"
+      "text": "Customer Analysis",
+      "header": {
+        "backgroundColor": "#856089",
+        "color": "#FFF",
+        "text": "Customer Analysis"
+      },
+      "visualization": {
+        "backgroundColor": "#FFF",
+        "component": "DiwoVisualVsCustomerOverviewComponent",
+        "data": {
+          "data": {
+           "backgroundColor": "#f9f9f9",
+           "bubble": {
+             "backgroundColor": "#f7b7d2",
+             "borderColor": "#ee7ca8",
+             "color": "#FFF",
+             "content": "<img src='/assets/images/gViz/visualizations/diwo-visual-bubble-poet-context/women.png' style='height: 100%; display: block; margin: 0px auto;' />"
+           },
+           "right": {
+             "borderColor": "#ee7ca8",
+             "items": [
+               {
+                 "topText": {
+                   "backgroundColor": "#f6b8d0",
+                   "borderColor": "#f6b8d0",
+                   "color": "#FFF",
+                   "content": "<div style='width: 100%; text-align: center;'>Age</div>"
+                 },
+                 "bottomText": {
+                   "backgroundColor": "#f9f9f9",
+                   "borderColor": "#f9f9f9",
+                   "color": "#9196a5",
+                   "content": "<div style='width: 100%; text-align: center;'>21 yrs - 25 yrs</div>"
+                 }
+               },
+               {
+                 "topText": {
+                   "backgroundColor": "#f6b8d0",
+                   "borderColor": "#f6b8d0",
+                   "color": "#FFF",
+                   "content": "<div style='width: 100%; text-align: center;'>Income</div>"
+                 },
+                 "bottomText": {
+                   "backgroundColor": "#f9f9f9",
+                   "borderColor": "#f9f9f9",
+                   "color": "#9196a5",
+                   "content": "<div style='width: 100%; text-align: center;'>$80 K - $110 K</div>"
+                 }
+               },
+               {
+                 "topText": {
+                   "backgroundColor": "#f6b8d0",
+                   "borderColor": "#f6b8d0",
+                   "color": "#FFF",
+                   "content": "<div style='width: 100%; text-align: center;'>Average Basket Value</div>"
+                 },
+                 "bottomText": {
+                   "backgroundColor": "#f9f9f9",
+                   "borderColor": "#f9f9f9",
+                   "color": "#9196a5",
+                   "content": "<div style='width: 100%; text-align: center;'>$65</div>"
+                 }
+               },
+               {
+                 "topText": {
+                   "backgroundColor": "#f6b8d0",
+                   "borderColor": "#f6b8d0",
+                   "color": "#FFF",
+                   "content": "<div style='width: 100%; text-align: center;'>Lifestyle</div>"
+                 },
+                 "bottomText": {
+                   "backgroundColor": "#f9f9f9",
+                   "borderColor": "#f9f9f9",
+                   "color": "#9196a5",
+                   "content": "<div style='width: 100%; text-align: center;'>Trendsetter, Athletic, Social</div>"
+                 }
+               }
+             ]
+           }
+          }
+        }
+      }
     },
     "bottomRight": {
       "backgroundColor": "#FFF",
       "borderColor": "#e96293",
       "color": "#fa86ce",
-      "text": "Price Point Analysis"
+      "text": "Price Point Analysis",
+      "header": {
+        "backgroundColor": "#856089",
+        "color": "#FFF",
+        "text": "Price Point Analysis"
+      },
+      "visualization": {
+        "backgroundColor": "#FFF",
+        "component": "DiwoVisualDonutWithToggleComponent",
+        "data": {
+          "toggle": {
+            "isVisible": false
+          },
+          "legend": {
+            "isVisible": true,
+            "text": "{{name}}"
+          },
+          "tooltip": {
+            "hasPercentage": false,
+            "title": "{{name}}"
+          },
+          "attrs": {
+            "radius": 30,
+            "muted": false,
+            "arcOpacity": 0.8
+          },
+          "x1": {
+            "title": "Sales Mix %",
+            "value": "sum",
+            "color": "#81638c",
+            "prefix": "",
+            "sufix": " %",
+            "format": "locale"
+          },
+          "data": [
+            {
+                "id": "donut-35-45",
+                "name": "$35-$45",
+                "color": "#f7b9ce",
+                "x1": 33
+            },
+            {
+                "id": "donut-18-25",
+                "name": "$18-$25",
+                "color": "#f7c9dd",
+                "x1": 27
+            },
+            {
+                "id": "donut-45-60",
+                "name": "$45-$60",
+                "color": "#f9d8e5",
+                "x1": 24
+            },
+            {
+                "id": "donut-25-35",
+                "name": "$35-$45",
+                "color": "#f9ecf2",
+                "x1": 16
+            }
+          ]
+        }
+      }
     },
     "mostTopLeft": {
       "backgroundColor": "#f2d7e3",

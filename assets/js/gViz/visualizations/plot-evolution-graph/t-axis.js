@@ -98,7 +98,7 @@ module.exports = function () {
                 .attr('text-anchor', 'middle')
                 .attr("x", function(d) { return (d.x1 - d.x0)/2; })
                 .attr("y", function(d) { return (d.y1 - d.y0)/2 + 3; })
-                .style('font-size', function(d) { return d.children == null || d.children.length === 0 ? "9px" : "10px"; })
+                .style('font-size', function(d) { return d.children == null || d.children.length === 0 ? "11px" : "11px"; })
                 .text(function(d) { return d.data.name; })
 
             });
