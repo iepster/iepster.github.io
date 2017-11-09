@@ -19,9 +19,6 @@ module.exports = function () {
   let onHover = function(d) { console.log(d); };
   let onClick = function(d) { console.log(d); };
 
-  // Specifics
-  let totals = true;
-
   // Validate attributes
   let validate = function (step) {
     switch (step) {

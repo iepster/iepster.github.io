@@ -81,7 +81,166 @@
       "backgroundColor": "#FFF",
       "borderColor": "#e96293",
       "color": "#fa86ce",
-      "text": "Sales & Stock Analysis"
+      "text": "Sales & Stock Analysis",
+      "header": {
+        "backgroundColor": "#856089",
+        "color": "#FFF",
+        "text": "Customer Analysis"
+      },
+      "visualization": {
+        "backgroundColor": "#FFF",
+        "component": "DiwoVisualVsSalesStockAnalysisComponent",
+        "data": {
+          "statsData": [
+            {
+              "title": "Sales",
+              "value": "$2.3M"
+            },
+            {
+              "title": "Units",
+              "value": "9250"
+            },
+            {
+              "title": "STS Ratio",
+              "value": "1.1"
+            },
+            {
+              "title": "Profitability",
+              "value": "$1.2M"
+            }
+          ],
+          "lineGraphData": {
+            "legend": {
+              "isVisible": true,
+              "text": "{{name}}"
+            },
+            "tooltip": {
+              "hasImg": true,
+              "muted": true,
+              "propagate": "title",
+              "header": [ "This is a main header" ],
+              "title": [  "<span class='metric'>{{name}} ({{x}})</span><span class='number'>{{y}}</span>"],
+              "body": []
+            },
+            "y": {
+              "title": "Units (K)",
+              "prefix": "",
+              "sufix": "",
+              "format": "",
+              "min": 0,
+              "max": 4
+            },
+            "x": {
+              "title": "Weeks",
+              "type": "number",
+              "prefix": "",
+              "sufix": "",
+              "format": ""
+            },
+            "data": [
+              {
+                "id": "actual",
+                "name": "Actual",
+                "startColor": "#7fc8c4",
+                "stopColor": "#1a6f67",
+                "pointColor": "#1a6f67",
+                "pointSize": "2",
+                "values": [
+                  { "x": "16", "y": 2 },
+                  { "x": "17", "y": 3 },
+                  { "x": "18", "y": 1 },
+                  { "x": "19", "y": 3 },
+                  { "x": "20", "y": 2 },
+                  { "x": "21", "y": 1 },
+                  { "x": "22", "y": 0 },
+                  { "x": "23", "y": 0 },
+                  { "x": "24", "y": 2 },
+                  { "x": "25", "y": 1 },
+                  { "x": "26", "y": 3.5 },
+                  { "x": "27", "y": 2 },
+                  { "x": "28", "y": 1 },
+                  { "x": "29", "y": 2 }
+                ]
+              },
+              {
+                "id": "planned",
+                "name": "Planned",
+                "startColor": "#d5d1da",
+                "stopColor": "#657072",
+                "pointColor": "#657072",
+                "pointSize": "2",
+                "values": [
+                  { "x": "16", "y": 1 },
+                  { "x": "17", "y": 2 },
+                  { "x": "18", "y": 3 },
+                  { "x": "19", "y": 2 },
+                  { "x": "20", "y": 1 },
+                  { "x": "21", "y": 1 },
+                  { "x": "22", "y": 2 },
+                  { "x": "23", "y": 2 },
+                  { "x": "24", "y": 3 },
+                  { "x": "25", "y": 3 },
+                  { "x": "26", "y": 1.5 },
+                  { "x": "27", "y": 3 },
+                  { "x": "28", "y": 2 },
+                  { "x": "29", "y": 3 }
+                ]
+              }
+            ]
+          },
+          "brushData": {
+            "style": {
+              "backgroundColor": "#FFF",
+              "brush": {
+                "color": "#846288",
+                "backgroundColor": "#FFF",
+                "brushBackgroundColor": "#f5d9e9",
+                "borderColor": "#cdc1cf",
+                "arrowsColor": "#e96997"
+              },
+              "nodes": {
+                "color": "#846288",
+                "backgroundColor": "#FFF",
+                "borderColor": "#846288",
+                "hoveredColor": "#eb719b",
+                "hoveredBackgroundColor": "#FFF",
+                "selectedColor": "#eb719b",
+                "selectedBackgroundColor": "#FFF"
+              }
+            },
+            "data": [
+              {
+                "id": "last-week",
+                "name": "Last Week",
+                "values": [16,22],
+                "children": [
+                  { "id": "day-16", "name": "16", "values": [16,16] },
+                  { "id": "day-17", "name": "17", "values": [17,17] },
+                  { "id": "day-18", "name": "18", "values": [18,18] },
+                  { "id": "day-19", "name": "19", "values": [19,19] },
+                  { "id": "day-20", "name": "20", "values": [20,20] },
+                  { "id": "day-21", "name": "21", "values": [21,21] },
+                  { "id": "day-22", "name": "22", "values": [22,22] }
+                ]
+              },
+              {
+                "id": "this-week",
+                "name": "This Week",
+                "values": [23,29],
+                "children": [
+                  { "id": "day-23", "name": "23", "values": [23,23] },
+                  { "id": "day-24", "name": "24", "values": [24,24] },
+                  { "id": "day-25", "name": "25", "values": [25,25] },
+                  { "id": "day-26", "name": "26", "values": [26,26] },
+                  { "id": "day-27", "name": "27", "values": [27,27] },
+                  { "id": "day-28", "name": "28", "values": [28,28] },
+                  { "id": "day-29", "name": "29", "values": [29,29] }
+                ]
+              }
+            ]
+          }
+        }
+      }
     },
     "topRight": {
       "backgroundColor": "#FFF",
