@@ -39,11 +39,11 @@
             [
               "<span style='color:#ea729e;'>Prints</span>",
               "<span style='width: 100%; font-weight: lighter;'>Floral Pink</span><span style='display: block; width: 35px; height: 35px; background-color: #000; border-radius: 50%; margin: 5px auto 0px;'></span>",
-              "<span style='width: 100%;font-weight: lighter;'>Tropical Print Insignia</span><span style='display: block; width: 35px; height: 35px; background-color: #edd9cb; border-radius: 50%; margin: 5px auto 0px;'></span>",
+              "<span style='width: 100%;font-weight: lighter; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;'>Tropical Print Insignia</span><span style='display: block; width: 35px; height: 35px; background-color: #edd9cb; border-radius: 50%; margin: 5px auto 0px;'></span>",
               "<span style='width: 100%;font-weight: lighter;'>Black (9ZF)</span><span style='display: block; width: 35px; height: 35px; background-color: #e9032c; border-radius: 50%; margin: 5px auto 0px;'></span>"
             ],
-            ["<span style='color:#ea729e;'>Fabric</span>","<span style='padding: 4px 10px; background-color: #f6d9e9; color: #ea729e;'>Cotton</span>","<span style='padding: 4px 10px; background-color: #f6d9e9; color: #ea729e;'>Nylon</span>","<span style='padding: 4px 10px; background-color: #f6d9e9; color: #ea729e;'>Silk</span>"],
-            ["<span style='color:#ea729e;'>Form</span>","<span style='padding: 4px 10px; background-color: #f6d9e9; color: #ea729e;'>Triangle</span>","<span style='padding: 4px 10px; background-color: #f6d9e9; color: #ea729e;'>Strapless</span>",""]
+            ["<span style='color:#ea729e;'>Fabric</span>","<span style='padding: 4px 10px; background-color: #f6d9e9; color: #ea729e; width: auto; margin: 0px auto; display: inline-block;'>Cotton</span>","<span style='padding: 4px 10px; background-color: #f6d9e9; color: #ea729e; width: auto; margin: 0px auto; display: inline-block;'>Nylon</span>","<span style='padding: 4px 10px; background-color: #f6d9e9; color: #ea729e; width: auto; margin: 0px auto; display: inline-block;'>Silk</span>"],
+            ["<span style='color:#ea729e;'>Form</span>","<span style='padding: 4px 10px; background-color: #f6d9e9; color: #ea729e; width: auto; margin: 0px auto; display: inline-block;'>Triangle</span>","<span style='padding: 4px 10px; background-color: #f6d9e9; color: #ea729e;' width: auto; margin: 0px auto; display: inline-block;>Strapless</span>",""]
           ]
         }
       }
