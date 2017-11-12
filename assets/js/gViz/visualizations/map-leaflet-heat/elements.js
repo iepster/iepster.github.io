@@ -65,9 +65,11 @@ module.exports = function () {
 
               // Initialize flags
               var isDraggable = e.draggable != null && e.draggable === true;
+              var isPin = _var.data.bars != null && _var.data.bars.barStyle != null && _var.data.bars.barStyle === 'pin';
+              var hasBarBottom = _var.data.bars != null && _var.data.bars.bottomBarHeight != null && _var.data.bars.bottomBarHeight !== 0;
 
               // Draw bottom bars
-              _var.bottomBars = d3.select(this).selectAll(".bottom-bar").data([e]);
+              _var.bottomBars = d3.select(this).selectAll(".bottom-bar").data(hasBarBottom ? [e] : []);
               _var.bottomBars.exit().remove();
               _var.bottomBars = _var.bottomBars.enter().append("rect").attr("class", "bottom-bar").merge(_var.bottomBars);
               _var.bottomBars.transition()
@@ -88,6 +90,18 @@ module.exports = function () {
                 .attr('y', _var.barY)
                 .attr('width', _var.barWidth)
                 .attr('height', _var.barHeight)
+                .attr('fill', _var.barColor)
+
+              // Draw circle on top of bars
+              _var.barCircles = d3.select(this).selectAll(".bar-circle").data(isPin ? [e] : []);
+              _var.barCircles.exit().remove();
+              _var.barCircles = _var.barCircles.enter().append("circle").attr("class", "bar-circle").merge(_var.barCircles);
+
+              // Update bars attributes
+              _var.barCircles.transition()
+                .attr('r', _var.pinRadius)
+                .attr('cx', 0)
+                .attr('cy', _var.barY)
                 .attr('fill', _var.barColor)
 
               // Create points/arrows groups

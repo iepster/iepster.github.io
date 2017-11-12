@@ -61,6 +61,11 @@ module.exports = function () {
             return _var.data.bars != null && _var.data.bars.mapStrokeColor != null ? _var.data.bars.mapStrokeColor : "#FFF";
           }
 
+          // Set pin radius
+          _var.pinRadius = function(d) {
+            return _var.data.bars != null && _var.data.bars.pinRadius != null ? _var.data.bars.pinRadius : (2*_var.barWidth(d));
+          }
+
           // Set bar width
           _var.barWidth = function(d) {
             return _var.data.bars != null && _var.data.bars.barWidth != null ? _var.data.bars.barWidth : 3;

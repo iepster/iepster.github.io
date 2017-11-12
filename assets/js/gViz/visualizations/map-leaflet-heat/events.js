@@ -35,7 +35,7 @@ module.exports = function () {
         case 'run':
 
           // Set shapes and bars
-          var bars   = _var.g.select('.chart-elements').selectAll('.bar, .bottom-bar');
+          var bars   = _var.g.select('.chart-elements').selectAll('.bar, .bottom-bar, .bar-circle');
           var pointEls = _var.g.select('.chart-elements').selectAll('.point-element');
           var points = _var.g.select('.chart-elements').selectAll('.point');
 

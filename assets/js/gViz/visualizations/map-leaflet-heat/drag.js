@@ -63,6 +63,10 @@ module.exports = function () {
                 .attr('height', _var.barHeight)
                 .attr('y', _var.barY)
                 .attr('fill', _var.barColor)
+              _var.container.d3.selectAll(".bar-circle").filter(function(g) { return g === d; })
+                .attr('cy', _var.barY)
+                .attr('fill', _var.barColor)
+
             }
           }
 
