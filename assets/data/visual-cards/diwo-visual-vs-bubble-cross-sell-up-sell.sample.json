@@ -1,0 +1,211 @@
+{
+  "data": {
+    "backgroundColor": "#fdebf4",
+    "center": {
+      "backgroundColor": "#f7b7d2",
+      "borderColor": "#f7b7d2",
+      "color": "#FFF",
+      "topTitle": "New Affinities",
+      "topValue": "36",
+      "image": "/assets/images/gViz/visualizations/diwo-visual-vs-bubble-cross-sell-up-sell/woman_pink_medium.png",
+      "imageBorderColor": "#FFF",
+      "bottomTitle": "Prospective Stores",
+      "bottomValue": "20"
+    },
+    "left": {
+      "backgroundColor": "#FFF",
+      "borderColor": "#e96293",
+      "color": "#e51c2a",
+      "text": "Customer Segments",
+      "image": "/assets/images/gViz/visualizations/diwo-visual-vs-bubble-cross-sell-up-sell/customer_segment_icon.png",
+      "expanded": {
+        "header": {
+          "text": "<img style='display: block; float: left; margin-right: 10px; height: 30px;' src='/assets/images/gViz/visualizations/diwo-visual-vs-bubble-cross-sell-up-sell/customer_segment_icon.png' /><span style='height:30px; line-height: 30px; display: block; width: auto; float: left; '>Customer Segments</span>",
+          "backgroundColor": "#FFF",
+          "color": "#e51c2a"
+        },
+        "visualization": {
+          "backgroundGrid": true,
+          "backgroundColor": "#FFF",
+          "borderColor": "#dddbdd",
+          "color": "#666",
+          "centerBubble": {
+            "backgroundColor": "#f7b7d2",
+            "borderColor": "#f7b7d2",
+            "color": "#FFF",
+            "title": "Overview",
+            "image": "/assets/images/gViz/visualizations/diwo-visual-vs-bubble-cross-sell-up-sell/woman_pink_medium.png"
+          },
+          "leftBubble": {
+            "backgroundColor": "#FFF",
+            "borderColor": "#ef89ac",
+            "color": "#a79cb2",
+            "bottomTextColor": "#f7b7d2",
+            "title": "Attribute Analysis",
+            "bottomText": "Top Trending",
+            "bubbles": {
+              "connectors": "#ef89ac",
+              "top": {
+                "backgroundColor": "#f3d6e3",
+                "borderColor": "#f3d6e3",
+                "hoverBackgroundColor": "#FFF",
+                "hoverBorderColor": "#ef89ac",
+                "header": {
+                  "color": "#bbb3c6",
+                  "borderColor": "#bbb3c6",
+                  "content": "Print"
+                },
+                "body": {
+                  "color": "#bbb3c6",
+                  "content": "<div style='width:20px; height:20px; border-radius:50%; margin: 3px 5px 0px 5px; float: left; background: #f7b7d2;'></div><div style='width:30px; height: 100%; float:left; font-size:12px; text-align: left; line-height: 29px;'>Pink</div>"
+                },
+                "footerImage": "/assets/images/top-trending-red.png"
+              },
+              "middle": {
+                "backgroundColor": "#f3d6e3",
+                "borderColor": "#f3d6e3",
+                "hoverBackgroundColor": "#FFF",
+                "hoverBorderColor": "#ef89ac",
+                "header": {
+                  "color": "#bbb3c6",
+                  "borderColor": "#bbb3c6",
+                  "content": "Color"
+                },
+                "body": {
+                  "color": "#bbb3c6",
+                  "content": "<div style='width:20px; height:20px; border-radius:50%; margin: 3px 5px 0px 5px; float: left; background: #000;'></div><div style='width:30px; height: 100%; float:left; font-size:12px; text-align: left;'>Pure Black</div>"
+                },
+                "footerImage": "/assets/images/top-trending-red.png"
+              },
+              "bottom": {
+                "backgroundColor": "#f3d6e3",
+                "borderColor": "#f3d6e3",
+                "hoverBackgroundColor": "#FFF",
+                "hoverBorderColor": "#ef89ac",
+                "header": {
+                  "color": "#bbb3c6",
+                  "borderColor": "#bbb3c6",
+                  "content": "Fabric"
+                },
+                "body": {
+                  "color": "#bbb3c6",
+                  "content": "<div style='width:20px; height:20px; margin: 3px 5px 0px 5px; float: left; overflow:hidden;'><img src='/assets/images/gViz/visualizations/diwo-visual-vs-bubble-cross-sell-up-sell/fabric_grey_icon_small.png' style='height: 20px;' /></div><div style='width:30px; height: 100%; float:left; font-size:12px; text-align: left; line-height: 29px;'>Velvet</div>"
+                },
+                "footerImage": "/assets/images/top-trending-red.png"
+              }
+            }
+          },
+          "rightBubble": {
+            "backgroundColor": "#FFF",
+            "borderColor": "#ef89ac",
+            "color": "#a79cb2",
+            "bottomTextColor": "#f7b7d2",
+            "title": "Customer Analysis",
+            "bottomText": "Top Customer Base",
+            "bubbles": {
+              "connectors": "#ef89ac",
+              "top": {
+                "backgroundColor": "#f3d6e3",
+                "borderColor": "#f3d6e3",
+                "hoverBackgroundColor": "#FFF",
+                "hoverBorderColor": "#ef89ac",
+                "header": {
+                  "color": "#bbb3c6",
+                  "borderColor": "#bbb3c6",
+                  "content": "Age"
+                },
+                "body": {
+                  "color": "#f19db6",
+                  "content": "<div style='width: 100%; height: 100%; text-align:center;'>21-25</div>"
+                }
+              },
+              "middle": {
+                "backgroundColor": "#f3d6e3",
+                "borderColor": "#f3d6e3",
+                "hoverBackgroundColor": "#FFF",
+                "hoverBorderColor": "#ef89ac",
+                "header": {
+                  "color": "#bbb3c6",
+                  "borderColor": "#bbb3c6",
+                  "content": "Lifestyle"
+                },
+                "body": {
+                  "color": "#f19db6",
+                  "content": "<div style='width: 100%; height: 100%; text-align:center;'>Athletic, Trendsetter</div>"
+                }
+              },
+              "bottom": {
+                "backgroundColor": "#f3d6e3",
+                "borderColor": "#f3d6e3",
+                "hoverBackgroundColor": "#FFF",
+                "hoverBorderColor": "#ef89ac",
+                "header": {
+                  "color": "#bbb3c6",
+                  "borderColor": "#bbb3c6",
+                  "content": "Income"
+                },
+                "body": {
+                  "color": "#f19db6",
+                  "content": "<div style='width: 100%; height: 100%; text-align:center;'>$80K-$110K</div>"
+                }
+              }
+            }
+          },
+          "bottomBubble": {
+            "backgroundColor": "#FFF",
+            "borderColor": "#ef89ac",
+            "color": "#a79cb2",
+            "bottomTextColor": "#f7b7d2",
+            "title": "Price Point Analysis",
+            "bottomText": "Top Price Point",
+            "bubbles": {
+              "connectors": "#ef89ac",
+              "bottom": {
+                "backgroundColor": "#f3d6e3",
+                "borderColor": "#f3d6e3",
+                "hoveredBackgroundColor": "#f3d6e3",
+                "hoveredBorderColor": "#f3d6e3",
+                "body": {
+                  "color": "#f19db6",
+                  "content": "<img style='width: 196px; height: 196px;' src='/assets/images/gViz/visualizations/diwo-visual-vs-bubble-cross-sell-up-sell/price-point-analysis-hovered.png' />"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "right": {
+      "backgroundColor": "#FFF",
+      "borderColor": "#e96293",
+      "color": "#e51c2a",
+      "text": "Sales Uplift Insights",
+      "image": "/assets/images/gViz/visualizations/diwo-visual-vs-bubble-cross-sell-up-sell/sales_uplift_icon.png",
+      "expanded": {
+        "header": {
+          "text": "<img style='display: block; float: left; margin-right: 10px; height: 30px;' src='/assets/images/gViz/visualizations/diwo-visual-vs-bubble-cross-sell-up-sell/sales_uplift_icon.png' /><span style='height:30px; line-height: 30px; display: block; width: auto; float: left; '>Sales Uplift Insights</span>",
+          "backgroundColor": "#FFF",
+          "color": "#e51c2a"
+        },
+        "visualization": {
+          "backgroundColor": "#FFF",
+          "borderColor": "#dddbdd",
+          "color": "#666",
+          "textAlign": "left",
+          "data": [
+            ["Most rewarding combination will be WEW Pushup with Strappy Sports Bra in Sports Bra."],
+            ["More than 50% of new combinations belongs to WEW and Date Bras."],
+            ["55% of new combinations have black color attribute. 80% of the new combinations have velvet fabric attribute."],
+            ["Most impacting stores are located in West and Southeast."]
+          ]
+        }
+      }
+    },
+    "connectors": "#e96293",
+    "backgroundBubbles": {
+      "backgroundColor": "#fef2f8",
+      "borderColor": "#fef2f8",
+      "opacity": 1
+    }
+  }
+}
