@@ -44,6 +44,7 @@ module.exports = function () {
 
               // Get number of ticks on axis to adjust ticks
               _var.numXTicks = _var.x_axis.selectAll(".tick line").size();
+              _var.xTicksSize = (_var.width) / (_var.numXTicks -1);
 
               _var.x_axis.selectAll(".tick line")
                 .attr('y1', 3)

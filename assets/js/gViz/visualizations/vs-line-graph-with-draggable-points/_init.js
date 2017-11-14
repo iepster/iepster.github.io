@@ -31,6 +31,7 @@ module.exports = function () {
   let margin = { top: 10, right: 10, bottom: 35, left: 0 };
 
   // Events bindings
+  let onHoverBetween = function(d) { console.log(d); };
   let onHover = function(d) { console.log(d); };
   let onClick = function(d) { console.log(d); };
   let onDragStart = function(d) { console.log(d); };
@@ -88,6 +89,7 @@ module.exports = function () {
             .colors(colors)
             .data(data)
             .margin(margin)
+            .onHoverBetween(onHoverBetween)
             .onHover(onHover)
             .onClick(onClick)
             .onDragStart(onDragStart)
@@ -180,7 +182,7 @@ module.exports = function () {
   };
 
   // Expose global variables
-  ['_id', '_var', 'action', 'animation', 'container', 'colors', 'data', 'margin','onHover','onClick','onDragStart','onDragEnd'].forEach(function (key) {
+  ['_id', '_var', 'action', 'animation', 'container', 'colors', 'data', 'margin','onHoverBetween','onHover','onClick','onDragStart','onDragEnd'].forEach(function (key) {
 
     // Attach variables to validation function
     validate[key] = function (_) {

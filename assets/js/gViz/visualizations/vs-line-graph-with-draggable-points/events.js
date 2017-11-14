@@ -146,21 +146,46 @@ module.exports = function () {
               } else if(origin === 'background') {
 
                 // Get valid date
-                var xValue = _var.x.invert(d3.mouse(mouse)[0]);
+                var mousePos = d3.mouse(mouse);
+                var xValue = _var.x.invert(mousePos[0]);
                 var tooltipValues = [];
+                var area = {
+                  x: null,
+                  y0: _var.y.domain()[0], y0Diff:(_var.height-mousePos[1]), y1:_var.y.domain()[1], y1Diff:mousePos[1], y1Changed: false,
+                  point: null
+                };
 
                 // Get values from each line group to use on the tooltip
                 _var.data.data.forEach(function(lineGroup, i) {
 
                   // Get most close value to the mouse position
                   var bisectIndex = bisector(lineGroup.values, xValue);
-                  if (bisectIndex > 0 && bisectIndex < lineGroup.values.length - 1) {
+                  if (bisectIndex > 0 && bisectIndex <= lineGroup.values.length - 1) {
                     var x0 = _var.x(lineGroup.values[bisectIndex - 1].parsedX);
                     var x1 = _var.x(lineGroup.values[bisectIndex].parsedX);
-                    bisectIndex = _var.margin.left - x0 >= (x1 - x0) / 2 ? bisectIndex : bisectIndex - 1;
+                    bisectIndex = mousePos[0] >= x0 + (_var.xTicksSize/2) ? bisectIndex : bisectIndex - 1;
                   }
 
                   if(lineGroup.values[bisectIndex]) {
+
+                    // Get y position of the point
+                    var yPos = _var.y(+lineGroup.values[bisectIndex].y);
+
+                    // Point is above the mouse
+                    if(yPos <= mousePos[1] && (mousePos[1] - yPos) <= area.y1Diff) {
+                      area.point = lineGroup.values[bisectIndex];
+                      area.y1 = +lineGroup.values[bisectIndex].y;
+                      area.y1Diff = mousePos[1] - yPos;
+                      area.y1Changed = true;
+                    }
+
+                    // Point is below the mouse
+                    if(yPos >= mousePos[1] && (yPos - mousePos[1]) <= area.y0Diff) {
+                      area.y0 = +lineGroup.values[bisectIndex].y;
+                      area.y0Diff = yPos - mousePos[1];
+                    }
+
+                    area.x = _var.x(lineGroup.values[bisectIndex].parsedX);
 
                     // Initialize tooltip object
                     var tooltipObj = {};
@@ -182,6 +207,27 @@ module.exports = function () {
                   }
 
                 });
+
+                // Create and update area between lines
+                _var.areaBetween = _var.g.selectAll(".area-between").data(area.y1Changed === true ? [area] : []);
+                _var.areaBetween.exit().remove();
+                _var.areaBetween = _var.areaBetween.enter().insert('rect', ':first-child').attr("class", "area-between").merge(_var.areaBetween);
+
+                if(area.y1Changed === true) {
+
+                  // Draw area
+                  _var.areaBetween
+                    .attr('x', (area.x - _var.xTicksSize/2) < 0 ? 0 : (area.x - _var.xTicksSize/2))
+                    .attr('y', _var.y(area.y1))
+                    .attr('width', _var.xTicksSize-3)
+                    .attr('height', _var.y(area.y0) - _var.y(area.y1))
+                    .style('fill', _var.pointColor(area.point))
+                    .style('fill-opacity', 0.1)
+                    .style('display', 'block')
+
+                  // Trigger onHoverBetween attribute function
+                  if(_var.onHoverBetween != null && typeof _var.onHoverBetween === "function") { _var.onHoverBetween(area); }
+                }
 
                 // Get left and top positions
                 var left = _var.wrap.node().getBoundingClientRect().left + _var.margin.left + d3.mouse(mouse)[0];
@@ -250,6 +296,9 @@ module.exports = function () {
               points.transition()
                 .style("filter", '')
                 .style('opacity', 1);
+
+              // Remove area
+              _var.g.selectAll(".area-between").style('display', 'none');
 
               // Set bars component
               shared.visualComponents.tooltip()
