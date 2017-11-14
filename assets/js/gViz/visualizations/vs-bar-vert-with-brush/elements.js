@@ -88,6 +88,9 @@ module.exports = function () {
                 .components(components)
                 .run();
 
+              if(_var.onHover != null && typeof _var.onHover === "function") { _var.onHover('out'); }
+
+
             }).on('click', function(e) {
 
               // Trigger onClick attribute function
