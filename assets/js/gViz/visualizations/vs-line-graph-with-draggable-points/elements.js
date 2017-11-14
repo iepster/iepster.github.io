@@ -105,6 +105,7 @@ module.exports = function () {
                 .action("mouseover")
                 .components(components)
                 .node(e)
+                .mouse(this)
                 .isDraggable(isDraggable)
                 .run();
 
@@ -121,6 +122,7 @@ module.exports = function () {
                 ._var(_var)
                 .action("mouseout")
                 .components(components)
+                .mouse(this)
                 .run();
 
             }).on('click', function(e) {

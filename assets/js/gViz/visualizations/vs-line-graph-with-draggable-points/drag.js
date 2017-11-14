@@ -42,6 +42,9 @@ module.exports = function () {
               .action("hide")
               .run();
 
+            // Remove area
+            _var.g.selectAll(".area-between").style('display', 'none');
+
             // Trigger onDragStart attribute function
             if(_var.onDragStart != null && typeof _var.onDragStart === "function") { _var.onDragStart(d); }
 
