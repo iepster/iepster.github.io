@@ -248,18 +248,24 @@ module.exports = function () {
                   });
                 }
 
-                // Set tooltip component
+                // Set bars component
                 shared.visualComponents.tooltip()
                   ._var(_var)
-                  .body(_var.data.tooltip != null && _var.data.tooltip.body != null ? _var.data.tooltip.body : "")
-                  .borderColor("#999")
-                  .hasImg(_var.data.tooltip != null && _var.data.tooltip.hasImg === true)
-                  .left(left)
-                  .muted(_var.data.tooltip != null && _var.data.tooltip.muted != null && _var.data.tooltip.muted === true)
-                  .obj({ color: "#999" })
-                  .top(top)
-                  .title(_var.data.tooltip != null && _var.data.tooltip.title != null ? _var.data.tooltip.title : "")
+                  .action("hide")
                   .run();
+
+                // // Set tooltip component
+                // shared.visualComponents.tooltip()
+                //   ._var(_var)
+                //   .body(_var.data.tooltip != null && _var.data.tooltip.body != null ? _var.data.tooltip.body : "")
+                //   .borderColor("#999")
+                //   .hasImg(_var.data.tooltip != null && _var.data.tooltip.hasImg === true)
+                //   .left(left)
+                //   .muted(_var.data.tooltip != null && _var.data.tooltip.muted != null && _var.data.tooltip.muted === true)
+                //   .obj({ color: "#999" })
+                //   .top(top)
+                //   .title(_var.data.tooltip != null && _var.data.tooltip.title != null ? _var.data.tooltip.title : "")
+                //   .run();
 
                 // Reset propagation attrs
                 propAttrs.forEach(function(attr) {

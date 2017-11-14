@@ -38,7 +38,7 @@ module.exports = function () {
           _var.yFormat = shared.helpers.number.parseFormat(_var.data == null ? null : _var.data.y);
 
           // Get y axis ticks
-          var bins = d3.max([3, parseInt(_var.height / 40, 10)]);
+          var bins = d3.max([3, parseInt(_var.height / 25, 10)]);
 
           // Define y axis
           _var.yAxis = d3.axisLeft(_var.y).ticks(bins).tickPadding(10).tickFormat(_var.yFormat);

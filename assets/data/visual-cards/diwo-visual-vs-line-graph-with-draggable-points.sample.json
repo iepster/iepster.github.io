@@ -7,8 +7,8 @@
   "tooltip": {
     "hasImg": true,
     "muted": true,
-    "propagate": "title",
-    "header": [ "This is a main header" ],
+    "propagate": "",
+    "header": [],
     "title": [  "<span class='metric'>{{name}} ({{x}})</span><span class='number'>{{y}}</span>"],
     "body": []
   },
