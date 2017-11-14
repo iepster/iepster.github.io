@@ -29,7 +29,8 @@
   },
   "attrs": {
     "barWidth": 8,
-    "wrapText": false
+    "wrapText": false,
+    "hasBrush": false
   },
   "data": [
     {

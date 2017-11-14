@@ -1,7 +1,7 @@
 {
   "data": {
     "topLeft": {
-      "text": "Demand Signals",
+      "text": "Demand Signals <img style='display: inline-block; height: 14px; margin: 0px 5px;' src='/assets/images/top-trending-green.png' /> Trends",
       "image": "/assets/images/gViz/visualizations/diwo-visual-vs-bubble-graph/user-signal.png",
       "chartData": {
         "data": [
@@ -10,7 +10,7 @@
             "text": "Floral Pink"
           },
           {
-            "label": "Style:",
+            "label": "Silhouette:",
             "text": "Push-up"
           },
           {
@@ -18,12 +18,12 @@
             "text": "Small"
           },
           {
-            "label": "Class:",
+            "label": "Collection:",
             "text": "WEW"
           },
           {
             "label": "Store:",
-            "text": "#100684 | Uplift: 16%"
+            "text": "#100684 | Uplift: 16% Herald Square"
           }
         ]
       }
@@ -40,20 +40,20 @@
           "hasImg": true,
           "muted": true,
           "propagate": "title",
-          "header": [ "This is a main header" ],
+          "header": [ ],
           "title": [  "<span class='metric'>{{name}} ({{x}})</span><span class='number'>{{y}}</span>"],
           "body": []
         },
         "y": {
-          "title": "This is a sample title",
+          "title": "Units (M)",
           "prefix": "",
           "sufix": "%",
           "format": ""
         },
         "x": {
-          "title": "This is a sample title",
-          "type": "number",
-          "prefix": "Week ",
+          "title": "Weeks",
+          "type": "string",
+          "prefix": "",
           "sufix": "",
           "format": ""
         },
@@ -64,28 +64,28 @@
             "pointColor": "#166961",
             "values": [
               {
-                "x": "30",
+                "x": "W30",
                 "y": 1
               }, {
-                "x": "31",
+                "x": "W31",
                 "y": 4
               }, {
-                "x": "32",
+                "x": "W32",
                 "y": 5
               }, {
-                "x": "33",
+                "x": "W33",
                 "y": 9
               }, {
-                "x": "34",
+                "x": "W34",
                 "y": 7
               }, {
-                "x": "35",
+                "x": "W35",
                 "y": 1
               }, {
-                "x": "36",
+                "x": "W36",
                 "y": 1
               }, {
-                "x": "37",
+                "x": "W37",
                 "y": 7
               }
             ]
@@ -98,28 +98,28 @@
             "pointColor": "#e30d12",
             "pointSize": 3,
             "values": [{
-                "x": "30",
+                "x": "W30",
                 "y": 4
               }, {
-                "x": "31",
+                "x": "W31",
                 "y": 3
               }, {
-                "x": "32",
+                "x": "W32",
                 "y": 2
               }, {
-                "x": "33",
+                "x": "W33",
                 "y": 14
               }, {
-                "x": "34",
+                "x": "W34",
                 "y": 9
               }, {
-                "x": "35",
+                "x": "W35",
                 "y": 7
               }, {
-                "x": "36",
+                "x": "W36",
                 "y": 9
               }, {
-                "x": "37",
+                "x": "W37",
                 "y": 3
               }
             ]
@@ -167,7 +167,8 @@
         },
         "attrs": {
           "barWidth": 8,
-          "wrapText": false
+          "wrapText": false,
+          "hasBrush": false
         },
         "data": [
           {

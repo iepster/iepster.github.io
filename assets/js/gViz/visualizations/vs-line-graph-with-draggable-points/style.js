@@ -32,7 +32,7 @@ module.exports = function () {
 
           // Set line width
           _var.lineWidth = function(d) {
-            return d.strokeWidth != null && !isNaN(d.strokeWidth) ? d.strokeWidth + "px" : "3px";
+            return d.strokeWidth != null && !isNaN(d.strokeWidth) ? d.strokeWidth + "px" : "2px";
           }
 
           // Set line color
@@ -76,7 +76,7 @@ module.exports = function () {
 
           // Set point color
           _var.pointSize = function(d, isDraggable=false) {
-            var size = d.pointSize != null ? d.pointSize : (d._parent.pointSize != null ? d._parent.pointSize : 4);
+            var size = d.pointSize != null ? d.pointSize : (d._parent.pointSize != null ? d._parent.pointSize : 3);
             return isDraggable ? d3.max([10,size]) : size;
           }
 

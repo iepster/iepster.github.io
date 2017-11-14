@@ -70,6 +70,9 @@ module.exports = function () {
           // Get bar width from the attrs
           _var.barWidth = _var.data.attrs != null && _var.data.attrs.barWidth != null && !isNaN(+_var.data.attrs.barWidth) ? +_var.data.attrs.barWidth : 10;
 
+          // Show / Hide brush
+          _var.margin.bottom = _var.data.attrs != null && _var.data.attrs.hasBrush != null && _var.data.attrs.hasBrush === false ? 5 : 60;
+
           break;
       }
     }

@@ -30,6 +30,8 @@
       "name": "Planned",
       "color": "#57a6a1",
       "pointColor": "#166961",
+      "strokeWidth": 1,
+      "pointSize": 3,
       "draggable": true,
       "values": [
         {

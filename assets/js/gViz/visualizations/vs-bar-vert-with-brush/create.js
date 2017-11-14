@@ -56,7 +56,9 @@ module.exports = function () {
           _var.gB = _var.wrap.selectAll("g.brush-wrap").data(["brush-wrap"]); // svg:g
           _var.gB.exit().remove();
           _var.gB = _var.gB.enter().append('g').attr('class', "brush-wrap").merge(_var.gB);
-          _var.gB.attr("transform", `translate(${_var.margin.left},${_var.height + _var.margin.top + 20})`);
+          _var.gB
+            .attr("transform", `translate(${_var.margin.left},${_var.height + _var.margin.top + 20})`)
+            .attr('display', _var.data.attrs != null && _var.data.attrs.hasBrush != null && _var.data.attrs.hasBrush === false ? 'none' : 'block')
 
           // Draw defs
           _var.defs = _var.wrap.selectAll("defs.svg-defs").data(["svg-defs"]);

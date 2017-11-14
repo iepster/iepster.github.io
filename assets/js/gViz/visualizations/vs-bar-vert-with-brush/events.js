@@ -34,11 +34,15 @@ module.exports = function () {
 
           // Set strokes and bars
           var strokes  = _var.g.select('.chart-elements').selectAll('.stroke, .wrapper-stroke')
-          var bars   = _var.g.select('.chart-elements').selectAll('.bar, .wrapper-bar')
+          var bars     = _var.g.select('.chart-elements').selectAll('.bar, .wrapper-bar')
+          var labels   = _var.g.select('.chart-elements').selectAll('.bar-label')
 
           switch (action) {
 
             case 'mouseover':
+
+              // Fade Labels
+              labels.transition().style('opacity', function(g) { return g.x === node.x ? 1 : 0.2; })
 
               // Fade strokes
               strokes.transition().style('opacity', function(g) { return g.x === node.x ? 1 : 0.2; })
@@ -87,6 +91,7 @@ module.exports = function () {
             case 'mouseout':
 
               // Reset opacity and filter
+              labels.transition().style('opacity', 1)
               strokes.transition().style('opacity', 1)
               bars.transition().style('opacity', 1).style("filter", "")
 
