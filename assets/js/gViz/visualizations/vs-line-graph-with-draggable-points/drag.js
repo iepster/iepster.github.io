@@ -49,7 +49,8 @@ module.exports = function () {
 
           // While dragging
           _var.dragging = function (d) {
-            d.y = _var.y.invert(d3.mouse(this)[1]);
+            var value = _var.y.invert(d3.mouse(this)[1]);
+            d.y = value > _var.y.domain()[1] ? _var.y.domain()[1] : (value < _var.y.domain()[0] ? _var.y.domain()[0] : value);
             d3.select(this).selectAll(".point.element, .bg-point.element").attr("d", function(d) { return _var.pointPath(d, true); });
             d3.select(this).selectAll(".arrow.element").attr("d", function(d) { return _var.arrowsPath(d); });
             _var.container.d3.selectAll(".line[data-id='"+d._parentId+"']").attr("d", function (d) { return _var.lineConstructor(d.values); })
