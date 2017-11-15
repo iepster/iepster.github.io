@@ -31,7 +31,7 @@
           "textAlign": "center",
           "data": [
             [
-              "<span style='color:#ea729e;'>Solid Color</span>",
+              "<span style='color:#ea729e; width: 100%; display: inline-block; text-align: left;'>Solid Color</span>",
               "<span style='width: 100%; font-weight: lighter;'>Pure Black (9ZF)</span><span style='display: block; width: 35px; height: 35px; background-color: #000; border-radius: 50%; margin: 5px auto 0px;'></span>",
               "<span style='width: 100%;font-weight: lighter;'>Beis (B15)</span><span style='display: block; width: 35px; height: 35px; background-color: #edd9cb; border-radius: 50%; margin: 5px auto 0px;'></span>",
               "<span style='width: 100%;font-weight: lighter;'>Red Pepper (D15)</span><span style='display: block; width: 35px; height: 35px; background-color: #e9032c; border-radius: 50%; margin: 5px auto 0px;'></span>"

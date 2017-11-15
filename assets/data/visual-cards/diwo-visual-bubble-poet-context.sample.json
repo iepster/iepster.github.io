@@ -15,7 +15,7 @@
       "color": "#fa86ce",
       "text": "Attribute Analysis",
       "header": {
-        "backgroundColor": "#856089",
+        "backgroundColor": "#f7b7d2",
         "color": "#FFF",
         "text": "Attribute Analysis"
       },
@@ -83,7 +83,7 @@
       "color": "#fa86ce",
       "text": "Sales & Stock Analysis",
       "header": {
-        "backgroundColor": "#856089",
+        "backgroundColor": "#f7b7d2",
         "color": "#FFF",
         "text": "Customer Analysis"
       },
@@ -248,7 +248,7 @@
       "color": "#fa86ce",
       "text": "Customer Analysis",
       "header": {
-        "backgroundColor": "#856089",
+        "backgroundColor": "#f7b7d2",
         "color": "#FFF",
         "text": "Customer Analysis"
       },
@@ -335,7 +335,7 @@
       "color": "#fa86ce",
       "text": "Price Point Analysis",
       "header": {
-        "backgroundColor": "#856089",
+        "backgroundColor": "#f7b7d2",
         "color": "#FFF",
         "text": "Price Point Analysis"
       },
