@@ -274,7 +274,13 @@ module.exports = function () {
                 })
 
                 // Trigger onHoverBetween attribute function
-                if(area.y1Changed === true && area.y0Changed === true && _var.onHoverBetween != null && typeof _var.onHoverBetween === "function") { _var.onHoverBetween(area); }
+                if(area.y1Changed === true && area.y0Changed === true) {
+                  if(_var.isHoveringBetween === false && _var.onHoverBetweenIn != null && typeof _var.onHoverBetweenIn === "function") { _var.onHoverBetweenIn(area); }
+                  _var.isHoveringBetween = true;
+                } else {
+                  if(_var.isHoveringBetween != null && _var.isHoveringBetween === true &&_var.onHoverBetweenOut != null && typeof _var.onHoverBetweenOut === "function") { _var.onHoverBetweenOut(area); }
+                  _var.isHoveringBetween = false;
+                }
 
               }
 

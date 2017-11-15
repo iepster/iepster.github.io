@@ -16,7 +16,8 @@ module.exports = function() {
   let margin    = { top: 10, right: 10, bottom: 10, left: 10 };
 
   // Events bindings
-  let onHoverBetween = function(d) { console.log(d); };
+  let onHoverBetweenIn = function(d) { console.log(d); };
+  let onHoverBetweenOut = function(d) { console.log(d); };
   let onHover = function(d) { console.log(d); };
   let onClick = function(d) { console.log(d); };
   let onDragStart = function(d) { console.log(d); };
@@ -47,11 +48,13 @@ module.exports = function() {
           _var.animation = animation;
           _var.colors = colors;
           _var.margin = margin;
-          _var.onHoverBetween = onHoverBetween;
+          _var.onHoverBetweenIn = onHoverBetweenIn;
+          _var.onHoverBetweenOut = onHoverBetweenOut;
           _var.onHover = onHover;
           _var.onClick = onClick;
           _var.onDragStart = onDragStart;
           _var.onDragEnd = onDragEnd;
+          _var.isHoveringBetween = false;
 
           // Id for shadows
           _var.shadowId = `vis-shadow-${Math.floor(Math.random() * ((1000000000 - 5) + 1)) + 5}`
@@ -86,7 +89,7 @@ module.exports = function() {
   };
 
   // Expose global variables
-  ['_id','_var','animation','container','colors','data','margin','onHoverBetween','onHover','onClick','onDragStart','onDragEnd'].forEach(function(key) {
+  ['_id','_var','animation','container','colors','data','margin','onHoverBetweenIn','onHoverBetweenOut','onHover','onClick','onDragStart','onDragEnd'].forEach(function(key) {
 
     // Attach variables to validation function
     validate[key] = function(_) {
