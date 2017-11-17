@@ -11,6 +11,7 @@ module.exports = function() {
   var action      = "show";
   var body        = "#333";
   var borderColor = "#333";
+  var backgroundColor = null;
   var color       = "#333";
   var content     = "";
   var hasImg      = false;
@@ -19,7 +20,8 @@ module.exports = function() {
   var obj         = {};
   var target      = null;
   var title       = 0;
-  var top         = 0;
+  var top         = null;
+  var bottom      = null;
 
   // Validate attributes
   var validate = function(step) {
@@ -53,13 +55,13 @@ module.exports = function() {
               title = title == null || title.constructor !== Array ? [] : title;
               title = title.map(function(t, i) {
 
-                return "<div class='node-header' style='color: {{color}}; background-color: " + (helpers.colors.isDark(obj.color) ? "#FFF" : "#434343") + "; "+( i !== 0 ? 'border-top: 1px solid {{color}}' : '')+"'>" + t + "</div>";
+                return "<div class='node-header' style='color: {{color}}; background-color: " + (backgroundColor == null ? (helpers.colors.isDark(obj.color) ? "#FFF" : "#434343") : backgroundColor) + "; "+( i !== 0 ? 'border-top: 1px solid {{color}}' : '')+"'>" + t + "</div>";
 
               }).join('');
 
               // Set body content
               body = body == null || body.constructor !== Array ? [] : body;
-              body = body.map(function(d) { return "<div class='node-edge' style='background-color: {{color}}; color: " + (helpers.colors.isDark(obj.color) ? "#FFF" : "#434343") + ";'>" + d + "</div>"; }).join('');
+              body = body.map(function(d) { return "<div class='node-edge' style='border-top: 1px solid " + borderColor + "; background-color: " + (backgroundColor == null ? "{{color}}" : backgroundColor) + "; color: " + (backgroundColor == null ? (helpers.colors.isDark(obj.color) ? "#FFF" : "#434343") : "{{color}}") + ";'>" + d + "</div>"; }).join('');
 
               // Join content
               content = helpers.text.replaceVariables(title, obj) + helpers.text.replaceVariables(body, obj);
@@ -67,7 +69,9 @@ module.exports = function() {
               // Update tooltip content
               target
                 .style("border", "1px solid "+borderColor)
-                .style("top", top + "px")
+                .style("left", left == null ? null : left + "px")
+                .style("top", top == null ? null : top + "px")
+                .style("bottom", bottom == null ? null : bottom + "px")
                 .html(content)
 
               break;
@@ -89,7 +93,7 @@ module.exports = function() {
   };
 
   // Exposicao de variaveis globais
-  ['_var','action','body','borderColor','color','hasImg','left','muted','obj','target','top','title'].forEach(function(key) {
+  ['_var','action','body','borderColor','backgroundColor','color','hasImg','left','muted','obj','target','top','bottom','title'].forEach(function(key) {
 
     // Attach variables to validation function
     validate[key] = function(_) {

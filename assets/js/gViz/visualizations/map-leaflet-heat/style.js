@@ -119,10 +119,15 @@ module.exports = function () {
 
           }
 
+          // Set bar color
+          _var.draggableColor = function(d) {
+            return _var.data.bars != null && _var.data.bars.draggableColor != null ? _var.data.bars.draggableColor : _var.barColor(d);
+          }
+
           // Arrwos color function depending on the point color
           _var.arrowsColor = function(d) {
             var barColor = _var.barColor(d);
-            return shared.helpers.colors.isDark(barColor) ? "#FFF" : "#333";
+            return _var.data.bars != null && _var.data.bars.arrowsColor != null ? _var.data.bars.arrowsColor : (shared.helpers.colors.isDark(barColor) ? "#FFF" : "#333");
           }
 
           // Set shape path for node

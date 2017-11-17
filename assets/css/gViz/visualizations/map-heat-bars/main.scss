@@ -20,6 +20,7 @@ svg.map-heat-bars {
 
   .legend {
     .scale-wrapper {
+      height: 14px;
       float: left;
       width: auto;
       span.low-name   { float: left; margin-right: 10px;  }
@@ -51,8 +52,8 @@ svg.map-heat-bars {
   width: auto;
   min-width: 100px;
   position: absolute;
-  top: 74px;
-  left: 40px;
+  bottom: 10px;
+  left: 10px;
   height: auto;
   z-index: 1001;
   font-size: 12px;
@@ -67,8 +68,9 @@ svg.map-heat-bars {
     border-top: none;
     background-color: rgba(255,255,255,0.6);
     color: #666;
+    font-weight: 300;
 
-    span.metric { max-width: 150px; font-weight: normal; margin-right: 20px;  }
+    span.metric { max-width: 150px; font-weight: 300; margin-right: 20px;  }
     span.number { float: right; font-weight: bold; font-family: 'Bebas'; }
   }
   .axis-title { color: #FFF; }

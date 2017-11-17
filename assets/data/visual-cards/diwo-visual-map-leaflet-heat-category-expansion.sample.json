@@ -1,0 +1,94 @@
+{
+  "title": "",
+  "mode": {
+    "bars": true
+  },
+  "toggle": {
+    "isVisible": false
+  },
+  "tooltip": {
+    "title": [
+      "{{name}}"
+    ],
+    "body": [
+      "<span class='metric'># Accounts</span><span class='number'>{{value}}</span>"
+    ]
+  },
+  "tooltipTable": {
+    "title": [
+      "<span style='color: #000;'>{{name}}</span>"
+    ],
+    "body": [
+      "<span class='metric' style='color: #000;'># Accounts</span><span class='number' style='color: #fa87c7;'>{{value}}</span>"
+    ]
+  },
+  "bars": {
+    "mapColor": "#8BC3D2",
+    "mapStrokeColor": "#FFF",
+    "mapOpacity": "0.7",
+    "barWidth": "3",
+    "barMaxHeight": 30,
+    "bottomBarHeight": 4,
+    "bottomBarColor": "#484845",
+    "draggableColor": "#f98427",
+    "arrowsColor": "#fff",
+    "colors": [
+      "#c5c5c7",
+      "#c5c5c7",
+      "#c5c5c7"
+    ],
+    "prefix": "$",
+    "sufix": "",
+    "format": "",
+    "type": "number"
+  },
+  "data": [
+    {
+      "id": "store-0",
+      "name": "New York",
+      "lat": 40.7127837,
+      "lon": -74.0059413,
+      "value": 10,
+      "draggable": true
+    },
+    {
+      "id": "store-3",
+      "name": "Houston",
+      "lat": 29.7604267,
+      "lon": -95.3698028,
+      "value": 10,
+      "draggable": true
+    },
+    {
+      "id": "store-103",
+      "name": "Des Moines",
+      "lat": 41.6005448,
+      "lon": -93.6091064,
+      "value": 10,
+      "draggable": true
+    },
+    {
+      "id": "store-104",
+      "name": "Modesto",
+      "lat": 37.63909719999999,
+      "lon": -120.9968782,
+      "value": 10,
+      "draggable": true
+    },
+    {
+      "id": "store-105",
+      "name": "Fayetteville",
+      "lat": 35.0526641,
+      "lon": -78.87835849999999,
+      "value": 10,
+      "draggable": true
+    },
+    {
+      "id": "store-106",
+      "name": "Tacoma",
+      "lat": 47.2528768,
+      "lon": -122.4442906,
+      "value": 10
+    }
+  ]
+}

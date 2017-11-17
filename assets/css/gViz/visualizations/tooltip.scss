@@ -23,7 +23,7 @@
     .title {
       padding: 10px 15px;
       font-size: 12px;
-      font-weight: normal;
+      font-weight: 300;
       display: block;
       width: 100%;
 
@@ -35,7 +35,7 @@
         .title-img {
           padding: 2px 8px;
           img { height: 30px; }
-          font-weight: normal;
+          font-weight: 300;
           height: 35px;
           display: block;
           float: left;
@@ -45,23 +45,23 @@
           line-height: 35px;
           padding: 0px 15px;
           width: auto;
-          font-weight: normal;
+          font-weight: 300;
           display: block;
           float: left;
         }
       }
 
-      span.metric { font-weight: normal; margin-right: 20px;  }
+      span.metric { font-weight: 300; margin-right: 20px;  }
       span.number { float: right; font-weight: bold; font-family: 'Bebas'; }
     }
 
     .text {
       padding: 10px 15px;
       font-size: 12px;
-      font-weight: normal;
+      font-weight: 300;
       display: block;
       width: 100%;
-      span.metric { font-weight: normal; margin-right: 20px;  }
+      span.metric { font-weight: 300; margin-right: 20px;  }
       span.number { float: right; font-weight: bold; font-family: 'Bebas'; }
     }
   }

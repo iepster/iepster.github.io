@@ -46,6 +46,12 @@ module.exports = function () {
               .target(_var.container.d3.closest('.gViz-outer-wrapper').select('.gViz-map-table-tooltip'))
               .run();
 
+            // Hide tooltip
+            shared.visualComponents.tooltip()
+              ._var(_var)
+              .action("hide")
+              .run();
+
             // Trigger onDragStart attribute function
             if(_var.onDragStart != null && typeof _var.onDragStart === "function") { _var.onDragStart(d); }
 
@@ -56,7 +62,7 @@ module.exports = function () {
             var position = -d3.mouse(this)[1];
             if(position >= _var.bottomBarHeight(d)) {
               d.value = _var.barScale.invert(position);
-              d3.select(this).selectAll(".point.element").attr("d", function(d) { return _var.pointPath(d); }).attr("fill", _var.barColor);
+              d3.select(this).selectAll(".point.element").attr("d", function(d) { return _var.pointPath(d); }).attr("fill", _var.draggableColor);
               d3.select(this).selectAll(".arrow.element").attr("d", function(d) { return _var.arrowsPath(d); }).attr("fill", _var.arrowsColor);
               d3.select(this).selectAll(".bg-point.element").attr("cy", _var.barY)
               _var.container.d3.selectAll(".bar").filter(function(g) { return g === d; })

@@ -8,7 +8,7 @@
           "backgroundColor": "#f7b7d2",
           "borderColor": "#EC75A2",
           "color": "#FFF",
-          "content": "<img src='/assets/images/gViz/visualizations/diwo-visual-vs-bubble-category-expansion/bra.png' style='height: 36px; display: block;     margin: 16px auto 0px;' />"
+          "content": "<img src='/assets/images/gViz/visualizations/diwo-visual-vs-bubble-cross-sell-up-sell/wew_bra_icon.png' style='height: 30px; display: block;     margin: 20px auto 0px;' />"
         },
         "left": {
           "borderColor": "#EC75A2",
@@ -52,7 +52,7 @@
           "backgroundColor": "#f7b7d2",
           "borderColor": "#EC75A2",
           "color": "#FFF",
-          "content": "<img src='/assets/images/gViz/visualizations/diwo-visual-bubble-poet-context/women.png' style='height: 100%; display: block; margin: 0px auto;' />"
+          "content": "<img src='/assets/images/gViz/visualizations/diwo-visual-vs-bubble-cross-sell-up-sell/woman_pink_medium.png' style='height: 40px; display: block; margin: 14px auto 0px;' />"
         },
         "right": {
           "borderColor": "#EC75A2",

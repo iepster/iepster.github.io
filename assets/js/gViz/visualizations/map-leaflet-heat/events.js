@@ -61,10 +61,18 @@ module.exports = function () {
                 // Fade points
                 points.transition().style("filter", function(g) { return g === node ? "url(#"+_var.shadowId+")" : ""; })
 
-                // Set x and y position
-                var y = 70;
-                var x = 0;
-                if(_var.data.title != null && _var.data.title !== "") { y += 35; }
+                // Get variables to calculate position
+                var isDraggable = node.draggable != null && node.draggable === true;
+                var translate = _var.wrap.style("transform").replace(/px/g, '').replace(/translate3d/g, 'translate').replace(/, 0\)/g, ')');
+                var t = shared.helpers.selection.getTransformation(translate);
+
+                // Get x and y values
+                var x = _var.map.latLngToLayerPoint(node).x - t.translateX;
+                var y = _var.map.latLngToLayerPoint(node).y - t.translateY;
+
+                // Get left and top positions
+                var left = _var.wrap.node().getBoundingClientRect().left + x;
+                var top  = _var.wrap.node().getBoundingClientRect().top + y - _var.barHeight(node) - (isDraggable ? 10 : 5);
 
                 // Initialize tooltip object
                 var tooltipObj = { properties: {} };
@@ -77,17 +85,41 @@ module.exports = function () {
 
                 // Set bars component
                 var tooltip = _var.data.tooltip;
+                shared.visualComponents.tooltip()
+                  ._var(_var)
+                  .body(_var.data.tooltip != null && _var.data.tooltip.body != null ? _var.data.tooltip.body : "")
+                  .muted(_var.data.tooltip != null && _var.data.tooltip.muted != null && _var.data.tooltip.muted === true)
+                  .borderColor(_var.barColor(node))
+                  .left(left)
+                  .hasImg(_var.data.tooltip != null && _var.data.tooltip.hasImg === true)
+                  .obj(tooltipObj)
+                  .top(top)
+                  .title(_var.data.tooltip != null && _var.data.tooltip.title != null ? _var.data.tooltip.title : "")
+                  .run();
+
+                // Initialize tooltipTable object
+                var tooltipTableObj = { properties: {} };
+
+                // Set color
+                tooltipTableObj.color =_var.barColor(node);
+
+                // Set node attributes to tooltipTable obj
+                Object.keys(node).forEach(function(k) { tooltipTableObj[k] = node[k]; });
+
+                // Set bars component
+                var tooltipTable = _var.data.tooltipTable;
                 shared.visualComponents.tooltipTable()
                   ._var(_var)
-                  .body(tooltip != null && tooltip.body != null ? tooltip.body : "")
+                  .body(tooltipTable != null && tooltipTable.body != null ? tooltipTable.body : "")
+                  .backgroundColor("#FFF")
                   .borderColor(_var.barColor(node))
-                  .hasImg(tooltip != null && tooltip.hasImg === true)
-                  .left(x)
-                  .muted(tooltip != null && tooltip.muted != null && tooltip.muted === true)
-                  .obj(tooltipObj)
+                  .hasImg(tooltipTable != null && tooltipTable.hasImg === true)
+                  .muted(tooltipTable != null && tooltipTable.muted != null && tooltipTable.muted === true)
+                  .obj(tooltipTableObj)
                   .target(_var.container.d3.closest('.gViz-outer-wrapper').select('.gViz-map-table-tooltip'))
-                  .title(tooltip != null && tooltip.title != null ? tooltip.title : "")
-                  .top(y)
+                  .title(tooltipTable != null && tooltipTable.title != null ? tooltipTable.title : "")
+                  .left(10)
+                  .bottom(10)
                   .run();
 
               }
@@ -105,11 +137,17 @@ module.exports = function () {
               // Fade points
               points.transition().style("filter", "")
 
-              // Set bars component
+              // Hide tooltipTable
               shared.visualComponents.tooltipTable()
                 ._var(_var)
                 .action("hide")
                 .target(_var.container.d3.closest('.gViz-outer-wrapper').select('.gViz-map-table-tooltip'))
+                .run();
+
+              // Hide tooltip
+              shared.visualComponents.tooltip()
+                ._var(_var)
+                .action("hide")
                 .run();
 
               break;

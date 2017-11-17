@@ -50,9 +50,18 @@ module.exports = function () {
               var mousePos = d3.mouse(mouse);
               var area = {
                 x: null,
-                y0: _var.y.domain()[0], y0Diff:(_var.height-mousePos[1]), y1:_var.y.domain()[1], y1Diff:mousePos[1], y1Changed: false, y0Change: false,
-                point: null
+                y0: _var.y.domain()[0], y0Diff:(_var.height-mousePos[1]), y0Change: false, y0After: null, y0Before: null,
+                y1:_var.y.domain()[1], y1Diff:mousePos[1], y1Changed: false, y1After: null, y1Before: null,
+                pointTop: null, pointBottom: null
               };
+              var areaValues = [
+                { top: 0, left: 0 },
+                { top: 0, left: 0 },
+                { top: 0, left: 0 },
+                { top: 0, left: 0 },
+                { top: 0, left: 0 },
+                { top: 0, left: 0 }
+              ];
 
               if(origin === 'node') {
 
@@ -61,7 +70,7 @@ module.exports = function () {
                 area.y0Changed = true;
                 area.y1 = +node.y;
                 area.y1Diff = mousePos[1] - _var.y(+node.y);
-                area.point = node;
+                area.pointTop = node;
                 area.x = _var.x(node.parsedX);
 
                 // Fade other groups
@@ -184,7 +193,7 @@ module.exports = function () {
 
                     // Point is above the mouse
                     if(yPos <= mousePos[1] && (mousePos[1] - yPos) <= area.y1Diff) {
-                      area.point = lineGroup.values[bisectIndex];
+                      area.pointTop = lineGroup.values[bisectIndex];
                       area.y1 = +lineGroup.values[bisectIndex].y;
                       area.y1Diff = mousePos[1] - yPos;
                       area.y1Changed = true;
@@ -192,113 +201,47 @@ module.exports = function () {
 
                     // Point is below the mouse
                     if(yPos >= mousePos[1] && (yPos - mousePos[1]) <= area.y0Diff) {
+                      area.pointBottom = lineGroup.values[bisectIndex];
                       area.y0 = +lineGroup.values[bisectIndex].y;
                       area.y0Diff = yPos - mousePos[1];
                       area.y0Changed = true;
                     }
-
-                    // Initialize tooltip object
-                    var tooltipObj = {};
-
-                    // Set parent n attributes to tooltip obj
-                    Object.keys(lineGroup).forEach(function(k) { tooltipObj[k] = lineGroup[k]; });
-
-                    // Set n attributes to tooltip obj
-                    Object.keys(lineGroup.values[bisectIndex]).forEach(function(k) { tooltipObj[k] = lineGroup.values[bisectIndex][k]; });
-
-                    // Set x, color and z values with format
-                    tooltipObj.x = _var.xFormat(lineGroup.values[bisectIndex].x);
-                    tooltipObj.y = _var.yFormat(lineGroup.values[bisectIndex].y);
-                    tooltipObj.color = _var.pointColor(lineGroup.values[bisectIndex]);
-
-                    // Store tooltipObj
-                    tooltipValues.push(tooltipObj);
-
                   }
-
                 });
-
-                // Get left and top positions
-                var left = _var.wrap.node().getBoundingClientRect().left + _var.margin.left + d3.mouse(mouse)[0];
-                var top  = _var.wrap.node().getBoundingClientRect().top + _var.margin.top;
-
-                // Propagate attributes for all values on tooltipValues
-                propAttrs.forEach(function(attr) {
-
-                  // Backup attr to be used on the propagation function
-                  _var.data.tooltip["_"+attr] = [];
-                  _var.data.tooltip[attr].forEach(function(d) { _var.data.tooltip["_"+attr].push(d); });
-
-                  // Store propagation attrs
-                  _var.data.tooltip[attr] = [];
-
-                  // Propagate tooltip over all series
-                  tooltipValues.forEach(function(d) {
-                    _var.data.tooltip["_"+attr].forEach(function(p) {
-                      _var.data.tooltip[attr].push(shared.helpers.text.replaceVariables(p, d));
-                    });
-                  });
-
-                });
-
-                // Set tooltip header as title
-                if(_var.data.tooltip.header != null) {
-                  _var.data.tooltip.header.forEach(function(p) {
-                    _var.data.tooltip.title.unshift(shared.helpers.text.replaceVariables(p, {}));
-                  });
-                }
-
-                // Set bars component
-                shared.visualComponents.tooltip()
-                  ._var(_var)
-                  .action("hide")
-                  .run();
-
-                // // Set tooltip component
-                // shared.visualComponents.tooltip()
-                //   ._var(_var)
-                //   .body(_var.data.tooltip != null && _var.data.tooltip.body != null ? _var.data.tooltip.body : "")
-                //   .borderColor("#999")
-                //   .hasImg(_var.data.tooltip != null && _var.data.tooltip.hasImg === true)
-                //   .left(left)
-                //   .muted(_var.data.tooltip != null && _var.data.tooltip.muted != null && _var.data.tooltip.muted === true)
-                //   .obj({ color: "#999" })
-                //   .top(top)
-                //   .title(_var.data.tooltip != null && _var.data.tooltip.title != null ? _var.data.tooltip.title : "")
-                //   .run();
-
-                // Reset propagation attrs
-                propAttrs.forEach(function(attr) {
-                  _var.data.tooltip[attr] = [];
-                  _var.data.tooltip["_"+attr].forEach(function(d) { _var.data.tooltip[attr].push(d); });
-                })
 
                 // Trigger onHoverBetween attribute function
                 if(area.y1Changed === true && area.y0Changed === true) {
+
+                  // Fire event
                   if(_var.isHoveringBetween === false && _var.onHoverBetweenIn != null && typeof _var.onHoverBetweenIn === "function") { _var.onHoverBetweenIn(area); }
                   _var.isHoveringBetween = true;
+
                 } else {
                   if(_var.isHoveringBetween != null && _var.isHoveringBetween === true &&_var.onHoverBetweenOut != null && typeof _var.onHoverBetweenOut === "function") { _var.onHoverBetweenOut(area); }
                   _var.isHoveringBetween = false;
                 }
-
               }
 
               // Create and update area between lines
               _var.areaBetween = _var.g.selectAll(".area-between").data(area.y1Changed === true && area.y0Changed === true ? [area] : []);
               _var.areaBetween.exit().remove();
-              _var.areaBetween = _var.areaBetween.enter().insert('rect', ':first-child').attr("class", "area-between").merge(_var.areaBetween);
+              _var.areaBetween = _var.areaBetween.enter().insert('path', ':first-child').attr("class", "area-between").merge(_var.areaBetween);
 
               if(area.y1Changed === true && area.y0Changed === true) {
+
+                // Get area path points
+                areaValues[0] = { top: _var.y(area.y1), left: (area.x - _var.xTicksSize/2) < 0 ? 0 : (area.x - _var.xTicksSize/2) };
+                areaValues[1] = { top: _var.y(area.y1), left: area.x };
+                areaValues[2] = { top: _var.y(area.y1), left: (area.x + _var.xTicksSize/2) > _var.width ? _var.width : (area.x + _var.xTicksSize/2) };
+                areaValues[3] = { top: _var.y(area.y0), left: (area.x - _var.xTicksSize/2) < 0 ? 0 : (area.x - _var.xTicksSize/2) };
+                areaValues[4] = { top: _var.y(area.y0), left: area.x };
+                areaValues[5] = { top: _var.y(area.y0), left: (area.x + _var.xTicksSize/2) > _var.width ? _var.width : (area.x + _var.xTicksSize/2) };
 
                 // Draw area
                 var areaX = (area.x - _var.xTicksSize/2) < 0 ? 0 : (area.x - _var.xTicksSize/2);
                 _var.areaBetween
-                  .attr('x', areaX)
-                  .attr('y', _var.y(area.y1))
-                  .attr('width',(areaX + _var.xTicksSize-3) > _var.width ? (_var.width - areaX) : (_var.xTicksSize - ((area.x - _var.xTicksSize/2) < 0 ? -(area.x - 2 - _var.xTicksSize/2) : 3)))
-                  .attr('height', _var.y(area.y0) - _var.y(area.y1))
-                  .style('fill', _var.pointColor(area.point))
+                  .attr('d', "M "+areaValues[0].left+","+areaValues[0].top+" L "+areaValues[1].left+","+areaValues[1].top+" "+areaValues[2].left+","+areaValues[2].top+" "+areaValues[5].left+","+areaValues[5].top+" "+areaValues[4].left+","+areaValues[4].top+" "+areaValues[3].left+","+areaValues[3].top+" Z")
+                  .style('fill', _var.pointColor(area.pointTop))
                   .style('fill-opacity', 0.1)
                   .style('display', 'block')
 

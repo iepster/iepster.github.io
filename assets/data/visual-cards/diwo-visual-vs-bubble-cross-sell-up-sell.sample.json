@@ -59,7 +59,7 @@
                   "color": "#bbb3c6",
                   "content": "<div style='width:20px; height:20px; border-radius:50%; margin: 3px 5px 0px 5px; float: left; background: #f7b7d2;'></div><div style='width:30px; height: 100%; float:left; font-size:12px; text-align: left; line-height: 29px;'>Pink</div>"
                 },
-                "footerImage": "/assets/images/top-trending-red.png"
+                "footerImage": "/assets/images/top-trending-pink.png"
               },
               "middle": {
                 "backgroundColor": "#f3d6e3",
@@ -73,9 +73,9 @@
                 },
                 "body": {
                   "color": "#bbb3c6",
-                  "content": "<div style='width:20px; height:20px; border-radius:50%; margin: 3px 5px 0px 5px; float: left; background: #000;'></div><div style='width:30px; height: 100%; float:left; font-size:12px; text-align: left;'>Pure Black</div>"
+                  "content": "<div style='width:20px; height:20px; border-radius:50%; margin: 3px 5px 0px 5px; float: left; background: #000;'></div><div style='width:30px; height: 100%; float:left; font-size:12px; text-align: left; padding-top: 1px;'>Pure Black</div>"
                 },
-                "footerImage": "/assets/images/top-trending-red.png"
+                "footerImage": "/assets/images/top-trending-pink.png"
               },
               "bottom": {
                 "backgroundColor": "#f3d6e3",
@@ -91,7 +91,7 @@
                   "color": "#bbb3c6",
                   "content": "<div style='width:20px; height:20px; margin: 3px 5px 0px 5px; float: left; overflow:hidden;'><img src='/assets/images/gViz/visualizations/diwo-visual-vs-bubble-cross-sell-up-sell/fabric_grey_icon_small.png' style='height: 20px;' /></div><div style='width:30px; height: 100%; float:left; font-size:12px; text-align: left; line-height: 29px;'>Velvet</div>"
                 },
-                "footerImage": "/assets/images/top-trending-red.png"
+                "footerImage": "/assets/images/top-trending-pink.png"
               }
             }
           },

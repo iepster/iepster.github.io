@@ -1,5 +1,5 @@
 {
-  "title": "Map Leaflet Heat",
+  "title": "",
   "mode": {
     "bars": true
   },
@@ -12,6 +12,14 @@
     ],
     "body": [
       "<span class='metric'># Accounts</span><span class='number'>{{value}}</span>"
+    ]
+  },
+  "tooltipTable": {
+    "title": [
+      "<span style='color: #000;'>{{name}}</span>"
+    ],
+    "body": [
+      "<span class='metric' style='color: #000;'># Accounts</span><span class='number' style='color: #fa87c7;'>{{value}}</span>"
     ]
   },
   "bars": {

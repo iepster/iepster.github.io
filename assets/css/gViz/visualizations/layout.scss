@@ -69,7 +69,7 @@
     &.gviz-legend-hover {
       max-height: 150px !important;
       overflow-y: auto !important;
-      background-color: #eee;
+      background-color: transparent;
       .legend, .axis-title-legend, .controls, .gviz-legend {
         .legend-content {
           max-width: none !important;

@@ -116,7 +116,7 @@ module.exports = function () {
                 points = points.enter().append("path").attr("class", "point element").merge(points);
                 points.transition().duration(200)
                   .attr("d", function(d) { return _var.pointPath(d); })
-                  .attr("fill", _var.barColor)
+                  .attr("fill", _var.draggableColor)
 
                 // Create point arrows for draggable lines
                 var arrows = d3.select(this).selectAll(".arrow.element").data([pg]);
