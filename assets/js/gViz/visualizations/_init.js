@@ -8,6 +8,7 @@ module.exports = {
   dendrogram: require('./dendrogram/_init.js'),
   donut: require('./donut/_init.js'),
   donutWithToggle: require('./donut-with-toggle/_init.js'),
+  donutCircle: require('./donut-circle/_init.js'),
   groupedVertBarChart: require('./grouped-vert-bar-chart/_init.js'),
   groupedHoriBarChart: require('./grouped-hori-bar-chart/_init.js'),
   hierarchicalBars: {

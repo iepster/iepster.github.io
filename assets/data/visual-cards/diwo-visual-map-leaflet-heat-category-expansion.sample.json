@@ -26,7 +26,7 @@
     "mapColor": "#8BC3D2",
     "mapStrokeColor": "#FFF",
     "mapOpacity": "0.7",
-    "barWidth": "3",
+    "barWidth": "5",
     "barMaxHeight": 30,
     "bottomBarHeight": 4,
     "bottomBarColor": "#484845",

@@ -59,7 +59,7 @@
                   "color": "#bbb3c6",
                   "content": "<div style='width:20px; height:20px; border-radius:50%; margin: 3px 5px 0px 5px; float: left; background: #f7b7d2;'></div><div style='width:30px; height: 100%; float:left; font-size:12px; text-align: left; line-height: 29px;'>Pink</div>"
                 },
-                "footerImage": "/assets/images/top-trending-pink.png"
+                "footerImage": "/assets/images/top-trending-green.png"
               },
               "middle": {
                 "backgroundColor": "#f3d6e3",
@@ -75,7 +75,7 @@
                   "color": "#bbb3c6",
                   "content": "<div style='width:20px; height:20px; border-radius:50%; margin: 3px 5px 0px 5px; float: left; background: #000;'></div><div style='width:30px; height: 100%; float:left; font-size:12px; text-align: left; padding-top: 1px;'>Pure Black</div>"
                 },
-                "footerImage": "/assets/images/top-trending-pink.png"
+                "footerImage": "/assets/images/top-trending-green.png"
               },
               "bottom": {
                 "backgroundColor": "#f3d6e3",
@@ -91,7 +91,7 @@
                   "color": "#bbb3c6",
                   "content": "<div style='width:20px; height:20px; margin: 3px 5px 0px 5px; float: left; overflow:hidden;'><img src='/assets/images/gViz/visualizations/diwo-visual-vs-bubble-cross-sell-up-sell/fabric_grey_icon_small.png' style='height: 20px;' /></div><div style='width:30px; height: 100%; float:left; font-size:12px; text-align: left; line-height: 29px;'>Velvet</div>"
                 },
-                "footerImage": "/assets/images/top-trending-pink.png"
+                "footerImage": "/assets/images/top-trending-green.png"
               }
             }
           },
@@ -165,9 +165,67 @@
                 "borderColor": "#f3d6e3",
                 "hoveredBackgroundColor": "#f3d6e3",
                 "hoveredBorderColor": "#f3d6e3",
-                "body": {
-                  "color": "#f19db6",
-                  "content": "<img style='width: 196px; height: 196px;' src='/assets/images/gViz/visualizations/diwo-visual-vs-bubble-cross-sell-up-sell/price-point-analysis-hovered.png' />"
+                "data": {
+                  "title": "",
+                  "legend": {
+                    "isVisible": false,
+                    "text": "{{name}}"
+                  },
+                  "tooltip": {
+                    "hasPercentage": true,
+                    "title": "{{name}}"
+                  },
+                  "attrs": {
+                    "radius": 20,
+                    "muted": false,
+                    "grid": false
+                  },
+                  "x1": {
+                    "title": "Sales Mix %",
+                    "value": "sum",
+                    "color": "#FFF",
+                    "prefix": "$",
+                    "sufix": "",
+                    "format": "locale"
+                  },
+                  "data": [
+                    {
+                        "id": "id-1",
+                        "name": "$35-$45",
+                        "color": "#FFF",
+                        "nameColor": "#8b719a",
+                        "percentageColor": "#FFF",
+                        "lineColor": "#FFF",
+                        "x1": 40
+                    },
+                    {
+                        "id": "id-2",
+                        "name": "$18-$25",
+                        "color": "#fde9f2",
+                        "nameColor": "#8b719a",
+                        "percentageColor": "#FFF",
+                        "lineColor": "#FFF",
+                        "x1": 28
+                    },
+                    {
+                        "id": "id-3",
+                        "name": "$45-$60",
+                        "color": "#fbd9e8",
+                        "nameColor": "#8b719a",
+                        "percentageColor": "#FFF",
+                        "lineColor": "#FFF",
+                        "x1": 22
+                    },
+                    {
+                        "id": "id-4",
+                        "name": "$25-$35",
+                        "color": "#f9c5da",
+                        "nameColor": "#8b719a",
+                        "percentageColor": "#FFF",
+                        "lineColor": "#FFF",
+                        "x1": 10
+                    }
+                  ]
                 }
               }
             }

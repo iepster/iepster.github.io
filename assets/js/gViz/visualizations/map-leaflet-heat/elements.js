@@ -182,6 +182,9 @@ module.exports = function () {
                 .node(e)
                 .run();
 
+              // Trigger onHover attribute function
+              if(_var.onHoverOut != null && typeof _var.onHoverOut === "function") { _var.onHoverOut(e); }
+
             // Click action
             }).on('click', function(e) {
 

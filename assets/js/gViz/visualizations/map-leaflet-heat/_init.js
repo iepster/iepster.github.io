@@ -42,6 +42,7 @@ module.exports = function () {
 
   // Event bindings
   let onHover = function(d) { console.log(d); };
+  let onHoverOut = function(d) { console.log(d); };
   let onClick = function(d) { console.log(d); };
   let onDragStart = function(d) { console.log(d); };
   let onDragEnd = function(d) { console.log(d); };
@@ -111,6 +112,7 @@ module.exports = function () {
             .startPoint(startPoint)
             .zoom(zoom)
             .onHover(onHover)
+            .onHoverOut(onHoverOut)
             .onClick(onClick)
             .onDragStart(onDragStart)
             .onDragEnd(onDragEnd)
@@ -227,7 +229,7 @@ module.exports = function () {
   };
 
   // Expose global variables
-  ['_id', '_var', 'action', 'animation','container', 'colors', 'data', 'height', 'margin','mode','width', 'tile', 'startPoint', 'zoom','onClick','onHover','onDragStart','onDragEnd'].forEach(function (key) {
+  ['_id', '_var', 'action', 'animation','container', 'colors', 'data', 'height', 'margin','mode','width', 'tile', 'startPoint', 'zoom','onClick','onHover','onHoverOut','onDragStart','onDragEnd'].forEach(function (key) {
 
     // Attach variables to validation function
     validate[key] = function (_) {
