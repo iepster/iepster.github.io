@@ -1,3 +1,5 @@
+$mainColor: #584c5b;
+
 svg.dendrogram-chart {
 
   font-family: 'Yantramanav', sans-serif;
@@ -18,6 +20,7 @@ svg.dendrogram-chart {
       cursor: pointer;
       fill: $middle-white;
       font-size: 12px;
+      font-weight: 300;
     }
 
   }
@@ -31,7 +34,7 @@ svg.dendrogram-chart {
 
   path.label-link {
     fill: transparent;
-    stroke: $blue4;
+    stroke: $mainColor;
     stroke-width: 1px;
     stroke-opacity: 0.8;
     shape-rendering: crispy-edges;
@@ -41,7 +44,7 @@ svg.dendrogram-chart {
 
   path.satelite {
     fill: transparent;
-    stroke: $blue4;
+    stroke: $mainColor;
     stroke-width: 1px;
     stroke-opacity: 0.5;
     shape-rendering: crispy-edges;
@@ -49,26 +52,26 @@ svg.dendrogram-chart {
 
   .link, .left-link {
     fill: none;
-    stroke: $blue4;
+    stroke: $mainColor;
     stroke-width: 1px;
     shape-rendering: crispy-edges;
   }
 
   text.level-label {
     font-size: 12px;
-    fill: $blue4;
+    fill: $mainColor;
   }
 
   g.prev-next-group {
     cursor: pointer;
     text {
       font-size: 12px;
-      fill: $light-white;
+      fill: $light-white;;
       font-weight: 300;
     }
     path.prev-next {
       fill: transparent;
-      stroke: $light-white;
+      stroke: $light-white;;
       stroke-width: 3px;
       cursor: pointer;
     }

@@ -24,6 +24,7 @@ module.exports = function() {
   let width     = null;
   let zHeight   = null;
   let zWidth    = null;
+  let zWidthPercent = null;
   let zoomNode  = null;
 
   // Validate attributes
@@ -61,6 +62,7 @@ module.exports = function() {
           _var.zoomLevel = -1;
           _var.mainValue = mainValue;
           _var.zoomNode = zoomNode;
+          _var.zWidthPercent = zWidthPercent;
 
           // Get container
           _var.container = { selector: container, d3: d3.select(container), el: (typeof container === 'string' || container instanceof String) ?            container : d3.select(container).node() };
@@ -86,7 +88,7 @@ module.exports = function() {
 
           // Define zoom height and zoom width
           _var.zHeight = zHeight != null ? zHeight : _var.height;
-          _var.zWidth = zWidth != null ? zWidth : _var.width * 0.55;
+          _var.zWidth = zWidth != null ? zWidth : _var.width * _var.zWidthPercent;
 
           // Set attribute _id to container
           _var.container.d3.attr('data-vis-id', _var._id);
@@ -106,7 +108,7 @@ module.exports = function() {
   };
 
   // Expose global variables
-  ['_id','_var','animation','click','hover','hovered','colors','container','data','height','margin','mainValue','scale','width','sumLevel','zHeight','zWidth','zoomNode'].forEach(function(key) {
+  ['_id','_var','animation','click','hover','hovered','colors','container','data','height','margin','mainValue','scale','width','sumLevel','zHeight','zWidth','zWidthPercent','zoomNode'].forEach(function(key) {
 
     // Attach variables to validation function
     validate[key] = function(_) {

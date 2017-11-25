@@ -179,8 +179,8 @@ module.exports = function() {
               if(_var.zoomNode != null) {
 
                 // Set width and zoom width
-                _var.width = _var._width = _var._width / 0.55;
-                _var.zWidth = _var.width * 0.55;
+                _var.width = _var._width = _var._width / _var.zWidthPercent;
+                _var.zWidth = _var.width * _var.zWidthPercent;
 
                 // Get children from all nodes
                 var zRoot = d3.hierarchy(_var.data, function (d) {

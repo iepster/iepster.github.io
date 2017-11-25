@@ -48,6 +48,8 @@ module.exports = function() {
             else if(node.children && node.children.length > 1) { elements = node.children; }
             else if(node._children && node._children.length > 1) { elements = node._children; }
 
+            if(node.data.id === 'solids') { console.log(elements); }
+
             // Set satelite points
             elements = elements.sort(function(a,b) { return d3.descending(+a.data.values.cYear, +b.data.values.cYear); });
 
@@ -183,6 +185,10 @@ module.exports = function() {
 
               // Recursive
               d.children.forEach(function (c) { _var.mapGraph(c); });
+
+              // Collapse nodes
+              if(d.data.collapsed != null && d.data.collapsed === true) { _var.collapse(d); }
+
             }
 
             // Update parent
@@ -221,7 +227,7 @@ module.exports = function() {
             if(_var.attrs.depths[`${d.depth}`] == null) { _var.attrs.depths[`${d.depth}`] = { count: 0, acc: 0 }; }
             _var.attrs.depths[`${d.depth}`].count += 1;
 
-            if (d.children) {
+            if (d.children && !(d.data.collapsed != null && d.data.collapsed === true)) {
               d.children.forEach(function (c) {
                 _var.getMaxDepth(c);
               });

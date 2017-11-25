@@ -355,7 +355,7 @@
             "title": "{{name}}"
           },
           "attrs": {
-            "radius": 30,
+            "radius": 20,
             "muted": false,
             "arcOpacity": 0.8
           },

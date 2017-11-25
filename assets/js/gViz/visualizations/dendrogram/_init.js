@@ -42,6 +42,7 @@ module.exports = function () {
   let width     = null;
   let zHeight   = null;
   let zWidth    = null;
+  let zWidthPercent  = 1;
   let zoomNode  = null;
 
   // Validate attributes
@@ -98,6 +99,7 @@ module.exports = function () {
             .width(width)
             .zHeight(zHeight)
             .zWidth(zWidth)
+            .zWidthPercent(zWidthPercent)
             .zoomNode(zoomNode)
             .run();
 
@@ -152,8 +154,8 @@ module.exports = function () {
           main('initialize');
 
           // Set width and zoom width
-          _var.width = _var._width = _var._width / 0.55;
-          _var.zWidth = _var.width * 0.55;
+          _var.width = _var._width = _var._width / _var.zWidthPercent;
+          _var.zWidth = _var.width * _var.zWidthPercent;
 
           // Running
           _var = components.hover()
@@ -170,7 +172,7 @@ module.exports = function () {
   };
 
   // Expose global variables
-  ['_id','_var','action','animation','click','hover','hovered','container','colors','data','height','margin','mainValue','zoomNode','scale','width','sumLevel','zHeight','zWidth'].forEach(function(key) {
+  ['_id','_var','action','animation','click','hover','hovered','container','colors','data','height','margin','mainValue','zoomNode','scale','width','sumLevel','zHeight','zWidth','zWidthPercent'].forEach(function(key) {
 
     // Attach variables to validation function
     validate[key] = function(_) {
