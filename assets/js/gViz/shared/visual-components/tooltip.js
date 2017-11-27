@@ -11,6 +11,7 @@ module.exports = function() {
   var action      = "show";
   var body        = "#333";
   var borderColor = "#333";
+  var backgroundColor = null;
   var color       = "#333";
   var content     = "";
   var hasImg      = false;
@@ -62,13 +63,11 @@ module.exports = function() {
                 // Set image
                 if(i === 0 && hasImg === true && obj.img != null && obj.img !== "") {
 
-                  t = "<span class='title with-image' style='color: #666; background-color: #FFF; "+( i !== 0 ? 'border-top: 1px solid {{color}}' : '')+"'><span class='title-img' style='border-right: 1px solid {{color}}'><img src='{{img}}'/></span><span class='title-text'>"+t+"</span></span>";
-                  //t = "<span class='title with-image' style='color: {{color}}; background-color: " + (helpers.colors.isDark(obj.color) ? "#FFF" : "#434343") + "; "+( i !== 0 ? 'border-top: 1px solid {{color}}' : '')+"'><span class='title-img' style='border-right: 1px solid {{color}}'><img src='{{img}}'/></span><span class='title-text'>"+t+"</span></span>";
+                  t = "<span class='title with-image' style='color: #666; background-color: "+(backgroundColor == null ? "#FFF" : backgroundColor)+"; border-top: 1px solid "+(borderColor == null ? '{{color}}' : borderColor)+";'><span class='title-img' style='border-right: 1px solid {{color}}'><img src='{{img}}'/></span><span class='title-text'>"+t+"</span></span>";
 
                 } else {
 
-                  t = "<span class='title' style='color: #666; background-color: #FFF; "+( i !== 0 ? 'border-top: 1px solid {{color}}' : '')+"'>" + t + "</span>";
-                  //t = "<span class='title' style='color: {{color}}; background-color: " + (helpers.colors.isDark(obj.color) ? "#FFF" : "#434343") + "; "+( i !== 0 ? 'border-top: 1px solid {{color}}' : '')+"'>" + t + "</span>";
+                  t = "<span class='title' style='color: #666; background-color: "+(backgroundColor == null ? "#FFF" : backgroundColor)+"; border-top: 1px solid "+(borderColor == null ? '{{color}}' : borderColor)+";'>" + t + "</span>";
 
                 }
 
@@ -77,7 +76,7 @@ module.exports = function() {
 
               // Set body content
               body = body == null || body.constructor !== Array ? [] : body;
-              body = body.map(function(d) { return "<span class='text' style='background-color: {{color}}; color: " + (helpers.colors.isDark(obj.color) ? "#FFF" : "#434343") + ";'>" + d + "</span>"; }).join('');
+              body = body.map(function(d) { return "<span class='text' style='background-color: "+(backgroundColor == null ? "{{color}}" : backgroundColor)+"; color: " + (helpers.colors.isDark(obj.color) ? "#FFF" : "#434343") + "; border-top: 1px solid "+(borderColor == null ? '{{color}}' : borderColor)+";'>" + d + "</span>"; }).join('');
 
               // Join content
               content = helpers.text.replaceVariables(title, obj) + helpers.text.replaceVariables(body, obj);
@@ -95,6 +94,7 @@ module.exports = function() {
                   ctn = ctn.enter().append("div").attr("class", 'content').merge(ctn);
                   ctn
                     .style("border", "1px solid "+borderColor)
+                    .style("border-top", "none")
                     .html(content)
 
                   // Update tooltip content
@@ -148,7 +148,7 @@ module.exports = function() {
   };
 
   // Exposicao de variaveis globais
-  ['_var','action','body','borderColor','color','hasImg','left','muted','obj','top','title'].forEach(function(key) {
+  ['_var','action','body','borderColor','backgroundColor','color','hasImg','left','muted','obj','top','title'].forEach(function(key) {
 
     // Attach variables to validation function
     validate[key] = function(_) {

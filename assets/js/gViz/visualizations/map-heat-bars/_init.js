@@ -33,6 +33,11 @@ module.exports = function () {
   var mode      = "bars";
   var width     = null;
 
+  // Event bindings
+  let onHover = function(d) { console.log(d); };
+  let onHoverOut = function(d) { console.log(d); };
+  let onClick = function(d) { console.log(d); };
+
   // Validate attributes
   var validate = function (step) {
     switch (step) {
@@ -86,6 +91,9 @@ module.exports = function () {
             .height(height)
             .margin(margin)
             .mode(mode)
+            .onHover(onHover)
+            .onHoverOut(onHoverOut)
+            .onClick(onClick)
             .width(width)
             .run();
           break;
@@ -96,7 +104,7 @@ module.exports = function () {
           // Set bar scale
           _var = components.barScale()
             ._var(_var)
-            .data(_var.data.data == null ? [] : _var.data.data.bars)
+            .data(_var.data.data == null || _var.data.data.bars == null ? [] : _var.data.data.bars)
             .run();
           break;
 
@@ -125,7 +133,7 @@ module.exports = function () {
           // Set heat scale
           _var = components.heatScale()
             ._var(_var)
-            .data(_var.data.data == null ? [] : _var.data.data.heat)
+            .data(_var.data.data == null || _var.data.data.heat == null ? [] : _var.data.data.heat)
             .run();
           break;
 
@@ -164,7 +172,7 @@ module.exports = function () {
   };
 
   // Expose global variables
-  ['_id', '_var', 'action', 'animation','container', 'colors', 'data', 'geoData', 'height', 'margin','mode','width'].forEach(function (key) {
+  ['_id', '_var', 'action', 'animation','container', 'colors', 'data', 'geoData', 'height', 'margin','mode','onClick','onHover','onHoverOut','width'].forEach(function (key) {
 
     // Attach variables to validation function
     validate[key] = function (_) {

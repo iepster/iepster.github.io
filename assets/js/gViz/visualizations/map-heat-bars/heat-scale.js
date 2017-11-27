@@ -14,7 +14,7 @@ module.exports = function () {
   var validate = function (step) {
 
     switch (step) {
-      case 'run': return true;
+      case 'run': return _var.data.heat != null && _var.data.data.heat != null;
       default: return false;
     }
   };

@@ -74,7 +74,7 @@ module.exports = function () {
                 .style('fill', _var.shapeColor)
                 .style('fill-opacity', _var.shapeOpacity)
                 .style('stroke', _var.shapeStrokeColor)
-                .style('stroke-width', (0.5 / _var.zoomTransform.k) + "px")
+                .style('stroke-width', _var.shapeStrokeWidth)
 
               _var.mapShapes.on('mouseover', function(e) {
 
@@ -127,6 +127,9 @@ module.exports = function () {
             .attr('transform', function(d) { return "translate("+_var.projection([d.lon, d.lat])[0]+","+_var.projection([d.lon, d.lat])[1]+")"; })
             .each(function (e, i) {
 
+              // Initialize flags
+              var isPin = _var.data.bars != null && _var.data.bars.barStyle != null && _var.data.bars.barStyle === 'pin';
+
               // Draw bottom bars
               _var.bottomBars = d3.select(this).selectAll(".bottom-bar").data([e]);
               _var.bottomBars.exit().remove();
@@ -149,6 +152,19 @@ module.exports = function () {
                 .attr('height', _var.barHeight)
                 .attr('fill', _var.barColor)
 
+              // Draw circle on top of bars
+              _var.barCircles = d3.select(this).selectAll(".bar-circle").data(isPin ? [e] : []);
+              _var.barCircles.exit().remove();
+              _var.barCircles = _var.barCircles.enter().append("circle").attr("class", "bar-circle").merge(_var.barCircles);
+
+              // Update bars attributes
+              _var.barCircles.transition()
+                .attr('r', _var.pinRadius)
+                .attr('cx', 0)
+                .attr('cy', _var.barY)
+                .attr('fill', _var.barColor)
+                .style('cursor', 'pointer')
+
             });
 
             // Hover action
@@ -165,6 +181,9 @@ module.exports = function () {
                 .node(e)
                 .run();
 
+              // Trigger onHover attribute function
+              if(_var.onHover != null && typeof _var.onHover === "function") { _var.onHover(e); }
+
             // Mouseout action
             }).on('mouseout', function(e) {
 
@@ -178,6 +197,15 @@ module.exports = function () {
                 .components(components)
                 .node(e)
                 .run();
+
+              // Trigger onHover attribute function
+              if(_var.onHoverOut != null && typeof _var.onHoverOut === "function") { _var.onHoverOut(e); }
+
+            // Click action
+            }).on('click', function(e) {
+
+              // Trigger onClick attribute function
+              if(_var.onClick != null && typeof _var.onClick === "function") { _var.onClick(e); }
 
             });
 

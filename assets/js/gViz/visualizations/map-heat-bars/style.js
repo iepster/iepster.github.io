@@ -49,6 +49,15 @@ module.exports = function () {
             }
           }
 
+          // Set shape stroke width
+          _var.shapeStrokeWidth = function(d) {
+            if(_var.mode === 'bars') {
+              return ((_var.data.bars != null && _var.data.bars.mapStrokeColor != null && !isNaN(+_var.data.bars.mapStrokeColor) ? _var.data.bars.mapStrokeColor : 1) / _var.zoomTransform.k) + "px";
+            } else {
+              return ((_var.data.heat != null && _var.data.heat.mapStrokeColor != null && !isNaN(+_var.data.heat.mapStrokeColor) ? _var.data.heat.mapStrokeColor : 1) / _var.zoomTransform.k) + "px";
+            }
+          }
+
           // Set shape stroke color
           _var.shapeStrokeColor = function(d) {
             if(_var.mode === 'bars') {
@@ -56,6 +65,11 @@ module.exports = function () {
             } else {
               return _var.data.heat != null && _var.data.heat.mapStrokeColor != null ? _var.data.heat.mapStrokeColor : "#FFF";
             }
+          }
+
+          // Set pin radius
+          _var.pinRadius = function(d) {
+            return _var.data.bars != null && _var.data.bars.pinRadius != null ? _var.data.bars.pinRadius : (2*_var.barWidth(d));
           }
 
           // Set bar width

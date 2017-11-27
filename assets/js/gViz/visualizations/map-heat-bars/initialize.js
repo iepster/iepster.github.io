@@ -19,6 +19,11 @@ module.exports = function() {
   var mode      = "bars";
   var width     = null;
 
+  // Event bindings
+  let onHover = function(d) { console.log(d); };
+  let onHoverOut = function(d) { console.log(d); };
+  let onClick = function(d) { console.log(d); };
+
   // Validate attributes
   var validate = function(step) {
     switch (step) {
@@ -45,6 +50,9 @@ module.exports = function() {
           _var.colors = colors;
           _var.margin = margin;
           _var.mode = mode;
+          _var.onHover = onHover;
+          _var.onHoverOut = onHoverOut;
+          _var.onClick = onClick;
 
           // Id for shadows
           _var.shadowId = `vis-shadow-${Math.floor(Math.random() * ((1000000000 - 5) + 1)) + 5}`
@@ -58,7 +66,7 @@ module.exports = function() {
           };
 
           // Get data
-          _var.data = data;
+          _var.data = data == null ? {} : data;
           _var.geoData = geoData;
 
           // Set zoom transform
@@ -69,7 +77,8 @@ module.exports = function() {
           _var.width = ((width != null) ? width : _var.container.clientRect.width) - (_var.margin.left + _var.margin.right);
 
           // Update height based on title and legend
-          if(_var.data.title == null || _var.data.title === "") { _var.height += 35; }
+          if(_var.data.title != null && _var.data.title !== "") { _var.height -= 35; }
+          if(_var.data.legend == null || _var.data.legend.isVisible == null || _var.data.legend.isVisible === true) { _var.height -= 30; }
 
           // Set attribute _id to container
           _var.container.d3.attr('data-vis-id', _var._id);
@@ -87,7 +96,7 @@ module.exports = function() {
   };
 
   // Expose global variables
-  ['_id','_var','animation','container','colors','data','geoData','height','margin','mode','width'].forEach(function(key) {
+  ['_id','_var','animation','container','colors','data','geoData','height','margin','mode','onClick','onHover','onHoverOut','width'].forEach(function(key) {
 
     // Attach variables to validation function
     validate[key] = function(_) {

@@ -15,13 +15,14 @@ module.exports = function() {
   var color       = "#333";
   var content     = "";
   var hasImg      = false;
-  var left        = 0;
   var muted       = false;
   var obj         = {};
   var target      = null;
   var title       = 0;
   var top         = null;
   var bottom      = null;
+  var right       = null;
+  var left        = null;
 
   // Validate attributes
   var validate = function(step) {
@@ -55,7 +56,7 @@ module.exports = function() {
               title = title == null || title.constructor !== Array ? [] : title;
               title = title.map(function(t, i) {
 
-                return "<div class='node-header' style='color: {{color}}; background-color: " + (backgroundColor == null ? (helpers.colors.isDark(obj.color) ? "#FFF" : "#434343") : backgroundColor) + "; "+( i !== 0 ? 'border-top: 1px solid {{color}}' : '')+"'>" + t + "</div>";
+                return "<div class='node-header' style='color: {{color}}; background-color: " + (backgroundColor == null ? (helpers.colors.isDark(obj.color) ? "#FFF" : "#434343") : backgroundColor) + "; border-top: 1px solid {{borderColor}};'>" + t + "</div>";
 
               }).join('');
 
@@ -69,9 +70,11 @@ module.exports = function() {
               // Update tooltip content
               target
                 .style("border", "1px solid "+borderColor)
-                .style("left", left == null ? null : left + "px")
+                .style("border-top", "none")
+                .style("right", right == null ? null : right + "px")
+                .style("left", left == null ? (right == null ? "10px" : null) : left + "px")
                 .style("top", top == null ? null : top + "px")
-                .style("bottom", bottom == null ? null : bottom + "px")
+                .style("bottom", bottom == null ? (top == null ? "10px" : null) : bottom + "px")
                 .html(content)
 
               break;
@@ -93,7 +96,7 @@ module.exports = function() {
   };
 
   // Exposicao de variaveis globais
-  ['_var','action','body','borderColor','backgroundColor','color','hasImg','left','muted','obj','target','top','bottom','title'].forEach(function(key) {
+  ['_var','action','body','borderColor','backgroundColor','color','hasImg','left','muted','obj','target','top','bottom','left','right','title'].forEach(function(key) {
 
     // Attach variables to validation function
     validate[key] = function(_) {

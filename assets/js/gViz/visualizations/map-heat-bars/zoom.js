@@ -39,7 +39,7 @@ module.exports = function () {
             _var.g.attr("transform", d3.event.transform)
 
             // Update shapes
-            _var.mapShapes.style('stroke-width', (0.5 / _var.zoomTransform.k) + "px")
+            _var.mapShapes.style('stroke-width', _var.shapeStrokeWidth)
 
             // Draw shadow
             shared.visualComponents.shadow()
