@@ -48,7 +48,6 @@ module.exports = function() {
 
           // Breadcrumbs items
           var items = [{ data: { id: 'reset-vis', abbr: 'Graph View' } }].concat(_var.createBreadcrumbs(node, []).reverse());
-          debugger;
 
           // Insert / Update breadcrumbs texts
           var bcSel = _var.container.d3.select('[data-id="gViz-wrapper-breadcrumbs"]').selectAll('breadcrumb-item').data(items);
