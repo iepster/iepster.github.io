@@ -81,8 +81,9 @@ module.exports = function() {
           _var.height = ((height != null) ? height : _var.container.clientRect.height) - (_var.margin.top + _var.margin.bottom);
           _var.width = ((width != null) ? width : _var.container.clientRect.width) - (_var.margin.left + _var.margin.right);
 
-          // Update height based on title and legend
-          if(_var.data.title == null || _var.data.title === "") { _var.height += 35; }
+          // // Update height based on title and legend
+          // if(_var.data.title != null && _var.data.title !== "") { _var.height -= 35; }
+          // if(_var.data.legend == null || _var.data.legend.isVisible == null || _var.data.legend.isVisible === true) { _var.height -= 30; }
 
           // Set attribute _id to container
           _var.container.d3.attr('data-vis-id', _var._id);

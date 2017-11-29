@@ -20,7 +20,7 @@
       "image": "/assets/images/gViz/visualizations/diwo-visual-vs-bubble-cross-sell-up-sell/customer_segment_icon.png",
       "expanded": {
         "header": {
-          "text": "<img style='display: block; float: left; margin-right: 10px; height: 34px;' src='/assets/images/gViz/visualizations/diwo-visual-vs-bubble-cross-sell-up-sell/customer_segment_icon.png' /><span style='height:34px; line-height: 34px; display: block; width: auto; float: left; '>Customer Segments</span>",
+          "text": "<img style='display: block; float: left; margin-right: 10px; height: 40px; margin-top: -5px;' src='/assets/images/gViz/visualizations/diwo-visual-vs-bubble-cross-sell-up-sell/customer_segment_icon.png' /><span style='height:34px; line-height: 34px; display: block; width: auto; float: left; '>Customer Segments</span>",
           "backgroundColor": "#FFF",
           "color": "#e51c2a"
         },
@@ -241,7 +241,7 @@
       "image": "/assets/images/gViz/visualizations/diwo-visual-vs-bubble-cross-sell-up-sell/sales_uplift_icon.png",
       "expanded": {
         "header": {
-          "text": "<img style='display: block; float: left; margin-right: 10px; height: 34px;' src='/assets/images/gViz/visualizations/diwo-visual-vs-bubble-cross-sell-up-sell/sales_uplift_icon.png' /><span style='height:34px; line-height: 34px; display: block; width: auto; float: left; '>Sales Uplift Insights</span>",
+          "text": "<img style='display: block; float: left; margin-right: 10px; height: 40px; margin-top: -5px;' src='/assets/images/gViz/visualizations/diwo-visual-vs-bubble-cross-sell-up-sell/sales_uplift_icon.png' /><span style='height:34px; line-height: 34px; display: block; width: auto; float: left; '>Sales Uplift Insights</span>",
           "backgroundColor": "#FFF",
           "color": "#e51c2a"
         },

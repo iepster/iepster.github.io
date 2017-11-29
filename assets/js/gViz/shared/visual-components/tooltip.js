@@ -98,8 +98,8 @@ module.exports = function() {
                     .html(content)
 
                   // Get arrow styles
-                  var arrowBGColor = backgroundColor != null ? backgroundColor : (body.length !== 0 ? helpers.text.replaceVariables("{{color}}") : "#FFF");
-                  var arrowColor = borderColor != null ? borderColor : helpers.text.replaceVariables("{{color}}");
+                  var arrowBGColor = backgroundColor != null ? backgroundColor : (body.length !== 0 ? helpers.text.replaceVariables("{{color}}", obj) : "#FFF");
+                  var arrowColor = borderColor != null ? borderColor : helpers.text.replaceVariables("{{color}}", obj);
 
                   // Update tooltip content
                   var arrow = d3.select(this).selectAll('.arrow').data(["gViz-arrow"]);

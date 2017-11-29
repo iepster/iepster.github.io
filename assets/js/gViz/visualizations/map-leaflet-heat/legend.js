@@ -34,7 +34,8 @@ module.exports = function() {
           var outerWrapper = _var.container.d3.closest('.gViz-outer-wrapper');
 
           // Set margin left and display style
-          outerWrapper.select('.legend-wrapper, .legend-wrapper-full').style('display', 'block')
+          outerWrapper.select('.legend-wrapper, .legend-wrapper-full')
+            .style('display', _var.data == null || _var.data.legend == null || _var.data.legend.isVisible == null || _var.data.legend.isVisible === true ? 'block' : 'none')
 
           // Set scale for heat
           var scaleWrapper = outerWrapper.select('.legend-wrapper, .legend-wrapper-full').select('.scale-wrapper')
