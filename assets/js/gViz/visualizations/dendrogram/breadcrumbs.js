@@ -150,34 +150,35 @@ module.exports = function() {
                 .style('fill', "none")
                 .style('opacity', 0)
 
-              // Create gradient bg
-              components.gradients()
-                .container(_var.wrap)
-                .id("diwo-gradient-glows")
-                .type('radialGradient')
-                .gData([{ colors: [ {offset:"0%", color:"rgba(6,19,36,1)"},{offset:"70%", color:"transparent"}]}])
-                .run();
+              // // Create gradient bg
+              // components.gradients()
+              //   .container(_var.wrap)
+              //   .id("diwo-gradient-glows")
+              //   .type('radialGradient')
+              //   .gData([{ colors: [ {offset:"0%", color:"rgba(6,19,36,1)"},{offset:"70%", color:"transparent"}]}])
+              //   .run();
 
-              // Draw Background rect
-              var bg_glow = d3.select(this).selectAll("rect.bg-glow").data(["bg-rect"]);
-              bg_glow.exit().remove();
-              bg_glow = bg_glow.enter().insert('rect', ':first-child').attr("class", "bg-glow").merge(bg_glow);
-              bg_glow
-                .attr("x", -4*s)
-                .attr('y', (e.side ==='prev' ? (3*h + 0.5*s) : 0) -3*s)
-                .attr('width',  8*s)
-                .attr("height", 6*s)
-                .style('fill', "none")
-                .style('opacity', 0)
+              // // Draw Background rect
+              // var bg_glow = d3.select(this).selectAll("rect.bg-glow").data(["bg-rect"]);
+              // bg_glow.exit().remove();
+              // bg_glow = bg_glow.enter().insert('rect', ':first-child').attr("class", "bg-glow").merge(bg_glow);
+              // bg_glow
+              //   .attr("x", -4*s)
+              //   .attr('y', (e.side ==='prev' ? (3*h + 0.5*s) : 0) -3*s)
+              //   .attr('width',  8*s)
+              //   .attr("height", 6*s)
+              //   .style('fill', "none")
+              //   .style('opacity', 0)
 
           // Hover
           }).on('mouseover', function(d) {
-            d3.select(this).selectAll("rect.bg-glow").style('fill', "url(#diwo-gradient-glows)").transition().duration(200).style('opacity', 1);
+            // d3.select(this).selectAll("rect.bg-glow").style('fill', "url(#diwo-gradient-glows)").transition().duration(200).style('opacity', 1);
             d3.select(this).selectAll("text").style('fill', "#FFF").transition().duration(200).style('opacity', 1);
             _var.g.selectAll(".node-group, .left-link").style('opacity', 0.4);
             _var.g.selectAll("path.link").style('stroke', "#122438");
           }).on('mouseout', function(d) {
-            d3.select(this).selectAll("rect.bg-glow, text").style('fill', "none").transition().duration(200).style('opacity', 0);
+            // d3.select(this).selectAll("rect.bg-glow, text").style('fill', "none").transition().duration(200).style('opacity', 0);
+            d3.select(this).selectAll("text").style('fill', "none").transition().duration(200).style('opacity', 0);
             _var.g.selectAll(".node-group, .left-link").style('opacity', 1);
             _var.g.selectAll("path.link").style('stroke', "#7291AD");
 

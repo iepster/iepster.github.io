@@ -85,10 +85,7 @@ module.exports = function() {
               // Update outer dimensions
               _var.wrap
                 .attr("width", _var.zWidth + _var.margin.left + _var.margin.right)
-                .attr("height", _var.zHeight + _var.margin.top + _var.margin.bottom - 5);
-
-              // Set wrappers height
-              _var.container.d3.style("height", parseInt(_var.zHeight + _var.margin.top + _var.margin.bottom) + 'px');
+                .attr("height", _var.zHeight + _var.margin.top + _var.margin.bottom);
 
               // Insert / Update nodes
               var nodeSel = _var.g.selectAll(`g.node-group`).filter(function(d) { return d == node; }).data([node], function (d) { return d.data.id; });
@@ -143,24 +140,24 @@ module.exports = function() {
 
               });
 
-              // Create gradient bg
-              components.gradients()
-                .container(_var.wrap)
-                .id("diwo-gradient-bg")
-                .type('radialGradient')
-                .gData([{ colors: [ {offset:"0%", color:"rgba(255,255,255,0.15)"},{offset:"50%", color:"transparent"}]}])
-                .run();
+              // // Create gradient bg
+              // components.gradients()
+              //   .container(_var.wrap)
+              //   .id("diwo-gradient-bg")
+              //   .type('radialGradient')
+              //   .gData([{ colors: [ {offset:"0%", color:"rgba(255,255,255,0.15)"},{offset:"50%", color:"transparent"}]}])
+              //   .run();
 
-              // Draw Background rect
-              var bg_rect = _var.g.selectAll("rect.bg-rect").data(["bg-rect"]);
-              bg_rect.remove().exit().remove();
-              bg_rect = bg_rect.enter().insert('rect', ':first-child').attr("class", "bg-rect").merge(bg_rect);
-              bg_rect
-                .attr("x", _var.zWidth > _var.zHeight ? 0 : -((_var.zHeight - _var.zWidth)/2))
-                .attr("y", _var.zWidth > _var.zHeight ? -((_var.zWidth - _var.zHeight)/2) : 0)
-                .attr('width',  _var.zWidth > _var.zHeight ? _var.zWidth : _var.zHeight)
-                .attr("height", _var.zWidth > _var.zHeight ? _var.zWidth : _var.zHeight)
-                .style('fill', "url(#diwo-gradient-bg)")
+              // // Draw Background rect
+              // var bg_rect = _var.g.selectAll("rect.bg-rect").data(["bg-rect"]);
+              // bg_rect.remove().exit().remove();
+              // bg_rect = bg_rect.enter().insert('rect', ':first-child').attr("class", "bg-rect").merge(bg_rect);
+              // bg_rect
+              //   .attr("x", _var.zWidth > _var.zHeight ? 0 : -((_var.zHeight - _var.zWidth)/2))
+              //   .attr("y", _var.zWidth > _var.zHeight ? -((_var.zWidth - _var.zHeight)/2) : 0)
+              //   .attr('width',  _var.zWidth > _var.zHeight ? _var.zWidth : _var.zHeight)
+              //   .attr("height", _var.zWidth > _var.zHeight ? _var.zWidth : _var.zHeight)
+              //   .style('fill', "url(#diwo-gradient-bg)")
 
               // Update breadcrumbs
               components.breadcrumbs()

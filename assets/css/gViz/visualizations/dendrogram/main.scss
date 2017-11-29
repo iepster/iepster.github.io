@@ -1,8 +1,11 @@
-$mainColor: #584c5b;
+// $mainColor: #584c5b;
+$levelLabelColor: #7e767f;
+$mainColor: #FFF;
 
 svg.dendrogram-chart {
 
   font-family: 'Yantramanav', sans-serif;
+  font-weight: 300;
 
   .node-group {
     cursor: pointer;
@@ -58,8 +61,8 @@ svg.dendrogram-chart {
   }
 
   text.level-label {
-    font-size: 12px;
-    fill: $mainColor;
+    font-size: 15px;
+    fill: $levelLabelColor;
   }
 
   g.prev-next-group {

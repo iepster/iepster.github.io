@@ -76,6 +76,7 @@ module.exports = function() {
               // Transition back to the parent element position
               linkUpdate
                 .attr('d', function (d) { return _var.diagonal(d, d.parent); })
+                .style("stroke-dasharray", function(d) { return _var.strokeStyle(d.parent); } )
                 .attr("clip-path", `url(#clip-${_var._id}`);
 
               // Remove any exiting links

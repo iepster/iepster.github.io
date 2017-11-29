@@ -87,6 +87,11 @@
       position: absolute;
       z-index: 1002;
       top: 0px;
+
+      &.arrow-bg {
+        z-index: 1001;
+        top: 1px;
+      }
     }
 
     &.no-body span {

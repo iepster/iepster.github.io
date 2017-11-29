@@ -20,7 +20,8 @@ module.exports = function () {
     satelites: require('./satelites.js'),
     setup: require('./setup.js'),
     events: require('./events.js'),
-    hover: require('./hover.js')
+    hover: require('./hover.js'),
+    style: require('./style.js'),
   };
 
   // Get attributes values
@@ -35,7 +36,7 @@ module.exports = function () {
   let container = null;
   let data      = [];
   let height    = null;
-  let margin    = { top: 40, right: 10, bottom: 40, left: 10 };
+  let margin    = { top: 50, right: 10, bottom: 0, left: 10 };
   let mainValue = false;
   let scale     = 1;
   let sumLevel  = null;
@@ -54,6 +55,7 @@ module.exports = function () {
       case 'helpers':     return true;
       case 'setup':       return true;
       case 'hover':       return true;
+      case 'style':       return true;
       default: return false;
     }
   };
@@ -70,6 +72,7 @@ module.exports = function () {
         case 'build':
 
           main('initialize');
+          main('style');
           main('create');
           main('helpers');
           main('create');
@@ -113,6 +116,15 @@ module.exports = function () {
             ._var(_var)
             .components(components)
             .parent(main)
+            .run();
+          break;
+
+        // Set style functions
+        case 'style':
+
+          // Creating
+          _var = components.style()
+            ._var(_var)
             .run();
           break;
 

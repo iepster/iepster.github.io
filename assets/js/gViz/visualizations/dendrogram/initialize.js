@@ -54,7 +54,6 @@ module.exports = function() {
           _var.hovered = hovered;
           _var.hover = hover;
           _var.colors = colors;
-          _var.data = data;
           _var.margin = margin;
           _var.sumLevel = sumLevel;
           _var.scale = scale;
@@ -64,8 +63,18 @@ module.exports = function() {
           _var.zoomNode = zoomNode;
           _var.zWidthPercent = zWidthPercent;
 
+          // Get data
+          _var.data = data.data;
+
+          // Get data attributes
+          _var.dataAttrs = {};
+          Object.keys(data).forEach(function(k) { if(k !== 'data') { _var.dataAttrs[k] = data[k]; } });
+
           // Get container
-          _var.container = { selector: container, d3: d3.select(container), el: (typeof container === 'string' || container instanceof String) ?            container : d3.select(container).node() };
+          _var.container = {
+            selector: container, d3: d3.select(container),
+            el: (typeof container === 'string' || container instanceof String) ? container : d3.select(container).node()
+          };
 
           // Get attrs
           _var.attrs = {
@@ -93,12 +102,12 @@ module.exports = function() {
           // Set attribute _id to container
           _var.container.d3.attr('data-vis-id', _var._id);
 
-          // Update most outer
-          _var.container.d3.closest(".watch-view").each(function() {
-            var parentHeight = this.getBoundingClientRect().height;
-            var calcHeight = _var.height + _var.margin.top + _var.margin.bottom;
-            d3.select(this).style('min-height', (parentHeight > calcHeight ? parentHeight : calcHeight) + "px");
-          });
+          // // Update most outer
+          // _var.container.d3.closest(".watch-view").each(function() {
+          //   var parentHeight = this.getBoundingClientRect().height;
+          //   var calcHeight = _var.height + _var.margin.top + _var.margin.bottom;
+          //   d3.select(this).style('min-height', (parentHeight > calcHeight ? parentHeight : calcHeight) + "px");
+          // });
 
           break;
       }

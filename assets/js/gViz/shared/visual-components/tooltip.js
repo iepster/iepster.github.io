@@ -97,13 +97,16 @@ module.exports = function() {
                     .style("border-top", "none")
                     .html(content)
 
+                  // Get arrow styles
+                  var arrowBGColor = backgroundColor != null ? backgroundColor : (body.length !== 0 ? helpers.text.replaceVariables("{{color}}") : "#FFF");
+                  var arrowColor = borderColor != null ? borderColor : helpers.text.replaceVariables("{{color}}");
+
                   // Update tooltip content
                   var arrow = d3.select(this).selectAll('.arrow').data(["gViz-arrow"]);
                   arrow.exit().remove();
                   arrow = arrow.enter().append("div").attr("class", 'arrow ' + (body === '' ? 'no-body' : '')).merge(arrow);
                   arrow
-                    .style("color", borderColor)
-                    .html("<span style= 'color:" + (body === '' ? (helpers.colors.isDark(obj.color) ? "#FFF" : "#434343") : '') + ";'>▼</span><span class='arrow-bg'>▼</span>");
+                    .html("<span style= 'color:"+arrowBGColor+";'>▼</span><span class='arrow-bg' style='color:"+arrowColor+";'>▼</span>");
 
                 });
 

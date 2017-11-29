@@ -38,7 +38,7 @@ module.exports = function() {
           // Update outer dimensions
           _var.wrap
             .attr("width",  _var.width +  _var.margin.left + _var.margin.right)
-            .attr("height", _var.height + _var.margin.top + _var.margin.bottom - 5);
+            .attr("height", _var.height + _var.margin.top + _var.margin.bottom);
 
           // Draw g
           _var.g = _var.wrap.selectAll("g.chart-wrap").data(["chart-wrap"]); // svg:g

@@ -286,7 +286,7 @@ module.exports = function() {
               _var.attrs.maxDepth = _var.attrs.maxDepth > (_var.sumLevel+2) ? _var.sumLevel+2 : _var.attrs.maxDepth;
             }
 
-            _var.height = _var.root.bbox._height < _var.height ? (_var.height + _var.margin.top) : _var.root.bbox._height;
+            _var.height = _var.root.bbox._height < _var.height ? _var.height : _var.root.bbox._height;
 
             // Declares a tree layout and assigns the size
             _var.treemap = d3.tree().size([_var.height, _var.width]);
@@ -294,10 +294,8 @@ module.exports = function() {
             // Update outer dimensions
             _var.wrap
               .attr("width", _var.width + _var.margin.left + _var.margin.right)
-              .attr("height", _var.height + _var.margin.top - 5);
+              .attr("height", _var.height + _var.margin.top + _var.margin.bottom);
 
-            // Set wrappers height
-            _var.container.d3.style("height", parseInt(_var.height - _var.margin.top) + 'px');
           };
 
           break;

@@ -171,9 +171,9 @@ module.exports = function() {
               levelSel
                 .attr('text-anchor', 'middle')
                 .attr('x', function(d,i) { return i * (_var.width / _var.attrs.maxDepth) + (_var.width / _var.attrs.maxDepth)/2; } )
-                .attr('y', -_var.margin.top/2 + 6)
+                .attr('y', -_var.margin.top/2)
                 .style('display','block')
-                .text(function(d) { return `Level ${d+1}`; })
+                .text(function(d) { return _var.dataAttrs.labels != null && _var.dataAttrs.labels[d] != null ? _var.dataAttrs.labels[d] : `Level ${d+1}`; })
 
               // Zoom to specific node passed as parameters
               if(_var.zoomNode != null) {

@@ -182,7 +182,7 @@ module.exports = function() {
                 .attr("dy", textOffset)
                 .transition().duration(animation).delay(delay)
                 .style("opacity", 1)
-                .style("font-size", `${11 / _var.scale}px`)
+                .style("font-size", `${(zoomed ? 13 : 11) / _var.scale}px`)
                 .text(function (d) { return d.data.abbr == null || zoomed ? d.data.name : d.data.abbr; });
 
               // Insert / Update node values
