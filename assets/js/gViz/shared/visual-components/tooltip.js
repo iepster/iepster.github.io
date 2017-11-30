@@ -20,6 +20,7 @@ module.exports = function() {
   var obj         = {};
   var top         = 0;
   var title       = 0;
+  var opacity     = 1;
 
   // Validate attributes
   var validate = function(step) {
@@ -118,7 +119,7 @@ module.exports = function() {
                       .style("top", function() { return (offset.top + top - (2 + this.getBoundingClientRect().height)) + "px"; })
                       .transition().duration(50)
                         .style("display", action === 'show' ? '' : 'block')
-                        .style("opacity", 1);
+                        .style("opacity", opacity);
                   })
 
               break;
@@ -151,7 +152,7 @@ module.exports = function() {
   };
 
   // Exposicao de variaveis globais
-  ['_var','action','body','borderColor','backgroundColor','color','hasImg','left','muted','obj','top','title'].forEach(function(key) {
+  ['_var','action','body','borderColor','backgroundColor','color','hasImg','left','muted','obj','opacity','top','title'].forEach(function(key) {
 
     // Attach variables to validation function
     validate[key] = function(_) {
