@@ -161,7 +161,7 @@ module.exports = function () {
               _var.barCircles.transition()
                 .attr('r', _var.pinRadius)
                 .attr('cx', 0)
-                .attr('cy', _var.barY)
+                .attr('cy', _var.pinY)
                 .attr('fill', _var.barColor)
                 .style('cursor', 'pointer')
 

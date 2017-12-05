@@ -22,9 +22,9 @@
     "bars": {
       "title": [],
       "body": [
-        "<span class='metric' style='color: #FFF;'>Store Location</span><span class='number' style='color: #a64775;'>{{storeLocation}}</span>",
-        "<span class='metric' style='color: #FFF;'>Store Type</span><span class='number' style='color: #a64775;'>{{storeType}}</span>",
-        "<span class='metric' style='color: #FFF;'>Footage</span><span class='number' style='color: #a64775;'>{{storeFootage}}</span>"
+        "<span class='metric' style='color: #FFF; font-size:15px;'>Store Location</span><span class='number' style='color: #e86493; font-size:14px;'>{{storeLocation}}</span>",
+        "<span class='metric' style='color: #FFF; font-size:15px;'>Store Type</span><span class='number' style='color: #e86493; font-size:14px;'>{{storeType}}</span>",
+        "<span class='metric' style='color: #FFF; font-size:15px;'>Footage</span><span class='number' style='color: #e86493; font-size:14px;'>{{storeFootage}}</span>"
       ]
     }
   },

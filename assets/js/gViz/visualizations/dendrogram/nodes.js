@@ -199,7 +199,7 @@ module.exports = function() {
                 .style("opacity", 1)
                 .style("font-size", `${9/_var.scale}px`)
                 .style('fill', function(d) { return d.data.color; })
-                .text(function (d) { return (isSatelite ? '' : 'C. Year ') +shared.helpers.number.localePercent(d.data.values[_var.mainValue]); });
+                .text(function (d) { return (isSatelite ? '' : 'Sales ') +shared.helpers.number.localeK(d.data.values[_var.mainValue]); });
 
               // Insert / Update node year over year
               var values = !isSatelite && mainValue && _var.mainValue && node.data.values && node.data.values[_var.mainValue] ? [node] : [];
@@ -215,7 +215,7 @@ module.exports = function() {
                 .style("opacity", 1)
                 .style("font-size", `${9/_var.scale}px`)
                 .style('fill', function(d) { return d.data.color; })
-                .text(function (d) { return 'YoY ' + shared.helpers.number.localePercent(d.data.values[_var.mainValue] - d.data.values.pYear); });
+                .text(function (d) { return 'Contribution ' + shared.helpers.number.localePercent(d.data.values[_var.mainValue] - d.data.values.pYear); });
 
               // Insert / Update left path
               if(!isSatelite) {

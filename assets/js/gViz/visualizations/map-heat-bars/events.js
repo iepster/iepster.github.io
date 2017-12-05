@@ -68,10 +68,11 @@ module.exports = function () {
                   // Get x and y values
                   var x = (_var.zoomTransform.x) + _var.projection([node.lon, node.lat])[0] * _var.zoomTransform.k;
                   var y = (_var.zoomTransform.y) + _var.projection([node.lon, node.lat])[1] * _var.zoomTransform.k;
+                  var isPin = _var.data.bars != null && _var.data.bars.barStyle != null && _var.data.bars.barStyle === 'pin';
 
                   // Get left and top positions
                   var left = _var.wrap.node().getBoundingClientRect().left + x;
-                  var top  = _var.wrap.node().getBoundingClientRect().top + y - _var.barHeight(node) - 5;
+                  var top  = _var.wrap.node().getBoundingClientRect().top + y - (_var.barHeight(node)*_var.zoomTransform.k) - (isPin ? (_var.pinRadius(node)*_var.zoomTransform.k) : 0) - 5;
 
                   // Initialize tooltip object
                   var tooltipObj = { properties: {} };
@@ -129,7 +130,7 @@ module.exports = function () {
                   .obj(tooltipTableObj)
                   .target(_var.container.d3.closest('.gViz-outer-wrapper').select('.gViz-map-table-tooltip'))
                   .title(tooltipTable[_var.mode] != null && tooltipTable[_var.mode].title != null ? tooltipTable[_var.mode].title : "")
-                  .top(tooltipTablePosition === 'bottom-left' || tooltipTablePosition === 'top-right' ? 10 : null)
+                  .top(tooltipTablePosition === 'top-left' || tooltipTablePosition === 'top-right' ? 10 : null)
                   .right(tooltipTablePosition === 'bottom-right' || tooltipTablePosition === 'top-right' ? 10 : null)
                   .bottom(tooltipTablePosition === 'bottom-left' || tooltipTablePosition === 'bottom-right' ? 10 : null)
                   .left(tooltipTablePosition === 'bottom-left' || tooltipTablePosition === 'top-left' ? 10 : null)

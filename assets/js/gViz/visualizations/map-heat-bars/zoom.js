@@ -51,6 +51,23 @@ module.exports = function () {
               .wrap(_var.wrap)
               .run();
 
+            // Update bottom bar attrs
+            _var.g.selectAll('.bottom-bar')
+              .attr('width', _var.barWidth)
+              .attr('height', _var.bottomBarHeight)
+              .attr('x', function(d) { return -_var.barWidth(d)/2; })
+              .attr('y', _var.barY)
+
+            // Update bar attrs
+            _var.g.selectAll('.bar')
+              .attr('width', _var.barWidth)
+              .attr('height', _var.barHeight)
+              .attr('x', function(d) { return -_var.barWidth(d)/2; })
+              .attr('y', _var.barY)
+
+            // Update circle attrs
+            _var.g.selectAll('.bar-circle').attr('r', _var.pinRadius).attr('cy', _var.pinY)
+
           }
 
           // Add zoom capabilities

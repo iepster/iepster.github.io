@@ -142,94 +142,95 @@ module.exports = function () {
                   _var.data.tooltip["_"+attr].forEach(function(d) { _var.data.tooltip[attr].push(d); });
                 });
 
-              } else if(origin === 'background') {
+              // } else if(origin === 'background') {
 
-                // Get valid date
-                var xValue = _var.x.invert(d3.mouse(mouse)[0]);
-                var tooltipValues = [];
+              //   // Get valid date
+              //   var xValue = _var.x.invert(d3.mouse(mouse)[0]);
+              //   var tooltipValues = [];
 
-                // Get values from each line group to use on the tooltip
-                _var.data.data.forEach(function(lineGroup, i) {
+              //   // Get values from each line group to use on the tooltip
+              //   _var.data.data.forEach(function(lineGroup, i) {
 
-                  // Get most close value to the mouse position
-                  var bisectIndex = bisector(lineGroup.values, xValue);
-                  if (bisectIndex > 0 && bisectIndex < lineGroup.values.length - 1) {
-                    var x0 = _var.x(lineGroup.values[bisectIndex - 1].parsedX);
-                    var x1 = _var.x(lineGroup.values[bisectIndex].parsedX);
-                    bisectIndex = _var.margin.left - x0 >= (x1 - x0) / 2 ? bisectIndex : bisectIndex - 1;
-                  }
+              //     // Get most close value to the mouse position
+              //     var bisectIndex = bisector(lineGroup.values, xValue);
+              //     if (bisectIndex > 0 && bisectIndex < lineGroup.values.length - 1) {
+              //       var x0 = _var.x(lineGroup.values[bisectIndex - 1].parsedX);
+              //       var x1 = _var.x(lineGroup.values[bisectIndex].parsedX);
+              //       bisectIndex = _var.margin.left - x0 >= (x1 - x0) / 2 ? bisectIndex : bisectIndex - 1;
+              //     }
 
-                  if(lineGroup.values[bisectIndex]) {
+              //     if(lineGroup.values[bisectIndex]) {
 
-                    // Initialize tooltip object
-                    var tooltipObj = {};
+              //       // Initialize tooltip object
+              //       var tooltipObj = {};
 
-                    // Set parent n attributes to tooltip obj
-                    Object.keys(lineGroup).forEach(function(k) { tooltipObj[k] = lineGroup[k]; });
+              //       // Set parent n attributes to tooltip obj
+              //       Object.keys(lineGroup).forEach(function(k) { tooltipObj[k] = lineGroup[k]; });
 
-                    // Set n attributes to tooltip obj
-                    Object.keys(lineGroup.values[bisectIndex]).forEach(function(k) { tooltipObj[k] = lineGroup.values[bisectIndex][k]; });
+              //       // Set n attributes to tooltip obj
+              //       Object.keys(lineGroup.values[bisectIndex]).forEach(function(k) { tooltipObj[k] = lineGroup.values[bisectIndex][k]; });
 
-                    // Set x, color and z values with format
-                    tooltipObj.x = _var.xFormat(lineGroup.values[bisectIndex].x);
-                    tooltipObj.y = _var.yFormat(lineGroup.values[bisectIndex].y);
-                    tooltipObj.color = _var.pointColor(lineGroup.values[bisectIndex]);
+              //       // Set x, color and z values with format
+              //       tooltipObj.x = _var.xFormat(lineGroup.values[bisectIndex].x);
+              //       tooltipObj.y = _var.yFormat(lineGroup.values[bisectIndex].y);
+              //       tooltipObj.color = _var.pointColor(lineGroup.values[bisectIndex]);
 
-                    // Store tooltipObj
-                    tooltipValues.push(tooltipObj);
+              //       // Store tooltipObj
+              //       tooltipValues.push(tooltipObj);
 
-                  }
+              //     }
 
-                });
+              //   });
 
-                // Get left and top positions
-                var left = _var.wrap.node().getBoundingClientRect().left + _var.margin.left + d3.mouse(mouse)[0];
-                var top  = _var.wrap.node().getBoundingClientRect().top + _var.margin.top;
+              //   // Get left and top positions
+              //   var left = _var.wrap.node().getBoundingClientRect().left + _var.margin.left + d3.mouse(mouse)[0];
+              //   var top  = _var.wrap.node().getBoundingClientRect().top + _var.margin.top + d3.mouse(mouse)[1] - 20;
 
-                // Propagate attributes for all values on tooltipValues
-                propAttrs.forEach(function(attr) {
+              //   // Propagate attributes for all values on tooltipValues
+              //   propAttrs.forEach(function(attr) {
 
-                  // Backup attr to be used on the propagation function
-                  _var.data.tooltip["_"+attr] = [];
-                  _var.data.tooltip[attr].forEach(function(d) { _var.data.tooltip["_"+attr].push(d); });
+              //     // Backup attr to be used on the propagation function
+              //     _var.data.tooltip["_"+attr] = [];
+              //     _var.data.tooltip[attr].forEach(function(d) { _var.data.tooltip["_"+attr].push(d); });
 
-                  // Store propagation attrs
-                  _var.data.tooltip[attr] = [];
+              //     // Store propagation attrs
+              //     _var.data.tooltip[attr] = [];
 
-                  // Propagate tooltip over all series
-                  tooltipValues.forEach(function(d) {
-                    _var.data.tooltip["_"+attr].forEach(function(p) {
-                      _var.data.tooltip[attr].push(shared.helpers.text.replaceVariables(p, d));
-                    });
-                  });
+              //     // Propagate tooltip over all series
+              //     tooltipValues.forEach(function(d) {
+              //       _var.data.tooltip["_"+attr].forEach(function(p) {
+              //         _var.data.tooltip[attr].push(shared.helpers.text.replaceVariables(p, d));
+              //       });
+              //     });
 
-                });
+              //   });
 
-                // Set tooltip header as title
-                if(_var.data.tooltip.header != null) {
-                  _var.data.tooltip.header.forEach(function(p) {
-                    _var.data.tooltip.title.unshift(shared.helpers.text.replaceVariables(p, {}));
-                  });
-                }
+              //   // Set tooltip header as title
+              //   if(_var.data.tooltip.header != null) {
+              //     _var.data.tooltip.header.forEach(function(p) {
+              //       _var.data.tooltip.title.unshift(shared.helpers.text.replaceVariables(p, {}));
+              //     });
+              //   }
 
-                // Set tooltip component
-                shared.visualComponents.tooltip()
-                  ._var(_var)
-                  .body(_var.data.tooltip != null && _var.data.tooltip.body != null ? _var.data.tooltip.body : "")
-                  .borderColor("#999")
-                  .hasImg(_var.data.tooltip != null && _var.data.tooltip.hasImg === true)
-                  .left(left)
-                  .muted(_var.data.tooltip != null && _var.data.tooltip.muted != null && _var.data.tooltip.muted === true)
-                  .obj({ color: "#999" })
-                  .top(top)
-                  .title(_var.data.tooltip != null && _var.data.tooltip.title != null ? _var.data.tooltip.title : "")
-                  .run();
+              //   // Set tooltip component
+              //   shared.visualComponents.tooltip()
+              //     ._var(_var)
+              //     .body(_var.data.tooltip != null && _var.data.tooltip.body != null ? _var.data.tooltip.body : "")
+              //     .borderColor("#999")
+              //     .hasImg(_var.data.tooltip != null && _var.data.tooltip.hasImg === true)
+              //     .left(left)
+              //     .muted(_var.data.tooltip != null && _var.data.tooltip.muted != null && _var.data.tooltip.muted === true)
+              //     .obj({ color: "#999" })
+              //     .opacity(0.8)
+              //     .top(top)
+              //     .title(_var.data.tooltip != null && _var.data.tooltip.title != null ? _var.data.tooltip.title : "")
+              //     .run();
 
-                // Reset propagation attrs
-                propAttrs.forEach(function(attr) {
-                  _var.data.tooltip[attr] = [];
-                  _var.data.tooltip["_"+attr].forEach(function(d) { _var.data.tooltip[attr].push(d); });
-                })
+              //   // Reset propagation attrs
+              //   propAttrs.forEach(function(attr) {
+              //     _var.data.tooltip[attr] = [];
+              //     _var.data.tooltip["_"+attr].forEach(function(d) { _var.data.tooltip[attr].push(d); });
+              //   })
 
               }
 

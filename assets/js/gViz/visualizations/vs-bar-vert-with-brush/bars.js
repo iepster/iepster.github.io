@@ -84,7 +84,7 @@ module.exports = function() {
             .attr('height', 2)
 
           // Draw bar texts
-          var label = (_var.x.bandwidth() - _var.barWidth)/2 > 15 ? [node] : [];
+          var label = (_var.x.bandwidth() - _var.barWidth)/2 > 12 ? [node] : [];
           var barLabels = nodeSel.selectAll("text.bar-label").data(label, function(d) { return d.x; });
           barLabels.exit().remove();
           barLabels = barLabels.enter().append('text').attr("class", "bar-label").merge(barLabels);
@@ -97,8 +97,6 @@ module.exports = function() {
             .style('text-anchor', function(d) { return +d.y >= 0 ? "start" : "end"; })
             .text(function(d) { return d.parsedName; })
             .each(function(d) { shared.helpers.text.wrapBySize(d3.select(this), _var.height/2 - 20, 20, 1); })
-
-
 
           break;
       }

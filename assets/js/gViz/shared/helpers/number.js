@@ -32,6 +32,7 @@ module.exports = function() {
     getUserLocale: getUserLocale,
     locale: function(d) { return (+d).toLocaleString(getUserLocale()); },
     localePercent: (d) => (+d).toFixed(1).toLocaleString(getUserLocale()) + "%",
+    localeK: (d) => (+d).toFixed(1).toLocaleString(getUserLocale()) + "k",
 
     // Formats
     format: {

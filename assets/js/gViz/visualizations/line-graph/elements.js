@@ -127,23 +127,23 @@ module.exports = function () {
 
               }
 
-            }).on('mousemove', function() {
+            // }).on('mousemove', function() {
 
-              if(!d3.select(d3.event.target).classed('point')) {
+            //   if(!d3.select(d3.event.target).classed('point')) {
 
-                // Set hovered node
-                _var.hovered = {};
+            //     // Set hovered node
+            //     _var.hovered = {};
 
-                // Mouseover event
-                components.events()
-                  ._var(_var)
-                  .action("mouseover")
-                  .components(components)
-                  .mouse(this)
-                  .origin('background')
-                  .run();
+            //     // Mouseover event
+            //     components.events()
+            //       ._var(_var)
+            //       .action("mouseover")
+            //       .components(components)
+            //       .mouse(this)
+            //       .origin('background')
+            //       .run();
 
-              }
+            //   }
 
             }).on('mouseout', function(e) {
 

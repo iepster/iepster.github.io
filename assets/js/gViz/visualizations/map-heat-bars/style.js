@@ -30,6 +30,11 @@ module.exports = function () {
         // Build entire visualizations
         case 'run':
 
+          // Get zoom transform
+          _var.getZoomTransform = function() {
+            return _var.zoomTransform.k >= 1 ? _var.zoomTransform.k : 1;
+          }
+
           // Set shape color
           _var.shapeColor = function(d) {
             if(_var.mode === 'bars') {
@@ -67,26 +72,30 @@ module.exports = function () {
             }
           }
 
+          // Set pin y
+          _var.pinY = function(d) {
+            return _var.barY(d) - _var.pinRadius(d) + (1 / _var.getZoomTransform());
+          }
+
           // Set pin radius
           _var.pinRadius = function(d) {
-            return _var.data.bars != null && _var.data.bars.pinRadius != null ? _var.data.bars.pinRadius : (2*_var.barWidth(d));
+            return (_var.data.bars != null && _var.data.bars.pinRadius != null ? _var.data.bars.pinRadius : (2*_var.barWidth(d))) / _var.getZoomTransform();
           }
 
           // Set bar width
           _var.barWidth = function(d) {
-            return _var.data.bars != null && _var.data.bars.barWidth != null ? _var.data.bars.barWidth : 3;
+            return (_var.data.bars != null && _var.data.bars.barWidth != null ? _var.data.bars.barWidth : 3) / _var.getZoomTransform();
           }
 
           // Set bottom bar y
           _var.barY = function(d) {
-            var bottomBarHeight = _var.data.bars != null && _var.data.bars.bottomBarHeight != null ? -_var.data.bars.bottomBarHeight : -3;
-            return bottomBarHeight - _var.barScale(+d.value);
+            return _var.bottomBarHeight(d) - _var.barHeight(d);;
           }
 
           // Set bottom bar height
           _var.barHeight = function(d) {
             var bottomBarHeight = _var.data.bars != null && _var.data.bars.bottomBarHeight != null ? -_var.data.bars.bottomBarHeight : -3;
-            return _var.barScale(+d.value);
+            return (_var.barScale(+d.value)) / _var.getZoomTransform();
           }
 
           // Set bar color
@@ -96,12 +105,12 @@ module.exports = function () {
 
           // Set bottom bar y
           _var.bottomBarY = function(d) {
-            return _var.data.bars != null && _var.data.bars.bottomBarHeight != null ? -_var.data.bars.bottomBarHeight : -3;
+            return (_var.data.bars != null && _var.data.bars.bottomBarHeight != null ? -_var.data.bars.bottomBarHeight : -3) / _var.getZoomTransform();
           }
 
           // Set bottom bar height
           _var.bottomBarHeight = function(d) {
-            return _var.data.bars != null && _var.data.bars.bottomBarHeight != null ? _var.data.bars.bottomBarHeight : 3;
+            return (_var.data.bars != null && _var.data.bars.bottomBarHeight != null ? _var.data.bars.bottomBarHeight : 3) / _var.getZoomTransform();
           }
 
           // Set bottom bar color

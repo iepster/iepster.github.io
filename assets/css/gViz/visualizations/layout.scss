@@ -65,6 +65,7 @@
 
   // Only legend inside elements styles
   .legend-wrapper, .legend-wrapper-full, .axis-title-legend-wrapper, .axis-title-legend-wrapper-full, .controls-wrapper, .gviz-legend-wrapper, .gviz-axis-title-wrapper {
+    padding: 5px 10px 0px !important;
 
     &.gviz-legend-hover {
       max-height: 150px !important;

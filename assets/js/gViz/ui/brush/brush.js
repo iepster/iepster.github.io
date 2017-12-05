@@ -41,17 +41,6 @@ module.exports = function () {
             _var.brushAttrs.pixelBounds = [0, _var.brushAttrs.width];
 
             // Insert brush
-            _var.brushText = _var.g.selectAll(".brush-text").data(["brush-text"]);
-            _var.brushText.exit().remove();
-            _var.brushText = _var.brushText.enter().append('text').attr("class", "brush-text").merge(_var.brushText);
-            _var.brushText
-              .attr("text-anchor", "middle")
-              .attr("x", _var.brushAttrs.width/2)
-              .attr("y", _var.brushAttrs.height/2 + 4)
-              .style('fill', _var.checkAttr(_var.data.style.brush, 'color', null, '#ccc'))
-              .text("Select the values extent here")
-
-            // Insert brush
             var brushSel = _var.g.selectAll(".brush").data(["brush"]);
             brushSel.exit().remove();
             brushSel = brushSel.enter().append('g').attr("class", "brush").merge(brushSel);
@@ -59,7 +48,9 @@ module.exports = function () {
               .attr('transform', 'translate(0,1)')
 
             var brushRect = brushSel.selectAll('.selection');
-            brushRect.style('fill', _var.checkAttr(_var.data.style.brush, 'brushBackgroundColor', null, '#ddd'))
+            brushRect
+              .style('fill', _var.checkAttr(_var.data.style.brush, 'brushBackgroundColor', null, '#ddd'))
+              .style('fill-opacity', 1)
 
             // Brush custom handles
             var handle = brushSel.selectAll(".handle--custom").data([{type: "w"}, {type: "e"}]);
@@ -77,6 +68,17 @@ module.exports = function () {
                 return `M ${0},${-tH/2} ${0},${tH/2} Z M ${-h/2-p},${0} ${-p},${-h/2} ${-p},${h/2} Z M ${h/2+p},${0} ${p},${-h/2} ${p} ${h/2} Z`;
               });
 
+            // Insert brush
+            _var.brushText = _var.g.selectAll(".brush-text").data(["brush-text"]);
+            _var.brushText.exit().remove();
+            _var.brushText = _var.brushText.enter().append('text').attr("class", "brush-text").merge(_var.brushText);
+            _var.brushText
+              .attr("text-anchor", "middle")
+              .attr("x", _var.brushAttrs.width/2)
+              .attr("y", _var.brushAttrs.height/2 + 5)
+              .style('fill', _var.checkAttr(_var.data.style.brush, 'color', null, '#ccc'))
+              .text("Select the values extent here")
+
             function brushstart() {}
 
             function brushing() {
@@ -90,11 +92,16 @@ module.exports = function () {
               // Get brush bounds
               var d0 = d3.event.selection.map(_var.brushAttrs.scale.invert);
 
-              // Update brush text
-              if(_var.brushText != null) { _var.brushText.attr("x", d3.mean(d0)).text("III"); }
-
               // Update brush
               handle.attr("display", null).attr("transform", function(d, i) { return "translate(" + d0[i] + "," + (_var.brushAttrs.height/2) + ")"; });
+
+              // Update brush text
+              if(_var.brushText != null) {
+                _var.brushText
+                  .attr("x", d3.mean(d0))
+                  .style('fill', _var.checkAttr(_var.data.style.brush, 'brushColor', null, '#FFF'))
+                  .text("III");
+              }
 
             }
 
@@ -122,9 +129,6 @@ module.exports = function () {
 
               }
 
-              // Update brush text
-              if(_var.brushText != null) { _var.brushText.attr("x", d3.mean(d1)).text("III"); }
-
               // Update pixelBounds
               _var.brushAttrs.pixelBounds = d1;
 
@@ -137,6 +141,14 @@ module.exports = function () {
               // Update brush
               handle.attr("display", null).transition()
                 .attr("transform", function(d, i) { return "translate(" + d1[i] + "," + (_var.brushAttrs.height/2) + ")"; });
+
+              // Update brush text
+              if(_var.brushText != null) {
+                _var.brushText
+                  .attr("x", d3.mean(d1))
+                  .style('fill', _var.checkAttr(_var.data.style.brush, 'brushColor', null, '#FFF'))
+                  .text("III");
+              }
 
               // Update elements
               _var.brushUpdate();

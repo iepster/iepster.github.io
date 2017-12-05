@@ -14,7 +14,7 @@
     "body": []
   },
   "x": {
-    "title": "Class - Master Style",
+    "title": "Variation by Choice Codes",
     "prefix": "",
     "sufix": "%",
     "type": "string",
@@ -29,8 +29,7 @@
   },
   "attrs": {
     "barWidth": 8,
-    "wrapText": false,
-    "hasBrush": false
+    "wrapText": false
   },
   "data": [
     {
@@ -47,15 +46,6 @@
       "name": "PK LACE HIGH NECK PU",
       "group": "Shortage",
       "y": 19,
-      "fill": "#e85e8f",
-      "gradient": "#fd9e83",
-      "stroke": "#b45276"
-    },
-    {
-      "x": "25",
-      "name": "Sp18724 Ultimate UL Halter",
-      "group": "Shortage",
-      "y": 25,
       "fill": "#e85e8f",
       "gradient": "#fd9e83",
       "stroke": "#b45276"
@@ -128,60 +118,6 @@
       "name": "18453 Strappy Racerback UL Sport",
       "group": "Negative Gap",
       "y": -13,
-      "fill": "#7d6e8f",
-      "gradient": "#bc97cd",
-      "stroke": "#706784"
-    },
-    {
-      "x": "-3",
-      "name": "18453 Strappy Racerback UL Sport",
-      "group": "Negative Gap",
-      "y": -3,
-      "fill": "#7d6e8f",
-      "gradient": "#bc97cd",
-      "stroke": "#706784"
-    },
-    {
-      "x": "-22",
-      "name": "18453 Strappy Racerback UL Sport",
-      "group": "Negative Gap",
-      "y": -3,
-      "fill": "#7d6e8f",
-      "gradient": "#bc97cd",
-      "stroke": "#706784"
-    },
-    {
-      "x": "-2",
-      "name": "18453 Strappy Racerback UL Sport",
-      "group": "Negative Gap",
-      "y": -2,
-      "fill": "#7d6e8f",
-      "gradient": "#bc97cd",
-      "stroke": "#706784"
-    },
-    {
-      "x": "-23",
-      "name": "18453 Strappy Racerback UL Sport",
-      "group": "Negative Gap",
-      "y": -3,
-      "fill": "#7d6e8f",
-      "gradient": "#bc97cd",
-      "stroke": "#706784"
-    },
-    {
-      "x": "-24",
-      "name": "18453 Strappy Racerback UL Sport",
-      "group": "Negative Gap",
-      "y": -3,
-      "fill": "#7d6e8f",
-      "gradient": "#bc97cd",
-      "stroke": "#706784"
-    },
-    {
-      "x": "-25",
-      "name": "18453 Strappy Racerback UL Sport",
-      "group": "Negative Gap",
-      "y": -3,
       "fill": "#7d6e8f",
       "gradient": "#bc97cd",
       "stroke": "#706784"

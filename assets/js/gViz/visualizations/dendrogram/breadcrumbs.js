@@ -44,7 +44,10 @@ module.exports = function() {
           _var.g.selectAll(`text.level-label`).style('display', 'none');
 
           // Clean breadcrumbs
-          _var.container.d3.select('[data-id="gViz-wrapper-breadcrumbs"]').html('');
+          _var.container.d3.select('[data-id="gViz-wrapper-breadcrumbs"]')
+            .style('top', "-5px")
+            .style('left', "70px")
+            .html('');
 
           // Breadcrumbs items
           var items = [{ data: { id: 'reset-vis', abbr: 'Graph View' } }].concat(_var.createBreadcrumbs(node, []).reverse());
@@ -125,7 +128,7 @@ module.exports = function() {
           pnSel.exit().remove();
           pnSel = pnSel.enter().append('g').attr('class', 'prev-next-group').merge(pnSel);
           pnSel
-            .attr("transform", function(d) { return `translate(${w},${d.side === "prev" ? (-_var.margin.top+s/2) : (_var.height - s/4) })`; })
+            .attr("transform", function(d) { return `translate(${w},${d.side === "prev" ? (-_var.margin.top+s/2) : (_var.height - s/4 - 2) })`; })
             .each(function(e) {
 
               var pathSel = d3.select(this).selectAll("path.prev-next").data([e]);

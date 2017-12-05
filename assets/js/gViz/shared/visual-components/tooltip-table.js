@@ -67,9 +67,10 @@ module.exports = function() {
               // Join content
               content = helpers.text.replaceVariables(title, obj) + helpers.text.replaceVariables(body, obj);
 
+
               // Update tooltip content
               target
-                .style("border", "1px solid "+borderColor)
+                .style("border", content === '' ? 'none' : "1px solid "+borderColor)
                 .style("border-top", "none")
                 .style("right", right == null ? null : right + "px")
                 .style("left", left == null ? (right == null ? "10px" : null) : left + "px")

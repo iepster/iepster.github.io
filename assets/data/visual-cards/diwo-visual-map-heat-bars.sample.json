@@ -10,6 +10,16 @@
       "body": [ "<span class='metric'># Accounts</span><span class='number'>{{value}}</span>" ]
     }
   },
+  "tooltipTable": {
+    "heat": {
+      "title": [ "{{properties.name}}" ],
+      "body": [ "<span class='metric'># Accounts</span><span class='number'>{{value}}</span>" ]
+    },
+    "bars": {
+      "title": [ "{{name}}" ],
+      "body": [ "<span class='metric'># Accounts</span><span class='number'>{{value}}</span>" ]
+    }
+  },
   "bars": {
     "mapColor": "#8BC3D2",
     "mapStrokeColor": "#FFF",
