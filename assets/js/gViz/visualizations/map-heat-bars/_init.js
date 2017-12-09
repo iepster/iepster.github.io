@@ -28,6 +28,7 @@ module.exports = function () {
   var colors    = { main: shared.helpers.colors.main, d3: d3.scaleOrdinal(d3.schemeCategory10) };
   var data      = [];
   var geoData   = {};
+  var labelsData   = {};
   var height    = null;
   var margin    = { top: 0, right: 0, bottom: 0, left: 0};
   var mode      = "bars";
@@ -88,6 +89,7 @@ module.exports = function () {
             .colors(colors)
             .data(data)
             .geoData(geoData)
+            .labelsData(labelsData)
             .height(height)
             .margin(margin)
             .mode(mode)
@@ -172,7 +174,7 @@ module.exports = function () {
   };
 
   // Expose global variables
-  ['_id', '_var', 'action', 'animation','container', 'colors', 'data', 'geoData', 'height', 'margin','mode','onClick','onHover','onHoverOut','width'].forEach(function (key) {
+  ['_id', '_var', 'action', 'animation','container', 'colors', 'data', 'geoData', 'labelsData', 'height', 'margin','mode','onClick','onHover','onHoverOut','width'].forEach(function (key) {
 
     // Attach variables to validation function
     validate[key] = function (_) {

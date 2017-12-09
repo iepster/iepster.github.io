@@ -35,6 +35,38 @@ module.exports = function () {
             return _var.zoomTransform.k >= 1 ? _var.zoomTransform.k : 1;
           }
 
+          _var.filterLabelsFromLatLon = function(d) {
+            return d.lon > _var.mapBounds[0][0] && d.lon < _var.mapBounds[1][0] && d.lat < _var.mapBounds[0][1] && d.lat > _var.mapBounds[1][1];
+          }
+
+          _var.filterLabels = function(d, i) {
+            var zoom = _var.getZoomTransform();
+            if(_var.getZoomTransform() < 2) { return false; }
+            else if(zoom >= 2  && zoom < 5  && d.is_capital === '1') { return true; }
+            else if(zoom >= 5  && zoom < 7  && (d.is_capital === '1' || i < 5)) { return true; }
+            else if(zoom >= 7  && zoom < 8  && (d.is_capital === '1' || i < 10)) { return true; }
+            else if(zoom >= 8  && zoom < 10 && (d.is_capital === '1' || i < 15)) { return true; }
+            else if(zoom >= 10 && zoom < 11 && (d.is_capital === '1' || i < 20)) { return true; }
+            else if(zoom >= 11 && zoom < 12 && (d.is_capital === '1' || i < 25)) { return true; }
+            else if(zoom >= 12 && zoom < 13 && (d.is_capital === '1' || i < 30)) { return true; }
+            else if(zoom >= 13 && zoom < 14 && (d.is_capital === '1' || i < 35)) { return true; }
+            else if(zoom >= 14 && zoom < 15 && (d.is_capital === '1' || i < 40)) { return true; }
+            else if(zoom >= 15 && zoom < 16 && (d.is_capital === '1' || i < 45)) { return true; }
+            else if(zoom >= 16 && zoom < 17 && (d.is_capital === '1' || i < 50)) { return true; }
+            else if(zoom >= 17 && zoom < 18 && (d.is_capital === '1' || i < 55)) { return true; }
+            else if(zoom >= 18 && zoom < 19 && (d.is_capital === '1' || i < 60)) { return true; }
+            else if(zoom >= 19 && zoom < 20 && (d.is_capital === '1' || i < 65)) { return true; }
+            else { return false; }
+          }
+
+          _var.filterStateLabelsAbbr = function() { return _var.getZoomTransform() < 8; }
+
+          // Get label state size
+          _var.labelStateSize = function(d) { return (12 / _var.getZoomTransform()) + "px"; }
+          _var.labelSize = function(d) { return (10 / _var.getZoomTransform()) + "px"; }
+          _var.labelStateDy = function(d) { return ((12 / _var.getZoomTransform())/2) + "px"; }
+          _var.labelDy = function(d) { return ((10 / _var.getZoomTransform())/2) + "px"; }
+
           // Set shape color
           _var.shapeColor = function(d) {
             if(_var.mode === 'bars') {

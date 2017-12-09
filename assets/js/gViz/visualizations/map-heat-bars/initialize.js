@@ -14,6 +14,7 @@ module.exports = function() {
   var colors    = { main: shared.helpers.colors.main, aux: shared.helpers.colors.aux };
   var data      = [];
   var geoData   = [];
+  var labelsData   = [];
   var height    = null;
   var margin    = { top: 10, right: 10, bottom: 10, left: 10 };
   var mode      = "bars";
@@ -68,6 +69,7 @@ module.exports = function() {
           // Get data
           _var.data = data == null ? {} : data;
           _var.geoData = geoData;
+          _var.labelsData = labelsData;
 
           // Set zoom transform
           if(_var.zoomTransform == null) { _var.zoomTransform = { k: 1, x: _var.margin.left, y: _var.margin.right }; }
@@ -96,7 +98,7 @@ module.exports = function() {
   };
 
   // Expose global variables
-  ['_id','_var','animation','container','colors','data','geoData','height','margin','mode','onClick','onHover','onHoverOut','width'].forEach(function(key) {
+  ['_id','_var','animation','container','colors','data','geoData','labelsData','height','margin','mode','onClick','onHover','onHoverOut','width'].forEach(function(key) {
 
     // Attach variables to validation function
     validate[key] = function(_) {

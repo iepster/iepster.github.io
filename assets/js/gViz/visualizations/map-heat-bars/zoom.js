@@ -65,6 +65,32 @@ module.exports = function () {
               .attr('x', function(d) { return -_var.barWidth(d)/2; })
               .attr('y', _var.barY)
 
+            // Draw state abbrs
+            var stateLabelsAbbr = _var.g.selectAll(".state-label-abbr").data(_var.filterStateLabelsAbbr() ? _var.geoData.features : []);
+            stateLabelsAbbr.exit().remove();
+            stateLabelsAbbr = stateLabelsAbbr.enter().append("text").attr("class", "state-label-abbr").merge(stateLabelsAbbr);
+            stateLabelsAbbr
+              .attr('text-anchor', "middle")
+              .attr('font-size', _var.labelStateSize)
+              .attr('x', function(d) { return _var.path.centroid(d)[0]; })
+              .attr('y', function(d) { return _var.path.centroid(d)[1]; })
+              .attr('dy', _var.labelStateDy )
+              .text(function(d) { return d.properties.abbr.toUpperCase(); })
+
+            // Resize Labels
+            var x = -_var.zoomTransform.x, y = -_var.zoomTransform.y, k = _var.zoomTransform.k;
+            _var.mapBounds = [_var.projection.invert([x/k,y/k]), _var.projection.invert([(x+_var.width)/k,(y+_var.height)/k])];
+            _var.mapLabels = d3.select(".labels-group").selectAll(".map-label").data(_var.labelsData.filter(_var.filterLabelsFromLatLon).filter(_var.filterLabels), function(d) { return d.name + '-' + d.state_id; });
+            _var.mapLabels.exit().remove();
+            _var.mapLabels = _var.mapLabels.enter().append("text").attr("class", "map-label").merge(_var.mapLabels);
+            _var.mapLabels
+              .attr('text-anchor', "middle")
+              .attr('font-size', _var.labelSize)
+              .attr('x', function(d) { return _var.projection([+d.lon, +d.lat])[0]; })
+              .attr('y', function(d) { return _var.projection([+d.lon, +d.lat])[1]; })
+              .attr('dy', _var.labelDy )
+              .text(function(d) { return d.name; })
+
             // Update circle attrs
             _var.g.selectAll('.bar-circle').attr('r', _var.pinRadius).attr('cy', _var.pinY)
 
@@ -72,9 +98,10 @@ module.exports = function () {
 
           // Add zoom capabilities
           _var.zoom_handler = d3.zoom()
+            .scaleExtent([1, 20])
             .on("zoom", _var.zoom_actions)
             .on("start", function() { _var.wrap.classed('grabbing', true) })
-            .on("end",   function() { _var.wrap.classed('grabbing', false) });
+            .on("end",   function() { _var.wrap.classed('grabbing', false) })
 
           // Bind zoom to svg
           _var.wrap
