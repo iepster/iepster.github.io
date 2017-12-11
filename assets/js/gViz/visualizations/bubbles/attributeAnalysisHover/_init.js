@@ -160,21 +160,21 @@ module.exports = function () {
   };
 
   // Expose some global variables
-  ['container', 'action', 'svgHeight', 'svgWidth'].forEach((key) => {
+  ['container', 'action', 'svgHeight', 'svgWidth','circleFill'].forEach((key) => {
 
     // Attach variables to main function
     return main[key] = function (_) {
 
       var string = `attrs['${key}'] = _`;
 
-      if (!arguments.length) { eval(`return attrs['${key}']`); }
+      if (!arguments.length)  { return eval(` attrs['${key}'];`); }
       eval(string);
       return main;
     };
   });
 
   //expose variables which causes corresponding handler functions to run
-  ['scale', 'state', 'data', 'hoverStart', 'hoverEnd'].forEach(function (key) {
+  ['scale', 'state', 'data', 'hoverStart', 'hoverEnd','circleFill'].forEach(function (key) {
 
     // Attach variables to main function
     return main[key] = function (_) {

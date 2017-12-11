@@ -37,6 +37,7 @@ module.exports = function () {
     headerTitleFill: '#EA5C84',
     headerTitleFontSize: 24,
     chartNameFill: '#73628C',
+    circleFill:'black',
     chartNameFontSize: 23,
     numberFlagFontSize: 27,
     numberFlagPosY: 10,
@@ -147,18 +148,18 @@ module.exports = function () {
   };
 
   // Expose some global variables
-  ['container', 'action', 'svgHeight', 'svgWidth', 'hasPointerEvents'].forEach((key) => {
+  ['container', 'action', 'svgHeight', 'svgWidth', 'hasPointerEvents','circleStroke'].forEach((key) => {
     // Attach variables to main function
     return main[key] = function (_) {
       var string = `attrs['${key}'] = _`;
-      if (!arguments.length) { eval(`return attrs['${key}']`); }
+      if (!arguments.length)  { return eval(` attrs['${key}'];`); }
       eval(string);
       return main;
     };
   });
 
   //expose variables which causes corresponding handler functions to run
-  ['scale', 'state', 'data', 'hoverStart', 'hoverEnd', 'showTitle', 'numberFlagColor', 'chartNameFill', 'lineDirection'].forEach(function (key) {
+  ['scale', 'state', 'data', 'hoverStart', 'hoverEnd', 'showTitle', 'numberFlagColor', 'chartNameFill', 'lineDirection','circleFill'].forEach(function (key) {
     // Attach variables to main function
     return main[key] = function (_) {
       if (!arguments.length) {

@@ -24,8 +24,8 @@ module.exports = function () {
     state: common.STATES.INITIAL,
     container: null,
     scale: 1,
-    svgWidth: 600,
-    svgHeight: 300,
+    svgWidth: 400,
+    svgHeight: 430,
     marginTop: 80,
     marginBottom: 5,
     marginRight: 120,
@@ -47,6 +47,7 @@ module.exports = function () {
     miniPieForegroundFill: '#EA5C84',
     priceWrapperBottomPos: 25,
     miniPieOuterRadius: 25,
+    circleFill:'white',
     miniPieInneradius: 15
   };
   let updateHandlerFuncs = common.getUpdateHandlerFuncs();
@@ -155,12 +156,12 @@ module.exports = function () {
   };
 
   // Expose some global variables
-  ['container', 'action', 'svgHeight', 'svgWidth'].forEach((key) => {
+  ['container', 'action', 'svgHeight', 'svgWidth','circleFill','circleStroke'].forEach((key) => {
 
     // Attach variables to main function
     return main[key] = function (_) {
       var string = `attrs['${key}'] = _`;
-      if (!arguments.length) { eval(`return attrs['${key}']`); }
+      if (!arguments.length) { return eval(` attrs['${key}'];`); }
       eval(string);
       return main;
     };

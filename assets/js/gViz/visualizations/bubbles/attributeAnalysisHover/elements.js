@@ -170,7 +170,7 @@ module.exports = function () {
           var miniCircle = transitionGroup.selectAll('.mini-circle').data(['mini-circle']);
           miniCircle.exit().remove();
           miniCircle = miniCircle.enter().append('circle').merge(miniCircle);
-          miniCircle.attr('fill', 'white').attr('r', attrs.salesMixMiniCircleRadius).attr('class', 'mini-circle')
+          miniCircle.attr('fill', attrs.circleFill).attr('r', attrs.salesMixMiniCircleRadius).attr('class', 'mini-circle')
 
           //sales mix mini circle text
           var miniCircleText = transitionGroup.selectAll('.miniCircleText').data(['mini-circle-text'])

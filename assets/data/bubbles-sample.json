@@ -101,15 +101,14 @@
         "title": "Sales & Stock Analysis",
         "name": "Top",
         "value": "Stock mix",
-        "image": "./assets/images/gViz/visualizations/bubbles/sportbrawhite.png",
-        "number": "1",
+        "image": "./assets/images/gViz/visualizations/bubbles/sportbra.png",
         "valueText": "22.3%"
       },
       "Stock2": {
         "title": "Sales & Stock Analysis",
         "name": "Top",
         "value": "Stock mix",
-        "image": "./assets/images/gViz/visualizations/bubbles/sportbrawhite.png",
+        "image": "./assets/images/gViz/visualizations/bubbles/sportbra.png",
         "number": "2",
         "valueText": "10.3%"
       },
@@ -117,7 +116,7 @@
         "title": "Sales & Stock Analysis",
         "name": "Top",
         "value": "Stock mix",
-        "image": "./assets/images/gViz/visualizations/bubbles/sportbrawhite.png",
+        "image": "./assets/images/gViz/visualizations/bubbles/sportbra.png",
         "number": "3",
         "valueText": "9.3%"
       },
@@ -125,7 +124,7 @@
         "title": "Sales & Stock Analysis",
         "name": "Top",
         "value": "Sell Thru",
-        "image": "./assets/images/gViz/visualizations/bubbles/sportbrawhite.png",
+        "image": "./assets/images/gViz/visualizations/bubbles/sportbra.png",
         "number": "1",
         "valueText": "15.3%"
       },
@@ -133,7 +132,7 @@
         "title": "Sales & Stock Analysis",
         "name": "Top",
         "value": "Sell Thru",
-        "image": "./assets/images/gViz/visualizations/bubbles/sportbrawhite.png",
+        "image": "./assets/images/gViz/visualizations/bubbles/sportbra.png",
         "number": "2",
         "valueText": "12.3%"
       },
@@ -141,7 +140,7 @@
         "title": "Sales & Stock Analysis",
         "name": "Top",
         "value": "Sell Thru",
-        "image": "./assets/images/gViz/visualizations/bubbles/sportbrawhite.png",
+        "image": "./assets/images/gViz/visualizations/bubbles/sportbra.png",
         "number": "3",
         "valueText": "9.3%"
       }

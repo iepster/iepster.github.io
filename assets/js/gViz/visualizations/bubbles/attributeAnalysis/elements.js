@@ -43,7 +43,7 @@ module.exports = function () {
           var centerCircle = centerPoint.selectAll('.background-circle').data(['background-circle'])
           centerCircle.exit().remove();
           centerCircle = centerCircle.enter().append('circle').merge(centerCircle);
-          centerCircle.attr('class', 'background-circle').attr('fill', 'white').attr('stroke', attrs.circleStroke).attr('stroke-width', attrs.circleStrokeWidth).attr('r', calc.circleRadius)
+          centerCircle.attr('class', 'background-circle').attr('fill', attrs.circleFill).attr('stroke', attrs.circleStroke).attr('stroke-width', attrs.circleStrokeWidth).attr('r', calc.circleRadius)
 
           //header title
           var headerTitle = chart.selectAll('.header-title').data(['header-title'])

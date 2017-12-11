@@ -56,11 +56,13 @@ module.exports = function () {
           var layoutKeys = Object.keys(layouts).filter(k => k != 'salesStockAnalysis');
           var wrapper = d3.select(chartsContainer);
 
+
           //chart wrapper divs
           var wrapperDivs = wrapper.selectAll('.chart-wrapper-div').data(layoutKeys, function (d) { return d; })
           wrapperDivs.exit().remove();
           wrapperDivs = wrapperDivs.enter().append('div').merge(wrapperDivs);
           wrapperDivs.attr('class', function (d) { return ' chart-wrapper-div ' + d; }).style('width', 0).style('height', 0).style("position", "absolute");
+
 
           //stock sales
           var salesStockAnalysisKeys = Object.keys(layouts.salesStockAnalysis);
@@ -79,17 +81,31 @@ module.exports = function () {
             var chart = bubbleComponents[d]()
 
             //  ----------- DIVS UPDATING STYLE  -----------
-            d3.select(this).style('top', layout.y + "px")
-            d3.select(this).style('left', layout.x + "px")
+
+            d3.select(this).style('top', (layout.y / 100 * attrs.height - chart.svgHeight() / 2 + attrs.movementOffsetY + (layout.dy ? layout.dy : 0)) + "px")
+            d3.select(this).style('left', (layout.x / 100 * attrs.width - chart.svgWidth() / 2 + attrs.movementOffsetX + (layout.dx ? layout.dx : 0)) + "px")
             var keys = Object.keys(layout.invokables);
             keys.forEach(k => {
-
+              console.log(d)
               // invoke function dinamically based on layout
               chart[k](layout.invokables[k])
 
               //set urlLocation for chart if exists
               if (chart.urlLocation) chart.urlLocation(urlLocation)
             })
+
+            if (layout.styles) {
+        
+              var styleKeys = Object.keys(layout.styles);
+              styleKeys.forEach(k => {
+                // invoke function dinamically based on layout
+                chart[k](layout.styles[k])
+
+                //set urlLocation for chart if exists
+                if (chart.urlLocation) chart.urlLocation(urlLocation)
+              })
+            }
+
             chart.container(chartsSelector).data(data[d]).run()
             allCharts.push({ "key": d, chart: chart, layout: layout });
           });
@@ -101,13 +117,16 @@ module.exports = function () {
             var chart = bubbleComponents.salesStockAnalysis()
 
             //  ----------- DIVS UPDATING STYLE  -----------
-            d3.select(this).style('top', layout.y + "px")
-            d3.select(this).style('left', layout.x + "px")
+            d3.select(this).style('top', (layout.y / 100 * attrs.height - chart.svgHeight() / 2 + attrs.movementOffsetY + (layout.dy ? layout.dy : 0)) + "px")
+            d3.select(this).style('left', (layout.x / 100 * attrs.width - chart.svgWidth() / 2 + attrs.movementOffsetX + (layout.dx ? layout.dx : 0)) + "px")
+
             var keys = Object.keys(layout.invokables);
             keys.forEach(k => {
 
               // invoke function dinamically based on layout
               chart[k](layout.invokables[k])
+
+              console.log('stock')
             })
 
             chart.container(chartsSelector).data(data.salesStockAnalysis[d]).run()
@@ -125,7 +144,7 @@ module.exports = function () {
   };
 
   // Expose Global Variables
-  ['_var', 'layoutType', 'chartsContainer', 'data', 'urlLocation'].forEach(function (key) {
+  ['_var', 'attrs', 'layoutType', 'chartsContainer', 'data', 'urlLocation'].forEach(function (key) {
 
     // Attach variables to validation function
     validate[key] = function (_) {
