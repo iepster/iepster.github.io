@@ -14,7 +14,7 @@ module.exports = function () {
   var validate = function (step) {
 
     switch (step) {
-      case 'run': return true;
+      case 'run': return _var.data.bars != null;
       default: return false;
     }
   };

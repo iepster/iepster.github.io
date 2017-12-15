@@ -1,0 +1,767 @@
+{
+  "data": {
+    "backgroundColor": "#2a2730",
+    "center": {
+      "style": {
+        "top": "calc(50% - 55px)",
+        "left": "calc(50% - 55px)",
+        "size": "110px",
+        "backgroundColor": "#ad5073",
+        "borderColor": "#ad5073",
+        "borderRadius": "50%",
+        "color": "#FFF",
+        "zIndex": "1005"
+      },
+      "content": {
+        "type": "1",
+        "topText": "#1000333",
+        "middleText": "<span style='border-top: 1px solid #FFF; border-bottom: 1px solid #FFF; padding: 3px;'>Orlando, FL</span>",
+        "bottomText": "50 ft"
+      }
+    },
+
+    "attributeAnalysis": {
+      "title": {
+        "style": {
+          "top": "calc(50% - 145px)",
+          "left": "calc(50% - 105px)",
+          "color": "#ad5073",
+          "fontSize": "10px",
+          "textAlign": "center"
+        },
+        "content": "Attribute Analysis"
+      },
+      "valuesBubble": {
+        "style": {
+          "top": "calc(50% - 130px)",
+          "left": "calc(50% - 125px)",
+          "size": "110px",
+          "backgroundColor": "#1a1620",
+          "borderColor": "#504859",
+          "borderRadius": "50%",
+          "color": "#FFF",
+          "zIndex": "1004",
+          "hoveredTop": "calc(50% - 130px)",
+          "hoveredLeft": "calc(50% - 125px)",
+          "hoveredSize": "110px",
+          "hoveredBackgroundColor": "#1a1620",
+          "hoveredBorderColor": "#504859"
+        },
+        "content": {
+          "type": "1",
+          "text": [
+            "<span style='color:#FFF; font-size: 12px; margin: 0px 14px 0px 17px;'>Color:</span><span style='font-size:  12px; color:#be527f;'>Black</span>",
+            "<span style='color:#FFF; font-size: 12px; margin: 0px 17px 0px 17px;'>Print:</span><span style='font-size:  12px; color:#be527f;'>Logo</span>",
+            "<span style='color:#FFF; font-size: 12px; margin: 0px 10px 0px 17px;'>Fabric:</span><span style='font-size: 12px; color:#be527f;'>Smooth</span>",
+            "<span style='color:#FFF; font-size: 10px; width: 100%; text-align: center; display: block; margin-top:5px;'>Top Trending <img src='/assets/images/top-trending-pink.png' style='display:inline-block; height:10px;'/></span>"
+          ]
+        },
+        "hoveredContent": {
+          "type": "1",
+          "text": [
+            "<div style='height:auto; float:left; width:33%; margin-bottom:3px;'><div style='height:11px; line-height:11px; font-size:10px; color:#FFF; font-weight:lighter; text-align: center; width: 100%;'>28px</div><div style='height:22px; width:22px; border-radius:50%; background:#000; margin: 2px auto;'></div><div style='height: 13px; line-height: 13px; font-size:10px; color:#e95c83; font-weight:lighter; text-align: center; width: 100%;'>Black</div></div>",
+            "<div style='height:auto; float:left; width:33%; margin-bottom:3px;'><div style='height:11px; line-height:11px; font-size:10px; color:#FFF; font-weight:lighter; text-align: center; width: 100%;'>28px</div><div style='height:22px; width:22px; border-radius:50%; background:#e95c83; margin: 2px auto;'></div><div style='height: 13px; line-height: 13px; font-size:10px; color:#e95c83; font-weight:lighter; text-align: center; width: 100%;'>Logo</div></div>",
+            "<div style='height:auto; float:left; width:33%; margin-bottom:3px;'><div style='height:11px; line-height:11px; font-size:10px; color:#FFF; font-weight:lighter; text-align:center; width:100%;'>28px</div><div style='height:22px; width:22px; border-radius:50%; background:#91add0; margin: 2px auto;'></div><div style='height: 13px; line-height: 13px; font-size:10px; color:#e95c83; font-weight:lighter; text-align: center; width: 100%;'>Smooth</div></div>",
+            "<span style='color:#FFF; font-size: 10px; width: 100%; text-align: center; display: block; margin-top:5px;'>Top Trending <img src='/assets/images/temp_icons/icon_5.svg' style='display:inline-block; height:10px;'/></span>"
+          ]
+        }
+      },
+      "chartBubble": {
+        "style": {
+          "top": "calc(50% - 140px)",
+          "left": "calc(50% - 180px)",
+          "size": "40px",
+          "backgroundColor": "#b14a6a",
+          "borderColor": "#b14a6a",
+          "borderRadius": "50%",
+          "color": "#FFF",
+          "zIndex": "1004",
+          "hoveredTop": "calc(50% - 190px)",
+          "hoveredLeft": "calc(50% - 325px)",
+          "hoveredSize": "205px",
+          "hoveredBackgroundColor": "#1a1620",
+          "hoveredBorderColor": "#504859"
+
+        },
+        "content": {
+          "type": "1",
+          "placeholder": "/assets/images/gViz/visualizations/diwo-visual-bubble-poet-context/wave.png"
+        },
+        "hoveredContent": {
+          "data": {
+            "backgroundColor": "transparent",
+            "borderColor": "#383142",
+            "color": "#FFF",
+            "textAlign": "left",
+            "trPadding": "2px 0px",
+            "tdPadding": "2px 5px",
+            "width": "auto",
+            "data": [
+              [
+                "<span style='font-size:8px;'>Att. Trends</span>",
+                "<span style='font-size:8px; width:100%; text-align:center;'>Top<img src='/assets/images/top-trending-green.png' style='display:inline-block; margin-left:5px; width:14px;'/></span>",
+                "<span style='font-size:8px; width:100%; text-align:center;'>Bottom<img src='/assets/images/bottom-trending-red.png' style='display:inline-block; margin-left:5px; width:14px;'/></span>"
+              ],
+              [
+                "<span style='font-size:8px;'>Color (Solid)</span>",
+                "<span style='font-size:8px; width:100%; text-align:center; color:#e95c83;'>Black</span>",
+                "<span style='font-size:8px; width:100%; text-align:center; color:#e95c83;'>Purple</span>"
+              ],
+              [
+                "<span style='font-size:8px;'>Color (Print)</span>",
+                "<span style='font-size:8px; width:100%; text-align:center; color:#e95c83;'>Logo</span>",
+                "<span style='font-size:8px; width:100%; text-align:center; color:#e95c83;'>Floral</span>"
+              ],
+              [
+                "<span style='font-size:8px;'>Size</span>",
+                "<span style='font-size:8px; width:100%; text-align:center; color:#e95c83;'>Medium</span>",
+                "<span style='font-size:8px; width:100%; text-align:center; color:#e95c83;'>Small</span>"
+              ],
+              [
+                "<span style='font-size:8px;'>Fabric</span>",
+                "<span style='font-size:8px; width:100%; text-align:center; color:#e95c83;'>Smooth</span>",
+                "<span style='font-size:8px; width:100%; text-align:center; color:#e95c83;'>Nylon</span>"
+              ],
+              [
+                "<span style='font-size:8px;'>Silhouette</span>",
+                "<span style='font-size:8px; width:100%; text-align:center; color:#e95c83;'>Push-Up</span>",
+                "<span style='font-size:8px; width:100%; text-align:center; color:#e95c83;'>Lightly Lined</span>"
+              ]
+            ]
+          }
+        }
+      },
+      "placeholderBubble": {
+        "style": {
+          "top": "calc(50% - 90px)",
+          "left": "calc(50% - 160px)",
+          "size": "12px",
+          "backgroundColor": "#f7b5c9",
+          "borderColor": "#f7b5c9",
+          "borderRadius": "50%",
+          "zIndex": "1004"
+        }
+      }
+    },
+
+    "customerAnalysis": {
+      "title": {
+        "style": {
+          "top": "calc(50% - 60px)",
+          "left": "calc(50% + 115px)",
+          "color": "#ad5073",
+          "fontSize": "10px",
+          "textAlign": "center"
+        },
+        "content": "Customer <br/> Analysis"
+      },
+      "chartBubble": {
+        "style": {
+          "top": "calc(50% - 35px)",
+          "left": "calc(50% + 115px)",
+          "size": "40px",
+          "backgroundColor": "#b14a6a",
+          "borderColor": "#b14a6a",
+          "borderRadius": "50%",
+          "color": "#FFF",
+          "zIndex": "1004"
+        },
+        "content": {
+          "type": "1",
+          "placeholder": "/assets/images/gViz/visualizations/diwo-visual-bubble-poet-context/women.png"
+        }
+      },
+      "placeholderBubble": [
+        {
+          "style": {
+            "top": "calc(50% - 55px)",
+            "left": "calc(50% + 170px)",
+            "size": "12px",
+            "backgroundColor": "#f7b5c9",
+            "borderColor": "#f7b5c9",
+            "borderRadius": "50%",
+            "zIndex": "1004",
+            "hoveredTop": "calc(50% - 58px)",
+            "hoveredLeft": "calc(50% + 170px)"
+          }
+        },
+        {
+          "style": {
+            "top": "calc(50% - 40px)",
+            "left": "calc(50% + 190px)",
+            "size": "12px",
+            "backgroundColor": "#f7b5c9",
+            "borderColor": "#f7b5c9",
+            "borderRadius": "50%",
+            "zIndex": "1004",
+            "hoveredTop": "calc(50% - 43px)",
+            "hoveredLeft": "calc(50% + 195px)"
+          }
+        },
+        {
+          "style": {
+            "top": "calc(50% - 20px)",
+            "left": "calc(50% + 180px)",
+            "size": "12px",
+            "backgroundColor": "#f7b5c9",
+            "borderColor": "#f7b5c9",
+            "borderRadius": "50%",
+            "zIndex": "1004",
+            "hoveredTop": "calc(50% - 10px)",
+            "hoveredLeft": "calc(50% + 190px)"
+          }
+        },
+        {
+          "style": {
+            "top": "calc(50% - 0px)",
+            "left": "calc(50% + 180px)",
+            "size": "12px",
+            "backgroundColor": "#f7b5c9",
+            "borderColor": "#f7b5c9",
+            "borderRadius": "50%",
+            "zIndex": "1004",
+            "hoveredTop": "calc(50% + 20px)",
+            "hoveredLeft": "calc(50% + 185px)"
+          }
+        },
+        {
+          "style": {
+            "top": "calc(50% + 15px)",
+            "left": "calc(50% + 160px)",
+            "size": "12px",
+            "backgroundColor": "#f7b5c9",
+            "borderColor": "#f7b5c9",
+            "borderRadius": "50%",
+            "zIndex": "1004",
+            "hoveredTop": "calc(50% + 30px)",
+            "hoveredLeft": "calc(50% + 155px)"
+          }
+        }
+      ],
+      "textElements": [
+        {
+          "style": {
+            "hoveredTop": "calc(50% - 78px)",
+            "hoveredLeft": "calc(50% + 188px)"
+          },
+          "hoveredContent": "<div style='font-size:12px; color:#b04a6a; font-weight: lighter;'>25-29</div><div style='font-size: 10px; color:#FFF; font-weight: lighter;'>Age</div>"
+        },
+        {
+          "style": {
+            "hoveredTop": "calc(50% - 48px)",
+            "hoveredLeft": "calc(50% + 213px)"
+          },
+          "hoveredContent": "<div style='font-size:12px; color:#b04a6a; font-weight: lighter;'>$80K-$110K</div><div style='font-size: 10px; color:#FFF; font-weight: lighter;'>Income</div>"
+        },
+        {
+          "style": {
+            "hoveredTop": "calc(50% - 17px)",
+            "hoveredLeft": "calc(50% + 207px)"
+          },
+          "hoveredContent": "<div><span style='font-size:9px; font-weight:lighter; color: #FFF; padding:1px 3px; background-color:#eb5c85;'>Pink Nation 62%</span><span style='font-size:9px; font-weight:lighter; margin-left: 5px; color:#FFF; padding:1px 3px; background-color:#eb5c85;'>Angel Card 12%</span></div><div style='font-size: 10px; color:#FFF; font-weight: lighter; margin-top:2px;'>Customer Type</div>"
+        },
+        {
+          "style": {
+            "hoveredTop": "calc(50% + 25px)",
+            "hoveredLeft": "calc(50% + 203px)"
+          },
+          "hoveredContent": "<div style='font-size:12px; color:#b04a6a; font-weight: lighter;'>High Value</div><div style='font-size: 10px; color:#FFF; font-weight: lighter;'>Value Segment</div>"
+        },
+        {
+          "style": {
+            "hoveredTop": "calc(50% + 45px)",
+            "hoveredLeft": "calc(50% + 156px)"
+          },
+          "hoveredContent": "<div style='font-size:12px; color:#b04a6a; font-weight: lighter;'>3 Weeks</div><div style='font-size: 10px; color:#FFF; font-weight: lighter;'>Frequency</div>"
+        }
+      ]
+    },
+
+    "pricePointAnalysis": {
+      "title": {
+        "style": {
+          "top": "calc(50% + 175px)",
+          "left": "calc(50% + 40px)",
+          "color": "#ad5073",
+          "fontSize": "10px",
+          "textAlign": "center"
+        },
+        "content": "Price Point Analysis"
+      },
+      "valuesBubble": {
+        "style": {
+          "top": "calc(50% + 20px)",
+          "left": "calc(50% + 5px)",
+          "size": "150px",
+          "backgroundColor": "#1a1620",
+          "borderColor": "#504859",
+          "borderRadius": "50%",
+          "color": "#FFF",
+          "zIndex": "1004"
+        },
+        "content": {
+          "type": "1",
+          "text": [
+            "<span style='color:#FFF; font-size: 11px; margin-right: 10px;'>Min Basket</span><span style='font-size: 11px; color:#be527f;'>$21</span>",
+            "<span style='color:#FFF; font-size: 11px; margin-right: 10px;'>Avg Basket</span><span style='font-size: 11px; color:#be527f;'>$34</span>",
+            "<span style='color:#FFF; font-size: 11px; margin-right: 10px;'>Max Basket</span><span style='font-size: 11px; color:#be527f;'>$95</span>",
+            "<span style='color:#be527f; font-size: 16px; height: 22px; line-height: 26px; display: inline-block;'>$15-$24.9</span>",
+            "<span style='color:#FFF; font-size: 11px;'>Top Price Point</span>"
+          ]
+        }
+      },
+      "chartBubble": {
+        "style": {
+          "top": "calc(50% + 75px)",
+          "left": "calc(50% + 180px)",
+          "size": "40px",
+          "backgroundColor": "#b14a6a",
+          "borderColor": "#b14a6a",
+          "borderRadius": "50%",
+          "color": "#FFF",
+          "zIndex": "1004",
+          "hoveredTop": "calc(50% + 10px)",
+          "hoveredLeft": "calc(50% + 155px)",
+          "hoveredSize": "170px",
+          "hoveredBackgroundColor": "#e95c83",
+          "hoveredBorderColor": "#e95c83"
+        },
+        "content": "/assets/images/gViz/visualizations/diwo-visual-bubble-poet-context/circle.png",
+        "hoveredContent": {
+          "title": "",
+          "legend": {
+            "isVisible": false
+          },
+          "tooltip": {
+            "hasPercentage": true,
+            "title": "{{name}}"
+          },
+          "attrs": {
+            "radius": 8,
+            "muted": false,
+            "grid": false
+          },
+          "x1": {
+            "title": "",
+            "value": "sum",
+            "color": "#FFF",
+            "prefix": "$",
+            "sufix": "",
+            "format": "locale"
+          },
+          "data": [
+            {
+              "id": "id-1",
+              "name": "$35-$45",
+              "color": "#FFF",
+              "nameColor": "#8b719a",
+              "percentageColor": "#FFF",
+              "lineColor": "#FFF",
+              "x1": 40
+            },
+            {
+              "id": "id-2",
+              "name": "$18-$25",
+              "color": "#fde9f2",
+              "nameColor": "#8b719a",
+              "percentageColor": "#FFF",
+              "lineColor": "#FFF",
+              "x1": 28
+            },
+            {
+              "id": "id-3",
+              "name": "$45-$60",
+              "color": "#fbd9e8",
+              "nameColor": "#8b719a",
+              "percentageColor": "#FFF",
+              "lineColor": "#FFF",
+              "x1": 22
+            },
+            {
+              "id": "id-4",
+              "name": "$25-$35",
+              "color": "#f9c5da",
+              "nameColor": "#8b719a",
+              "percentageColor": "#FFF",
+              "lineColor": "#FFF",
+              "x1": 10
+            }
+          ]
+        }
+      }
+    },
+
+    "salesStockAnalysis": {
+      "title": {
+        "style": {
+          "top": "calc(50% - 10px)",
+          "left": "calc(50% - 135px)",
+          "color": "#ad5073",
+          "fontSize": "10px",
+          "textAlign": "center"
+        },
+        "content": "Sales & Stock </br> Analysis"
+      },
+      "bubbles": [
+        {
+          "style": {
+            "top": "calc(50% - 55px)",
+            "left": "calc(50% - 235px)",
+            "size": "86px",
+            "imageSize": "30px",
+            "backgroundColor": "#1a1620",
+            "borderColor": "#4b4255",
+            "borderRadius": "50%",
+            "color": "#FFF",
+            "zIndex": "1004"
+          },
+          "content": {
+            "type": "1",
+            "image": "/assets/images/gViz/visualizations/bubbles/sportbra.png",
+            "bottomText": "PK Bling FL Flat </br> WB Legging",
+            "topNumber": "<span style='background-color:#e95b86; color:#FFF; padding: 2px 5px 1px; font-size:10px; border-radius:50%'>1</span>",
+            "sideBubbles": [
+              {
+                "style": {
+                  "top": "calc(50% - 20px)",
+                  "left": "calc(50% - 285px)",
+                  "size": "24px",
+                  "imageSize": "20px",
+                  "backgroundColor": "#fa79ae",
+                  "borderColor": "#fa79ae",
+                  "borderRadius": "50%",
+                  "color": "#FFF",
+                  "zIndex": "1004",
+                  "hoveredTop": "calc(50% - 110px)",
+                  "hoveredLeft": "calc(50% - 295px)",
+                  "hoveredSize": "70px",
+                  "hoveredBackgroundColor": "#1a1620",
+                  "hoveredBorderColor": "#413a4b"
+                },
+                "content": "<div style='margin-top: 1px; font-size:11px; margin-left: -1px;'>2</div>",
+                "hoveredContent": {
+                  "type": "1",
+                  "image": "/assets/images/gViz/visualizations/bubbles/sportbra.png",
+                  "bottomText": "<div style='font-size: 9px; line-height: 11px; height: 22px;'>PK NB FL Flat </br> WB Legging</div>",
+                  "topNumber": "<span style='background-color:#e95b86; color:#FFF; padding: 1px 4px 0px; font-size:8px; border-radius:50%'>2</span>"
+                }
+              },
+              {
+                "style": {
+                  "top": "calc(50% + 10px)",
+                  "left": "calc(50% - 295px)",
+                  "size": "18px",
+                  "imageSize": "20px",
+                  "backgroundColor": "#f7b5c9",
+                  "borderColor": "#f7b5c9",
+                  "borderRadius": "50%",
+                  "color": "#FFF",
+                  "zIndex": "1004",
+                  "hoveredTop": "calc(50% - 50px)",
+                  "hoveredLeft": "calc(50% - 300px)",
+                  "hoveredSize": "70px",
+                  "hoveredBackgroundColor": "#1a1620",
+                  "hoveredBorderColor": "#413a4b"
+                },
+                "content": "<div style='margin-top: 1px; font-size:10px; margin-left: -1px;'>3</div>",
+                "hoveredContent": {
+                  "type": "1",
+                  "image": "/assets/images/gViz/visualizations/bubbles/sportbra.png",
+                  "bottomText": "<div style='font-size: 9px; line-height: 11px; height: 22px;'>PK Ultimate NB </br> Legging</div>",
+                  "topNumber": "<span style='background-color:#f7b5c9; color:#FFF; padding: 1px 4px 0px; font-size:8px; border-radius:50%'>3</span>"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "style": {
+            "top": "calc(50% + 15px)",
+            "left": "calc(50% - 195px)",
+            "size": "86px",
+            "imageSize": "30px",
+            "backgroundColor": "#1a1620",
+            "borderColor": "#4b4255",
+            "borderRadius": "50%",
+            "color": "#FFF",
+            "zIndex": "1004"
+          },
+          "content": {
+            "type": "1",
+            "image": "/assets/images/gViz/visualizations/bubbles/sportbra.png",
+            "bottomText": "PK WEW PU",
+            "topNumber": "<span style='background-color:#71618d; color:#FFF; padding: 2px 5px 1px; font-size:10px; border-radius:50%'>1</span>",
+            "sideBubbles": [
+              {
+                "style": {
+                  "top": "calc(50% + 80px)",
+                  "left": "calc(50% - 235px)",
+                  "size": "24px",
+                  "imageSize": "20px",
+                  "backgroundColor": "#7b6c8e",
+                  "borderColor": "#7b6c8e",
+                  "borderRadius": "50%",
+                  "color": "#FFF",
+                  "zIndex": "1004",
+                  "hoveredTop": "calc(50% + 40px)",
+                  "hoveredLeft": "calc(50% - 285px)",
+                  "hoveredSize": "70px",
+                  "hoveredBackgroundColor": "#1a1620",
+                  "hoveredBorderColor": "#413a4b"
+                },
+                "content": "<div style='margin-top: 1px; font-size:11px; margin-left: -1px;'>2</div>",
+                "hoveredContent": {
+                  "type": "1",
+                  "image": "/assets/images/gViz/visualizations/bubbles/sportbra.png",
+                  "bottomText": "<div style='font-size: 9px; line-height: 11px; height: 22px;'>PK WEW LL</div>",
+                  "topNumber": "<span style='background-color:#7b6c8e; color:#FFF; padding: 1px 4px 0px; font-size:8px; border-radius:50%'>2</span>"
+                }
+              },
+              {
+                "style": {
+                  "top": "calc(50% + 110px)",
+                  "left": "calc(50% - 225px)",
+                  "size": "18px",
+                  "imageSize": "20px",
+                  "backgroundColor": "#bd96cf",
+                  "borderColor": "#bd96cf",
+                  "borderRadius": "50%",
+                  "color": "#FFF",
+                  "zIndex": "1004",
+                  "hoveredTop": "calc(50% + 80px)",
+                  "hoveredLeft": "calc(50% - 235px)",
+                  "hoveredSize": "70px",
+                  "hoveredBackgroundColor": "#1a1620",
+                  "hoveredBorderColor": "#413a4b"
+                },
+                "content": "<div style='margin-top: 1px; font-size:10px; margin-left: -1px;'>3</div>",
+                "hoveredContent": {
+                  "type": "1",
+                  "image": "/assets/images/gViz/visualizations/bubbles/sportbra.png",
+                  "bottomText": "<div style='font-size: 9px; line-height: 11px; height: 22px;'>PK WEW </br> Super PU</div>",
+                  "topNumber": "<span style='background-color:#bd96cf; color:#FFF; padding: 1px 4px 0px; font-size:8px; border-radius:50%'>3</span>"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "style": {
+            "top": "calc(50% + 15px)",
+            "left": "calc(50% - 115px)",
+            "size": "86px",
+            "imageSize": "30px",
+            "backgroundColor": "#1a1620",
+            "borderColor": "#4b4255",
+            "borderRadius": "50%",
+            "color": "#FFF",
+            "zIndex": "1004"
+          },
+          "content": {
+            "type": "1",
+            "image": "/assets/images/gViz/visualizations/bubbles/sportbra.png",
+            "bottomText": "Logo Hipster",
+            "topNumber": "<span style='background-color:#e95b86; color:#FFF; padding: 2px 5px 1px; font-size:10px; border-radius:50%'>1</span>",
+            "sideBubbles": [
+              {
+                "style": {
+                  "top": "calc(50% + 120px)",
+                  "left": "calc(50% - 95px)",
+                  "size": "24px",
+                  "imageSize": "20px",
+                  "backgroundColor": "#fa79ae",
+                  "borderColor": "#fa79ae",
+                  "borderRadius": "50%",
+                  "color": "#FFF",
+                  "zIndex": "1004",
+                  "hoveredTop": "calc(50% + 95px)",
+                  "hoveredLeft": "calc(50% - 120px)",
+                  "hoveredSize": "70px",
+                  "hoveredBackgroundColor": "#1a1620",
+                  "hoveredBorderColor": "#413a4b"
+                },
+                "content": "<div style='margin-top: 1px; font-size:11px; margin-left: -1px;'>2</div>",
+                "hoveredContent": {
+                  "type": "1",
+                  "image": "/assets/images/gViz/visualizations/bubbles/sportbra.png",
+                  "bottomText": "<div style='font-size: 9px; line-height: 11px; height: 22px;'>SLT Cheeky <br/> Cheeky</div>",
+                  "topNumber": "<span style='background-color:#fa79ae; color:#FFF; padding: 1px 4px 0px; font-size:8px; border-radius:50%'>2</span>"
+                }
+              },
+              {
+                "style": {
+                  "top": "calc(50% + 130px)",
+                  "left": "calc(50% - 65px)",
+                  "size": "18px",
+                  "imageSize": "20px",
+                  "backgroundColor": "#f7b5c9",
+                  "borderColor": "#f7b5c9",
+                  "borderRadius": "50%",
+                  "color": "#FFF",
+                  "zIndex": "1004",
+                  "hoveredTop": "calc(50% + 95px)",
+                  "hoveredLeft": "calc(50% - 60px)",
+                  "hoveredSize": "70px",
+                  "hoveredBackgroundColor": "#1a1620",
+                  "hoveredBorderColor": "#413a4b"
+                },
+                "content": "<div style='margin-top: 1px; font-size:10px; margin-left: -1px;'>3</div>",
+                "hoveredContent": {
+                  "type": "1",
+                  "image": "/assets/images/gViz/visualizations/bubbles/sportbra.png",
+                  "bottomText": "<div style='font-size: 9px; line-height: 11px; height: 22px;'>Wide Logo <br/> Boyshort</div>",
+                  "topNumber": "<span style='background-color:#f7b5c9; color:#FFF; padding: 1px 4px 0px; font-size:8px; border-radius:50%'>3</span>"
+                }
+              }
+            ]
+
+          }
+        }
+      ]
+    },
+
+    "promotionAnalysis": {
+      "title": {
+        "style": {
+          "top": "calc(50% - 190px)",
+          "left": "calc(50% + 40px)",
+          "color": "#ad5073",
+          "fontSize": "10px",
+          "textAlign": "center"
+        },
+        "content": "Promotion </br> Analysis"
+      },
+      "valuesBubble": {
+        "style": {
+          "top": "calc(50% - 160px)",
+          "left": "calc(50% - 5px)",
+          "size": "126px",
+          "backgroundColor": "#1a1620",
+          "borderColor": "#504859",
+          "borderRadius": "50%",
+          "color": "#FFF",
+          "zIndex": "1004"
+        },
+        "content": {
+          "type": "1",
+          "text": [
+            "<span style='font-weight:lighter; color:#FFF; font-size: 12px;'>Top Promotion</span>",
+            "<span style='font-weight:lighter; color:#be527f; font-size: 12px;'>Item Discount %Off</span>",
+            "<hr style='border-bottom: none; margin: 5px 10px;'>",
+            "<div style='height: 26px; width: 100%;'><div style='float:left; height:26px; line-height:26px; width:47%; color:#FFF;'><span style='display:block; float:right; margin-right: 5px; font-weight: lighter;'>38%</span><img src='/assets/images/gViz/visualizations/diwo-visual-bubble-poet-context/circle.png' style='display:block; float:right; height: 20px; margin: 2px 2px 0px 0px;' /></div><div style='float:left; height:26px; line-height:13px; width:50%; color:#FFF; text-align:left; font-weight: lighter; font-size:10px;'>Discounted <br/> Transactions</div></div>"
+          ]
+        }
+      }
+    },
+
+    "storeAnalysis": {
+      "title": {
+        "style": {
+          "top": "calc(50% - 175px)",
+          "left": "calc(50% + 30px)",
+          "color": "#ad5073",
+          "fontSize": "10px",
+          "textAlign": "center"
+        },
+        "content": "Store Analysis"
+      },
+      "valuesBubble": {
+        "style": {
+          "top": "calc(50% - 160px)",
+          "left": "calc(50% - 5px)",
+          "size": "126px",
+          "backgroundColor": "#1a1620",
+          "borderColor": "#504859",
+          "borderRadius": "50%",
+          "color": "#FFF",
+          "zIndex": "1004"
+        },
+        "content": {
+          "type": "1",
+          "data": {
+            "legend": {
+              "isVisible": false
+            },
+            "actions": {
+              "isVisible": false
+            },
+            "mode": "heat",
+            "heat": {
+              "colors": ["#c73e68","#FFF"],
+              "mapStrokeColor": "#9a768c",
+              "shapeId": "abbr",
+              "prefix": "",
+              "sufix": "%",
+              "format": "locale",
+              "type": "number"
+            },
+            "attrs": {
+              "labels": false,
+              "grid": false
+            },
+            "data": {
+              "heat": [
+                { "id": "al", "value": "100" },
+                { "id": "ak", "value": "200" },
+                { "id": "az", "value": "300" },
+                { "id": "ar", "value": "400" },
+                { "id": "ca", "value": "500" },
+                { "id": "co", "value": "600" },
+                { "id": "ct", "value": "700" },
+                { "id": "de", "value": "600" },
+                { "id": "fl", "value": "500" },
+                { "id": "ga", "value": "400" },
+                { "id": "hi", "value": "300" },
+                { "id": "id", "value": "200" },
+                { "id": "il", "value": "100" },
+                { "id": "in", "value": "200" },
+                { "id": "ia", "value": "300" },
+                { "id": "ks", "value": "400" },
+                { "id": "ky", "value": "500" },
+                { "id": "la", "value": "600" },
+                { "id": "me", "value": "700" },
+                { "id": "md", "value": "600" },
+                { "id": "ma", "value": "500" },
+                { "id": "mi", "value": "400" },
+                { "id": "mn", "value": "300" },
+                { "id": "ms", "value": "200" },
+                { "id": "mo", "value": "100" },
+                { "id": "mt", "value": "200" },
+                { "id": "ne", "value": "300" },
+                { "id": "nv", "value": "400" },
+                { "id": "nh", "value": "500" },
+                { "id": "nj", "value": "600" },
+                { "id": "nm", "value": "700" },
+                { "id": "ny", "value": "600" },
+                { "id": "nc", "value": "500" },
+                { "id": "nd", "value": "400" },
+                { "id": "oh", "value": "300" },
+                { "id": "ok", "value": "200" },
+                { "id": "or", "value": "100" },
+                { "id": "pa", "value": "100" },
+                { "id": "ri", "value": "100" },
+                { "id": "sc", "value": "100" },
+                { "id": "sd", "value": "100" },
+                { "id": "tn", "value": "100" },
+                { "id": "tx", "value": "100" },
+                { "id": "ut", "value": "100" },
+                { "id": "vt", "value": "100" },
+                { "id": "va", "value": "100" },
+                { "id": "wa", "value": "100" },
+                { "id": "wv", "value": "100" },
+                { "id": "wy", "value": "100" }
+              ]
+            }
+          }
+        }
+      }
+    },
+
+    "connectors": "#e96293",
+    "backgroundBubbles": {
+      "backgroundColor": "#302c36",
+      "borderColor": "#302c36",
+      "opacity": 1
+    }
+  }
+}

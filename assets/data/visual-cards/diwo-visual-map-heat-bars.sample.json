@@ -1,5 +1,9 @@
 {
   "title": "Map Heat Bars",
+  "mode": "heat",
+  "legend": {
+    "isVisible": false
+  },
   "tooltip": {
     "heat": {
       "title": [ "{{properties.name}}" ],

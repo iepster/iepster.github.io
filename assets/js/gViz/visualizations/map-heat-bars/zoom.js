@@ -66,7 +66,7 @@ module.exports = function () {
               .attr('y', _var.barY)
 
             // Draw state abbrs
-            var stateLabelsAbbr = _var.g.selectAll(".state-label-abbr").data(_var.filterStateLabelsAbbr() ? _var.geoData.features : []);
+            var stateLabelsAbbr = _var.g.selectAll(".state-label-abbr").data(_var.hasLabels && _var.filterStateLabelsAbbr() ? _var.geoData.features : []);
             stateLabelsAbbr.exit().remove();
             stateLabelsAbbr = stateLabelsAbbr.enter().append("text").attr("class", "state-label-abbr").merge(stateLabelsAbbr);
             stateLabelsAbbr
@@ -80,7 +80,7 @@ module.exports = function () {
             // Resize Labels
             var x = -_var.zoomTransform.x, y = -_var.zoomTransform.y, k = _var.zoomTransform.k;
             _var.mapBounds = [_var.projection.invert([x/k,y/k]), _var.projection.invert([(x+_var.width)/k,(y+_var.height)/k])];
-            _var.mapLabels = d3.select(".labels-group").selectAll(".map-label").data(_var.labelsData.filter(_var.filterLabelsFromLatLon).filter(_var.filterLabels), function(d) { return d.name + '-' + d.state_id; });
+            _var.mapLabels = d3.select(".labels-group").selectAll(".map-label").data((_var.hasLabels ? _var.labelsData.filter(_var.filterLabelsFromLatLon).filter(_var.filterLabels) : []), function(d) { return d.name + '-' + d.state_id; });
             _var.mapLabels.exit().remove();
             _var.mapLabels = _var.mapLabels.enter().append("text").attr("class", "map-label").merge(_var.mapLabels);
             _var.mapLabels

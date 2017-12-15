@@ -97,6 +97,7 @@ module.exports = function () {
 
           // Set shape stroke color
           _var.shapeStrokeColor = function(d) {
+            console.log(_var.mode);
             if(_var.mode === 'bars') {
               return _var.data.bars != null && _var.data.bars.mapStrokeColor != null ? _var.data.bars.mapStrokeColor : "#FFF";
             } else {

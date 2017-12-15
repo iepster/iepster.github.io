@@ -80,7 +80,7 @@ module.exports = function () {
                 .style('stroke-width', _var.shapeStrokeWidth)
 
               // Draw state abbrs
-              var stateLabelsAbbr = d3.select(this).selectAll(".state-label-abbr").data(_var.filterStateLabelsAbbr() ? _var.geoData.features : []);
+              var stateLabelsAbbr = d3.select(this).selectAll(".state-label-abbr").data(_var.hasLabels && _var.filterStateLabelsAbbr() ? _var.geoData.features : []);
               stateLabelsAbbr.exit().remove();
               stateLabelsAbbr = stateLabelsAbbr.enter().append("text").attr("class", "state-label-abbr").merge(stateLabelsAbbr);
               stateLabelsAbbr
@@ -132,7 +132,7 @@ module.exports = function () {
             });
 
           // Create groups
-          var labelsGroup = elements.selectAll(".labels-group").data(['labels-group']);
+          var labelsGroup = elements.selectAll(".labels-group").data(_var.hasLabels ? ['labels-group'] : []);
           labelsGroup.exit().remove();
           labelsGroup = labelsGroup.enter().append("g").attr("class", "labels-group").merge(labelsGroup);
 
@@ -141,7 +141,7 @@ module.exports = function () {
             .each(function (e, i) {
 
               // Draw shapes
-              var countiesLabels = d3.select(this).selectAll(".map-label").data(_var.labelsData.filter(_var.filterLabelsFromLatLon).filter(_var.filterLabels), function(d) { return d.name + '-' + d.state_id; });
+              var countiesLabels = d3.select(this).selectAll(".map-label").data((_var.hasLabels ? _var.labelsData.filter(_var.filterLabelsFromLatLon).filter(_var.filterLabels) : []), function(d) { return d.name + '-' + d.state_id; });
               countiesLabels.exit().remove();
               countiesLabels = countiesLabels.enter().append("text").attr("class", "map-label").merge(countiesLabels);
               countiesLabels
