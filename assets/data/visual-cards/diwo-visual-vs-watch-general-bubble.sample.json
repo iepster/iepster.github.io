@@ -661,7 +661,9 @@
           "left": "calc(50% + 30px)",
           "color": "#ad5073",
           "fontSize": "10px",
-          "textAlign": "center"
+          "textAlign": "center",
+          "hoveredTop": "calc(50% - 205px)",
+          "hoveredLeft": "calc(50% + 65px)"
         },
         "content": "Store Analysis"
       },
@@ -673,8 +675,11 @@
           "backgroundColor": "#1a1620",
           "borderColor": "#504859",
           "borderRadius": "50%",
+          "hoveredSize": "205px",
           "color": "#FFF",
-          "zIndex": "1004"
+          "zIndex": "1004",
+          "hoveredTop": "calc(50% - 190px)",
+          "hoveredLeft": "calc(50% - 5px)"
         },
         "content": {
           "type": "1",
