@@ -1,6 +1,7 @@
 {
   "data": {
     "backgroundColor": "#2a2730",
+
     "center": {
       "style": {
         "top": "calc(50% - 55px)",

@@ -1,22 +1,83 @@
 {
   "data": {
     "backgroundColor": "#2a2730",
-    "center": {
+
+    "filterBubble": {
       "style": {
         "top": "calc(50% - 55px)",
         "left": "calc(50% - 55px)",
         "size": "110px",
-        "backgroundColor": "#ad5073",
+        "backgroundColor": "#262626",
         "borderColor": "#ad5073",
         "borderRadius": "50%",
         "color": "#FFF",
-        "zIndex": "1005"
+        "zIndex": "1006"
       },
       "content": {
-        "type": "1",
-        "topText": "#1000333",
-        "middleText": "<span style='border-top: 1px solid #FFF; border-bottom: 1px solid #FFF; padding: 3px;'>Orlando, FL</span>",
-        "bottomText": "50 ft"
+        "backgroundBubble": {
+          "style": {
+            "top": "calc(50% - 31px)",
+            "left": "calc(50% - 31px)",
+            "size": "60px",
+            "backgroundColor": "#transparent",
+            "borderColor": "#ad5073",
+            "borderRadius": "50%",
+            "borderStyle": "dashed",
+            "opacity": "0.5",
+            "zIndex": "1004"
+          }
+        },
+        "filterBubbles": [
+          {
+            "style": {
+              "top": "calc(50% - 34px)",
+              "left": "calc(50% - 44px)",
+              "size": "36px",
+              "imageSize": "28px",
+              "backgroundColor": "#ad5073",
+              "borderColor": "#ad5073",
+              "borderRadius": "50%",
+              "zIndex": "1005"
+            },
+            "content": {
+              "id": "product",
+              "placeholder": "/assets/images/gViz/visualizations/diwo-visual-bubble-poet-context/women.png"
+            }
+          },
+          {
+            "style": {
+              "top": "calc(50% - 34px)",
+              "left": "calc(50% + 6px)",
+              "size": "36px",
+              "imageSize": "28px",
+              "backgroundColor": "#ad5073",
+              "borderColor": "#ad5073",
+              "borderRadius": "50%",
+              "zIndex": "1005"
+            },
+            "content": {
+              "id": "customer",
+              "selected": true,
+              "placeholder": "/assets/images/gViz/visualizations/diwo-visual-bubble-poet-context/women.png"
+            }
+          },
+          {
+            "style": {
+              "top": "calc(50% + 10px)",
+              "left": "calc(50% - 18px)",
+              "size": "36px",
+              "imageSize": "28px",
+              "backgroundColor": "#ad5073",
+              "borderColor": "#ad5073",
+              "borderRadius": "50%",
+              "zIndex": "1005"
+            },
+            "content": {
+              "id": "location",
+              "placeholder": "/assets/images/gViz/visualizations/diwo-visual-bubble-poet-context/women.png"
+            }
+          }
+        ]
       }
     },
 
