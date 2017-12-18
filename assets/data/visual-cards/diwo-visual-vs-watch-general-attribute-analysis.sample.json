@@ -1,0 +1,124 @@
+{
+  "title": {
+    "style": {
+      "top": "calc(50% - 70px)",
+      "left": "calc(50% - 20px)",
+      "color": "#ad5073",
+      "fontSize": "10px",
+      "textAlign": "center"
+    },
+    "content": "Attribute Analysis"
+  },
+  "valuesBubble": {
+    "style": {
+      "top": "calc(50% - 55px)",
+      "left": "calc(50% - 40px)",
+      "size": "110px",
+      "backgroundColor": "#1a1620",
+      "borderColor": "#504859",
+      "borderRadius": "50%",
+      "color": "#FFF",
+      "zIndex": "1004",
+      "hoveredTop": "calc(50% - 55px)",
+      "hoveredLeft": "calc(50% - 40px)",
+      "hoveredSize": "110px",
+      "hoveredBackgroundColor": "#1a1620",
+      "hoveredBorderColor": "#504859"
+    },
+    "content": {
+      "type": "1",
+      "text": [
+        "<span style='color:#FFF; font-size: 12px; margin: 0px 14px 0px 17px;'>Color:</span><span style='font-size:  12px; color:#be527f;'>Black</span>",
+        "<span style='color:#FFF; font-size: 12px; margin: 0px 17px 0px 17px;'>Print:</span><span style='font-size:  12px; color:#be527f;'>Logo</span>",
+        "<span style='color:#FFF; font-size: 12px; margin: 0px 10px 0px 17px;'>Fabric:</span><span style='font-size: 12px; color:#be527f;'>Smooth</span>",
+        "<span style='color:#FFF; font-size: 10px; width: 100%; text-align: center; display: block; margin-top:5px;'>Top Trending <img src='/assets/images/top-trending-pink.png' style='display:inline-block; height:10px;'/></span>"
+      ]
+    },
+    "hoveredContent": {
+      "type": "1",
+      "text": [
+        "<div style='height:auto; float:left; width:33%; margin-bottom:3px;'><div style='height:11px; line-height:11px; font-size:10px; color:#FFF; font-weight:lighter; text-align: center; width: 100%;'>28px</div><div style='height:22px; width:22px; border-radius:50%; background:#000; margin: 2px auto;'></div><div style='height: 13px; line-height: 13px; font-size:10px; color:#e95c83; font-weight:lighter; text-align: center; width: 100%;'>Black</div></div>",
+        "<div style='height:auto; float:left; width:33%; margin-bottom:3px;'><div style='height:11px; line-height:11px; font-size:10px; color:#FFF; font-weight:lighter; text-align: center; width: 100%;'>28px</div><div style='height:22px; width:22px; border-radius:50%; background:#e95c83; margin: 2px auto;'></div><div style='height: 13px; line-height: 13px; font-size:10px; color:#e95c83; font-weight:lighter; text-align: center; width: 100%;'>Logo</div></div>",
+        "<div style='height:auto; float:left; width:33%; margin-bottom:3px;'><div style='height:11px; line-height:11px; font-size:10px; color:#FFF; font-weight:lighter; text-align:center; width:100%;'>28px</div><div style='height:22px; width:22px; border-radius:50%; background:#91add0; margin: 2px auto;'></div><div style='height: 13px; line-height: 13px; font-size:10px; color:#e95c83; font-weight:lighter; text-align: center; width: 100%;'>Smooth</div></div>",
+        "<span style='color:#FFF; font-size: 10px; width: 100%; text-align: center; display: block; margin-top:5px;'>Top Trending <img src='/assets/images/temp_icons/icon_5.svg' style='display:inline-block; height:10px;'/></span>"
+      ]
+    }
+  },
+  "chartBubble": {
+    "style": {
+      "top": "calc(50% - 65px)",
+      "left": "calc(50% - 95px)",
+      "size": "40px",
+      "backgroundColor": "#b14a6a",
+      "borderColor": "#b14a6a",
+      "borderRadius": "50%",
+      "color": "#FFF",
+      "zIndex": "1004",
+      "hoveredTop": "calc(50% - 115px)",
+      "hoveredLeft": "calc(50% - 240px)",
+      "hoveredSize": "205px",
+      "hoveredBackgroundColor": "#1a1620",
+      "hoveredBorderColor": "#504859"
+
+    },
+    "content": {
+      "type": "1",
+      "placeholder": "/assets/images/gViz/visualizations/diwo-visual-bubble-poet-context/wave.png"
+    },
+    "hoveredContent": {
+      "data": {
+        "backgroundColor": "transparent",
+        "borderColor": "#383142",
+        "color": "#FFF",
+        "textAlign": "left",
+        "trPadding": "2px 0px",
+        "tdPadding": "2px 5px",
+        "width": "auto",
+        "data": [
+          [
+            "<span style='font-size:8px;'>Att. Trends</span>",
+            "<span style='font-size:8px; width:100%; text-align:center;'>Top<img src='/assets/images/top-trending-green.png' style='display:inline-block; margin-left:5px; width:14px;'/></span>",
+            "<span style='font-size:8px; width:100%; text-align:center;'>Bottom<img src='/assets/images/bottom-trending-red.png' style='display:inline-block; margin-left:5px; width:14px;'/></span>"
+          ],
+          [
+            "<span style='font-size:8px;'>Color (Solid)</span>",
+            "<span style='font-size:8px; width:100%; text-align:center; color:#e95c83;'>Black</span>",
+            "<span style='font-size:8px; width:100%; text-align:center; color:#e95c83;'>Purple</span>"
+          ],
+          [
+            "<span style='font-size:8px;'>Color (Print)</span>",
+            "<span style='font-size:8px; width:100%; text-align:center; color:#e95c83;'>Logo</span>",
+            "<span style='font-size:8px; width:100%; text-align:center; color:#e95c83;'>Floral</span>"
+          ],
+          [
+            "<span style='font-size:8px;'>Size</span>",
+            "<span style='font-size:8px; width:100%; text-align:center; color:#e95c83;'>Medium</span>",
+            "<span style='font-size:8px; width:100%; text-align:center; color:#e95c83;'>Small</span>"
+          ],
+          [
+            "<span style='font-size:8px;'>Fabric</span>",
+            "<span style='font-size:8px; width:100%; text-align:center; color:#e95c83;'>Smooth</span>",
+            "<span style='font-size:8px; width:100%; text-align:center; color:#e95c83;'>Nylon</span>"
+          ],
+          [
+            "<span style='font-size:8px;'>Silhouette</span>",
+            "<span style='font-size:8px; width:100%; text-align:center; color:#e95c83;'>Push-Up</span>",
+            "<span style='font-size:8px; width:100%; text-align:center; color:#e95c83;'>Lightly Lined</span>"
+          ]
+        ]
+      }
+    }
+  },
+  "placeholderBubble": {
+    "style": {
+      "top": "calc(50% - 15px)",
+      "left": "calc(50% - 75px)",
+      "size": "12px",
+      "backgroundColor": "#f7b5c9",
+      "borderColor": "#f7b5c9",
+      "borderRadius": "50%",
+      "zIndex": "1004"
+    }
+  }
+}
+

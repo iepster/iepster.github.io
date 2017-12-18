@@ -33,7 +33,7 @@
               "top": "calc(50% - 34px)",
               "left": "calc(50% - 44px)",
               "size": "36px",
-              "imageSize": "28px",
+              "imageSize": "18px",
               "backgroundColor": "#ad5073",
               "borderColor": "#ad5073",
               "borderRadius": "50%",
@@ -42,7 +42,7 @@
             "content": {
               "id": "product",
               "selected": true,
-              "placeholder": "/assets/images/gViz/visualizations/diwo-visual-bubble-poet-context/women.png"
+              "placeholder": "/assets/images/watch/icon_product.png"
             }
           },
           {
@@ -50,7 +50,7 @@
               "top": "calc(50% - 34px)",
               "left": "calc(50% + 6px)",
               "size": "36px",
-              "imageSize": "28px",
+              "imageSize": "18px",
               "backgroundColor": "#ad5073",
               "borderColor": "#ad5073",
               "borderRadius": "50%",
@@ -58,7 +58,7 @@
             },
             "content": {
               "id": "customer",
-              "placeholder": "/assets/images/gViz/visualizations/diwo-visual-bubble-poet-context/women.png"
+              "placeholder": "/assets/images/watch/icon_customer.png"
             }
           },
           {
@@ -66,7 +66,7 @@
               "top": "calc(50% + 10px)",
               "left": "calc(50% - 18px)",
               "size": "36px",
-              "imageSize": "28px",
+              "imageSize": "15px",
               "backgroundColor": "#ad5073",
               "borderColor": "#ad5073",
               "borderRadius": "50%",
@@ -74,7 +74,7 @@
             },
             "content": {
               "id": "location",
-              "placeholder": "/assets/images/gViz/visualizations/diwo-visual-bubble-poet-context/women.png"
+              "placeholder": "/assets/images/watch/icon_location.png"
             }
           }
         ]
