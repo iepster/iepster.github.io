@@ -1,6 +1,6 @@
 // $mainColor: #584c5b;
 $levelLabelColor: #7e767f;
-$mainColor: #FFF;
+$mainColor: #bb4f78;
 
 svg.dendrogram-chart {
 
@@ -37,7 +37,7 @@ svg.dendrogram-chart {
 
   path.label-link {
     fill: transparent;
-    stroke: $mainColor;
+    stroke: #FFF;
     stroke-width: 1px;
     stroke-opacity: 0.8;
     shape-rendering: crispy-edges;
@@ -47,7 +47,7 @@ svg.dendrogram-chart {
 
   path.satelite {
     fill: transparent;
-    stroke: $mainColor;
+    stroke: #FFF;
     stroke-width: 1px;
     stroke-opacity: 0.5;
     shape-rendering: crispy-edges;

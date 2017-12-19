@@ -45,7 +45,7 @@ module.exports = function() {
 
           // Clean breadcrumbs
           _var.container.d3.select('[data-id="gViz-wrapper-breadcrumbs"]')
-            .style('top', "-5px")
+            .style('top', "15px")
             .style('left', "70px")
             .html('');
 
@@ -178,12 +178,12 @@ module.exports = function() {
             // d3.select(this).selectAll("rect.bg-glow").style('fill', "url(#diwo-gradient-glows)").transition().duration(200).style('opacity', 1);
             d3.select(this).selectAll("text").style('fill', "#FFF").transition().duration(200).style('opacity', 1);
             _var.g.selectAll(".node-group, .left-link").style('opacity', 0.4);
-            _var.g.selectAll("path.link").style('stroke', "#122438");
+            _var.g.selectAll("path.link").style('stroke', "#bb4f78");
           }).on('mouseout', function(d) {
             // d3.select(this).selectAll("rect.bg-glow, text").style('fill', "none").transition().duration(200).style('opacity', 0);
             d3.select(this).selectAll("text").style('fill', "none").transition().duration(200).style('opacity', 0);
             _var.g.selectAll(".node-group, .left-link").style('opacity', 1);
-            _var.g.selectAll("path.link").style('stroke', "#7291AD");
+            _var.g.selectAll("path.link").style('stroke', "#bb4f78");
 
           // Click
           }).on('click', function(d) {

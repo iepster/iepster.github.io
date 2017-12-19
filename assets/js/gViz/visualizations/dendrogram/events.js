@@ -42,7 +42,7 @@ module.exports = function() {
               // Style
               _var.g.selectAll(".node-group").style('opacity', function(n) { return n == node ? 1 : 0.1; });
               _var.g.selectAll(".left-link").style('opacity', 0.1);
-              _var.g.selectAll("path.link").style('stroke', "#FFF");
+              _var.g.selectAll("path.link").style('stroke', "#bb4f78");
               nodeSel.selectAll('.node-s-abbr, .label-link, .label-circle').style('opacity', 1);
 
               // Increase scale
@@ -67,7 +67,7 @@ module.exports = function() {
 
               // Style
               _var.g.selectAll(".node-group, path.left-link").style('opacity', 1);
-              _var.g.selectAll("path.link").style('stroke', "#FFF");
+              _var.g.selectAll("path.link").style('stroke', "#bb4f78");
               nodeSel.selectAll('.node-s-abbr, .label-link, .label-circle')
                 .style("opacity", function(n) { return n.parent && n.satAttrs && n.satAttrs.lvl >= n.parent.maxSatLvl-1 ? 1 : 0; } )
 
@@ -85,7 +85,7 @@ module.exports = function() {
 
               // Style
               _var.g.selectAll(".node-group, path.link, path.left-link").style('opacity', 1);
-              _var.g.selectAll("path.link").style('stroke', "#7291AD");
+              _var.g.selectAll("path.link").style('stroke', "#bb4f78");
               nodeSel.selectAll('.node-s-abbr, .label-link, .label-circle')
                 .style("opacity", function(n) { return n.parent && n.satAttrs && n.satAttrs.lvl >= n.parent.maxSatLvl-1 ? 1 : 0; } )
 
