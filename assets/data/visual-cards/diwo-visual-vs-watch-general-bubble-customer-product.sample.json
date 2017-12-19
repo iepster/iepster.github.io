@@ -398,7 +398,8 @@
           "attrs": {
             "radius": 8,
             "muted": false,
-            "grid": false
+            "grid": false,
+            "scale": 1.2
           },
           "x1": {
             "title": "",
