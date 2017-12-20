@@ -1,0 +1,132 @@
+{
+  "title": {
+    "style": {
+      "top": "calc(50% - 60px)",
+      "left": "calc(50% - 45px)",
+      "color": "#ad5073",
+      "fontSize": "10px",
+      "textAlign": "center"
+    },
+    "content": "Customer <br/> Analysis"
+  },
+  "chartBubble": {
+    "style": {
+      "top": "calc(50% - 35px)",
+      "left": "calc(50% - 45px)",
+      "size": "40px",
+      "backgroundColor": "#b14a6a",
+      "borderColor": "#b14a6a",
+      "borderRadius": "50%",
+      "color": "#FFF",
+      "zIndex": "1004"
+    },
+    "content": {
+      "type": "1",
+      "placeholder": "/assets/images/gViz/visualizations/diwo-visual-bubble-poet-context/women.png"
+    }
+  },
+  "placeholderBubble": [
+    {
+      "style": {
+        "top": "calc(50% - 55px)",
+        "left": "calc(50% + 10px)",
+        "size": "12px",
+        "backgroundColor": "#f7b5c9",
+        "borderColor": "#f7b5c9",
+        "borderRadius": "50%",
+        "zIndex": "1004",
+        "hoveredTop": "calc(50% - 58px)",
+        "hoveredLeft": "calc(50% + 10px)"
+      }
+    },
+    {
+      "style": {
+        "top": "calc(50% - 40px)",
+        "left": "calc(50% + 30px)",
+        "size": "12px",
+        "backgroundColor": "#f7b5c9",
+        "borderColor": "#f7b5c9",
+        "borderRadius": "50%",
+        "zIndex": "1004",
+        "hoveredTop": "calc(50% - 43px)",
+        "hoveredLeft": "calc(50% + 35px)"
+      }
+    },
+    {
+      "style": {
+        "top": "calc(50% - 20px)",
+        "left": "calc(50% + 20px)",
+        "size": "12px",
+        "backgroundColor": "#f7b5c9",
+        "borderColor": "#f7b5c9",
+        "borderRadius": "50%",
+        "zIndex": "1004",
+        "hoveredTop": "calc(50% - 10px)",
+        "hoveredLeft": "calc(50% + 30px)"
+      }
+    },
+    {
+      "style": {
+        "top": "calc(50% - 0px)",
+        "left": "calc(50% + 20px)",
+        "size": "12px",
+        "backgroundColor": "#f7b5c9",
+        "borderColor": "#f7b5c9",
+        "borderRadius": "50%",
+        "zIndex": "1004",
+        "hoveredTop": "calc(50% + 20px)",
+        "hoveredLeft": "calc(50% + 25px)"
+      }
+    },
+    {
+      "style": {
+        "top": "calc(50% + 15px)",
+        "left": "calc(50% + 0px)",
+        "size": "12px",
+        "backgroundColor": "#f7b5c9",
+        "borderColor": "#f7b5c9",
+        "borderRadius": "50%",
+        "zIndex": "1004",
+        "hoveredTop": "calc(50% + 30px)",
+        "hoveredLeft": "calc(50% - 5px)"
+      }
+    }
+  ],
+  "textElements": [
+    {
+      "style": {
+        "hoveredTop": "calc(50% - 78px)",
+        "hoveredLeft": "calc(50% + 28px)"
+      },
+      "hoveredContent": "<div style='font-size:12px; color:#b04a6a; font-weight: lighter;'>25-29</div><div style='font-size: 10px; color:#FFF; font-weight: lighter;'>Age</div>"
+    },
+    {
+      "style": {
+        "hoveredTop": "calc(50% - 48px)",
+        "hoveredLeft": "calc(50% + 53px)"
+      },
+      "hoveredContent": "<div style='font-size:12px; color:#b04a6a; font-weight: lighter;'>$80K-$110K</div><div style='font-size: 10px; color:#FFF; font-weight: lighter;'>Income</div>"
+    },
+    {
+      "style": {
+        "hoveredTop": "calc(50% - 17px)",
+        "hoveredLeft": "calc(50% + 47px)"
+      },
+      "hoveredContent": "<div><span style='font-size:9px; font-weight:lighter; color: #FFF; padding:1px 3px; background-color:#eb5c85;'>Pink Nation 62%</span><span style='font-size:9px; font-weight:lighter; margin-left: 5px; color:#FFF; padding:1px 3px; background-color:#eb5c85;'>Angel Card 12%</span></div><div style='font-size: 10px; color:#FFF; font-weight: lighter; margin-top:2px;'>Customer Type</div>"
+    },
+    {
+      "style": {
+        "hoveredTop": "calc(50% + 25px)",
+        "hoveredLeft": "calc(50% + 43px)"
+      },
+      "hoveredContent": "<div style='font-size:12px; color:#b04a6a; font-weight: lighter;'>High Value</div><div style='font-size: 10px; color:#FFF; font-weight: lighter;'>Value Segment</div>"
+    },
+    {
+      "style": {
+        "hoveredTop": "calc(50% + 45px)",
+        "hoveredLeft": "calc(50% - 4px)"
+      },
+      "hoveredContent": "<div style='font-size:12px; color:#b04a6a; font-weight: lighter;'>3 Weeks</div><div style='font-size: 10px; color:#FFF; font-weight: lighter;'>Frequency</div>"
+    }
+  ]
+}

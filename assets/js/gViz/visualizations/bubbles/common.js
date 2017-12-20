@@ -24,62 +24,94 @@ module.exports = {
       hoverEnd: null
     }
   },
-  drawWhiteCircles: function (whiteCirclesWrapper, frequency) {
-    frequency = frequency || 250;
-    for (var i = 0; i < 10; i++) {
-      var svg = whiteCirclesWrapper
-        .append('svg')
-        .attr('width', frequency + (Math.random() * 100 - 40))
-        .attr('height', frequency)
-      svg.append('circle')
-        .attr('r', 30)
-        .attr('cx', 100)
-        .attr('cy', 100)
-        .attr('fill', '#e3e8ef');
-      svg.style('transform', function (d) {
-        var scale = Math.random() * 2.5 + 0.5;
-        return 'scale(' + scale + ')'
+  drawWhiteCircles: function (whiteCirclesWrapper, attrs) {
+    frequency = attrs.frequency || 250;
+
+    var whiteCircleSvgElements = whiteCirclesWrapper.patternify({
+      selector: 'white-circle-svg-element',
+      elementTag: 'svg',
+      data: d3.range(10)
+    })
+      .attr('width', frequency + (Math.random() * 100 - 40))
+      .attr('height', frequency)
+
+    whiteCircleSvgElementCircle = whiteCircleSvgElements
+      .patternify({
+        selector: 'white-circle-svg-element-circle',
+        elementTag: 'circle',
+        data: d => [d]
       })
-    }
+      .attr('r', 30)
+      .attr('cx', 100)
+      .attr('cy', 100)
+      .attr('fill', '#e3e8ef');
+
+    whiteCircleSvgElements.style('transform', function (d) {
+      var scale = Math.random() * 2.5 + 0.5;
+      return 'scale(' + scale + ')'
+    })
+
+    whiteCircleSvgElements.each(function (d) {
+      var circleDim = d3.select(this).node().getBoundingClientRect();
+      var pos = circleDim.y + circleDim.height;
+      if (pos > attrs.height) {
+        d3.select(this).style('display', 'none')
+      } else {
+        d3.select(this).style('display', 'inline')
+      }
+    })
+
   },
   layouts: {
     "INITIAL": {
       "pricePointAnalysisHover": {
-        x: 540,
-        y: 300,
+        x: 65,
+        y: 55,
+        dx: 135,
+        dy: -25,
         invokables: {
           scale: 0.7,
           state: "HIDDEN"
         },
       },
       "mainProductBubble": {
-        x: 350,
-        y: 190,
+        x: 50,
+        y: 50,
         invokables: {
+          circleStroke:'#786285',
           scale: 0.8,
+          circleFill: '#B93E71',
         }
       },
       "attributeAnalysis": {
-        x: 80,
-        y: 30,
+        x: 40,
+        y: 43,
         invokables: {
+          circleFill: '#1B1620',
+          circleStroke:'#786285',
           svgWidth: 400,
           svgHeight: 400,
         },
         linkedBubbles: ["attributeAnalysisHover"]
       },
       "customerAnalysis": {
-        x: 412,
-        y: -20,
+        x: 70,
+        y: 30,
         invokables: {
+          circleStroke:'#786285',
+          circleFill: '#1B1620',
           scale: 0.7,
         },
       },
       "salesStockAnalysis": {
         "Stock2": {
-          x: -70,
-          y: 80,
+          x: 30,
+          y: 55,
+          dx: -120,
+          dy: -100,
           invokables: {
+            circleFill: '#1B1620',
+            circleStroke:'#786285',
             scale: 0.52,
             state: "HIDDEN",
             numberFlagColor: '#73628C',
@@ -88,9 +120,13 @@ module.exports = {
           }
         },
         "Stock3": {
-          x: -60,
-          y: 200,
+          x: 30,
+          y: 55,
+          dx: -110,
+          dy: 20,
           invokables: {
+            circleFill: '#1B1620',
+            circleStroke:'#786285',
             scale: 0.52,
             state: "HIDDEN",
             numberFlagColor: '#73628C',
@@ -99,9 +135,11 @@ module.exports = {
           }
         },
         "Stock1": {
-          x: 50,
-          y: 180,
+          x: 30,
+          y: 55,
           invokables: {
+            circleFill: '#1B1620',
+            circleStroke:'#786285',
             scale: 0.6,
             showTitle: true,
             numberFlagColor: '#73628C',
@@ -112,9 +150,13 @@ module.exports = {
           linkedBubbles: ["Stock2", 'Stock3', 'Sell1', 'Sell2', 'Sell3']
         },
         "Sell2": {
-          x: 320,
-          y: 320,
+          x: 45,
+          y: 67,
+          dx: 120,
+          dy: 80,
           invokables: {
+            circleFill: '#1B1620',
+            circleStroke:'#786285',
             scale: 0.52,
             state: "HIDDEN",
             numberFlagColor: '#EA5C84',
@@ -123,9 +165,13 @@ module.exports = {
           }
         },
         "Sell3": {
-          x: 180,
-          y: 360,
+          x: 45,
+          y: 67,
+          dx: -20,
+          dy: 120,
           invokables: {
+            circleFill: '#1B1620',
+            circleStroke:'#786285',
             scale: 0.52,
             state: "HIDDEN",
             numberFlagColor: '#EA5C84',
@@ -133,9 +179,11 @@ module.exports = {
             lineDirection: 'NONE'
           }
         }, "Sell1": {
-          x: 200,
-          y: 240,
+          x: 45,
+          y: 67,
           invokables: {
+            circleFill: '#1B1620',
+            circleStroke:'#786285',
             scale: 0.6,
             numberFlagColor: '#EA5C84',
             chartNameFill: "#FF0076",
@@ -145,18 +193,23 @@ module.exports = {
           linkedBubbles: ["Stock2", 'Stock3', 'Stock1', 'Sell2', 'Sell3']
         }
       }, "attributeAnalysisHover": {
-        x: -85,
-        y: -30,
+        x: 40,
+        y: 43,
+        dx: -185,
+        dy: -85,
         invokables: {
+          circleFill: '#1B1620',
           svgWidth: 400,
           svgHeight: 400,
           state: "HIDDEN"
         },
       },
       "pricePointAnalysis": {
-        x: 360,
-        y: 260,
+        x: 65,
+        y: 55,
         invokables: {
+          circleFill: '#1B1620',
+          circleStroke:'#786285',
           scale: 0.5,
           svgWidth: 400,
           svgHeight: 430
@@ -164,253 +217,253 @@ module.exports = {
         linkedBubbles: ["pricePointAnalysisHover"]
       },
     },
-    "CUSTOMER_ANALYSIS_ACTIVE": {
-      "pricePointAnalysisHover": {
-        x: 490,
-        y: 310,
-        invokables: {
-          scale: 0.7,
-          state: "HIDDEN"
-        },
-      },
-      "attributeAnalysisHover": {
-        x: -190,
-        y: -30,
-        invokables: {
-          svgWidth: 400,
-          svgHeight: 400,
-          state: "HIDDEN"
-        },
-      },
-      "mainProductBubble": {
-        x: 150,
-        y: 190,
-        invokables: {
-          scale: 0.8,
-        }
-      },
-      "attributeAnalysis": {
-        x: -150,
-        y: 30,
-        invokables: {
-          svgWidth: 400,
-          svgHeight: 400,
-          state: "SHADOWED"
-        },
-      },
-      "customerAnalysis": {
-        x: 352,
-        y: 40,
-        invokables: {
-          scale: 1,
-          state: 'ACTIVE'
-        },
-      },
-      "salesStockAnalysis": {
-        "Stock2": {
-          x: -70,
-          y: 80,
-          invokables: {
-            scale: 0.52,
-            state: "HIDDEN",
-            numberFlagColor: '#73628C',
-            chartNameFill: "#583F6C",
-            lineDirection: "NONE"
-          }
-        },
-        "Stock3": {
-          x: -60,
-          y: 200,
-          invokables: {
-            scale: 0.52,
-            state: "HIDDEN",
-            numberFlagColor: '#73628C',
-            chartNameFill: "#38214D",
-            lineDirection: "NONE"
-          }
-        },
-        "Stock1": {
-          x: 50,
-          y: 280,
-          invokables: {
-            scale: 0.6,
-            showTitle: true,
-            numberFlagColor: '#73628C',
-            chartNameFill: "#73628C",
-            state: "SHADOWED",
-            lineDirection: "NONE"
-          }
-        },
-        "Sell1": {
-          x: 200,
-          y: 340,
-          invokables: {
-            scale: 0.6,
-            numberFlagColor: '#EA5C84',
-            chartNameFill: "#FF0076",
-            state: "SHADOWED",
-            lineDirection: "NONE"
-          }
-        },
-        "Sell2": {
-          x: 320,
-          y: 320,
-          invokables: {
-            scale: 0.52,
-            state: "HIDDEN",
-            numberFlagColor: '#EA5C84',
-            chartNameFill: "#F20070",
-            lineDirection: "NONE"
-          }
-        },
-        "Sell3": {
-          x: 180,
-          y: 360,
-          invokables: {
-            scale: 0.52,
-            state: "HIDDEN",
-            numberFlagColor: '#EA5C84',
-            chartNameFill: "#E9004F"
-          }
-        },
-      }
-      , "pricePointAnalysis": {
-        x: 360,
-        y: 260,
-        invokables: {
-          scale: 0.5,
-          svgWidth: 400,
-          svgHeight: 430,
-          state: "SHADOWED"
-        }
-      },
-    },
-    "CUSTOMER_AND_ATTR_ANALYSIS_ACTIVE": {
+    // "CUSTOMER_ANALYSIS_ACTIVE": {
+    //   "pricePointAnalysisHover": {
+    //     x: 490,
+    //     y: 310,
+    //     invokables: {
+    //       scale: 0.7,
+    //       state: "HIDDEN"
+    //     },
+    //   },
+    //   "attributeAnalysisHover": {
+    //     x: -190,
+    //     y: -30,
+    //     invokables: {
+    //       svgWidth: 400,
+    //       svgHeight: 400,
+    //       state: "HIDDEN"
+    //     },
+    //   },
+    //   "mainProductBubble": {
+    //     x: 150,
+    //     y: 190,
+    //     invokables: {
+    //       scale: 0.8,
+    //     }
+    //   },
+    //   "attributeAnalysis": {
+    //     x: -150,
+    //     y: 30,
+    //     invokables: {
+    //       svgWidth: 400,
+    //       svgHeight: 400,
+    //       state: "SHADOWED"
+    //     },
+    //   },
+    //   "customerAnalysis": {
+    //     x: 352,
+    //     y: 40,
+    //     invokables: {
+    //       scale: 1,
+    //       state: 'ACTIVE'
+    //     },
+    //   },
+    //   "salesStockAnalysis": {
+    //     "Stock2": {
+    //       x: -70,
+    //       y: 80,
+    //       invokables: {
+    //         scale: 0.52,
+    //         state: "HIDDEN",
+    //         numberFlagColor: '#73628C',
+    //         chartNameFill: "#583F6C",
+    //         lineDirection: "NONE"
+    //       }
+    //     },
+    //     "Stock3": {
+    //       x: -60,
+    //       y: 200,
+    //       invokables: {
+    //         scale: 0.52,
+    //         state: "HIDDEN",
+    //         numberFlagColor: '#73628C',
+    //         chartNameFill: "#38214D",
+    //         lineDirection: "NONE"
+    //       }
+    //     },
+    //     "Stock1": {
+    //       x: 50,
+    //       y: 280,
+    //       invokables: {
+    //         scale: 0.6,
+    //         showTitle: true,
+    //         numberFlagColor: '#73628C',
+    //         chartNameFill: "#73628C",
+    //         state: "SHADOWED",
+    //         lineDirection: "NONE"
+    //       }
+    //     },
+    //     "Sell1": {
+    //       x: 200,
+    //       y: 340,
+    //       invokables: {
+    //         scale: 0.6,
+    //         numberFlagColor: '#EA5C84',
+    //         chartNameFill: "#FF0076",
+    //         state: "SHADOWED",
+    //         lineDirection: "NONE"
+    //       }
+    //     },
+    //     "Sell2": {
+    //       x: 320,
+    //       y: 320,
+    //       invokables: {
+    //         scale: 0.52,
+    //         state: "HIDDEN",
+    //         numberFlagColor: '#EA5C84',
+    //         chartNameFill: "#F20070",
+    //         lineDirection: "NONE"
+    //       }
+    //     },
+    //     "Sell3": {
+    //       x: 180,
+    //       y: 360,
+    //       invokables: {
+    //         scale: 0.52,
+    //         state: "HIDDEN",
+    //         numberFlagColor: '#EA5C84',
+    //         chartNameFill: "#E9004F"
+    //       }
+    //     },
+    //   }
+    //   , "pricePointAnalysis": {
+    //     x: 60,
+    //     y: 55,
+    //     invokables: {
+    //       scale: 0.5,
+    //       svgWidth: 400,
+    //       svgHeight: 430,
+    //       state: "SHADOWED"
+    //     }
+    //   },
+    // },
+    // "CUSTOMER_AND_ATTR_ANALYSIS_ACTIVE": {
 
-      "attributeAnalysisHover": {
-        x: -190,
-        y: 300,
-        invokables: {
-          svgWidth: 400,
-          svgHeight: 400,
-          state: "ACTIVE",
-          scale: 0.8,
-        },
-      },
-      "mainProductBubble": {
-        x: 120,
-        y: 150,
-        invokables: {
-          scale: 0.8,
-        }
-      },
-      "attributeAnalysis": {
-        x: 0,
-        y: 330,
-        invokables: {
-          svgWidth: 400,
-          svgHeight: 400,
-          state: 'ACTIVE',
-          scale: 0.6
-        },
-        linkedBubbles: ["attributeAnalysisHover"]
-      },
-      "customerAnalysis": {
-        x: 352,
-        y: 40,
-        invokables: {
-          scale: 1,
-          state: 'ACTIVE'
-        },
-      },
-      "salesStockAnalysis": {
-        "Stock2": {
-          x: -70,
-          y: 80,
-          invokables: {
-            scale: 0.52,
-            state: "HIDDEN",
-            numberFlagColor: '#73628C',
-            chartNameFill: "#583F6C",
-            lineDirection: "NONE"
-          }
-        },
-        "Stock3": {
-          x: -60,
-          y: 200,
-          invokables: {
-            scale: 0.52,
-            state: "HIDDEN",
-            numberFlagColor: '#73628C',
-            chartNameFill: "#38214D",
-            lineDirection: "NONE"
-          }
-        },
-        "Stock1": {
-          x: 50,
-          y: 280,
-          invokables: {
-            scale: 0.6,
-            showTitle: true,
-            numberFlagColor: '#73628C',
-            chartNameFill: "#73628C",
-            state: "SHADOWED",
-            lineDirection: "NONE"
-          }
-        },
-        "Sell1": {
-          x: 200,
-          y: 340,
-          invokables: {
-            scale: 0.6,
-            numberFlagColor: '#EA5C84',
-            chartNameFill: "#FF0076",
-            state: "SHADOWED",
-            lineDirection: "NONE"
-          }
-        },
-        "Sell2": {
-          x: 320,
-          y: 320,
-          invokables: {
-            scale: 0.52,
-            state: "HIDDEN",
-            numberFlagColor: '#EA5C84',
-            chartNameFill: "#F20070",
-            lineDirection: "NONE"
-          }
-        },
-        "Sell3": {
-          x: 180,
-          y: 360,
-          invokables: {
-            scale: 0.52,
-            state: "HIDDEN",
-            numberFlagColor: '#EA5C84',
-            chartNameFill: "#E9004F",
-            lineDirection: "NONE"
-          }
-        },
-      }
-      , "pricePointAnalysis": {
-        x: 360,
-        y: 260,
-        invokables: {
-          scale: 0.5,
-          svgWidth: 400,
-          svgHeight: 430,
-          state: "SHADOWED"
-        }
-      },
-      "pricePointAnalysisHover": {
-        x: 510,
-        y: 310,
-        invokables: {
-          scale: 0.7,
-          state: "HIDDEN"
-        },
-      },
-    }
+    //   "attributeAnalysisHover": {
+    //     x: -190,
+    //     y: 300,
+    //     invokables: {
+    //       svgWidth: 400,
+    //       svgHeight: 400,
+    //       state: "ACTIVE",
+    //       scale: 0.8,
+    //     },
+    //   },
+    //   "mainProductBubble": {
+    //     x: 120,
+    //     y: 150,
+    //     invokables: {
+    //       scale: 0.8,
+    //     }
+    //   },
+    //   "attributeAnalysis": {
+    //     x: 0,
+    //     y: 330,
+    //     invokables: {
+    //       svgWidth: 400,
+    //       svgHeight: 400,
+    //       state: 'ACTIVE',
+    //       scale: 0.6
+    //     },
+    //     linkedBubbles: ["attributeAnalysisHover"]
+    //   },
+    //   "customerAnalysis": {
+    //     x: 352,
+    //     y: 40,
+    //     invokables: {
+    //       scale: 1,
+    //       state: 'ACTIVE'
+    //     },
+    //   },
+    //   "salesStockAnalysis": {
+    //     "Stock2": {
+    //       x: -70,
+    //       y: 80,
+    //       invokables: {
+    //         scale: 0.52,
+    //         state: "HIDDEN",
+    //         numberFlagColor: '#73628C',
+    //         chartNameFill: "#583F6C",
+    //         lineDirection: "NONE"
+    //       }
+    //     },
+    //     "Stock3": {
+    //       x: -60,
+    //       y: 200,
+    //       invokables: {
+    //         scale: 0.52,
+    //         state: "HIDDEN",
+    //         numberFlagColor: '#73628C',
+    //         chartNameFill: "#38214D",
+    //         lineDirection: "NONE"
+    //       }
+    //     },
+    //     "Stock1": {
+    //       x: 50,
+    //       y: 280,
+    //       invokables: {
+    //         scale: 0.6,
+    //         showTitle: true,
+    //         numberFlagColor: '#73628C',
+    //         chartNameFill: "#73628C",
+    //         state: "SHADOWED",
+    //         lineDirection: "NONE"
+    //       }
+    //     },
+    //     "Sell1": {
+    //       x: 200,
+    //       y: 340,
+    //       invokables: {
+    //         scale: 0.6,
+    //         numberFlagColor: '#EA5C84',
+    //         chartNameFill: "#FF0076",
+    //         state: "SHADOWED",
+    //         lineDirection: "NONE"
+    //       }
+    //     },
+    //     "Sell2": {
+    //       x: 320,
+    //       y: 320,
+    //       invokables: {
+    //         scale: 0.52,
+    //         state: "HIDDEN",
+    //         numberFlagColor: '#EA5C84',
+    //         chartNameFill: "#F20070",
+    //         lineDirection: "NONE"
+    //       }
+    //     },
+    //     "Sell3": {
+    //       x: 180,
+    //       y: 360,
+    //       invokables: {
+    //         scale: 0.52,
+    //         state: "HIDDEN",
+    //         numberFlagColor: '#EA5C84',
+    //         chartNameFill: "#E9004F",
+    //         lineDirection: "NONE"
+    //       }
+    //     },
+    //   }
+    //   , "pricePointAnalysis": {
+    //     x: 360,
+    //     y: 260,
+    //     invokables: {
+    //       scale: 0.5,
+    //       svgWidth: 400,
+    //       svgHeight: 430,
+    //       state: "SHADOWED"
+    //     }
+    //   },
+    //   "pricePointAnalysisHover": {
+    //     x: 510,
+    //     y: 310,
+    //     invokables: {
+    //       scale: 0.7,
+    //       state: "HIDDEN"
+    //     },
+    //   },
+    // }
   }
   // possibleLayouts: {
   //     "INITIAL": {

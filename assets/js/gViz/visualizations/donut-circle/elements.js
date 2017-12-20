@@ -65,7 +65,7 @@ module.exports = function () {
               .style('fill', 'none')
               .attr('stroke', function(d) { return d.data.lineColor != null ? d.data.lineColor : (d.data.color != null ? d.data.color : "#FFF"); })
               .style('stroke-width', '1px')
-              .attr('transform', function(d) { return 'rotate('+d.angle+')'; })
+              .attr('transform', function(d) { return d.angle != null ? 'rotate('+d.angle+')' : ''; })
               .attr("x1", function(d) { return _var.arc.centroid(d)[0]; })
               .attr("y1", function(d) { return _var.arc.centroid(d)[1]; })
               .attr("x2", function(d) { return _var.arcLine.centroid(d)[0]; })

@@ -141,7 +141,10 @@ module.exports = function() {
                 .style('top', (_var.container.dimensions.title + _var.container.dimensions.legend) + 'px')
 
               // Define height and width
+              var scale = _var.data != null && _var.data.attrs != null && _var.data.attrs.scale != null ? _var.data.attrs.scale : 1;
               var containerClientRect = _var.container.d3.node().getBoundingClientRect();
+              containerClientRect.height = (containerClientRect.height / scale) / scale;
+              containerClientRect.width = (containerClientRect.width / scale);
               _var.height = containerClientRect.height - (_var.margin.top + _var.margin.bottom);
               _var.width = containerClientRect.width - (_var.margin.left + _var.margin.right);
 

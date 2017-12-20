@@ -63,7 +63,7 @@ module.exports = function () {
           var rect = pattern.selectAll('.rect').data(['rect']);
           rect.exit().remove();
           rect = rect.enter().append('rect').merge(rect);
-          rect.attr('class', 'rect').attr('x', 0).attr('y', 0).attr('width', attrs.rectanglePatternLength).attr('height', attrs.rectanglePatternLength).attr('stroke', 'black').attr('stroke-width', '0.1px').attr('fill', '#FFFFFF');
+          rect.attr('class', 'rect').attr('x', 0).attr('y', 0).attr('width', attrs.rectanglePatternLength).attr('height', attrs.rectanglePatternLength).attr('stroke', 'white').attr('stroke-width', '0.1px').attr('fill', attrs.circleFill);
 
 
 

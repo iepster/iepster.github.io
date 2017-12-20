@@ -42,6 +42,7 @@ module.exports = function () {
     eachLegendHeight: 20,
     legendTextFontSize: 12,
     legendTextFill: '#EBA5C3',
+    circleFill: '#F7B5C9',
     insightCircleFill: '#F7B5C9',
     insightLineFill: '#9D91AA',
     insightLineStrokeWidth: 2.5,
@@ -96,6 +97,7 @@ module.exports = function () {
 
   // Main function
   let main = function (step) {
+   
 
     // Validate attributes if necessary
     if (validate(step)) {
@@ -177,12 +179,12 @@ module.exports = function () {
   };
 
   // Expose some global variables
-  ['container', 'action', 'svgHeight', 'svgWidth'].forEach((key) => {
+  ['container', 'action', 'svgHeight', 'svgWidth','circleFill','circleStroke'].forEach((key) => {
 
     // Attach variables to main function
     return main[key] = function (_) {
       var string = `attrs['${key}'] = _`;
-      if (!arguments.length) { eval(`return attrs['${key}']`); }
+      if (!arguments.length) { return eval(` attrs['${key}'];`); }
       eval(string);
       return main;
     };

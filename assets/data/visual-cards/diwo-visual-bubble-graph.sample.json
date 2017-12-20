@@ -101,42 +101,42 @@
                 "title": "Sales & Stock Analysis",
                 "name": "Top",
                 "value": "Stock mix",
-                "image": "./assets/images/gViz/visualizations/bubbles/sportbrawhite.png",
+                "image": "./assets/images/gViz/visualizations/bubbles/sportbra.png",
                 "number": "1"
             },
             "Stock2": {
                 "title": "Sales & Stock Analysis",
                 "name": "Top",
                 "value": "Stock mix",
-                "image": "./assets/images/gViz/visualizations/bubbles/sportbrawhite.png",
+                "image": "./assets/images/gViz/visualizations/bubbles/sportbra.png",
                 "number": "2"
             },
             "Stock3": {
                 "title": "Sales & Stock Analysis",
                 "name": "Top",
                 "value": "Stock mix",
-                "image": "./assets/images/gViz/visualizations/bubbles/sportbrawhite.png",
+                "image": "./assets/images/gViz/visualizations/bubbles/sportbra.png",
                 "number": "3"
             },
             "Sell1": {
                 "title": "Sales & Stock Analysis",
                 "name": "Top",
                 "value": "Sell Thru",
-                "image": "./assets/images/gViz/visualizations/bubbles/sportbrawhite.png",
+                "image": "./assets/images/gViz/visualizations/bubbles/sportbra.png",
                 "number": "1"
             },
             "Sell2": {
                 "title": "Sales & Stock Analysis",
                 "name": "Top",
                 "value": "Sell Thru",
-                "image": "./assets/images/gViz/visualizations/bubbles/sportbrawhite.png",
+                "image": "./assets/images/gViz/visualizations/bubbles/sportbra.png",
                 "number": "2"
             },
             "Sell3": {
                 "title": "Sales & Stock Analysis",
                 "name": "Top",
                 "value": "Sell Thru",
-                "image": "./assets/images/gViz/visualizations/bubbles/sportbrawhite.png",
+                "image": "./assets/images/gViz/visualizations/bubbles/sportbra.png",
                 "number": "3"
             }
         },

@@ -1,0 +1,113 @@
+{
+  "title": {
+    "style": {
+      "top": "calc(50% + 70px)",
+      "left": "calc(50% - 70px)",
+      "color": "#ad5073",
+      "fontSize": "10px",
+      "textAlign": "center"
+    },
+    "content": "Price Point Analysis"
+  },
+  "valuesBubble": {
+    "style": {
+      "top": "calc(50% - 85px)",
+      "left": "calc(50% - 105px)",
+      "size": "150px",
+      "backgroundColor": "#1a1620",
+      "borderColor": "#504859",
+      "borderRadius": "50%",
+      "color": "#FFF",
+      "zIndex": "1004"
+    },
+    "content": {
+      "type": "1",
+      "text": [
+        "<span style='color:#FFF; font-size: 11px; margin-right: 10px;'>Min Basket</span><span style='font-size: 11px; color:#be527f;'>$21</span>",
+        "<span style='color:#FFF; font-size: 11px; margin-right: 10px;'>Avg Basket</span><span style='font-size: 11px; color:#be527f;'>$34</span>",
+        "<span style='color:#FFF; font-size: 11px; margin-right: 10px;'>Max Basket</span><span style='font-size: 11px; color:#be527f;'>$95</span>",
+        "<span style='color:#be527f; font-size: 16px; height: 22px; line-height: 26px; display: inline-block;'>$15-$24.9</span>",
+        "<span style='color:#FFF; font-size: 11px;'>Top Price Point</span>"
+      ]
+    }
+  },
+  "chartBubble": {
+    "style": {
+      "top": "calc(50% - 30px)",
+      "left": "calc(50% + 70px)",
+      "size": "40px",
+      "backgroundColor": "#b14a6a",
+      "borderColor": "#b14a6a",
+      "borderRadius": "50%",
+      "color": "#FFF",
+      "zIndex": "1004",
+      "hoveredTop": "calc(50% - 95px)",
+      "hoveredLeft": "calc(50% + 40px)",
+      "hoveredSize": "170px",
+      "hoveredBackgroundColor": "#e95c83",
+      "hoveredBorderColor": "#e95c83"
+    },
+    "content": "/assets/images/gViz/visualizations/diwo-visual-bubble-poet-context/circle.png",
+    "hoveredContent": {
+      "title": "",
+      "legend": {
+        "isVisible": false
+      },
+      "tooltip": {
+        "hasPercentage": true,
+        "title": "{{name}}"
+      },
+      "attrs": {
+        "radius": 8,
+        "muted": false,
+        "grid": false
+      },
+      "x1": {
+        "title": "",
+        "value": "sum",
+        "color": "#FFF",
+        "prefix": "$",
+        "sufix": "",
+        "format": "locale"
+      },
+      "data": [
+        {
+          "id": "id-1",
+          "name": "$35-$45",
+          "color": "#FFF",
+          "nameColor": "#8b719a",
+          "percentageColor": "#FFF",
+          "lineColor": "#FFF",
+          "x1": 40
+        },
+        {
+          "id": "id-2",
+          "name": "$18-$25",
+          "color": "#fde9f2",
+          "nameColor": "#8b719a",
+          "percentageColor": "#FFF",
+          "lineColor": "#FFF",
+          "x1": 28
+        },
+        {
+          "id": "id-3",
+          "name": "$45-$60",
+          "color": "#fbd9e8",
+          "nameColor": "#8b719a",
+          "percentageColor": "#FFF",
+          "lineColor": "#FFF",
+          "x1": 22
+        },
+        {
+          "id": "id-4",
+          "name": "$25-$35",
+          "color": "#f9c5da",
+          "nameColor": "#8b719a",
+          "percentageColor": "#FFF",
+          "lineColor": "#FFF",
+          "x1": 10
+        }
+      ]
+    }
+  }
+}

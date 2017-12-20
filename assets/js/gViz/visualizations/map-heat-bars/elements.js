@@ -48,6 +48,9 @@ module.exports = function () {
           // Update projection
           _var.projection.scale(s).translate(t);
 
+          // Set bounds
+          _var.mapBounds = [_var.projection.invert([0,0]), _var.projection.invert([_var.width,_var.height])];
+
           // Set data array
           var _data = (data == null ? _var.data.data : data);
 
@@ -75,6 +78,18 @@ module.exports = function () {
                 .style('fill-opacity', _var.shapeOpacity)
                 .style('stroke', _var.shapeStrokeColor)
                 .style('stroke-width', _var.shapeStrokeWidth)
+
+              // Draw state abbrs
+              var stateLabelsAbbr = d3.select(this).selectAll(".state-label-abbr").data(_var.hasLabels && _var.filterStateLabelsAbbr() ? _var.geoData.features : []);
+              stateLabelsAbbr.exit().remove();
+              stateLabelsAbbr = stateLabelsAbbr.enter().append("text").attr("class", "state-label-abbr").merge(stateLabelsAbbr);
+              stateLabelsAbbr
+                .attr('text-anchor', "middle")
+                .attr('font-size', _var.labelStateSize)
+                .attr('x', function(d) { return _var.path.centroid(d)[0]; })
+                .attr('y', function(d) { return _var.path.centroid(d)[1]; })
+                .attr('dy', _var.labelStateDy )
+                .text(function(d) { return d.properties.abbr.toUpperCase(); })
 
               _var.mapShapes.on('mouseover', function(e) {
 
@@ -115,6 +130,30 @@ module.exports = function () {
 
               });
             });
+
+          // Create groups
+          var labelsGroup = elements.selectAll(".labels-group").data(_var.hasLabels ? ['labels-group'] : []);
+          labelsGroup.exit().remove();
+          labelsGroup = labelsGroup.enter().append("g").attr("class", "labels-group").merge(labelsGroup);
+
+          // For each element in group
+          labelsGroup
+            .each(function (e, i) {
+
+              // Draw shapes
+              var countiesLabels = d3.select(this).selectAll(".map-label").data((_var.hasLabels ? _var.labelsData.filter(_var.filterLabelsFromLatLon).filter(_var.filterLabels) : []), function(d) { return d.name + '-' + d.state_id; });
+              countiesLabels.exit().remove();
+              countiesLabels = countiesLabels.enter().append("text").attr("class", "map-label").merge(countiesLabels);
+              countiesLabels
+                .attr('text-anchor', "middle")
+                .attr('font-size', _var.labelSize)
+                .attr('x', function(d) { return _var.projection([+d.lon, +d.lat])[0]; })
+                .attr('y', function(d) { return _var.projection([+d.lon, +d.lat])[1]; })
+                .attr('dy', _var.labelDy )
+                .text(function(d) { return d.name; })
+
+            });
+
 
           // Create groups
           var barsData = _var.mode === 'bars' && _var.data.data != null && _var.data.data.bars != null ? _var.data.data.bars : [];

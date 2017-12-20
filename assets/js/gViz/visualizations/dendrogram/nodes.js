@@ -192,12 +192,12 @@ module.exports = function() {
               text = text.enter().append('text').attr('class', 'node-value').merge(text);
               text
                 .attr("x", 0 )
-                .attr("y", 15 )
+                .attr("y", 17 )
                 .attr("text-anchor", "middle" )
                 .style("opacity", 0)
                 .transition().duration(animation).delay(isSatelite ? animation + delay : delay)
                 .style("opacity", 1)
-                .style("font-size", `${9/_var.scale}px`)
+                .style("font-size", `${11/_var.scale}px`)
                 .style('fill', function(d) { return d.data.color; })
                 .text(function (d) { return (isSatelite ? '' : 'Sales ') +shared.helpers.number.localeK(d.data.values[_var.mainValue]); });
 
@@ -208,12 +208,12 @@ module.exports = function() {
               text = text.enter().append('text').attr('class', 'node-yoy').merge(text);
               text
                 .attr("x", 0 )
-                .attr("y", 28 )
+                .attr("y", 30 )
                 .attr("text-anchor", "middle" )
                 .style("opacity", 0)
                 .transition().duration(animation).delay(delay)
                 .style("opacity", 1)
-                .style("font-size", `${9/_var.scale}px`)
+                .style("font-size", `${11/_var.scale}px`)
                 .style('fill', function(d) { return d.data.color; })
                 .text(function (d) { return 'Contribution ' + shared.helpers.number.localePercent(d.data.values[_var.mainValue] - d.data.values.pYear); });
 
