@@ -28,66 +28,66 @@
   "placeholderBubble": [
     {
       "style": {
-        "top": "calc(50% - 55px)",
+        "top": "calc(50% - 54px)",
         "left": "calc(50% + 10px)",
-        "size": "12px",
+        "size": "10px",
         "backgroundColor": "#f7b5c9",
         "borderColor": "#f7b5c9",
         "borderRadius": "50%",
         "zIndex": "1004",
-        "hoveredTop": "calc(50% - 58px)",
+        "hoveredTop": "calc(50% - 57px)",
         "hoveredLeft": "calc(50% + 10px)"
       }
     },
     {
       "style": {
-        "top": "calc(50% - 40px)",
+        "top": "calc(50% - 39px)",
         "left": "calc(50% + 30px)",
-        "size": "12px",
+        "size": "10px",
         "backgroundColor": "#f7b5c9",
         "borderColor": "#f7b5c9",
         "borderRadius": "50%",
         "zIndex": "1004",
-        "hoveredTop": "calc(50% - 43px)",
+        "hoveredTop": "calc(50% - 42px)",
         "hoveredLeft": "calc(50% + 35px)"
       }
     },
     {
       "style": {
-        "top": "calc(50% - 20px)",
+        "top": "calc(50% - 19px)",
         "left": "calc(50% + 20px)",
-        "size": "12px",
+        "size": "10px",
         "backgroundColor": "#f7b5c9",
         "borderColor": "#f7b5c9",
         "borderRadius": "50%",
         "zIndex": "1004",
-        "hoveredTop": "calc(50% - 10px)",
+        "hoveredTop": "calc(50% - 9px)",
         "hoveredLeft": "calc(50% + 30px)"
       }
     },
     {
       "style": {
-        "top": "calc(50% - 0px)",
+        "top": "calc(50% + 1px)",
         "left": "calc(50% + 20px)",
-        "size": "12px",
+        "size": "10px",
         "backgroundColor": "#f7b5c9",
         "borderColor": "#f7b5c9",
         "borderRadius": "50%",
         "zIndex": "1004",
-        "hoveredTop": "calc(50% + 20px)",
+        "hoveredTop": "calc(50% + 21px)",
         "hoveredLeft": "calc(50% + 25px)"
       }
     },
     {
       "style": {
-        "top": "calc(50% + 15px)",
+        "top": "calc(50% + 16px)",
         "left": "calc(50% + 0px)",
-        "size": "12px",
+        "size": "10px",
         "backgroundColor": "#f7b5c9",
         "borderColor": "#f7b5c9",
         "borderRadius": "50%",
         "zIndex": "1004",
-        "hoveredTop": "calc(50% + 30px)",
+        "hoveredTop": "calc(50% + 31px)",
         "hoveredLeft": "calc(50% - 5px)"
       }
     }

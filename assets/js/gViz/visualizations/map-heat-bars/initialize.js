@@ -76,8 +76,13 @@ module.exports = function() {
           if(_var.zoomTransform == null) { _var.zoomTransform = { k: 1, x: _var.margin.left, y: _var.margin.right }; }
 
           // Define height and width
-          _var.height = ((height != null) ? height : _var.container.clientRect.height) - (_var.margin.top + _var.margin.bottom);
-          _var.width = ((width != null) ? width : _var.container.clientRect.width) - (_var.margin.left + _var.margin.right);
+          var scale = _var.data != null && _var.data.attrs != null && _var.data.attrs.scale != null ? _var.data.attrs.scale : 1;
+          _var.height = ((height != null) ? height : _var.container.clientRect.height)/scale;
+          _var.width = ((width != null) ? width : _var.container.clientRect.width)/scale;
+
+          // Update height and width on borders
+          _var.height = _var.height - (_var.margin.top + _var.margin.bottom);
+          _var.width = _var.width - (_var.margin.left + _var.margin.right);
 
           // Update height based on title and legend
           if(_var.data.title != null && _var.data.title !== "") { _var.height -= 35; }

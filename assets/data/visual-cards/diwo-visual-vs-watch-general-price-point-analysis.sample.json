@@ -9,6 +9,17 @@
     },
     "content": "Price Point Analysis"
   },
+  "connectors": [
+    {
+      "style": {
+        "top": "calc(50% - 10px)",
+        "left": "calc(50% + 45px)",
+        "size": "26px",
+        "borderColor": "#756886",
+        "zIndex": 1003
+      }
+    }
+  ],
   "valuesBubble": {
     "style": {
       "top": "calc(50% - 85px)",
@@ -41,9 +52,9 @@
       "borderRadius": "50%",
       "color": "#FFF",
       "zIndex": "1004",
-      "hoveredTop": "calc(50% - 95px)",
+      "hoveredTop": "calc(50% - 120px)",
       "hoveredLeft": "calc(50% + 40px)",
-      "hoveredSize": "170px",
+      "hoveredSize": "220px",
       "hoveredBackgroundColor": "#e95c83",
       "hoveredBorderColor": "#e95c83"
     },
@@ -75,7 +86,7 @@
           "id": "id-1",
           "name": "$35-$45",
           "color": "#FFF",
-          "nameColor": "#8b719a",
+          "nameColor": "#efabbe",
           "percentageColor": "#FFF",
           "lineColor": "#FFF",
           "x1": 40
@@ -84,7 +95,7 @@
           "id": "id-2",
           "name": "$18-$25",
           "color": "#fde9f2",
-          "nameColor": "#8b719a",
+          "nameColor": "#efabbe",
           "percentageColor": "#FFF",
           "lineColor": "#FFF",
           "x1": 28
@@ -93,7 +104,7 @@
           "id": "id-3",
           "name": "$45-$60",
           "color": "#fbd9e8",
-          "nameColor": "#8b719a",
+          "nameColor": "#efabbe",
           "percentageColor": "#FFF",
           "lineColor": "#FFF",
           "x1": 22
@@ -102,7 +113,7 @@
           "id": "id-4",
           "name": "$25-$35",
           "color": "#f9c5da",
-          "nameColor": "#8b719a",
+          "nameColor": "#efabbe",
           "percentageColor": "#FFF",
           "lineColor": "#FFF",
           "x1": 10

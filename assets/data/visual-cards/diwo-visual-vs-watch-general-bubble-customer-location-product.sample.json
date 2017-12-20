@@ -1,7 +1,7 @@
 {
   "data": {
-    "backgroundColor": "transparent",
-    "transform": "scale(1.2)",
+    "backgroundColor": "#190f1f",
+    "transform": "scale(1)",
 
     "filterBubble": {
       "style": {
@@ -138,9 +138,9 @@
           "borderRadius": "50%",
           "color": "#FFF",
           "zIndex": "1004",
-          "hoveredTop": "calc(50% - 25px)",
-          "hoveredLeft": "calc(50% - 320px)",
-          "hoveredSize": "205px",
+          "hoveredTop": "calc(50% - 75px)",
+          "hoveredLeft": "calc(50% - 420px)",
+          "hoveredSize": "305px",
           "hoveredBackgroundColor": "#1a1620",
           "hoveredBorderColor": "#504859"
         },
@@ -155,38 +155,38 @@
             "color": "#FFF",
             "textAlign": "left",
             "trPadding": "2px 0px",
-            "tdPadding": "2px 5px",
+            "tdPadding": "4px 5px",
             "width": "auto",
             "data": [
               [
-                "<span style='font-size:8px;'>Att. Trends</span>",
-                "<span style='font-size:8px; width:100%; text-align:center;'>Top<img src='/assets/images/top-trending-green.png' style='display:inline-block; margin-left:5px; width:14px;'/></span>",
-                "<span style='font-size:8px; width:100%; text-align:center;'>Bottom<img src='/assets/images/bottom-trending-red.png' style='display:inline-block; margin-left:5px; width:14px;'/></span>"
+                "<span style='font-size:12px;'>Att. Trends</span>",
+                "<span style='font-size:12px; width:100%; text-align:center;'>Top<img src='/assets/images/top-trending-green.png' style='display:inline-block; margin-left:5px; width:14px;'/></span>",
+                "<span style='font-size:12px; width:100%; text-align:center;'>Bottom<img src='/assets/images/bottom-trending-red.png' style='display:inline-block; margin-left:5px; width:14px;'/></span>"
               ],
               [
-                "<span style='font-size:8px;'>Color (Solid)</span>",
-                "<span style='font-size:8px; width:100%; text-align:center; color:#e95c83;'>Black</span>",
-                "<span style='font-size:8px; width:100%; text-align:center; color:#e95c83;'>Purple</span>"
+                "<span style='font-size:12px;'>Color (Solid)</span>",
+                "<span style='font-size:12px; width:100%; text-align:center; color:#e95c83;'>Black</span>",
+                "<span style='font-size:12px; width:100%; text-align:center; color:#e95c83;'>Purple</span>"
               ],
               [
-                "<span style='font-size:8px;'>Color (Print)</span>",
-                "<span style='font-size:8px; width:100%; text-align:center; color:#e95c83;'>Logo</span>",
-                "<span style='font-size:8px; width:100%; text-align:center; color:#e95c83;'>Floral</span>"
+                "<span style='font-size:12px;'>Color (Print)</span>",
+                "<span style='font-size:12px; width:100%; text-align:center; color:#e95c83;'>Logo</span>",
+                "<span style='font-size:12px; width:100%; text-align:center; color:#e95c83;'>Floral</span>"
               ],
               [
-                "<span style='font-size:8px;'>Size</span>",
-                "<span style='font-size:8px; width:100%; text-align:center; color:#e95c83;'>Medium</span>",
-                "<span style='font-size:8px; width:100%; text-align:center; color:#e95c83;'>Small</span>"
+                "<span style='font-size:12px;'>Size</span>",
+                "<span style='font-size:12px; width:100%; text-align:center; color:#e95c83;'>Medium</span>",
+                "<span style='font-size:12px; width:100%; text-align:center; color:#e95c83;'>Small</span>"
               ],
               [
-                "<span style='font-size:8px;'>Fabric</span>",
-                "<span style='font-size:8px; width:100%; text-align:center; color:#e95c83;'>Smooth</span>",
-                "<span style='font-size:8px; width:100%; text-align:center; color:#e95c83;'>Nylon</span>"
+                "<span style='font-size:12px;'>Fabric</span>",
+                "<span style='font-size:12px; width:100%; text-align:center; color:#e95c83;'>Smooth</span>",
+                "<span style='font-size:12px; width:100%; text-align:center; color:#e95c83;'>Nylon</span>"
               ],
               [
-                "<span style='font-size:8px;'>Silhouette</span>",
-                "<span style='font-size:8px; width:100%; text-align:center; color:#e95c83;'>Push-Up</span>",
-                "<span style='font-size:8px; width:100%; text-align:center; color:#e95c83;'>Lightly Lined</span>"
+                "<span style='font-size:12px;'>Silhouette</span>",
+                "<span style='font-size:12px; width:100%; text-align:center; color:#e95c83;'>Push-Up</span>",
+                "<span style='font-size:12px; width:100%; text-align:center; color:#e95c83;'>Lightly Lined</span>"
               ]
             ]
           }
@@ -216,6 +216,17 @@
         },
         "content": "Price Point Analysis"
       },
+      "connectors": [
+        {
+          "style": {
+            "top": "calc(50% - 70px)",
+            "left": "calc(50% + 180px)",
+            "size": "16px",
+            "borderColor": "#756886",
+            "zIndex": 1003
+          }
+        }
+      ],
       "valuesBubble": {
         "style": {
           "top": "calc(50% - 145px)",
@@ -240,7 +251,7 @@
       },
       "chartBubble": {
         "style": {
-          "top": "calc(50% - 100px)",
+          "top": "calc(50% - 90px)",
           "left": "calc(50% + 195px)",
           "size": "40px",
           "backgroundColor": "#b14a6a",
@@ -248,9 +259,9 @@
           "borderRadius": "50%",
           "color": "#FFF",
           "zIndex": "1004",
-          "hoveredTop": "calc(50% - 165px)",
+          "hoveredTop": "calc(50% - 190px)",
           "hoveredLeft": "calc(50% + 165px)",
-          "hoveredSize": "170px",
+          "hoveredSize": "220px",
           "hoveredBackgroundColor": "#e95c83",
           "hoveredBorderColor": "#e95c83"
         },
@@ -268,7 +279,7 @@
             "radius": 8,
             "muted": false,
             "grid": false,
-            "scale": 1.2
+            "scale": 1
           },
           "x1": {
             "title": "",
@@ -283,7 +294,7 @@
               "id": "id-1",
               "name": "$35-$45",
               "color": "#FFF",
-              "nameColor": "#8b719a",
+              "nameColor": "#efabbe",
               "percentageColor": "#FFF",
               "lineColor": "#FFF",
               "x1": 40
@@ -292,7 +303,7 @@
               "id": "id-2",
               "name": "$18-$25",
               "color": "#fde9f2",
-              "nameColor": "#8b719a",
+              "nameColor": "#efabbe",
               "percentageColor": "#FFF",
               "lineColor": "#FFF",
               "x1": 28
@@ -301,7 +312,7 @@
               "id": "id-3",
               "name": "$45-$60",
               "color": "#fbd9e8",
-              "nameColor": "#8b719a",
+              "nameColor": "#efabbe",
               "percentageColor": "#FFF",
               "lineColor": "#FFF",
               "x1": 22
@@ -310,7 +321,7 @@
               "id": "id-4",
               "name": "$25-$35",
               "color": "#f9c5da",
-              "nameColor": "#8b719a",
+              "nameColor": "#efabbe",
               "percentageColor": "#FFF",
               "lineColor": "#FFF",
               "x1": 10
@@ -358,7 +369,7 @@
     "backgroundBubbles": {
       "backgroundColor": "#302c36",
       "borderColor": "#302c36",
-      "opacity": 1
+      "opacity": 0.2
     }
   }
 }

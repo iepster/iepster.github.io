@@ -54,9 +54,9 @@
       "borderRadius": "50%",
       "color": "#FFF",
       "zIndex": "1004",
-      "hoveredTop": "calc(50% - 115px)",
-      "hoveredLeft": "calc(50% - 240px)",
-      "hoveredSize": "205px",
+      "hoveredTop": "calc(50% - 165px)",
+      "hoveredLeft": "calc(50% - 340px)",
+      "hoveredSize": "305px",
       "hoveredBackgroundColor": "#1a1620",
       "hoveredBorderColor": "#504859"
 
@@ -72,38 +72,38 @@
         "color": "#FFF",
         "textAlign": "left",
         "trPadding": "2px 0px",
-        "tdPadding": "2px 5px",
+        "tdPadding": "4px 5px",
         "width": "auto",
         "data": [
           [
-            "<span style='font-size:8px;'>Att. Trends</span>",
-            "<span style='font-size:8px; width:100%; text-align:center;'>Top<img src='/assets/images/top-trending-green.png' style='display:inline-block; margin-left:5px; width:14px;'/></span>",
-            "<span style='font-size:8px; width:100%; text-align:center;'>Bottom<img src='/assets/images/bottom-trending-red.png' style='display:inline-block; margin-left:5px; width:14px;'/></span>"
+            "<span style='font-size:12px;'>Att. Trends</span>",
+            "<span style='font-size:12px; width:100%; text-align:center;'>Top<img src='/assets/images/top-trending-green.png' style='display:inline-block; margin-left:5px; width:14px;'/></span>",
+            "<span style='font-size:12px; width:100%; text-align:center;'>Bottom<img src='/assets/images/bottom-trending-red.png' style='display:inline-block; margin-left:5px; width:14px;'/></span>"
           ],
           [
-            "<span style='font-size:8px;'>Color (Solid)</span>",
-            "<span style='font-size:8px; width:100%; text-align:center; color:#e95c83;'>Black</span>",
-            "<span style='font-size:8px; width:100%; text-align:center; color:#e95c83;'>Purple</span>"
+            "<span style='font-size:12px;'>Color (Solid)</span>",
+            "<span style='font-size:12px; width:100%; text-align:center; color:#e95c83;'>Black</span>",
+            "<span style='font-size:12px; width:100%; text-align:center; color:#e95c83;'>Purple</span>"
           ],
           [
-            "<span style='font-size:8px;'>Color (Print)</span>",
-            "<span style='font-size:8px; width:100%; text-align:center; color:#e95c83;'>Logo</span>",
-            "<span style='font-size:8px; width:100%; text-align:center; color:#e95c83;'>Floral</span>"
+            "<span style='font-size:12px;'>Color (Print)</span>",
+            "<span style='font-size:12px; width:100%; text-align:center; color:#e95c83;'>Logo</span>",
+            "<span style='font-size:12px; width:100%; text-align:center; color:#e95c83;'>Floral</span>"
           ],
           [
-            "<span style='font-size:8px;'>Size</span>",
-            "<span style='font-size:8px; width:100%; text-align:center; color:#e95c83;'>Medium</span>",
-            "<span style='font-size:8px; width:100%; text-align:center; color:#e95c83;'>Small</span>"
+            "<span style='font-size:12px;'>Size</span>",
+            "<span style='font-size:12px; width:100%; text-align:center; color:#e95c83;'>Medium</span>",
+            "<span style='font-size:12px; width:100%; text-align:center; color:#e95c83;'>Small</span>"
           ],
           [
-            "<span style='font-size:8px;'>Fabric</span>",
-            "<span style='font-size:8px; width:100%; text-align:center; color:#e95c83;'>Smooth</span>",
-            "<span style='font-size:8px; width:100%; text-align:center; color:#e95c83;'>Nylon</span>"
+            "<span style='font-size:12px;'>Fabric</span>",
+            "<span style='font-size:12px; width:100%; text-align:center; color:#e95c83;'>Smooth</span>",
+            "<span style='font-size:12px; width:100%; text-align:center; color:#e95c83;'>Nylon</span>"
           ],
           [
-            "<span style='font-size:8px;'>Silhouette</span>",
-            "<span style='font-size:8px; width:100%; text-align:center; color:#e95c83;'>Push-Up</span>",
-            "<span style='font-size:8px; width:100%; text-align:center; color:#e95c83;'>Lightly Lined</span>"
+            "<span style='font-size:12px;'>Silhouette</span>",
+            "<span style='font-size:12px; width:100%; text-align:center; color:#e95c83;'>Push-Up</span>",
+            "<span style='font-size:12px; width:100%; text-align:center; color:#e95c83;'>Lightly Lined</span>"
           ]
         ]
       }

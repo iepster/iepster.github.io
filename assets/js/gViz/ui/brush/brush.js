@@ -77,7 +77,7 @@ module.exports = function () {
               .attr("x", _var.brushAttrs.width/2)
               .attr("y", _var.brushAttrs.height/2 + 5)
               .style('fill', _var.checkAttr(_var.data.style.brush, 'color', null, '#ccc'))
-              .text("Select the values extent here")
+              .text("Timeline")
 
             function brushstart() {}
 
