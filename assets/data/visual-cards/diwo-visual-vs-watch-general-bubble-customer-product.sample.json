@@ -620,9 +620,9 @@
         {
           "style": {
             "top": "calc(50% - 196px)",
-            "left": "calc(50% - 16px)",
+            "left": "calc(50% + 9px)",
             "hoveredTop": "calc(50% - 196px)",
-            "hoveredLeft": "calc(50% - 16px)",
+            "hoveredLeft": "calc(50% + 9px)",
             "opacity": 0,
             "hoveredOpacity": 1,
             "zIndex": 1007
@@ -667,7 +667,8 @@
               "labels": false,
               "grid": false,
               "zoom": false,
-              "pan": false
+              "pan": false,
+              "hover": false
             },
             "data": {
               "heat": [

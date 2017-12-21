@@ -94,7 +94,7 @@ module.exports = function () {
               _var.mapShapes.on('mouseover', function(e) {
 
                 // Only for heat mode
-                if(_var.mode === 'heat') {
+                if(_var.mode === 'heat' && hasHover) {
 
                   // Set hovered node
                   _var.hovered  = e.id;
@@ -113,7 +113,7 @@ module.exports = function () {
               }).on('mouseout', function(e) {
 
                 // Only for heat mode
-                if(_var.mode === 'heat') {
+                if(_var.mode === 'heat' && hasHover) {
 
                   // Reset hovered node
                   _var.hovered  = null;
@@ -209,36 +209,43 @@ module.exports = function () {
             // Hover action
             barsGroup.on('mouseover', function(e) {
 
-              // Set hovered node
-              _var.hovered  = e.id;
+              if(hasHover) {
 
-              // Mouseover event
-              components.events()
-                ._var(_var)
-                .action("mouseover")
-                .components(components)
-                .node(e)
-                .run();
+                // Set hovered node
+                _var.hovered  = e.id;
 
-              // Trigger onHover attribute function
-              if(_var.onHover != null && typeof _var.onHover === "function") { _var.onHover(e); }
+                // Mouseover event
+                components.events()
+                  ._var(_var)
+                  .action("mouseover")
+                  .components(components)
+                  .node(e)
+                  .run();
+
+                // Trigger onHover attribute function
+                if(_var.onHover != null && typeof _var.onHover === "function") { _var.onHover(e); }
+              }
 
             // Mouseout action
             }).on('mouseout', function(e) {
 
-              // Reset hovered node
-              _var.hovered  = null;
+              if(hasHover) {
 
-              // Mouseout event
-              components.events()
-                ._var(_var)
-                .action("mouseout")
-                .components(components)
-                .node(e)
-                .run();
+                // Reset hovered node
+                _var.hovered  = null;
 
-              // Trigger onHover attribute function
-              if(_var.onHoverOut != null && typeof _var.onHoverOut === "function") { _var.onHoverOut(e); }
+                // Mouseout event
+                components.events()
+                  ._var(_var)
+                  .action("mouseout")
+                  .components(components)
+                  .node(e)
+                  .run();
+
+                // Trigger onHover attribute function
+                if(_var.onHoverOut != null && typeof _var.onHoverOut === "function") { _var.onHoverOut(e); }
+
+              }
 
             // Click action
             }).on('click', function(e) {
