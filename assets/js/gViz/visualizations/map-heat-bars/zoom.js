@@ -97,8 +97,9 @@ module.exports = function () {
           }
 
           // Add zoom capabilities
+          var hasZoom = !(_var.data != null && _var.data.attrs != null && _var.data.attrs.zoom != null && _var.data.attrs.zoom === false);
           _var.zoom_handler = d3.zoom()
-            .scaleExtent([1, 20])
+            .scaleExtent(hasZoom ? [1, 20] : [1,1])
             .on("zoom", _var.zoom_actions)
             .on("start", function() { _var.wrap.classed('grabbing', true) })
             .on("end",   function() { _var.wrap.classed('grabbing', false) })
@@ -107,6 +108,16 @@ module.exports = function () {
           _var.wrap
             .call(_var.zoom_handler)
             .call(_var.zoom_handler.transform, d3.zoomIdentity.translate(_var.zoomTransform.x, _var.zoomTransform.y).scale(_var.zoomTransform.k))
+
+          // Remove zoom if specified on the json
+          var hasPan = !(_var.data != null && _var.data.attrs != null && _var.data.attrs.pan != null && _var.data.attrs.pan === false);
+          if(!hasPan) {
+            _var.wrap
+              .on("mousedown.zoom", null)
+              .on("touchstart.zoom", null)
+              .on("touchmove.zoom", null)
+              .on("touchend.zoom", null);
+          }
 
           // Reset visualization zoom
           _var.container.d3.closest('.gViz-outer-wrapper').select("[data-action='reset']").on('click', function(d) {

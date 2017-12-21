@@ -606,103 +606,6 @@
         },
         "content": "Sales & Stock </br> Analysis"
       },
-      "circleConnectors": [
-        {
-          "style": {
-            "top": "calc(50% - 62px)",
-            "left": "calc(50% - 242px)",
-            "size": "100px",
-            "borderColor": "#756886",
-            "clipPath": "polygon(0% 10%, 50% 50%, 0% 35%, -2% 100%)",
-            "transform": "rotate(-40deg)",
-            "zIndex": 1003
-          }
-        },
-        {
-          "style": {
-            "top": "calc(50% + 8px)",
-            "left": "calc(50% - 202px)",
-            "size": "100px",
-            "borderColor": "#756886",
-            "clipPath": "polygon(0% 10%, 50% 50%, 0% 40%, -2% 100%)",
-            "transform": "rotate(-59deg)",
-            "zIndex": 1003
-          }
-        },
-        {
-          "style": {
-            "top": "calc(50% + 8px)",
-            "left": "calc(50% - 122px)",
-            "size": "100px",
-            "borderColor": "#756886",
-            "clipPath": "polygon(0% 10%, 50% 50%, 0% 40%, -2% 100%)",
-            "transform": "rotate(-116deg)",
-            "zIndex": 1003
-          }
-        }
-      ],
-      "connectors": [
-        {
-          "style": {
-            "borderColor": "#756886",
-            "size": "20px",
-            "top": "calc(50% + -10px)",
-            "left": "calc(50% - 261px)",
-            "transform": "rotate(-4deg)",
-            "zIndex": 1003
-          }
-        },
-        {
-          "style": {
-            "borderColor": "#756886",
-            "size": "41px",
-            "top": "calc(50% + 12px)",
-            "left": "calc(50% - 278px)",
-            "transform": "rotate(-14deg)",
-            "zIndex": 1003
-          }
-        },
-        {
-          "style": {
-            "borderColor": "#756886",
-            "size": "18px",
-            "top": "calc(50% + 80px)",
-            "left": "calc(50% - 215px)",
-            "transform": "rotate(-33deg)",
-            "zIndex": 1003
-          }
-        },
-        {
-          "style": {
-            "borderColor": "#756886",
-            "size": "30px",
-            "top": "calc(50% + 104px)",
-            "left": "calc(50% - 212px)",
-            "transform": "rotate(-41deg)",
-            "zIndex": 1003
-          }
-        },
-        {
-          "style": {
-            "borderColor": "#756886",
-            "size": "26px",
-            "top": "calc(50% + 118px)",
-            "left": "calc(50% - 71px)",
-            "transform": "rotate(-98deg)",
-            "zIndex": 1003
-          }
-        },
-        {
-          "style": {
-            "borderColor": "#756886",
-            "size": "14px",
-            "top": "calc(50% + 113px)",
-            "left": "calc(50% - 90px)",
-            "transform": "rotate(-87deg)",
-            "zIndex": 1003
-          }
-        }
-      ],
       "bubbles": [
         {
           "style": {
@@ -721,6 +624,41 @@
             "image": "/assets/images/watch/icon_legging.png",
             "bottomText": "PK Bling FL Flat </br> WB Legging",
             "topNumber": "<span style='background-color:#e95b86; color:#FFF; padding: 2px 5px 1px; font-size:10px; border-radius:50%'>1</span>",
+            "circleConnectors": [
+              {
+                "style": {
+                  "top": "calc(50% - 62px)",
+                  "left": "calc(50% - 242px)",
+                  "size": "100px",
+                  "borderColor": "#756886",
+                  "clipPath": "polygon(0% 10%, 50% 50%, 0% 35%, -2% 100%)",
+                  "transform": "rotate(-40deg)",
+                  "zIndex": 1003
+                }
+              }
+            ],
+            "connectors": [
+              {
+                "style": {
+                  "borderColor": "#756886",
+                  "size": "20px",
+                  "top": "calc(50% + -10px)",
+                  "left": "calc(50% - 261px)",
+                  "transform": "rotate(-4deg)",
+                  "zIndex": 1003
+                }
+              },
+              {
+                "style": {
+                  "borderColor": "#756886",
+                  "size": "41px",
+                  "top": "calc(50% + 12px)",
+                  "left": "calc(50% - 278px)",
+                  "transform": "rotate(-14deg)",
+                  "zIndex": 1003
+                }
+              }
+            ],
             "sideBubbles": [
               {
                 "style": {
@@ -792,6 +730,41 @@
             "image": "/assets/images/watch/icon_bra.png",
             "bottomText": "PK WEW PU",
             "topNumber": "<span style='background-color:#71618d; color:#FFF; padding: 2px 5px 1px; font-size:10px; border-radius:50%'>1</span>",
+            "circleConnectors": [
+              {
+                "style": {
+                  "top": "calc(50% + 8px)",
+                  "left": "calc(50% - 202px)",
+                  "size": "100px",
+                  "borderColor": "#756886",
+                  "clipPath": "polygon(0% 10%, 50% 50%, 0% 40%, -2% 100%)",
+                  "transform": "rotate(-59deg)",
+                  "zIndex": 1003
+                }
+              }
+            ],
+            "connectors": [
+              {
+                "style": {
+                  "borderColor": "#756886",
+                  "size": "18px",
+                  "top": "calc(50% + 80px)",
+                  "left": "calc(50% - 215px)",
+                  "transform": "rotate(-33deg)",
+                  "zIndex": 1003
+                }
+              },
+              {
+                "style": {
+                  "borderColor": "#756886",
+                  "size": "30px",
+                  "top": "calc(50% + 104px)",
+                  "left": "calc(50% - 212px)",
+                  "transform": "rotate(-41deg)",
+                  "zIndex": 1003
+                }
+              }
+            ],
             "sideBubbles": [
               {
                 "style": {
@@ -863,6 +836,41 @@
             "image": "/assets/images/watch/icon_pantie.png",
             "bottomText": "Logo Hipster",
             "topNumber": "<span style='background-color:#e95b86; color:#FFF; padding: 2px 5px 1px; font-size:10px; border-radius:50%'>1</span>",
+            "circleConnectors": [
+              {
+                "style": {
+                  "top": "calc(50% + 8px)",
+                  "left": "calc(50% - 122px)",
+                  "size": "100px",
+                  "borderColor": "#756886",
+                  "clipPath": "polygon(0% 10%, 50% 50%, 0% 40%, -2% 100%)",
+                  "transform": "rotate(-116deg)",
+                  "zIndex": 1003
+                }
+              }
+            ],
+            "connectors": [
+              {
+                "style": {
+                  "borderColor": "#756886",
+                  "size": "26px",
+                  "top": "calc(50% + 118px)",
+                  "left": "calc(50% - 71px)",
+                  "transform": "rotate(-98deg)",
+                  "zIndex": 1003
+                }
+              },
+              {
+                "style": {
+                  "borderColor": "#756886",
+                  "size": "14px",
+                  "top": "calc(50% + 113px)",
+                  "left": "calc(50% - 90px)",
+                  "transform": "rotate(-87deg)",
+                  "zIndex": 1003
+                }
+              }
+            ],
             "sideBubbles": [
               {
                 "style": {
