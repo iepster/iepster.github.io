@@ -88,9 +88,9 @@
       "title": {
         "style": {
           "top": "calc(50% + 140px)",
-          "left": "calc(50% - 95px)",
+          "left": "calc(50% - 105px)",
           "color": "#ad5073",
-          "fontSize": "10px",
+          "fontSize": "12px",
           "textAlign": "center"
         },
         "content": "Attribute Analysis"
@@ -243,10 +243,10 @@
     "pricePointAnalysis": {
       "title": {
         "style": {
-          "top": "calc(50% - 160px)",
-          "left": "calc(50% + 65px)",
+          "top": "calc(50% - 165px)",
+          "left": "calc(50% + 58px)",
           "color": "#ad5073",
-          "fontSize": "10px",
+          "fontSize": "12px",
           "textAlign": "center"
         },
         "content": "Price Point Analysis"
@@ -369,10 +369,10 @@
     "promotionAnalysis": {
       "title": {
         "style": {
-          "top": "calc(50% - 160px)",
-          "left": "calc(50% - 110px)",
+          "top": "calc(50% - 163px)",
+          "left": "calc(50% - 120px)",
           "color": "#ad5073",
-          "fontSize": "10px",
+          "fontSize": "12px",
           "textAlign": "center"
         },
         "content": "Promotion </br> Analysis"

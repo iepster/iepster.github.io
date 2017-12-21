@@ -87,9 +87,9 @@
       "title": {
         "style": {
           "top": "calc(50% + 140px)",
-          "left": "calc(50% - 95px)",
+          "left": "calc(50% - 105px)",
           "color": "#ad5073",
-          "fontSize": "10px",
+          "fontSize": "12px",
           "textAlign": "center"
         },
         "content": "Attribute Analysis"
@@ -242,10 +242,10 @@
     "customerAnalysis": {
       "title": {
         "style": {
-          "top": "calc(50% + 60px)",
-          "left": "calc(50% + 45px)",
+          "top": "calc(50% + 55px)",
+          "left": "calc(50% + 40px)",
           "color": "#ad5073",
-          "fontSize": "10px",
+          "fontSize": "12px",
           "textAlign": "center"
         },
         "content": "Customer <br/> Analysis"
@@ -470,10 +470,10 @@
     "pricePointAnalysis": {
       "title": {
         "style": {
-          "top": "calc(50% - 160px)",
-          "left": "calc(50% + 65px)",
+          "top": "calc(50% - 165px)",
+          "left": "calc(50% + 58px)",
           "color": "#ad5073",
-          "fontSize": "10px",
+          "fontSize": "12px",
           "textAlign": "center"
         },
         "content": "Price Point Analysis"
@@ -596,13 +596,13 @@
     "storeAnalysis": {
       "title": {
         "style": {
-          "top": "calc(50% - 220px)",
-          "left": "calc(50% - 140px)",
+          "top": "calc(50% - 225px)",
+          "left": "calc(50% - 150px)",
           "color": "#ad5073",
-          "fontSize": "10px",
+          "fontSize": "12px",
           "textAlign": "center",
-          "hoveredTop": "calc(50% - 305px)",
-          "hoveredLeft": "calc(50% - 168px)"
+          "hoveredTop": "calc(50% - 310px)",
+          "hoveredLeft": "calc(50% - 178px)"
         },
         "content": "Store Analysis"
       },

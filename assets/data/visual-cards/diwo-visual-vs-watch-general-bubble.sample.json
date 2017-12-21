@@ -25,10 +25,10 @@
     "attributeAnalysis": {
       "title": {
         "style": {
-          "top": "calc(50% - 145px)",
-          "left": "calc(50% - 105px)",
+          "top": "calc(50% - 150px)",
+          "left": "calc(50% - 110px)",
           "color": "#ad5073",
-          "fontSize": "10px",
+          "fontSize": "12px",
           "textAlign": "center"
         },
         "content": "Attribute Analysis"
@@ -184,10 +184,10 @@
     "customerAnalysis": {
       "title": {
         "style": {
-          "top": "calc(50% - 60px)",
-          "left": "calc(50% + 115px)",
+          "top": "calc(50% - 67px)",
+          "left": "calc(50% + 110px)",
           "color": "#ad5073",
-          "fontSize": "10px",
+          "fontSize": "12px",
           "textAlign": "center"
         },
         "content": "Customer <br/> Analysis"
@@ -413,9 +413,9 @@
       "title": {
         "style": {
           "top": "calc(50% + 175px)",
-          "left": "calc(50% + 40px)",
+          "left": "calc(50% + 35px)",
           "color": "#ad5073",
-          "fontSize": "10px",
+          "fontSize": "12px",
           "textAlign": "center"
         },
         "content": "Price Point Analysis"
@@ -538,10 +538,10 @@
     "salesStockAnalysis": {
       "title": {
         "style": {
-          "top": "calc(50% - 10px)",
+          "top": "calc(50% - 15px)",
           "left": "calc(50% - 135px)",
           "color": "#ad5073",
-          "fontSize": "10px",
+          "fontSize": "12px",
           "textAlign": "center"
         },
         "content": "Sales & Stock </br> Analysis"
@@ -875,7 +875,7 @@
           "top": "calc(50% - 190px)",
           "left": "calc(50% + 40px)",
           "color": "#ad5073",
-          "fontSize": "10px",
+          "fontSize": "12px",
           "textAlign": "center"
         },
         "content": "Promotion </br> Analysis"
@@ -906,10 +906,10 @@
     "storeAnalysis": {
       "title": {
         "style": {
-          "top": "calc(50% - 175px)",
-          "left": "calc(50% + 30px)",
+          "top": "calc(50%2- 180px)",
+          "left": "calc(50% + 20px)",
           "color": "#ad5073",
-          "fontSize": "10px",
+          "fontSize": "12px",
           "textAlign": "center",
           "hoveredTop": "calc(50% - 205px)",
           "hoveredLeft": "calc(50% + 65px)"
@@ -920,9 +920,9 @@
         {
           "style": {
             "top": "calc(50% - 62px)",
-            "left": "calc(50% + 20px)",
+            "left": "calc(50% + 16px)",
             "hoveredTop": "calc(50% - 30px)",
-            "hoveredLeft": "calc(50% + 60px)",
+            "hoveredLeft": "calc(50% + 56px)",
             "zIndex": 1007
           },
           "content": "<div style='font-size:10px; color:#FFF; font-weight: lighter;'>Top Customer Base</div>"
@@ -943,7 +943,7 @@
       "valuesBubble": {
         "style": {
           "top": "calc(50% - 160px)",
-          "left": "calc(50% - 5px)",
+          "left": "calc(50% - 10px)",
           "size": "126px",
           "backgroundColor": "#1a1620",
           "borderColor": "#504859",

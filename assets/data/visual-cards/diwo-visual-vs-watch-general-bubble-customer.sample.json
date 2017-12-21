@@ -85,10 +85,10 @@
     "attributeAnalysis": {
       "title": {
         "style": {
-          "top": "calc(50% - 145px)",
-          "left": "calc(50% - 105px)",
+          "top": "calc(50% - 150px)",
+          "left": "calc(50% - 110px)",
           "color": "#ad5073",
-          "fontSize": "10px",
+          "fontSize": "12px",
           "textAlign": "center"
         },
         "content": "Attribute Analysis"
@@ -245,9 +245,9 @@
       "title": {
         "style": {
           "top": "calc(50% + 175px)",
-          "left": "calc(50% + 40px)",
+          "left": "calc(50% + 35px)",
           "color": "#ad5073",
-          "fontSize": "10px",
+          "fontSize": "12px",
           "textAlign": "center"
         },
         "content": "Price Point Analysis"
@@ -370,10 +370,10 @@
     "salesStockAnalysis": {
       "title": {
         "style": {
-          "top": "calc(50% - 10px)",
+          "top": "calc(50% - 15px)",
           "left": "calc(50% - 135px)",
           "color": "#ad5073",
-          "fontSize": "10px",
+          "fontSize": "12px",
           "textAlign": "center"
         },
         "content": "Sales & Stock </br> Analysis"
@@ -704,10 +704,10 @@
     "promotionAnalysis": {
       "title": {
         "style": {
-          "top": "calc(50% - 190px)",
-          "left": "calc(50% + 40px)",
+          "top": "calc(50% - 195px)",
+          "left": "calc(50% + 35px)",
           "color": "#ad5073",
-          "fontSize": "10px",
+          "fontSize": "12px",
           "textAlign": "center"
         },
         "content": "Promotion </br> Analysis"
@@ -738,13 +738,13 @@
     "storeAnalysis": {
       "title": {
         "style": {
-          "top": "calc(50% - 145px)",
-          "left": "calc(50% + 190px)",
+          "top": "calc(50% - 150px)",
+          "left": "calc(50% + 180px)",
           "color": "#ad5073",
-          "fontSize": "10px",
+          "fontSize": "12px",
           "textAlign": "center",
-          "hoveredTop": "calc(50% - 190px)",
-          "hoveredLeft": "calc(50% + 225px)"
+          "hoveredTop": "calc(50% - 195px)",
+          "hoveredLeft": "calc(50% + 215px)"
         },
         "content": "Store Analysis"
       },
