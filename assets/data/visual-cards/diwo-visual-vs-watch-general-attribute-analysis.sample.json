@@ -9,6 +9,41 @@
     },
     "content": "Attribute Analysis"
   },
+  "circleConnectors": [
+    {
+      "style": {
+        "top": "calc(50% - 63px)",
+        "left": "calc(50% - 48px)",
+        "size": "126px",
+        "borderColor": "#756886",
+        "clipPath": "polygon(0% 10%, 50% 50%, 0% 35%, -2% 100%)",
+        "transform": "rotate(-11deg)",
+        "zIndex": 1003
+      }
+    }
+  ],
+  "connectors": [
+    {
+      "style": {
+        "borderColor": "#756886",
+        "size": "20px",
+        "top": "calc(50% - 33px)",
+        "left": "calc(50% - 59px)",
+        "transform": "rotate(24deg)",
+        "zIndex": 1003
+      }
+    },
+    {
+      "style": {
+        "borderColor": "#756886",
+        "size": "17px",
+        "top": "calc(50% - 8px)",
+        "left": "calc(50% - 63px)",
+        "transform": "rotate(6deg)",
+        "zIndex": 1003
+      }
+    }
+  ],
   "valuesBubble": {
     "style": {
       "top": "calc(50% - 55px)",

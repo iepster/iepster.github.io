@@ -95,6 +95,41 @@
         },
         "content": "Attribute Analysis"
       },
+      "circleConnectors": [
+        {
+          "style": {
+            "top": "calc(50% + 17px)",
+            "left": "calc(50% - 128px)",
+            "size": "126px",
+            "borderColor": "#756886",
+            "clipPath": "polygon(0% 10%, 50% 50%, 0% 35%, -2% 100%)",
+            "transform": "rotate(-11deg)",
+            "zIndex": 1003
+          }
+        }
+      ],
+      "connectors": [
+        {
+          "style": {
+            "borderColor": "#756886",
+            "size": "20px",
+            "top": "calc(50% + 47px)",
+            "left": "calc(50% - 139px)",
+            "transform": "rotate(24deg)",
+            "zIndex": 1003
+          }
+        },
+        {
+          "style": {
+            "borderColor": "#756886",
+            "size": "17px",
+            "top": "calc(50% + 72px)",
+            "left": "calc(50% - 143px)",
+            "transform": "rotate(6deg)",
+            "zIndex": 1003
+          }
+        }
+      ],
       "valuesBubble": {
         "style": {
           "top": "calc(50% + 25px)",
@@ -194,8 +229,8 @@
       },
       "placeholderBubble": {
         "style": {
-          "top": "calc(50% + 60px)",
-          "left": "calc(50% - 145px)",
+          "top": "calc(50% + 66px)",
+          "left": "calc(50% - 153px)",
           "size": "12px",
           "backgroundColor": "#f7b5c9",
           "borderColor": "#f7b5c9",
@@ -276,7 +311,7 @@
             "title": "{{name}}"
           },
           "attrs": {
-            "radius": 8,
+            "radius": 15,
             "muted": false,
             "grid": false,
             "scale": 1

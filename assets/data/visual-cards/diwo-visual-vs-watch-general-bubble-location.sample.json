@@ -93,6 +93,41 @@
         },
         "content": "Attribute Analysis"
       },
+      "circleConnectors": [
+        {
+          "style": {
+            "top": "calc(50% - 138px)",
+            "left": "calc(50% - 133px)",
+            "size": "126px",
+            "borderColor": "#756886",
+            "clipPath": "polygon(0% 10%, 50% 50%, 0% 35%, -2% 100%)",
+            "transform": "rotate(-11deg)",
+            "zIndex": 1003
+          }
+        }
+      ],
+      "connectors": [
+        {
+          "style": {
+            "borderColor": "#756886",
+            "size": "20px",
+            "top": "calc(50% - 108px)",
+            "left": "calc(50% - 144px)",
+            "transform": "rotate(24deg)",
+            "zIndex": 1003
+          }
+        },
+        {
+          "style": {
+            "borderColor": "#756886",
+            "size": "17px",
+            "top": "calc(50% - 83px)",
+            "left": "calc(50% - 148px)",
+            "transform": "rotate(6deg)",
+            "zIndex": 1003
+          }
+        }
+      ],
       "valuesBubble": {
         "style": {
           "top": "calc(50% - 130px)",
@@ -217,6 +252,101 @@
         },
         "content": "Customer <br/> Analysis"
       },
+      "circleConnectors": [
+        {
+          "style": {
+            "top": "calc(50% - 123px)",
+            "left": "calc(50% + 42px)",
+            "size": "56px",
+            "borderColor": "#756886",
+            "clipPath": "polygon(0% 10%, 50% 50%, 0% 112%, -2% 100%)",
+            "transform": "rotate(192deg)",
+            "zIndex": 1003
+          }
+        }
+      ],
+      "connectors": [
+        {
+          "style": {
+            "borderColor": "#756886",
+            "size": "43px",
+            "top": "calc(50% - 59px)",
+            "left": "calc(50% + 27px)",
+            "transform": "rotate(-60deg)",
+            "zIndex": 1003
+          }
+        },
+        {
+          "style": {
+            "borderColor": "#756886",
+            "size": "20px",
+            "top": "calc(50% - 120px)",
+            "left": "calc(50% + 89px)",
+            "transform": "rotate(-42deg)",
+            "hoveredSize": "23px",
+            "hoveredTop": "calc(50% - 121px)",
+            "hoveredLeft": "calc(50% + 88px)",
+            "hoveredTransform": "rotate(-48deg)",
+            "zIndex": 1003
+          }
+        },
+        {
+          "style": {
+            "borderColor": "#756886",
+            "size": "30px",
+            "top": "calc(50% - 108px)",
+            "left": "calc(50% + 96px)",
+            "transform": "rotate(-18deg)",
+            "hoveredSize": "37px",
+            "hoveredTop": "calc(50% - 109px)",
+            "hoveredLeft": "calc(50% + 95px)",
+            "hoveredTransform": "rotate(-22deg)",
+            "zIndex": 1003
+          }
+        },
+        {
+          "style": {
+            "borderColor": "#756886",
+            "size": "18px",
+            "top": "calc(50% - 95px)",
+            "left": "calc(50% + 98px)",
+            "transform": "rotate(0deg)",
+            "hoveredSize": "29px",
+            "hoveredTop": "calc(50% - 90px)",
+            "hoveredLeft": "calc(50% + 97px)",
+            "hoveredTransform": "rotate(13deg)",
+            "zIndex": 1003
+          }
+        },
+        {
+          "style": {
+            "borderColor": "#756886",
+            "size": "22px",
+            "top": "calc(50% - 82px)",
+            "left": "calc(50% + 95px)",
+            "transform": "rotate(24deg)",
+            "hoveredSize": "37px",
+            "hoveredTop": "calc(50% - 70px)",
+            "hoveredLeft": "calc(50% + 89px)",
+            "hoveredTransform": "rotate(41deg)",
+            "zIndex": 1003
+          }
+        },
+        {
+          "style": {
+            "borderColor": "#756886",
+            "size": "15px",
+            "top": "calc(50% - 69px)",
+            "left": "calc(50% + 84px)",
+            "transform": "rotate(53deg)",
+            "hoveredSize": "26px",
+            "hoveredTop": "calc(50% - 62px)",
+            "hoveredLeft": "calc(50% + 78px)",
+            "hoveredTransform": "rotate(75deg)",
+            "zIndex": 1003
+          }
+        }
+      ],
       "chartBubble": {
         "style": {
           "top": "calc(50% - 115px)",
@@ -410,7 +540,7 @@
             "title": "{{name}}"
           },
           "attrs": {
-            "radius": 8,
+            "radius": 15,
             "muted": false,
             "grid": false,
             "scale": 1
@@ -476,6 +606,103 @@
         },
         "content": "Sales & Stock </br> Analysis"
       },
+      "circleConnectors": [
+        {
+          "style": {
+            "top": "calc(50% - 62px)",
+            "left": "calc(50% - 242px)",
+            "size": "100px",
+            "borderColor": "#756886",
+            "clipPath": "polygon(0% 10%, 50% 50%, 0% 35%, -2% 100%)",
+            "transform": "rotate(-40deg)",
+            "zIndex": 1003
+          }
+        },
+        {
+          "style": {
+            "top": "calc(50% + 8px)",
+            "left": "calc(50% - 202px)",
+            "size": "100px",
+            "borderColor": "#756886",
+            "clipPath": "polygon(0% 10%, 50% 50%, 0% 40%, -2% 100%)",
+            "transform": "rotate(-59deg)",
+            "zIndex": 1003
+          }
+        },
+        {
+          "style": {
+            "top": "calc(50% + 8px)",
+            "left": "calc(50% - 122px)",
+            "size": "100px",
+            "borderColor": "#756886",
+            "clipPath": "polygon(0% 10%, 50% 50%, 0% 40%, -2% 100%)",
+            "transform": "rotate(-116deg)",
+            "zIndex": 1003
+          }
+        }
+      ],
+      "connectors": [
+        {
+          "style": {
+            "borderColor": "#756886",
+            "size": "20px",
+            "top": "calc(50% + -10px)",
+            "left": "calc(50% - 261px)",
+            "transform": "rotate(-4deg)",
+            "zIndex": 1003
+          }
+        },
+        {
+          "style": {
+            "borderColor": "#756886",
+            "size": "41px",
+            "top": "calc(50% + 12px)",
+            "left": "calc(50% - 278px)",
+            "transform": "rotate(-14deg)",
+            "zIndex": 1003
+          }
+        },
+        {
+          "style": {
+            "borderColor": "#756886",
+            "size": "18px",
+            "top": "calc(50% + 80px)",
+            "left": "calc(50% - 215px)",
+            "transform": "rotate(-33deg)",
+            "zIndex": 1003
+          }
+        },
+        {
+          "style": {
+            "borderColor": "#756886",
+            "size": "30px",
+            "top": "calc(50% + 104px)",
+            "left": "calc(50% - 212px)",
+            "transform": "rotate(-41deg)",
+            "zIndex": 1003
+          }
+        },
+        {
+          "style": {
+            "borderColor": "#756886",
+            "size": "26px",
+            "top": "calc(50% + 118px)",
+            "left": "calc(50% - 71px)",
+            "transform": "rotate(-98deg)",
+            "zIndex": 1003
+          }
+        },
+        {
+          "style": {
+            "borderColor": "#756886",
+            "size": "14px",
+            "top": "calc(50% + 113px)",
+            "left": "calc(50% - 90px)",
+            "transform": "rotate(-87deg)",
+            "zIndex": 1003
+          }
+        }
+      ],
       "bubbles": [
         {
           "style": {

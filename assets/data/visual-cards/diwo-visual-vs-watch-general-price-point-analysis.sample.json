@@ -69,7 +69,7 @@
         "title": "{{name}}"
       },
       "attrs": {
-        "radius": 8,
+        "radius": 15,
         "muted": false,
         "grid": false
       },

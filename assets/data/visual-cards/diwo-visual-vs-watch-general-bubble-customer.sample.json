@@ -93,6 +93,41 @@
         },
         "content": "Attribute Analysis"
       },
+      "circleConnectors": [
+        {
+          "style": {
+            "top": "calc(50% - 138px)",
+            "left": "calc(50% - 133px)",
+            "size": "126px",
+            "borderColor": "#756886",
+            "clipPath": "polygon(0% 10%, 50% 50%, 0% 35%, -2% 100%)",
+            "transform": "rotate(-11deg)",
+            "zIndex": 1003
+          }
+        }
+      ],
+      "connectors": [
+        {
+          "style": {
+            "borderColor": "#756886",
+            "size": "20px",
+            "top": "calc(50% - 108px)",
+            "left": "calc(50% - 144px)",
+            "transform": "rotate(24deg)",
+            "zIndex": 1003
+          }
+        },
+        {
+          "style": {
+            "borderColor": "#756886",
+            "size": "17px",
+            "top": "calc(50% - 83px)",
+            "left": "calc(50% - 148px)",
+            "transform": "rotate(6deg)",
+            "zIndex": 1003
+          }
+        }
+      ],
       "valuesBubble": {
         "style": {
           "top": "calc(50% - 130px)",
@@ -277,7 +312,7 @@
             "title": "{{name}}"
           },
           "attrs": {
-            "radius": 8,
+            "radius": 15,
             "muted": false,
             "grid": false,
             "scale": 1
@@ -343,6 +378,103 @@
         },
         "content": "Sales & Stock </br> Analysis"
       },
+      "circleConnectors": [
+        {
+          "style": {
+            "top": "calc(50% - 62px)",
+            "left": "calc(50% - 242px)",
+            "size": "100px",
+            "borderColor": "#756886",
+            "clipPath": "polygon(0% 10%, 50% 50%, 0% 35%, -2% 100%)",
+            "transform": "rotate(-40deg)",
+            "zIndex": 1003
+          }
+        },
+        {
+          "style": {
+            "top": "calc(50% + 8px)",
+            "left": "calc(50% - 202px)",
+            "size": "100px",
+            "borderColor": "#756886",
+            "clipPath": "polygon(0% 10%, 50% 50%, 0% 40%, -2% 100%)",
+            "transform": "rotate(-59deg)",
+            "zIndex": 1003
+          }
+        },
+        {
+          "style": {
+            "top": "calc(50% + 8px)",
+            "left": "calc(50% - 122px)",
+            "size": "100px",
+            "borderColor": "#756886",
+            "clipPath": "polygon(0% 10%, 50% 50%, 0% 40%, -2% 100%)",
+            "transform": "rotate(-116deg)",
+            "zIndex": 1003
+          }
+        }
+      ],
+      "connectors": [
+        {
+          "style": {
+            "borderColor": "#756886",
+            "size": "20px",
+            "top": "calc(50% + -10px)",
+            "left": "calc(50% - 261px)",
+            "transform": "rotate(-4deg)",
+            "zIndex": 1003
+          }
+        },
+        {
+          "style": {
+            "borderColor": "#756886",
+            "size": "41px",
+            "top": "calc(50% + 12px)",
+            "left": "calc(50% - 278px)",
+            "transform": "rotate(-14deg)",
+            "zIndex": 1003
+          }
+        },
+        {
+          "style": {
+            "borderColor": "#756886",
+            "size": "18px",
+            "top": "calc(50% + 80px)",
+            "left": "calc(50% - 215px)",
+            "transform": "rotate(-33deg)",
+            "zIndex": 1003
+          }
+        },
+        {
+          "style": {
+            "borderColor": "#756886",
+            "size": "30px",
+            "top": "calc(50% + 104px)",
+            "left": "calc(50% - 212px)",
+            "transform": "rotate(-41deg)",
+            "zIndex": 1003
+          }
+        },
+        {
+          "style": {
+            "borderColor": "#756886",
+            "size": "26px",
+            "top": "calc(50% + 118px)",
+            "left": "calc(50% - 71px)",
+            "transform": "rotate(-98deg)",
+            "zIndex": 1003
+          }
+        },
+        {
+          "style": {
+            "borderColor": "#756886",
+            "size": "14px",
+            "top": "calc(50% + 113px)",
+            "left": "calc(50% - 90px)",
+            "transform": "rotate(-87deg)",
+            "zIndex": 1003
+          }
+        }
+      ],
       "bubbles": [
         {
           "style": {
@@ -608,6 +740,18 @@
         },
         "content": "Store Analysis"
       },
+      "connectors": [
+        {
+          "style": {
+            "top": "calc(50% - 1px)",
+            "left": "calc(50% + 55px)",
+            "size": "69px",
+            "borderColor": "#756886",
+            "transform": "rotate(-10deg)",
+            "zIndex": 1003
+          }
+        }
+      ],
       "textElements": [
         {
           "style": {

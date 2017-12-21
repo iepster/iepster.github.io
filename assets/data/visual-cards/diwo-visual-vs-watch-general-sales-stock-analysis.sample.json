@@ -9,6 +9,103 @@
     },
     "content": "Sales & Stock </br> Analysis"
   },
+  "circleConnectors": [
+    {
+      "style": {
+        "top": "calc(50% - 62px)",
+        "left": "calc(50% - 107px)",
+        "size": "100px",
+        "borderColor": "#756886",
+        "clipPath": "polygon(0% 10%, 50% 50%, 0% 35%, -2% 100%)",
+        "transform": "rotate(-40deg)",
+        "zIndex": 1003
+      }
+    },
+    {
+      "style": {
+        "top": "calc(50% + 8px)",
+        "left": "calc(50% - 67px)",
+        "size": "100px",
+        "borderColor": "#756886",
+        "clipPath": "polygon(0% 10%, 50% 50%, 0% 40%, -2% 100%)",
+        "transform": "rotate(-59deg)",
+        "zIndex": 1003
+      }
+    },
+    {
+      "style": {
+        "top": "calc(50% + 8px)",
+        "left": "calc(50% + 13px)",
+        "size": "100px",
+        "borderColor": "#756886",
+        "clipPath": "polygon(0% 10%, 50% 50%, 0% 40%, -2% 100%)",
+        "transform": "rotate(-116deg)",
+        "zIndex": 1003
+      }
+    }
+  ],
+  "connectors": [
+    {
+      "style": {
+        "borderColor": "#756886",
+        "size": "20px",
+        "top": "calc(50% + -10px)",
+        "left": "calc(50% - 126px)",
+        "transform": "rotate(-4deg)",
+        "zIndex": 1003
+      }
+    },
+    {
+      "style": {
+        "borderColor": "#756886",
+        "size": "41px",
+        "top": "calc(50% + 12px)",
+        "left": "calc(50% - 143px)",
+        "transform": "rotate(-14deg)",
+        "zIndex": 1003
+      }
+    },
+    {
+      "style": {
+        "borderColor": "#756886",
+        "size": "18px",
+        "top": "calc(50% + 80px)",
+        "left": "calc(50% - 80px)",
+        "transform": "rotate(-33deg)",
+        "zIndex": 1003
+      }
+    },
+    {
+      "style": {
+        "borderColor": "#756886",
+        "size": "30px",
+        "top": "calc(50% + 104px)",
+        "left": "calc(50% - 77px)",
+        "transform": "rotate(-41deg)",
+        "zIndex": 1003
+      }
+    },
+    {
+      "style": {
+        "borderColor": "#756886",
+        "size": "26px",
+        "top": "calc(50% + 118px)",
+        "left": "calc(50% + 64px)",
+        "transform": "rotate(-98deg)",
+        "zIndex": 1003
+      }
+    },
+    {
+      "style": {
+        "borderColor": "#756886",
+        "size": "14px",
+        "top": "calc(50% + 113px)",
+        "left": "calc(50% + 45px)",
+        "transform": "rotate(-87deg)",
+        "zIndex": 1003
+      }
+    }
+  ],
   "bubbles": [
     {
       "style": {
