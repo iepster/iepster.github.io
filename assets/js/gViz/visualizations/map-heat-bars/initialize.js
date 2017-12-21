@@ -78,6 +78,7 @@ module.exports = function() {
 
           // Define height and width
           var scale = _var.data != null && _var.data.attrs != null && _var.data.attrs.scale != null ? _var.data.attrs.scale : 1;
+          console.log(scale);
           _var.height = ((height != null) ? height : _var.container.clientRect.height)/scale;
           _var.width = ((width != null) ? width : _var.container.clientRect.width)/scale;
 

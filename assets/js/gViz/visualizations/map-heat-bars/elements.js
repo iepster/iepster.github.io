@@ -94,7 +94,7 @@ module.exports = function () {
               _var.mapShapes.on('mouseover', function(e) {
 
                 // Only for heat mode
-                if(_var.mode === 'heat' && hasHover) {
+                if(_var.mode === 'heat' && _var.hasHover) {
 
                   // Set hovered node
                   _var.hovered  = e.id;
@@ -113,7 +113,7 @@ module.exports = function () {
               }).on('mouseout', function(e) {
 
                 // Only for heat mode
-                if(_var.mode === 'heat' && hasHover) {
+                if(_var.mode === 'heat' && _var.hasHover) {
 
                   // Reset hovered node
                   _var.hovered  = null;
@@ -209,7 +209,7 @@ module.exports = function () {
             // Hover action
             barsGroup.on('mouseover', function(e) {
 
-              if(hasHover) {
+              if(_var.hasHover) {
 
                 // Set hovered node
                 _var.hovered  = e.id;
@@ -229,7 +229,7 @@ module.exports = function () {
             // Mouseout action
             }).on('mouseout', function(e) {
 
-              if(hasHover) {
+              if(_var.hasHover) {
 
                 // Reset hovered node
                 _var.hovered  = null;
