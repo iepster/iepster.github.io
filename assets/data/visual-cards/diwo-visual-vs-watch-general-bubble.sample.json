@@ -873,7 +873,7 @@
       "title": {
         "style": {
           "top": "calc(50% - 190px)",
-          "left": "calc(50% + 40px)",
+          "left": "calc(50% + 25px)",
           "color": "#ad5073",
           "fontSize": "12px",
           "textAlign": "center"
@@ -883,7 +883,7 @@
       "valuesBubble": {
         "style": {
           "top": "calc(50% - 160px)",
-          "left": "calc(50% - 5px)",
+          "left": "calc(50% - 10px)",
           "size": "126px",
           "backgroundColor": "#1a1620",
           "borderColor": "#504859",
