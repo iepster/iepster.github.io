@@ -140,6 +140,19 @@ module.exports = function () {
                 .on("drag", _var.dragging)
                 .on("end", _var.dragended));
 
+            } else {
+
+              pointGroups
+                .on("mousedown.drag", null)
+                .on("mousewheel.drag", null)
+                .on("mousemove.drag", null)
+                .on("DOMMouseScroll.drag", null)
+                .on("dblclick.drag", null)
+                .on("touchstart.drag", null)
+                .on("touchmove.drag", null)
+                .on("touchend.drag", null)
+                .on('mousedown.drag', null);
+
             }
 
           });

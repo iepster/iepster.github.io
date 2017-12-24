@@ -39,7 +39,8 @@
       "y": 5,
       "fill": "#e85e8f",
       "gradient": "#fd9e83",
-      "stroke": "#b45276"
+      "stroke": "#b45276",
+      "labelColor": "#b45276"
     },
     {
       "x": "19",
@@ -48,7 +49,8 @@
       "y": 19,
       "fill": "#e85e8f",
       "gradient": "#fd9e83",
-      "stroke": "#b45276"
+      "stroke": "#b45276",
+      "labelColor": "#b45276"
     },
     {
       "x": "35",
@@ -57,7 +59,8 @@
       "y": 35,
       "fill": "#e85e8f",
       "gradient": "#fd9e83",
-      "stroke": "#b45276"
+      "stroke": "#b45276",
+      "labelColor": "#b45276"
     },
     {
       "x": "45",
@@ -66,7 +69,8 @@
       "y": 45,
       "fill": "#e85e8f",
       "gradient": "#fd9e83",
-      "stroke": "#b45276"
+      "stroke": "#b45276",
+      "labelColor": "#b45276"
     },
     {
       "x": "50",

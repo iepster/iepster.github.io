@@ -89,7 +89,7 @@ module.exports = function() {
           barLabels.exit().remove();
           barLabels = barLabels.enter().append('text').attr("class", "bar-label").merge(barLabels);
           barLabels
-            .style('fill', function(d) { return _var.getColor(d, "stroke"); })
+            .style('fill', function(d) { return _var.getColor(d, "labelColor"); })
             .attr("y", function(d) { return _var.x.bandwidth()/2 + _var.barWidth + 7; })
             .attr('x', function(d) { return -_var.y(0) + (+d.y >= 0 ? 5 : -5); })
             .attr('transform', "rotate(-90)")

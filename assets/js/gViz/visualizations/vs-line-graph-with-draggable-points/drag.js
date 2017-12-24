@@ -45,6 +45,12 @@ module.exports = function () {
             // Remove area
             _var.g.selectAll(".area-between").style('display', 'none');
 
+            // Remove mouse events from elements
+            _var.g.selectAll(".chart-elements").selectAll(".element-group").style("filter", "").style('opacity', 1);
+            _var.g.selectAll(".chart-elements").selectAll(".element-group").selectAll('.point-group').style("filter", "").style('opacity', 1);
+            _var.g.selectAll(".chart-elements").selectAll(".element-group").selectAll('.line').style("filter", "").style('opacity', 1);
+
+
             // Trigger onDragStart attribute function
             if(_var.onDragStart != null && typeof _var.onDragStart === "function") { _var.onDragStart(d); }
 
