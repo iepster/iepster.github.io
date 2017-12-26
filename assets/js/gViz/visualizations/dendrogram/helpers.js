@@ -48,7 +48,7 @@ module.exports = function() {
             else if(node.children && node.children.length > 1) { elements = node.children; }
             else if(node._children && node._children.length > 1) { elements = node._children; }
 
-            if(node.data.id === 'solids') { console.log(elements); }
+            // if(node.data.id === 'solids') { console.log(elements); }
 
             // Set satelite points
             elements = elements.sort(function(a,b) { return d3.descending(+a.data.values.cYear, +b.data.values.cYear); });

@@ -46,7 +46,7 @@ module.exports = function() {
           // Clean breadcrumbs
           _var.container.d3.select('[data-id="gViz-wrapper-breadcrumbs"]')
             .style('top', "15px")
-            .style('left', "70px")
+            .style('left', "105px")
             .html('');
 
           // Breadcrumbs items

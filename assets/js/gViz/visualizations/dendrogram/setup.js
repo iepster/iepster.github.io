@@ -209,6 +209,13 @@ module.exports = function() {
                     .run();
 
                 });
+
+              } else {
+
+                // Clean breadcrumbs and prev/next arrows
+                _var.container.d3.select('[data-id="gViz-wrapper-breadcrumbs"]').html('');
+                _var.g.selectAll("g.prev-next-group, rect.bg-rect").remove();
+
               }
 
               break;

@@ -104,7 +104,7 @@ module.exports = function () {
 
 
               // Draw center percentage
-              var centerPercentage = _var.g.selectAll("text.center-percentage").data(_var.data.tooltip.hasPercentage === true || node.data.percentage == null || node.data.percentage === "" ? [node] : []);
+              var centerPercentage = _var.g.selectAll("text.center-percentage").data(!(_var.data.tooltip.hasPercentage != null && _var.data.tooltip.hasPercentage === false) ? [node] : []);
               centerPercentage.exit().remove();
               centerPercentage = centerPercentage.enter().append('text').attr("class", "center-percentage").merge(centerPercentage);
               centerPercentage
