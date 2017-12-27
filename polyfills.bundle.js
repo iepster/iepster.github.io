@@ -29,16 +29,18 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_core_js_es6_regexp___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_10_core_js_es6_regexp__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_core_js_es6_map__ = __webpack_require__("../../../../core-js/es6/map.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_core_js_es6_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_11_core_js_es6_map__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12_core_js_es6_set__ = __webpack_require__("../../../../core-js/es6/set.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12_core_js_es6_set___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_12_core_js_es6_set__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13_core_js_es6_reflect__ = __webpack_require__("../../../../core-js/es6/reflect.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13_core_js_es6_reflect___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_13_core_js_es6_reflect__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14_core_js_es7_reflect__ = __webpack_require__("../../../../core-js/es7/reflect.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14_core_js_es7_reflect___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_14_core_js_es7_reflect__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15_zone_js_dist_zone__ = __webpack_require__("../../../../zone.js/dist/zone.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15_zone_js_dist_zone___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_15_zone_js_dist_zone__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16_web_animations_js_web_animations_min__ = __webpack_require__("../../../../web-animations-js/web-animations.min.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16_web_animations_js_web_animations_min___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_16_web_animations_js_web_animations_min__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12_core_js_es6_weak_map__ = __webpack_require__("../../../../core-js/es6/weak-map.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12_core_js_es6_weak_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_12_core_js_es6_weak_map__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13_core_js_es6_set__ = __webpack_require__("../../../../core-js/es6/set.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13_core_js_es6_set___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_13_core_js_es6_set__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14_core_js_es6_reflect__ = __webpack_require__("../../../../core-js/es6/reflect.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14_core_js_es6_reflect___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_14_core_js_es6_reflect__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15_core_js_es7_reflect__ = __webpack_require__("../../../../core-js/es7/reflect.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15_core_js_es7_reflect___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_15_core_js_es7_reflect__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16_zone_js_dist_zone__ = __webpack_require__("../../../../zone.js/dist/zone.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16_zone_js_dist_zone___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_16_zone_js_dist_zone__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17_web_animations_js_web_animations_min__ = __webpack_require__("../../../../web-animations-js/web-animations.min.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17_web_animations_js_web_animations_min___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_17_web_animations_js_web_animations_min__);
 // This file includes polyfills needed by Angular and is loaded before
 // the app. You can add your own extra polyfills to this file.
 
@@ -58,7 +60,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 
-//# sourceMappingURL=polyfills.js.map
+
+
 
 /***/ }),
 
@@ -307,6 +310,17 @@ module.exports = __webpack_require__("../../../../core-js/modules/_core.js").Str
 __webpack_require__("../../../../core-js/modules/es6.symbol.js");
 __webpack_require__("../../../../core-js/modules/es6.object.to-string.js");
 module.exports = __webpack_require__("../../../../core-js/modules/_core.js").Symbol;
+
+
+/***/ }),
+
+/***/ "../../../../core-js/es6/weak-map.js":
+/***/ (function(module, exports, __webpack_require__) {
+
+__webpack_require__("../../../../core-js/modules/es6.object.to-string.js");
+__webpack_require__("../../../../core-js/modules/es6.array.iterator.js");
+__webpack_require__("../../../../core-js/modules/es6.weak-map.js");
+module.exports = __webpack_require__("../../../../core-js/modules/_core.js").WeakMap;
 
 
 /***/ }),
@@ -1028,7 +1042,7 @@ module.exports = function (NAME, wrapper, methods, common, IS_MAP, IS_WEAK) {
 /***/ "../../../../core-js/modules/_core.js":
 /***/ (function(module, exports) {
 
-var core = module.exports = { version: '2.5.1' };
+var core = module.exports = { version: '2.5.3' };
 if (typeof __e == 'number') __e = core; // eslint-disable-line no-undef
 
 
@@ -1621,7 +1635,7 @@ module.exports = function (Base, NAME, Constructor, next, DEFAULT, IS_SET, FORCE
   var VALUES_BUG = false;
   var proto = Base.prototype;
   var $native = proto[ITERATOR] || proto[FF_ITERATOR] || DEFAULT && proto[DEFAULT];
-  var $default = $native || getMethod(DEFAULT);
+  var $default = (!BUGGY && $native) || getMethod(DEFAULT);
   var $entries = DEFAULT ? !DEF_VALUES ? $default : getMethod('entries') : undefined;
   var $anyNative = NAME == 'Array' ? proto.entries || $native : $native;
   var methods, key, IteratorPrototype;
@@ -3124,7 +3138,7 @@ $export($export.P + $export.F * __webpack_require__("../../../../core-js/modules
     var start = toAbsoluteIndex(begin, len);
     var upTo = toAbsoluteIndex(end, len);
     var size = toLength(upTo - start);
-    var cloned = Array(size);
+    var cloned = new Array(size);
     var i = 0;
     for (; i < size; i++) cloned[i] = klass == 'String'
       ? this.charAt(start + i)
@@ -5253,6 +5267,7 @@ var wksDefine = __webpack_require__("../../../../core-js/modules/_wks-define.js"
 var enumKeys = __webpack_require__("../../../../core-js/modules/_enum-keys.js");
 var isArray = __webpack_require__("../../../../core-js/modules/_is-array.js");
 var anObject = __webpack_require__("../../../../core-js/modules/_an-object.js");
+var isObject = __webpack_require__("../../../../core-js/modules/_is-object.js");
 var toIObject = __webpack_require__("../../../../core-js/modules/_to-iobject.js");
 var toPrimitive = __webpack_require__("../../../../core-js/modules/_to-primitive.js");
 var createDesc = __webpack_require__("../../../../core-js/modules/_property-desc.js");
@@ -5445,15 +5460,14 @@ $JSON && $export($export.S + $export.F * (!USE_NATIVE || $fails(function () {
   return _stringify([S]) != '[null]' || _stringify({ a: S }) != '{}' || _stringify(Object(S)) != '{}';
 })), 'JSON', {
   stringify: function stringify(it) {
-    if (it === undefined || isSymbol(it)) return; // IE8 returns string on undefined
     var args = [it];
     var i = 1;
     var replacer, $replacer;
     while (arguments.length > i) args.push(arguments[i++]);
-    replacer = args[1];
-    if (typeof replacer == 'function') $replacer = replacer;
-    if ($replacer || !isArray(replacer)) replacer = function (key, value) {
-      if ($replacer) value = $replacer.call(this, key, value);
+    $replacer = replacer = args[1];
+    if (!isObject(replacer) && it === undefined || isSymbol(it)) return; // IE8 returns string on undefined
+    if (!isArray(replacer)) replacer = function (key, value) {
+      if (typeof $replacer == 'function') value = $replacer.call(this, key, value);
       if (!isSymbol(value)) return value;
     };
     args[1] = replacer;
