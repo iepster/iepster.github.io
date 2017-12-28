@@ -94,3 +94,11 @@
   }
 }
 
+.overflow-ellipsis {
+  display: inline-block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  &[data-clamp='2'] { -webkit-line-clamp: 2; -webkit-box-orient: vertical; white-space: normal; display: -webkit-box; }
+  &[data-clamp='3'] { -webkit-line-clamp: 3; -webkit-box-orient: vertical; white-space: normal; display: -webkit-box; }
+}

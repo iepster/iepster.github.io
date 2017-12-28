@@ -145,19 +145,10 @@
         "content": {
           "type": "1",
           "text": [
-            "<span style='color:#FFF; font-size: 12px; margin: 0px 14px 0px 17px;'>Color:</span><span style='font-size:  12px; color:#be527f;'>Black</span>",
-            "<span style='color:#FFF; font-size: 12px; margin: 0px 17px 0px 17px;'>Print:</span><span style='font-size:  12px; color:#be527f;'>Logo</span>",
-            "<span style='color:#FFF; font-size: 12px; margin: 0px 10px 0px 17px;'>Fabric:</span><span style='font-size: 12px; color:#be527f;'>Smooth</span>",
+            "<span style='color:#FFF; font-size: 12px; margin: 0px 14px 0px 17px; display:block; float:left;'>Color: </span><span class='overflow-ellipsis' style='font-size:12px; color:#be527f; width:45px;'>Black</span>",
+            "<span style='color:#FFF; font-size: 12px; margin: 0px 17px 0px 17px; display:block; float:left;'>Print: </span><span class='overflow-ellipsis' style='font-size:12px; color:#be527f; width:45px;' title='H17-035-08 - C002 PrplPetl 3KL'>H17-035-08 - C002 PrplPetl 3KL</span>",
+            "<span style='color:#FFF; font-size: 12px; margin: 0px 10px 0px 17px; display:block; float:left;'>Fabric:</span><span class='overflow-ellipsis' style='font-size:12px; color:#be527f; width:45px;'>Smooth</span>",
             "<span style='color:#FFF; font-size: 10px; width: 100%; text-align: center; display: block; margin-top:5px;'>Top Trending <img src='/assets/images/top-trending-pink.png' style='display:inline-block; height:10px;'/></span>"
-          ]
-        },
-        "hoveredContent": {
-          "type": "1",
-          "text": [
-            "<div style='height:auto; float:left; width:33%; margin-bottom:3px;'><div style='height:11px; line-height:11px; font-size:10px; color:#FFF; font-weight:lighter; text-align: center; width: 100%;'>28px</div><div style='height:22px; width:22px; border-radius:50%; background:#000; margin: 2px auto;'></div><div style='height: 13px; line-height: 13px; font-size:10px; color:#e95c83; font-weight:lighter; text-align: center; width: 100%;'>Black</div></div>",
-            "<div style='height:auto; float:left; width:33%; margin-bottom:3px;'><div style='height:11px; line-height:11px; font-size:10px; color:#FFF; font-weight:lighter; text-align: center; width: 100%;'>28px</div><div style='height:22px; width:22px; border-radius:50%; background:#e95c83; margin: 2px auto;'></div><div style='height: 13px; line-height: 13px; font-size:10px; color:#e95c83; font-weight:lighter; text-align: center; width: 100%;'>Logo</div></div>",
-            "<div style='height:auto; float:left; width:33%; margin-bottom:3px;'><div style='height:11px; line-height:11px; font-size:10px; color:#FFF; font-weight:lighter; text-align:center; width:100%;'>28px</div><div style='height:22px; width:22px; border-radius:50%; background:#91add0; margin: 2px auto;'></div><div style='height: 13px; line-height: 13px; font-size:10px; color:#e95c83; font-weight:lighter; text-align: center; width: 100%;'>Smooth</div></div>",
-            "<span style='color:#FFF; font-size: 10px; width: 100%; text-align: center; display: block; margin-top:5px;'>Top Trending <img src='/assets/images/temp_icons/icon_5.svg' style='display:inline-block; height:10px;'/></span>"
           ]
         }
       },
