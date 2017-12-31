@@ -18,6 +18,10 @@
       "selectedBackgroundColor": "#FFF"
     }
   },
+  "attrs": {
+    "start": 22,
+    "end": 25
+  },
   "data": [
     {
       "id": "this-month",

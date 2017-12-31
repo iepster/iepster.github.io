@@ -84,10 +84,7 @@ module.exports = function () {
             function brushing() {
 
               // Only transition after input.
-              if (d3.event == null || d3.event.sourceEvent == null) return;
-
-              // Ignore empty selections.
-              if (d3.event == null || d3.event.selection == null) return;
+              if ((d3.event == null || d3.event.selection == null || d3.event.sourceEvent == null) && _var.isEmptySelection) return;
 
               // Get brush bounds
               var d0 = d3.event.selection.map(_var.brushAttrs.scale.invert);
@@ -108,7 +105,7 @@ module.exports = function () {
             function brushended() {
 
               // Only transition after input.
-              if (d3.event == null || d3.event.sourceEvent == null) return;
+              if ((d3.event == null || d3.event.sourceEvent == null) && _var.isEmptySelection) return;
 
               // Reset selected
               var nodes = _var.g.selectAll(".node");
@@ -155,11 +152,42 @@ module.exports = function () {
 
             }
 
+            function brushSetValue() {
+
+              // Set value to false
+              _var.isEmptySelection = false;
+
+              // Get start and end intervals from json
+              var start = _var.data.attrs != null && _var.data.attrs.start != null && !isNaN(_var.data.attrs.start) ? _var.data.attrs.start : null;
+              var end = _var.data.attrs != null && _var.data.attrs.end != null && !isNaN(_var.data.attrs.end) ? _var.data.attrs.end : null;
+
+              // Get leaves
+              var leaves = _var.brushAttrs.hRoot.leaves().sort(function(a,b) { return d3.ascending(a.data.values[0], b.data.values[0]); });
+
+              // Get bounds
+              var bounds = [leaves[0], leaves[leaves.length-1]];
+              leaves.forEach(function(n, i) {
+                if(start == null || (n.data.values[0] <= start && n.data.values[1] >= start && n.data.values[0])) { bounds[0] = n; }
+                if(end == null || (n.data.values[0] <= end && n.data.values[1] >= end)) { bounds[1] = n; }
+              });
+
+              // Pixed bounds
+              _var.brushAttrs.pixelBounds = [bounds[0].x0, bounds[1].x1];
+
+              // If the brush was created
+              if(_var.brush != null) { _var.g.select(".brush").call(_var.brush.move, [bounds[0].x0, bounds[1].x1]); }
+
+            }
+
             // Update elements
             _var.brushUpdate = function () {
 
               // Trigger onHover attribute function
               if(_var.onSelect != null && typeof _var.onSelect === "function") { _var.onSelect(_var.brushAttrs.bounds); }
+
+              // Set value to false
+              _var.isSetValue = false;
+              _var.isEmptySelection = true;
 
             }
 
@@ -272,6 +300,10 @@ module.exports = function () {
               })
 
             }
+
+            // Set values
+            brushSetValue();
+
 
           break;
       }
