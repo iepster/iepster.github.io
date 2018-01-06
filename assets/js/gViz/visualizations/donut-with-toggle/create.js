@@ -49,14 +49,16 @@ module.exports = function () {
           _var.g.attr("transform", `translate(${_var.margin.left + _var.width/2},${_var.margin.top + _var.height/2})`);
 
           // Draw background grid
-          shared.visualComponents.backgroundGrid()
-            .id(_var._id)
-            .height(_var.height + _var.margin.top + _var.margin.bottom)
-            .width(_var.width + _var.margin.left + _var.margin.right)
-            .left(0)
-            .top(0)
-            .wrap(_var.container.d3)
-            .run();
+          if(!(_var.data != null && _var.data.attrs != null && _var.data.attrs.grid != null && _var.data.attrs.grid === false)) {
+            shared.visualComponents.backgroundGrid()
+              .id(_var._id)
+              .height(_var.height + _var.margin.top + _var.margin.bottom)
+              .width(_var.width + _var.margin.left + _var.margin.right)
+              .left(0)
+              .top(0)
+              .wrap(_var.container.d3)
+              .run();
+          }
 
           // Draw shadow
           shared.visualComponents.shadow()

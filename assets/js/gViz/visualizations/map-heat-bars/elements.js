@@ -105,6 +105,29 @@ module.exports = function () {
                     .action("mouseover")
                     .components(components)
                     .node(e)
+                    .nodeSel(this)
+                    .source('shape')
+                    .run();
+
+                }
+
+              // Mousemove action
+              }).on('mousemove', function(e) {
+
+                // Only for heat mode
+                if(_var.mode === 'heat' && _var.hasHover) {
+
+                  // Set hovered node
+                  _var.hovered  = e.id;
+
+                  // Mouseover event
+                  components.events()
+                    ._var(_var)
+                    .action("mouseover")
+                    .components(components)
+                    .node(e)
+                    .nodeSel(this)
+                    .source('shape')
                     .run();
 
                 }

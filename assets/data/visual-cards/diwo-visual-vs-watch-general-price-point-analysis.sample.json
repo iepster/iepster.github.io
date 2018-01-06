@@ -61,11 +61,14 @@
     "content": "/assets/images/gViz/visualizations/diwo-visual-bubble-poet-context/circle.png",
     "hoveredContent": {
       "title": "",
+      "toggle": {
+        "isVisible": false
+      },
       "legend": {
         "isVisible": false
       },
       "tooltip": {
-        "hasPercentage": true,
+        "hasPercentage": false,
         "title": "{{name}}"
       },
       "attrs": {
@@ -74,7 +77,7 @@
         "grid": false
       },
       "x1": {
-        "title": "",
+        "title": "Estimated External Assets",
         "value": "sum",
         "color": "#FFF",
         "prefix": "$",
@@ -86,36 +89,24 @@
           "id": "id-1",
           "name": "$35-$45",
           "color": "#FFF",
-          "nameColor": "#efabbe",
-          "percentageColor": "#FFF",
-          "lineColor": "#FFF",
           "x1": 40
         },
         {
           "id": "id-2",
           "name": "$18-$25",
           "color": "#fde9f2",
-          "nameColor": "#efabbe",
-          "percentageColor": "#FFF",
-          "lineColor": "#FFF",
           "x1": 28
         },
         {
           "id": "id-3",
           "name": "$45-$60",
           "color": "#fbd9e8",
-          "nameColor": "#efabbe",
-          "percentageColor": "#FFF",
-          "lineColor": "#FFF",
           "x1": 22
         },
         {
           "id": "id-4",
           "name": "$25-$35",
           "color": "#f9c5da",
-          "nameColor": "#efabbe",
-          "percentageColor": "#FFF",
-          "lineColor": "#FFF",
           "x1": 10
         }
       ]

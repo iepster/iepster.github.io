@@ -13,6 +13,7 @@ module.exports = function () {
   var node       = null;
   var _node      = null;
   var nodeSel    = null;
+  var source     = 'node';
 
   // Validate attributes
   var validate = function (step) {
@@ -63,45 +64,58 @@ module.exports = function () {
                   .style('opacity', function(g) { return g === _node || _var.mode !== 'heat' ? _var.shapeOpacity(g) : 0.2; })
                   .style("filter", function(g) { return g === _node && _var.mode === 'heat' ? "url(#"+_var.shadowId+")" : ""; })
 
-                if(_var.mode === "bars") {
+                // CHeck if it's a pin
+                var isPin = _var.data.bars != null && _var.data.bars.barStyle != null && _var.data.bars.barStyle === 'pin';
+
+                if(source != null && source === 'shape') {
+
+                  var x = (_var.zoomTransform.x) + d3.mouse(nodeSel)[0] * _var.zoomTransform.k;
+                  var y = (_var.zoomTransform.y) + d3.mouse(nodeSel)[1] * _var.zoomTransform.k;
+
+                  // Get left and top positions
+                  var left = _var.wrap.node().getBoundingClientRect().left + x;
+                  var top  = _var.wrap.node().getBoundingClientRect().top + y - 5;
+
+                } else {
 
                   // Get x and y values
                   var x = (_var.zoomTransform.x) + _var.projection([node.lon, node.lat])[0] * _var.zoomTransform.k;
                   var y = (_var.zoomTransform.y) + _var.projection([node.lon, node.lat])[1] * _var.zoomTransform.k;
-                  var isPin = _var.data.bars != null && _var.data.bars.barStyle != null && _var.data.bars.barStyle === 'pin';
 
                   // Get left and top positions
                   var left = _var.wrap.node().getBoundingClientRect().left + x;
                   var top  = _var.wrap.node().getBoundingClientRect().top + y - (_var.barHeight(node)*_var.zoomTransform.k) - (isPin ? (_var.pinRadius(node)*_var.zoomTransform.k) : 0) - 5;
 
-                  // Initialize tooltip object
-                  var tooltipObj = { properties: {} };
-
-                  // Set color
-                  tooltipObj.color = _var.mode === 'bars' ? _var.barColor(node) : _var.shapeColor(_node);
-
-                  // Set node attributes to tooltip obj
-                  Object.keys(node).forEach(function(k) { tooltipObj[k] = node[k]; });
-
-                  // Store shape properties for heat mode
-                  if(_var.mode === 'heat') { Object.keys(_node.properties).forEach(function(k) { tooltipObj.properties[k] = _node.properties[k]; }); }
-
-                  // Set bars component
-                  var tooltip = _var.data.tooltip == null ? {} : _var.data.tooltip;
-                  shared.visualComponents.tooltip()
-                    ._var(_var)
-                    .body(tooltip[_var.mode] != null && tooltip[_var.mode].body != null ? tooltip[_var.mode].body : "")
-                    .borderColor(tooltip.borderColor != null ? tooltip.borderColor : (_var.mode === 'bars' ? _var.barColor(node) : _var.shapeColor(_node)))
-                    .backgroundColor(tooltip.backgroundColor != null ? tooltip.backgroundColor : null)
-                    .hasImg(tooltip[_var.mode] != null && tooltip[_var.mode].hasImg === true)
-                    .left(left)
-                    .muted(tooltip[_var.mode] != null && tooltip[_var.mode].muted != null && tooltip[_var.mode].muted === true)
-                    .obj(tooltipObj)
-                    .title(tooltip[_var.mode] != null && tooltip[_var.mode].title != null ? tooltip[_var.mode].title : "")
-                    .top(top)
-                    .run();
-
                 }
+
+                // Initialize tooltip object
+                var tooltipObj = { properties: {} };
+
+                // Set color
+                tooltipObj.color = _var.mode === 'bars' ? _var.barColor(node) : _var.shapeColor(_node);
+
+                // Set node attributes to tooltip obj
+                Object.keys(node).forEach(function(k) { tooltipObj[k] = node[k]; });
+
+                // Store shape properties for heat mode
+                if(_var.mode === 'heat') { Object.keys(_node.properties).forEach(function(k) { tooltipObj.properties[k] = _node.properties[k]; }); }
+
+                // Set bars component
+                var tooltip = _var.data.tooltip == null ? {} : _var.data.tooltip;
+                shared.visualComponents.tooltip()
+                  ._var(_var)
+                  .body(tooltip[_var.mode] != null && tooltip[_var.mode].body != null ? tooltip[_var.mode].body : "")
+                  .borderColor(tooltip.borderColor != null ? tooltip.borderColor : (_var.mode === 'bars' ? _var.barColor(node) : _var.shapeColor(_node)))
+                  .backgroundColor(tooltip.backgroundColor != null ? tooltip.backgroundColor : null)
+                  .hasImg(tooltip[_var.mode] != null && tooltip[_var.mode].hasImg === true)
+                  .left(left)
+                  .muted(tooltip[_var.mode] != null && tooltip[_var.mode].muted != null && tooltip[_var.mode].muted === true)
+                  .obj(tooltipObj)
+                  .title(tooltip[_var.mode] != null && tooltip[_var.mode].title != null ? tooltip[_var.mode].title : "")
+                  .top(top)
+                  .run();
+
+
 
                 // Initialize tooltipTable object
                 var tooltipTableObj = { properties: {} };
@@ -171,7 +185,7 @@ module.exports = function () {
   };
 
   // Exposicao de variaveis globais
-  ['_var','action','components','node','nodeSel'].forEach(function (key) {
+  ['_var','action','components','node','nodeSel','source'].forEach(function (key) {
 
     // Attach variables to validation function
     validate[key] = function (_) {

@@ -1,8 +1,8 @@
 {
   "data": {
-    "backgroundColor": "#190f1f",
+    "backgroundColor": "transparent",
     "transform": "scale(1)",
-
+    "scale": 1,
     "filterBubble": {
       "style": {
         "top": "calc(50% - 55px)",
@@ -81,7 +81,6 @@
         ]
       }
     },
-
     "attributeAnalysis": {
       "title": {
         "style": {
@@ -128,6 +127,17 @@
           }
         }
       ],
+      "placeholderBubble": {
+        "style": {
+          "top": "calc(50% - 90px)",
+          "left": "calc(50% - 160px)",
+          "size": "12px",
+          "backgroundColor": "#f7b5c9",
+          "borderColor": "#f7b5c9",
+          "borderRadius": "50%",
+          "zIndex": "1004"
+        }
+      },
       "valuesBubble": {
         "style": {
           "top": "calc(50% - 130px)",
@@ -147,10 +157,10 @@
         "content": {
           "type": "1",
           "text": [
-            "<span style='color:#FFF; font-size: 12px; margin: 0px 14px 0px 17px; display:block; float:left;'>Color: </span><span class='overflow-ellipsis' style='font-size:12px; color:#be527f; width:45px;'>Black</span>",
-            "<span style='color:#FFF; font-size: 12px; margin: 0px 17px 0px 17px; display:block; float:left;'>Print: </span><span class='overflow-ellipsis' style='font-size:12px; color:#be527f; width:45px;' title='H17-035-08 - C002 PrplPetl 3KL'>H17-035-08 - C002 PrplPetl 3KL</span>",
-            "<span style='color:#FFF; font-size: 12px; margin: 0px 10px 0px 17px; display:block; float:left;'>Fabric:</span><span class='overflow-ellipsis' style='font-size:12px; color:#be527f; width:45px;'>Smooth</span>",
-            "<span style='color:#FFF; font-size: 10px; width: 100%; text-align: center; display: block; margin-top:5px;'>Top Trending <img src='/assets/images/top-trending-pink.png' style='display:inline-block; height:10px;'/></span>"
+            "<span style=\"color:#FFF; font-size: 12px; margin: 0px 14px 0px 17px; display:block; float:left;\">Color:</span><span class='overflow-ellipsis' style=\"font-size:  12px; color:#be527f; width:45px;\" title=\"Black 093\">Black 093</span>",
+            "<span style=\"color:#FFF; font-size: 12px; margin: 0px 14px 0px 17px; display:block; float:left;\">Prints:</span><span class='overflow-ellipsis' style=\"font-size:  12px; color:#be527f; width:45px;\" title=\"H17-035-08 - C002 PrplPetl 3KL\">H17-035-08 - C002 PrplPetl 3KL</span>",
+            "<span style=\"color:#FFF; font-size: 12px; margin: 0px 14px 0px 17px; display:block; float:left;\">Fabric:</span><span class='overflow-ellipsis' style=\"font-size:  12px; color:#be527f; width:45px;\" title=\"SMOOTH\">SMOOTH</span>",
+            "<span style=\"color:#FFF; font-size: 10px; width: 100%; text-align: center; display: block; margin-top:5px;\">Top Trending <img src='/assets/images/top-trending-pink.png' style=\"display:inline-block; height:10px;\"/></span>"
           ]
         }
       },
@@ -164,12 +174,11 @@
           "borderRadius": "50%",
           "color": "#FFF",
           "zIndex": "1004",
-          "hoveredTop": "calc(50% - 240px)",
-          "hoveredLeft": "calc(50% - 425px)",
-          "hoveredSize": "305px",
+          "hoveredTop": "calc(50% - 235px)",
+          "hoveredLeft": "calc(50% - 416px)",
+          "hoveredSize": "300px",
           "hoveredBackgroundColor": "#1a1620",
           "hoveredBorderColor": "#504859"
-
         },
         "content": {
           "type": "1",
@@ -182,56 +191,44 @@
             "color": "#FFF",
             "textAlign": "left",
             "trPadding": "2px 0px",
-            "tdPadding": "4px 5px",
+            "tdPadding": "2px 5px",
             "width": "auto",
             "data": [
               [
-                "<span style='font-size:12px;'>Att. Trends</span>",
-                "<span style='font-size:12px; width:100%; text-align:center;'>Top<img src='/assets/images/top-trending-green.png' style='display:inline-block; margin-left:5px; width:14px;'/></span>",
-                "<span style='font-size:12px; width:100%; text-align:center;'>Bottom<img src='/assets/images/bottom-trending-red.png' style='display:inline-block; margin-left:5px; width:14px;'/></span>"
+                "<span style=\"font-size:12px;\">Attributes</span>",
+                "<span style=\"font-size:12px; width:100%; text-align:center;\">Top<img src=\"/assets/images/top-trending-green.png\" style=\"display:inline-block; margin-left:5px; width:14px;\"/></span>",
+                "<span style=\"font-size:12px; width:100%; text-align:center;\">Bottom<img src=\"/assets/images/bottom-trending-red.png\" style=\"display:inline-block; margin-left:5px; width:14px;\"/></span>"
               ],
               [
-                "<span style='font-size:12px;'>Color (Solid)</span>",
-                "<span style='font-size:12px; width:100%; text-align:center; color:#e95c83;'>Black</span>",
-                "<span style='font-size:12px; width:100%; text-align:center; color:#e95c83;'>Purple</span>"
+                "<span style=\"font-size:12px;\">Color(Solid)</span>",
+                "<span style=\"font-size:12px; width:100%; text-align:center; color:#e95c83;\">Black 093</span>",
+                "<span style=\"font-size:12px; width:100%; text-align:center; color:#e95c83;\">GENERIC NO COLOR 38</span>"
               ],
               [
-                "<span style='font-size:12px;'>Color (Print)</span>",
-                "<span style='font-size:12px; width:100%; text-align:center; color:#e95c83;'>Logo</span>",
-                "<span style='font-size:12px; width:100%; text-align:center; color:#e95c83;'>Floral</span>"
+                "<span style=\"font-size:12px;\">Color(Prints)</span>",
+                "<span style=\"font-size:12px; width:100%; text-align:center; color:#e95c83;\">H17-035-08 - C002 PrplPetl 3KL</span>",
+                "<span style=\"font-size:12px; width:100%; text-align:center; color:#e95c83;\">117099 FloralWave C707 RsyMve</span>"
               ],
               [
-                "<span style='font-size:12px;'>Size</span>",
-                "<span style='font-size:12px; width:100%; text-align:center; color:#e95c83;'>Medium</span>",
-                "<span style='font-size:12px; width:100%; text-align:center; color:#e95c83;'>Small</span>"
+                "<span style=\"font-size:12px;\">Size</span>",
+                "<span style=\"font-size:12px; width:100%; text-align:center; color:#e95c83;\">null</span>",
+                "<span style=\"font-size:12px; width:100%; text-align:center; color:#e95c83;\">AA/A</span>"
               ],
               [
-                "<span style='font-size:12px;'>Fabric</span>",
-                "<span style='font-size:12px; width:100%; text-align:center; color:#e95c83;'>Smooth</span>",
-                "<span style='font-size:12px; width:100%; text-align:center; color:#e95c83;'>Nylon</span>"
+                "<span style=\"font-size:12px;\">Fabric</span>",
+                "<span style=\"font-size:12px; width:100%; text-align:center; color:#e95c83;\">SMOOTH</span>",
+                "<span style=\"font-size:12px; width:100%; text-align:center; color:#e95c83;\">FLANNEL</span>"
               ],
               [
-                "<span style='font-size:12px;'>Silhouette</span>",
-                "<span style='font-size:12px; width:100%; text-align:center; color:#e95c83;'>Push-Up</span>",
-                "<span style='font-size:12px; width:100%; text-align:center; color:#e95c83;'>Lightly Lined</span>"
+                "<span style=\"font-size:12px;\">Silhouette</span>",
+                "<span style=\"font-size:12px; width:100%; text-align:center; color:#e95c83;\">unknown</span>",
+                "<span style=\"font-size:12px; width:100%; text-align:center; color:#e95c83;\">unknown</span>"
               ]
             ]
           }
         }
-      },
-      "placeholderBubble": {
-        "style": {
-          "top": "calc(50% - 90px)",
-          "left": "calc(50% - 160px)",
-          "size": "12px",
-          "backgroundColor": "#f7b5c9",
-          "borderColor": "#f7b5c9",
-          "borderRadius": "50%",
-          "zIndex": "1004"
-        }
       }
     },
-
     "pricePointAnalysis": {
       "title": {
         "style": {
@@ -268,10 +265,10 @@
         "content": {
           "type": "1",
           "text": [
-            "<span style='color:#FFF; font-size: 11px; margin-right: 10px;'>Min Basket</span><span style='font-size: 11px; color:#be527f;'>$21</span>",
-            "<span style='color:#FFF; font-size: 11px; margin-right: 10px;'>Avg Basket</span><span style='font-size: 11px; color:#be527f;'>$34</span>",
-            "<span style='color:#FFF; font-size: 11px; margin-right: 10px;'>Max Basket</span><span style='font-size: 11px; color:#be527f;'>$95</span>",
-            "<span style='color:#be527f; font-size: 16px; height: 22px; line-height: 26px; display: inline-block;'>$15-$24.9</span>",
+            "<span style='color:#FFF; font-size: 11px; margin-right: 10px;'>Min Basket</span><span style='font-size: 11px; color:#be527f;'>$ 0.1</span>",
+            "<span style='color:#FFF; font-size: 11px; margin-right: 10px;'>Avg Basket</span><span style='font-size: 11px; color:#be527f;'>$ 61.5</span>",
+            "<span style='color:#FFF; font-size: 11px; margin-right: 10px;'>Max Basket</span><span style='font-size: 11px; color:#be527f;'>$ 896</span>",
+            "<span style='color:#be527f; font-size: 16px; height: 22px; line-height: 26px; display: inline-block;'><$18</span>",
             "<span style='color:#FFF; font-size: 11px;'>Top Price Point</span>"
           ]
         }
@@ -295,21 +292,23 @@
         "content": "/assets/images/gViz/visualizations/diwo-visual-bubble-poet-context/circle.png",
         "hoveredContent": {
           "title": "",
+          "toggle": {
+            "isVisible": false
+          },
           "legend": {
             "isVisible": false
           },
           "tooltip": {
-            "hasPercentage": true,
+            "hasPercentage": false,
             "title": "{{name}}"
           },
           "attrs": {
             "radius": 15,
             "muted": false,
-            "grid": false,
-            "scale": 1
+            "grid": false
           },
           "x1": {
-            "title": "",
+            "title": "Estimated External Assets",
             "value": "sum",
             "color": "#FFF",
             "prefix": "$",
@@ -321,43 +320,30 @@
               "id": "id-1",
               "name": "$35-$45",
               "color": "#FFF",
-              "nameColor": "#efabbe",
-              "percentageColor": "#FFF",
-              "lineColor": "#FFF",
               "x1": 40
             },
             {
               "id": "id-2",
               "name": "$18-$25",
               "color": "#fde9f2",
-              "nameColor": "#efabbe",
-              "percentageColor": "#FFF",
-              "lineColor": "#FFF",
               "x1": 28
             },
             {
               "id": "id-3",
               "name": "$45-$60",
               "color": "#fbd9e8",
-              "nameColor": "#efabbe",
-              "percentageColor": "#FFF",
-              "lineColor": "#FFF",
               "x1": 22
             },
             {
               "id": "id-4",
               "name": "$25-$35",
               "color": "#f9c5da",
-              "nameColor": "#efabbe",
-              "percentageColor": "#FFF",
-              "lineColor": "#FFF",
               "x1": 10
             }
           ]
         }
       }
     },
-
     "salesStockAnalysis": {
       "title": {
         "style": {
@@ -370,112 +356,6 @@
         "content": "Sales & Stock </br> Analysis"
       },
       "bubbles": [
-        {
-          "style": {
-            "top": "calc(50% - 55px)",
-            "left": "calc(50% - 235px)",
-            "size": "86px",
-            "imageSize": "30px",
-            "backgroundColor": "#1a1620",
-            "borderColor": "#4b4255",
-            "borderRadius": "50%",
-            "color": "#FFF",
-            "zIndex": "1004"
-          },
-          "content": {
-            "type": "1",
-            "image": "/assets/images/watch/icon_legging.png",
-            "bottomText": "<div class='overflow-ellipsis' data-clamp='2' style='margin-left:10px; width:66px; font-size: 10px;' title='PK Bling FL Flat WB Legging'>PK Bling FL Flat WB Legging</div>",
-            "topNumber": "<span style='background-color:#e95b86; color:#FFF; padding: 2px 5px 1px; font-size:10px; border-radius:50%'>1</span>",
-            "circleConnectors": [
-              {
-                "style": {
-                  "top": "calc(50% - 62px)",
-                  "left": "calc(50% - 242px)",
-                  "size": "100px",
-                  "borderColor": "#756886",
-                  "clipPath": "polygon(0% 10%, 50% 50%, 0% 35%, -2% 100%)",
-                  "transform": "rotate(-40deg)",
-                  "zIndex": 1003
-                }
-              }
-            ],
-            "connectors": [
-              {
-                "style": {
-                  "borderColor": "#756886",
-                  "size": "20px",
-                  "top": "calc(50% + -10px)",
-                  "left": "calc(50% - 261px)",
-                  "transform": "rotate(-4deg)",
-                  "zIndex": 1003
-                }
-              },
-              {
-                "style": {
-                  "borderColor": "#756886",
-                  "size": "41px",
-                  "top": "calc(50% + 12px)",
-                  "left": "calc(50% - 278px)",
-                  "transform": "rotate(-14deg)",
-                  "zIndex": 1003
-                }
-              }
-            ],
-            "sideBubbles": [
-              {
-                "style": {
-                  "top": "calc(50% - 20px)",
-                  "left": "calc(50% - 285px)",
-                  "size": "24px",
-                  "imageSize": "20px",
-                  "backgroundColor": "#fa79ae",
-                  "borderColor": "#fa79ae",
-                  "borderRadius": "50%",
-                  "color": "#FFF",
-                  "zIndex": "1004",
-                  "hoveredTop": "calc(50% - 110px)",
-                  "hoveredLeft": "calc(50% - 295px)",
-                  "hoveredSize": "70px",
-                  "hoveredBackgroundColor": "#1a1620",
-                  "hoveredBorderColor": "#413a4b"
-                },
-                "content": "<div style='margin-top: 1px; font-size:11px; margin-left: -1px;'>2</div>",
-                "hoveredContent": {
-                  "type": "1",
-                  "image": "/assets/images/watch/icon_legging.png",
-                  "bottomText": "<div class='overflow-ellipsis' data-clamp='2' style='margin-left:10px; width:50px; font-size: 9px; line-height: 11px; height: 22px;' title='PK NB FL Flat WB Legging'>PK NB FL Flat WB Legging</div>",
-                  "topNumber": "<span style='background-color:#e95b86; color:#FFF; padding: 1px 4px 0px; font-size:8px; border-radius:50%'>2</span>"
-                }
-              },
-              {
-                "style": {
-                  "top": "calc(50% + 10px)",
-                  "left": "calc(50% - 295px)",
-                  "size": "18px",
-                  "imageSize": "20px",
-                  "backgroundColor": "#f7b5c9",
-                  "borderColor": "#f7b5c9",
-                  "borderRadius": "50%",
-                  "color": "#FFF",
-                  "zIndex": "1004",
-                  "hoveredTop": "calc(50% - 50px)",
-                  "hoveredLeft": "calc(50% - 300px)",
-                  "hoveredSize": "70px",
-                  "hoveredBackgroundColor": "#1a1620",
-                  "hoveredBorderColor": "#413a4b"
-                },
-                "content": "<div style='margin-top: 1px; font-size:10px; margin-left: -1px;'>3</div>",
-                "hoveredContent": {
-                  "type": "1",
-                  "image": "/assets/images/watch/icon_legging.png",
-                  "bottomText": "<div class='overflow-ellipsis' data-clamp='2' style='margin-left:10px; width:50px; font-size: 9px; line-height: 11px; height: 22px;' title='PK Ultimate NB Legging'>PK Ultimate NB Legging</div>",
-                  "topNumber": "<span style='background-color:#f7b5c9; color:#FFF; padding: 1px 4px 0px; font-size:8px; border-radius:50%'>3</span>"
-                }
-              }
-            ]
-          }
-        },
         {
           "style": {
             "top": "calc(50% + 15px)",
@@ -491,7 +371,7 @@
           "content": {
             "type": "1",
             "image": "/assets/images/watch/icon_bra.png",
-            "bottomText": "<div class='overflow-ellipsis' data-clamp='2' style='margin-left:10px; width:66px; font-size: 10px;' title='PK WEW PU'>PK WEW PU</div>",
+            "bottomText": "VSX Spt Bra Raw Edge Max Support",
             "topNumber": "<span style='background-color:#71618d; color:#FFF; padding: 2px 5px 1px; font-size:10px; border-radius:50%'>1</span>",
             "circleConnectors": [
               {
@@ -550,7 +430,7 @@
                 "hoveredContent": {
                   "type": "1",
                   "image": "/assets/images/watch/icon_bra.png",
-                  "bottomText": "<div class='overflow-ellipsis' data-clamp='2' style='margin-left:10px; width:50px; font-size: 9px; line-height: 11px; height: 22px;' title='PK WEW LL'>PK WEW LL</div>",
+                  "bottomText": "<div class='overflow-ellipsis' data-clamp='2' style='margin-left:10px; width:50px; font-size: 9px; line-height: 11px; height: 22px;' title='Pkpush 15399 Wew Pu Soft'> Pkpush 15399 Wew Pu Soft</div>",
                   "topNumber": "<span style='background-color:#7b6c8e; color:#FFF; padding: 1px 4px 0px; font-size:8px; border-radius:50%'>2</span>"
                 }
               },
@@ -575,7 +455,7 @@
                 "hoveredContent": {
                   "type": "1",
                   "image": "/assets/images/watch/icon_bra.png",
-                  "bottomText": "<div class='overflow-ellipsis' data-clamp='2' style='margin-left:10px; width:50px; font-size: 9px; line-height: 11px; height: 22px;' title='PK WEW Super PU'>PK WEW Super PU</div>",
+                  "bottomText": "<div class='overflow-ellipsis' data-clamp='2' style='margin-left:10px; width:50px; font-size: 9px; line-height: 11px; height: 22px;' title='Bbv Ll Multiway Smooth'> Bbv Ll Multiway Smooth</div>",
                   "topNumber": "<span style='background-color:#bd96cf; color:#FFF; padding: 1px 4px 0px; font-size:8px; border-radius:50%'>3</span>"
                 }
               }
@@ -597,7 +477,7 @@
           "content": {
             "type": "1",
             "image": "/assets/images/watch/icon_pantie.png",
-            "bottomText": "<div class='overflow-ellipsis' data-clamp='2' style='margin-left:10px; width:66px; font-size: 10px;' title='Logo Hipster'>Logo Hipster</div>",
+            "bottomText": "<div class='overflow-ellipsis' data-clamp='2' style='margin-left:10px; width:50px; font-size: 9px; line-height: 11px; height: 22px;' title='Pkthong 14744 Shine No Show Thong'> Pkthong 14744 Shine No Show Thong</div>",
             "topNumber": "<span style='background-color:#e95b86; color:#FFF; padding: 2px 5px 1px; font-size:10px; border-radius:50%'>1</span>",
             "circleConnectors": [
               {
@@ -656,7 +536,7 @@
                 "hoveredContent": {
                   "type": "1",
                   "image": "/assets/images/watch/icon_pantie.png",
-                  "bottomText": "<div class='overflow-ellipsis' data-clamp='2' style='margin-left:10px; width:50px; font-size: 9px; line-height: 11px; height: 22px;' title='SLT Cheeky Cheeky'>SLT Cheeky Cheeky</div>",
+                  "bottomText": "<div class='overflow-ellipsis' data-clamp='2' style='margin-left:10px; width:50px; font-size: 9px; line-height: 11px; height: 22px;' title='Pkthong 19803 Logo Velvet Thong'> Pkthong 19803 Logo Velvet Thong</div>",
                   "topNumber": "<span style='background-color:#fa79ae; color:#FFF; padding: 1px 4px 0px; font-size:8px; border-radius:50%'>2</span>"
                 }
               },
@@ -681,17 +561,121 @@
                 "hoveredContent": {
                   "type": "1",
                   "image": "/assets/images/watch/icon_pantie.png",
-                  "bottomText": "<div class='overflow-ellipsis' data-clamp='2' style='margin-left:10px; width:50px; font-size: 9px; line-height: 11px; height: 22px;' title='Wide Logo Boyshort'>Wide Logo Boyshort</div>",
+                  "bottomText": "<div class='overflow-ellipsis' data-clamp='2' style='margin-left:10px; width:50px; font-size: 9px; line-height: 11px; height: 22px;' title='Pkthong 19803 Logo Velvet Thong'> Pkthong 19803 Logo Velvet Thong</div>",
                   "topNumber": "<span style='background-color:#f7b5c9; color:#FFF; padding: 1px 4px 0px; font-size:8px; border-radius:50%'>3</span>"
                 }
               }
             ]
-
+          }
+        },
+        {
+          "style": {
+            "top": "calc(50% - 55px)",
+            "left": "calc(50% - 235px)",
+            "size": "86px",
+            "imageSize": "30px",
+            "backgroundColor": "#1a1620",
+            "borderColor": "#4b4255",
+            "borderRadius": "50%",
+            "color": "#FFF",
+            "zIndex": "1004"
+          },
+          "content": {
+            "type": "1",
+            "image": "/assets/images/watch/icon_legging.png",
+            "bottomText": "162249 Denim Baseball Hat",
+            "topNumber": "<span style='background-color:#e95b86; color:#FFF; padding: 2px 5px 1px; font-size:10px; border-radius:50%'>1</span>",
+            "circleConnectors": [
+              {
+                "style": {
+                  "top": "calc(50% - 62px)",
+                  "left": "calc(50% - 242px)",
+                  "size": "100px",
+                  "borderColor": "#756886",
+                  "clipPath": "polygon(0% 10%, 50% 50%, 0% 35%, -2% 100%)",
+                  "transform": "rotate(-40deg)",
+                  "zIndex": 1003
+                }
+              }
+            ],
+            "connectors": [
+              {
+                "style": {
+                  "borderColor": "#756886",
+                  "size": "20px",
+                  "top": "calc(50% + -10px)",
+                  "left": "calc(50% - 261px)",
+                  "transform": "rotate(-4deg)",
+                  "zIndex": 1003
+                }
+              },
+              {
+                "style": {
+                  "borderColor": "#756886",
+                  "size": "41px",
+                  "top": "calc(50% + 12px)",
+                  "left": "calc(50% - 278px)",
+                  "transform": "rotate(-14deg)",
+                  "zIndex": 1003
+                }
+              }
+            ],
+            "sideBubbles": [
+              {
+                "style": {
+                  "top": "calc(50% - 20px)",
+                  "left": "calc(50% - 285px)",
+                  "size": "24px",
+                  "imageSize": "20px",
+                  "backgroundColor": "#fa79ae",
+                  "borderColor": "#fa79ae",
+                  "borderRadius": "50%",
+                  "color": "#FFF",
+                  "zIndex": "1004",
+                  "hoveredTop": "calc(50% - 110px)",
+                  "hoveredLeft": "calc(50% - 295px)",
+                  "hoveredSize": "70px",
+                  "hoveredBackgroundColor": "#1a1620",
+                  "hoveredBorderColor": "#413a4b"
+                },
+                "content": "<div style='margin-top: 1px; font-size:11px; margin-left: -1px;'>2</div>",
+                "hoveredContent": {
+                  "type": "1",
+                  "image": "/assets/images/watch/icon_legging.png",
+                  "bottomText": "<div class='overflow-ellipsis' data-clamp='2' style='margin-left:10px; width:50px; font-size: 9px; line-height: 11px; height: 22px;' title='119666 Knee High Sock Set'> 119666 Knee High Sock Set</div>",
+                  "topNumber": "<span style='background-color:#e95b86; color:#FFF; padding: 1px 4px 0px; font-size:8px; border-radius:50%'>2</span>"
+                }
+              },
+              {
+                "style": {
+                  "top": "calc(50% + 10px)",
+                  "left": "calc(50% - 295px)",
+                  "size": "18px",
+                  "imageSize": "20px",
+                  "backgroundColor": "#f7b5c9",
+                  "borderColor": "#f7b5c9",
+                  "borderRadius": "50%",
+                  "color": "#FFF",
+                  "zIndex": "1004",
+                  "hoveredTop": "calc(50% - 50px)",
+                  "hoveredLeft": "calc(50% - 300px)",
+                  "hoveredSize": "70px",
+                  "hoveredBackgroundColor": "#1a1620",
+                  "hoveredBorderColor": "#413a4b"
+                },
+                "content": "<div style='margin-top: 1px; font-size:10px; margin-left: -1px;'>3</div>",
+                "hoveredContent": {
+                  "type": "1",
+                  "image": "/assets/images/watch/icon_legging.png",
+                  "bottomText": "<div class='overflow-ellipsis' data-clamp='2' style='margin-left:10px; width:50px; font-size: 9px; line-height: 11px; height: 22px;' title='146945 Synthetic Low Shows'> 146945 Synthetic Low Shows</div>",
+                  "topNumber": "<span style='background-color:#f7b5c9; color:#FFF; padding: 1px 4px 0px; font-size:8px; border-radius:50%'>3</span>"
+                }
+              }
+            ]
           }
         }
       ]
     },
-
     "promotionAnalysis": {
       "title": {
         "style": {
@@ -725,7 +709,6 @@
         }
       }
     },
-
     "storeAnalysis": {
       "title": {
         "style": {
@@ -798,9 +781,18 @@
             "actions": {
               "isVisible": false
             },
+            "tooltip": {
+              "heat": {
+                "title": [ "{{properties.name}}" ],
+                "body": [ "<span class='metric'># Accounts</span><span class='number'>{{value}}</span>" ]
+              }
+            },
             "mode": "heat",
             "heat": {
-              "colors": ["#c73e68","#FFF"],
+              "colors": [
+                "#c73e68",
+                "#FFF"
+              ],
               "mapStrokeColor": "#1a1720",
               "shapeId": "abbr",
               "prefix": "",
@@ -813,71 +805,176 @@
               "grid": false,
               "zoom": false,
               "pan": false,
-              "hover": false
+              "hover": true,
+              "scale": 1
             },
             "data": {
               "heat": [
-                { "id": "al", "value": "100" },
-                { "id": "ak", "value": "200" },
-                { "id": "az", "value": "300" },
-                { "id": "ar", "value": "400" },
-                { "id": "ca", "value": "500" },
-                { "id": "co", "value": "600" },
-                { "id": "ct", "value": "700" },
-                { "id": "de", "value": "600" },
-                { "id": "fl", "value": "500" },
-                { "id": "ga", "value": "400" },
-                { "id": "hi", "value": "300" },
-                { "id": "id", "value": "200" },
-                { "id": "il", "value": "100" },
-                { "id": "in", "value": "200" },
-                { "id": "ia", "value": "300" },
-                { "id": "ks", "value": "400" },
-                { "id": "ky", "value": "500" },
-                { "id": "la", "value": "600" },
-                { "id": "me", "value": "700" },
-                { "id": "md", "value": "600" },
-                { "id": "ma", "value": "500" },
-                { "id": "mi", "value": "400" },
-                { "id": "mn", "value": "300" },
-                { "id": "ms", "value": "200" },
-                { "id": "mo", "value": "100" },
-                { "id": "mt", "value": "200" },
-                { "id": "ne", "value": "300" },
-                { "id": "nv", "value": "400" },
-                { "id": "nh", "value": "500" },
-                { "id": "nj", "value": "600" },
-                { "id": "nm", "value": "700" },
-                { "id": "ny", "value": "600" },
-                { "id": "nc", "value": "500" },
-                { "id": "nd", "value": "400" },
-                { "id": "oh", "value": "300" },
-                { "id": "ok", "value": "200" },
-                { "id": "or", "value": "100" },
-                { "id": "pa", "value": "100" },
-                { "id": "ri", "value": "100" },
-                { "id": "sc", "value": "100" },
-                { "id": "sd", "value": "100" },
-                { "id": "tn", "value": "100" },
-                { "id": "tx", "value": "100" },
-                { "id": "ut", "value": "100" },
-                { "id": "vt", "value": "100" },
-                { "id": "va", "value": "100" },
-                { "id": "wa", "value": "100" },
-                { "id": "wv", "value": "100" },
-                { "id": "wy", "value": "100" }
+                {
+                  "id": "fl",
+                  "value": "59284.57"
+                },
+                {
+                  "id": "ct",
+                  "value": "2337.86"
+                },
+                {
+                  "id": "nv",
+                  "value": "5251.97"
+                },
+                {
+                  "id": "ky",
+                  "value": "2360.71"
+                },
+                {
+                  "id": "nh",
+                  "value": "10890.39"
+                },
+                {
+                  "id": "mo",
+                  "value": "9633.89"
+                },
+                {
+                  "id": "il",
+                  "value": "14842.79"
+                },
+                {
+                  "id": "ia",
+                  "value": "9874.09"
+                },
+                {
+                  "id": "hi",
+                  "value": "3567.96"
+                },
+                {
+                  "id": "sc",
+                  "value": "5431.23"
+                },
+                {
+                  "id": "wa",
+                  "value": "15599.38"
+                },
+                {
+                  "id": "ny",
+                  "value": "45627.04"
+                },
+                {
+                  "id": "ma",
+                  "value": "14313.75"
+                },
+                {
+                  "id": "ca",
+                  "value": "26391.88"
+                },
+                {
+                  "id": "dc",
+                  "value": "1246.87"
+                },
+                {
+                  "id": "wi",
+                  "value": "24835.44"
+                },
+                {
+                  "id": "va",
+                  "value": "16170.48"
+                },
+                {
+                  "id": "az",
+                  "value": "1186.44"
+                },
+                {
+                  "id": "in",
+                  "value": "10105.59"
+                },
+                {
+                  "id": "oh",
+                  "value": "24733.47"
+                },
+                {
+                  "id": "la",
+                  "value": "3427.15"
+                },
+                {
+                  "id": "nc",
+                  "value": "13974.03"
+                },
+                {
+                  "id": "pa",
+                  "value": "19000.7"
+                },
+                {
+                  "id": "ks",
+                  "value": "3751.35"
+                },
+                {
+                  "id": "wv",
+                  "value": "3640.39"
+                },
+                {
+                  "id": "mi",
+                  "value": "37857.95"
+                },
+                {
+                  "id": "md",
+                  "value": "9846.6"
+                },
+                {
+                  "id": "tx",
+                  "value": "60109.66"
+                },
+                {
+                  "id": "al",
+                  "value": "3112.28"
+                },
+                {
+                  "id": "wy",
+                  "value": "2116.71"
+                },
+                {
+                  "id": "or",
+                  "value": "20099.85"
+                },
+                {
+                  "id": "co",
+                  "value": "32566.04"
+                },
+                {
+                  "id": "mt",
+                  "value": "2049.38"
+                },
+                {
+                  "id": "nj",
+                  "value": "13962.71"
+                },
+                {
+                  "id": "nd",
+                  "value": "10502.20"
+                },
+                {
+                  "id": "ga",
+                  "value": "15541.91"
+                },
+                {
+                  "id": "mn",
+                  "value": "5993.05"
+                }
               ]
             }
           }
         }
       }
     },
-
     "connectors": "#e96293",
     "backgroundBubbles": {
       "backgroundColor": "#302c36",
       "borderColor": "#302c36",
       "opacity": 0.2
+    },
+    "customerAnalysis": null,
+    "performance": {
+      "Sales": "600K",
+      "Units": "40K",
+      "Profitability": "400K"
     }
   }
 }

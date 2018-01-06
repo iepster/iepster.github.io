@@ -262,7 +262,7 @@ module.exports = function() {
 
               // Set sizes
               d.bbox._width = d.bbox.width + 6 * _var.attrs.offset.y;
-              d.bbox._height = d.bbox.height + _var.attrs.offset.x;
+              d.bbox._height = d.bbox.height*2 + 6 + _var.attrs.offset.x;
             }
 
             return d.bbox;

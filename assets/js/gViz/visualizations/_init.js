@@ -14,6 +14,7 @@ module.exports = {
   hierarchicalBars: {
     horizontal: require('./hierarchical-bars/horizontal/_init.js')
   },
+  sparkline: require('./sparkline/_init.js'),
   lineGraph: require('./line-graph/_init.js'),
   linearLine: require('./linear-line/_init.js'),
   mapHeatBars: require('./map-heat-bars/_init.js'),
