@@ -125,9 +125,9 @@ module.exports = function () {
             return (_var.data.bars != null && _var.data.bars.barWidth != null ? _var.data.bars.barWidth : 3) / _var.getZoomTransform();
           }
 
-          // Set bottom bar y
+          // Set bar y
           _var.barY = function(d) {
-            return _var.bottomBarHeight(d) - _var.barHeight(d);;
+            return - (_var.bottomBarHeight(d) + _var.barHeight(d));
           }
 
           // Set bottom bar height
