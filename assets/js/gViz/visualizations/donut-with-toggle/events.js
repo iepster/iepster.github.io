@@ -99,9 +99,9 @@ module.exports = function () {
                 .attr('text-anchor', 'middle')
                 .text(node.data[_var.metric] != null ? _var.format(+node.data[_var.metric]) : "No value")
                 .style('opacity', 0)
+                .style('font-size', _var.data[_var.metric].valueSize != null ? _var.data[_var.metric].valueSize : "22px")
                 .transition()
                   .style('opacity', 1)
-
 
               // Draw center percentage
               var centerPercentage = _var.g.selectAll("text.center-percentage").data(!(_var.data.tooltip.hasPercentage != null && _var.data.tooltip.hasPercentage === false) ? [node] : []);
@@ -111,8 +111,10 @@ module.exports = function () {
                 .attr('x', 0)
                 .attr('y', node.data.img == null || node.data.img === '' ? 55 : 95)
                 .attr('text-anchor', 'middle')
-                .text(node.data.percentage == null || node.data.percentage === "" ? (node.data[_var.metric] != null ? d3.format('.2')(+node.data[_var.metric] / +_var.data[_var.metric].total * 100) + "%" : "No value") : node.data.percentage )
+                .text(node.data.percentage == null || node.data.percentage === "" ? (node.data[_var.metric] != null ? d3.format(".2%")(+node.data[_var.metric] / +_var.data[_var.metric].total) : "No value") : node.data.percentage )
                 .style('opacity', 0)
+                .style('fill', _var.data[_var.metric].percentageColor != null ? _var.data[_var.metric].percentageColor : "#444")
+                .style('font-size', _var.data[_var.metric].percentageSize != null ? _var.data[_var.metric].percentageSize : "18px")
                 .transition()
                   .style('opacity', 1)
 
@@ -157,6 +159,7 @@ module.exports = function () {
                 .attr('y', 20)
                 .attr('text-anchor', 'middle')
                 .text(_var.data != null && node != null ? node._value : "No value")
+                .style('font-size', _var.data[_var.metric].valueSize != null ? _var.data[_var.metric].valueSize : "22px")
                 .style('opacity', 0)
                 .transition()
                   .style('opacity', 1)
@@ -170,6 +173,8 @@ module.exports = function () {
                 .attr('y', 55)
                 .attr('text-anchor', 'middle')
                 .style('opacity', 0)
+                .style('fill', _var.data[_var.metric].percentageColor != null ? _var.data[_var.metric].percentageColor : "#444")
+                .style('font-size', _var.data[_var.metric].percentageSize != null ? _var.data[_var.metric].percentageSize : "18px")
                 .transition()
                   .style('opacity', 1)
 

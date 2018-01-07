@@ -72,8 +72,24 @@ module.exports = function () {
             stateLabelsAbbr
               .attr('text-anchor', "middle")
               .attr('font-size', _var.labelStateSize)
-              .attr('x', function(d) { return _var.path.centroid(d)[0]; })
-              .attr('y', function(d) { return _var.path.centroid(d)[1]; })
+              .attr('x', function(d) {
+                var offset = 0;
+                if(d.properties.abbr === 'de') { offset = 3; }
+                else if(d.properties.abbr === 'ri') { offset = 2; }
+                return _var.path.centroid(d)[0] + offset;
+              })
+              .attr('y', function(d) {
+                var offset = 0;
+                if(d.properties.abbr === 'md') { offset = -5; }
+                else if(d.properties.abbr === 'dc') { offset = 5; }
+                else if(d.properties.abbr === 'de') { offset = 2; }
+                else if(d.properties.abbr === 'vt') { offset = -8; }
+                else if(d.properties.abbr === 'nh') { offset = 4; }
+                else if(d.properties.abbr === 'ct') { offset = 3; }
+                else if(d.properties.abbr === 'ma') { offset = -2; }
+                else if(d.properties.abbr === 'ri') { offset = 2; }
+                return _var.path.centroid(d)[1] + offset;
+              })
               .attr('dy', _var.labelStateDy )
               .text(function(d) { return d.properties.abbr.toUpperCase(); })
 

@@ -38,6 +38,8 @@ module.exports = function () {
           // Set shapes and bars
           var shapes = _var.g.select('.chart-elements').selectAll('.map-shape');
           var bars   = _var.g.select('.chart-elements').selectAll('.bar, .bottom-bar, .bar-circle');
+          var pointEls = _var.g.select('.chart-elements').selectAll('.point-element');
+          var points = _var.g.select('.chart-elements').selectAll('.point');
 
           // Store node
           _node = node;
@@ -64,6 +66,13 @@ module.exports = function () {
                   .style('opacity', function(g) { return g === _node || _var.mode !== 'heat' ? _var.shapeOpacity(g) : 0.2; })
                   .style("filter", function(g) { return g === _node && _var.mode === 'heat' ? "url(#"+_var.shadowId+")" : ""; })
 
+                // Show / Hide point groups
+                pointEls
+                  .style('display', function(g) { return g.id === node.id && node.draggable != null && node.draggable === true ? 'block' : 'none'; })
+
+                // Fade points
+                points.transition().style("filter", function(g) { return g === node ? "url(#"+_var.shadowId+")" : ""; })
+
                 // CHeck if it's a pin
                 var isPin = _var.data.bars != null && _var.data.bars.barStyle != null && _var.data.bars.barStyle === 'pin';
 
@@ -74,7 +83,7 @@ module.exports = function () {
 
                   // Get left and top positions
                   var left = _var.wrap.node().getBoundingClientRect().left + x;
-                  var top  = _var.wrap.node().getBoundingClientRect().top + y - 5;
+                  var top  = _var.wrap.node().getBoundingClientRect().top + y - 15;
 
                 } else {
 
@@ -114,8 +123,6 @@ module.exports = function () {
                   .title(tooltip[_var.mode] != null && tooltip[_var.mode].title != null ? tooltip[_var.mode].title : "")
                   .top(top)
                   .run();
-
-
 
                 // Initialize tooltipTable object
                 var tooltipTableObj = { properties: {} };
@@ -159,6 +166,8 @@ module.exports = function () {
               // Reset opacity and filter
               bars.transition().style('opacity', 1).style("filter", "")
               shapes.transition().style('opacity', _var.shapeOpacity).style("filter", "")
+              pointEls.style('display', 'none')
+              points.transition().style("filter", "")
 
               // Hide tooltip
               shared.visualComponents.tooltip()

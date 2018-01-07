@@ -118,6 +118,7 @@ module.exports = function () {
             .attr('text-anchor', 'middle')
             .text(_var.data != null && node != null ? node._value : "No value")
             .style('opacity', 0)
+            .style('font-size', _var.data[_var.metric].valueSize != null ? _var.data[_var.metric].valueSize : "22px")
             .transition()
               .style('opacity', 1)
 
@@ -130,7 +131,9 @@ module.exports = function () {
             .attr('y', 55)
             .attr('text-anchor', 'middle')
             .style('opacity', 0)
-            .text(function(d) { console.log(d); return d; })
+            .style('fill', _var.data[_var.metric].percentageColor != null ? _var.data[_var.metric].percentageColor : "#444")
+            .style('font-size', _var.data[_var.metric].percentageSize != null ? _var.data[_var.metric].percentageSize : "18px")
+            .text(function(d) { return d; })
             .transition()
               .style('opacity', 1)
 

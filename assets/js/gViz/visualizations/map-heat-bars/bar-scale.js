@@ -32,7 +32,7 @@ module.exports = function () {
 
           // Initialize scale
           _var.barMaxHeight = 10 + _var.data.bars != null && !isNaN(+_var.data.bars.barMaxHeight) ? _var.data.bars.barMaxHeight : _var.height * .15;
-          _var.barScale = d3.scaleLinear().range([_var.barMaxHeight, 10]);
+          _var.barScale = d3.scaleLinear().range([10, _var.barMaxHeight]);
 
           // Define aux variables
           var min = null,
@@ -56,7 +56,7 @@ module.exports = function () {
           var diff = Math.abs(max - min) === 0 ? Math.abs(max * 0.1) : Math.abs(max - min) * 0.05;
 
           // Set x domain
-          _var.barBounds = [min, max];
+          _var.barBounds = [(min == 0 ? min : min - diff), max + diff];
           _var.barScale.domain(_var.barBounds);
 
           // Set format

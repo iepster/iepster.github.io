@@ -42,7 +42,7 @@ module.exports = function () {
           // Using the path determine the bounds of the current map and use
           // these to determine better values for the scale and translation
           var b = _var.path.bounds(_var.geoData);
-          var s = 0.95 / Math.max((b[1][0] - b[0][0]) / _var.width, (b[1][1] - b[0][1]) / _var.height);
+          var s = 1 / Math.max((b[1][0] - b[0][0]) / _var.width, (b[1][1] - b[0][1]) / _var.height);
           var t = [(_var.width - s * (b[1][0] + b[0][0])) / 2, (_var.height - s * (b[1][1] + b[0][1])) / 2];
 
           // Update projection
@@ -86,8 +86,24 @@ module.exports = function () {
               stateLabelsAbbr
                 .attr('text-anchor', "middle")
                 .attr('font-size', _var.labelStateSize)
-                .attr('x', function(d) { return _var.path.centroid(d)[0]; })
-                .attr('y', function(d) { return _var.path.centroid(d)[1]; })
+                .attr('x', function(d) {
+                  var offset = 0;
+                  if(d.properties.abbr === 'de') { offset = 3; }
+                  else if(d.properties.abbr === 'ri') { offset = 2; }
+                  return _var.path.centroid(d)[0] + offset;
+                })
+                .attr('y', function(d) {
+                  var offset = 0;
+                  if(d.properties.abbr === 'md') { offset = -5; }
+                  else if(d.properties.abbr === 'dc') { offset = 5; }
+                  else if(d.properties.abbr === 'de') { offset = 2; }
+                  else if(d.properties.abbr === 'vt') { offset = -8; }
+                  else if(d.properties.abbr === 'nh') { offset = 4; }
+                  else if(d.properties.abbr === 'ct') { offset = 3; }
+                  else if(d.properties.abbr === 'ma') { offset = -2; }
+                  else if(d.properties.abbr === 'ri') { offset = 2; }
+                  return _var.path.centroid(d)[1] + offset;
+                })
                 .attr('dy', _var.labelStateDy )
                 .text(function(d) { return d.properties.abbr.toUpperCase(); })
 
@@ -190,6 +206,7 @@ module.exports = function () {
             .each(function (e, i) {
 
               // Initialize flags
+              var isDraggable = e.draggable != null && e.draggable === true;
               var isPin = _var.data.bars != null && _var.data.bars.barStyle != null && _var.data.bars.barStyle === 'pin';
 
               // Draw bottom bars
@@ -226,6 +243,50 @@ module.exports = function () {
                 .attr('cy', _var.pinY)
                 .attr('fill', _var.barColor)
                 .style('cursor', 'pointer')
+
+              // Create points/arrows groups
+              var pointEls = d3.select(this).selectAll(".point-element.element").data(isDraggable ? [e] : []);
+              pointEls.exit().remove();
+              pointEls = pointEls.enter().append("g").attr("class", "point-element element").merge(pointEls);
+              pointEls.style('cursor', 'pointer').style('display', 'none').each(function(pg) {
+
+                // Create point
+                var points = d3.select(this).selectAll(".point.element").data([pg]);
+                points.exit().remove();
+                points = points.enter().append("path").attr("class", "point element").merge(points);
+                points.transition().duration(200)
+                  .attr("d", function(d) { return _var.pointPath(d); })
+                  .attr("fill", _var.draggableColor)
+
+                // Create point arrows for draggable lines
+                var arrows = d3.select(this).selectAll(".arrow.element").data([pg]);
+                arrows.exit().remove();
+                arrows = arrows.enter().append("path").attr("class", "arrow element").merge(arrows);
+                arrows.transition().duration(200)
+                  .attr("d", function(d) { return _var.arrowsPath(d); })
+                  .attr("fill", _var.arrowsColor)
+
+                // Create point
+                var bgPoints = d3.select(this).selectAll(".bg-point.element").data([pg]);
+                bgPoints.exit().remove();
+                bgPoints = bgPoints.enter().append("circle").attr("class", "bg-point element").merge(bgPoints);
+                bgPoints.transition().duration(200)
+                  .attr("cx", 0)
+                  .attr("cy", _var.barY)
+                  .attr("r", 5)
+                  .attr("fill", "transparent")
+
+              });
+
+              if(isDraggable) {
+
+                // Bind drag to points groups
+                pointEls.call(d3.drag()
+                  .on("start", _var.dragstarted)
+                  .on("drag", _var.dragging)
+                  .on("end", _var.dragended));
+
+              }
 
             });
 

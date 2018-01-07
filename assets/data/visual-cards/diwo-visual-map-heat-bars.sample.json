@@ -24,6 +24,9 @@
       "body": [ "<span class='metric'># Accounts</span><span class='number'>{{value}}</span>" ]
     }
   },
+  "attrs": {
+    "legendBins": 4
+  },
   "bars": {
     "mapColor": "#8BC3D2",
     "mapStrokeColor": "#FFF",

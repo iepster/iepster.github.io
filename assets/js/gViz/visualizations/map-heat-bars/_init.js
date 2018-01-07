@@ -11,6 +11,7 @@ module.exports = function () {
     initialize: require('./initialize.js'),
     barScale: require('./bar-scale.js'),
     create: require('./create.js'),
+    drag: require('./drag.js'),
     elements: require('./elements.js'),
     events: require('./events.js'),
     heatScale: require('./heat-scale.js'),
@@ -38,6 +39,8 @@ module.exports = function () {
   let onHover = function(d) { console.log(d); };
   let onHoverOut = function(d) { console.log(d); };
   let onClick = function(d) { console.log(d); };
+  let onDragStart = function(d) { console.log(d); };
+  let onDragEnd = function(d) { console.log(d); };
 
   // Validate attributes
   var validate = function (step) {
@@ -46,6 +49,7 @@ module.exports = function () {
       case 'initialize': return true;
       case 'barScale':   return data != null && data.data != null;
       case 'create':     return data != null && data.data != null;
+      case 'drag':       return data != null && data.data != null;
       case 'elements':   return data != null && data.data != null;
       case 'heatScale':  return data != null && data.data != null;
       case 'legend':     return data != null && data.data != null;
@@ -68,6 +72,7 @@ module.exports = function () {
 
           main('initialize');
           main('style');
+          main('drag');
           main('barScale');
           main('heatScale');
           main('create');
@@ -96,6 +101,8 @@ module.exports = function () {
             .onHover(onHover)
             .onHoverOut(onHoverOut)
             .onClick(onClick)
+            .onDragStart(onDragStart)
+            .onDragEnd(onDragEnd)
             .width(width)
             .run();
           break;
@@ -107,6 +114,16 @@ module.exports = function () {
           _var = components.barScale()
             ._var(_var)
             .data(_var.data.data == null || _var.data.data.bars == null ? [] : _var.data.data.bars)
+            .run();
+          break;
+
+        // Drag fucntions
+        case 'drag':
+
+          // Initializing drag
+          _var = components.drag()
+            ._var(_var)
+            .components(components)
             .run();
           break;
 
@@ -174,7 +191,7 @@ module.exports = function () {
   };
 
   // Expose global variables
-  ['_id', '_var', 'action', 'animation','container', 'colors', 'data', 'geoData', 'labelsData', 'height', 'margin','mode','onClick','onHover','onHoverOut','width'].forEach(function (key) {
+  ['_id', '_var', 'action', 'animation','container', 'colors', 'data', 'geoData', 'labelsData', 'height', 'margin','mode','onClick','onHover','onHoverOut','width','onDragStart','onDragEnd'].forEach(function (key) {
 
     // Attach variables to validation function
     validate[key] = function (_) {

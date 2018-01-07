@@ -67,6 +67,12 @@ module.exports = function () {
           _var.labelStateDy = function(d) { return ((12 / _var.getZoomTransform())/2) + "px"; }
           _var.labelDy = function(d) { return ((10 / _var.getZoomTransform())/2) + "px"; }
 
+          // Set shape value
+          _var.shapeValue = function(d) {
+            var obj = _var.heatData[d.properties[_var.data.heat != null && _var.data.heat.shapeId != null ? _var.data.heat.shapeId : "id"]];
+            return obj == null ? null : +obj.value;
+          }
+
           // Set shape color
           _var.shapeColor = function(d) {
             if(_var.mode === 'bars') {
@@ -150,6 +156,59 @@ module.exports = function () {
             return _var.data.bars != null && _var.data.bars.bottomBarColor != null ? _var.data.bars.bottomBarColor : "#999";
           }
 
+          // Set bar color
+          _var.draggableColor = function(d) {
+            return _var.data.bars != null && _var.data.bars.draggableColor != null ? _var.data.bars.draggableColor : _var.barColor(d);
+          }
+
+          // Set shape path for node
+          _var.pointPath = function(d) {
+
+            // Get radius
+            var isPin = _var.data.bars != null && _var.data.bars.barStyle != null && _var.data.bars.barStyle === 'pin';
+            var r = 5;
+            var dr = r*2;
+            var x  = 0;
+            var y  = isPin ? _var.pinY(d) : _var.barY(d);
+
+            return "M " + (x != null ? x : 0) + " " + (y != null ? y : 0) + " " +
+                   "m -" + r + ", 0 " +
+                   "a " + r + "," + r + " 0 1,0 " + ( r*2) + ",0 " +
+                   "a " + r + "," + r + " 0 1,0 " + (-r*2) + ",0 ";
+
+          }
+
+          // Arrwos color function depending on the point color
+          _var.arrowsColor = function(d) {
+            var barColor = _var.barColor(d);
+            return _var.data.bars != null && _var.data.bars.arrowsColor != null ? _var.data.bars.arrowsColor : (shared.helpers.colors.isDark(barColor) ? "#FFF" : "#333");
+          }
+
+          // Set shape path for node
+          _var.arrowsPath = function(d) {
+
+            // Get variables values to be used on the path construction
+            var isPin = _var.data.bars != null && _var.data.bars.barStyle != null && _var.data.bars.barStyle === 'pin';
+            var r = 2;
+            var dr = r*2;
+            var x  = 0;
+            var y  = isPin ? _var.pinY(d) : _var.barY(d);
+
+            // Draw arrows path
+            var path = "";
+
+            // Arrow up
+            path += "M " + (x != null ? x : 0) + " " + (((y-1) != null ? (y-1) : 0) - r) + " ";
+            path += "l " + r + ", " + (dr*0.7) + " ";
+            path += "l " + (-dr) + ", " + 0 + " " + "Z";
+
+            // Arrow down
+            path += "M " + ((x != null ? x : 0) - r) + " " + (((y+3) != null ? (y+3) : 0) - r) + " ";
+            path += "l " + dr + ", 0 ";
+            path += "l " + (-r) + ", " + (dr*0.7) + " " + "Z";
+
+            return path
+          }
 
           break;
       }

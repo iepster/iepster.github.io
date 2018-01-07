@@ -484,7 +484,10 @@
             "color": "#FFF",
             "prefix": "$",
             "sufix": "",
-            "format": "locale"
+            "format": "locale",
+            "percentageColor": "#FFF",
+            "percentageSize": "18px",
+            "valueSize": "22px"
           },
           "data": [
             {
@@ -907,18 +910,6 @@
             "zIndex": 1007
           },
           "content": "<div style='font-size:10px; color:#FFF; font-weight: lighter;'>Top Customer Base</div>"
-        },
-        {
-          "style": {
-            "top": "calc(50% - 140px)",
-            "left": "calc(50% + 197px)",
-            "hoveredTop": "calc(50% - 140px)",
-            "hoveredLeft": "calc(50% + 197px)",
-            "opacity": 0,
-            "hoveredOpacity": 1,
-            "zIndex": 1007
-          },
-          "content": "<div style='width:50px;'><div style='height:18px; width:18px; background:#d70862; float:left; margin-right:5px'></div><div style='height:18px;line-height:18px; float:left; font-size:11px; font-weight:lighter; color:#f88cb3;'>32%</div></div><div style='width:50px;'><div style='height:18px; width:18px; background:#eb5c83; float:left; margin-right:5px'></div><div style='height:18px;line-height:18px; float:left; font-size:11px; font-weight:lighter; color:#f88cb3;'>32%</div></div><div style='width:50px;'><div style='height:18px; width:18px; background:#f88cb3; float:left; margin-right:5px'></div><div style='height:18px;line-height:18px; float:left; font-size:11px; font-weight:lighter; color:#f88cb3;'>32%</div></div><div style='width:50px;'><div style='height:18px; width:18px; background:#fcc2df; float:left; margin-right:5px'></div><div style='height:18px;line-height:18px; float:left; font-size:11px; font-weight:lighter; color:#f88cb3;'>32%</div></div><div style='width:50px;'><div style='height:18px; width:18px; background:#fde1ef; float:left; margin-right:5px'></div><div style='height:18px;line-height:18px; float:left; font-size:11px; font-weight:lighter; color:#f88cb3;'>32%</div></div><div style='width:50px;'><div style='height:18px; width:18px; background:#FFF; float:left; margin-right:5px'></div><div style='height:18px;line-height:18px; float:left; font-size:11px; font-weight:lighter; color:#f88cb3;'>32%</div></div>"
         }
       ],
       "valuesBubble": {
@@ -952,15 +943,16 @@
             },
             "mode": "heat",
             "heat": {
-              "colors": ["#c73e68","#FFF"],
+              "colors": ["#FFF","#c73e68"],
               "mapStrokeColor": "#1a1720",
               "shapeId": "abbr",
               "prefix": "",
-              "sufix": "%",
+              "sufix": "",
               "format": "locale",
               "type": "number"
             },
             "attrs": {
+              "legendBins": 4,
               "labels": false,
               "grid": false,
               "zoom": false,

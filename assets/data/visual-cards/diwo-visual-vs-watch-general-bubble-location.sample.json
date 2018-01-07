@@ -544,7 +544,10 @@
             "color": "#FFF",
             "prefix": "$",
             "sufix": "",
-            "format": "locale"
+            "format": "locale",
+            "percentageColor": "#FFF",
+            "percentageSize": "18px",
+            "valueSize": "22px"
           },
           "data": [
             {

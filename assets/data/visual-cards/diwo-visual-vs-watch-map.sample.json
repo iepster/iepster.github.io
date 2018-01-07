@@ -31,6 +31,7 @@
   "attrs": {
     "grid": false
   },
+  "mode": "bars",
   "bars": {
     "mapColor": "#464250",
     "mapStrokeColor": "#2f2832",
@@ -42,6 +43,8 @@
     "barColor": "#d6a9bb",
     "barStyle": "pin",
     "pinRadius": 4,
+    "draggableColor": "#f98427",
+    "arrowsColor": "#fff",
     "prefix": "$",
     "sufix": "",
     "format": "",
@@ -54,26 +57,28 @@
         "name": "Store #000",
         "lat": 32.806671,
         "lon": -86.79113,
-        "value": "100",
+        "value": 100,
         "sales": "$250K",
         "hourlyWalkIns": "305",
         "StsRatio": "287",
         "storeLocation": "SOUTH PARK",
         "storeType": "PINK STORE",
-        "storeFootage": "5500 sq. ft."
+        "storeFootage": "5500 sq. ft.",
+        "draggable": true
       },
       {
         "id": "store-2",
         "name": "Store #111",
         "lat": 33.729759,
         "lon": -111.431221,
-        "value": "100",
+        "value": 100,
         "sales": "$150K",
         "hourlyWalkIns": "205",
         "StsRatio": "143",
         "storeLocation": "NEW YORK",
         "storeType": "PINK STORE",
-        "storeFootage": "7100 sq. ft."
+        "storeFootage": "7100 sq. ft.",
+        "draggable": true
       }
     ]
   }
