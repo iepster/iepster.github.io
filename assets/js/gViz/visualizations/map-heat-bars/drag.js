@@ -56,11 +56,11 @@ module.exports = function () {
 
           // While dragging
           _var.dragging = function (d) {
-            var position = -d3.mouse(this)[1];
+            var position = -d3.mouse(this)[1] * _var.getZoomTransform();
             if(position >= _var.bottomBarHeight(d)) {
               d.value = _var.barScale.invert(position);
-              d3.select(this).selectAll(".point.element").attr("d", function(d) { return _var.pointPath(d); }).attr("fill", _var.draggableColor);
-              d3.select(this).selectAll(".arrow.element").attr("d", function(d) { return _var.arrowsPath(d); }).attr("fill", _var.arrowsColor);
+              d3.select(this).selectAll(".point.element").attr("d", _var.pointPath).attr("fill", _var.draggableColor);
+              d3.select(this).selectAll(".arrow.element").attr("d", _var.arrowsPath).attr("fill", _var.arrowsColor);
               d3.select(this).selectAll(".bg-point.element").attr("cy", _var.barY)
               _var.container.d3.selectAll(".bar").filter(function(g) { return g === d; })
                 .attr('height', _var.barHeight)
@@ -78,6 +78,9 @@ module.exports = function () {
 
             // Set dragging node to true
             _var.nodeDragging = false;
+
+            // Update point Els visibility
+            if(_var.hovered !== d.id) { d3.select(this).style("display", "none"); }
 
             // Trigger onDragEnd attribute function
             if(_var.onDragEnd != null && typeof _var.onDragEnd === "function") { _var.onDragEnd(d); }

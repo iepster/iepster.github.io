@@ -56,7 +56,7 @@ module.exports = function () {
               .attr('width', _var.barWidth)
               .attr('height', _var.bottomBarHeight)
               .attr('x', function(d) { return -_var.barWidth(d)/2; })
-              .attr('y', _var.barY)
+              .attr('y', _var.bottomBarY)
 
             // Update bar attrs
             _var.g.selectAll('.bar')
@@ -64,6 +64,11 @@ module.exports = function () {
               .attr('height', _var.barHeight)
               .attr('x', function(d) { return -_var.barWidth(d)/2; })
               .attr('y', _var.barY)
+
+
+            _var.g.selectAll(".point.element").attr("d", _var.pointPath).attr("fill", _var.draggableColor);
+            _var.g.selectAll(".arrow.element").attr("d", _var.arrowsPath).attr("fill", _var.arrowsColor);
+            _var.g.selectAll(".bg-point.element").attr("cy", _var.barY)
 
             // Draw state abbrs
             var stateLabelsAbbr = _var.g.selectAll(".state-label-abbr").data(_var.hasLabels && _var.filterStateLabelsAbbr() ? _var.geoData.features : []);

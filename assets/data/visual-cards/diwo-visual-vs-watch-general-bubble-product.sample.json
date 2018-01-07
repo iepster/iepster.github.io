@@ -1,7 +1,6 @@
 {
   "data": {
     "backgroundColor": "#190f1f",
-    "transform": "scale(1)",
 
     "filterBubble": {
       "style": {
@@ -145,10 +144,10 @@
         "content": {
           "type": "1",
           "text": [
-            "<span style='color:#FFF; font-size: 12px; margin: 0px 14px 0px 17px; display:block; float:left;'>Color: </span><span class='overflow-ellipsis' style='font-size:12px; color:#be527f; width:45px;'>Black</span>",
-            "<span style='color:#FFF; font-size: 12px; margin: 0px 17px 0px 17px; display:block; float:left;'>Print: </span><span class='overflow-ellipsis' style='font-size:12px; color:#be527f; width:45px;' title='H17-035-08 - C002 PrplPetl 3KL'>H17-035-08 - C002 PrplPetl 3KL</span>",
-            "<span style='color:#FFF; font-size: 12px; margin: 0px 10px 0px 17px; display:block; float:left;'>Fabric:</span><span class='overflow-ellipsis' style='font-size:12px; color:#be527f; width:45px;'>Smooth</span>",
-            "<span style='color:#FFF; font-size: 10px; width: 100%; text-align: center; display: block; margin-top:5px;'>Top Trending <img src='/assets/images/top-trending-pink.png' style='display:inline-block; height:10px;'/></span>"
+            "<div class='overflow-ellipsis' style='height: 14px; margin-left:10%; color:#be527f; font-size: 12px; width: 80%; text-align:center;'><span style='color:#FFF; padding-right:5px;' title='Color: Black'>Color: </span>Black</div>",
+            "<div class='overflow-ellipsis' style='height: 14px; margin-left:10%; color:#be527f; font-size: 12px; width: 80%; text-align:center;'><span style='color:#FFF; padding-right:5px;'>Print: </span><span title='H17-035-08 - C002 PrplPetl 3KL'>H17-035-08 - C002 PrplPetl 3KL</span></div>",
+            "<div class='overflow-ellipsis' style='height: 14px; margin-left:10%; color:#be527f; font-size: 12px; width: 80%; text-align:center;'><span style='color:#FFF; padding-right:5px;' title='Fabric: SMOOTH' >Fabric: </span>SMOOTH</div>",
+            "<div style='color:#FFF; font-size: 10px; width: 100%; text-align: center;'><span style='margin-top: 3px;'>Top Trending</span><img src='/assets/images/top-trending-pink.png' style='display:inline-block; height:10px; margin-top: 3px;'/></div>"
           ]
         }
       },

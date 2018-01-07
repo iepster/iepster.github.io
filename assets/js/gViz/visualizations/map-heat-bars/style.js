@@ -125,9 +125,9 @@ module.exports = function () {
             return (_var.data.bars != null && _var.data.bars.barWidth != null ? _var.data.bars.barWidth : 3) / _var.getZoomTransform();
           }
 
-          // Set bottom bar y
+          // Set bar y
           _var.barY = function(d) {
-            return _var.bottomBarHeight(d) - _var.barHeight(d);;
+            return - (_var.bottomBarHeight(d) + _var.barHeight(d));
           }
 
           // Set bottom bar height
@@ -166,7 +166,7 @@ module.exports = function () {
 
             // Get radius
             var isPin = _var.data.bars != null && _var.data.bars.barStyle != null && _var.data.bars.barStyle === 'pin';
-            var r = 5;
+            var r = 5 / _var.getZoomTransform();
             var dr = r*2;
             var x  = 0;
             var y  = isPin ? _var.pinY(d) : _var.barY(d);
@@ -189,21 +189,23 @@ module.exports = function () {
 
             // Get variables values to be used on the path construction
             var isPin = _var.data.bars != null && _var.data.bars.barStyle != null && _var.data.bars.barStyle === 'pin';
-            var r = 2;
+            var r = 2 / _var.getZoomTransform();
             var dr = r*2;
             var x  = 0;
             var y  = isPin ? _var.pinY(d) : _var.barY(d);
+            var up = 1 / _var.getZoomTransform();
+            var down = 3 / _var.getZoomTransform();
 
             // Draw arrows path
             var path = "";
 
             // Arrow up
-            path += "M " + (x != null ? x : 0) + " " + (((y-1) != null ? (y-1) : 0) - r) + " ";
+            path += "M " + (x != null ? x : 0) + " " + (((y-up) != null ? (y-up) : 0) - r) + " ";
             path += "l " + r + ", " + (dr*0.7) + " ";
             path += "l " + (-dr) + ", " + 0 + " " + "Z";
 
             // Arrow down
-            path += "M " + ((x != null ? x : 0) - r) + " " + (((y+3) != null ? (y+3) : 0) - r) + " ";
+            path += "M " + ((x != null ? x : 0) - r) + " " + (((y+down) != null ? (y+down) : 0) - r) + " ";
             path += "l " + dr + ", 0 ";
             path += "l " + (-r) + ", " + (dr*0.7) + " " + "Z";
 

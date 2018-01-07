@@ -67,14 +67,16 @@ module.exports = function () {
                   .style("filter", function(g) { return g === _node && _var.mode === 'heat' ? "url(#"+_var.shadowId+")" : ""; })
 
                 // Show / Hide point groups
-                pointEls
-                  .style('display', function(g) { return g.id === node.id && node.draggable != null && node.draggable === true ? 'block' : 'none'; })
+                if(_var.nodeDragging == null || _var.nodeDragging === false) {
+                  pointEls.style('display', function(g) { return g.id === node.id && node.draggable != null && node.draggable === true ? 'block' : 'none'; })
+                }
 
                 // Fade points
                 points.transition().style("filter", function(g) { return g === node ? "url(#"+_var.shadowId+")" : ""; })
 
                 // CHeck if it's a pin
                 var isPin = _var.data.bars != null && _var.data.bars.barStyle != null && _var.data.bars.barStyle === 'pin';
+                var isDraggable = node.draggable != null && node.draggable === true;
 
                 if(source != null && source === 'shape') {
 
@@ -93,7 +95,7 @@ module.exports = function () {
 
                   // Get left and top positions
                   var left = _var.wrap.node().getBoundingClientRect().left + x;
-                  var top  = _var.wrap.node().getBoundingClientRect().top + y - (_var.barHeight(node)*_var.zoomTransform.k) - (isPin ? (_var.pinRadius(node)*_var.zoomTransform.k) : 0) - 5;
+                  var top  = _var.wrap.node().getBoundingClientRect().top + y - (_var.barHeight(node)*_var.zoomTransform.k) - (isPin ? (_var.pinRadius(node)*_var.zoomTransform.k) : 0) - (isDraggable ? 5 : 0) - 5;
 
                 }
 
@@ -166,7 +168,7 @@ module.exports = function () {
               // Reset opacity and filter
               bars.transition().style('opacity', 1).style("filter", "")
               shapes.transition().style('opacity', _var.shapeOpacity).style("filter", "")
-              pointEls.style('display', 'none')
+              if(_var.nodeDragging == null || _var.nodeDragging === false) { pointEls.style('display', 'none'); }
               points.transition().style("filter", "")
 
               // Hide tooltip
