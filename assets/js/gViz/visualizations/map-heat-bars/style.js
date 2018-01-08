@@ -35,6 +35,11 @@ module.exports = function () {
             return _var.zoomTransform.k >= 1 ? _var.zoomTransform.k : 1;
           }
 
+          _var.filterBarLabels = function(d, i) {
+            if(_var.getZoomTransform() < 4.5 || d.label == null || d.label === '') { return false; }
+            else { return true; }
+          }
+
           _var.filterLabelsFromLatLon = function(d) {
             return d.lon > _var.mapBounds[0][0] && d.lon < _var.mapBounds[1][0] && d.lat < _var.mapBounds[0][1] && d.lat > _var.mapBounds[1][1];
           }

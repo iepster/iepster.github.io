@@ -101,7 +101,7 @@ module.exports = function () {
             // Resize Labels
             var x = -_var.zoomTransform.x, y = -_var.zoomTransform.y, k = _var.zoomTransform.k;
             _var.mapBounds = [_var.projection.invert([x/k,y/k]), _var.projection.invert([(x+_var.width)/k,(y+_var.height)/k])];
-            _var.mapLabels = d3.select(".labels-group").selectAll(".map-label").data((_var.hasLabels ? _var.labelsData.filter(_var.filterLabelsFromLatLon).filter(_var.filterLabels) : []), function(d) { return d.name + '-' + d.state_id; });
+            _var.mapLabels = d3.select(".labels-group").selectAll(".map-label").data((_var.hasLabels && _var.hasCities ? _var.labelsData.filter(_var.filterLabelsFromLatLon).filter(_var.filterLabels) : []), function(d) { return d.name + '-' + d.state_id; });
             _var.mapLabels.exit().remove();
             _var.mapLabels = _var.mapLabels.enter().append("text").attr("class", "map-label").merge(_var.mapLabels);
             _var.mapLabels
@@ -111,6 +111,20 @@ module.exports = function () {
               .attr('y', function(d) { return _var.projection([+d.lon, +d.lat])[1]; })
               .attr('dy', _var.labelDy )
               .text(function(d) { return d.name; })
+
+            // Draw bar labels¬
+            _var.g.selectAll(".bars-group").each(function(e) {
+              var barLabels = d3.select(this).selectAll(".bar-label").data([e].filter(_var.filterBarLabels), function(d) { return d.id; });
+              barLabels.exit().remove();
+              barLabels = barLabels.enter().append("text").attr("class", "bar-label").merge(barLabels);
+              barLabels
+                .attr('text-anchor', "middle")
+                .attr('font-size', _var.labelSize)
+                .attr('x', 0)
+                .attr('y', function(d,i) { return (i % 2 === 0 ? 3 : 10) / _var.getZoomTransform(); })
+                .attr('dy', _var.labelDy )
+                .text(function(d) { return d.label; })
+            });
 
             // Update circle attrs
             _var.g.selectAll('.bar-circle').attr('r', _var.pinRadius).attr('cy', _var.pinY)

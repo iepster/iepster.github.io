@@ -171,7 +171,7 @@ module.exports = function () {
             });
 
           // Create groups
-          var labelsGroup = elements.selectAll(".labels-group").data(_var.hasLabels ? ['labels-group'] : []);
+          var labelsGroup = elements.selectAll(".labels-group").data(_var.hasLabels && _var.hasCities ? ['labels-group'] : []);
           labelsGroup.exit().remove();
           labelsGroup = labelsGroup.enter().append("g").attr("class", "labels-group").merge(labelsGroup);
 
@@ -192,7 +192,6 @@ module.exports = function () {
                 .text(function(d) { return d.name; })
 
             });
-
 
           // Create groups
           var barsData = _var.mode === 'bars' && _var.data.data != null && _var.data.data.bars != null ? _var.data.data.bars : [];
@@ -243,6 +242,18 @@ module.exports = function () {
                 .attr('cy', _var.pinY)
                 .attr('fill', _var.barColor)
                 .style('cursor', 'pointer')
+
+              // Draw bar labels
+              var barLabels = d3.select(this).selectAll(".bar-label").data([e].filter(_var.filterBarLabels), function(d) { return d.id; });
+              barLabels.exit().remove();
+              barLabels = barLabels.enter().append("text").attr("class", "bar-label").merge(barLabels);
+              barLabels
+                .attr('text-anchor', "middle")
+                .attr('font-size', _var.labelSize)
+                .attr('x', 0)
+                .attr('y', function(d,i) { return (i % 2 === 0 ? 3 : 10) / _var.getZoomTransform(); })
+                .attr('dy', _var.labelDy )
+                .text(function(d) { return d.label; })
 
               // Create points/arrows groups
               var pointEls = d3.select(this).selectAll(".point-element.element").data(isDraggable ? [e] : []);

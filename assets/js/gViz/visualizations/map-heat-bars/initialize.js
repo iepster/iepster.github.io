@@ -76,6 +76,7 @@ module.exports = function() {
           _var.labelsData = labelsData;
           _var.hasLabels = !(data != null && data.attrs != null && data.attrs.labels != null && data.attrs.labels === false);
           _var.hasHover = !(data != null && data.attrs != null && data.attrs.hover != null && data.attrs.hover === false);
+          _var.hasCities = !(data != null && data.attrs != null && data.attrs.cities != null && data.attrs.cities === false);
 
           // Set zoom transform
           if(_var.zoomTransform == null) { _var.zoomTransform = { k: 1, x: _var.margin.left, y: _var.margin.right }; }
