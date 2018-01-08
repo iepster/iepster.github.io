@@ -143,6 +143,7 @@ module.exports = function () {
           _var.wrap
             .call(_var.zoom_handler)
             .call(_var.zoom_handler.transform, d3.zoomIdentity.translate(_var.zoomTransform.x, _var.zoomTransform.y).scale(_var.zoomTransform.k))
+            .on("mousedown", function() { d3.event.preventDefault(); });
 
           // Remove zoom if specified on the json
           var hasPan = !(_var.data != null && _var.data.attrs != null && _var.data.attrs.pan != null && _var.data.attrs.pan === false);

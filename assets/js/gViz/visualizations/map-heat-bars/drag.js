@@ -33,6 +33,9 @@ module.exports = function () {
           // Start the drag action
           _var.dragstarted = function (d) {
 
+            // Prevent zoom
+            d3.event.sourceEvent.preventDefault();
+
             // Set dragging node to true
             _var.nodeDragging = true;
 
