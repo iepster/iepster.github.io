@@ -86,7 +86,7 @@ module.exports = function() {
               var tooltip = d3.selectAll('.gViz-tooltip').data(["gViz-tooltip"]);
               tooltip.exit().remove();
               tooltip = tooltip.enter().append("div").attr("class", 'gViz-tooltip').style('opacity', 0).merge(tooltip);
-              tooltip
+              tooltip.style('pointer-events', 'none')
                 .each(function() {
 
                   // Update tooltip content

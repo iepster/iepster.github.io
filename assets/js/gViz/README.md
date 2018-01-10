@@ -10,7 +10,7 @@ When component is created extend class BaseVisual from shared/shareables/visuals
 
 ### Step 3 
 
-Import and add the newly created class to the array VisualList in shared/shareables/shareables.module.ts
+Import and add the newly created class to the array VisualList in shared/shareables/visual-list.ts
 
 ### Step 4
 

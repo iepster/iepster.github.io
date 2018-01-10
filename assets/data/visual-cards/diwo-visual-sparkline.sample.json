@@ -11,13 +11,15 @@
   "y": {
     "prefix": "",
     "sufix": "%",
-    "format": ""
+    "format": "",
+    "axis": false
   },
   "x": {
     "type": "number",
     "prefix": "W",
     "sufix": "",
-    "format": ""
+    "format": "",
+    "axis": false
   },
   "data": [{
       "id": "2016",

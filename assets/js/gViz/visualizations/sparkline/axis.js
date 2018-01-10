@@ -36,31 +36,26 @@ module.exports = function () {
 
             case 'create':
 
-              // // Create and update X axis
-              // _var.x_axis = _var.g.selectAll(".x.axis").data(['x']);
-              // _var.x_axis.exit().remove();
-              // _var.x_axis = _var.x_axis.enter().append('g').attr("class", "x axis").merge(_var.x_axis);
-              // _var.x_axis.call(_var.xAxis.tickSize(-_var.height)).attr("transform", 'translate(0,' + _var.height + ')')
-              // _var.x_axis.selectAll(".tick line").attr('y1', 3)
-              // _var.x_axis.selectAll(".tick text")
-              //   .attr('x', function(d, i) {
-              //     if((_var.xIsDate || _var.xIsNumber) && i === _var.x_axis.selectAll(".tick text").size()-1) {
-              //       return -(this.getBBox().width/2) + _var.margin.right;
-              //     } else { return 0; }
-              //   })
+              // Create and update X axis
+              var hasXAxis = _var.data.y != null && _var.data.y.axis != null && _var.data.y.axis === true;
+              _var.x_axis = _var.g.selectAll(".x.axis").data(hasXAxis ? ['x'] : []);
+              _var.x_axis.exit().remove();
+              _var.x_axis = _var.x_axis.enter().append('g').attr("class", "x axis").merge(_var.x_axis);
+              _var.x_axis.call(_var.xAxis.tickSize(-_var.height)).attr("transform", 'translate(0,' + _var.height + ')')
+              _var.x_axis.selectAll(".tick line").attr('y1', 0)
+              _var.x_axis.selectAll(".tick text").remove();
 
-              // // Remove overlapping tick text
-              // _var.x_axis.selectAll(".tick text").filter(function(d) { return d === _var.xTarget; }).remove();
+              // Create and update Y axis
+              var hasYAxis = _var.data.x != null && _var.data.x.axis != null && _var.data.x.axis === true;
+              _var.y_axis = _var.g.selectAll(".y.axis").data(hasYAxis ? ['y'] : []);
+              _var.y_axis.exit().remove();
+              _var.y_axis = _var.y_axis.enter().append('g').attr("class", "y axis").merge(_var.y_axis);
+              _var.y_axis.transition().call(_var.yAxis.tickSize(-_var.width))
+              _var.y_axis.selectAll(".tick line").attr('x1', 0)
+              _var.y_axis.selectAll(".tick text").remove();
 
-              // // Create and update Y axis
-              // _var.y_axis = _var.g.selectAll(".y.axis").data(['y']);
-              // _var.y_axis.exit().remove();
-              // _var.y_axis = _var.y_axis.enter().append('g').attr("class", "y axis").merge(_var.y_axis);
-              // _var.y_axis.transition().call(_var.yAxis.tickSize(-_var.width))
-              // _var.y_axis.selectAll(".tick line").attr('x1', -3)
-
-              // // Remove overlapping tick text
-              // _var.y_axis.selectAll(".tick text").filter(function(d) { return d === _var.yTarget; }).remove();
+              // Remove path domain if one of the axis are not visible
+              if(hasYAxis === false || hasXAxis === false) { _var.g.selectAll("path.domain").remove(); }
 
               break;
 

@@ -70,6 +70,7 @@ module.exports = function() {
 
               // Update tooltip content
               target
+                .style('pointer-events', 'none')
                 .style("border", content === '' ? 'none' : "1px solid "+borderColor)
                 .style("border-top", "none")
                 .style("right", right == null ? null : right + "px")
