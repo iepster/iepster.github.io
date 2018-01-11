@@ -1,7 +1,15 @@
 // Imports
 var d3 = require("d3");
 var common = require("../common");
-var bubbleComponents = require('../../_init.js').bubbleComponents;
+var bubbleComponents = {
+    pricePointAnalysis: require('../pricePointAnalysis/_init.js'),
+    pricePointAnalysisHover: require('../pricePointAnalysisHover/_init.js'),
+    attributeAnalysisHover: require('../attributeAnalysisHover/_init.js'),
+    salesStockAnalysis: require('../salesStockAnalysis/_init.js'),
+    mainProductBubble: require('../mainProductBubble/_init.js'),
+    attributeAnalysis: require('../attributeAnalysis/_init.js'),
+    customerAnalysis: require('../customerAnalysis/_init.js')
+  };
 
 // Initialize the visualization class
 module.exports = function () {
@@ -95,7 +103,7 @@ module.exports = function () {
             })
 
             if (layout.styles) {
-        
+
               var styleKeys = Object.keys(layout.styles);
               styleKeys.forEach(k => {
                 // invoke function dinamically based on layout
