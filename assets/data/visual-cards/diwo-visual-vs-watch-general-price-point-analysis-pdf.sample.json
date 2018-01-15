@@ -1,0 +1,136 @@
+{
+  "isPdf": true,
+  "title": {
+    "style": {
+      "top": "calc(50% + 70px)",
+      "left": "calc(50% - 70px)",
+      "color": "#ad5073",
+      "fontSize": "10px",
+      "textAlign": "center"
+    },
+    "content": "Price Point Analysis"
+  },
+  "connectors": [
+    {
+      "style": {
+        "top": "calc(50% - 10px)",
+        "left": "calc(50% + 45px)",
+        "size": "26px",
+        "borderColor": "#756886",
+        "zIndex": 1003
+      }
+    }
+  ],
+  "valuesBubble": {
+    "style": {
+      "top": "calc(50% - 85px)",
+      "left": "calc(50% - 105px)",
+      "size": "150px",
+      "backgroundColor": "#1a1620",
+      "borderColor": "#504859",
+      "borderRadius": "50%",
+      "color": "#FFF",
+      "zIndex": "1004"
+    },
+    "content": {
+      "type": "1",
+      "text": [
+        "<span style='color:#FFF; font-size: 11px; margin-right: 10px;'>Min Basket</span><span style='font-size: 11px; color:#be527f;'>$21</span>",
+        "<span style='color:#FFF; font-size: 11px; margin-right: 10px;'>Avg Basket</span><span style='font-size: 11px; color:#be527f;'>$34</span>",
+        "<span style='color:#FFF; font-size: 11px; margin-right: 10px;'>Max Basket</span><span style='font-size: 11px; color:#be527f;'>$95</span>",
+        "<span style='color:#be527f; font-size: 16px; height: 22px; line-height: 26px; display: inline-block;'>$15-$24.9</span>",
+        "<span style='color:#FFF; font-size: 11px;'>Top Price Point</span>"
+      ],
+      "pdfText": [
+        "<p style='color:#be527f; font-size: 30px; text-align: center;'>$15-$24.9</p>",
+        "<p style='color:#333; font-size: 12px; width: 100%; text-align: center; margin-top: 10px;'>Top Price Point</p>"
+      ],
+      "pdfChart": {
+        "data": {
+          "backgroundColor": "transparent",
+          "tableBorderColor": "transparent",
+          "borderColor": "transparent",
+          "color": "#000",
+          "textAlign": "center",
+          "data": [
+            [
+              "<div style='height: 77px; padding: 20px 0px 0px; position: relative;'><img src='/assets/images/pink-bag.png' style='display: block; width: 30px; margin: 0px auto 10px;' /><span style='width: 100%; font-weight: 300; font-size: 12px;'>Min</span><span style='position:absolute; display:block; width: 100%; top: 37px; font-size: 11px; font-family: Bebas; left: 0px; color: #FFF;'>$25</span></div>",
+              "<div style='height: 77px; padding: 15px 0px 0px; position: relative;'><img src='/assets/images/pink-bag.png' style='display: block; width: 35px; margin: 0px auto 10px;' /><span style='width: 100%; font-weight: 300; font-size: 12px;'>Avg</span><span style='position:absolute; display:block; width: 100%; top: 36px; font-size: 12px; font-family: Bebas; left: 0px; color: #FFF;'>$32</span></div>",
+              "<div style='height: 77px; padding: 10px 0px 0px; position: relative;'><img src='/assets/images/pink-bag.png' style='display: block; width: 40px; margin: 0px auto 10px;' /><span style='width: 100%; font-weight: 300; font-size: 12px;'>Max</span><span style='position:absolute; display:block; width: 100%; top: 34px; font-size: 13px; font-family: Bebas; left: 0px; color: #FFF;'>$65</span></div>"
+            ]
+          ]
+        }
+      }
+    }
+  },
+  "chartBubble": {
+    "style": {
+      "top": "calc(50% - 30px)",
+      "left": "calc(50% + 70px)",
+      "size": "40px",
+      "backgroundColor": "#b14a6a",
+      "borderColor": "#b14a6a",
+      "borderRadius": "50%",
+      "color": "#FFF",
+      "zIndex": "1004",
+      "hoveredTop": "calc(50% - 120px)",
+      "hoveredLeft": "calc(50% + 40px)",
+      "hoveredSize": "220px",
+      "hoveredBackgroundColor": "#e95c83",
+      "hoveredBorderColor": "#e95c83"
+    },
+    "content": "/assets/images/gViz/visualizations/diwo-visual-bubble-poet-context/circle.png",
+    "hoveredContent": {
+      "title": "",
+      "toggle": {
+        "isVisible": false
+      },
+      "legend": {
+        "isVisible": false
+      },
+      "tooltip": {
+        "hasPercentage": false,
+        "title": "{{name}}"
+      },
+      "attrs": {
+        "radius": 10,
+        "muted": false,
+        "grid": false
+      },
+      "x1": {
+        "title": "Assets",
+        "value": "sum",
+        "color": "#333",
+        "prefix": "$",
+        "sufix": "",
+        "format": "locale"
+      },
+      "data": [
+        {
+          "id": "id-1",
+          "name": "$35-$45",
+          "color": "#FFF",
+          "x1": 40
+        },
+        {
+          "id": "id-2",
+          "name": "$18-$25",
+          "color": "#fde9f2",
+          "x1": 28
+        },
+        {
+          "id": "id-3",
+          "name": "$45-$60",
+          "color": "#fbd9e8",
+          "x1": 22
+        },
+        {
+          "id": "id-4",
+          "name": "$25-$35",
+          "color": "#f9c5da",
+          "x1": 10
+        }
+      ]
+    }
+  }
+}

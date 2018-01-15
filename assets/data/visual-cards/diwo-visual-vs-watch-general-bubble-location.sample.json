@@ -625,7 +625,7 @@
                 "style": {
                   "borderColor": "#756886",
                   "size": "20px",
-                  "top": "calc(50% + -10px)",
+                  "top": "calc(50% - 10px)",
                   "left": "calc(50% - 261px)",
                   "transform": "rotate(-4deg)",
                   "zIndex": 1003
