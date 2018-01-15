@@ -65,7 +65,8 @@ module.exports = function () {
               centerTitle.exit().remove();
               centerTitle = centerTitle.enter().append('text').attr("class", "center-title").merge(centerTitle);
               centerTitle
-                .style('fill', node.data.color)
+                .style('fill', _var.data.attrs != null && _var.data.attrs.textColor != null ? _var.data.attrs.textColor : node.data.color)
+                .attr('font-weight', '300')
                 .attr('x', 0)
                 .attr('y', node.data.img == null || node.data.img === '' ? -20 : -45)
                 .attr('text-anchor', 'middle')
@@ -93,7 +94,7 @@ module.exports = function () {
               centerValue.exit().remove();
               centerValue = centerValue.enter().append('text').attr("class", "center-value").merge(centerValue);
               centerValue
-                .style('fill', node.data.color)
+                .style('fill', _var.data.attrs != null && _var.data.attrs.textColor != null ? _var.data.attrs.textColor : node.data.color)
                 .attr('x', 0)
                 .attr('y', node.data.img == null || node.data.img === '' ? 20 : 60)
                 .attr('text-anchor', 'middle')
@@ -113,7 +114,7 @@ module.exports = function () {
                 .attr('text-anchor', 'middle')
                 .text(node.data.percentage == null || node.data.percentage === "" ? (node.data[_var.metric] != null ? d3.format(".2%")(+node.data[_var.metric] / +_var.data[_var.metric].total) : "No value") : node.data.percentage )
                 .style('opacity', 0)
-                .style('fill', _var.data[_var.metric].percentageColor != null ? _var.data[_var.metric].percentageColor : "#444")
+                .style('fill', _var.data[_var.metric].percentageColor != null ? _var.data[_var.metric].percentageColor : "#575757")
                 .style('font-size', _var.data[_var.metric].percentageSize != null ? _var.data[_var.metric].percentageSize : "18px")
                 .transition()
                   .style('opacity', 1)
@@ -137,7 +138,8 @@ module.exports = function () {
               centerTitle.exit().remove();
               centerTitle = centerTitle.enter().append('text').attr("class", "center-title").merge(centerTitle);
               centerTitle
-                .style('fill', _var.data != null && node != null && node.color != null ? node.color : "#666" )
+                .style('fill', _var.data.attrs != null && _var.data.attrs.textColor != null ? _var.data.attrs.textColor : (node != null && node.color != null ? node.color : "#666"))
+                .attr('font-weight', '300')
                 .attr('y', 0)
                 .attr('y', -20)
                 .attr('text-anchor', 'middle')
@@ -154,7 +156,7 @@ module.exports = function () {
               centerValue.exit().remove();
               centerValue = centerValue.enter().append('text').attr("class", "center-value").merge(centerValue);
               centerValue
-                .style('fill', _var.data != null && node != null && node.color != null ? node.color : "#666" )
+                .style('fill', _var.data.attrs != null && _var.data.attrs.textColor != null ? _var.data.attrs.textColor : (node != null && node.color != null ? node.color : "#666" ))
                 .attr('y', 0)
                 .attr('y', 20)
                 .attr('text-anchor', 'middle')
@@ -173,7 +175,7 @@ module.exports = function () {
                 .attr('y', 55)
                 .attr('text-anchor', 'middle')
                 .style('opacity', 0)
-                .style('fill', _var.data[_var.metric].percentageColor != null ? _var.data[_var.metric].percentageColor : "#444")
+                .style('fill', _var.data[_var.metric].percentageColor != null ? _var.data[_var.metric].percentageColor : "#575757")
                 .style('font-size', _var.data[_var.metric].percentageSize != null ? _var.data[_var.metric].percentageSize : "18px")
                 .transition()
                   .style('opacity', 1)

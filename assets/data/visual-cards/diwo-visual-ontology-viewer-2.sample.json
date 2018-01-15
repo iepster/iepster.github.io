@@ -32,6 +32,10 @@
     "format": "locale",
     "size": [10,15]
   },
+  "attrs": {
+    "width": "100%",
+    "height": "100%"
+  },
   "data": {
     "nodes": [
       { "id": "product-01", "name": "AQUAFINA 20 OZ BOTTLE", "type": "Product", "color": "#0b3543" },

@@ -40,6 +40,10 @@
     "colors": ["#47d8c7", "#e3c170", "#fe492b"],
     "data": ["heat-one", "heat-two"]
   },
+  "attrs": {
+    "width": "100%",
+    "height": "100%"
+  },
   "data": {
     "heat-one": {
       "title": "Total Claims",

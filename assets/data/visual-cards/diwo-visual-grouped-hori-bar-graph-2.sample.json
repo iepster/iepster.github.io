@@ -30,7 +30,9 @@
   },
   "attrs": {
     "barHeight": 10,
-    "innerLabels": true
+    "innerLabels": true,
+    "width": "100%",
+    "height": "100%"
   },
   "colors": {
     "05/01/2017": {

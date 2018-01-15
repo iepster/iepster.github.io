@@ -22,7 +22,7 @@
         "zIndex": 1007,
         "color": "#FFF",
         "pdfTop": "calc(100% - 20px)",
-        "pdfColor": "#333"
+        "pdfColor": "#575757"
       },
       "content": "<div style='font-size:12px; font-weight: lighter;'>Top Customer Base</div>"
     }
@@ -59,7 +59,7 @@
         "mode": "heat",
         "heat": {
           "colors": ["#FFF","#c73e68"],
-          "mapStrokeColor": "#9a768c",
+          "mapStrokeColor": "#b2b2b2",
           "shapeId": "abbr",
           "prefix": "",
           "sufix": "",
@@ -68,6 +68,7 @@
         },
         "attrs": {
           "legendBins": 4,
+          "legendColor": "#e8649a",
           "labels": false,
           "grid": false,
           "zoom": false,

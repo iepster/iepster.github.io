@@ -35,7 +35,9 @@
     "lineStyle": "solid",
     "pointColor": "#0c3543",
     "pointShape": "diamond",
-    "legend": "Cases H. per Underwriter per Day"
+    "legend": "Cases H. per Underwriter per Day",
+    "width": "100%",
+    "height": "100%"
   },
   "data": [
     {

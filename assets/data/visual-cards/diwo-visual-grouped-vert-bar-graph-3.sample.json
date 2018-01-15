@@ -28,7 +28,9 @@
   },
   "attrs": {
     "barWidth": 8,
-    "wrapText": false
+    "wrapText": false,
+    "width": "100%",
+    "height": "100%"
   },
   "colors": {
     "male": {

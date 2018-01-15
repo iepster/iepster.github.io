@@ -42,15 +42,15 @@
         "<span style='color:#FFF; font-size: 11px;'>Top Price Point</span>"
       ],
       "pdfText": [
-        "<p style='color:#be527f; font-size: 30px; text-align: center;'>$15-$24.9</p>",
-        "<p style='color:#333; font-size: 12px; width: 100%; text-align: center; margin-top: 10px;'>Top Price Point</p>"
+        "<p style='color:#e8649a; font-size: 30px; text-align: center;'>$15-$24.9</p>",
+        "<p style='color:#575757; font-size: 12px; width: 100%; text-align: center; margin-top: 10px;'>Top Price Point</p>"
       ],
       "pdfChart": {
         "data": {
           "backgroundColor": "transparent",
           "tableBorderColor": "transparent",
           "borderColor": "transparent",
-          "color": "#000",
+          "color": "#575757",
           "textAlign": "center",
           "data": [
             [
@@ -95,12 +95,13 @@
       "attrs": {
         "radius": 10,
         "muted": false,
-        "grid": false
+        "grid": false,
+        "textColor": "#575757"
       },
       "x1": {
         "title": "Assets",
         "value": "sum",
-        "color": "#333",
+        "color": "#575757",
         "prefix": "$",
         "sufix": "",
         "format": "locale"
@@ -109,25 +110,25 @@
         {
           "id": "id-1",
           "name": "$35-$45",
-          "color": "#FFF",
+          "color": "#e6669a",
           "x1": 40
         },
         {
           "id": "id-2",
           "name": "$18-$25",
-          "color": "#fde9f2",
+          "color": "#e882ac",
           "x1": 28
         },
         {
           "id": "id-3",
           "name": "$45-$60",
-          "color": "#fbd9e8",
+          "color": "#ea9ebd",
           "x1": 22
         },
         {
           "id": "id-4",
           "name": "$25-$35",
-          "color": "#f9c5da",
+          "color": "#edbacf",
           "x1": 10
         }
       ]

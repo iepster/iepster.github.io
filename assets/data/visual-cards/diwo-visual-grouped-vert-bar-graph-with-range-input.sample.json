@@ -37,7 +37,9 @@
     "format": ""
   },
   "attrs": {
-    "barWidth": 10
+    "barWidth": 10,
+    "width": "100%",
+    "height": "100%"
   },
   "colors": {
     "male": {

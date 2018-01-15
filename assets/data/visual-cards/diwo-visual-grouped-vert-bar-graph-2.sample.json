@@ -26,6 +26,10 @@
     "sufix": "",
     "format": ""
   },
+  "attrs": {
+    "width": "100%",
+    "height": "100%"
+  },
   "colors": {
     "05/01/2017": {
       "fill": "#3eb1d4",

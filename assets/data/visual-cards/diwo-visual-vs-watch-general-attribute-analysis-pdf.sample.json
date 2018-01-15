@@ -105,9 +105,11 @@
       "data": {
         "backgroundColor": "transparent",
         "borderColor": "#383142",
+        "hasTopBorder": false,
+        "hasBottomBorder": false,
         "color": "#FFF",
         "pdfBorderColor": "#bbb",
-        "pdfColor": "#333",
+        "pdfColor": "#575757",
         "textAlign": "left",
         "trPadding": "2px 0px",
         "tdPadding": "4px 5px",

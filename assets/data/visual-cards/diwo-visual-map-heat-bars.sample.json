@@ -25,7 +25,10 @@
     }
   },
   "attrs": {
-    "legendBins": 4
+    "legendBins": 4,
+    "legendColor": "#e8649a",
+    "width": "100%",
+    "height": "100%"
   },
   "bars": {
     "mapColor": "#8BC3D2",

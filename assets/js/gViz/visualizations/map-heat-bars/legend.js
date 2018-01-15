@@ -72,9 +72,10 @@ module.exports = function() {
             .style('cursor', 'pointer')
             .html(function(d, i) {
               var value = scaleBinsValues[0] + ((scaleBinsValues[1] - scaleBinsValues[0])/bins) * i;
-              var color = _var.mode === 'heat' ? _var.heatScale(value) : _var.barScale(value);
+              var rectColor = _var.mode === 'heat' ? _var.heatScale(value) : _var.barScale(value);
+              var color = _var.data.attrs != null && _var.data.attrs.legendColor != null && _var.data.attrs.legendColor !== "" ? _var.data.attrs.legendColor : (_var.mode === 'heat' ? _var.heatScale(value) : _var.barScale(value));
               var parsedValue = _var.mode === 'heat' ? _var.heatFormat(value) : _var.barFormat(value);
-              var string = "<div style='display: block; height:18px; width:18px; background:"+color+"; float:left; margin-right:5px'></div>";
+              var string = "<div style='display: block; height:18px; width:18px; background:"+rectColor+"; float:left; margin-right:5px'></div>";
               string += "<div style='display: block; height:18px; line-height:20px; float:left; font-size:11px; font-weight:lighter; color: "+color+";'>"+parsedValue+"</div>";
               return string;
             });
