@@ -258,11 +258,16 @@ module.exports = function() {
               d.bbox._width = d.bbox.width > width ? d.bbox.width + 6 * _var.attrs.offset.y : width;
               d.bbox._height = d.bbox.height > height ? d.bbox.height + _var.attrs.offset.x : height;
 
+            } else if (d._children != null || (d.data.collapsed != null && d.data.collapsed === true)) {
+
+              d.bbox._width = d.bbox.width + 6 * _var.attrs.offset.y;
+              d.bbox._height = d.bbox.height + _var.attrs.offset.x;
+
             } else {
 
-              // Set sizes
               d.bbox._width = d.bbox.width + 6 * _var.attrs.offset.y;
-              d.bbox._height = d.bbox.height*2 + 6 + _var.attrs.offset.x;
+              d.bbox._height = d.bbox.height * 2 + 6 + _var.attrs.offset.x;
+
             }
 
             return d.bbox;

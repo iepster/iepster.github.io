@@ -34,7 +34,7 @@
         "<span style='font-weight:lighter; color:#575757; font-size: 12px;'>Top Promotion</span>",
         "<span style='font-weight:lighter; color:#eb5b85; font-size: 20px;'>Item Discount %Off</span>",
         "<hr style='border-bottom: none; margin: 5px 10px; border-top: 1px solid #FFF;'>",
-        "<div style='height: 45px; width: 100%;'><div style='float:left; height:45px; line-height:45px; width:47%; color:#eb5b85; font-size:10px; position:relative;'><span style='display:block; float:right; margin-right: 20px; font-weight: lighter; color:#eb5b85;'>38%</span><img src='/assets/images/mini_donnut_chart-03.png' style='display:block; position: absolute; right: 9px; height: 40px; top: 2px;' /></div><div style='float:left; height:45px; line-height:45px; width:50%; color:#575757; text-align:left; font-weight: lighter; font-size: 12px;'>Discounted Transactions</div></div>"
+        "<div style='height: 45px; width: auto;'> <span style='display:inline-block; height:45px; width:45px; line-height:45px; color:#eb5b85; font-size:10px; position:relative;'> <span style='display:block; margin-right: 20px; font-weight: lighter; color:#eb5b85;'>38%</span> <img src='/assets/images/mini_donnut_chart-03.png' style='display:block; position: absolute; left: -7px; height: 40px; top: 2px;' /> </span> <span style='display:inline-block; height:45px; line-height:45px; color:#575757; text-align:left; font-weight: lighter; font-size: 12px;'>Discounted Transactions</span></div>"
       ]
     }
   }
