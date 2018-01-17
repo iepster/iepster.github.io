@@ -1,0 +1,57 @@
+{
+  "style": {
+    "backgroundColor": "#FFF",
+    "brush": {
+      "color": "#997e13",
+      "backgroundColor": "#FFF",
+      "brushBackgroundColor": "#b7ae85",
+      "borderColor": "#997e13",
+      "arrowsColor": "#997e13"
+    },
+    "nodes": {
+      "color": "#575757",
+      "backgroundColor": "#FFF",
+      "borderColor": "#dfdbcc",
+      "hoveredColor": "#c9c2a5",
+      "hoveredBackgroundColor": "#FFF",
+      "selectedColor": "#c9c2a5",
+      "selectedBackgroundColor": "#FFF"
+    }
+  },
+  "attrs": {
+    "width": "100%",
+    "height": "100%",
+    "start": 22,
+    "end": 25
+  },
+  "data": [
+    {
+      "id": "last-week",
+      "name": "Last Week",
+      "values": [16,22],
+      "children": [
+        { "id": "day-16", "name": "16", "values": [16,16] },
+        { "id": "day-17", "name": "17", "values": [17,17] },
+        { "id": "day-18", "name": "18", "values": [18,18] },
+        { "id": "day-19", "name": "19", "values": [19,19] },
+        { "id": "day-20", "name": "20", "values": [20,20] },
+        { "id": "day-21", "name": "21", "values": [21,21] },
+        { "id": "day-22", "name": "22", "values": [22,22] }
+      ]
+    },
+    {
+      "id": "this-week",
+      "name": "This Week",
+      "values": [23,29],
+      "children": [
+        { "id": "day-23", "name": "23", "values": [23,23] },
+        { "id": "day-24", "name": "24", "values": [24,24] },
+        { "id": "day-25", "name": "25", "values": [25,25] },
+        { "id": "day-26", "name": "26", "values": [26,26] },
+        { "id": "day-27", "name": "27", "values": [27,27] },
+        { "id": "day-28", "name": "28", "values": [28,28] },
+        { "id": "day-29", "name": "29", "values": [29,29] }
+      ]
+    }
+  ]
+}

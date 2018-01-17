@@ -1,0 +1,52 @@
+[
+  {
+    "title": "Commercial Metal Inc.",
+    "inline": true,
+    "titleBackgroundColor": "transparent",
+    "titleBorderColor": "transparent",
+    "backgroundColor": "transparent",
+    "borderColor": "#c9c090",
+    "color": "#575757",
+    "rowItems": [
+      { "text": "Liability", "highlight": false },
+      { "text": "Number of Claims", "highlight": false },
+      { "text": "Claim Amount", "highlight": false },
+      { "text": "Premium Paid", "highlight": false },
+      { "text": "Employee Growth", "highlight": false }
+    ]
+  },
+  {
+    "title": "2016",
+    "inline": true,
+    "titleBackgroundColor": "transparent",
+    "titleBorderColor": "#c9c090",
+    "backgroundColor": "#dfdac6",
+    "borderColor": "#dfdac6",
+    "color": "#575757",
+    "textAlign": "center",
+    "rowItems": [
+      { "text": "$1.7M", "highlight": false },
+      { "text": "0", "highlight": false },
+      { "text": "$0K", "highlight": false },
+      { "text": "$14K", "highlight": false },
+      { "text": "10,198", "highlight": false }
+    ]
+  },
+  {
+    "title": "2017",
+    "inline": true,
+    "titleBackgroundColor": "transparent",
+    "titleBorderColor": "#c9c090",
+    "backgroundColor": "#dfdac6",
+    "borderColor": "#dfdac6",
+    "color": "#575757",
+    "textAlign": "center",
+    "rowItems": [
+      { "text": "$1.6M", "highlight": false },
+      { "text": "0", "highlight": false },
+      { "text": "$321K", "highlight": false },
+      { "text": "$21K", "highlight": false },
+      { "text": "11,422", "highlight": false }
+    ]
+  }
+]
