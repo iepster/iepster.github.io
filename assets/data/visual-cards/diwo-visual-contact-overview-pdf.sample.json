@@ -5,48 +5,51 @@
     "titleBackgroundColor": "transparent",
     "titleBorderColor": "transparent",
     "backgroundColor": "transparent",
-    "borderColor": "#c9c090",
+    "borderColor": "#997c12",
+    "padding": "2px 10px",
     "color": "#575757",
     "rowItems": [
-      { "text": "Liability", "highlight": false },
-      { "text": "Number of Claims", "highlight": false },
-      { "text": "Claim Amount", "highlight": false },
-      { "text": "Premium Paid", "highlight": false },
-      { "text": "Employee Growth", "highlight": false }
+      { "text": "Liability", "highlight": false, "padding": "2px 10px" },
+      { "text": "Number of Claims", "highlight": false, "padding": "2px 10px" },
+      { "text": "Claim Amount", "highlight": false, "padding": "2px 10px" },
+      { "text": "Premium Paid", "highlight": false, "padding": "2px 10px" },
+      { "text": "Employee Growth", "highlight": false, "padding": "2px 10px" }
     ]
   },
   {
     "title": "2016",
     "inline": true,
     "titleBackgroundColor": "transparent",
-    "titleBorderColor": "#c9c090",
+    "titleBorderColor": "#997c12",
     "backgroundColor": "#dfdac6",
     "borderColor": "#dfdac6",
     "color": "#575757",
+    "padding": "2px 10px",
     "textAlign": "center",
     "rowItems": [
-      { "text": "$1.7M", "highlight": false },
-      { "text": "0", "highlight": false },
-      { "text": "$0K", "highlight": false },
-      { "text": "$14K", "highlight": false },
-      { "text": "10,198", "highlight": false }
+      { "text": "$1.7M", "highlight": false, "padding": "2px 10px" },
+      { "text": "0", "highlight": false, "padding": "2px 10px" },
+      { "text": "$0K", "highlight": false, "padding": "2px 10px" },
+      { "text": "$14K", "highlight": false, "padding": "2px 10px" },
+      { "text": "10,198", "highlight": false, "padding": "2px 10px" }
     ]
   },
   {
     "title": "2017",
     "inline": true,
     "titleBackgroundColor": "transparent",
-    "titleBorderColor": "#c9c090",
+    "titleBorderColor": "#997c12",
     "backgroundColor": "#dfdac6",
     "borderColor": "#dfdac6",
     "color": "#575757",
+    "padding": "2px 10px",
     "textAlign": "center",
     "rowItems": [
-      { "text": "$1.6M", "highlight": false },
-      { "text": "0", "highlight": false },
-      { "text": "$321K", "highlight": false },
-      { "text": "$21K", "highlight": false },
-      { "text": "11,422", "highlight": false }
+      { "text": "$1.6M", "highlight": false, "padding": "2px 10px" },
+      { "text": "0", "highlight": false, "padding": "2px 10px" },
+      { "text": "$321K", "highlight": false, "padding": "2px 10px" },
+      { "text": "$21K", "highlight": false, "padding": "2px 10px" },
+      { "text": "11,422", "highlight": false, "padding": "2px 10px" }
     ]
   }
 ]

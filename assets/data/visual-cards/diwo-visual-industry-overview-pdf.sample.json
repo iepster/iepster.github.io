@@ -2,20 +2,20 @@
   "isPdf": true,
   "statsData": [
     {
-      "title": "Sales",
-      "value": "<span style='color:#575757;'>$2.3M</span>"
+      "title": "<span style='color:#707b86;'>Sales</span>",
+      "value": "<span style='color:#707b86;'>$2.3M</span>"
     },
     {
-      "title": "Units",
-      "value": "<span style='color:#575757;'>9250</span>"
+      "title": "<span style='color:#707b86;'>Units</span>",
+      "value": "<span style='color:#707b86;'>9250</span>"
     },
     {
-      "title": "STS Ratio",
-      "value": "<span style='color:#575757;'>1.1</span>"
+      "title": "<span style='color:#707b86;'>STS Ratio</span>",
+      "value": "<span style='color:#707b86;'>1.1</span>"
     },
     {
-      "title": "Profitability",
-      "value": "<span style='color:#575757;'>$1.2M</span>"
+      "title": "<span style='color:#707b86;'>Profitability</span>",
+      "value": "<span style='color:#707b86;'>$1.2M</span>"
     }
   ],
   "lineGraphData": {
