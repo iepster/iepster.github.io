@@ -44,9 +44,9 @@ module.exports = function() {
             node.maxSatLvl = 0;
 
             // Get satelites
-            if(_var.sumLevel != null && node.depth === _var.sumLevel-1 && node._nodes && node._nodes.length > 1) { elements = node._nodes; }
-            else if(node.children && node.children.length > 1) { elements = node.children; }
-            else if(node._children && node._children.length > 1) { elements = node._children; }
+            if(_var.sumLevel != null && node.depth === _var.sumLevel-1 && node._nodes && node._nodes.length >= 1) { elements = node._nodes; }
+            else if(node.children && node.children.length >= 1) { elements = node.children; }
+            else if(node._children && node._children.length >= 1) { elements = node._children; }
 
             // if(node.data.id === 'solids') { console.log(elements); }
 
