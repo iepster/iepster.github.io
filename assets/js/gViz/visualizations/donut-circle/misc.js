@@ -77,11 +77,11 @@ module.exports = function() {
                 var legendStr = "";
 
                 // Add rect for obj
-                if(_var.muted) {
-                  legendStr += "<span class='"+shape+"' style='background-color:"+mutedColor+"; margin-right: -2px;'></span>";
-                }
+                legendStr += "<span class='legend-content' >";
+                if(_var.muted) { legendStr += "<span class='"+shape+"' style='background-color:"+mutedColor+"; margin-right: -2px;'></span>"; }
                 legendStr += "<span class='"+shape+"' style='background-color:"+fillColor+" ; '></span><span class='name'>";
                 legendStr += shared.helpers.text.replaceVariables(legend, d);
+                legendStr += "</span>";
                 legendStr += "</span>";
 
                 // If the legend str wasnt computed, add to legend

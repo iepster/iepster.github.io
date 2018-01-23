@@ -5,6 +5,7 @@
   },
   "legend": {
     "isVisible": true,
+    "position": "right",
     "text": "{{name}}"
   },
   "tooltip": {

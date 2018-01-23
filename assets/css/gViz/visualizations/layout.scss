@@ -120,6 +120,15 @@
         float: left;
       }
 
+      .legend-content.side {
+        max-width: 100%;
+        max-height: 100%;
+        span.name {
+          max-width: calc(100% - 18px);
+          margin-right: 0px;
+        }
+      }
+
       // Legend axis title, if exists
       span.axis-title {
         display: block;

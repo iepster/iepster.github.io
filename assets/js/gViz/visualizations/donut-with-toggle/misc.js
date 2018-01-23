@@ -60,7 +60,10 @@ module.exports = function() {
                 .style('display', hasTitle ? 'block' : 'none')
                 .html(_var.data.title)
 
-              /* -- Axis and Legend -- */
+              /* -- Legend -- */
+              var hasLegend = _var.data.legend != null && _var.data.legend.isVisible != null && _var.data.legend.isVisible === true;
+              var legendPos = hasLegend && (["top","left","right","bottom"].indexOf(_var.data.legend.position) !== -1) ? _var.data.legend.position : "top";
+
               // Initialize string
               var string = "";
               var stringObj = {};
@@ -77,11 +80,11 @@ module.exports = function() {
                 var legendStr = "";
 
                 // Add rect for obj
-                if(_var.muted) {
-                  legendStr += "<span class='"+shape+"' style='background-color:"+mutedColor+"; margin-right: -2px;'></span>";
-                }
+                legendStr += "<span class='legend-content "+(legendPos === 'left' || legendPos === 'right' ? 'side' : '')+"' " + (legendPos==='top' || legendPos==='bottom' ? '' : "style='display:block; width: 100%;'") + " title='"+shared.helpers.text.replaceVariables(legend, d)+"'>";
+                if(_var.muted) { legendStr += "<span class='"+shape+"' style='background-color:"+mutedColor+"; margin-right: -2px;'></span>"; }
                 legendStr += "<span class='"+shape+"' style='background-color:"+fillColor+" ; '></span><span class='name'>";
                 legendStr += shared.helpers.text.replaceVariables(legend, d);
+                legendStr += "</span>";
                 legendStr += "</span>";
 
                 // If the legend str wasnt computed, add to legend
@@ -93,14 +96,14 @@ module.exports = function() {
               });
 
               // Set margin left and display style
-              var hasLegend = _var.data.legend != null && _var.data.legend.isVisible != null && _var.data.legend.isVisible === true;
               var legendWrapper = _var.container.outerWrapper.selectAll(".gviz-legend-wrapper").data(["gviz-legend-wrapper"]);
               legendWrapper.exit().remove();
               legendWrapper = legendWrapper.enter().append("div").attr('class', "gviz-legend-wrapper").merge(legendWrapper);
               legendWrapper
-                .style('width', '100%')
+                .style('width', legendPos === "top" || legendPos === "bottom" ? '100%' : '20%')
+                .style('min-width', '110px')
                 .style('height', 'auto')
-                .style('max-height', '60px')
+                .style('max-height', legendPos === 'top' && legendPos === 'bottom' ? '60px' : '100%')
                 .style('line-height', '30px')
                 .style('margin', '0px 0px 5px 0px')
                 .style('padding', '0px 10px')
@@ -109,8 +112,8 @@ module.exports = function() {
                 .style('font-size', '13px')
                 .style('z-index', "1005")
                 .style('position', 'absolute')
-                .style('top', hasTitle ? "35px" : "0px")
-                .style('left', "0px")
+                .style('left', legendPos === 'right' ? 'unset' : "0px")
+                .style('right', legendPos === 'right' ? "0px" : 'unset')
                 .style('display', hasLegend ? 'block' : 'none')
                 .each(function(d) {
 
@@ -123,22 +126,49 @@ module.exports = function() {
 
                 });
 
+              // Set mouse over legend functions
               legendWrapper
-                .on('mouseover', function() { d3.select(this).classed('gviz-legend-hover', true); })
-                .on('mouseout', function() { d3.select(this).classed('gviz-legend-hover', false); });
+                .on('mouseover', function() { if(legendPos === 'top' || legendPos ==='bottom') { d3.select(this).classed('gviz-legend-hover', true); }})
+                .on('mouseout', function() { if(legendPos === 'top' || legendPos ==='bottom') { d3.select(this).classed('gviz-legend-hover', false); }});
 
               // Set legend dimension
-              _var.container.dimensions.legend = hasLegend ? (legendWrapper.node().getBoundingClientRect().height + 5) : 0;
+              _var.container.dimensions.legendHeight = hasLegend && (legendPos === 'top' || legendPos === 'bottom') ? (legendWrapper.node().getBoundingClientRect().height + 5) : 0;
+              _var.container.dimensions.legendWidth = hasLegend && (legendPos === 'top' || legendPos === 'bottom') ?  0 : (legendWrapper.node().getBoundingClientRect().width);
+
+              // Update legend top position
+              legendWrapper
+                .style('top', function() {
+                  if(legendPos === 'bottom') { return 'unset'; }
+                  else if(legendPos === 'top') { return hasTitle ? "35px" : "0px"; }
+                  else { return ((_var.container.outerWrapperClientRect.height - _var.container.dimensions.title) >= _var.container.dimensions.legendHeight ?  (_var.container.outerWrapperClientRect.height/2 - _var.container.dimensions.title - _var.container.dimensions.legendHeight/2) : (hasTitle ? "35px" : "0px")) + 'px'; }
+                })
+                .style('bottom', legendPos === 'bottom' ? "0px" : 'unset')
 
               // Update container _id, height and client bound rect
               _var.container.d3
                 .attr('data-vis-id', _var._id)
-                .style('height', (_var.container.outerWrapperClientRect.height - (_var.container.dimensions.title + _var.container.dimensions.legend)) + "px")
-                .style('top', (_var.container.dimensions.title + _var.container.dimensions.legend) + 'px')
+                .style('height', (_var.container.outerWrapperClientRect.height - (_var.container.dimensions.title + _var.container.dimensions.legendHeight)) + "px")
+                .style('width', (_var.container.outerWrapperClientRect.width - _var.container.dimensions.legendWidth) + "px")
+                .style('top', (_var.container.dimensions.title + (legendPos === 'top' ? _var.container.dimensions.legendHeight : 0)) + 'px')
+                .style('left', legendPos === 'left' ? 'unset' : '0px')
+                .style('right', legendPos === 'left' ? '0px' : 'unset')
 
               // Update grid background position
               _var.container.outerWrapper.selectAll('.grid-background')
-                .style('top', (_var.container.dimensions.title + _var.container.dimensions.legend) + 'px')
+                .style('top', (_var.container.dimensions.title +  (legendPos === 'top' ? _var.container.dimensions.legendHeight : 0)) + 'px')
+                .style('left', legendPos === 'left' ? 'unset' : '0px')
+                .style('right', legendPos === 'left' ? '0px' : 'unset')
+
+              // Update toggle position
+              var hasToggle = _var.data.toggle != null && _var.data.toggle.isVisible != null && _var.data.toggle.isVisible === true;
+              _var.container.outerWrapper.selectAll('.gViz-donut-with-toggle-center-toggle')
+                .style('display', hasToggle ? 'block' : 'none')
+                .style('top', 'calc(50% - 60px)')
+                .style('left', function() {
+                  if(legendPos === 'top' || legendPos === 'bottom') { return null; }
+                  else if(legendPos==='left') { return (_var.container.outerWrapperClientRect.width/2 + _var.container.dimensions.legendWidth/2 - 12)+'px'; }
+                  else if(legendPos==='right') { return (_var.container.outerWrapperClientRect.width/2 - _var.container.dimensions.legendWidth/2 - 12)+'px'; }
+                });
 
               // Define height and width
               var scale = _var.data != null && _var.data.attrs != null && _var.data.attrs.scale != null ? _var.data.attrs.scale : 1;
