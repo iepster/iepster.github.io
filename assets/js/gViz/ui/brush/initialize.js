@@ -61,6 +61,9 @@ module.exports = function () {
           // Store data
           _var.data = data;
 
+          // Check if its disabled
+          _var.isDisabled = _var.data.attrs != null && _var.data.attrs.disabled != null && _var.data.attrs.disabled === true;
+
           break;
       }
     }

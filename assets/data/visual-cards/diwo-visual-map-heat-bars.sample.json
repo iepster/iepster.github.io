@@ -26,7 +26,8 @@
   },
   "attrs": {
     "legendBins": 4,
-    "legendColor": "#e8649a",
+    "legendColor": "#425d64",
+    "legendText": "{{amount}} States | {{min}} to {{max}} accounts",
     "width": "100%",
     "height": "100%"
   },
@@ -47,8 +48,8 @@
   "heat": {
     "colors": ["#8BC3D2"],
     "shapeId": "abbr",
-    "prefix": "",
-    "sufix": "%",
+    "prefix": "$",
+    "sufix": "",
     "format": "locale",
     "type": "number"
   },

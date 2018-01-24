@@ -84,12 +84,12 @@ module.exports = function () {
             cells.on('click', function(d) {
 
               // If the brush was created
-              if(_var.brush != null) { _var.g.select(".brush").call(_var.brush.move, [d.x0, d.x1]); }
+              if(_var.brush != null && !_var.isDisabled) { _var.g.select(".brush").call(_var.brush.move, [d.x0, d.x1]); }
 
             }).on('mouseover', function(d) {
 
               // If the brush was created
-              if(_var.brush != null) {
+              if(_var.brush != null && !_var.isDisabled) {
 
                 // Mark as hovered
                 var sel = d3.select(this);
@@ -109,7 +109,7 @@ module.exports = function () {
             }).on('mouseout', function(d) {
 
               // If the brush was created
-              if(_var.brush != null) {
+              if(_var.brush != null && !_var.isDisabled) {
 
                 // Remove hovered
                 var sel = d3.select(this);

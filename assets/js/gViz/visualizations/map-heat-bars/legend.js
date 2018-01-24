@@ -45,23 +45,23 @@ module.exports = function() {
                 .style('background', _var.mode === "heat" ? "linear-gradient(to right, "+_var.heatColors.join(',')+")" : _var.barColor({}))
 
           // Get scale bins values
-          var scaleBinsValues = _var.mode === 'heat' ? _var.heatScale.domain() : _var.barScale.domain();
-          var bins = _var.data.attrs != null && _var.data.attrs.legendBins != null && !isNaN(+_var.data.attrs.legendBins) ? +_var.data.attrs.legendBins : 0;
-          var hasScaleBins = bins >= 2;
+          _var.legendBinsValues = _var.mode === 'heat' ? _var.heatScale.domain() : _var.barScale.domain();
+          _var.legendBins = _var.data.attrs != null && _var.data.attrs.legendBins != null && !isNaN(+_var.data.attrs.legendBins) ? +_var.data.attrs.legendBins : 0;
+          var hasLegendBins =_var.legendBins >= 2;
 
           // Draw legend scale bins
-          var scaleBinsWrapper = outerWrapper.selectAll(".scale-bins-wrapper").data(hasScaleBins ? ['scale-bins-wrapper'] : []);
+          var scaleBinsWrapper = outerWrapper.selectAll(".scale-bins-wrapper").data(hasLegendBins ? ['scale-bins-wrapper'] : []);
           scaleBinsWrapper.exit().remove();
           scaleBinsWrapper = scaleBinsWrapper.enter().append('div').attr("class", "scale-bins-wrapper").merge(scaleBinsWrapper);
           scaleBinsWrapper
             .style('position', 'absolute')
             .style('width', 'auto')
             .style('height', 'auto')
-            .style('top', (((_var.height + _var.margin.top + _var.margin.top)/2) - (((bins+1)*20)/2)) + 'px')
+            .style('top', (((_var.height + _var.margin.top + _var.margin.top)/2) - (((_var.legendBins+1)*20)/2)) + 'px')
             .style('left', (_var.width + _var.margin.left + _var.margin.right) + 'px')
 
           // Draw legend scale bins
-          var scaleBins = scaleBinsWrapper.selectAll(".scale-bins").data(hasScaleBins ? d3.range(bins+1) : []);
+          var scaleBins = scaleBinsWrapper.selectAll(".scale-bins").data(hasLegendBins ? d3.range(_var.legendBins+1) : []);
           scaleBins.exit().remove();
           scaleBins = scaleBins.enter().append('div').attr("class", "scale-bins").merge(scaleBins);
           scaleBins
@@ -71,20 +71,34 @@ module.exports = function() {
             .style('white-space', 'nowrap')
             .style('cursor', 'pointer')
             .html(function(d, i) {
-              var value = scaleBinsValues[0] + ((scaleBinsValues[1] - scaleBinsValues[0])/bins) * i;
-              var rectColor = _var.mode === 'heat' ? _var.heatScale(value) : _var.barScale(value);
-              var color = _var.data.attrs != null && _var.data.attrs.legendColor != null && _var.data.attrs.legendColor !== "" ? _var.data.attrs.legendColor : (_var.mode === 'heat' ? _var.heatScale(value) : _var.barScale(value));
-              var parsedValue = _var.mode === 'heat' ? _var.heatFormat(value) : _var.barFormat(value);
+
+              // Get range values
+              var min = _var.legendBinsValues[0] + ((_var.legendBinsValues[1] - _var.legendBinsValues[0])/(_var.legendBins+1)) * i;
+              var max  = _var.legendBinsValues[0] + ((_var.legendBinsValues[1] - _var.legendBinsValues[0])/(_var.legendBins+1)) * (i+1);
+              var parsedValue = _var.mode === 'heat' ? _var.heatFormat : _var.barFormat;
+
+              // Get amount of elements
+              var amount = _var.data.data[_var.mode].filter(function(g) { return (i === 0 || +g.value >= min) && (i === _var.legendBins || +g.value < max); }).length;
+
+              // Get text string
+              var legendText = _var.data.attrs != null && _var.data.attrs.legendText != null && _var.data.attrs.legendText !== '' ? _var.data.attrs.legendText : "{{amount}} | {{min}} - {{max}}";
+              var text = shared.helpers.text.replaceVariables(legendText, { min: parsedValue(min), max: parsedValue(max), amount: amount });
+
+              // Get colors
+              var rectColor = _var.mode === 'heat' ? _var.heatScale(min) : _var.barScale(min);
+              var color = _var.data.attrs != null && _var.data.attrs.legendColor != null && _var.data.attrs.legendColor !== "" ? _var.data.attrs.legendColor : (_var.mode === 'heat' ? _var.heatScale(min) : _var.barScale(min));
+
+              // Draw legend elements
               var string = "<div style='display: block; height:18px; width:18px; background:"+rectColor+"; float:left; margin-right:5px'></div>";
-              string += "<div style='display: block; height:18px; line-height:20px; float:left; font-size:11px; font-weight:lighter; color: "+color+";'>"+parsedValue+"</div>";
+              string += "<div style='display: block; height:18px; line-height:20px; float:left; font-size:11px; font-weight:lighter; color: "+color+";'>"+text+"</div>";
               return string;
             });
 
           // Mouseover action
           scaleBins.on('mouseover', function(d, i) {
 
-            var min = scaleBinsValues[0] + ((scaleBinsValues[1] - scaleBinsValues[0])/bins) * i;
-            var max = scaleBinsValues[0] + ((scaleBinsValues[1] - scaleBinsValues[0])/bins) * (i+1);
+            var min = _var.legendBinsValues[0] + ((_var.legendBinsValues[1] - _var.legendBinsValues[0])/_var.legendBins) * i;
+            var max = _var.legendBinsValues[0] + ((_var.legendBinsValues[1] - _var.legendBinsValues[0])/_var.legendBins) * (i+1);
 
             // Fade bars
             _var.g.select('.chart-elements').selectAll('.bar, .bottom-bar, .bar-circle').transition()

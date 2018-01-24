@@ -40,6 +40,7 @@ module.exports = function () {
           var bars   = _var.g.select('.chart-elements').selectAll('.bar, .bottom-bar, .bar-circle');
           var pointEls = _var.g.select('.chart-elements').selectAll('.point-element');
           var points = _var.g.select('.chart-elements').selectAll('.point');
+          var legendBins = _var.container.d3.closest('.gViz-outer-wrapper').selectAll(".scale-bins-wrapper").selectAll(".scale-bins");
 
           // Store node
           _node = node;
@@ -66,9 +67,23 @@ module.exports = function () {
                   .style('opacity', function(g) { return g === _node || _var.mode !== 'heat' ? _var.shapeOpacity(g) : 0.2; })
                   .style("filter", function(g) { return g === _node && _var.mode === 'heat' ? "url(#"+_var.shadowId+")" : ""; })
 
+                // Fade map shapes
+                console.log(_node);
+                legendBins.transition()
+                  .style('opacity', function(d,i) {
+                    var min = _var.legendBinsValues[0] + ((_var.legendBinsValues[1] - _var.legendBinsValues[0])/_var.legendBins) * i;
+                    var max = _var.legendBinsValues[0] + ((_var.legendBinsValues[1] - _var.legendBinsValues[0])/_var.legendBins) * (i+1);
+                    return node.value >= min && node.value < max ? 1 : 0.2;
+                  })
+                  .style("filter", function(d,i) {
+                    var min = _var.legendBinsValues[0] + ((_var.legendBinsValues[1] - _var.legendBinsValues[0])/_var.legendBins) * i;
+                    var max = _var.legendBinsValues[0] + ((_var.legendBinsValues[1] - _var.legendBinsValues[0])/_var.legendBins) * (i+1);
+                    return node.value >= min && node.value < max ? "url(#"+_var.shadowId+")" : "";
+                  })
+
                 // Show / Hide point groups
                 if(_var.nodeDragging == null || _var.nodeDragging === false) {
-                  pointEls.style('display', function(g) { return g.id === node.id && node.draggable != null && node.draggable === true ? 'block' : 'none'; })
+                  pointEls.style('display', function(g) { return g.id===node.id && node.draggable != null && node.draggable === true ? 'block' : 'none'; })
                 }
 
                 // Fade points
@@ -80,8 +95,8 @@ module.exports = function () {
 
                 if(source != null && source === 'shape') {
 
-                  var x = (_var.zoomTransform.x) + d3.mouse(nodeSel)[0] * _var.zoomTransform.k;
-                  var y = (_var.zoomTransform.y) + d3.mouse(nodeSel)[1] * _var.zoomTransform.k;
+                  var x = ((_var.zoomTransform.x) + d3.mouse(nodeSel)[0] * _var.zoomTransform.k) * _var.scale;
+                  var y = ((_var.zoomTransform.y) + d3.mouse(nodeSel)[1] * _var.zoomTransform.k) * _var.scale;
 
                   // Get left and top positions
                   var left = _var.wrap.node().getBoundingClientRect().left + x;
@@ -90,8 +105,8 @@ module.exports = function () {
                 } else {
 
                   // Get x and y values
-                  var x = (_var.zoomTransform.x) + _var.projection([node.lon, node.lat])[0] * _var.zoomTransform.k;
-                  var y = (_var.zoomTransform.y) + _var.projection([node.lon, node.lat])[1] * _var.zoomTransform.k;
+                  var x = ((_var.zoomTransform.x) + _var.projection([node.lon, node.lat])[0] * _var.zoomTransform.k) * _var.scale;
+                  var y = ((_var.zoomTransform.y) + _var.projection([node.lon, node.lat])[1] * _var.zoomTransform.k) * _var.scale;
 
                   // Get left and top positions
                   var left = _var.wrap.node().getBoundingClientRect().left + x;
@@ -168,6 +183,7 @@ module.exports = function () {
               // Reset opacity and filter
               bars.transition().style('opacity', 1).style("filter", "")
               shapes.transition().style('opacity', _var.shapeOpacity).style("filter", "")
+              legendBins.transition().style('opacity', 1).style("filter", "")
               if(_var.nodeDragging == null || _var.nodeDragging === false) { pointEls.style('display', 'none'); }
               points.transition().style("filter", "")
 

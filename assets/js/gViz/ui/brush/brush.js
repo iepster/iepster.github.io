@@ -44,11 +44,18 @@ module.exports = function () {
             var brushSel = _var.g.selectAll(".brush").data(["brush"]);
             brushSel.exit().remove();
             brushSel = brushSel.enter().append('g').attr("class", "brush").merge(brushSel);
-            brushSel.call(_var.brush)
+            brushSel
+              .style("pointer-events", _var.isDisabled ? 'none' : 'all')
+              .call(_var.brush)
               .attr('transform', 'translate(0,1)')
+
+            var brushOverlay = brushSel.selectAll('.overlay');
+            brushOverlay
+              .style("pointer-events", _var.isDisabled ? 'none' : 'all')
 
             var brushRect = brushSel.selectAll('.selection');
             brushRect
+              .style("pointer-events", _var.isDisabled ? 'none' : 'all')
               .style('fill', _var.checkAttr(_var.data.style.brush, 'brushBackgroundColor', null, '#ddd'))
               .style('fill-opacity', 1)
 
@@ -57,6 +64,7 @@ module.exports = function () {
             handle.exit().remove();
             handle = handle.enter().append("path").attr("class", "handle--custom").merge(handle);
             handle
+              .style("pointer-events", _var.isDisabled ? 'none' : 'all')
               .attr("display", "none")
               .attr("fill-opacity", 0.8)
               .style('stroke', _var.checkAttr(_var.data.style.brush, 'arrowsColor', 'color', '#999'))
@@ -73,6 +81,7 @@ module.exports = function () {
             _var.brushText.exit().remove();
             _var.brushText = _var.brushText.enter().append('text').attr("class", "brush-text").merge(_var.brushText);
             _var.brushText
+              .style("pointer-events", _var.isDisabled ? 'none' : 'all')
               .attr("text-anchor", "middle")
               .attr("x", _var.brushAttrs.width/2)
               .attr("y", _var.brushAttrs.height/2 + 5)
@@ -303,7 +312,6 @@ module.exports = function () {
 
             // Set values
             brushSetValue();
-
 
           break;
       }

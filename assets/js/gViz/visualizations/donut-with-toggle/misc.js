@@ -129,7 +129,8 @@ module.exports = function() {
               // Set mouse over legend functions
               legendWrapper
                 .on('mouseover', function() { if(legendPos === 'top' || legendPos ==='bottom') { d3.select(this).classed('gviz-legend-hover', true); }})
-                .on('mouseout', function() { if(legendPos === 'top' || legendPos ==='bottom') { d3.select(this).classed('gviz-legend-hover', false); }});
+                .on('mouseout', function() { if(legendPos === 'top' || legendPos ==='bottom') { d3.select(this).classed('gviz-legend-hover', false); }})
+                .classed('is-pdf', _var.data.attrs != null && _var.data.attrs.isPdf != null && _var.data.attrs.isPdf === true)
 
               // Set legend dimension
               _var.container.dimensions.legendHeight = hasLegend && (legendPos === 'top' || legendPos === 'bottom') ? (legendWrapper.node().getBoundingClientRect().height + 5) : 0;
@@ -140,7 +141,9 @@ module.exports = function() {
                 .style('top', function() {
                   if(legendPos === 'bottom') { return 'unset'; }
                   else if(legendPos === 'top') { return hasTitle ? "35px" : "0px"; }
-                  else { return ((_var.container.outerWrapperClientRect.height - _var.container.dimensions.title) >= _var.container.dimensions.legendHeight ?  (_var.container.outerWrapperClientRect.height/2 - _var.container.dimensions.title - _var.container.dimensions.legendHeight/2) : (hasTitle ? "35px" : "0px")) + 'px'; }
+                  else {
+                    var legendHeight = legendWrapper.node().getBoundingClientRect().height + 5;
+                    return ((_var.container.outerWrapperClientRect.height - _var.container.dimensions.title) >= _var.container.dimensions.legendHeight ?  (_var.container.outerWrapperClientRect.height/2 - _var.container.dimensions.title - legendHeight/2) : (hasTitle ? "35px" : "0px")) + 'px'; }
                 })
                 .style('bottom', legendPos === 'bottom' ? "0px" : 'unset')
 
@@ -173,10 +176,8 @@ module.exports = function() {
               // Define height and width
               var scale = _var.data != null && _var.data.attrs != null && _var.data.attrs.scale != null ? _var.data.attrs.scale : 1;
               var containerClientRect = _var.container.d3.node().getBoundingClientRect();
-              containerClientRect.height = (containerClientRect.height / scale) / scale;
-              containerClientRect.width = (containerClientRect.width / scale);
-              _var.height = containerClientRect.height - (_var.margin.top + _var.margin.bottom);
-              _var.width = containerClientRect.width - (_var.margin.left + _var.margin.right);
+              _var.height = (containerClientRect.height / scale) - (_var.margin.top + _var.margin.bottom);
+              _var.width = (containerClientRect.width / scale) - (_var.margin.left + _var.margin.right);
 
               // NO DATA AVAILABLE
               if (_var.data == null || _var.data.data == null || _var.data.data.length === 0) {

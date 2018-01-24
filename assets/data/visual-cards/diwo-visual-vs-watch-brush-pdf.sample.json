@@ -19,6 +19,9 @@
       "selectedBackgroundColor": "#FFF"
     }
   },
+  "attrs": {
+    "disabled": true
+  },
   "data": [
     {
       "id": "last-week",

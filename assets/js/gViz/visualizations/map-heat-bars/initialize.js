@@ -82,9 +82,9 @@ module.exports = function() {
           if(_var.zoomTransform == null) { _var.zoomTransform = { k: 1, x: _var.margin.left, y: _var.margin.right }; }
 
           // Define height and width
-          var scale = _var.data != null && _var.data.attrs != null && _var.data.attrs.scale != null ? _var.data.attrs.scale : 1;
-          _var.height = ((height != null) ? height : _var.container.clientRect.height)/scale;
-          _var.width = ((width != null) ? width : _var.container.clientRect.width)/scale;
+          _var.scale = _var.data != null && _var.data.attrs != null && _var.data.attrs.scale != null ? _var.data.attrs.scale : 1;
+          _var.height = ((height != null) ? height : _var.container.clientRect.height)/_var.scale;
+          _var.width = ((width != null) ? width : _var.container.clientRect.width)/_var.scale;
 
           // Update height and width on borders
           _var.height = _var.height - (_var.margin.top + _var.margin.bottom);

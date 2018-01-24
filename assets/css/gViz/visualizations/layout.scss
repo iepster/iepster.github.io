@@ -81,6 +81,28 @@
       }
     }
 
+    &.is-pdf {
+      .legend-content {
+        max-width: none !important;
+        height: auto !important;
+        position: relative;
+        span.rect {
+          position: absolute;
+          top: 0px;
+          left: 0px;
+        }
+        span.name {
+          text-indent: 12px;
+          max-width: none !important;
+          white-space: normal !important;
+          overflow: visible !important;
+          height: auto !important;
+          line-height: 18px !important;
+          margin-top: 7px !important;
+        }
+      }
+    }
+
     .legend, .axis-title-legend, .controls, .gviz-legend {
 
       .legend-content {
