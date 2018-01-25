@@ -67,19 +67,18 @@ module.exports = function () {
                   .style('opacity', function(g) { return g === _node || _var.mode !== 'heat' ? _var.shapeOpacity(g) : 0.2; })
                   .style("filter", function(g) { return g === _node && _var.mode === 'heat' ? "url(#"+_var.shadowId+")" : ""; })
 
-                // Fade map shapes
-                console.log(_node);
+                // Fade map legends
                 legendBins.transition()
                   .style('opacity', function(d,i) {
                     var min = _var.legendBinsValues[0] + ((_var.legendBinsValues[1] - _var.legendBinsValues[0])/_var.legendBins) * i;
                     var max = _var.legendBinsValues[0] + ((_var.legendBinsValues[1] - _var.legendBinsValues[0])/_var.legendBins) * (i+1);
                     return node.value >= min && node.value < max ? 1 : 0.2;
                   })
-                  .style("filter", function(d,i) {
-                    var min = _var.legendBinsValues[0] + ((_var.legendBinsValues[1] - _var.legendBinsValues[0])/_var.legendBins) * i;
-                    var max = _var.legendBinsValues[0] + ((_var.legendBinsValues[1] - _var.legendBinsValues[0])/_var.legendBins) * (i+1);
-                    return node.value >= min && node.value < max ? "url(#"+_var.shadowId+")" : "";
-                  })
+                  // .style("filter", function(d,i) {
+                  //   var min = _var.legendBinsValues[0] + ((_var.legendBinsValues[1] - _var.legendBinsValues[0])/_var.legendBins) * i;
+                  //   var max = _var.legendBinsValues[0] + ((_var.legendBinsValues[1] - _var.legendBinsValues[0])/_var.legendBins) * (i+1);
+                  //   return node.value >= min && node.value < max ? "url(#"+_var.shadowId+")" : "";
+                  // })
 
                 // Show / Hide point groups
                 if(_var.nodeDragging == null || _var.nodeDragging === false) {

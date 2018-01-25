@@ -75,14 +75,16 @@ module.exports = function() {
               // Get range values
               var min = _var.legendBinsValues[0] + ((_var.legendBinsValues[1] - _var.legendBinsValues[0])/(_var.legendBins+1)) * i;
               var max  = _var.legendBinsValues[0] + ((_var.legendBinsValues[1] - _var.legendBinsValues[0])/(_var.legendBins+1)) * (i+1);
-              var parsedValue = _var.mode === 'heat' ? _var.heatFormat : _var.barFormat;
+              var format = _var.mode === 'heat' ? _var.heatFormat : _var.barFormat;
 
               // Get amount of elements
-              var amount = _var.data.data[_var.mode].filter(function(g) { return (i === 0 || +g.value >= min) && (i === _var.legendBins || +g.value < max); }).length;
+              var values = _var.data.data[_var.mode].filter(function(g) { return (i===0 || +g.value>=min) && (i===_var.legendBins || +g.value<max); });
+              var amount = values.length;
+              var sum    = d3.sum(values, function(d) { return +d.value; });
 
               // Get text string
               var legendText = _var.data.attrs != null && _var.data.attrs.legendText != null && _var.data.attrs.legendText !== '' ? _var.data.attrs.legendText : "{{amount}} | {{min}} - {{max}}";
-              var text = shared.helpers.text.replaceVariables(legendText, { min: parsedValue(min), max: parsedValue(max), amount: amount });
+              var text = shared.helpers.text.replaceVariables(legendText, { min: format(min), max: format(max), amount: amount, sum: format(sum) });
 
               // Get colors
               var rectColor = _var.mode === 'heat' ? _var.heatScale(min) : _var.barScale(min);
@@ -97,8 +99,10 @@ module.exports = function() {
           // Mouseover action
           scaleBins.on('mouseover', function(d, i) {
 
+            // Attribute initial values
             var min = _var.legendBinsValues[0] + ((_var.legendBinsValues[1] - _var.legendBinsValues[0])/_var.legendBins) * i;
             var max = _var.legendBinsValues[0] + ((_var.legendBinsValues[1] - _var.legendBinsValues[0])/_var.legendBins) * (i+1);
+            var self = this;
 
             // Fade bars
             _var.g.select('.chart-elements').selectAll('.bar, .bottom-bar, .bar-circle').transition()
@@ -110,15 +114,16 @@ module.exports = function() {
               .style('opacity', function(g) { return _var.shapeValue(g) >= min && _var.shapeValue(g) < max ? _var.shapeOpacity(g) : 0.2; })
               .style("filter", function(g) { return _var.shapeValue(g) >= min && _var.shapeValue(g) < max ? "url(#"+_var.shadowId+")" : ""; })
 
+            // Fade map legends
+            scaleBins.transition()
+              .style('opacity', function(g) { return g == d ? 1 : 0.2; })
+              //.style("filter",  function(g) { return g == d ? "url(#"+_var.shadowId+")" : ""; })
+
           // Mouseout action
           }).on('mouseout', function(d,i) {
-
-            // Fade bars
             _var.g.select('.chart-elements').selectAll('.bar, .bottom-bar, .bar-circle').transition().style('opacity', 1).style("filter", "");
-
-            // Fade map shapes
             _var.g.select('.chart-elements').selectAll('.map-shape').transition().style('opacity', _var.shapeOpacity).style("filter", "");
-
+            scaleBins.transition().style('opacity', _var.shapeOpacity).style("filter", "");
           });
 
           break;
