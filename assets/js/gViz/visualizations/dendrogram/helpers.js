@@ -242,7 +242,7 @@ module.exports = function() {
             d.acc = 0;
 
             // Recursive iteration
-            if (d.children != null) {
+            if (d.children != null && d.children.length !== 0) {
 
               // Get sizes from children
               var bbox_array = d.children.map(function (c) { return _var.getAttrs(c); });
@@ -258,7 +258,12 @@ module.exports = function() {
               d.bbox._width = d.bbox.width > width ? d.bbox.width + 6 * _var.attrs.offset.y : width;
               d.bbox._height = d.bbox.height > height ? d.bbox.height + _var.attrs.offset.x : height;
 
-            } else if (d._children != null || (d.data.collapsed != null && d.data.collapsed === true)) {
+            } else if ((d._children == null || d._children.length === 0) && (d.children == null || (d.children != null && d.children.length === 0))) {
+
+              d.bbox._width = d.bbox.width + 6 * _var.attrs.offset.y;
+              d.bbox._height = d.bbox.height * 2 + 6 + _var.attrs.offset.x;
+
+            } else if ((d._children != null && d._children.length !== 0) || (d.data.collapsed != null && d.data.collapsed === true)) {
 
               d.bbox._width = d.bbox.width + 6 * _var.attrs.offset.y;
               d.bbox._height = d.bbox.height + _var.attrs.offset.x;
