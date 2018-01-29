@@ -92,7 +92,7 @@ module.exports = function() {
 
           // Update height based on title and legend
           if(_var.data.title != null && _var.data.title !== "") { _var.height -= 35; }
-          if((_var.data.legend != null && _var.data.legend.isVisible != null && _var.data.legend.isVisible === true) || (_var.data.toggle != null && _var.data.toggle.isVisible != null && _var.data.toggle.isVisible === true)) { _var.height -= 35; }
+          if((_var.data.legend != null && _var.data.legend.isVisible != null && _var.data.legend.isVisible === true) || (_var.data.toggle != null && _var.data.toggle.isVisible != null && _var.data.toggle.isVisible === true)) { _var.height -= 47; }
 
           // Set attribute _id to container
           _var.container.d3.attr('data-vis-id', _var._id);

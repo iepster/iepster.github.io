@@ -39,6 +39,7 @@ module.exports = function () {
           _var.wrap
             .attr("width", _var.width + _var.margin.left + _var.margin.right)
             .attr("height", _var.height + _var.margin.top + _var.margin.bottom)
+            .style("background-color", _var.data.attrs != null && _var.data.attrs.backgroundColor != null && _var.data.attrs.backgroundColor !== '' ? _var.data.attrs.backgroundColor : 'transparent')
             .classed('grab', true);
 
           // Draw g
@@ -55,8 +56,8 @@ module.exports = function () {
               .id(_var._id)
               .height(_var.height + _var.margin.top + _var.margin.bottom)
               .width(_var.width + _var.margin.left + _var.margin.right)
-              .left(_var.margin.left)
-              .top(_var.margin.top)
+              .left(0)
+              .top(0)
               .wrap(_var.container.d3)
               .run();
           }
