@@ -31,7 +31,7 @@ module.exports = function () {
   var geoData   = {};
   var labelsData   = {};
   var height    = null;
-  var margin    = { top: 0, right: 0, bottom: 0, left: 0};
+  var margin    = { top: 0, right: 10, bottom: 0, left: 10};
   var mode      = "bars";
   var width     = null;
 
