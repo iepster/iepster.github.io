@@ -1,0 +1,18 @@
+{
+  "title": "Top 3 results",
+  "showNumbers": true,
+  "data": {
+    "title": "Sure, I can show you revenue for features as",
+    "items": [
+      {
+        "text": "Product Style"
+      },
+      {
+        "text": "SKU"
+      },
+      {
+        "text": "Master Style"
+      }
+    ]
+  }
+}

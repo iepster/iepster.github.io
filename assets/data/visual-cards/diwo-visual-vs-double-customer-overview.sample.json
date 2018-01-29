@@ -1,0 +1,121 @@
+{
+  "data": {
+    "backgroundColor": "#fff",
+    "leftData": {
+      "data": {
+        "backgroundColor": "#fff",
+        "bubble": {
+          "backgroundColor": "#f7b7d2",
+          "borderColor": "#EC75A2",
+          "color": "#FFF",
+          "content": "<img src='/assets/images/gViz/visualizations/diwo-visual-vs-bubble-cross-sell-up-sell/wew_bra_icon.png' style='height: 30px; display: block;     margin: 20px auto 0px;' />"
+        },
+        "left": {
+          "borderColor": "#EC75A2",
+          "items": [
+            {
+              "topText": {
+                "backgroundColor": "#f6b8d0",
+                "borderColor": "#f6b8d0",
+                "color": "#FFF",
+                "content": "<div style='width: 100%; text-align: center;'>Sales Mix %</div>"
+              },
+              "bottomText": {
+                "backgroundColor": "#fff",
+                "borderColor": "#fff",
+                "color": "#9196a5",
+                "content": "<div style='width: 100%; text-align: center;'>9.82%</div>"
+              }
+            },
+            {
+              "topText": {
+                "backgroundColor": "#f6b8d0",
+                "borderColor": "#f6b8d0",
+                "color": "#FFF",
+                "content": "<div style='width: 100%; text-align: center;'>Selling Frequency</div>"
+              },
+              "bottomText": {
+                "backgroundColor": "#fff",
+                "borderColor": "#fff",
+                "color": "#9196a5",
+                "content": "<div style='width: 100%; text-align: center;'>Every 12 Transactions</div>"
+              }
+            }
+          ]
+        }
+      }
+    },
+    "rightData": {
+      "data": {
+        "backgroundColor": "#fff",
+        "bubble": {
+          "backgroundColor": "#f7b7d2",
+          "borderColor": "#EC75A2",
+          "color": "#FFF",
+          "content": "<img src='/assets/images/gViz/visualizations/diwo-visual-vs-bubble-cross-sell-up-sell/woman_pink_medium.png' style='height: 40px; display: block; margin: 14px auto 0px;' />"
+        },
+        "right": {
+          "borderColor": "#EC75A2",
+          "items": [
+            {
+              "topText": {
+                "backgroundColor": "#f6b8d0",
+                "borderColor": "#f6b8d0",
+                "color": "#FFF",
+                "content": "<div style='width: 100%; text-align: center;'>Age</div>"
+              },
+              "bottomText": {
+                "backgroundColor": "#fff",
+                "borderColor": "#fff",
+                "color": "#9196a5",
+                "content": "<div style='width: 100%; text-align: center;'>21 yrs - 25 yrs</div>"
+              }
+            },
+            {
+              "topText": {
+                "backgroundColor": "#f6b8d0",
+                "borderColor": "#f6b8d0",
+                "color": "#FFF",
+                "content": "<div style='width: 100%; text-align: center;'>Income</div>"
+              },
+              "bottomText": {
+                "backgroundColor": "#fff",
+                "borderColor": "#fff",
+                "color": "#9196a5",
+                "content": "<div style='width: 100%; text-align: center;'>$80 K - $110 K</div>"
+              }
+            },
+            {
+              "topText": {
+                "backgroundColor": "#f6b8d0",
+                "borderColor": "#f6b8d0",
+                "color": "#FFF",
+                "content": "<div style='width: 100%; text-align: center;'>Average Basket Value</div>"
+              },
+              "bottomText": {
+                "backgroundColor": "#fff",
+                "borderColor": "#fff",
+                "color": "#9196a5",
+                "content": "<div style='width: 100%; text-align: center;'>$65</div>"
+              }
+            },
+            {
+              "topText": {
+                "backgroundColor": "#f6b8d0",
+                "borderColor": "#f6b8d0",
+                "color": "#FFF",
+                "content": "<div style='width: 100%; text-align: center;'>Lifestyle</div>"
+              },
+              "bottomText": {
+                "backgroundColor": "#fff",
+                "borderColor": "#fff",
+                "color": "#9196a5",
+                "content": "<div style='width: 100%; text-align: center;'>Trendsetter, Athletic, Social</div>"
+              }
+            }
+          ]
+        }
+      }
+    }
+  }
+}

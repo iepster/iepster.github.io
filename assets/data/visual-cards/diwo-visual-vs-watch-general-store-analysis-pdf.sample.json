@@ -1,0 +1,136 @@
+{
+  "isPdf": true,
+  "title": {
+    "style": {
+      "top": "calc(50% - 115px)",
+      "left": "calc(50% - 28px)",
+      "color": "#ad5073",
+      "fontSize": "10px",
+      "textAlign": "center",
+      "hoveredTop": "calc(50% - 168px)",
+      "hoveredLeft": "calc(50% - 28px)"
+    },
+    "content": "Store Analysis"
+  },
+  "textElements": [
+    {
+      "style": {
+        "top": "calc(50% + 60px)",
+        "left": "calc(50% - 48px)",
+        "hoveredTop": "calc(50% + 92px)",
+        "hoveredLeft": "calc(50% - 48px)",
+        "zIndex": 1007,
+        "color": "#FFF",
+        "pdfTop": "calc(100% - 20px)",
+        "pdfColor": "#575757"
+      },
+      "content": "<div style='font-size:12px; font-weight: lighter;'>Top Customer Base</div>"
+    }
+  ],
+  "valuesBubble": {
+    "style": {
+      "top": "calc(50% - 100px)",
+      "left": "calc(50% - 100px)",
+      "size": "200px",
+      "backgroundColor": "#1a1620",
+      "borderColor": "#504859",
+      "borderRadius": "50%",
+      "hoveredSize": "300px",
+      "color": "#FFF",
+      "zIndex": "1004",
+      "hoveredTop": "calc(50% - 150px)",
+      "hoveredLeft": "calc(50% - 150px)"
+    },
+    "content": {
+      "type": "1",
+      "data": {
+        "legend": {
+          "isVisible": false
+        },
+        "actions": {
+          "isVisible": false
+        },
+        "tooltip": {
+          "heat": {
+            "title": [ "{{properties.name}}" ],
+            "body": [ "<span class='metric'># Accounts</span><span class='number'>{{value}}</span>" ]
+          }
+        },
+        "mode": "heat",
+        "heat": {
+          "colors": ["#FFF","#c73e68"],
+          "mapStrokeColor": "#b2b2b2",
+          "shapeId": "abbr",
+          "prefix": "",
+          "sufix": "",
+          "format": "locale",
+          "type": "number"
+        },
+        "attrs": {
+          "legendBins": 4,
+          "legendColor": "#e8649a",
+          "labels": false,
+          "grid": false,
+          "zoom": false,
+          "pan": false,
+          "hover": true
+        },
+        "data": {
+          "heat": [
+            { "id": "al", "value": "100" },
+            { "id": "ak", "value": "200" },
+            { "id": "az", "value": "300" },
+            { "id": "ar", "value": "400" },
+            { "id": "ca", "value": "500" },
+            { "id": "co", "value": "600" },
+            { "id": "ct", "value": "700" },
+            { "id": "de", "value": "600" },
+            { "id": "fl", "value": "500" },
+            { "id": "ga", "value": "400" },
+            { "id": "hi", "value": "300" },
+            { "id": "id", "value": "200" },
+            { "id": "il", "value": "100" },
+            { "id": "in", "value": "200" },
+            { "id": "ia", "value": "300" },
+            { "id": "ks", "value": "400" },
+            { "id": "ky", "value": "500" },
+            { "id": "la", "value": "600" },
+            { "id": "me", "value": "700" },
+            { "id": "md", "value": "600" },
+            { "id": "ma", "value": "500" },
+            { "id": "mi", "value": "400" },
+            { "id": "mn", "value": "300" },
+            { "id": "ms", "value": "200" },
+            { "id": "mo", "value": "100" },
+            { "id": "mt", "value": "200" },
+            { "id": "ne", "value": "300" },
+            { "id": "nv", "value": "400" },
+            { "id": "nh", "value": "500" },
+            { "id": "nj", "value": "600" },
+            { "id": "nm", "value": "700" },
+            { "id": "ny", "value": "600" },
+            { "id": "nc", "value": "500" },
+            { "id": "nd", "value": "400" },
+            { "id": "oh", "value": "300" },
+            { "id": "ok", "value": "200" },
+            { "id": "or", "value": "100" },
+            { "id": "pa", "value": "100" },
+            { "id": "ri", "value": "100" },
+            { "id": "sc", "value": "100" },
+            { "id": "sd", "value": "100" },
+            { "id": "tn", "value": "100" },
+            { "id": "tx", "value": "100" },
+            { "id": "ut", "value": "100" },
+            { "id": "vt", "value": "100" },
+            { "id": "va", "value": "100" },
+            { "id": "wa", "value": "100" },
+            { "id": "wv", "value": "100" },
+            { "id": "wy", "value": "100" }
+          ]
+        }
+      }
+    }
+  }
+}
+
+

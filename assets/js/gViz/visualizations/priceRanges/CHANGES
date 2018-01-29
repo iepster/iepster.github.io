@@ -1,0 +1,4 @@
+1. UNCOMMENT REQUIRES AT THE START
+2. change module.fileName with module.exports
+3. uncomment "requires" at init.js
+4. rename init js to _init.js

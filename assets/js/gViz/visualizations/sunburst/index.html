@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Sunburst </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        .tooltip-div.right ::after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 0;
+            position: absolute;
+
+            border-top: 13px solid transparent;
+            border-bottom: 13px solid transparent;
+            border-left: 13px solid white;
+            right: -10px;
+
+            top: 1px;
+        }
+
+
+
+
+
+
+
+
+
+
+        .tooltip-div.left ::before {
+            content: '';
+            display: block;
+            width: 0;
+            height: 0;
+            position: absolute;
+
+            border-top: 13px solid transparent;
+            border-bottom: 13px solid transparent;
+            border-right: 13px solid white;
+            left: -10px;
+
+            top: 1px;
+        }
+
+
+
+
+
+
+
+
+
+
+
+        body {
+            background-image: url(../../assets/sunburst/sunburst-back.png)
+        }
+    </style>
+
+
+</head>
+
+<body translate="no">
+
+    <div class="sunburst">
+    </div>
+
+
+    <script>
+        var module = {}
+        var lineModule = {}
+    </script>
+
+    <link rel="stylesheet" href="../../../lib/styles/font-awesome.min.css">
+    <script src="sunburst.line/handlers.js"></script>
+    <script src="sunburst.line/create.js"></script>
+    <script src="sunburst.line/elements.js"></script>
+    <script src="sunburst.line/initialize.js"></script>
+    <script src="sunburst.line/init.js"></script>
+
+
+    <script src="../../../lib/d3.v4.js"></script>
+    <script src="handlers.js"></script>
+    <script src="create.js"></script>
+    <script src="elements.js"></script>
+    <script src="initialize.js"></script>
+    <script src="init.js"></script>
+
+
+
+
+    <script>
+        d3.json("sunburstData.json", function (err, data) {
+            var chart = module._init()
+                .container('.sunburst')
+                .data(data)
+                .type('PRODUCTED')
+                .run()
+        })
+    </script>
+
+
+</body>
+
+</html>

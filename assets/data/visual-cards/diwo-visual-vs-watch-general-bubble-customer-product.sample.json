@@ -1,0 +1,716 @@
+{
+  "data": {
+    "backgroundColor": "#190f1f",
+
+    "filterBubble": {
+      "style": {
+        "top": "calc(50% - 55px)",
+        "left": "calc(50% - 55px)",
+        "size": "110px",
+        "backgroundColor": "#262626",
+        "borderColor": "#ad5073",
+        "borderRadius": "50%",
+        "color": "#FFF",
+        "zIndex": "1006"
+      },
+      "content": {
+        "backgroundBubble": {
+          "style": {
+            "top": "calc(50% - 31px)",
+            "left": "calc(50% - 31px)",
+            "size": "60px",
+            "backgroundColor": "#transparent",
+            "borderColor": "#ad5073",
+            "borderRadius": "50%",
+            "borderStyle": "dashed",
+            "opacity": "0.5",
+            "zIndex": "1004"
+          }
+        },
+        "filterBubbles": [
+          {
+            "style": {
+              "top": "calc(50% - 34px)",
+              "left": "calc(50% - 44px)",
+              "size": "36px",
+              "imageSize": "18px",
+              "backgroundColor": "#ad5073",
+              "borderColor": "#ad5073",
+              "borderRadius": "50%",
+              "zIndex": "1005"
+            },
+            "content": {
+              "id": "product",
+              "selected": true,
+              "placeholder": "/assets/images/watch/icon_product.png"
+            }
+          },
+          {
+            "style": {
+              "top": "calc(50% - 34px)",
+              "left": "calc(50% + 6px)",
+              "size": "36px",
+              "imageSize": "18px",
+              "backgroundColor": "#ad5073",
+              "borderColor": "#ad5073",
+              "borderRadius": "50%",
+              "zIndex": "1005"
+            },
+            "content": {
+              "id": "customer",
+              "selected": true,
+              "placeholder": "/assets/images/watch/icon_customer.png"
+            }
+          },
+          {
+            "style": {
+              "top": "calc(50% + 10px)",
+              "left": "calc(50% - 18px)",
+              "size": "36px",
+              "imageSize": "15px",
+              "backgroundColor": "#ad5073",
+              "borderColor": "#ad5073",
+              "borderRadius": "50%",
+              "zIndex": "1005"
+            },
+            "content": {
+              "id": "location",
+              "placeholder": "/assets/images/watch/icon_location.png"
+            }
+          }
+        ]
+      }
+    },
+
+    "attributeAnalysis": {
+      "title": {
+        "style": {
+          "top": "calc(50% + 140px)",
+          "left": "calc(50% - 105px)",
+          "color": "#ad5073",
+          "fontSize": "12px",
+          "textAlign": "center"
+        },
+        "content": "Attribute Analysis"
+      },
+      "circleConnectors": [
+        {
+          "style": {
+            "top": "calc(50% + 17px)",
+            "left": "calc(50% - 128px)",
+            "size": "126px",
+            "borderColor": "#756886",
+            "clipPath": "polygon(0% 10%, 50% 50%, 0% 35%, -2% 100%)",
+            "transform": "rotate(-11deg)",
+            "zIndex": 1003
+          }
+        }
+      ],
+      "connectors": [
+        {
+          "style": {
+            "borderColor": "#756886",
+            "size": "20px",
+            "top": "calc(50% + 47px)",
+            "left": "calc(50% - 139px)",
+            "transform": "rotate(24deg)",
+            "zIndex": 1003
+          }
+        },
+        {
+          "style": {
+            "borderColor": "#756886",
+            "size": "17px",
+            "top": "calc(50% + 72px)",
+            "left": "calc(50% - 144px)",
+            "transform": "rotate(6deg)",
+            "zIndex": 1003
+          }
+        }
+      ],
+      "valuesBubble": {
+        "style": {
+          "top": "calc(50% + 25px)",
+          "left": "calc(50% - 120px)",
+          "size": "110px",
+          "backgroundColor": "#1a1620",
+          "borderColor": "#504859",
+          "borderRadius": "50%",
+          "color": "#FFF",
+          "zIndex": "1004",
+          "hoveredSize": "110px",
+          "hoveredBackgroundColor": "#1a1620",
+          "hoveredBorderColor": "#504859"
+        },
+        "content": {
+          "type": "1",
+          "text": [
+            "<div class='overflow-ellipsis' style='height: 14px; margin-left:10%; color:#be527f; font-size: 12px; width: 80%; text-align:center;'><span style='color:#FFF; padding-right:5px;' title='Color: Black'>Color: </span>Black</div>",
+            "<div class='overflow-ellipsis' style='height: 14px; margin-left:10%; color:#be527f; font-size: 12px; width: 80%; text-align:center;'><span style='color:#FFF; padding-right:5px;'>Print: </span><span title='H17-035-08 - C002 PrplPetl 3KL'>H17-035-08 - C002 PrplPetl 3KL</span></div>",
+            "<div class='overflow-ellipsis' style='height: 14px; margin-left:10%; color:#be527f; font-size: 12px; width: 80%; text-align:center;'><span style='color:#FFF; padding-right:5px;' title='Fabric: SMOOTH' >Fabric: </span>SMOOTH</div>",
+            "<div style='color:#FFF; font-size: 10px; width: 100%; text-align: center;'><span style='margin-top: 3px;'>Top Trending</span><img src='/assets/images/top-trending-pink.png' style='display:inline-block; height:10px; margin-top: 3px;'/></div>"
+          ]
+        }
+      },
+      "chartBubble": {
+        "style": {
+          "top": "calc(50% + 15px)",
+          "left": "calc(50% - 170px)",
+          "size": "40px",
+          "backgroundColor": "#b14a6a",
+          "borderColor": "#b14a6a",
+          "borderRadius": "50%",
+          "color": "#FFF",
+          "zIndex": "1004",
+          "hoveredTop": "calc(50% - 75px)",
+          "hoveredLeft": "calc(50% - 420px)",
+          "hoveredSize": "305px",
+          "hoveredBackgroundColor": "#1a1620",
+          "hoveredBorderColor": "#504859"
+        },
+        "content": {
+          "type": "1",
+          "placeholder": "/assets/images/gViz/visualizations/diwo-visual-bubble-poet-context/wave.png"
+        },
+        "hoveredContent": {
+          "data": {
+            "backgroundColor": "transparent",
+            "borderColor": "#383142",
+            "color": "#FFF",
+            "textAlign": "left",
+            "trPadding": "2px 0px",
+            "tdPadding": "4px 5px",
+            "width": "auto",
+            "data": [
+              [
+                "<span style='font-size:12px;'>Att. Trends</span>",
+                "<span style='font-size:12px; width:100%; text-align:center;'>Top<img src='/assets/images/top-trending-green.png' style='display:inline-block; margin-left:5px; width:14px;'/></span>",
+                "<span style='font-size:12px; width:100%; text-align:center;'>Bottom<img src='/assets/images/bottom-trending-red.png' style='display:inline-block; margin-left:5px; width:14px;'/></span>"
+              ],
+              [
+                "<span style='font-size:12px;'>Color (Solid)</span>",
+                "<span style='font-size:12px; width:100%; text-align:center; color:#e95c83;'>Black</span>",
+                "<span style='font-size:12px; width:100%; text-align:center; color:#e95c83;'>Purple</span>"
+              ],
+              [
+                "<span style='font-size:12px;'>Color (Print)</span>",
+                "<span style='font-size:12px; width:100%; text-align:center; color:#e95c83;'>Logo</span>",
+                "<span style='font-size:12px; width:100%; text-align:center; color:#e95c83;'>Floral</span>"
+              ],
+              [
+                "<span style='font-size:12px;'>Size</span>",
+                "<span style='font-size:12px; width:100%; text-align:center; color:#e95c83;'>Medium</span>",
+                "<span style='font-size:12px; width:100%; text-align:center; color:#e95c83;'>Small</span>"
+              ],
+              [
+                "<span style='font-size:12px;'>Fabric</span>",
+                "<span style='font-size:12px; width:100%; text-align:center; color:#e95c83;'>Smooth</span>",
+                "<span style='font-size:12px; width:100%; text-align:center; color:#e95c83;'>Nylon</span>"
+              ],
+              [
+                "<span style='font-size:12px;'>Silhouette</span>",
+                "<span style='font-size:12px; width:100%; text-align:center; color:#e95c83;'>Push-Up</span>",
+                "<span style='font-size:12px; width:100%; text-align:center; color:#e95c83;'>Lightly Lined</span>"
+              ]
+            ]
+          }
+        }
+      },
+      "placeholderBubble": {
+        "style": {
+          "top": "calc(50% + 66px)",
+          "left": "calc(50% - 153px)",
+          "size": "12px",
+          "backgroundColor": "#f7b5c9",
+          "borderColor": "#f7b5c9",
+          "borderRadius": "50%",
+          "zIndex": "1004"
+        }
+      }
+    },
+
+    "customerAnalysis": {
+      "title": {
+        "style": {
+          "top": "calc(50% + 55px)",
+          "left": "calc(50% + 40px)",
+          "color": "#ad5073",
+          "fontSize": "12px",
+          "textAlign": "center"
+        },
+        "content": "Customer <br/> Analysis"
+      },
+      "circleConnectors": [
+        {
+          "style": {
+            "top": "calc(50% + 77px)",
+            "left": "calc(50% + 37px)",
+            "size": "56px",
+            "borderColor": "#756886",
+            "clipPath": "polygon(0% 10%, 50% 50%, 0% 112%, -2% 100%)",
+            "transform": "rotate(192deg)",
+            "zIndex": 1003
+          }
+        }
+      ],
+      "connectors": [
+        {
+          "style": {
+            "borderColor": "#756886",
+            "size": "51px",
+            "top": "calc(50% + 70px)",
+            "left": "calc(50% + 11px)",
+            "transform": "rotate(52deg)",
+            "zIndex": 1003
+          }
+        },
+        {
+          "style": {
+            "borderColor": "#756886",
+            "size": "20px",
+            "top": "calc(50% + 80px)",
+            "left": "calc(50% + 83px)",
+            "transform": "rotate(-42deg)",
+            "hoveredSize": "23px",
+            "hoveredTop": "calc(50% + 79px)",
+            "hoveredLeft": "calc(50% + 83px)",
+            "hoveredTransform": "rotate(-48deg)",
+            "zIndex": 1003
+          }
+        },
+        {
+          "style": {
+            "borderColor": "#756886",
+            "size": "30px",
+            "top": "calc(50% + 92px)",
+            "left": "calc(50% + 91px)",
+            "transform": "rotate(-18deg)",
+            "hoveredSize": "37px",
+            "hoveredTop": "calc(50% + 91px)",
+            "hoveredLeft": "calc(50% + 90px)",
+            "hoveredTransform": "rotate(-22deg)",
+            "zIndex": 1003
+          }
+        },
+        {
+          "style": {
+            "borderColor": "#756886",
+            "size": "18px",
+            "top": "calc(50% + 105px)",
+            "left": "calc(50% + 92px)",
+            "transform": "rotate(0deg)",
+            "hoveredSize": "29px",
+            "hoveredTop": "calc(50% + 110px)",
+            "hoveredLeft": "calc(50% + 92px)",
+            "hoveredTransform": "rotate(13deg)",
+            "zIndex": 1003
+          }
+        },
+        {
+          "style": {
+            "borderColor": "#756886",
+            "size": "22px",
+            "top": "calc(50% + 118px)",
+            "left": "calc(50% + 90px)",
+            "transform": "rotate(24deg)",
+            "hoveredSize": "37px",
+            "hoveredTop": "calc(50% + 130px)",
+            "hoveredLeft": "calc(50% + 84px)",
+            "hoveredTransform": "rotate(41deg)",
+            "zIndex": 1003
+          }
+        },
+        {
+          "style": {
+            "borderColor": "#756886",
+            "size": "15px",
+            "top": "calc(50% + 131px)",
+            "left": "calc(50% + 79px)",
+            "transform": "rotate(53deg)",
+            "hoveredSize": "26px",
+            "hoveredTop": "calc(50% + 138px)",
+            "hoveredLeft": "calc(50% + 73px)",
+            "hoveredTransform": "rotate(75deg)",
+            "zIndex": 1003
+          }
+        }
+      ],
+      "chartBubble": {
+        "style": {
+          "top": "calc(50% + 85px)",
+          "left": "calc(50% + 45px)",
+          "size": "40px",
+          "backgroundColor": "#b14a6a",
+          "borderColor": "#b14a6a",
+          "borderRadius": "50%",
+          "color": "#FFF",
+          "zIndex": "1004"
+        },
+        "content": {
+          "type": "1",
+          "placeholder": "/assets/images/gViz/visualizations/diwo-visual-bubble-poet-context/women.png"
+        }
+      },
+      "placeholderBubble": [
+        {
+          "style": {
+            "top": "calc(50% + 67px)",
+            "left": "calc(50% + 100px)",
+            "size": "10px",
+            "backgroundColor": "#f7b5c9",
+            "borderColor": "#f7b5c9",
+            "borderRadius": "50%",
+            "zIndex": "1004",
+            "hoveredTop": "calc(50% + 64px)",
+            "hoveredLeft": "calc(50% + 100px)"
+          }
+        },
+        {
+          "style": {
+            "top": "calc(50% + 82px)",
+            "left": "calc(50% + 120px)",
+            "size": "10px",
+            "backgroundColor": "#f7b5c9",
+            "borderColor": "#f7b5c9",
+            "borderRadius": "50%",
+            "zIndex": "1004",
+            "hoveredTop": "calc(50% + 79px)",
+            "hoveredLeft": "calc(50% + 125px)"
+          }
+        },
+        {
+          "style": {
+            "top": "calc(50% + 102px)",
+            "left": "calc(50% + 110px)",
+            "size": "10px",
+            "backgroundColor": "#f7b5c9",
+            "borderColor": "#f7b5c9",
+            "borderRadius": "50%",
+            "zIndex": "1004",
+            "hoveredTop": "calc(50% + 112px)",
+            "hoveredLeft": "calc(50% + 120px)"
+          }
+        },
+        {
+          "style": {
+            "top": "calc(50% + 122px)",
+            "left": "calc(50% + 110px)",
+            "size": "10px",
+            "backgroundColor": "#f7b5c9",
+            "borderColor": "#f7b5c9",
+            "borderRadius": "50%",
+            "zIndex": "1004",
+            "hoveredTop": "calc(50% + 142px)",
+            "hoveredLeft": "calc(50% + 115px)"
+          }
+        },
+        {
+          "style": {
+            "top": "calc(50% + 137px)",
+            "left": "calc(50% + 90px)",
+            "size": "10px",
+            "backgroundColor": "#f7b5c9",
+            "borderColor": "#f7b5c9",
+            "borderRadius": "50%",
+            "zIndex": "1004",
+            "hoveredTop": "calc(50% + 152px)",
+            "hoveredLeft": "calc(50% + 85px)"
+          }
+        }
+      ],
+      "textElements": [
+        {
+          "style": {
+            "hoveredTop": "calc(50% + 43px)",
+            "hoveredLeft": "calc(50% + 118px)"
+          },
+          "hoveredContent": "<div style='font-size:12px; color:#b04a6a; font-weight: lighter;'>25-29</div><div style='font-size: 11px; color:#FFF; font-weight: lighter;'>Age</div>"
+        },
+        {
+          "style": {
+            "hoveredTop": "calc(50% + 73px)",
+            "hoveredLeft": "calc(50% + 143px)"
+          },
+          "hoveredContent": "<div style='font-size:12px; color:#b04a6a; font-weight: lighter;'>$80K-$110K</div><div style='font-size: 11px; color:#FFF; font-weight: lighter;'>Income</div>"
+        },
+        {
+          "style": {
+            "hoveredTop": "calc(50% + 104px)",
+            "hoveredLeft": "calc(50% + 137px)"
+          },
+          "hoveredContent": "<div><span style='font-size:9px; font-weight:lighter; color: #FFF; padding:1px 3px; background-color:#eb5c85;'>Pink Nation 62%</span><span style='font-size:9px; font-weight:lighter; margin-left: 5px; color:#FFF; padding:1px 3px; background-color:#eb5c85;'>Angel Card 12%</span></div><div style='font-size: 11px; color:#FFF; font-weight: lighter; margin-top:2px;'>Customer Type</div>"
+        },
+        {
+          "style": {
+            "hoveredTop": "calc(50% + 146px)",
+            "hoveredLeft": "calc(50% + 133px)"
+          },
+          "hoveredContent": "<div style='font-size:12px; color:#b04a6a; font-weight: lighter;'>High Value</div><div style='font-size: 11px; color:#FFF; font-weight: lighter;'>Value Segment</div>"
+        },
+        {
+          "style": {
+            "hoveredTop": "calc(50% + 166px)",
+            "hoveredLeft": "calc(50% + 86px)"
+          },
+          "hoveredContent": "<div style='font-size:12px; color:#b04a6a; font-weight: lighter;'>3 Weeks</div><div style='font-size: 11px; color:#FFF; font-weight: lighter;'>Frequency</div>"
+        }
+      ]
+    },
+
+    "pricePointAnalysis": {
+      "title": {
+        "style": {
+          "top": "calc(50% - 165px)",
+          "left": "calc(50% + 58px)",
+          "color": "#ad5073",
+          "fontSize": "12px",
+          "textAlign": "center"
+        },
+        "content": "Price Point Analysis"
+      },
+      "connectors": [
+        {
+          "style": {
+            "top": "calc(50% - 70px)",
+            "left": "calc(50% + 180px)",
+            "size": "16px",
+            "borderColor": "#756886",
+            "zIndex": 1003
+          }
+        }
+      ],
+      "valuesBubble": {
+        "style": {
+          "top": "calc(50% - 145px)",
+          "left": "calc(50% + 30px)",
+          "size": "150px",
+          "backgroundColor": "#1a1620",
+          "borderColor": "#504859",
+          "borderRadius": "50%",
+          "color": "#FFF",
+          "zIndex": "1004"
+        },
+        "content": {
+          "type": "1",
+          "text": [
+            "<span style='color:#FFF; font-size: 11px; margin-right: 10px;'>Min Basket</span><span style='font-size: 11px; color:#be527f;'>$21</span>",
+            "<span style='color:#FFF; font-size: 11px; margin-right: 10px;'>Avg Basket</span><span style='font-size: 11px; color:#be527f;'>$34</span>",
+            "<span style='color:#FFF; font-size: 11px; margin-right: 10px;'>Max Basket</span><span style='font-size: 11px; color:#be527f;'>$95</span>",
+            "<span style='color:#be527f; font-size: 16px; height: 22px; line-height: 26px; display: inline-block;'>$15-$24.9</span>",
+            "<span style='color:#FFF; font-size: 11px;'>Top Price Point</span>"
+          ]
+        }
+      },
+      "chartBubble": {
+        "style": {
+          "top": "calc(50% - 90px)",
+          "left": "calc(50% + 195px)",
+          "size": "40px",
+          "backgroundColor": "#b14a6a",
+          "borderColor": "#b14a6a",
+          "borderRadius": "50%",
+          "color": "#FFF",
+          "zIndex": "1004",
+          "hoveredTop": "calc(50% - 190px)",
+          "hoveredLeft": "calc(50% + 165px)",
+          "hoveredSize": "220px",
+          "hoveredBackgroundColor": "#e95c83",
+          "hoveredBorderColor": "#e95c83"
+        },
+        "content": "/assets/images/gViz/visualizations/diwo-visual-bubble-poet-context/circle.png",
+        "hoveredContent": {
+          "title": "",
+          "toggle": {
+            "isVisible": false
+          },
+          "legend": {
+            "isVisible": false
+          },
+          "tooltip": {
+            "hasPercentage": false,
+            "title": "{{name}}"
+          },
+          "attrs": {
+            "radius": 15,
+            "muted": false,
+            "grid": false
+          },
+          "x1": {
+            "title": "Estimated External Assets",
+            "value": "sum",
+            "color": "#FFF",
+            "prefix": "$",
+            "sufix": "",
+            "format": "locale",
+            "percentageColor": "#FFF",
+            "percentageSize": "18px",
+            "valueSize": "22px"
+          },
+          "data": [
+            {
+              "id": "id-1",
+              "name": "$35-$45",
+              "color": "#FFF",
+              "x1": 40
+            },
+            {
+              "id": "id-2",
+              "name": "$18-$25",
+              "color": "#fde9f2",
+              "x1": 28
+            },
+            {
+              "id": "id-3",
+              "name": "$45-$60",
+              "color": "#fbd9e8",
+              "x1": 22
+            },
+            {
+              "id": "id-4",
+              "name": "$25-$35",
+              "color": "#f9c5da",
+              "x1": 10
+            }
+          ]
+        }
+      }
+    },
+
+    "storeAnalysis": {
+      "title": {
+        "style": {
+          "top": "calc(50% - 225px)",
+          "left": "calc(50% - 150px)",
+          "color": "#ad5073",
+          "fontSize": "12px",
+          "textAlign": "center",
+          "hoveredTop": "calc(50% - 310px)",
+          "hoveredLeft": "calc(50% - 178px)"
+        },
+        "content": "Store Analysis"
+      },
+      "textElements": [
+        {
+          "style": {
+            "top": "calc(50% - 45px)",
+            "left": "calc(50% - 158px)",
+            "hoveredTop": "calc(50% - 42px)",
+            "hoveredLeft": "calc(50% - 188px)",
+            "zIndex": 1007
+          },
+          "content": "<div style='font-size:12px; color:#FFF; font-weight: lighter;'>Top Customer Base</div>"
+        }
+      ],
+      "valuesBubble": {
+        "style": {
+          "top": "calc(50% - 205px)",
+          "left": "calc(50% - 210px)",
+          "size": "200px",
+          "backgroundColor": "#1a1620",
+          "borderColor": "#504859",
+          "borderRadius": "50%",
+          "hoveredSize": "300px",
+          "color": "#FFF",
+          "zIndex": "1004",
+          "hoveredTop": "calc(50% - 290px)",
+          "hoveredLeft": "calc(50% - 290px)"
+        },
+        "content": {
+          "type": "1",
+          "data": {
+            "legend": {
+              "isVisible": false
+            },
+            "actions": {
+              "isVisible": false
+            },
+            "tooltip": {
+              "heat": {
+                "title": [ "{{properties.name}}" ],
+                "body": [ "<span class='metric'># Accounts</span><span class='number'>{{value}}</span>" ]
+              }
+            },
+            "mode": "heat",
+            "heat": {
+              "colors": ["#FFF","#c73e68"],
+              "mapStrokeColor": "#1a1720",
+              "shapeId": "abbr",
+              "prefix": "",
+              "sufix": "",
+              "format": "locale",
+              "type": "number"
+            },
+            "attrs": {
+              "legendBins": 4,
+              "labels": false,
+              "grid": false,
+              "zoom": false,
+              "pan": false,
+              "hover": true
+            },
+            "data": {
+              "heat": [
+                { "id": "al", "value": "100" },
+                { "id": "ak", "value": "200" },
+                { "id": "az", "value": "300" },
+                { "id": "ar", "value": "400" },
+                { "id": "ca", "value": "500" },
+                { "id": "co", "value": "600" },
+                { "id": "ct", "value": "700" },
+                { "id": "de", "value": "600" },
+                { "id": "fl", "value": "500" },
+                { "id": "ga", "value": "400" },
+                { "id": "hi", "value": "300" },
+                { "id": "id", "value": "200" },
+                { "id": "il", "value": "100" },
+                { "id": "in", "value": "200" },
+                { "id": "ia", "value": "300" },
+                { "id": "ks", "value": "400" },
+                { "id": "ky", "value": "500" },
+                { "id": "la", "value": "600" },
+                { "id": "me", "value": "700" },
+                { "id": "md", "value": "600" },
+                { "id": "ma", "value": "500" },
+                { "id": "mi", "value": "400" },
+                { "id": "mn", "value": "300" },
+                { "id": "ms", "value": "200" },
+                { "id": "mo", "value": "100" },
+                { "id": "mt", "value": "200" },
+                { "id": "ne", "value": "300" },
+                { "id": "nv", "value": "400" },
+                { "id": "nh", "value": "500" },
+                { "id": "nj", "value": "600" },
+                { "id": "nm", "value": "700" },
+                { "id": "ny", "value": "600" },
+                { "id": "nc", "value": "500" },
+                { "id": "nd", "value": "400" },
+                { "id": "oh", "value": "300" },
+                { "id": "ok", "value": "200" },
+                { "id": "or", "value": "100" },
+                { "id": "pa", "value": "100" },
+                { "id": "ri", "value": "100" },
+                { "id": "sc", "value": "100" },
+                { "id": "sd", "value": "100" },
+                { "id": "tn", "value": "100" },
+                { "id": "tx", "value": "100" },
+                { "id": "ut", "value": "100" },
+                { "id": "vt", "value": "100" },
+                { "id": "va", "value": "100" },
+                { "id": "wa", "value": "100" },
+                { "id": "wv", "value": "100" },
+                { "id": "wy", "value": "100" }
+              ]
+            }
+          }
+        }
+      }
+    },
+
+    "connectors": "#e96293",
+    "backgroundBubbles": {
+      "backgroundColor": "#302c36",
+      "borderColor": "#302c36",
+      "opacity": 0.2
+    }
+  }
+}
