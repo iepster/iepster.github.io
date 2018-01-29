@@ -34,15 +34,27 @@ module.exports = function() {
           var outerWrapper = _var.container.d3.closest('.gViz-outer-wrapper');
 
           // Set margin left and display style
+          var hasLegend = _var.data.legend == null || _var.data.legend.isVisible == null || _var.data.legend.isVisible === true;
           outerWrapper.select('.legend-wrapper, .legend-wrapper-full')
-            .style('display', _var.data == null || _var.data.legend == null || _var.data.legend.isVisible == null || _var.data.legend.isVisible === true ? 'block' : 'none')
+            .style('display', hasLegend ? 'block' : 'none')
 
           // Set margin left and display style
-          outerWrapper.select('.legend-wrapper, .legend-wrapper-full')
-            .select('.scale-wrapper')
-              .style('display', _var.mode === 'heat' ? 'block' : 'none')
-              .select('.scale-rect')
-                .style('background', _var.mode === "heat" ? "linear-gradient(to right, "+_var.heatColors.join(',')+")" : _var.barColor({}))
+          var scaleWrapperHeat = outerWrapper.select('.legend-wrapper, .legend-wrapper-full').select(".scale-wrapper[data-mode='heat']")
+          var scaleWrapperBars = outerWrapper.select('.legend-wrapper, .legend-wrapper-full').select(".scale-wrapper[data-mode='bars']")
+
+          // Set visibility for heat mode
+          scaleWrapperHeat
+            .style('display', _var.mode === 'heat' ? 'block' : 'none')
+            .select('.scale-rect')
+              .style('background', _var.mode === "heat" ? "linear-gradient(to right, "+_var.heatColors.join(',')+")" : _var.barColor({}))
+
+          // Set visibility for bars mode
+          scaleWrapperBars.style('display', _var.mode === 'bars' ? 'block' : 'none')
+          scaleWrapperBars.select('.low-name').html(hasLegend ? _var.data.legend.text : '');
+
+          // Set toggle visibility
+          var hasToggle = _var.data.toggle != null && _var.data.toggle.isVisible != null && _var.data.toggle.isVisible === true;
+          outerWrapper.select('.legend-wrapper, .legend-wrapper-full').select('.toggle-wrapper').style('display', hasToggle ? 'block' : 'none')
 
           // Get scale bins values
           _var.legendBinsValues = _var.mode === 'heat' ? _var.heatScale.domain() : _var.barScale.domain();

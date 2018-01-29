@@ -2,7 +2,8 @@
   "title": "",
   "mode": "bars",
   "legend": {
-    "isVisible": false
+    "isVisible": true,
+    "text": "Projected Units"
   },
   "tooltip": {
     "backgroundColor": "#FFF",

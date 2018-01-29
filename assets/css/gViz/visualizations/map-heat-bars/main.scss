@@ -14,9 +14,10 @@ svg.map-heat-bars {
   }
 }
 
-.legend-wrapper {
+.legend-wrapper, .legend-wrapper-full {
   display: block;
   color: #666;
+  margin-bottom: 5px !important;
 
   .legend {
     .scale-wrapper {
