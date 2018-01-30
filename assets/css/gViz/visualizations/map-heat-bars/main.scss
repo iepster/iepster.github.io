@@ -20,6 +20,7 @@ svg.map-heat-bars {
   margin-bottom: 17px !important;
 
   .legend {
+    overflow: hidden !important;
     .scale-wrapper {
       height: 14px;
       float: left;
@@ -27,9 +28,9 @@ svg.map-heat-bars {
       span.low-name   { float: left; margin-right: 10px;  }
       span.high-name  { float: left; margin-left: 10px;  }
       span.scale-rect { float: left; width: 15px; height: 10px; }
-      span.bar-1 { float: left; margin-right: 2px; width: 3px; height: 10px; margin-top: 1px; background-color: #a2aeae; }
-      span.bar-2 { float: left; margin-right: 2px; width: 3px; height: 14px; margin-top: -3px; background-color: #a2aeae; }
-      span.bar-3 { float: left; width: 3px; height: 18px; margin-top: -7px; background-color: #a2aeae; }
+      span.bar-1 { float: left; margin-right: 2px; width: 3px; height: 6px; margin-top: 4px; background-color: #a2aeae; }
+      span.bar-2 { float: left; margin-right: 2px; width: 3px; height: 10px; margin-top: 0; background-color: #a2aeae; }
+      span.bar-3 { float: left; width: 3px; height: 14px; margin-top: -4px; background-color: #a2aeae; }
     }
     .toggle-wrapper {
       float: right;

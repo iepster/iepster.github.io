@@ -1,9 +1,9 @@
 {
   "data": {
-    "backgroundColor": "#fff",
+    "backgroundColor": "#fdebf4",
     "leftData": {
       "data": {
-        "backgroundColor": "#fff",
+        "backgroundColor": "#fdebf4",
         "bubble": {
           "backgroundColor": "#f7b7d2",
           "borderColor": "#EC75A2",
@@ -47,7 +47,7 @@
     },
     "rightData": {
       "data": {
-        "backgroundColor": "#fff",
+        "backgroundColor": "#fdebf4",
         "bubble": {
           "backgroundColor": "#f7b7d2",
           "borderColor": "#EC75A2",

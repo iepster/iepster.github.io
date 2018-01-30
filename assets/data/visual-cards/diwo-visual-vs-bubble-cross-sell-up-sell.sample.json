@@ -59,7 +59,7 @@
                   "color": "#bbb3c6",
                   "content": "<div style='width:20px; height:20px; border-radius:50%; margin: 3px 5px 0px 5px; float: left; background: #f7b7d2;'></div><div style='width:30px; height: 100%; float:left; font-size:12px; text-align: left; line-height: 29px;'>Pink</div>"
                 },
-                "footerImage": "/assets/images/temp_icons/icon_5.svg"
+                "footerImage": "/assets/images/watch/icon_top_trending.png"
               },
               "middle": {
                 "backgroundColor": "#f3d6e3",
@@ -75,7 +75,7 @@
                   "color": "#bbb3c6",
                   "content": "<div style='width:20px; height:20px; border-radius:50%; margin: 3px 5px 0px 5px; float: left; background: #000;'></div><div style='width:30px; height: 100%; float:left; font-size:12px; text-align: left; padding-top: 1px;'>Pure Black</div>"
                 },
-                "footerImage": "/assets/images/temp_icons/icon_5.svg"
+                "footerImage": "/assets/images/watch/icon_top_trending.png"
               },
               "bottom": {
                 "backgroundColor": "#f3d6e3",
@@ -91,7 +91,7 @@
                   "color": "#bbb3c6",
                   "content": "<div style='width:20px; height:20px; margin: 3px 5px 0px 5px; float: left; overflow:hidden;'><img src='/assets/images/gViz/visualizations/diwo-visual-vs-bubble-cross-sell-up-sell/fabric_grey_icon_small.png' style='height: 20px;' /></div><div style='width:30px; height: 100%; float:left; font-size:12px; text-align: left; line-height: 29px;'>Velvet</div>"
                 },
-                "footerImage": "/assets/images/temp_icons/icon_5.svg"
+                "footerImage": "/assets/images/watch/icon_top_trending.png"
               }
             }
           },
@@ -104,49 +104,97 @@
             "bottomText": "Top Customer Base",
             "bubbles": {
               "connectors": "#ef89ac",
-              "top": {
-                "backgroundColor": "#f3d6e3",
-                "borderColor": "#f3d6e3",
-                "hoverBackgroundColor": "#FFF",
-                "hoverBorderColor": "#ef89ac",
-                "header": {
-                  "color": "#bbb3c6",
-                  "borderColor": "#bbb3c6",
-                  "content": "Age"
-                },
-                "body": {
-                  "color": "#f19db6",
-                  "content": "<div style='width: 100%; height: 100%; text-align:center;'>21-25</div>"
-                }
-              },
               "middle": {
                 "backgroundColor": "#f3d6e3",
                 "borderColor": "#f3d6e3",
                 "hoverBackgroundColor": "#FFF",
                 "hoverBorderColor": "#ef89ac",
-                "header": {
-                  "color": "#bbb3c6",
-                  "borderColor": "#bbb3c6",
-                  "content": "Lifestyle"
-                },
-                "body": {
-                  "color": "#f19db6",
-                  "content": "<div style='width: 100%; height: 100%; text-align:center;'>Athletic, Trendsetter</div>"
-                }
-              },
-              "bottom": {
-                "backgroundColor": "#f3d6e3",
-                "borderColor": "#f3d6e3",
-                "hoverBackgroundColor": "#FFF",
-                "hoverBorderColor": "#ef89ac",
-                "header": {
-                  "color": "#bbb3c6",
-                  "borderColor": "#bbb3c6",
-                  "content": "Income"
-                },
-                "body": {
-                  "color": "#f19db6",
-                  "content": "<div style='width: 100%; height: 100%; text-align:center;'>$80K-$110K</div>"
+                "data": {
+                  "legend": {
+                    "isVisible": false
+                  },
+                  "actions": {
+                    "isVisible": false
+                  },
+                  "tooltip": {
+                    "heat": {
+                      "title": [ "{{properties.name}}" ],
+                      "body": [ "<span class='metric'># Accounts</span><span class='number'>{{value}}</span>" ]
+                    }
+                  },
+                  "mode": "heat",
+                  "heat": {
+                    "colors": ["#FFF","#c73e68"],
+                    "mapStrokeColor": "#1a1720",
+                    "shapeId": "abbr",
+                    "prefix": "",
+                    "sufix": "%",
+                    "format": "locale",
+                    "type": "number"
+                  },
+                  "attrs": {
+                    "legendBins": 4,
+                    "legendColor": "#a79cb2",
+                    "legendText": "{{perc}}",
+                    "labels": false,
+                    "grid": false,
+                    "zoom": false,
+                    "pan": false,
+                    "hover": true
+                  },
+                  "data": {
+                    "heat": [
+                      { "id": "al", "value": "10" },
+                      { "id": "ak", "value": "20" },
+                      { "id": "az", "value": "30" },
+                      { "id": "ar", "value": "40" },
+                      { "id": "ca", "value": "50" },
+                      { "id": "co", "value": "60" },
+                      { "id": "ct", "value": "70" },
+                      { "id": "de", "value": "60" },
+                      { "id": "fl", "value": "50" },
+                      { "id": "ga", "value": "40" },
+                      { "id": "hi", "value": "30" },
+                      { "id": "id", "value": "20" },
+                      { "id": "il", "value": "10" },
+                      { "id": "in", "value": "20" },
+                      { "id": "ia", "value": "30" },
+                      { "id": "ks", "value": "40" },
+                      { "id": "ky", "value": "50" },
+                      { "id": "la", "value": "60" },
+                      { "id": "me", "value": "70" },
+                      { "id": "md", "value": "60" },
+                      { "id": "ma", "value": "50" },
+                      { "id": "mi", "value": "40" },
+                      { "id": "mn", "value": "30" },
+                      { "id": "ms", "value": "20" },
+                      { "id": "mo", "value": "10" },
+                      { "id": "mt", "value": "20" },
+                      { "id": "ne", "value": "30" },
+                      { "id": "nv", "value": "40" },
+                      { "id": "nh", "value": "50" },
+                      { "id": "nj", "value": "60" },
+                      { "id": "nm", "value": "70" },
+                      { "id": "ny", "value": "60" },
+                      { "id": "nc", "value": "50" },
+                      { "id": "nd", "value": "40" },
+                      { "id": "oh", "value": "30" },
+                      { "id": "ok", "value": "20" },
+                      { "id": "or", "value": "10" },
+                      { "id": "pa", "value": "10" },
+                      { "id": "ri", "value": "10" },
+                      { "id": "sc", "value": "10" },
+                      { "id": "sd", "value": "10" },
+                      { "id": "tn", "value": "10" },
+                      { "id": "tx", "value": "10" },
+                      { "id": "ut", "value": "10" },
+                      { "id": "vt", "value": "10" },
+                      { "id": "va", "value": "10" },
+                      { "id": "wa", "value": "10" },
+                      { "id": "wv", "value": "10" },
+                      { "id": "wy", "value": "10" }
+                    ]
+                  }
                 }
               }
             }
@@ -167,63 +215,57 @@
                 "hoveredBorderColor": "#f3d6e3",
                 "data": {
                   "title": "",
+                  "toggle": {
+                    "isVisible": false
+                  },
                   "legend": {
-                    "isVisible": false,
-                    "text": "{{name}}"
+                    "isVisible": false
                   },
                   "tooltip": {
-                    "hasPercentage": true,
+                    "hasPercentage": false,
                     "title": "{{name}}"
                   },
                   "attrs": {
-                    "radius": 20,
+                    "radius": 15,
                     "muted": false,
-                    "grid": false
+                    "grid": false,
+                    "textColor": "#FFF"
                   },
                   "x1": {
-                    "title": "Sales Mix %",
+                    "title": "Estimated External Assets",
                     "value": "sum",
                     "color": "#FFF",
                     "prefix": "$",
                     "sufix": "",
-                    "format": "locale"
+                    "format": "locale",
+                    "percentageColor": "#FFF",
+                    "percentageSize": "18px",
+                    "valueSize": "22px"
                   },
                   "data": [
                     {
-                        "id": "id-1",
-                        "name": "$35-$45",
-                        "color": "#FFF",
-                        "nameColor": "#8b719a",
-                        "percentageColor": "#FFF",
-                        "lineColor": "#FFF",
-                        "x1": 40
+                      "id": "id-1",
+                      "name": "$35-$45",
+                      "color": "#FFF",
+                      "x1": 40
                     },
                     {
-                        "id": "id-2",
-                        "name": "$18-$25",
-                        "color": "#fde9f2",
-                        "nameColor": "#8b719a",
-                        "percentageColor": "#FFF",
-                        "lineColor": "#FFF",
-                        "x1": 28
+                      "id": "id-2",
+                      "name": "$18-$25",
+                      "color": "#fde9f2",
+                      "x1": 28
                     },
                     {
-                        "id": "id-3",
-                        "name": "$45-$60",
-                        "color": "#fbd9e8",
-                        "nameColor": "#8b719a",
-                        "percentageColor": "#FFF",
-                        "lineColor": "#FFF",
-                        "x1": 22
+                      "id": "id-3",
+                      "name": "$45-$60",
+                      "color": "#fbd9e8",
+                      "x1": 22
                     },
                     {
-                        "id": "id-4",
-                        "name": "$25-$35",
-                        "color": "#f9c5da",
-                        "nameColor": "#8b719a",
-                        "percentageColor": "#FFF",
-                        "lineColor": "#FFF",
-                        "x1": 10
+                      "id": "id-4",
+                      "name": "$25-$35",
+                      "color": "#f9c5da",
+                      "x1": 10
                     }
                   ]
                 }
@@ -374,7 +416,7 @@
                   "<div style='height:auto; float:left; width:33%; margin-bottom:3px;'><div style='height:11px; line-height:11px; font-size:10px; color:#a99fb7; font-weight:lighter; text-align: center; width: 100%;'>28px</div><div style='height:22px; width:22px; border-radius:50%; background:#000; margin: 2px auto;'></div><div style='height: 13px; line-height: 13px; font-size:10px; color:#a99fb7; font-weight:lighter; text-align: center; width: 100%;'>Black</div></div>",
                   "<div style='height:auto; float:left; width:33%; margin-bottom:3px;'><div style='height:11px; line-height:11px; font-size:10px; color:#a99fb7; font-weight:lighter; text-align: center; width: 100%;'>28px</div><div style='height:22px; width:22px; border-radius:50%; background:#e95c83; margin: 2px auto;'></div><div style='height: 13px; line-height: 13px; font-size:10px; color:#a99fb7; font-weight:lighter; text-align: center; width: 100%;'>Logo</div></div>",
                   "<div style='height:auto; float:left; width:33%; margin-bottom:3px;'><div style='height:11px; line-height:11px; font-size:10px; color:#a99fb7; font-weight:lighter; text-align:center; width:100%;'>28px</div><div style='height:22px; width:22px; border-radius:50%; background:#91add0; margin: 2px auto;'></div><div style='height: 13px; line-height: 13px; font-size:10px; color:#a99fb7; font-weight:lighter; text-align: center; width: 100%;'>Smooth</div></div>",
-                  "<span style='color:#ee7598; font-size: 10px; width: 100%; text-align: center; display: block; margin-top:5px;'>Top Trending <img src='/assets/images/temp_icons/icon_5.svg' style='display:inline-block; height:10px;'/></span>"
+                  "<span style='color:#ee7598; font-size: 10px; width: 100%; text-align: center; display: block; margin-top:5px;'>Top Trending <img src='/assets/images/watch/icon_top_trending.png' style='display:inline-block; height:10px;'/></span>"
                 ]
               }
             },

@@ -90,13 +90,15 @@ module.exports = function() {
               var format = _var.mode === 'heat' ? _var.heatFormat : _var.barFormat;
 
               // Get amount of elements
-              var values = _var.data.data[_var.mode].filter(function(g) { return (i===0 || +g.value>=min) && (i===_var.legendBins || +g.value<max); });
-              var amount = values.length;
-              var sum    = d3.sum(values, function(d) { return +d.value; });
+              var totalSum = d3.sum(_var.data.data[_var.mode], function(d) { return +d.value; });
+              var values   = _var.data.data[_var.mode].filter(function(g) { return (i===0 || +g.value>=min) && (i===_var.legendBins || +g.value<max); });
+              var amount   = values.length;
+              var sum      = d3.sum(values, function(d) { return +d.value; });
+              var perc     = ((sum / totalSum) * 100).toFixed(1) + "%";
 
               // Get text string
               var legendText = _var.data.attrs != null && _var.data.attrs.legendText != null && _var.data.attrs.legendText !== '' ? _var.data.attrs.legendText : "{{amount}} | {{min}} - {{max}}";
-              var text = shared.helpers.text.replaceVariables(legendText, { min: format(min), max: format(max), amount: amount, sum: format(sum) });
+              var text = shared.helpers.text.replaceVariables(legendText, { min: format(min), max: format(max), amount: amount, sum: format(sum), perc: perc });
 
               // Get colors
               var rectColor = _var.mode === 'heat' ? _var.heatScale(min) : _var.barScale(min);
