@@ -18,13 +18,13 @@
                 "backgroundColor": "#f6b8d0",
                 "borderColor": "#f6b8d0",
                 "color": "#FFF",
-                "content": "<div style='width: 100%; text-align: center;'>Sales Mix %</div>"
+                "content": "Sales Mix %"
               },
               "bottomText": {
                 "backgroundColor": "#fff",
                 "borderColor": "#fff",
                 "color": "#9196a5",
-                "content": "<div style='width: 100%; text-align: center;'>9.82%</div>"
+                "content": "9.82%"
               }
             },
             {
@@ -32,13 +32,13 @@
                 "backgroundColor": "#f6b8d0",
                 "borderColor": "#f6b8d0",
                 "color": "#FFF",
-                "content": "<div style='width: 100%; text-align: center;'>Selling Frequency</div>"
+                "content": "Selling Frequency"
               },
               "bottomText": {
                 "backgroundColor": "#fff",
                 "borderColor": "#fff",
                 "color": "#9196a5",
-                "content": "<div style='width: 100%; text-align: center;'>Every 12 Transactions</div>"
+                "content": "Every 12 Transactions"
               }
             }
           ]
@@ -62,13 +62,13 @@
                 "backgroundColor": "#f6b8d0",
                 "borderColor": "#f6b8d0",
                 "color": "#FFF",
-                "content": "<div style='width: 100%; text-align: center;'>Age</div>"
+                "content": "Age"
               },
               "bottomText": {
                 "backgroundColor": "#fff",
                 "borderColor": "#fff",
                 "color": "#9196a5",
-                "content": "<div style='width: 100%; text-align: center;'>21 yrs - 25 yrs</div>"
+                "content": "21 yrs - 25 yrs"
               }
             },
             {
@@ -76,13 +76,13 @@
                 "backgroundColor": "#f6b8d0",
                 "borderColor": "#f6b8d0",
                 "color": "#FFF",
-                "content": "<div style='width: 100%; text-align: center;'>Income</div>"
+                "content": "Income"
               },
               "bottomText": {
                 "backgroundColor": "#fff",
                 "borderColor": "#fff",
                 "color": "#9196a5",
-                "content": "<div style='width: 100%; text-align: center;'>$80 K - $110 K</div>"
+                "content": "$80 K - $110 K"
               }
             },
             {
@@ -90,13 +90,13 @@
                 "backgroundColor": "#f6b8d0",
                 "borderColor": "#f6b8d0",
                 "color": "#FFF",
-                "content": "<div style='width: 100%; text-align: center;'>Average Basket Value</div>"
+                "content": "Average Basket Value"
               },
               "bottomText": {
                 "backgroundColor": "#fff",
                 "borderColor": "#fff",
                 "color": "#9196a5",
-                "content": "<div style='width: 100%; text-align: center;'>$65</div>"
+                "content": "$65"
               }
             },
             {
@@ -104,13 +104,13 @@
                 "backgroundColor": "#f6b8d0",
                 "borderColor": "#f6b8d0",
                 "color": "#FFF",
-                "content": "<div style='width: 100%; text-align: center;'>Lifestyle</div>"
+                "content": "Lifestyle"
               },
               "bottomText": {
                 "backgroundColor": "#fff",
                 "borderColor": "#fff",
                 "color": "#9196a5",
-                "content": "<div style='width: 100%; text-align: center;'>Trendsetter, Athletic, Social</div>"
+                "content": "Trendsetter, Athletic, Social"
               }
             }
           ]
