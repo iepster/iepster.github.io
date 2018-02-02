@@ -28,6 +28,7 @@
     "legendBins": 4,
     "legendColor": "#425d64",
     "legendText": "Amount: {{amount}} | Sum: {{sum}} | Range: {{min}} - {{max}}",
+    "legendBorderColor": "#8bc3d2",
     "width": "100%",
     "height": "100%"
   },

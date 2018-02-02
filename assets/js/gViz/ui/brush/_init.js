@@ -2,6 +2,7 @@
 var d3 = require("d3");
 var shared = require("../../shared/_init.js");
 
+
 // Module declaration
 module.exports = function () {
   "use strict";

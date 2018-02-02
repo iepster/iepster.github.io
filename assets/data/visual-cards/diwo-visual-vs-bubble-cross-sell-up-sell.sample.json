@@ -136,6 +136,7 @@
                     "legendBins": 4,
                     "legendColor": "#a79cb2",
                     "legendText": "{{perc}}",
+                    "legendBorderColor": "#f4d8e1",
                     "labels": false,
                     "grid": false,
                     "zoom": false,
