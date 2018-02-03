@@ -1,0 +1,194 @@
+/* =============================================================================
+   MEDIA QUERIES
+   ========================================================================== */
+
+// Add these mixins in your normal scss flow.
+/* Eg.
+    .container{
+        width:1024px;
+
+        @include tablets{
+            width:90%;
+        }
+    }
+*/
+
+@mixin lrm {
+  @media screen and (max-width: 1350px) {
+    @content;
+  }
+}
+
+@mixin tablets {
+  @media screen and (max-width: 1000px) {
+    @content;
+  }
+}
+
+@mixin phones {
+  @media screen and (max-width: 720px) {
+    @content;
+  }
+}
+
+/* =============================================================================
+   Unit transform
+   ========================================================================== */
+
+//COMPATIBILITY
+
+
+@mixin transform($args...) {
+  transform: $args;
+  -webkit-transform: $args;
+  -moz-transform: $args;
+  -ms-transform: $args;
+}
+
+@mixin transform-origin($input) {
+  transform-origin: $input;
+  -webkit-transform-origin: $input;
+  -moz-transform-origin: $input;
+  -ms-transform-origin: $input;
+}
+
+@mixin transform-style($input) {
+  transform-style: $input;
+  -webkit-transform-style: $input;
+  -moz-transform-style: $input;
+  -ms-transform-style: $input;
+}
+
+
+@function needs-vendor($p){
+  $l: transform, another-property-you-want-prefixed, and-another;
+  @each $i in $l {
+    @if $i == $p { @return terue; }
+  }
+  @return false;
+}
+
+@function vendor-args($arg, $vendor) {
+  $result: ();
+  @each $i in $arg {
+    @if needs-vendor($i) { $result: append($result, #{$vendor}); }
+    @else { $result: append($result, $i); }
+  }
+  @return $result;
+}
+
+@mixin vendor($property, $args, $vendors: ('-webkit-', '-moz-', '-ms-', '-o-', '')){
+  @each $vendor in $vendors {
+    $out: null;
+    @each $arg in $args {
+      $out: ($out, vendor-args($arg, $vendor));
+    }
+    #{$vendor}#{$property}: $out;
+  }
+}
+
+
+@mixin transition($args...) {
+  @include vendor(transition, $args, ('-webkit-', '-moz-', '-o-', ''));
+}
+
+@mixin box-shadow($input) {
+  -moz-box-shadow: $input;
+  -webkit-box-shadow: $input;
+  box-shadow: $input;
+}
+
+@mixin perspective($input) {
+  -moz-perspective: $input;
+  -webkit-perspective: $input;
+  perspective: $input;
+}
+
+@mixin keyframes($animationName) {
+  @-webkit-keyframes #{$animationName} {
+    @content;
+  }
+  @-moz-keyframes #{$animationName} {
+    @content;
+  }
+  @-o-keyframes #{$animationName} {
+    @content;
+  }
+  @keyframes #{$animationName} {
+    @content;
+  }
+}
+
+@mixin animation($input) {
+  animation: $input;
+  -webkit-animation: $input;
+  -moz-animation: $input;
+  -ms-animation: $input;
+}
+
+@mixin animation-play-state($input) {
+  animation-play-state: $input;
+  -webkit-animation-play-state: $input;
+  -moz-animation-play-state: $input;
+  -ms-animation-play-state: $input;
+}
+
+@mixin border-radius($input) {
+  -webkit-border-radius: $input;
+  -moz-border-radius: $input;
+  border-radius: $input;
+}
+
+// Box sizing
+@mixin box-sizing($boxmodel) {
+  -webkit-box-sizing: $boxmodel;
+  -moz-box-sizing: $boxmodel;
+  box-sizing: $boxmodel;
+}
+
+// User select
+// For selecting text on the page
+
+@mixin user-select($select) {
+  -webkit-user-select: $select;
+  -moz-user-select: $select;
+  -ms-user-select: $select; // IE10+
+  user-select: $select;
+}
+
+// When element is focused by using tab key
+
+@mixin column-count($input) {
+
+  -webkit-column-count: $input;
+  -moz-column-count: $input;
+  column-count: $input;
+}
+
+// Clearfix
+@mixin clearfix() {
+  &:before,
+  &:after {
+    content: " "; // 1
+    display: table; // 2
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+@mixin transition-all($transition: null) {
+  @if ($transition) {
+    @include transition($transition);
+  } @else {
+    @include transition(all 0.3s cubic-bezier(0.55, 0, 0.55, 0.2));
+    transition-property: bottom,top, left, box-shadow, opacity, transform, padding, background, width, height;
+  }
+}
+
+@mixin transition-time($delay: null) {
+
+  @include transition(all 0.5s cubic-bezier(0.55, 0, 0.55, 0.2) $delay);
+  transition-property: box-shadow, opacity, transform, padding, background, width, height;
+
+}

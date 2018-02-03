@@ -1,0 +1,67 @@
+{
+    "overridableParams": {
+        "title":"products donut",
+        "restModeSumValue": "$ {TOTAL_SALES} K ",
+        "restModeSumText": "Total Sales ",
+        "hoverModePriceText": "Total Sales ",
+        "hoverModePriceValue": "${SALES} K ",
+        "hoverModeProductType": "{productId} ",
+        "hoverModeProductName": "{name} ",
+        "productTextDefaultFill": "#6F6E6E",
+        "hoverOpacity": 0.5,
+        "totalSalesFontSize": 28,
+        "donutStrokeWidth": 5,
+        "donutRadius": 70
+    },
+    "values": [
+        {
+            "sales": 60,
+            "name": "Jevelry",
+            "color": "#EB7147",
+            "img": "https://bumbeishvili.github.io/D3Viz-Gregory/framework/assets/sunburst/Products/default.png",
+            "productId": "SAD315293"
+        },
+        {
+            "sales": 55,
+            "name": "Ring",
+            "color": "#F9B548",
+            "img": "https://bumbeishvili.github.io/D3Viz-Gregory/framework/assets/sunburst/Products/default.png",
+            "productId": "SAD315294"
+        },
+        {
+            "sales": 30,
+            "name": "Other Bag",
+            "color": "#32A49B",
+            "img": "https://bumbeishvili.github.io/D3Viz-Gregory/framework/assets/sunburst/Products/default.png",
+            "productId": "SAD315295"
+        },
+        {
+            "sales": 20,
+            "name": "Other Ring",
+            "color": "#3CB1D5",
+            "img": "https://bumbeishvili.github.io/D3Viz-Gregory/framework/assets/sunburst/Products/default.png",
+            "productId": "SAD315296"
+        },
+        {
+            "sales": 18,
+            "name": "Bag Again",
+            "color": "#6C7E90",
+            "img": "https://bumbeishvili.github.io/D3Viz-Gregory/framework/assets/sunburst/Products/default.png",
+            "productId": "SAD315297"
+        },
+        {
+            "sales": 10,
+            "name": "Again",
+            "color": "#664371",
+            "img": "https://bumbeishvili.github.io/D3Viz-Gregory/framework/assets/sunburst/Products/default.png",
+            "productId": "SAD315298"
+        },
+        {
+            "sales": 8,
+            "name": "Again",
+            "color": "#B25344",
+            "img": "https://bumbeishvili.github.io/D3Viz-Gregory/framework/assets/sunburst/Products/default.png",
+            "productId": "SAD315299"
+        }
+    ]
+}

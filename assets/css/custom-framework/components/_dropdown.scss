@@ -1,0 +1,6 @@
+.dropdown-arrow-ctrl{
+  &.is-open .dropdown-arrow{
+    //@include transform-origin(50% 40%);
+    @include transform(rotate(180deg));
+  }
+}

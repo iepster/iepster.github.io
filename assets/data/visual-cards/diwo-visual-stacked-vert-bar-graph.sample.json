@@ -1,0 +1,147 @@
+{
+  "title": "",
+  "legend": {
+    "isVisible": true,
+    "text": "{{name}}"
+  },
+  "tooltip": {
+    "hasImg": true,
+    "title": [ "{{name}}", "<span class='metric'>Stock/Sales Ratio</span><span class='number'>{{y}}</span>" ],
+    "body": []
+  },
+  "x": {
+    "title": "Revenue $",
+    "prefix": "",
+    "sufix": "",
+    "type": "time",
+    "outFormat": "%b - %Y",
+    "inFormat": "%Y-%d-%m"
+  },
+  "y": {
+    "title": "Contribution to sell Mix",
+    "equal": true,
+    "prefix": "$",
+    "sufix": "",
+    "format": ""
+  },
+  "attrs": {
+    "barWidth": 10
+  },
+  "colors": {
+    "male": {
+      "fill": "#b1b7b9",
+      "gradient": "#e7e7e9",
+      "stroke": "#202a2e"
+    },
+    "female": {
+      "fill": "#b1b7b9",
+      "gradient": "#e7e7e9",
+      "stroke": "#202a2e"
+    },
+    "other": {
+      "fill": "#b1b7b9",
+      "gradient": "#e7e7e9",
+      "stroke": "#202a2e"
+    },
+    "AgeGroup1": {
+      "fill": "#20b2d3",
+      "gradient": "#7dd1e5",
+      "stroke": "#017db2"
+    },
+    "AgeGroup2": {
+      "fill": "#ff5e3f",
+      "gradient": "#ff9e87",
+      "stroke": "#ff2029"
+    },
+    "AgeGroup3": {
+      "fill": "#feb652",
+      "gradient": "#ffd092",
+      "stroke": "#fe813a"
+    },
+    "AgeGroup4": {
+      "fill": "#08a59d",
+      "gradient": "#78c9c5",
+      "stroke": "#006861"
+    }
+  },
+  "data": [
+    {
+      "x": "male",
+      "name": "Male",
+      "values": [
+        {
+          "x": "AgeGroup1",
+          "name": "2016-01-01",
+          "y": 0.6
+        },
+        {
+          "x": "AgeGroup2",
+          "name": "2016-01-02",
+          "y": 0.2
+        },
+        {
+          "x": "AgeGroup3",
+          "name": "2016-01-03",
+          "y": 0.6
+        },
+        {
+          "x": "AgeGroup4",
+          "name": "2016-01-04",
+          "y": 0.5
+        }
+      ]
+    },
+    {
+      "x": "female",
+      "name": "Female",
+      "values": [
+        {
+          "x": "AgeGroup1",
+          "name": "2016-01-01",
+          "y": 0.6
+        },
+        {
+          "x": "AgeGroup2",
+          "name": "2016-01-02",
+          "y": 0.2
+        },
+        {
+          "x": "AgeGroup3",
+          "name": "2016-01-03",
+          "y": 0.6
+        },
+        {
+          "x": "AgeGroup4",
+          "name": "2016-01-04",
+          "y": 0.5
+        }
+      ]
+    },
+    {
+      "x": "other",
+      "name": "Other",
+      "values": [
+        {
+          "x": "AgeGroup1",
+          "name": "2016-01-01",
+          "y": 0.6
+        },
+        {
+          "x": "AgeGroup2",
+          "name": "2016-01-02",
+          "y": 0.2
+        },
+        {
+          "x": "AgeGroup3",
+          "name": "2016-01-03",
+          "y": 0.6
+        },
+        {
+          "x": "AgeGroup4",
+          "name": "2016-01-04",
+          "y": 0.5
+        }
+      ]
+    }
+  ]
+}
