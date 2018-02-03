@@ -1,0 +1,309 @@
+{
+  "title": "Diwo Visual Pyramid Chart",
+  "legend": {
+    "isVisible": true,
+    "text": "{{name}}"
+  },
+  "select": {
+    "isVisible": true,
+    "title": "Quarters / Years",
+    "id": "y",
+    "name": "name",
+    "target": "group"
+  },
+  "tooltip": {
+    "title": [ "{{name}}" ],
+    "body": [ "<span class='metric'>CPV</span><span class='number'>{{x}}</span>" ]
+  },
+  "y": {
+    "title": "Revenue $",
+    "prefix": "",
+    "suffix": "",
+    "type": "string"
+  },
+  "yIn": {
+    "title": "Revenue $",
+    "prefix": "",
+    "suffix": "",
+    "type": "time",
+    "outFormat": "%b - %Y",
+    "inFormat": "%Y-%d-%m"
+  },
+  "xLeft": {
+    "title": "Leads Total",
+    "equal": true,
+    "prefix": "$",
+    "suffix": "",
+    "format": "",
+    "min": 0,
+    "max": 60
+  },
+  "xRight": {
+    "title": "Conversions Total",
+    "equal": true,
+    "prefix": "$",
+    "suffix": "",
+    "format": "",
+    "min": 0,
+    "max": 60
+  },
+  "attrs": {
+    "barHeight": 4,
+    "width": "100%",
+    "height": "100%"
+  },
+  "colors": {
+    "leads": {
+      "fill": "#34b1d6",
+      "gradient": "#89d1e6",
+      "stroke": "#2392c4"
+    },
+    "conversions": {
+      "fill": "#fbca80",
+      "gradient": "#fee5af",
+      "stroke": "#f9bd5d"
+    }
+  },
+  "data": [
+    {
+      "y": "q4-2017",
+      "name": "Q4 2017",
+      "values": [
+        {
+          "y": "element-1",
+          "name": "Free Trade for 4 Weeks",
+          "xLeft": {
+            "id": "leads",
+            "name": "Leads",
+            "x": 10
+          },
+          "xRight": {
+            "id": "conversions",
+            "name": "Conversions",
+            "x": 5
+          }
+        }
+      ]
+    },
+    {
+      "y": "q3-2017",
+      "name": "Q3 2017",
+      "values": [
+        {
+          "y": "element-1",
+          "name": "Free Trade for 2 Weeks",
+          "xLeft": {
+            "id": "leads",
+            "name": "Leads",
+            "x": 20
+          },
+          "xRight": {
+            "id": "conversions",
+            "name": "Conversions",
+            "x": 10
+          }
+        }
+      ]
+    },
+    {
+      "y": "q2-2017",
+      "name": "Q2 2017",
+      "values": [
+        {
+          "y": "element-1",
+          "name": "Free Trade for 1 Week",
+          "xLeft": {
+            "id": "leads",
+            "name": "Leads",
+            "x": 30
+          },
+          "xRight": {
+            "id": "conversions",
+            "name": "Conversions",
+            "x": 15
+          }
+        }
+      ]
+    },
+    {
+      "y": "q1-2017",
+      "name": "Q1 2017",
+      "values": [
+        {
+          "y": "element-1",
+          "name": "200 Free Trades",
+          "xLeft": {
+            "id": "leads",
+            "name": "Leads",
+            "x": 40
+          },
+          "xRight": {
+            "id": "conversions",
+            "name": "Conversions",
+            "x": 20
+          }
+        }
+      ]
+    },
+    {
+      "y": "q4-2016",
+      "name": "Q4 2016",
+      "values": [
+        {
+          "y": "element-1",
+          "name": "100 Free Trades",
+          "xLeft": {
+            "id": "leads",
+            "name": "Leads",
+            "x": 10
+          },
+          "xRight": {
+            "id": "conversions",
+            "name": "Conversions",
+            "x": 5
+          }
+        }
+      ]
+    },
+    {
+      "y": "q3-2016",
+      "name": "Q3 2016",
+      "values": [
+        {
+          "y": "element-1",
+          "name": "Free Membership",
+          "xLeft": {
+            "id": "leads",
+            "name": "Leads",
+            "x": 20
+          },
+          "xRight": {
+            "id": "conversions",
+            "name": "Conversions",
+            "x": 10
+          }
+        }
+      ]
+    },
+    {
+      "y": "q2-2016",
+      "name": "Q2 2016",
+      "values": [
+        {
+          "y": "element-1",
+          "name": "Free Advisory",
+          "xLeft": {
+            "id": "leads",
+            "name": "Leads",
+            "x": 30
+          },
+          "xRight": {
+            "id": "conversions",
+            "name": "Conversions",
+            "x": 15
+          }
+        }
+      ]
+    },
+    {
+      "y": "q1-2016",
+      "name": "Q1 2016",
+      "values": [
+        {
+          "y": "element-1",
+          "name": "Friend Referral",
+          "xLeft": {
+            "id": "leads",
+            "name": "Leads",
+            "x": 40
+          },
+          "xRight": {
+            "id": "conversions",
+            "name": "Conversions",
+            "x": 20
+          }
+        }
+      ]
+    },
+    {
+      "y": "q4-2015",
+      "name": "Q4 2015",
+      "values": [
+        {
+          "y": "element-1",
+          "name": "$50 Gift Card",
+          "xLeft": {
+            "id": "leads",
+            "name": "Leads",
+            "x": 30
+          },
+          "xRight": {
+            "id": "conversions",
+            "name": "Conversions",
+            "x": 20
+          }
+        }
+      ]
+    },
+    {
+      "y": "q3-2015",
+      "name": "Q3 2015",
+      "values": [
+        {
+          "y": "element-1",
+          "name": "$25 Gift Card",
+          "xLeft": {
+            "id": "leads",
+            "name": "Leads",
+            "x": 15
+          },
+          "xRight": {
+            "id": "conversions",
+            "name": "Conversions",
+            "x": 20
+          }
+        }
+      ]
+    },
+    {
+      "y": "q2-2015",
+      "name": "Q2 2015",
+      "values": [
+        {
+          "y": "element-1",
+          "name": "50 Free Trades",
+          "xLeft": {
+            "id": "leads",
+            "name": "Leads",
+            "x": 26
+          },
+          "xRight": {
+            "id": "conversions",
+            "name": "Conversions",
+            "x": 13
+          }
+        }
+      ]
+    },
+    {
+      "y": "q1-2015",
+      "name": "Q1 2015",
+      "values": [
+        {
+          "y": "element-1",
+          "name": "30 Free Trades",
+          "xLeft": {
+            "id": "leads",
+            "name": "Leads",
+            "x": 36
+          },
+          "xRight": {
+            "id": "conversions",
+            "name": "Conversions",
+            "x": 5
+          }
+        }
+      ]
+    }
+  ]
+}

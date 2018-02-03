@@ -1,0 +1,42 @@
+{
+  "title": "Primary account holders with custodial account relationships have",
+  "data": [
+    {
+      "icon": "/assets/images/gViz/visualizations/diwo-visual-answer-icon-with-variable/user.svg",
+      "title": { "type": "string", "value": "HNM", "color": "#00AA9E" },
+      "label": { "type": "string", "value": "$$$", "color": "#00AA9E" },
+      "value": { "type": "number", "value": 14, "prefix": "", "sufix": "%", "format": "locale", "color": "#00AA9E" }
+    },
+    {
+      "icon": "/assets/images/gViz/visualizations/diwo-visual-answer-icon-with-variable/user.svg",
+      "title": { "type": "string", "value": "LNW", "color": "#666"  },
+      "label": { "type": "string", "value": "$", "color": "#666" },
+      "value": { "type": "number", "value": 238723239, "prefix": "$", "sufix": "", "format": "locale", "color": "#FF420A" }
+    },
+    {
+      "icon": "/assets/images/gViz/visualizations/diwo-visual-answer-icon-with-variable/user.svg",
+      "title": { "type": "string", "value": "MNW", "color": "#666"  },
+      "label": { "type": "string", "value": "$$", "color": "#666" },
+      "value": { "type": "number", "value": 7, "prefix": "", "sufix": "%", "format": "locale", "color": "orange" }
+    },
+    {
+      "icon": "/assets/images/gViz/visualizations/diwo-visual-answer-icon-with-variable/user.svg",
+      "title": { "type": "string", "value": "HNM", "color": "#00AA9E" },
+      "label": { "type": "string", "value": "$$$", "color": "#00AA9E" },
+      "value": { "type": "number", "value": 14, "prefix": "", "sufix": "%", "format": "locale", "color": "#00AA9E" }
+    },
+    {
+      "icon": "/assets/images/gViz/visualizations/diwo-visual-answer-icon-with-variable/user.svg",
+      "title": { "type": "string", "value": "LNW", "color": "#666"  },
+      "label": { "type": "string", "value": "$", "color": "#666" },
+      "value": { "type": "number", "value": 238723239, "prefix": "$", "sufix": "", "format": "locale", "color": "#FF420A" }
+    },
+    {
+      "icon": "/assets/images/gViz/visualizations/diwo-visual-answer-icon-with-variable/user.svg",
+      "title": { "type": "string", "value": "MNW", "color": "#666"  },
+      "label": { "type": "string", "value": "$$", "color": "#666" },
+      "value": { "type": "number", "value": 7, "prefix": "", "sufix": "%", "format": "locale", "color": "orange" }
+    }
+
+  ]
+}

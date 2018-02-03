@@ -1,0 +1,138 @@
+{
+  "title": "",
+  "legend": {
+    "isVisible": true,
+    "text": "{{group}}"
+  },
+  "tooltip": {
+    "hasImg": false,
+    "title": [
+      "{{group}}",
+      "<span class='metric'>Propensity</span><span class='number'>{{y}}</span>"
+    ],
+    "body": []
+  },
+  "y": {
+    "title": "",
+    "prefix": "",
+    "suffix": "",
+    "type": "time",
+    "outFormat": "%b - %Y",
+    "inFormat": "%m/%d/%Y"
+  },
+  "x": {
+    "title": "",
+    "prefix": "",
+    "suffix": "",
+    "format": "",
+    "min": 0,
+    "max": 0
+  },
+  "attrs": {
+    "barHeight": 10,
+    "innerLabels": true,
+    "width": "100%",
+    "height": "100%"
+  },
+  "colors": {
+    "05/01/2017": {
+      "fill": "#3eb1d4",
+      "gradient": "#6CD3EA ",
+      "stroke": "#0c3543"
+    },
+    "06/01/2017": {
+      "fill": "#3faca6",
+      "gradient": "#66CCC5",
+      "stroke": "#19807A"
+    },
+    "07/01/2017": {
+      "fill": "#3faca6",
+      "gradient": "#66CCC5",
+      "stroke": "#19807A"
+    },
+    "08/01/2017": {
+      "fill": "#3faca6",
+      "gradient": "#66CCC5",
+      "stroke": "#19807A"
+    },
+    "09/01/2017": {
+      "fill": "#3faca6",
+      "gradient": "#66CCC5",
+      "stroke": "#19807A"
+    }
+  },
+  "data": [
+    {
+      "y": "Male",
+      "name": "Male",
+      "values": [
+        {
+          "y": "05/01/2017",
+          "name": "05/01/2017",
+          "group": "Reserves",
+          "x": 102000000
+        },
+        {
+          "y": "06/01/2017",
+          "name": "06/01/2017",
+          "group": "Forecasted Reserves",
+          "x": 76000000
+        },
+        {
+          "y": "07/01/2017",
+          "name": "07/01/2017",
+          "group": "Forecasted Reserves",
+          "x": 54000000
+        },
+        {
+          "y": "08/01/2017",
+          "name": "08/01/2017",
+          "group": "Forecasted Reserves",
+          "x": 32000000
+        },
+        {
+          "y": "09/01/2017",
+          "name": "09/01/2017",
+          "group": "Forecasted Reserves",
+          "x": 12000000
+        }
+      ]
+    },
+    {
+      "y": "Female",
+      "name": "Female",
+      "values": [
+        {
+          "y": "05/01/2017",
+          "name": "05/01/2017",
+          "group": "Reserves",
+          "x": 102000000
+        },
+        {
+          "y": "06/01/2017",
+          "name": "06/01/2017",
+          "group": "Forecasted Reserves",
+          "x": 76000000
+        },
+        {
+          "y": "07/01/2017",
+          "name": "07/01/2017",
+          "group": "Forecasted Reserves",
+          "x": 54000000
+        },
+        {
+          "y": "08/01/2017",
+          "name": "08/01/2017",
+          "group": "Forecasted Reserves",
+          "x": 32000000
+        },
+        {
+          "y": "09/01/2017",
+          "name": "09/01/2017",
+          "group": "Forecasted Reserves",
+          "x": 12000000
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1263 @@
+{
+  "data": {
+    "backgroundColor": "#fdebf4",
+    "center": {
+      "backgroundColor": "#f7b7d2",
+      "borderColor": "#f7b7d2",
+      "color": "#FFF",
+      "topTitle": "New Affinities",
+      "topValue": "36",
+      "image": "/assets/images/gViz/visualizations/diwo-visual-vs-bubble-cross-sell-up-sell/woman_pink_medium.png",
+      "imageBorderColor": "#FFF",
+      "bottomTitle": "Prospective Stores",
+      "bottomValue": "20"
+    },
+    "left": {
+      "backgroundColor": "#FFF",
+      "borderColor": "#e96293",
+      "color": "#e51c2a",
+      "text": "Customer Segments",
+      "image": "/assets/images/gViz/visualizations/diwo-visual-vs-bubble-cross-sell-up-sell/customer_segment_icon.png",
+      "expanded": {
+        "header": {
+          "text": "<img style='display: block; float: left; margin-right: 10px; height: 40px; margin-top: -5px;' src='/assets/images/gViz/visualizations/diwo-visual-vs-bubble-cross-sell-up-sell/customer_segment_icon.png' /><span style='height:34px; line-height: 34px; display: block; width: auto; float: left; '>Customer Segments</span>",
+          "backgroundColor": "#FFF",
+          "color": "#e51c2a"
+        },
+        "visualization": {
+          "backgroundGrid": true,
+          "backgroundColor": "#FFF",
+          "borderColor": "#dddbdd",
+          "color": "#666",
+          "centerBubble": {
+            "backgroundColor": "#f7b7d2",
+            "borderColor": "#f7b7d2",
+            "color": "#FFF",
+            "title": "Overview",
+            "image": "/assets/images/gViz/visualizations/diwo-visual-vs-bubble-cross-sell-up-sell/woman_pink_medium.png"
+          },
+          "leftBubble": {
+            "backgroundColor": "#FFF",
+            "borderColor": "#ef89ac",
+            "color": "#a79cb2",
+            "bottomTextColor": "#f7b7d2",
+            "title": "Attribute Analysis",
+            "bottomText": "Top Trending",
+            "bubbles": {
+              "connectors": "#ef89ac",
+              "top": {
+                "backgroundColor": "#f3d6e3",
+                "borderColor": "#f3d6e3",
+                "hoverBackgroundColor": "#FFF",
+                "hoverBorderColor": "#ef89ac",
+                "header": {
+                  "color": "#bbb3c6",
+                  "borderColor": "#bbb3c6",
+                  "content": "Print"
+                },
+                "body": {
+                  "color": "#bbb3c6",
+                  "content": "<div style='width:20px; height:20px; border-radius:50%; margin: 3px 5px 0px 5px; float: left; background: #f7b7d2;'></div><div style='width:30px; height: 100%; float:left; font-size:12px; text-align: left; line-height: 29px;'>Pink</div>"
+                },
+                "footerImage": "/assets/images/watch/icon_top_trending.png"
+              },
+              "middle": {
+                "backgroundColor": "#f3d6e3",
+                "borderColor": "#f3d6e3",
+                "hoverBackgroundColor": "#FFF",
+                "hoverBorderColor": "#ef89ac",
+                "header": {
+                  "color": "#bbb3c6",
+                  "borderColor": "#bbb3c6",
+                  "content": "Color"
+                },
+                "body": {
+                  "color": "#bbb3c6",
+                  "content": "<div style='width:20px; height:20px; border-radius:50%; margin: 3px 5px 0px 5px; float: left; background: #000;'></div><div style='width:30px; height: 100%; float:left; font-size:12px; text-align: left; padding-top: 1px;'>Pure Black</div>"
+                },
+                "footerImage": "/assets/images/watch/icon_top_trending.png"
+              },
+              "bottom": {
+                "backgroundColor": "#f3d6e3",
+                "borderColor": "#f3d6e3",
+                "hoverBackgroundColor": "#FFF",
+                "hoverBorderColor": "#ef89ac",
+                "header": {
+                  "color": "#bbb3c6",
+                  "borderColor": "#bbb3c6",
+                  "content": "Fabric"
+                },
+                "body": {
+                  "color": "#bbb3c6",
+                  "content": "<div style='width:20px; height:20px; margin: 3px 5px 0px 5px; float: left; overflow:hidden;'><img src='/assets/images/gViz/visualizations/diwo-visual-vs-bubble-cross-sell-up-sell/fabric_grey_icon_small.png' style='height: 20px;' /></div><div style='width:30px; height: 100%; float:left; font-size:12px; text-align: left; line-height: 29px;'>Velvet</div>"
+                },
+                "footerImage": "/assets/images/watch/icon_top_trending.png"
+              }
+            }
+          },
+          "rightBubble": {
+            "backgroundColor": "#FFF",
+            "borderColor": "#ef89ac",
+            "color": "#a79cb2",
+            "bottomTextColor": "#f7b7d2",
+            "title": "Customer Analysis",
+            "bottomText": "Top Customer Base",
+            "bubbles": {
+              "connectors": "#ef89ac",
+              "middle": {
+                "backgroundColor": "#f3d6e3",
+                "borderColor": "#f3d6e3",
+                "hoverBackgroundColor": "#FFF",
+                "hoverBorderColor": "#ef89ac",
+                "data": {
+                  "legend": {
+                    "isVisible": false
+                  },
+                  "actions": {
+                    "isVisible": false
+                  },
+                  "tooltip": {
+                    "heat": {
+                      "title": [ "{{properties.name}}" ],
+                      "body": [ "<span class='metric'># Accounts</span><span class='number'>{{value}}</span>" ]
+                    }
+                  },
+                  "mode": "heat",
+                  "heat": {
+                    "colors": ["#FFF","#c73e68"],
+                    "mapStrokeColor": "#1a1720",
+                    "shapeId": "abbr",
+                    "prefix": "",
+                    "sufix": "%",
+                    "format": "locale",
+                    "type": "number"
+                  },
+                  "attrs": {
+                    "legendBins": 4,
+                    "legendColor": "#a79cb2",
+                    "legendText": "{{perc}}",
+                    "legendBorderColor": "#f4d8e1",
+                    "labels": false,
+                    "grid": false,
+                    "zoom": false,
+                    "pan": false,
+                    "hover": true
+                  },
+                  "data": {
+                    "heat": [
+                      { "id": "al", "value": "10" },
+                      { "id": "ak", "value": "20" },
+                      { "id": "az", "value": "30" },
+                      { "id": "ar", "value": "40" },
+                      { "id": "ca", "value": "50" },
+                      { "id": "co", "value": "60" },
+                      { "id": "ct", "value": "70" },
+                      { "id": "de", "value": "60" },
+                      { "id": "fl", "value": "50" },
+                      { "id": "ga", "value": "40" },
+                      { "id": "hi", "value": "30" },
+                      { "id": "id", "value": "20" },
+                      { "id": "il", "value": "10" },
+                      { "id": "in", "value": "20" },
+                      { "id": "ia", "value": "30" },
+                      { "id": "ks", "value": "40" },
+                      { "id": "ky", "value": "50" },
+                      { "id": "la", "value": "60" },
+                      { "id": "me", "value": "70" },
+                      { "id": "md", "value": "60" },
+                      { "id": "ma", "value": "50" },
+                      { "id": "mi", "value": "40" },
+                      { "id": "mn", "value": "30" },
+                      { "id": "ms", "value": "20" },
+                      { "id": "mo", "value": "10" },
+                      { "id": "mt", "value": "20" },
+                      { "id": "ne", "value": "30" },
+                      { "id": "nv", "value": "40" },
+                      { "id": "nh", "value": "50" },
+                      { "id": "nj", "value": "60" },
+                      { "id": "nm", "value": "70" },
+                      { "id": "ny", "value": "60" },
+                      { "id": "nc", "value": "50" },
+                      { "id": "nd", "value": "40" },
+                      { "id": "oh", "value": "30" },
+                      { "id": "ok", "value": "20" },
+                      { "id": "or", "value": "10" },
+                      { "id": "pa", "value": "10" },
+                      { "id": "ri", "value": "10" },
+                      { "id": "sc", "value": "10" },
+                      { "id": "sd", "value": "10" },
+                      { "id": "tn", "value": "10" },
+                      { "id": "tx", "value": "10" },
+                      { "id": "ut", "value": "10" },
+                      { "id": "vt", "value": "10" },
+                      { "id": "va", "value": "10" },
+                      { "id": "wa", "value": "10" },
+                      { "id": "wv", "value": "10" },
+                      { "id": "wy", "value": "10" }
+                    ]
+                  }
+                }
+              }
+            }
+          },
+          "bottomBubble": {
+            "backgroundColor": "#FFF",
+            "borderColor": "#ef89ac",
+            "color": "#a79cb2",
+            "bottomTextColor": "#f7b7d2",
+            "title": "Price Point Analysis",
+            "bottomText": "Top Price Point",
+            "bubbles": {
+              "connectors": "#ef89ac",
+              "bottom": {
+                "backgroundColor": "#f3d6e3",
+                "borderColor": "#f3d6e3",
+                "hoveredBackgroundColor": "#f3d6e3",
+                "hoveredBorderColor": "#f3d6e3",
+                "data": {
+                  "title": "",
+                  "toggle": {
+                    "isVisible": false
+                  },
+                  "legend": {
+                    "isVisible": false
+                  },
+                  "tooltip": {
+                    "hasPercentage": false,
+                    "title": "{{name}}"
+                  },
+                  "attrs": {
+                    "radius": 15,
+                    "muted": false,
+                    "grid": false,
+                    "textColor": "#FFF"
+                  },
+                  "x1": {
+                    "title": "Estimated External Assets",
+                    "value": "sum",
+                    "color": "#FFF",
+                    "prefix": "$",
+                    "sufix": "",
+                    "format": "locale",
+                    "percentageColor": "#FFF",
+                    "percentageSize": "18px",
+                    "valueSize": "22px"
+                  },
+                  "data": [
+                    {
+                      "id": "id-1",
+                      "name": "$35-$45",
+                      "color": "#FFF",
+                      "x1": 40
+                    },
+                    {
+                      "id": "id-2",
+                      "name": "$18-$25",
+                      "color": "#fde9f2",
+                      "x1": 28
+                    },
+                    {
+                      "id": "id-3",
+                      "name": "$45-$60",
+                      "color": "#fbd9e8",
+                      "x1": 22
+                    },
+                    {
+                      "id": "id-4",
+                      "name": "$25-$35",
+                      "color": "#f9c5da",
+                      "x1": 10
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "topRight": {
+      "backgroundColor": "#FFF",
+      "borderColor": "#e96293",
+      "color": "#e51c2a",
+      "text": "Sales Uplift Insights",
+      "image": "/assets/images/gViz/visualizations/diwo-visual-vs-bubble-cross-sell-up-sell/sales_uplift_icon.png",
+      "expanded": {
+        "header": {
+          "text": "<img style='display: block; float: left; margin-right: 10px; height: 40px; margin-top: -5px;' src='/assets/images/gViz/visualizations/diwo-visual-vs-bubble-cross-sell-up-sell/sales_uplift_icon.png' /><span style='height:34px; line-height: 34px; display: block; width: auto; float: left; '>Sales Uplift Insights</span>",
+          "backgroundColor": "#FFF",
+          "color": "#e51c2a"
+        },
+        "visualization": {
+          "backgroundColor": "#FFF",
+          "borderColor": "#dddbdd",
+          "color": "#666",
+          "textAlign": "left",
+          "data": [
+            ["Most rewarding combination will be WEW Pushup with Strappy Sports Bra in Sports Bra."],
+            ["More than 50% of new combinations belongs to WEW and Date Bras."],
+            ["55% of new combinations have black color attribute. 80% of the new combinations have velvet fabric attribute."],
+            ["Most impacting stores are located in West and Southeast."]
+          ]
+        }
+      }
+    },
+    "connectors": "#e96293",
+    "backgroundBubbles": {
+      "backgroundColor": "#fef2f8",
+      "borderColor": "#fef2f8",
+      "opacity": 1
+    },
+
+    "bottomRight": {
+      "backgroundColor": "#FFF",
+      "borderColor": "#e96293",
+      "color": "#e51c2a",
+      "text": "Customer Overview",
+      "hoveredText": "<div style='height:32px; width:160px; margin:0px auto;'><img style='display:block; float:left; height:32px; margin: 0px 5px 0px 0px;' src='/assets/images/watch/overview_icon-20.png' /><span style='display:block; float:left; width: auto; height: 32px; line-height: 32px;'>Customer Overview</span></p>",
+      "image": "/assets/images/watch/overview_icon-20.png",
+      "chartData": {
+        "data": {
+          "backgroundColor": "transparent",
+          "transform": "scale(1)",
+
+          "center": {
+            "style": {
+              "top": "calc(50% - 55px)",
+              "left": "calc(50% - 55px)",
+              "size": "110px",
+              "backgroundColor": "#f7b7d2",
+              "borderColor": "#f7b7d2",
+              "borderRadius": "50%",
+              "color": "#FFF",
+              "zIndex": "1005"
+            },
+            "content": {
+              "type": "1",
+              "topText": "Sport Bra",
+              "middleText": "<div style='height:40px;'><img style='height:40px;' src='/assets/images/sport_class.png' /></div>",
+              "bottomText": "Week 40"
+            }
+          },
+
+          "attributeAnalysis": {
+            "title": {
+              "style": {
+                "top": "calc(50% - 150px)",
+                "left": "calc(50% - 110px)",
+                "color": "#f7b7d3",
+                "fontSize": "12px",
+                "textAlign": "center"
+              },
+              "content": "Attribute Analysis"
+            },
+            "circleConnectors": [
+              {
+                "style": {
+                  "top": "calc(50% - 138px)",
+                  "left": "calc(50% - 133px)",
+                  "size": "126px",
+                  "borderColor": "#e96293",
+                  "clipPath": "polygon(0% 10%, 50% 50%, 0% 35%, -2% 100%)",
+                  "transform": "rotate(-11deg)",
+                  "zIndex": 1003
+                }
+              }
+            ],
+            "connectors": [
+              {
+                "style": {
+                  "borderColor": "#e96293",
+                  "size": "20px",
+                  "top": "calc(50% - 108px)",
+                  "left": "calc(50% - 144px)",
+                  "transform": "rotate(24deg)",
+                  "zIndex": 1003
+                }
+              },
+              {
+                "style": {
+                  "borderColor": "#e96293",
+                  "size": "17px",
+                  "top": "calc(50% - 83px)",
+                  "left": "calc(50% - 148px)",
+                  "transform": "rotate(6deg)",
+                  "zIndex": 1003
+                }
+              }
+            ],
+            "valuesBubble": {
+              "style": {
+                "top": "calc(50% - 130px)",
+                "left": "calc(50% - 125px)",
+                "size": "110px",
+                "backgroundColor": "#FFF",
+                "borderColor": "#ed7ca5",
+                "borderRadius": "50%",
+                "color": "#897b9e",
+                "zIndex": "1004",
+                "hoveredTop": "calc(50% - 130px)",
+                "hoveredLeft": "calc(50% - 125px)",
+                "hoveredSize": "110px",
+                "hoveredBackgroundColor": "#FFF",
+                "hoveredBorderColor": "#ed7ca5"
+              },
+              "content": {
+                "type": "1",
+                "text": [
+                  "<span style='font-size: 12px; margin: 0px 14px 0px 17px;'>Color:</span><span style='font-size:  12px; color:#a99fb7;'>Black</span>",
+                  "<span style='font-size: 12px; margin: 0px 17px 0px 17px;'>Print:</span><span style='font-size:  12px; color:#a99fb7;'>Logo</span>",
+                  "<span style='font-size: 12px; margin: 0px 10px 0px 17px;'>Fabric:</span><span style='font-size: 12px; color:#a99fb7;'>Smooth</span>",
+                  "<span style='font-size: 10px; width: 100%; text-align: center; display: block; margin-top:5px;'>Top Trending <img src='/assets/images/top-trending-pink.png' style='display:inline-block; height:10px;'/></span>"
+                ]
+              },
+              "hoveredContent": {
+                "type": "1",
+                "text": [
+                  "<div style='height:auto; float:left; width:33%; margin-bottom:3px;'><div style='height:11px; line-height:11px; font-size:10px; color:#a99fb7; font-weight:lighter; text-align: center; width: 100%;'>28px</div><div style='height:22px; width:22px; border-radius:50%; background:#000; margin: 2px auto;'></div><div style='height: 13px; line-height: 13px; font-size:10px; color:#a99fb7; font-weight:lighter; text-align: center; width: 100%;'>Black</div></div>",
+                  "<div style='height:auto; float:left; width:33%; margin-bottom:3px;'><div style='height:11px; line-height:11px; font-size:10px; color:#a99fb7; font-weight:lighter; text-align: center; width: 100%;'>28px</div><div style='height:22px; width:22px; border-radius:50%; background:#e95c83; margin: 2px auto;'></div><div style='height: 13px; line-height: 13px; font-size:10px; color:#a99fb7; font-weight:lighter; text-align: center; width: 100%;'>Logo</div></div>",
+                  "<div style='height:auto; float:left; width:33%; margin-bottom:3px;'><div style='height:11px; line-height:11px; font-size:10px; color:#a99fb7; font-weight:lighter; text-align:center; width:100%;'>28px</div><div style='height:22px; width:22px; border-radius:50%; background:#91add0; margin: 2px auto;'></div><div style='height: 13px; line-height: 13px; font-size:10px; color:#a99fb7; font-weight:lighter; text-align: center; width: 100%;'>Smooth</div></div>",
+                  "<span style='color:#ee7598; font-size: 10px; width: 100%; text-align: center; display: block; margin-top:5px;'>Top Trending <img src='/assets/images/watch/icon_top_trending.png' style='display:inline-block; height:10px;'/></span>"
+                ]
+              }
+            },
+            "chartBubble": {
+              "style": {
+                "top": "calc(50% - 140px)",
+                "left": "calc(50% - 180px)",
+                "size": "40px",
+                "backgroundColor": "#f3d7e3",
+                "borderColor": "#f3d7e3",
+                "borderRadius": "50%",
+                "color": "#897b9e",
+                "zIndex": "1004",
+                "hoveredTop": "calc(50% - 240px)",
+                "hoveredLeft": "calc(50% - 425px)",
+                "hoveredSize": "305px",
+                "hoveredBackgroundColor": "#FFF",
+                "hoveredBorderColor": "#ed7ca5"
+
+              },
+              "content": {
+                "type": "1",
+                "placeholder": "/assets/images/gViz/visualizations/diwo-visual-bubble-poet-context/wave.png"
+              },
+              "hoveredContent": {
+                "data": {
+                  "backgroundColor": "#FFF",
+                  "borderColor": "#d7cad9",
+                  "color": "#897b9e",
+                  "textAlign": "left",
+                  "trPadding": "2px 0px",
+                  "tdPadding": "4px 5px",
+                  "width": "auto",
+                  "data": [
+                    [
+                      "<span style='font-size:12px;'>Att. Trends</span>",
+                      "<span style='font-size:12px; width:100%; text-align:center;'>Top<img src='/assets/images/top-trending-green.png' style='display:inline-block; margin-left:5px; width:14px;'/></span>",
+                      "<span style='font-size:12px; width:100%; text-align:center;'>Bottom<img src='/assets/images/bottom-trending-red.png' style='display:inline-block; margin-left:5px; width:14px;'/></span>"
+                    ],
+                    [
+                      "<span style='font-size:12px;'>Color (Solid)</span>",
+                      "<span style='font-size:12px; width:100%; text-align:center; color:#fa79ae;'>Black</span>",
+                      "<span style='font-size:12px; width:100%; text-align:center; color:#fa79ae;'>Purple</span>"
+                    ],
+                    [
+                      "<span style='font-size:12px;'>Color (Print)</span>",
+                      "<span style='font-size:12px; width:100%; text-align:center; color:#fa79ae;'>Logo</span>",
+                      "<span style='font-size:12px; width:100%; text-align:center; color:#fa79ae;'>Floral</span>"
+                    ],
+                    [
+                      "<span style='font-size:12px;'>Size</span>",
+                      "<span style='font-size:12px; width:100%; text-align:center; color:#fa79ae;'>Medium</span>",
+                      "<span style='font-size:12px; width:100%; text-align:center; color:#fa79ae;'>Small</span>"
+                    ],
+                    [
+                      "<span style='font-size:12px;'>Fabric</span>",
+                      "<span style='font-size:12px; width:100%; text-align:center; color:#fa79ae;'>Smooth</span>",
+                      "<span style='font-size:12px; width:100%; text-align:center; color:#fa79ae;'>Nylon</span>"
+                    ],
+                    [
+                      "<span style='font-size:12px;'>Silhouette</span>",
+                      "<span style='font-size:12px; width:100%; text-align:center; color:#fa79ae;'>Push-Up</span>",
+                      "<span style='font-size:12px; width:100%; text-align:center; color:#fa79ae;'>Lightly Lined</span>"
+                    ]
+                  ]
+                }
+              }
+            },
+            "placeholderBubble": {
+              "style": {
+                "top": "calc(50% - 90px)",
+                "left": "calc(50% - 160px)",
+                "size": "12px",
+                "backgroundColor": "#f3d5e3",
+                "borderColor": "#f3d5e3",
+                "borderRadius": "50%",
+                "zIndex": "1004"
+              }
+            }
+          },
+
+          "customerAnalysis": {
+            "title": {
+              "style": {
+                "top": "calc(50% - 67px)",
+                "left": "calc(50% + 110px)",
+                "color": "#f7b7d3",
+                "fontSize": "12px",
+                "textAlign": "center"
+              },
+              "content": "Customer <br/> Analysis"
+            },
+            "circleConnectors": [
+              {
+                "style": {
+                  "top": "calc(50% - 43px)",
+                  "left": "calc(50% + 107px)",
+                  "size": "56px",
+                  "borderColor": "#e96293",
+                  "clipPath": "polygon(0% 10%, 50% 50%, 0% 112%, -2% 100%)",
+                  "transform": "rotate(192deg)",
+                  "zIndex": 1003
+                }
+              }
+            ],
+            "connectors": [
+              {
+                "style": {
+                  "borderColor": "#e96293",
+                  "size": "62px",
+                  "top": "calc(50% - 9px)",
+                  "left": "calc(50% + 54px)",
+                  "transform": "rotate(-8deg)",
+                  "zIndex": 1003
+                }
+              },
+              {
+                "style": {
+                  "borderColor": "#e96293",
+                  "size": "20px",
+                  "top": "calc(50% - 40px)",
+                  "left": "calc(50% + 153px)",
+                  "transform": "rotate(-42deg)",
+                  "hoveredSize": "23px",
+                  "hoveredTop": "calc(50% - 41px)",
+                  "hoveredLeft": "calc(50% + 153px)",
+                  "hoveredTransform": "rotate(-48deg)",
+                  "zIndex": 1003
+                }
+              },
+              {
+                "style": {
+                  "borderColor": "#e96293",
+                  "size": "30px",
+                  "top": "calc(50% - 28px)",
+                  "left": "calc(50% + 161px)",
+                  "transform": "rotate(-18deg)",
+                  "hoveredSize": "37px",
+                  "hoveredTop": "calc(50% - 29px)",
+                  "hoveredLeft": "calc(50% + 160px)",
+                  "hoveredTransform": "rotate(-22deg)",
+                  "zIndex": 1003
+                }
+              },
+              {
+                "style": {
+                  "borderColor": "#e96293",
+                  "size": "18px",
+                  "top": "calc(50% - 15px)",
+                  "left": "calc(50% + 162px)",
+                  "transform": "rotate(0deg)",
+                  "hoveredSize": "29px",
+                  "hoveredTop": "calc(50% - 10px)",
+                  "hoveredLeft": "calc(50% + 162px)",
+                  "hoveredTransform": "rotate(13deg)",
+                  "zIndex": 1003
+                }
+              },
+              {
+                "style": {
+                  "borderColor": "#e96293",
+                  "size": "22px",
+                  "top": "calc(50% - 2px)",
+                  "left": "calc(50% + 160px)",
+                  "transform": "rotate(24deg)",
+                  "hoveredSize": "37px",
+                  "hoveredTop": "calc(50% + 10px)",
+                  "hoveredLeft": "calc(50% + 154px)",
+                  "hoveredTransform": "rotate(41deg)",
+                  "zIndex": 1003
+                }
+              },
+              {
+                "style": {
+                  "borderColor": "#e96293",
+                  "size": "15px",
+                  "top": "calc(50% + 11px)",
+                  "left": "calc(50% + 149px)",
+                  "transform": "rotate(53deg)",
+                  "hoveredSize": "26px",
+                  "hoveredTop": "calc(50% + 18px)",
+                  "hoveredLeft": "calc(50% + 143px)",
+                  "hoveredTransform": "rotate(75deg)",
+                  "zIndex": 1003
+                }
+              }
+            ],
+            "chartBubble": {
+              "style": {
+                "top": "calc(50% - 35px)",
+                "left": "calc(50% + 115px)",
+                "size": "40px",
+                "backgroundColor": "#f3d5e3",
+                "borderColor": "#f3d5e3",
+                "borderRadius": "50%",
+                "color": "#897b9e",
+                "zIndex": "1004"
+              },
+              "content": {
+                "type": "1",
+                "placeholder": "/assets/images/gViz/visualizations/diwo-visual-bubble-poet-context/women.png"
+              }
+            },
+            "placeholderBubble": [
+              {
+                "style": {
+                  "top": "calc(50% - 54px)",
+                  "left": "calc(50% + 170px)",
+                  "size": "10px",
+                  "backgroundColor": "#f3d5e3",
+                  "borderColor": "#f3d5e3",
+                  "borderRadius": "50%",
+                  "zIndex": "1004",
+                  "hoveredTop": "calc(50% - 57px)",
+                  "hoveredLeft": "calc(50% + 170px)"
+                }
+              },
+              {
+                "style": {
+                  "top": "calc(50% - 39px)",
+                  "left": "calc(50% + 190px)",
+                  "size": "10px",
+                  "backgroundColor": "#f3d5e3",
+                  "borderColor": "#f3d5e3",
+                  "borderRadius": "50%",
+                  "zIndex": "1004",
+                  "hoveredTop": "calc(50% - 42px)",
+                  "hoveredLeft": "calc(50% + 195px)"
+                }
+              },
+              {
+                "style": {
+                  "top": "calc(50% - 19px)",
+                  "left": "calc(50% + 180px)",
+                  "size": "10px",
+                  "backgroundColor": "#f3d5e3",
+                  "borderColor": "#f3d5e3",
+                  "borderRadius": "50%",
+                  "zIndex": "1004",
+                  "hoveredTop": "calc(50% - 9px)",
+                  "hoveredLeft": "calc(50% + 190px)"
+                }
+              },
+              {
+                "style": {
+                  "top": "calc(50% + 1px)",
+                  "left": "calc(50% + 180px)",
+                  "size": "10px",
+                  "backgroundColor": "#f3d5e3",
+                  "borderColor": "#f3d5e3",
+                  "borderRadius": "50%",
+                  "zIndex": "1004",
+                  "hoveredTop": "calc(50% + 21px)",
+                  "hoveredLeft": "calc(50% + 185px)"
+                }
+              },
+              {
+                "style": {
+                  "top": "calc(50% + 16px)",
+                  "left": "calc(50% + 160px)",
+                  "size": "10px",
+                  "backgroundColor": "#f3d5e3",
+                  "borderColor": "#f3d5e3",
+                  "borderRadius": "50%",
+                  "zIndex": "1004",
+                  "hoveredTop": "calc(50% + 31px)",
+                  "hoveredLeft": "calc(50% + 155px)"
+                }
+              }
+            ],
+            "textElements": [
+              {
+                "style": {
+                  "hoveredTop": "calc(50% - 78px)",
+                  "hoveredLeft": "calc(50% + 188px)"
+                },
+                "hoveredContent": "<div style='font-size:12px; color:#897b9e; font-weight: lighter;'>25-29</div><div style='font-size: 11px; color:#fa79ae; font-weight: lighter;'>Age</div>"
+              },
+              {
+                "style": {
+                  "hoveredTop": "calc(50% - 48px)",
+                  "hoveredLeft": "calc(50% + 213px)"
+                },
+                "hoveredContent": "<div style='font-size:12px; color:#897b9e; font-weight: lighter;'>$80K-$110K</div><div style='font-size: 11px; color:#fa79ae; font-weight: lighter;'>Income</div>"
+              },
+              {
+                "style": {
+                  "hoveredTop": "calc(50% - 17px)",
+                  "hoveredLeft": "calc(50% + 207px)"
+                },
+                "hoveredContent": "<div><span style='font-size:9px; font-weight:lighter; color: #FFF; padding:1px 3px; background-color:#fa79ae;'>Pink Nation 62%</span><span style='font-size:9px; font-weight:lighter; margin-left: 5px; color:#FFF; padding:1px 3px; background-color:#fa79ae;'>Angel Card 12%</span></div><div style='font-size: 11px; color:#fa79ae; font-weight: lighter; margin-top:2px;'>Customer Type</div>"
+              },
+              {
+                "style": {
+                  "hoveredTop": "calc(50% + 25px)",
+                  "hoveredLeft": "calc(50% + 203px)"
+                },
+                "hoveredContent": "<div style='font-size:12px; color:#897b9e; font-weight: lighter;'>High Value</div><div style='font-size: 11px; color:#fa79ae; font-weight: lighter;'>Value Segment</div>"
+              },
+              {
+                "style": {
+                  "hoveredTop": "calc(50% + 45px)",
+                  "hoveredLeft": "calc(50% + 156px)"
+                },
+                "hoveredContent": "<div style='font-size:12px; color:#897b9e; font-weight: lighter;'>3 Weeks</div><div style='font-size: 11px; color:#fa79ae; font-weight: lighter;'>Frequency</div>"
+              }
+            ]
+          },
+
+          "pricePointAnalysis": {
+            "title": {
+              "style": {
+                "top": "calc(50% + 175px)",
+                "left": "calc(50% + 35px)",
+                "color": "#f7b7d3",
+                "fontSize": "12px",
+                "textAlign": "center"
+              },
+              "content": "Price Point Analysis"
+            },
+            "connectors": [
+              {
+                "style": {
+                  "top": "calc(50% + 95px)",
+                  "left": "calc(50% + 155px)",
+                  "size": "26px",
+                  "borderColor": "#e96293",
+                  "zIndex": 1003
+                }
+              }
+            ],
+            "valuesBubble": {
+              "style": {
+                "top": "calc(50% + 20px)",
+                "left": "calc(50% + 5px)",
+                "size": "150px",
+                "backgroundColor": "#FFF",
+                "borderColor": "#e96293",
+                "borderRadius": "50%",
+                "color": "#a397b1",
+                "zIndex": "1004"
+              },
+              "content": {
+                "type": "1",
+                "text": [
+                  "<span style='font-size: 11px; margin-right: 10px;'>Min Basket</span><span style='font-size: 11px; color:#fa79ae;'>$21</span>",
+                  "<span style='font-size: 11px; margin-right: 10px;'>Avg Basket</span><span style='font-size: 11px; color:#fa79ae;'>$34</span>",
+                  "<span style='font-size: 11px; margin-right: 10px;'>Max Basket</span><span style='font-size: 11px; color:#fa79ae;'>$95</span>",
+                  "<span style='color:#fa79ae; font-size: 16px; height: 22px; line-height: 26px; display: inline-block;'>$15-$24.9</span>",
+                  "<span style='font-size: 11px;'>Top Price Point</span>"
+                ]
+              }
+            },
+            "chartBubble": {
+              "style": {
+                "top": "calc(50% + 75px)",
+                "left": "calc(50% + 180px)",
+                "size": "40px",
+                "backgroundColor": "#f3d7e3",
+                "borderColor": "#f3d7e3",
+                "borderRadius": "50%",
+                "color": "#FFF",
+                "zIndex": "1004",
+                "hoveredTop": "calc(50% - 15px)",
+                "hoveredLeft": "calc(50% + 130px)",
+                "hoveredSize": "220px",
+                "hoveredBackgroundColor": "#f7b7d2",
+                "hoveredBorderColor": "#f7b7d2"
+              },
+              "content": "/assets/images/gViz/visualizations/diwo-visual-bubble-poet-context/circle.png",
+              "hoveredContent": {
+                "title": "",
+                "legend": {
+                  "isVisible": false
+                },
+                "tooltip": {
+                  "hasPercentage": true,
+                  "title": "{{name}}"
+                },
+                "attrs": {
+                  "radius": 15,
+                  "muted": false,
+                  "grid": false,
+                  "scale": 1
+                },
+                "x1": {
+                  "title": "",
+                  "value": "sum",
+                  "color": "#FFF",
+                  "prefix": "$",
+                  "sufix": "",
+                  "format": "locale"
+                },
+                "data": [
+                  {
+                    "id": "id-1",
+                    "name": "$35-$45",
+                    "color": "#FFF",
+                    "nameColor": "#FFF",
+                    "percentageColor": "#FFF",
+                    "lineColor": "#FFF",
+                    "x1": 40
+                  },
+                  {
+                    "id": "id-2",
+                    "name": "$18-$25",
+                    "color": "#fde9f2",
+                    "nameColor": "#FFF",
+                    "percentageColor": "#FFF",
+                    "lineColor": "#FFF",
+                    "x1": 28
+                  },
+                  {
+                    "id": "id-3",
+                    "name": "$45-$60",
+                    "color": "#fbd9e8",
+                    "nameColor": "#FFF",
+                    "percentageColor": "#FFF",
+                    "lineColor": "#FFF",
+                    "x1": 22
+                  },
+                  {
+                    "id": "id-4",
+                    "name": "$25-$35",
+                    "color": "#f9c5da",
+                    "nameColor": "#FFF",
+                    "percentageColor": "#FFF",
+                    "lineColor": "#FFF",
+                    "x1": 10
+                  }
+                ]
+              }
+            }
+          },
+
+          "salesStockAnalysis": {
+            "title": {
+              "style": {
+                "top": "calc(50% - 15px)",
+                "left": "calc(50% - 135px)",
+                "color": "#f7b7d3",
+                "fontSize": "12px",
+                "textAlign": "center"
+              },
+              "content": "Sales & Stock </br> Analysis"
+            },
+            "bubbles": [
+              {
+                "style": {
+                  "top": "calc(50% + 15px)",
+                  "left": "calc(50% - 195px)",
+                  "size": "86px",
+                  "imageSize": "30px",
+                  "backgroundColor": "#FFF",
+                  "borderColor": "#e96293",
+                  "borderRadius": "50%",
+                  "color": "#71618d",
+                  "zIndex": "1004"
+                },
+                "content": {
+                  "type": "1",
+                  "image": "/assets/images/watch/icon_bra.png",
+                  "bottomText": "PK WEW PU",
+                  "topNumber": "<span style='background-color:#71618d; color:#FFF; padding: 2px 5px 1px; font-size:10px; border-radius:50%'>1</span>",
+                  "circleConnectors": [
+                    {
+                      "style": {
+                        "top": "calc(50% + 8px)",
+                        "left": "calc(50% - 202px)",
+                        "size": "100px",
+                        "borderColor": "#e96293",
+                        "clipPath": "polygon(0% 10%, 50% 50%, 0% 40%, -2% 100%)",
+                        "transform": "rotate(-59deg)",
+                        "zIndex": 1003
+                      }
+                    }
+                  ],
+                  "connectors": [
+                    {
+                      "style": {
+                        "borderColor": "#e96293",
+                        "size": "18px",
+                        "top": "calc(50% + 80px)",
+                        "left": "calc(50% - 215px)",
+                        "transform": "rotate(-33deg)",
+                        "zIndex": 1003
+                      }
+                    },
+                    {
+                      "style": {
+                        "borderColor": "#e96293",
+                        "size": "30px",
+                        "top": "calc(50% + 104px)",
+                        "left": "calc(50% - 212px)",
+                        "transform": "rotate(-41deg)",
+                        "zIndex": 1003
+                      }
+                    }
+                  ],
+                  "sideBubbles": [
+                    {
+                      "style": {
+                        "top": "calc(50% + 80px)",
+                        "left": "calc(50% - 235px)",
+                        "size": "24px",
+                        "imageSize": "20px",
+                        "backgroundColor": "#7b6c8e",
+                        "borderColor": "#7b6c8e",
+                        "borderRadius": "50%",
+                        "color": "#FFF",
+                        "zIndex": "1004",
+                        "hoveredTop": "calc(50% + 40px)",
+                        "hoveredLeft": "calc(50% - 285px)",
+                        "hoveredSize": "70px",
+                        "hoveredBackgroundColor": "#FFF",
+                        "hoveredBorderColor": "#e96293"
+                      },
+                      "content": "<div style='margin-top: 1px; font-size:11px; margin-left: -1px;'>2</div>",
+                      "hoveredContent": {
+                        "type": "1",
+                        "image": "/assets/images/watch/icon_bra.png",
+                        "bottomText": "<div style='color:#71618d; font-size: 9px; line-height: 11px; height: 22px;'>PK WEW LL</div>",
+                        "topNumber": "<span style='background-color:#7b6c8e; color:#FFF; padding: 1px 4px 0px; font-size:8px; border-radius:50%'>2</span>"
+                      }
+                    },
+                    {
+                      "style": {
+                        "top": "calc(50% + 110px)",
+                        "left": "calc(50% - 225px)",
+                        "size": "18px",
+                        "imageSize": "20px",
+                        "backgroundColor": "#bd96cf",
+                        "borderColor": "#bd96cf",
+                        "borderRadius": "50%",
+                        "color": "#FFF",
+                        "zIndex": "1004",
+                        "hoveredTop": "calc(50% + 80px)",
+                        "hoveredLeft": "calc(50% - 235px)",
+                        "hoveredSize": "70px",
+                        "hoveredBackgroundColor": "#FFF",
+                        "hoveredBorderColor": "#e96293"
+                      },
+                      "content": "<div style='margin-top: 1px; font-size:10px; margin-left: -1px;'>3</div>",
+                      "hoveredContent": {
+                        "type": "1",
+                        "image": "/assets/images/watch/icon_bra.png",
+                        "bottomText": "<div style='color:#71618d; font-size: 9px; line-height: 11px; height: 22px;'>PK WEW </br> Super PU</div>",
+                        "topNumber": "<span style='background-color:#bd96cf; color:#FFF; padding: 1px 4px 0px; font-size:8px; border-radius:50%'>3</span>"
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "style": {
+                  "top": "calc(50% + 15px)",
+                  "left": "calc(50% - 115px)",
+                  "size": "86px",
+                  "imageSize": "30px",
+                  "backgroundColor": "#FFF",
+                  "borderColor": "#e96293",
+                  "borderRadius": "50%",
+                  "color": "#fa79ae",
+                  "zIndex": "1004"
+                },
+                "content": {
+                  "type": "1",
+                  "image": "/assets/images/watch/icon_pantie.png",
+                  "bottomText": "Logo Hipster",
+                  "topNumber": "<span style='background-color:#e95b86; color:#FFF; padding: 2px 5px 1px; font-size:10px; border-radius:50%'>1</span>",
+                  "circleConnectors": [
+                    {
+                      "style": {
+                        "top": "calc(50% + 8px)",
+                        "left": "calc(50% - 122px)",
+                        "size": "100px",
+                        "borderColor": "#e96293",
+                        "clipPath": "polygon(0% 10%, 50% 50%, 0% 40%, -2% 100%)",
+                        "transform": "rotate(-116deg)",
+                        "zIndex": 1003
+                      }
+                    }
+                  ],
+                  "connectors": [
+                    {
+                      "style": {
+                        "borderColor": "#e96293",
+                        "size": "26px",
+                        "top": "calc(50% + 118px)",
+                        "left": "calc(50% - 71px)",
+                        "transform": "rotate(-98deg)",
+                        "zIndex": 1003
+                      }
+                    },
+                    {
+                      "style": {
+                        "borderColor": "#e96293",
+                        "size": "14px",
+                        "top": "calc(50% + 113px)",
+                        "left": "calc(50% - 90px)",
+                        "transform": "rotate(-87deg)",
+                        "zIndex": 1003
+                      }
+                    }
+                  ],
+                  "sideBubbles": [
+                    {
+                      "style": {
+                        "top": "calc(50% + 120px)",
+                        "left": "calc(50% - 95px)",
+                        "size": "24px",
+                        "imageSize": "20px",
+                        "backgroundColor": "#fa79ae",
+                        "borderColor": "#fa79ae",
+                        "borderRadius": "50%",
+                        "color": "#FFF",
+                        "zIndex": "1004",
+                        "hoveredTop": "calc(50% + 95px)",
+                        "hoveredLeft": "calc(50% - 120px)",
+                        "hoveredSize": "70px",
+                        "hoveredBackgroundColor": "#FFF",
+                        "hoveredBorderColor": "#e96293"
+                      },
+                      "content": "<div style='margin-top: 1px; font-size:11px; margin-left: -1px;'>2</div>",
+                      "hoveredContent": {
+                        "type": "1",
+                        "image": "/assets/images/watch/icon_pantie.png",
+                        "bottomText": "<div style='color:#fa79ae; font-size: 9px; line-height: 11px; height: 22px;'>SLT Cheeky <br/> Cheeky</div>",
+                        "topNumber": "<span style='background-color:#fa79ae; color:#FFF; padding: 1px 4px 0px; font-size:8px; border-radius:50%'>2</span>"
+                      }
+                    },
+                    {
+                      "style": {
+                        "top": "calc(50% + 130px)",
+                        "left": "calc(50% - 65px)",
+                        "size": "18px",
+                        "imageSize": "20px",
+                        "backgroundColor": "#f7b5c9",
+                        "borderColor": "#f7b5c9",
+                        "borderRadius": "50%",
+                        "color": "#FFF",
+                        "zIndex": "1004",
+                        "hoveredTop": "calc(50% + 95px)",
+                        "hoveredLeft": "calc(50% - 60px)",
+                        "hoveredSize": "70px",
+                        "hoveredBackgroundColor": "#FFF",
+                        "hoveredBorderColor": "#e96293"
+                      },
+                      "content": "<div style='margin-top: 1px; font-size:10px; margin-left: -1px;'>3</div>",
+                      "hoveredContent": {
+                        "type": "1",
+                        "image": "/assets/images/watch/icon_pantie.png",
+                        "bottomText": "<div style='color:#fa79ae; font-size: 9px; line-height: 11px; height: 22px;'>Wide Logo <br/> Boyshort</div>",
+                        "topNumber": "<span style='background-color:#f7b5c9; color:#FFF; padding: 1px 4px 0px; font-size:8px; border-radius:50%'>3</span>"
+                      }
+                    }
+                  ]
+
+                }
+              }
+            ]
+          },
+
+          "promotionAnalysis": {
+            "title": {
+              "style": {
+                "top": "calc(50% - 190px)",
+                "left": "calc(50% + 25px)",
+                "color": "#f7b7d3",
+                "fontSize": "12px",
+                "textAlign": "center"
+              },
+              "content": "Promotion </br> Analysis"
+            },
+            "valuesBubble": {
+              "style": {
+                "top": "calc(50% - 160px)",
+                "left": "calc(50% - 10px)",
+                "size": "126px",
+                "backgroundColor": "#FFF",
+                "borderColor": "#e96293",
+                "borderRadius": "50%",
+                "color": "#a99fb7",
+                "zIndex": "1004"
+              },
+              "content": {
+                "type": "1",
+                "text": [
+                  "<span style='font-weight:lighter; color:#a99fb7; font-size: 12px;'>Top Promotion</span>",
+                  "<span style='font-weight:lighter; color:#fa79ae; font-size: 12px;'>Item Discount %Off</span>",
+                  "<hr style='border-color: #ea6a99; border-bottom: none; margin: 5px 10px;'>",
+                  "<div style='height: 26px; width: 100%;'><div style='float:left; height:26px; line-height:26px; width:47%; color:#a99fb7;'><span style='display:block; float:right; margin-right: 5px; font-weight: lighter;'>38%</span><img src='/assets/images/gViz/visualizations/diwo-visual-bubble-poet-context/circle.png' style='display:block; float:right; height: 20px; margin: 2px 2px 0px 0px;' /></div><div style='float:left; height:26px; line-height:13px; width:50%; color:#a99fb7; text-align:left; font-weight: lighter; font-size:10px;'>Discounted <br/> Transactions</div></div>"
+                ]
+              }
+            }
+          },
+
+          "storeAnalysis": {
+            "title": {
+              "style": {
+                "top": "calc(50%2- 180px)",
+                "left": "calc(50% + 20px)",
+                "color": "#f7b7d3",
+                "fontSize": "12px",
+                "textAlign": "center",
+                "hoveredTop": "calc(50% - 205px)",
+                "hoveredLeft": "calc(50% + 65px)"
+              },
+              "content": "Store Analysis"
+            },
+            "textElements": [
+              {
+                "style": {
+                  "top": "calc(50% - 62px)",
+                  "left": "calc(50% + 16px)",
+                  "hoveredTop": "calc(50% - 30px)",
+                  "hoveredLeft": "calc(50% + 56px)",
+                  "zIndex": 1007
+                },
+                "content": "<div style='font-size:10px; color:#FFF; font-weight: lighter;'>Top Customer Base</div>"
+              },
+              {
+                "style": {
+                  "top": "calc(50% - 140px)",
+                  "left": "calc(50% + 197px)",
+                  "hoveredTop": "calc(50% - 140px)",
+                  "hoveredLeft": "calc(50% + 197px)",
+                  "opacity": 0,
+                  "hoveredOpacity": 1,
+                  "zIndex": 1007
+                },
+                "content": "<div style='width:50px;'><div style='height:18px; width:18px; background:#d70862; float:left; margin-right:5px'></div><div style='height:18px;line-height:18px; float:left; font-size:11px; font-weight:lighter; color:#f88cb3;'>32%</div></div><div style='width:50px;'><div style='height:18px; width:18px; background:#eb5c83; float:left; margin-right:5px'></div><div style='height:18px;line-height:18px; float:left; font-size:11px; font-weight:lighter; color:#f88cb3;'>32%</div></div><div style='width:50px;'><div style='height:18px; width:18px; background:#f88cb3; float:left; margin-right:5px'></div><div style='height:18px;line-height:18px; float:left; font-size:11px; font-weight:lighter; color:#f88cb3;'>32%</div></div><div style='width:50px;'><div style='height:18px; width:18px; background:#fcc2df; float:left; margin-right:5px'></div><div style='height:18px;line-height:18px; float:left; font-size:11px; font-weight:lighter; color:#f88cb3;'>32%</div></div><div style='width:50px;'><div style='height:18px; width:18px; background:#fde1ef; float:left; margin-right:5px'></div><div style='height:18px;line-height:18px; float:left; font-size:11px; font-weight:lighter; color:#f88cb3;'>32%</div></div><div style='width:50px;'><div style='height:18px; width:18px; background:#FFF; float:left; margin-right:5px'></div><div style='height:18px;line-height:18px; float:left; font-size:11px; font-weight:lighter; color:#f88cb3;'>32%</div></div>"
+              }
+            ],
+            "valuesBubble": {
+              "style": {
+                "top": "calc(50% - 160px)",
+                "left": "calc(50% - 10px)",
+                "size": "126px",
+                "backgroundColor": "#FFF",
+                "borderColor": "#e96293",
+                "borderRadius": "50%",
+                "hoveredSize": "205px",
+                "color": "#FFF",
+                "zIndex": "1004",
+                "hoveredTop": "calc(50% - 190px)",
+                "hoveredLeft": "calc(50% - 5px)"
+              },
+              "content": {
+                "type": "1",
+                "data": {
+                  "legend": {
+                    "isVisible": false
+                  },
+                  "actions": {
+                    "isVisible": false
+                  },
+                  "mode": "heat",
+                  "heat": {
+                    "colors": ["#c73e68","#FFF"],
+                    "mapStrokeColor": "#1a1720",
+                    "shapeId": "abbr",
+                    "prefix": "",
+                    "sufix": "%",
+                    "format": "locale",
+                    "type": "number"
+                  },
+                  "attrs": {
+                    "labels": false,
+                    "grid": false,
+                    "zoom": false,
+                    "pan": false,
+                    "hover": false
+                  },
+                  "data": {
+                    "heat": [
+                      { "id": "al", "value": "100" },
+                      { "id": "ak", "value": "200" },
+                      { "id": "az", "value": "300" },
+                      { "id": "ar", "value": "400" },
+                      { "id": "ca", "value": "500" },
+                      { "id": "co", "value": "600" },
+                      { "id": "ct", "value": "700" },
+                      { "id": "de", "value": "600" },
+                      { "id": "fl", "value": "500" },
+                      { "id": "ga", "value": "400" },
+                      { "id": "hi", "value": "300" },
+                      { "id": "id", "value": "200" },
+                      { "id": "il", "value": "100" },
+                      { "id": "in", "value": "200" },
+                      { "id": "ia", "value": "300" },
+                      { "id": "ks", "value": "400" },
+                      { "id": "ky", "value": "500" },
+                      { "id": "la", "value": "600" },
+                      { "id": "me", "value": "700" },
+                      { "id": "md", "value": "600" },
+                      { "id": "ma", "value": "500" },
+                      { "id": "mi", "value": "400" },
+                      { "id": "mn", "value": "300" },
+                      { "id": "ms", "value": "200" },
+                      { "id": "mo", "value": "100" },
+                      { "id": "mt", "value": "200" },
+                      { "id": "ne", "value": "300" },
+                      { "id": "nv", "value": "400" },
+                      { "id": "nh", "value": "500" },
+                      { "id": "nj", "value": "600" },
+                      { "id": "nm", "value": "700" },
+                      { "id": "ny", "value": "600" },
+                      { "id": "nc", "value": "500" },
+                      { "id": "nd", "value": "400" },
+                      { "id": "oh", "value": "300" },
+                      { "id": "ok", "value": "200" },
+                      { "id": "or", "value": "100" },
+                      { "id": "pa", "value": "100" },
+                      { "id": "ri", "value": "100" },
+                      { "id": "sc", "value": "100" },
+                      { "id": "sd", "value": "100" },
+                      { "id": "tn", "value": "100" },
+                      { "id": "tx", "value": "100" },
+                      { "id": "ut", "value": "100" },
+                      { "id": "vt", "value": "100" },
+                      { "id": "va", "value": "100" },
+                      { "id": "wa", "value": "100" },
+                      { "id": "wv", "value": "100" },
+                      { "id": "wy", "value": "100" }
+                    ]
+                  }
+                }
+              }
+            }
+          },
+
+          "connectors": "#e96293",
+          "backgroundBubbles": {
+            "backgroundColor": "transparent",
+            "borderColor": "transparent",
+            "opacity": 0.2
+          }
+        }
+      }
+    }
+  }
+}

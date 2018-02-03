@@ -1,0 +1,1229 @@
+{
+  "overridableParams": {
+    "title": "sunburst",
+    "restModeSumValue": {
+      "prefix": "$",
+      "sufix": "",
+      "format": ""
+    },
+    "restModeSumText": "Total Sales ",
+    "hoverModePriceText": "Total Sales ",
+    "hoverModePriceValue": {
+      "prefix": "$",
+      "sufix": "",
+      "format": ""
+    },
+    "firstLevelTooltipText": {
+      "left": "{PERCENT} %",
+      "right": "of the category "
+    },
+    "deepLevelTooltipText": {
+      "left": "{PERCENT} %",
+      "right": "of the collection "
+    },
+    "radiusExponent": 0.5,
+    "radiusLengthFraction": 1,
+    "hoverModeProductType": "{type} ",
+    "hoverModeProductName": "{name} ",
+    "centerText": "Total Revenue {} ",
+    "defaultTextColor": "#898888",
+    "productTextDefaultFill": "#6F6E6E",
+    "productRevenueText": "$ 1K",
+    "productName": "Product name ",
+    "productColor": "blue",
+    "productSizeVal": "LDD",
+    "draggedSunburstTransparency": 0.3,
+    "breadcrumbTextSize": 12,
+    "isFullScreenMode": true,
+    "hideVariablesButton": true
+  },
+  "color": "none",
+  "children": [
+    {
+      "name": "POP",
+      "img": "assets/images/can.png",
+      "color": [
+        "#fa271e",
+        "#fb6035",
+        "#fc9f82",
+        "#fecfc3"
+      ],
+      "children": [
+        {
+          "name": "POP SINGLES",
+          "img": "assets/images/pop_bottle.png",
+          "children": [
+            {
+              "name": "COCA COLA",
+              "img": "assets/images/COCA_COLA_CLASSIC_12.5_OZ.jpg",
+              "children": [
+                {
+                  "name": "COCA COLA CLASSIC 12.5 OZ",
+                  "sales": "173",
+                  "type": "Product",
+                  "img": "assets/images/COCA_COLA_CLASSIC_12.5_OZ.jpg"
+                },
+                {
+                  "name": "COCA COLA ZERO 12.5 OZ",
+                  "sales": "116",
+                  "type": "Product",
+                  "img": "assets/images/COCA_COLA_ZERO_12.5_OZ.jpg"
+                },
+                {
+                  "name": "DIET COKE 12.5 OZ",
+                  "sales": "106",
+                  "type": "Product",
+                  "img": "assets/images/DIET_COKE_12.5_OZ.jpg"
+                },
+                {
+                  "name": "COCA COLA ZERO 20 OZ BOTTLE SINGLE",
+                  "sales": "360",
+                  "type": "Product",
+                  "img": "assets/images/COCA_COLA_ZERO_20_OZ_BOTTLE_SINGLE.jpg"
+                },
+                {
+                  "name": "COCA COLA CLASSIC 20 OZ BOTTLE",
+                  "sales": "36",
+                  "type": "Product",
+                  "img": "assets/images/COCA_COLA_CLASSIC_20_OZ_BOTTLE.jpg"
+                },
+                {
+                  "name": "DIET COKE 20 OZ BOTTLE SINGLE",
+                  "sales": "22",
+                  "type": "Product",
+                  "img": "assets/images/DIET_COKE_20_OZ_BOTTLE_SINGLE.jpg"
+                },
+                {
+                  "name": "DIET COKE C/F 20 OZ BOTTLE SINGLE",
+                  "sales": "79",
+                  "type": "Product",
+                  "img": "assets/images/DIET_COKE_CF_20_OZ_BOTTLE_SINGLE.jpg"
+                },
+                {
+                  "name": "DIET COKE 1 LITER BOTTLE",
+                  "sales": "43",
+                  "type": "Product",
+                  "img": "assets/images/DIET_COKE_1_LITER_BOTTLE.jpg"
+                },
+                {
+                  "name": "COCA COLA VANILLA  20 OZ BOTTLE SINGLE",
+                  "sales": "315",
+                  "type": "Product",
+                  "img": "assets/images/COCA_COLA_VANILLA_20_OZ_BOTTLE_SINGLE.jpg"
+                },
+                {
+                  "name": "DIET COKE 16 OZ BOTTLE SINGLE",
+                  "sales": "161",
+                  "type": "Product",
+                  "img": "assets/images/DIET_COKE_16_OZ_BOTTLE_SINGLE.jpg"
+                },
+                {
+                  "name": "COCA COLA ZERO 16 OZ BOTTLE",
+                  "sales": "62",
+                  "type": "Product",
+                  "img": "assets/images/COCA_COLA_ZERO_16_OZ_BOTTLE.jpg"
+                },
+                {
+                  "name": "COCA COLA 16 OZ CAN",
+                  "sales": "74",
+                  "type": "Product",
+                  "img": "assets/images/COCA_COLA_16_OZ_CAN.jpg"
+                },
+                {
+                  "name": "DIET COKE 16 OZ CAN",
+                  "sales": "74",
+                  "type": "Product",
+                  "img": "assets/images/DIET_COKE_16_OZ_CAN.jpg"
+                },
+                {
+                  "name": "COCA COLA ZERO 16 OZ CAN",
+                  "sales": "164",
+                  "type": "Product",
+                  "img": "assets/images/COCA_COLA_ZERO_16_OZ_CAN.jpg"
+                },
+                {
+                  "name": "COKE LIFE 20 OZ BTL",
+                  "sales": "59",
+                  "type": "Product",
+                  "img": "assets/images/COKE_LIFE_20_OZ_BTL.jpg"
+                },
+                {
+                  "name": "COKE ALUMINUM CONTOUR BOTTLE 8.5 OZ",
+                  "sales": "50",
+                  "type": "Product",
+                  "img": "assets/images/COKE_ALUMINUM_CONTOUR_BOTTLE_8.5_OZ.jpg"
+                },
+                {
+                  "name": "DIET COKE ALUMINUM CONTOUR BOTTLE 8.5 OZ",
+                  "sales": "98",
+                  "type": "Product",
+                  "img": "assets/images/DIET_COKE_ALUMINUM_CONTOUR_BOTTLE_8.5_OZ.jpg"
+                },
+                {
+                  "name": "COKE ZERO ALUMINUM CONTOUR BOTTLE 8.5 OZ",
+                  "sales": "272",
+                  "type": "Product",
+                  "img": "assets/images/COKE_ZERO_ALUMINUM_CONTOUR_BOTTLE_8.5_OZ.jpg"
+                },
+                {
+                  "name": "COKE CONTOUR GLASS BOTTLE 8 OZ",
+                  "sales": "52",
+                  "type": "Product",
+                  "img": "assets/images/COKE_CONTOUR_GLASS_BOTTLE_8_OZ.jpg"
+                },
+                {
+                  "name": "COKE ZERO 24 OZ BOTTLE",
+                  "sales": "72",
+                  "type": "Product",
+                  "img": "assets/images/COKE_ZERO_24_OZ_BOTTLE.jpg"
+                },
+                {
+                  "name": "DIET COKE 24 OZ BOTTLE",
+                  "sales": "392",
+                  "type": "Product",
+                  "img": "assets/images/DIET_COKE_24_OZ_BOTTLE.jpg"
+                }
+              ],
+              "type": "Brand"
+            },
+            {
+              "name": "DR PEPPER",
+              "img": "assets/images/DR_PEPPER_20OZ_BTL_SNG.jpg",
+              "children": [
+                {
+                  "name": "DR PEPPER TEN 20OZ BTL SNg",
+                  "sales": "62",
+                  "type": "Product",
+                  "img": "assets/images/DR_PEPPER_20OZ_BTL_SNG.jpg"
+                },
+                {
+                  "name": "DR PEPPER 12.5 OZ",
+                  "sales": "45",
+                  "type": "Product",
+                  "img": "assets/images/DR_PEPPER_12.5_OZ.jpg"
+                },
+                {
+                  "name": "DR PEPPER DIET 12.5OZ",
+                  "sales": "17",
+                  "type": "Product",
+                  "img": "assets/images/DR_PEPPER_DIET_12.5_OZ.jpg"
+                },
+                {
+                  "name": "DR PEPPER DIET 16OZ",
+                  "sales": "38",
+                  "type": "Product",
+                  "img": "assets/images/DR_PEPPER_DIET_16_OZ.jpg"
+                },
+                {
+                  "name": "DR PEPPER 16 OZ BTL",
+                  "sales": "108",
+                  "type": "Product",
+                  "img": "assets/images/DR_PEPPER_16_OZ_BTL.jpg"
+                },
+                {
+                  "name": "DR PEPPER DIET CHRY 21Z BTL BNS",
+                  "sales": "78",
+                  "type": "Product",
+                  "img": "assets/images/DR_PEPPER_DIET_CHRY_21Z_BTL_BNS.jpg"
+                },
+                {
+                  "name": "DR PEPPER 21OZ BTL BONUS",
+                  "sales": "30",
+                  "type": "Product",
+                  "img": "assets/images/DR_PEPPER_21OZ_BTL_BONUS.jpg"
+                },
+                {
+                  "name": "DR PEPPER DIET 21OZ BTL BONUS",
+                  "sales": "18",
+                  "type": "Product",
+                  "img": "assets/images/DR_PEPPER_DIET_21_OZ_BTL_BONUS.jpg"
+                },
+                {
+                  "name": "DR PEPPER 20OZ BTL SNg",
+                  "sales": "98",
+                  "type": "Product",
+                  "img": "assets/images/DR_PEPPER_20OZ_BTL_SNG.jpg"
+                },
+                {
+                  "name": "DR PEPPER DIET 20 OZ BTL SNg",
+                  "sales": "134",
+                  "type": "Product",
+                  "img": "assets/images/DR_PEPPER_DIET_20_OZ_BTL_SNG.jpg"
+                },
+                {
+                  "name": "DR PEPPER 1 LTR",
+                  "sales": "61",
+                  "type": "Product",
+                  "img": "assets/images/DR_PEPPER_1_LTR.jpg"
+                },
+                {
+                  "name": "DR PEPPER 16 OZ CAN",
+                  "sales": "321",
+                  "type": "Product",
+                  "img": "assets/images/DR_PEPPER_16_OZ_CAN.jpg"
+                },
+                {
+                  "name": "DR PEPPER DIET 16 OZ CAN",
+                  "sales": "187",
+                  "type": "Product",
+                  "img": "assets/images/DR_PEPPER_DIET_16_OZ_CAN.jpg"
+                },
+                {
+                  "name": "DR PEPPER 24 OZ BOTTLE",
+                  "sales": "141",
+                  "type": "Product",
+                  "img": "assets/images/DR_PEPPER_24_OZ_BOTTLE.jpg"
+                }
+              ],
+              "type": "Brand"
+            },
+            {
+              "name": "MOUNTAIN DEW",
+              "img": "assets/images/MOUNTAIN_DEW_24_OZ_CAN.jpg",
+              "children": [
+                {
+                  "name": "MOUNTAIN DEW 24 OZ CAN",
+                  "sales": "75",
+                  "type": "Product",
+                  "img": "assets/images/MOUNTAIN_DEW_24_OZ_CAN.jpg"
+                },
+                {
+                  "name": "MOUNTAIN DEW DIET 24 OZ CAN",
+                  "sales": "208",
+                  "type": "Product",
+                  "img": "assets/images/MOUNTAIN_DEW_DIET_24_OZ_CAN.jpg"
+                },
+                {
+                  "name": "MOUNTAIN DEW CODE RED 24 OZ CAN",
+                  "sales": "139",
+                  "type": "Product",
+                  "img": "assets/images/MOUNTAIN_DEW_CODE_RED_24_OZ_CAN.jpg"
+                },
+                {
+                  "name": "MOUNTAIN DEW KICK START ORANGE CITRUS",
+                  "sales": "13",
+                  "type": "Product",
+                  "img": "assets/images/MOUNTAIN_DEW_KICK_START_ORANGE_CITRUS.jpg"
+                },
+                {
+                  "name": "MOUNTAIN DEW KICK START FRUIT PUNCH",
+                  "sales": "46",
+                  "type": "Product",
+                  "img": "assets/images/MOUNTAIN_DEW_KICK_START_FRUIT_PUNCH.jpg"
+                },
+                {
+                  "name": "MOUNTAIN DEW GLASS",
+                  "sales": "166",
+                  "type": "Product",
+                  "img": "assets/images/MOUNTAIN_DEW_GLASS.jpg"
+                },
+                {
+                  "name": "MOUNTAIN DEW LIVE WIRE 20 OZ SINGLE",
+                  "sales": "47",
+                  "type": "Product",
+                  "img": "assets/images/MOUNTAIN_DEW_LIVE_WIRE_20_OZ_SINGLE.jpg"
+                },
+                {
+                  "name": "MOUNTAIN DEW THROWBACK 20 OZ SINGLE",
+                  "sales": "15",
+                  "type": "Product",
+                  "img": "assets/images/MOUNTAIN_DEW_THROWBACK_20_OZ_SINGLE.jpg"
+                },
+                {
+                  "name": "MOUNTAIN DEW WHITE OUT LTO 20 OZ SINGLE",
+                  "sales": "240",
+                  "type": "Product",
+                  "img": "assets/images/MOUNTAIN_DEW_WHITE_OUT_LTO_20_OZ_SINGLE.jpg"
+                },
+                {
+                  "name": "MOUNTAIN DEW CODE RED 20 OZ BOTTLE SINGLE",
+                  "sales": "82",
+                  "type": "Product",
+                  "img": "assets/images/MOUNTAIN_DEW_CODE_RED_20_OZ_BOTTLE_SINGLE.jpg"
+                },
+                {
+                  "name": "MOUNTAIN DEW CODE RED 1LTR BTL",
+                  "sales": "112",
+                  "type": "Product",
+                  "img": "assets/images/MOUNTAIN_DEW_CODE_RED_1LTR_BTL.jpg"
+                },
+                {
+                  "name": "MOUNTAIN DEW 1 LTR 33.8 OZ",
+                  "sales": "382",
+                  "type": "Product",
+                  "img": "assets/images/MOUNTAIN_DEW_1_LTR_33.8_OZ.jpg"
+                },
+                {
+                  "name": "MOUNTAIN DEW DIET 1 LTR",
+                  "sales": "345",
+                  "type": "Product",
+                  "img": "assets/images/MOUNTAIN_DEW_DIET_1_LTR.jpg"
+                },
+                {
+                  "name": "MOUNTAIN DEW 16 OZ PET",
+                  "sales": "32",
+                  "type": "Product",
+                  "img": "assets/images/MOUNTAIN_DEW_16_OZ_PET.jpg"
+                },
+                {
+                  "name": "MOUNTAIN DEW DIET SUPER NOVA LTO 20 OZ",
+                  "sales": "223",
+                  "type": "Product",
+                  "img": "assets/images/MOUNTAIN_DEW_DIET_SUPER_NOVA_LTO_20_OZ.jpg"
+                },
+                {
+                  "name": "MOUNTAIN DEW 20 OZ BOTTLE SINGLE",
+                  "sales": "38",
+                  "type": "Product",
+                  "img": "assets/images/MOUNTAIN_DEW_20_OZ_BOTTLE_SINGLE.jpg"
+                },
+                {
+                  "name": "MOUNTAIN DEW DIET 20 OZ BOTTLE SINGLE",
+                  "sales": "137",
+                  "type": "Product",
+                  "img": "assets/images/MOUNTAIN_DEW_DIET_20_OZ_BOTTLE_SINGLE.jpg"
+                },
+                {
+                  "name": "MOUNTAIN DEW NON PP 16 OZ CAN",
+                  "sales": "232",
+                  "type": "Product",
+                  "img": "assets/images/MOUNTAIN_DEW_NON_PP_16_OZ_CAN.jpg"
+                },
+                {
+                  "name": "MOUNTAIN DEW DIET CODE RED 20 OZ",
+                  "sales": "89",
+                  "type": "Product",
+                  "img": "assets/images/MOUNTAIN_DEW_DIET_CODE_RED_20_OZ.jpg"
+                },
+                {
+                  "name": "MOUNTAIN DEW GAME FUEL LEMONADE LTO 20 OZ BTL",
+                  "sales": "151",
+                  "type": "Product",
+                  "img": "assets/images/MOUNTAIN_DEW_GAME_FUEL_LEMONADE_LTO_20_OZ_BTL.jpg"
+                },
+                {
+                  "name": "MOUNTAIN DEW SANGRITA 20 OZ BOTTLE",
+                  "sales": "23",
+                  "type": "Product",
+                  "img": "assets/images/MOUNTAIN_DEW_SANGRITA_20_OZ_BOTTLE.jpg"
+                },
+                {
+                  "name": "MOUNTAIN DEW SHINE 12 OZ GLASS BOTTLE",
+                  "sales": "22",
+                  "type": "Product",
+                  "img": "assets/images/MOUNTAIN_DEW_SHINE_12_OZ_GLASS_BOTTLE.jpg"
+                },
+                {
+                  "name": "MOUNTAIN DEW SANGRITA 24 OZ CAN",
+                  "sales": "14",
+                  "type": "Product",
+                  "img": "assets/images/MOUNTAIN_DEW_SANGRITA_24_OZ_CAN.jpg"
+                },
+                {
+                  "name": "MOUNTAIN DEW CODE RED 16 OZ CAN",
+                  "sales": "17",
+                  "type": "Product",
+                  "img": "assets/images/MOUNTAIN_DEW_CODE_RED_16_OZ_CAN.jpg"
+                },
+                {
+                  "name": "MOUNTAIN DEW PITCH BLACK 20 OZ BOTTLE",
+                  "sales": "117",
+                  "type": "Product",
+                  "img": "assets/images/MOUNTAIN_DEW_PITCH_BLACK_20_OZ_BOTTLE.jpg"
+                },
+                {
+                  "name": "MOUNTAIN DEW BLACK LABEL 16 OZ CAN",
+                  "sales": "62",
+                  "type": "Product",
+                  "img": "assets/images/MOUNTAIN_DEW_BLACK_LABEL_16_OZ_CAN.jpg"
+                },
+                {
+                  "name": "KICKSTART MOUNTAIN DEW CRAN ORANGE 16 OZ CAN",
+                  "sales": "33",
+                  "type": "Product",
+                  "img": "assets/images/KICKSTART_MOUNTAIN_DEW_CRAN_ORANGE_16_OZ_CAN.jpg"
+                },
+                {
+                  "name": "MOUNTAIN DEW MANGO HEAT 20 OZ BOTTLE",
+                  "sales": "39",
+                  "type": "Product",
+                  "img": "assets/images/MOUNTAIN_DEW_MANGO_HEAT_20_OZ_BOTTLE.jpg"
+                },
+                {
+                  "name": "MOUNTAIN DEW WHITE LABEL 16 OZ CAN",
+                  "sales": "24",
+                  "type": "Product",
+                  "img": "assets/images/MOUNTAIN_DEW_WHITE_LABEL_16_OZ_CAN.jpg"
+                },
+                {
+                  "name": "MOUNTAIN DEW GREEN LABEL 16 OZ CAN",
+                  "sales": "86",
+                  "type": "Product",
+                  "img": "assets/images/MOUNTAIN_DEW_GREEN_LABEL_16_OZ_CAN.jpg"
+                },
+                {
+                  "name": "MOUNTAIN DEW SPIKED LEMONADE 16 OZ CAN",
+                  "sales": "169",
+                  "type": "Product",
+                  "img": "assets/images/MOUNTAIN_DEW_SPIKED_LEMONADE_16_OZ_CAN.jpg"
+                },
+                {
+                  "name": "MOUNTAIN DEW SPIKED LEMONADE RASP 16 OZ CAN",
+                  "sales": "347",
+                  "type": "Product",
+                  "img": "assets/images/MOUNTAIN_DEW_SPIKED_LEMONADE_RASP_16_OZ_CAN.jpg"
+                },
+                {
+                  "name": "MOUNTAIN DEW SA 20 OZ BOTTLE",
+                  "sales": "122",
+                  "type": "Product",
+                  "img": "assets/images/MOUNTAIN_DEW_SA_20_OZ_BOTTLE.jpg"
+                }
+              ],
+              "type": "Brand"
+            },
+            {
+              "name": "PEPSI",
+              "img": "assets/images/PEPSI_NEXT_20_OZ_SINGLE.jpg",
+              "children": [
+                {
+                  "name": "PEPSI NEXT 20 OZ SINGLE",
+                  "sales": "17",
+                  "type": "Product",
+                  "img": "assets/images/PEPSI_NEXT_20_OZ_SINGLE.jpg"
+                },
+                {
+                  "name": "PEPSI NEXT PARADISE MANGO LTO 20 OZ",
+                  "sales": "127",
+                  "type": "Product",
+                  "img": "assets/images/PEPSI_NEXT_PARADISE _MANGO_LTO_20_OZ.jpg"
+                },
+                {
+                  "name": "PEPSI X FACTOR DRAGON FRUIT LTO 20 OZ",
+                  "sales": "21",
+                  "type": "Product",
+                  "img": "assets/images/PEPSI_X_FACTOR_DRAGON_FRUIT_LTO_20_OZ.jpg"
+                },
+                {
+                  "name": "PEPSI 24 OZ",
+                  "sales": "90",
+                  "type": "Product",
+                  "img": "assets/images/PEPSI_24_OZ.jpg"
+                },
+                {
+                  "name": "PEPSI GLASS",
+                  "sales": "152",
+                  "type": "Product",
+                  "img": "assets/images/PEPSI_GLASS.jpg"
+                },
+                {
+                  "name": "PEPSI SLAM PP.99 16 OZ CAN SNGLE",
+                  "sales": "65",
+                  "type": "Product",
+                  "img": "assets/images/PEPSI_SLAM_PP.99_16_OZ_CAN_SNGLE.jpg"
+                },
+                {
+                  "name": "PEPSI W/REAL SUGAR 20 OZ",
+                  "sales": "25",
+                  "type": "Product",
+                  "img": "assets/images/PEPSI_WREAL_SUGAR_20_OZ.jpg"
+                },
+                {
+                  "name": "TROPICANA FRUIT JUICE 20 OZ BOTTLE",
+                  "sales": "300",
+                  "type": "Product",
+                  "img": "assets/images/TROPICANA_FRUIT_JUICE_20_OZ_BOTTLE.jpg"
+                },
+                {
+                  "name": "TROPICANA LEMONADE 20 OZ BOTTLE",
+                  "sales": "200",
+                  "type": "Product",
+                  "img": "assets/images/TROPICANA_LEMONADE_20_OZ_BOTTLE.jpg"
+                },
+                {
+                  "name": "TROPICANA PINK LEMONADE 20 OZ BOTTLE",
+                  "sales": "183",
+                  "type": "Product",
+                  "img": "assets/images/TROPICANA_PINK_LEMONADE_20_OZ_BOTTLE.jpg"
+                },
+                {
+                  "name": "PEPSI 16 OZ BOTTLE SINGLE PET",
+                  "sales": "219",
+                  "type": "Product",
+                  "img": "assets/images/PEPSI_16_OZ_BOTTLE_SINGLE_PET.jpg"
+                },
+                {
+                  "name": "PEPSI DIET 16 OZ PET",
+                  "sales": "68",
+                  "type": "Product",
+                  "img": "assets/images/PEPSI_DIET_16_OZ_PET.jpg"
+                },
+                {
+                  "name": "PEPSI C/F 20 OZ SINGLE",
+                  "sales": "288",
+                  "type": "Product",
+                  "img": "assets/images/PEPSI_CF_20_OZ_SINGLE.jpg"
+                },
+                {
+                  "name": "PEPSI DIET C/F 20 OZ BOTTLE SINGLE",
+                  "sales": "263",
+                  "type": "Product",
+                  "img": "assets/images/PEPSI_DIET_20_OZ_BOTTLE_SINGLE.jpg"
+                },
+                {
+                  "name": "PEPSI 1 LITER BOTTLE",
+                  "sales": "95",
+                  "type": "Product",
+                  "img": "assets/images/PEPSI_1_LITER_BOTTLE.jpg"
+                },
+                {
+                  "name": "PEPSI DIET 1 LITER",
+                  "sales": "186",
+                  "type": "Product",
+                  "img": "assets/images/PEPSI_DIET_1_LITER.jpg"
+                },
+                {
+                  "name": "PEPSI ZERO 16 OZ PET",
+                  "sales": "459",
+                  "type": "Product",
+                  "img": "assets/images/PEPSI_ZERO_16_OZ_PET.jpg"
+                },
+                {
+                  "name": "PEPSI ZERO 20 OZ BOTTLE",
+                  "sales": "414",
+                  "type": "Product",
+                  "img": "assets/images/PEPSI_ZERO_20_OZ_BOTTLE.jpg"
+                },
+                {
+                  "name": "PEPSI 20 OZ BOTTLE SINGLE",
+                  "sales": "268",
+                  "type": "Product",
+                  "img": "assets/images/PEPSI_20_OZ_BOTTLE_SINGLE.jpg"
+                },
+                {
+                  "name": "PEPSI DIET 20 OZ BOTTLE SINGLE",
+                  "sales": "156",
+                  "type": "Product",
+                  "img": "assets/images/PEPSI_DIET_20_OZ_BOTTLE_SINGLE.jpg"
+                },
+                {
+                  "name": "PEPSI NON PP 16 OZ CAN",
+                  "sales": "89",
+                  "type": "Product",
+                  "img": "assets/images/PEPSI_NON_PP_16_OZ_CAN.jpg"
+                },
+                {
+                  "name": "PEPSI W/REAL SUGAR VANILLA LTO 20 OZ",
+                  "sales": "55",
+                  "type": "Product",
+                  "img": "assets/images/PEPSI_WREAL_SUGAR_VANILLA_LTO_20_OZ.jpg"
+                },
+                {
+                  "name": "PEPSI ZERO 16 OZ CAN",
+                  "sales": "138",
+                  "type": "Product",
+                  "img": "assets/images/PEPSI_ZERO_16_OZ_CAN.jpg"
+                },
+                {
+                  "name": "PEPSI 1893 ORIGINAL 12 OZ CAN",
+                  "sales": "218",
+                  "type": "Product",
+                  "img": "assets/images/PEPSI_1893_ORIGINAL_12_OZ_CAN.jpg"
+                },
+                {
+                  "name": "PEPSI 1893 GINGER 12 OZ CAN",
+                  "sales": "199",
+                  "type": "Product",
+                  "img": "assets/images/PEPSI_1893_GINGER_12_OZ_CAN.jpg"
+                },
+                {
+                  "name": "CRYSTAL PEPSI 20 OZ BOTTLE",
+                  "sales": "239",
+                  "type": "Product",
+                  "img": "assets/images/CRYSTAL_PEPSI_20_OZ_BOTTLE.jpg"
+                },
+                {
+                  "name": "PEPSI DIET CLASSIC 20 OZ BOTTLE",
+                  "sales": "39",
+                  "type": "Product",
+                  "img": "assets/images/PEPSI_DIET_CLASSIC_20_OZ_BOTTLE.jpg"
+                },
+                {
+                  "name": "PEPSI 1893 CITRUS 12 OZ CAN",
+                  "sales": "314",
+                  "type": "Product",
+                  "img": "assets/images/PEPSI_1893_CITRUS_12_OZ_CAN.jpg"
+                },
+                {
+                  "name": "PEPSI 1893 BLACK CURRANT 12 OZ CAN",
+                  "sales": "287",
+                  "type": "Product",
+                  "img": "assets/images/PEPSI_1893_BLACK_CURRANT_12_OZ_CAN.jpg"
+                },
+                {
+                  "name": "PEPSI FIRE 20 OZ BOTTLE",
+                  "sales": "89",
+                  "type": "Product",
+                  "img": "assets/images/PEPSI_FIRE_20_OZ_BOTTLE.jpg"
+                }
+              ],
+              "type": "Brand"
+            },
+            {
+              "name": "SPRITE",
+              "img": "assets/images/SPRITE_12.5_OZ.jpg",
+              "children": [
+                {
+                  "name": "SPRITE 12.5 OZ",
+                  "sales": "33",
+                  "type": "Product",
+                  "img": "assets/images/SPRITE_12.5_OZ.jpg"
+                },
+                {
+                  "name": "SPRITE 16 OZ",
+                  "sales": "55",
+                  "type": "Product",
+                  "img": "assets/images/SPRITE_16_OZ.jpg"
+                },
+                {
+                  "name": "SPRITE ZERO 20 OZ BTL SNg",
+                  "sales": "30",
+                  "type": "Product",
+                  "img": "assets/images/SPRITE_ZERO_20_OZ_BTL_SNg.jpg"
+                },
+                {
+                  "name": "SPRITE 20 OZ BTL SNg",
+                  "sales": "36",
+                  "type": "Product",
+                  "img": "assets/images/SPRITE_20_OZ_BTL_SNg.jpg"
+                },
+                {
+                  "name": "SPRITE 1 LITER BTL",
+                  "sales": "26",
+                  "type": "Product",
+                  "img": "assets/images/SPRITE_1_LITER_BTL.jpg"
+                },
+                {
+                  "name": "SPRITE 16 OZ CAN",
+                  "sales": "46",
+                  "type": "Product",
+                  "img": "assets/images/SPRITE_16_OZ_CAN.jpg"
+                },
+                {
+                  "name": "SPRITE ALUMINUM CONTOUR BOTTLE 8.5 OZ",
+                  "sales": "182",
+                  "type": "Product",
+                  "img": "assets/images/SPRITE_ALUMINUM_CONTOUR_BOTTLE_8.5 OZ.jpg"
+                },
+                {
+                  "name": "SPRITE 24 OZ BOTTLE",
+                  "sales": "262",
+                  "type": "Product",
+                  "img": "assets/images/SPRITE_24_OZ_BOTTLE.jpg"
+                },
+                {
+                  "name": "SPRITE TROPICAL MIX 20 OZ BOTTLE",
+                  "sales": "74",
+                  "type": "Product",
+                  "img": "assets/images/SPRITE_TROPICAL_MIX_20_OZ_BOTTLE.jpg"
+                }
+              ],
+              "type": "Brand"
+            }
+          ],
+          "type": "Class"
+        },
+        {
+          "name": "POP 12 PACKS",
+          "children": [
+            {
+              "name": "COCA COLA",
+              "img": "assets/images/can_pack_2.png",
+              "children": [
+                {
+                  "name": "DIET COKE C/F 12 PK/12 OZ CAN",
+                  "sales": "29",
+                  "type": "Product",
+                  "img": "assets/images/DIET_COKE_CF_12_PK12_OZ_CAN.png"
+                },
+                {
+                  "name": "COKE 15PK/12 OZ CAN",
+                  "sales": "104",
+                  "type": "Product",
+                  "img": "assets/images/COKE_15PK-12_OZ_CAN.jpg"
+                },
+                {
+                  "name": "COCA COLA ZERO 12 PK/12 OZ CAN",
+                  "sales": "377",
+                  "type": "Product",
+                  "img": "assets/images/COCA_COLA_ZERO_12_PK12_OZ_CAN.jpg"
+                },
+                {
+                  "name": "COCA COLA 12 PK/12 OZ CAN",
+                  "sales": "35",
+                  "type": "Product",
+                  "img": "assets/images/COCA_COLA_12_PK12_OZ_CAN.jpg"
+                },
+                {
+                  "name": "DIET COKE 12 PK/12 OZ CAN",
+                  "sales": "125",
+                  "type": "Product",
+                  "img": "assets/images/DIET_COKE_12_PK12_OZ_CAN.jpg"
+                },
+                {
+                  "name": "COCA COLA  6 PK/12 OZ CANS",
+                  "sales": "6",
+                  "type": "Product",
+                  "img": "assets/images/COCA_COLA_6_PK12_OZ_CANS.jpg"
+                },
+                {
+                  "name": "COCA-COLA  ZERO 6 PK/12 OZ CANS",
+                  "sales": "57",
+                  "type": "Product",
+                  "img": "assets/images/COCA_COLA_ZERO_16_OZ_BOTTLE.jpg"
+                },
+                {
+                  "name": "DIET COKE 6 PK/12 OZ CANS",
+                  "sales": "154",
+                  "type": "Product",
+                  "img": "assets/images/COCA_COLA_ZERO_16_OZ_BOTTLE.jpg"
+                }
+              ],
+              "type": "Brand"
+            },
+            {
+              "name": "MOUNTAIN DEW",
+              "img": "assets/images/MOUNTAIN DEW_DIET_FRIDGE_MATE_12_PK-12_OZ.jpg",
+              "children": [
+                {
+                  "name": "MOUNTAIN DEW DIET FRIDGE MATE 12 PK/12 OZ",
+                  "sales": "47",
+                  "type": "Product",
+                  "img": "assets/images/MOUNTAIN DEW_DIET_FRIDGE_MATE_12_PK-12_OZ.jpg"
+                },
+                {
+                  "name": "MOUNTAIN DEW WHITE OUT LTO 12/12 OZ 2X",
+                  "sales": "107",
+                  "type": "Product",
+                  "img": "assets/images/MOUNTAIN_DEW_WHITE_OUT_LTO_20_OZ_SINGLE.jpg"
+                },
+                {
+                  "name": "MOUNTAIN DEW TYPHOON LTO 12 PACK 12 OZ",
+                  "sales": "146",
+                  "type": "Product",
+                  "img": "assets/images/MOUNTAIN_DEW_TYPHOON_LTO_12_PACK_12_OZ.jpg"
+                },
+                {
+                  "name": "MOUNTAIN DEW DISTORTION 12 PK/12 OZ 2X6",
+                  "sales": "56",
+                  "type": "Product",
+                  "img": "assets/images/MOUNTAIN_DEW_DISTORTION_12_PK12_OZ_2X6.jpg"
+                },
+                {
+                  "name": "MOUNTAIN DEW DIET 12 PK/12 OZ CAN 3X4",
+                  "sales": "56",
+                  "type": "Product",
+                  "img": "assets/images/MOUNTAIN_DEW_DIET_12_PK12_OZ_CAN_3X4.jpg"
+                },
+                {
+                  "name": "MOUNTAIN DEW 12 PK/12 OZ CAN 3X4",
+                  "sales": "175",
+                  "type": "Product",
+                  "img": "assets/images/MOUNTAIN_DEW_12_PK-12_OZ_CAN_3X4.jpg"
+                },
+                {
+                  "name": "MOUNTAIN DEW CODE RED 12 PK/12 OZ CAN FM",
+                  "sales": "292",
+                  "type": "Product",
+                  "img": "assets/images/MOUNTAIN_DEW_CODE_RED_12_PK-12_OZ_CAN_FM.jpg"
+                },
+                {
+                  "name": "MOUNTAIN DEW GAME FUEL LMNADE LTO 12 PK/12 OZ CANS",
+                  "sales": "81",
+                  "type": "Product",
+                  "img": "assets/images/MOUNTAIN_DEW_GAME_FUEL_LMNADE_LTO_12_PK-12_OZ_CANS.jpg"
+                },
+                {
+                  "name": "MOUNTAIN DEW SANGRITA 12 PACK 12 OZ CANS",
+                  "sales": "80",
+                  "type": "Product",
+                  "img": "assets/images/MOUNTAIN_DEW_SANGRITA_12_PACK_12_OZ_CANS.jpg"
+                },
+                {
+                  "name": "MOUNTAIN DEW PITCH BLACK 12 PK/12 OZ CANS",
+                  "sales": "50",
+                  "type": "Product",
+                  "img": "assets/images/MOUNTAIN_DEW_PITCH_BLACK_12_PK-12_OZ_CANS.jpg"
+                },
+                {
+                  "name": "MOUNTAIN DEW VOLTAGE RAZ 12PK/12 OZ",
+                  "sales": "179",
+                  "type": "Product",
+                  "img": "assets/images/MOUNTAIN_DEW_VOLTAGE_RAZ_12PK-12_OZ.jpg"
+                },
+                {
+                  "name": "MOUNTAIN DEW MANGO HEAT 12 PACK CANS",
+                  "sales": "206",
+                  "type": "Product",
+                  "img": "assets/images/MOUNTAIN_DEW_MANGO_HEAT_12_PACK_CANS.jpg"
+                }
+              ],
+              "type": "Brand"
+            },
+            {
+              "name": "PEPSI",
+              "img": "assets/images/PEPSI_NEXT_12_PK-12_OZ_2X6.jpg",
+              "children": [
+                {
+                  "name": "PEPSI NEXT 12 PK/12 OZ 2X6",
+                  "sales": "47",
+                  "type": "Product",
+                  "img": "assets/images/PEPSI_NEXT_12_PK-12_OZ_2X6.jpg"
+                },
+                {
+                  "name": "PEPSI ZERO 12 PK/12 OZ",
+                  "sales": "452",
+                  "type": "Product",
+                  "img": "assets/images/PEPSI_ZERO_12_PK-12_OZ.jpg"
+                },
+                {
+                  "name": "PEPSI 12 PK/12 OZ CAN 3X4",
+                  "sales": "68",
+                  "type": "Product",
+                  "img": "assets/images/PEPSI_DIET_12_PK-12_OZ_CAN_3X4.jpg"
+                },
+                {
+                  "name": "PEPSI C/F FRIDGE MATE 12/12 OZ CAN",
+                  "sales": "67",
+                  "type": "Product",
+                  "img": "assets/images/PEPSI_CF_FRIDGE_MATE_12-12_OZ_CAN.jpg"
+                },
+                {
+                  "name": "PEPSI DIET 12 PK/12 OZ CAN 3X4",
+                  "sales": "41",
+                  "type": "Product",
+                  "img": "assets/images/PEPSI_DIET_CLASSIC_12PK-122_OZ_CANS.jpg"
+                },
+                {
+                  "name": "PEPSI DIET CLASSIC 12PK/122 OZ CANS",
+                  "sales": "126",
+                  "type": "Product",
+                  "img": "assets/images/PEPSI_DIET_12_PK-12_OZ_CAN_3X4.jpg"
+                },
+                {
+                  "name": "PEPSI FIRE 12 PK/12 OZ CAN",
+                  "sales": "39",
+                  "type": "Product",
+                  "img": "assets/images/PEPSI_FIRE_12_PK-12_OZ_CAN.jpg"
+                },
+                {
+                  "name": "PEPSI SA 12 PK/12 OZ CAN",
+                  "sales": "53",
+                  "type": "Product",
+                  "img": "assets/images/PEPSI_FIRE_12_PK-12_OZ_CAN.jpg"
+                }
+              ],
+              "type": "Brand"
+            },
+            {
+              "name": "SPRITE",
+              "img": "assets/images/SPRITE_15PK-12OZ_CAN.jpg",
+              "children": [
+                {
+                  "name": "SPRITE 15PK/12OZ CAN",
+                  "sales": "203",
+                  "type": "Product",
+                  "img": "assets/images/SPRITE_15PK-12OZ_CAN.jpg"
+                },
+                {
+                  "name": "SPRITE 12 PK/12 OZ CAN",
+                  "sales": "243",
+                  "type": "Product",
+                  "img": "assets/images/SPRITE_12_PK-12_OZ_CAN.jpg"
+                },
+                {
+                  "name": "SPRITE 6 PK/12 OZ CANS",
+                  "sales": "211",
+                  "type": "Product",
+                  "img": "assets/images/SPRITE_6_PK-12_OZ_CANS.jpg"
+                }
+              ],
+              "type": "Brand"
+            }
+          ],
+          "type": "Class"
+        }
+      ],
+      "type": "Category"
+    },
+    {
+      "name": "WATER",
+      "img": "assets/images/bottled_water.png",
+      "color": [
+        "#f98325",
+        "#fbb63a",
+        "#fed089",
+        "#fee8c5"
+      ],
+      "children": [
+        {
+          "name": "WATER",
+          "img": "assets/images/bottled_water.png",
+          "children": [
+            {
+              "name": "AQUAFINA",
+              "img": "assets/images/AQUAFINA_1_LITER_BOTTLE.jpg",
+              "children": [
+                {
+                  "name": "AQUAFINA 20 OZ BOTTLE",
+                  "sales": "30",
+                  "type": "Product",
+                  "img": "assets/images/AQUAFINA_20_OZ_BOTTLE.jpg"
+                },
+                {
+                  "name": "AQUAFINA 1 LITER BOTTLE",
+                  "sales": "92",
+                  "type": "Product",
+                  "img": "assets/images/AQUAFINA_1_LITER_BOTTLE.jpg"
+                }
+              ],
+              "type": "Brand"
+            },
+            {
+              "name": "DASANI",
+              "img": "assets/images/DASANI_20_OZ_BOTTLE.jpg",
+              "children": [
+                {
+                  "name": "DASANI WATER 8 PK/12 OZ BTL",
+                  "sales": "29",
+                  "type": "Product",
+                  "img": "assets/images/DASANI_20_OZ_BOTTLE.jpg"
+                },
+                {
+                  "name": "DASANI WATER W/LEMON 20 OZ BTL",
+                  "sales": "128",
+                  "type": "Product",
+                  "img": "assets/images/DASANI_WATER_W-LEMON_20_OZ_BTL.jpg"
+                },
+                {
+                  "name": "DASANI WATER 1 LTR",
+                  "sales": "217",
+                  "type": "Product",
+                  "img": "assets/images/DASANI_WATER_1_LTR.jpg"
+                },
+                {
+                  "name": "DASANI 20 OZ BOTTLE",
+                  "sales": "67",
+                  "type": "Product",
+                  "img": "assets/images/DASANI_20_OZ_BOTTLE.jpg"
+                }
+              ],
+              "type": "Brand"
+            },
+            {
+              "name": "EVIAN",
+              "img": "assets/images/EVIAN_WATER_1_LTR_33.8_OZ.jpg",
+              "children": [
+                {
+                  "name": "EVIAN WATER 1 LTR 33.8 OZ",
+                  "sales": "36",
+                  "type": "Product",
+                  "img": "assets/images/EVIAN_WATER_1_LTR_33.8_OZ.jpg"
+                },
+                {
+                  "name": "EVIAN WATER .5 LTR",
+                  "sales": "35",
+                  "type": "Product",
+                  "img": "assets/images/EVIAN_WATER_.5_LTR.jpg"
+                }
+              ],
+              "type": "Brand"
+            },
+            {
+              "name": "ICE MOUNTAIN",
+              "img": "assets/images/ICE_MOUNTAIN_SPRING_WATER_6-16.9_OZ.jpg",
+              "children": [
+                {
+                  "name": "ICE MOUNTAIN SPRING WATER 6/16.9OZ",
+                  "sales": "25",
+                  "type": "Product",
+                  "img": "assets/images/ICE_MOUNTAIN_SPRING_WATER_6-16.9_OZ.jpg"
+                },
+                {
+                  "name": "ICE MOUNTAIN WATER 1 LITER",
+                  "sales": "107",
+                  "type": "Product",
+                  "img": "assets/images/ICE _MOUNTAIN_ WATER_1_ LITER.jpg"
+                },
+                {
+                  "name": "ICE MOUNTAIN WATER 20 OZ",
+                  "sales": "297",
+                  "type": "Product",
+                  "img": "assets/images/ICE_MOUNTAIN_WATER_20_OZ.jpg"
+                },
+                {
+                  "name": "ICE MOUNTAIN SPRING WATER 700 ML",
+                  "sales": "198",
+                  "type": "Product",
+                  "img": "assets/images/ICE_MOUNTAIN_SPRING_WATER_700ML.jpg"
+                },
+                {
+                  "name": "ICE MOUNTAIN AQUAPOD 8/11 OZ",
+                  "sales": "181",
+                  "type": "Product",
+                  "img": "assets/images/ICE_MOUNTAIN_AQUAPOD_8-11_OZ.jpg"
+                },
+                {
+                  "name": "ICE MOUNTAIN SPRING WATER SPORT 6/23OZ",
+                  "sales": "56",
+                  "type": "Product",
+                  "img": "assets/images/ICE _MOUNTAIN _SPRING _WATER_ SPORT_6-_23_OZ.jpg"
+                },
+                {
+                  "name": "ICE MOUNTAIN WATER 3 LITER",
+                  "sales": "22",
+                  "type": "Product",
+                  "img": "assets/images/ICE_MOUNTAIN_WATER_3_LITER.jpg"
+                },
+                {
+                  "name": "ICE MOUNTAIN WATER 1.5  LITER BOTTLE",
+                  "sales": "285",
+                  "type": "Product",
+                  "img": "assets/images/ICE_MOUNTAIN_WATER_1.5 _LITER_BOTTLE.jpg"
+                }
+              ],
+              "type": "Brand"
+            },
+            {
+              "name": "MOUNTAIN DEW",
+              "children": [
+                {
+                  "name": "MOUNTAIN VALLEY SPRING WATER 11.3 OZ BOTTLE",
+                  "sales": "43",
+                  "type": "Product",
+                  "img": "assets/images/MOUNTAIN_VALLEY_SPRING_WATER_11.3_OZ_BOTTLE.jpg"
+                }
+              ],
+              "type": "Brand"
+            },
+            {
+              "name": "NESTLE",
+              "img": "assets/images/NESTLE_PURE_LIFE_700_ML.jpg",
+              "children": [
+                {
+                  "name": "NESTLE PURE LIFE 700 ML",
+                  "sales": "15",
+                  "type": "Product",
+                  "img": "assets/images/NESTLE_PURE_LIFE_700_ML.jpg"
+                },
+                {
+                  "name": "NESTLE PURE LIFE 20 PK 16.9 OZ",
+                  "sales": "55",
+                  "type": "Product",
+                  "img": "assets/images/NESTLE_PURE_LIFE_20_PK_16.9_OZ.jpg"
+                },
+                {
+                  "name": "NESTLE PURE LIFE 1 LITER",
+                  "sales": "77",
+                  "type": "Product",
+                  "img": "assets/images/NESTLE_PURE_LIFE_1_LITER.jpg"
+                },
+                {
+                  "name": "NESTLE PURE LIFE .5 LITER 24 PK",
+                  "sales": "261",
+                  "type": "Product",
+                  "img": "assets/images/NESTLE_PURE_LIFE_.5 LITER_24_PK.jpg"
+                }
+              ],
+              "type": "Brand"
+            }
+          ],
+          "type": "Class"
+        }
+      ],
+      "type": "Category"
+    },
+    {
+      "name": "JUICE",
+      "color": [
+        "#0f6961",
+        "#2aa49c",
+        "#7fc8c4",
+        "#bfe4e2"
+      ],
+      "img": "assets/images/apple_juice_bottle.png",
+      "children": [
+        {
+          "name": "JUICE",
+          "img": "assets/images/apple_juice_bottle.png",
+          "children": [
+            {
+              "name": "COCA COLA",
+              "img": "assets/images/COCA_COLA_16_OZ_CAN.jpg",
+              "children": [
+                {
+                  "name": "MINUTE MAID APPLE JUICE 15.2 OZ",
+                  "sales": "248",
+                  "type": "Product",
+                  "img": "assets/images/MINUTE_MAID_APPLE_JUICE_15.2_OZ.jpg"
+                },
+                {
+                  "name": "MINUTE MAID ORANGE JUICE 15.2 OZ",
+                  "sales": "165",
+                  "type": "Product",
+                  "img": "assets/images/MINUTE_MAID_ORANGE_JUICE_15.2_OZ.jpg"
+                },
+                {
+                  "name": "MINUTE MAID CRNBRY APPLE 15.2 OZ",
+                  "sales": "461",
+                  "type": "Product",
+                  "img": "assets/images/MINUTE_MAID_CRNBRY_APPLE_15.2_OZ.jpg"
+                }
+              ],
+              "type": "Brand"
+            },
+            {
+              "name": "PEPSI",
+              "img": "assets/images/TROPICANA_NO_PULP-CALCIUM_12_OZ.jpg",
+              "children": [
+                {
+                  "name": "TROPICANA NO PULP/CALCIUM 12 OZ",
+                  "sales": "206",
+                  "type": "Product",
+                  "img": "assets/images/TROPICANA_NO_PULP-CALCIUM_12_OZ.jpg"
+                },
+                {
+                  "name": "TROPICANA FARM STAND STRW BAN 12 OZ",
+                  "sales": "205",
+                  "type": "Product",
+                  "img": "assets/images/TROPICANA_FARM_STAND_STRW_BAN_12_OZ.jpg"
+                },
+                {
+                  "name": "TROPICANA PP NO PULP 100% JUICE 12 OZ BOTTLE",
+                  "sales": "121",
+                  "type": "Product",
+                  "img": "assets/images/TROPICANA_PP_NO_PULP_100-JUICE_12_OZ_BOTTLE.jpg"
+                },
+                {
+                  "name": "TROPICANA PP SOME PULP 100% JUICE 12 OZ",
+                  "sales": "89",
+                  "type": "Product",
+                  "img": "assets/images/TROPICANA_PP_SOME_PULP-100_JUICE_12_OZ.jpg"
+                },
+                {
+                  "name": "TROPICANA FARMSTAND TROPICAL GREEN 12 OZ",
+                  "sales": "25",
+                  "type": "Product",
+                  "img": "assets/images/TROPICANA_FARMSTAND_TROPICAL_GREEN_12_OZ.jpg"
+                }
+              ],
+              "type": "Brand"
+            }
+          ],
+          "type": "Class"
+        }
+      ],
+      "type": "Category"
+    }
+  ]
+}

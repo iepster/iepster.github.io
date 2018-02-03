@@ -1,0 +1,507 @@
+@mixin grid-media-query($media-query) {
+  $breakpoint-found: false;
+
+  @each $breakpoint in $breakpoints {
+    $name: nth($breakpoint, 1);
+    $declaration: nth($breakpoint, 2);
+
+    @if $media-query == $name and $declaration {
+      $breakpoint-found: true;
+
+      @media only screen and #{$declaration} {
+        @content;
+      }
+    }
+  }
+
+  @if $breakpoint-found == false {
+    @warn "Breakpoint '#{$media-query}' does not exist";
+  }
+}
+
+@mixin sizes($property,$namespace:"", $namespace2:"") {
+  /** Whole */
+  .#{$namespace}one-whole#{$namespace2} {
+
+    #{$property}: 100%;
+  }
+
+
+  .#{$namespace}two-whole#{$namespace2} {
+    #{$property}: 200%;
+  }
+
+
+  /* Halves */
+  .#{$namespace}one-half#{$namespace2} {
+    #{$property}: 50%;
+  }
+
+
+
+  /* Thirds */
+  .#{$namespace}one-third#{$namespace2} {
+    #{$property}: 33.333%;
+  }
+  .#{$namespace}two-thirds {
+    #{$property}: 66.666%;
+  }
+
+
+
+  /* Quarters */
+  .#{$namespace}one-quarter#{$namespace2} {
+    #{$property}: 25%;
+  }
+  .#{$namespace}two-quarters#{$namespace2} {
+    #{$property}: 50%;
+  }
+  .#{$namespace}three-quarters#{$namespace2} {
+    #{$property}: 75%;
+  }
+
+
+
+  /* Fifths */
+  .#{$namespace}one-fifth#{$namespace2} {
+    #{$property}: 20%;
+  }
+  .#{$namespace}two-fifths#{$namespace2} {
+    #{$property}: 40%;
+  }
+  .#{$namespace}three-fifths#{$namespace2} {
+    #{$property}: 60%;
+  }
+  .#{$namespace}four-fifths#{$namespace2} {
+    #{$property}: 80%;
+  }
+
+
+
+  /* Sixths */
+  .#{$namespace}one-sixth#{$namespace2} {
+    #{$property}: 16.666%;
+  }
+  .#{$namespace}two-sixths#{$namespace2} {
+    #{$property}: 33.333%;
+  }
+  .#{$namespace}three-sixths#{$namespace2} {
+    #{$property}: 50%;
+  }
+  .#{$namespace}four-sixths#{$namespace2} {
+    #{$property}: 66.666%;
+  }
+  .#{$namespace}five-sixths#{$namespace2} {
+    #{$property}: 83.333%;
+  }
+
+
+  /* Eighths */
+  .#{$namespace}one-eighth#{$namespace2} {
+    #{$property}: 12.5%;
+  }
+  .#{$namespace}two-eighths#{$namespace2} {
+    #{$property}: 25%;
+  }
+  .#{$namespace}three-eighths#{$namespace2} {
+    #{$property}: 37.5%;
+  }
+  .#{$namespace}four-eighths#{$namespace2} {
+    #{$property}: 50%;
+  }
+  .#{$namespace}five-eighths#{$namespace2} {
+    #{$property}: 62.5%;
+  }
+  .#{$namespace}six-eighths#{$namespace2} {
+    #{$property}: 75%;
+  }
+  .#{$namespace}seven-eighths#{$namespace2} {
+    #{$property}: 87.5%;
+  }
+
+
+
+  /* Tenths */
+  .#{$namespace}one-tenth#{$namespace2} {
+    #{$property}: 10%;
+  }
+  .#{$namespace}two-tenths#{$namespace2} {
+    #{$property}: 20%;
+  }
+  .#{$namespace}three-tenths#{$namespace2} {
+    #{$property}: 30%;
+  }
+  .#{$namespace}four-tenths#{$namespace2} {
+    #{$property}: 40%;
+  }
+  .#{$namespace}five-tenths#{$namespace2} {
+    #{$property}: 50%;
+  }
+  .#{$namespace}six-tenths#{$namespace2} {
+    #{$property}: 60%;
+  }
+  .#{$namespace}seven-tenths#{$namespace2} {
+    #{$property}: 70%;
+  }
+  .#{$namespace}eight-tenths#{$namespace2} {
+    #{$property}: 80%;
+  }
+  .#{$namespace}nine-tenths#{$namespace2} {
+    #{$property}: 90%;
+  }
+
+
+
+  /* Twelfths */
+  .#{$namespace}one-twelfth#{$namespace2} {
+    #{$property}: 8.333%;
+  }
+  .#{$namespace}two-twelfths#{$namespace2} {
+    #{$property}: 16.666%;
+  }
+  .#{$namespace}three-twelfths#{$namespace2} {
+    #{$property}: 25%;
+  }
+  .#{$namespace}four-twelfths#{$namespace2} {
+    #{$property}: 33.333%;
+  }
+  .#{$namespace}five-twelfths#{$namespace2} {
+    #{$property}: 41.666%
+  }
+  .#{$namespace}six-twelfths#{$namespace2} {
+    #{$property}: 50%;
+  }
+  .#{$namespace}seven-twelfths#{$namespace2} {
+    #{$property}: 58.333%;
+  }
+  .#{$namespace}eight-twelfths#{$namespace2} {
+    #{$property}: 66.666%;
+  }
+  .#{$namespace}nine-twelfths#{$namespace2} {
+    #{$property}: 75%;
+  }
+  .#{$namespace}ten-twelfths#{$namespace2} {
+    #{$property}: 83.333%;
+  }
+  .#{$namespace}eleven-twelfths#{$namespace2} {
+    #{$property}: 91.666%;
+  }
+}
+
+@mixin device-type($namespace:"") {
+  /** Whole */
+  .#{$namespace}one-whole {
+    width: 100%;
+  }
+  .#{$namespace}one-whole-tall {
+    height: 100%;
+  }
+
+  .#{$namespace}two-whole {
+    width: 200%;
+  }
+  .#{$namespace}two-whole-tall {
+    height: 200%;
+  }
+
+  /* Halves */
+  .#{$namespace}one-half {
+    width: 50%;
+  }
+
+  .#{$namespace}one-half-tall {
+    height: 50%;
+  }
+
+  /* Thirds */
+  .#{$namespace}one-third {
+    width: 33.333%;
+  }
+  .#{$namespace}two-thirds {
+    width: 66.666%;
+  }
+
+  .#{$namespace}one-third-tall {
+    height: 33.333%;
+  }
+  .#{$namespace}two-thirds-tall {
+    height: 66.666%;
+  }
+
+  /* Quarters */
+  .#{$namespace}one-quarter {
+    width: 25%;
+  }
+  .#{$namespace}two-quarters {
+    width: 50%;
+  }
+  .#{$namespace}three-quarters {
+    width: 75%;
+  }
+
+  .#{$namespace}one-quarter-tall {
+    height: 25%;
+  }
+  .#{$namespace}two-quarters-tall {
+    height: 50%;
+  }
+  .#{$namespace}three-quarters-tall {
+    height: 75%;
+  }
+
+  /* Fifths */
+  .#{$namespace}one-fifth {
+    width: 20%;
+  }
+  .#{$namespace}two-fifths {
+    width: 40%;
+  }
+  .#{$namespace}three-fifths {
+    width: 60%;
+  }
+  .#{$namespace}four-fifths {
+    width: 80%;
+  }
+
+  .#{$namespace}one-fifth-tall {
+    height: 20%;
+  }
+  .#{$namespace}two-fifths-tall {
+    height: 40%;
+  }
+  .#{$namespace}three-fifths-tall {
+    height: 60%;
+  }
+  .#{$namespace}four-fifths-tall {
+    height: 80%;
+  }
+
+  /* Sixths */
+  .#{$namespace}one-sixth {
+    width: 16.666%;
+  }
+  .#{$namespace}two-sixths {
+    width: 33.333%;
+  }
+  .#{$namespace}three-sixths {
+    width: 50%;
+  }
+  .#{$namespace}four-sixths {
+    width: 66.666%;
+  }
+  .#{$namespace}five-sixths {
+    width: 83.333%;
+  }
+
+  .#{$namespace}one-sixth-tall {
+    height: 16.666%;
+  }
+  .#{$namespace}two-sixths-tall {
+    height: 33.333%;
+  }
+  .#{$namespace}three-sixths-tall {
+    height: 50%;
+  }
+  .#{$namespace}four-sixths-tall {
+    height: 66.666%;
+  }
+  .#{$namespace}five-sixths-tall {
+    height: 83.333%;
+  }
+
+  /* Eighths */
+  .#{$namespace}one-eighth {
+    width: 12.5%;
+  }
+  .#{$namespace}two-eighths {
+    width: 25%;
+  }
+  .#{$namespace}three-eighths {
+    width: 37.5%;
+  }
+  .#{$namespace}four-eighths {
+    width: 50%;
+  }
+  .#{$namespace}five-eighths {
+    width: 62.5%;
+  }
+  .#{$namespace}six-eighths {
+    width: 75%;
+  }
+  .#{$namespace}seven-eighths {
+    width: 87.5%;
+  }
+
+  .#{$namespace}one-eighth-tall {
+    height: 12.5%;
+  }
+  .#{$namespace}two-eighths-tall {
+    height: 25%;
+  }
+  .#{$namespace}three-eighths-tall {
+    height: 37.5%;
+  }
+  .#{$namespace}four-eighths-tall {
+    height: 50%;
+  }
+  .#{$namespace}five-eighths-tall {
+    height: 62.5%;
+  }
+  .#{$namespace}six-eighths-tall {
+    height: 75%;
+  }
+  .#{$namespace}seven-eighths-tall {
+    height: 87.5%;
+  }
+
+  /* Tenths */
+  .#{$namespace}one-tenth {
+    width: 10%;
+  }
+  .#{$namespace}two-tenths {
+    width: 20%;
+  }
+  .#{$namespace}three-tenths {
+    width: 30%;
+  }
+  .#{$namespace}four-tenths {
+    width: 40%;
+  }
+  .#{$namespace}five-tenths {
+    width: 50%;
+  }
+  .#{$namespace}six-tenths {
+    width: 60%;
+  }
+  .#{$namespace}seven-tenths {
+    width: 70%;
+  }
+  .#{$namespace}eight-tenths {
+    width: 80%;
+  }
+  .#{$namespace}nine-tenths {
+    width: 90%;
+  }
+
+  .#{$namespace}one-tenth-tall {
+    height: 10%;
+  }
+  .#{$namespace}two-tenths-tall {
+    height: 20%;
+  }
+  .#{$namespace}three-tenths-tall {
+    height: 30%;
+  }
+  .#{$namespace}four-tenths-tall {
+    height: 40%;
+  }
+  .#{$namespace}five-tenths-tall {
+    height: 50%;
+  }
+  .#{$namespace}six-tenths-tall {
+    height: 60%;
+  }
+  .#{$namespace}seven-tenths-tall {
+    height: 70%;
+  }
+  .#{$namespace}eight-tenths-tall {
+    height: 80%;
+  }
+  .#{$namespace}nine-tenths-tall {
+    height: 90%;
+  }
+
+  /* Twelfths */
+  .#{$namespace}one-twelfth {
+    width: 8.333%;
+  }
+  .#{$namespace}two-twelfths {
+    width: 16.666%;
+  }
+  .#{$namespace}three-twelfths {
+    width: 25%;
+  }
+  .#{$namespace}four-twelfths {
+    width: 33.333%;
+  }
+  .#{$namespace}five-twelfths {
+    width: 41.666%
+  }
+  .#{$namespace}six-twelfths {
+    width: 50%;
+  }
+  .#{$namespace}seven-twelfths {
+    width: 58.333%;
+  }
+  .#{$namespace}eight-twelfths {
+    width: 66.666%;
+  }
+  .#{$namespace}nine-twelfths {
+    width: 75%;
+  }
+  .#{$namespace}ten-twelfths {
+    width: 83.333%;
+  }
+  .#{$namespace}eleven-twelfths {
+    width: 91.666%;
+  }
+
+  .#{$namespace}one-twelfth-tall {
+    height: 8.333%;
+  }
+  .#{$namespace}two-twelfths-tall {
+    height: 16.666%;
+  }
+  .#{$namespace}three-twelfths-tall {
+    height: 25%;
+  }
+  .#{$namespace}four-twelfths-tall {
+    height: 33.333%;
+  }
+  .#{$namespace}five-twelfths-tall {
+    height: 41.666%
+  }
+  .#{$namespace}six-twelfths-tall {
+    height: 50%;
+  }
+  .#{$namespace}seven-twelfths-tall {
+    height: 58.333%;
+  }
+  .#{$namespace}eight-twelfths-tall {
+    height: 66.666%;
+  }
+  .#{$namespace}nine-twelfths-tall {
+    height: 75%;
+  }
+  .#{$namespace}ten-twelfths-tall {
+    height: 83.333%;
+  }
+  .#{$namespace}eleven-twelfths-tall {
+    height: 91.666%;
+  }
+}
+
+.is-flex-one-third{
+  @include flex(33.333%);
+}
+$top: top;
+
+.is-one-half{
+  #{$top}:20%;
+}
+
+@include sizes(width, 'is-', '');
+@include sizes(height, 'is-', '-tall');
+@each $side in (top, right, bottom, left) {
+  @include sizes($side, '#{$side}-', '');
+}
+
+@each $name in $breakpoint-has-widths {
+  @include grid-media-query($name) {
+    //@include device-type('when-#{$name}.is-');
+    @include sizes(width, 'when-#{$name}.is-', '');
+    @include sizes(height,'when-#{$name}.is-', '-tall');
+  }
+}
+
+

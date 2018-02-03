@@ -1,0 +1,34 @@
+{
+  "title": {
+    "style": {
+      "top": "calc(50% - 80px)",
+      "left": "calc(50% - 20px)",
+      "color": "#ad5073",
+      "fontSize": "10px",
+      "textAlign": "center"
+    },
+    "content": "Promotion </br> Analysis"
+  },
+  "valuesBubble": {
+    "style": {
+      "top": "calc(50% - 50px)",
+      "left": "calc(50% - 65px)",
+      "size": "126px",
+      "backgroundColor": "#1a1620",
+      "borderColor": "#504859",
+      "borderRadius": "50%",
+      "color": "#FFF",
+      "zIndex": "1004"
+    },
+    "content": {
+      "type": "1",
+      "text": [
+        "<span style='font-weight:lighter; color:#FFF; font-size: 12px;'>Top Promotion</span>",
+        "<span style='font-weight:lighter; color:#be527f; font-size: 12px;'>Item Discount %Off</span>",
+        "<hr style='border-bottom: none; margin: 5px 10px; border-color:#e96293;'>",
+        "<div style='height: 26px; width: 100%;'><div style='float:left; height:26px; line-height:26px; width:47%; color:#FFF;'><span style='display:block; float:right; margin-right: 5px; font-weight: lighter;'>38%</span><img src='/assets/images/gViz/visualizations/diwo-visual-bubble-poet-context/circle.png' style='display:block; float:right; height: 20px; margin: 2px 2px 0px 0px;' /></div><div style='float:left; height:26px; line-height:13px; width:50%; color:#FFF; text-align:left; font-weight: lighter; font-size:10px;'>Discounted <br/> Transactions</div></div>"
+      ]
+    }
+  }
+}
+

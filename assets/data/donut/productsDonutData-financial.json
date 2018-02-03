@@ -1,0 +1,55 @@
+{
+    "overridableParams": {
+        "title": "products donut",
+        "restModeSumValue": "$20,235,138",
+        "restModeSumText": "Management Fees",
+        "hoverModePriceText": "Total Sales ",
+        "hoverModePriceValue": "${COMMA_FORMATTED_VALUE}",
+        "hoverModeProductType": "{productId} ",
+        "hoverModeProductName": "{name} ",
+        "productTextDefaultFill": "#6F6E6E",
+        "productTextDefaultFillSimpleLayout": "#6F6E6E",
+        "hoverOpacity": 0.5,
+        "totalSalesFontSize": 28,
+        "totalSalesFontSizeSimpleLayout": 20,
+        "donutStrokeWidth": 5,
+        "donutRadius": 50,
+        "totalSalesValueFontSize": 80,
+        "totalSalesValueFontSizeSimpleLayout": 50,
+        "interpolationConfig": {
+            "interpolate": true,
+            "defaultColor": "#B2B2B2"
+        },
+        "layoutType": "SIMPLE",
+        "restModeSimpleLayoutCenterTextFill": "#FF6733",
+        "simpleModePercentText": "{PERCENT} %",
+        "marginTop": 70,
+        "marginBottom": 70
+    },
+    "values": [
+        {
+            "sales": 11562936,
+            "name": "Asset Based Line of Credit",
+            "color": "#EB7147",
+            "productId": "SAD315293"
+        },
+        {
+            "sales": 1445367,
+            "name": "IRA",
+            "color": "#F9B548",
+            "productId": "SAD315294"
+        },
+        {
+            "sales": 4336101,
+            "name": "Managed Futures",
+            "color": "#32A49B",
+            "productId": "SAD315295"
+        },
+        {
+            "sales": 2890734,
+            "name": "Money Market",
+            "color": "#3CB1D5",
+            "productId": "SAD315296"
+        }
+    ]
+}

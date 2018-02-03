@@ -1,0 +1,83 @@
+{
+  "title": "Expected myRewards' Churn Rate for May 2017",
+  "legend": {
+    "isVisible": true,
+    "text": "{{group}}"
+  },
+  "tooltip": {
+    "hasImg": true,
+    "title": [ "{{name}}", "<span class='metric'>Stock/Sales Ratio</span><span class='number'>{{y}}</span>" ],
+    "body": []
+  },
+  "x": {
+    "title": "",
+    "prefix": "",
+    "sufix": "",
+    "type": "time",
+    "outFormat": "%b%y",
+    "inFormat": "%Y-%d-%m"
+  },
+  "yLeft": {
+    "title": "New Cases",
+    "prefix": "$",
+    "sufix": "",
+    "format": ""
+  },
+  "yRight": {
+    "title": "Cases H. per Underwriter",
+    "prefix": "",
+    "sufix": "%",
+    "format": ""
+  },
+  "attrs": {
+    "lineColor": "#337483",
+    "lineWidth": 4,
+    "lineStyle": "solid",
+    "pointColor": "#0c3543",
+    "pointShape": "diamond",
+    "legend": "Cases H. per Underwriter per Day"
+  },
+  "data": [
+    {
+      "x": "Red Clutches",
+      "name": "Red Clutches",
+      "img": "http://ecx.images-amazon.com/images/I/51m%2BsPQTgWL._SL256_.jpg",
+      "yBar": 2.3,
+      "yLine": 100,
+      "fill": "#fcc363",
+      "gradient": "#FFDB9E",
+      "stroke": "#C78C2A",
+      "group": "Total New Cases"
+    }, {
+      "x": "Gray Clutches",
+      "name": "Gray Clutches ",
+      "img": "https://thumbnail.image.rakuten.co.jp/@0_mall/bestgallery/cabinet/7501_8000/1007539_1.jpg?_ex=128x128",
+      "yBar": 4.8,
+      "yLine": 40,
+      "fill": "#fcc363",
+      "gradient": "#FFDB9E",
+      "stroke": "#C78C2A",
+      "group": "Total New Cases"
+    }, {
+      "x": "Blue Carryall",
+      "name": "Blue Carryall",
+      "img": "http://store.meadia.net/images/product/h/http:-storemeadianet-cases-laptop-13-moshi-urbana-cerulean-b-256px-256px.png",
+      "yBar": 3.7,
+      "yLine": 1,
+      "fill": "#fcc363",
+      "gradient": "#FFDB9E",
+      "stroke": "#C78C2A",
+      "group": "Total New Cases"
+    }, {
+      "x": "Green Cross-Body",
+      "name": "Green Cross-Body",
+      "img": "https://i.ebayimg.com/00/s/NTAwWDUwMA==/z/2AwAAOSwcaFZD~G0/$_14.JPG",
+      "yBar": 1.7,
+      "yLine": 21,
+      "fill": "#fcc363",
+      "gradient": "#FFDB9E",
+      "stroke": "#C78C2A",
+      "group": "Total New Cases"
+    }
+  ]
+}
