@@ -1,3 +1,0 @@
-{ "id": "WATER", "name": "WATER", "type": "collection", "shape": "circle", "color": "#0b3543", "strokeColor": "#0b3543" },
-{ "id": "POP", "name": "POP", "type": "collection", "shape": "circle", "color": "#0b3543", "strokeColor": "#0b3543" },
-{ "id": "JUICE", "name": "JUICE", "type": "collection", "shape": "circle", "color": "#0b3543", "strokeColor": "#0b3543" },
