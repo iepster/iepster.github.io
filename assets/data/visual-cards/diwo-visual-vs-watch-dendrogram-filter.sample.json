@@ -1,0 +1,47 @@
+{
+  "title": "Dendrogram Filter",
+  "name": "Customer",
+  "children": [
+     {
+       "name": "Age",
+       "children": [
+          { "name": "<18 yrs" },
+          { "name": "19-21 yrs" },
+          { "name": "22-30 yrs" },
+          { "name": "31-40 yrs" },
+          { "name": ">41 yrs" }
+        ],
+        "allow-multiple": true
+     },
+     {
+       "name": "Frequency",
+       "children": [
+          { "name": "3-Weekers" },
+          { "name": "Annually" },
+          { "name": "Bi-Annually" },
+          { "name": "Bi-Monthly" },
+          { "name": "Monthly" },
+          { "name": "One-Timer" }
+        ],
+        "allow-multiple": false
+     },
+     {
+       "name": "Income",
+       "children": [
+          { "name": "<$25K" },
+          { "name": "$100k+" },
+          { "name": "$25k-$50k" },
+          { "name": "$50k-$100k" }
+        ],
+        "allow-multiple": false
+     },
+     {
+       "name": "Value Segment",
+       "children": [
+          { "name": "HV" },
+          { "name": "NHV" }
+        ],
+        "allow-multiple": false
+     }
+   ]
+}

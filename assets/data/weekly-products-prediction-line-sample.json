@@ -1,0 +1,341 @@
+{
+  "x": {
+    "title": "Deviation",
+    "tooltip": "Deviation",
+    "prefix": "",
+    "sufix": ""
+  },
+  "y": {
+    "title": "Deviation",
+    "tooltip": "Deviation",
+    "prefix": "",
+    "sufix": "%",
+    "target": 0
+  },
+  "positiveValuesBrush": [
+    "0 to 50",
+    "0 to 10",
+    "10 to 20",
+    "20 to 30",
+    "30 to 40",
+    "40 to 50"
+  ],
+  "negativeValuesBrush": [
+    "0 to 50",
+    "0 to 10",
+    "10 to 20",
+    "20 to 30",
+    "30 to 40",
+    "40 to 50"
+  ],
+  "data": [
+    {
+      "id": "Jevlery",
+      "x": 50,
+      "y": -50,
+      "name": "Jevelry",
+      "color": "#EB7147",
+      "img": "https://bumbeishvili.github.io/D3Viz-Gregory/framework/assets/sunburst/Products/default.png",
+      "productId": "SAD315293",
+      "profit": 10000,
+      "actualContribution": 9.8,
+      "plannedContribution": 8.4,
+      "sales": {
+        "dates": [
+          "W1",
+          "W2",
+          "W3",
+          "W4",
+          "W5",
+          "W6",
+          "W7",
+          "W8"
+        ],
+        "actual": [
+          40,
+          33,
+          39,
+          55,
+          62,
+          80,
+          55,
+          33
+        ],
+        "predicted": [
+          30,
+          54,
+          30,
+          50,
+          40,
+          45,
+          22,
+          40
+        ]
+      }
+    },
+    {
+      "id": "Ring",
+      "x": 25,
+      "y": -25,
+      "name": "Ring",
+      "color": "#F9B548",
+      "img": "https://bumbeishvili.github.io/D3Viz-Gregory/framework/assets/sunburst/Products/default.png",
+      "productId": "SAD315294",
+      "profit": 10000,
+      "actualContribution": 9.8,
+      "plannedContribution": 8.4,
+      "sales": {
+        "dates": [
+          "W1",
+          "W2",
+          "W3",
+          "W4",
+          "W5",
+          "W6",
+          "W7",
+          "W8"
+        ],
+        "actual": [
+          30,
+          40,
+          20,
+          50,
+          30,
+          20,
+          40,
+          60
+        ],
+        "predicted": [
+          20,
+          30,
+          25,
+          60,
+          70,
+          18,
+          22,
+          30
+        ]
+      }
+    },
+    {
+      "id": "Other Bag",
+      "x": 10,
+      "y": 10,
+      "name": "Other Bag",
+      "color": "#32A49B",
+      "img": "https://bumbeishvili.github.io/D3Viz-Gregory/framework/assets/sunburst/Products/default.png",
+      "productId": "SAD315295",
+      "profit": 10000,
+      "actualContribution": 9.8,
+      "plannedContribution": 8.4,
+      "sales": {
+        "dates": [
+          "W1",
+          "W2",
+          "W3",
+          "W4",
+          "W5",
+          "W6",
+          "W7",
+          "W8"
+        ],
+        "actual": [
+          35,
+          25,
+          57,
+          89,
+          43,
+          67,
+          53,
+          50
+        ],
+        "predicted": [
+          30,
+          44,
+          30,
+          50,
+          30,
+          45,
+          40,
+          68
+        ]
+      }
+    },
+    {
+      "id": "Other Ring",
+      "x": 15,
+      "y": -15,
+      "name": "Other Ring",
+      "color": "#3CB1D5",
+      "img": "https://bumbeishvili.github.io/D3Viz-Gregory/framework/assets/sunburst/Products/default.png",
+      "productId": "SAD315296",
+      "profit": 10000,
+      "actualContribution": 9.8,
+      "plannedContribution": 8.4,
+      "sales": {
+        "dates": [
+          "W1",
+          "W2",
+          "W3",
+          "W4",
+          "W5",
+          "W6",
+          "W7",
+          "W8"
+        ],
+        "actual": [
+          70,
+          50,
+          70,
+          60,
+          50,
+          90,
+          80,
+          60
+        ],
+        "predicted": [
+          60,
+          50,
+          40,
+          70,
+          70,
+          80,
+          70,
+          50
+        ]
+      }
+    },
+    {
+      "id": "Bag Again",
+      "x": 33,
+      "y": 33,
+      "name": "Bag Again",
+      "color": "#6C7E90",
+      "img": "https://bumbeishvili.github.io/D3Viz-Gregory/framework/assets/sunburst/Products/default.png",
+      "productId": "SAD315297",
+      "profit": 10000,
+      "actualContribution": 9.8,
+      "plannedContribution": 8.4,
+      "sales": {
+        "dates": [
+          "W1",
+          "W2",
+          "W3",
+          "W4",
+          "W5",
+          "W6",
+          "W7",
+          "W8"
+        ],
+        "actual": [
+          40,
+          33,
+          39,
+          55,
+          62,
+          80,
+          55,
+          33
+        ],
+        "predicted": [
+          30,
+          54,
+          30,
+          50,
+          40,
+          45,
+          22,
+          40
+        ]
+      }
+    },
+    {
+      "id": "Again",
+      "x": 22,
+      "y": -22,
+      "name": "Again",
+      "color": "#664371",
+      "img": "https://bumbeishvili.github.io/D3Viz-Gregory/framework/assets/sunburst/Products/default.png",
+      "productId": "SAD315298",
+      "profit": 10000,
+      "actualContribution": 9.8,
+      "plannedContribution": 8.4,
+      "sales": {
+        "dates": [
+          "W1",
+          "W2",
+          "W3",
+          "W4",
+          "W5",
+          "W6",
+          "W7",
+          "W8"
+        ],
+        "actual": [
+          35,
+          25,
+          57,
+          89,
+          43,
+          67,
+          53,
+          50
+        ],
+        "predicted": [
+          30,
+          44,
+          30,
+          50,
+          30,
+          45,
+          40,
+          68
+        ]
+      }
+    },
+    {
+      "id": "Jevlery",
+      "x": 10,
+      "y": 10,
+      "name": "Again",
+      "color": "#B25344",
+      "img": "https://bumbeishvili.github.io/D3Viz-Gregory/framework/assets/sunburst/Products/default.png",
+      "productId": "SAD315299",
+      "profit": 10000,
+      "actualContribution": 9.8,
+      "plannedContribution": 8.4,
+      "sales": {
+        "dates": [
+          "W1",
+          "W2",
+          "W3",
+          "W4",
+          "W5",
+          "W6",
+          "W7",
+          "W8"
+        ],
+        "actual": [
+          70,
+          50,
+          70,
+          60,
+          50,
+          90,
+          80,
+          60
+        ],
+        "predicted": [
+          60,
+          50,
+          40,
+          70,
+          70,
+          80,
+          70,
+          50
+        ]
+      }
+    }
+  ]
+}

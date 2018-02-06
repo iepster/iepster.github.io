@@ -1,0 +1,15 @@
+svg.bar-chart-vert-neg {
+
+  font-family: 'Yantramanav', sans-serif;
+
+  .x.axis, .y.axis {
+    text { font-size: 10px; font-weight: 300; letter-spacing: 1px;  fill: #706f6f; }
+    line { fill: none; stroke-width: 1px; stroke: #dcdcdc; stroke-opacity: 0.8; shape-rendering: crispEdges; stroke-dasharray: 2 2; }
+    path { fill: none; stroke-width: 1px; stroke: #dcdcdc; stroke-opacity: 1; shape-rendering: crispEdges; }
+  }
+  .axis-legend { font-size: 10px; font-weight: 300; letter-spacing: 1px;  fill: #706f6f; }
+  .target { fill: none; stroke-width: 1px; stroke: #8C8C8C; stroke-opacity: 1; shape-rendering: crispEdges; }
+  .target-text { fill: #8C8C8C; font-weight: bold; font-size: 10px; }
+  .element-group { cursor: pointer; }
+
+}

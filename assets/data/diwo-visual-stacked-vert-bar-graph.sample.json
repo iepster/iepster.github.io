@@ -1,0 +1,647 @@
+{
+  "title": "Remuneracao Mediana por Sexo agrupados por Orgao Superior",
+  "legend": {
+    "isVisible": true,
+    "text": "{{name}}"
+  },
+  "tooltip": {
+    "title": [ "{{name}}" ],
+    "body": [ "<span class='metric'>Remuneracao Mediana</span><span class='number'>{{y}}</span>" ]
+  },
+  "x": {
+    "title": "Sexo agrupados por Orgao Superior",
+    "prefix": "",
+    "sufix": ""
+  },
+  "y": {
+    "title": "Remuneracao Mediana",
+    "prefix": "$",
+    "sufix": "",
+    "format": "locale"
+  },
+  "data": [
+    {
+      "x": "C.EX",
+      "name": "C.EX",
+      "wrap": "mean",
+      "values": [
+        {
+          "x": "Fem",
+          "name": "Fem",
+          "y": "6586.66"
+        },
+        {
+          "x": "Mas",
+          "name": "Mas",
+          "y": "4522.85"
+        }
+      ]
+    },
+    {
+      "x": "CFIA",
+      "name": "CFIA",
+      "wrap": "sum",
+      "values": [
+        {
+          "x": "Mas",
+          "name": "Mas",
+          "y": "4814.56"
+        },
+        {
+          "x": "Fem",
+          "name": "Fem",
+          "y": "8698.78"
+        }
+      ]
+    },
+    {
+      "x": "GDF",
+      "name": "GDF",
+      "wrap": "sum",
+      "values": [
+        {
+          "x": "Mas",
+          "name": "Mas",
+          "y": "7996.73"
+        },
+        {
+          "x": "Fem",
+          "name": "Fem",
+          "y": "9222.94"
+        }
+      ]
+    },
+    {
+      "x": "MAPA",
+      "name": "MAPA",
+      "wrap": "sum",
+      "values": [
+        {
+          "x": "Mas",
+          "name": "Mas",
+          "y": "9264.39"
+        },
+        {
+          "x": "Fem",
+          "name": "Fem",
+          "y": "5366.68"
+        }
+      ]
+    },
+    {
+      "x": "MCID",
+      "name": "MCID",
+      "wrap": "sum",
+      "values": [
+        {
+          "x": "Mas",
+          "name": "Mas",
+          "y": "6016.35"
+        },
+        {
+          "x": "Fem",
+          "name": "Fem",
+          "y": "10435.46"
+        }
+      ]
+    },
+    {
+      "x": "MCTI",
+      "name": "MCTI",
+      "wrap": "sum",
+      "values": [
+        {
+          "x": "Mas",
+          "name": "Mas",
+          "y": "10668.6"
+        },
+        {
+          "x": "Fem",
+          "name": "Fem",
+          "y": "5510.83"
+        }
+      ]
+    },
+    {
+      "x": "MD",
+      "name": "MD",
+      "wrap": "sum",
+      "values": [
+        {
+          "x": "Mas",
+          "name": "Mas",
+          "y": "5978.38"
+        },
+        {
+          "x": "Fem",
+          "name": "Fem",
+          "y": "5194.01"
+        }
+      ]
+    },
+    {
+      "x": "MDA",
+      "name": "MDA",
+      "wrap": "sum",
+      "values": [
+        {
+          "x": "Mas",
+          "name": "Mas",
+          "y": "6130.0"
+        },
+        {
+          "x": "Fem",
+          "name": "Fem",
+          "y": "10146.93"
+        }
+      ]
+    },
+    {
+      "x": "MDIC",
+      "name": "MDIC",
+      "wrap": "sum",
+      "values": [
+        {
+          "x": "Mas",
+          "name": "Mas",
+          "y": "10577.22"
+        },
+        {
+          "x": "Fem",
+          "name": "Fem",
+          "y": "5685.88"
+        }
+      ]
+    },
+    {
+      "x": "MDSA",
+      "name": "MDSA",
+      "wrap": "sum",
+      "values": [
+        {
+          "x": "Mas",
+          "name": "Mas",
+          "y": "5983.23"
+        },
+        {
+          "x": "Fem",
+          "name": "Fem",
+          "y": "5685.88"
+        }
+      ]
+    },
+    {
+      "x": "ME",
+      "name": "ME",
+      "wrap": "sum",
+      "values": [
+        {
+          "x": "Mas",
+          "name": "Mas",
+          "y": "6654.98"
+        },
+        {
+          "x": "Fem",
+          "name": "Fem",
+          "y": "7033.68"
+        }
+      ]
+    },
+    {
+      "x": "MEC",
+      "name": "MEC",
+      "wrap": "sum",
+      "values": [
+        {
+          "x": "Mas",
+          "name": "Mas",
+          "y": "7244.18"
+        },
+        {
+          "x": "Fem",
+          "name": "Fem",
+          "y": "10489.04"
+        }
+      ]
+    },
+    {
+      "x": "MF",
+      "name": "MF",
+      "wrap": "sum",
+      "values": [
+        {
+          "x": "Mas",
+          "name": "Mas",
+          "y": "14868.9"
+        },
+        {
+          "x": "Fem",
+          "name": "Fem",
+          "y": "7490.81"
+        }
+      ]
+    },
+    {
+      "x": "MIN",
+      "name": "MIN",
+      "wrap": "sum",
+      "values": [
+        {
+          "x": "Mas",
+          "name": "Mas",
+          "y": "6954.98"
+        },
+        {
+          "x": "Fem",
+          "name": "Fem",
+          "y": "6715.78"
+        }
+      ]
+    },
+    {
+      "x": "MINC",
+      "name": "MINC",
+      "wrap": "sum",
+      "values": [
+        {
+          "x": "Mas",
+          "name": "Mas",
+          "y": "6105.86"
+        },
+        {
+          "x": "Fem",
+          "name": "Fem",
+          "y": "8735.29"
+        }
+      ]
+    },
+    {
+      "x": "MJ",
+      "name": "MJ",
+      "wrap": "sum",
+      "values": [
+        {
+          "x": "Mas",
+          "name": "Mas",
+          "y": "13947.33"
+        },
+        {
+          "x": "Fem",
+          "name": "Fem",
+          "y": "5285.11"
+        }
+      ]
+    },
+    {
+      "x": "MM",
+      "name": "MM",
+      "wrap": "sum",
+      "values": [
+        {
+          "x": "Mas",
+          "name": "Mas",
+          "y": "6244.0"
+        },
+        {
+          "x": "Fem",
+          "name": "Fem",
+          "y": "11066.3"
+        }
+      ]
+    },
+    {
+      "x": "MMA",
+      "name": "MMA",
+      "wrap": "sum",
+      "values": [
+        {
+          "x": "Mas",
+          "name": "Mas",
+          "y": "10957.22"
+        },
+        {
+          "x": "Fem",
+          "name": "Fem",
+          "y": "8461.65"
+        }
+      ]
+    },
+    {
+      "x": "MME",
+      "name": "MME",
+      "wrap": "sum",
+      "values": [
+        {
+          "x": "Mas",
+          "name": "Mas",
+          "y": "9476.47"
+        },
+        {
+          "x": "Fem",
+          "name": "Fem",
+          "y": "5351.83"
+        }
+      ]
+    },
+    {
+      "x": "MP",
+      "name": "MP",
+      "wrap": "sum",
+      "values": [
+        {
+          "x": "Mas",
+          "name": "Mas",
+          "y": "5761.01"
+        },
+        {
+          "x": "Fem",
+          "name": "Fem",
+          "y": "10314.81"
+        }
+      ]
+    },
+    {
+      "x": "MPS",
+      "name": "MPS",
+      "wrap": "sum",
+      "values": [
+        {
+          "x": "Mas",
+          "name": "Mas",
+          "y": "9476.03"
+        },
+        {
+          "x": "Fem",
+          "name": "Fem",
+          "y": "10035.24"
+        }
+      ]
+    },
+    {
+      "x": "MRE",
+      "name": "MRE",
+      "wrap": "sum",
+      "values": [
+        {
+          "x": "Mas",
+          "name": "Mas",
+          "y": "16935.4"
+        },
+        {
+          "x": "Fem",
+          "name": "Fem",
+          "y": "5763.23"
+        }
+      ]
+    },
+    {
+      "x": "MS",
+      "name": "MS",
+      "wrap": "sum",
+      "values": [
+        {
+          "x": "Mas",
+          "name": "Mas",
+          "y": "5939.62"
+        },
+        {
+          "x": "Fem",
+          "name": "Fem",
+          "y": "7961.87"
+        }
+      ]
+    },
+    {
+      "x": "MT",
+      "name": "MT",
+      "wrap": "sum",
+      "values": [
+        {
+          "x": "Mas",
+          "name": "Mas",
+          "y": "8651.27"
+        },
+        {
+          "x": "Fem",
+          "name": "Fem",
+          "y": "5491.3"
+        }
+      ]
+    },
+    {
+      "x": "MTB",
+      "name": "MTB",
+      "wrap": "sum",
+      "values": [
+        {
+          "x": "Mas",
+          "name": "Mas",
+          "y": "6208.31"
+        },
+        {
+          "x": "Fem",
+          "name": "Fem",
+          "y": "20932.41"
+        }
+      ]
+    },
+    {
+      "x": "MTFCGU",
+      "name": "MTFCGU",
+      "wrap": "sum",
+      "values": [
+        {
+          "x": "Mas",
+          "name": "Mas",
+          "y": "22649.21"
+        },
+        {
+          "x": "Fem",
+          "name": "Fem",
+          "y": "5855.04"
+        }
+      ]
+    },
+    {
+      "x": "MTUR",
+      "name": "MTUR",
+      "wrap": "sum",
+      "values": [
+        {
+          "x": "Mas",
+          "name": "Mas",
+          "y": "6233.39"
+        },
+        {
+          "x": "Fem",
+          "name": "Fem",
+          "y": "8372.78"
+        }
+      ]
+    },
+    {
+      "x": "PR",
+      "name": "PR",
+      "wrap": "sum",
+      "values": [
+        {
+          "x": "Mas",
+          "name": "Mas",
+          "y": "8344.32"
+        }
+      ]
+    }
+  ],
+  "colors": {
+    "C.EX": {
+      "fill": "#ccc",
+      "gradient": "#ccc",
+      "stroke": "#ccc"
+    },
+    "Fem": {
+      "fill": "#B33EAF",
+      "gradient": "#B33EAF",
+      "stroke": "#B33EAF"
+    },
+    "Mas": {
+      "fill": "#3E75B3",
+      "gradient": "#3E75B3",
+      "stroke": "#3E75B3"
+    },
+    "CFIA": {
+      "fill": "#ccc",
+      "gradient": "#ccc",
+      "stroke": "#ccc"
+    },
+    "GDF": {
+      "fill": "#ccc",
+      "gradient": "#ccc",
+      "stroke": "#ccc"
+    },
+    "MAPA": {
+      "fill": "#ccc",
+      "gradient": "#ccc",
+      "stroke": "#ccc"
+    },
+    "MCID": {
+      "fill": "#ccc",
+      "gradient": "#ccc",
+      "stroke": "#ccc"
+    },
+    "MCTI": {
+      "fill": "#ccc",
+      "gradient": "#ccc",
+      "stroke": "#ccc"
+    },
+    "MD": {
+      "fill": "#ccc",
+      "gradient": "#ccc",
+      "stroke": "#ccc"
+    },
+    "MDA": {
+      "fill": "#ccc",
+      "gradient": "#ccc",
+      "stroke": "#ccc"
+    },
+    "MDIC": {
+      "fill": "#ccc",
+      "gradient": "#ccc",
+      "stroke": "#ccc"
+    },
+    "MDSA": {
+      "fill": "#ccc",
+      "gradient": "#ccc",
+      "stroke": "#ccc"
+    },
+    "ME": {
+      "fill": "#ccc",
+      "gradient": "#ccc",
+      "stroke": "#ccc"
+    },
+    "MEC": {
+      "fill": "#ccc",
+      "gradient": "#ccc",
+      "stroke": "#ccc"
+    },
+    "MF": {
+      "fill": "#ccc",
+      "gradient": "#ccc",
+      "stroke": "#ccc"
+    },
+    "MIN": {
+      "fill": "#ccc",
+      "gradient": "#ccc",
+      "stroke": "#ccc"
+    },
+    "MINC": {
+      "fill": "#ccc",
+      "gradient": "#ccc",
+      "stroke": "#ccc"
+    },
+    "MJ": {
+      "fill": "#ccc",
+      "gradient": "#ccc",
+      "stroke": "#ccc"
+    },
+    "MM": {
+      "fill": "#ccc",
+      "gradient": "#ccc",
+      "stroke": "#ccc"
+    },
+    "MMA": {
+      "fill": "#ccc",
+      "gradient": "#ccc",
+      "stroke": "#ccc"
+    },
+    "MME": {
+      "fill": "#ccc",
+      "gradient": "#ccc",
+      "stroke": "#ccc"
+    },
+    "MP": {
+      "fill": "#ccc",
+      "gradient": "#ccc",
+      "stroke": "#ccc"
+    },
+    "MPS": {
+      "fill": "#ccc",
+      "gradient": "#ccc",
+      "stroke": "#ccc"
+    },
+    "MRE": {
+      "fill": "#ccc",
+      "gradient": "#ccc",
+      "stroke": "#ccc"
+    },
+    "MS": {
+      "fill": "#ccc",
+      "gradient": "#ccc",
+      "stroke": "#ccc"
+    },
+    "MT": {
+      "fill": "#ccc",
+      "gradient": "#ccc",
+      "stroke": "#ccc"
+    },
+    "MTB": {
+      "fill": "#ccc",
+      "gradient": "#ccc",
+      "stroke": "#ccc"
+    },
+    "MTFCGU": {
+      "fill": "#ccc",
+      "gradient": "#ccc",
+      "stroke": "#ccc"
+    },
+    "MTUR": {
+      "fill": "#ccc",
+      "gradient": "#ccc",
+      "stroke": "#ccc"
+    },
+    "PR": {
+      "fill": "#ccc",
+      "gradient": "#ccc",
+      "stroke": "#ccc"
+    }
+  }
+}

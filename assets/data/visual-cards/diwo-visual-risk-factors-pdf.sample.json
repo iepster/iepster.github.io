@@ -1,0 +1,55 @@
+{
+  "toggle": {
+    "isVisible": false
+  },
+  "legend": {
+    "isVisible": true,
+    "text": "{{name}}"
+  },
+  "tooltip": {
+    "hasPercentage": false,
+    "title": "{{name}}"
+  },
+  "attrs": {
+    "radius": 20,
+    "muted": false,
+    "arcOpacity": 0.8,
+    "width": "100%",
+    "height": "100%",
+    "grid": false
+  },
+  "x1": {
+    "title": "Risk Matrix",
+    "value": "sum",
+    "color": "#575757",
+    "prefix": "",
+    "sufix": "%",
+    "format": "locale"
+  },
+  "data": [
+    {
+        "id": "SAD315293",
+        "name": "Financial",
+        "color": "#a28925",
+        "x1": 31
+    },
+    {
+        "id": "SAD315294",
+        "name": "Operating",
+        "color": "#ab963c",
+        "x1": 23
+    },
+    {
+        "id": "SAD315295",
+        "name": "Env.",
+        "color": "#bdae69",
+        "x1": 18
+    },
+    {
+        "id": "SAD315296",
+        "name": "Legal & Reg.",
+        "color": "#ccc498",
+        "x1": 16
+    }
+  ]
+}

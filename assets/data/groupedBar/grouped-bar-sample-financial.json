@@ -1,0 +1,96 @@
+{
+	"title": "Offer Propensity to New ETF Customer",
+	"format": "%",
+	"tooltipText": "$ {value} M ",
+	"yAxisFormat": "${AXIS_VALUE_FORMATTED}",
+	"xAxisDescription": "",
+	"yAxisDescription": "",
+	"colors": [
+		{
+			"id": "managementFees",
+			"fill": "#3faca6",
+			"gradient": "#efefef",
+			"stroke": "#434343"
+		},
+		{
+			"id": "externalAssets",
+			"fill": "#0f3744",
+			"gradient": "#6CD3EA",
+			"stroke": "#434343"
+		}
+	],
+	"data": [
+		{
+			"id": "c1",
+			"name": "Assets",
+			"values": [
+				{
+					"id": "managementFees",
+					"name": "Managed Fees",
+					"value": 11562936,
+					"propensity": 41
+				},
+				{
+					"id": "externalAssets",
+					"name": "Estimated External Assets",
+					"value": 7515908,
+					"propensity": 42
+				}
+			]
+		},
+		{
+			"id": "c2",
+			"name": "IRA",
+			"values": [
+				{
+					"id": "managementFees",
+					"name": "Managed Fees",
+					"value": 1445367,
+					"propensity": 43
+				},
+				{
+					"id": "externalAssets",
+					"name": "Estimated External Assets",
+					"value": 433610,
+					"propensity": 44
+				}
+			]
+		},
+		{
+			"id": "c3",
+			"name": "Futures",
+			"values": [
+				{
+					"id": "managementFees",
+					"name": "Managed Fees",
+					"value": 4336101,
+					"propensity": 45
+				},
+				{
+					"id": "externalAssets",
+					"name": "Estimated External Assets",
+					"value": 3035270.7,
+					"propensity": 46
+				}
+			]
+		},
+		{
+			"id": "c4",
+			"name": "Money M.",
+			"values": [
+				{
+					"id": "managementFees",
+					"name": "Managed Fees",
+					"value": 2890734,
+					"propensity": 47
+				},
+				{
+					"id": "externalAssets",
+					"name": "Estimated External Assets",
+					"value": 2312587.2,
+					"propensity": 48
+				}
+			]
+		}
+	]
+}

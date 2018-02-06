@@ -1,0 +1,51 @@
+// Variables file
+@import './variables.scss';
+
+// For testing
+@import './test.scss';
+
+// Mixins for scss
+@import './mixins.scss';
+
+// Ui elements
+@import './ui/ui.loader.scss';
+@import './ui/ui.mouse-pointers.scss';
+@import './ui/ui.tooltipster.scss';
+
+// Pages
+@import './pages/visuals.scss';
+
+// Visualizations
+@import './visualizations/main.scss';
+@import './visualizations/layout.scss';
+@import './visualizations/tooltip.scss';
+@import './visualizations/answer-icon-with-variable/main.scss';
+@import './visualizations/answer-list-view/main.scss';
+@import './visualizations/bar/main.scss';
+@import './visualizations/bar-chart-vert-neg/main.scss';
+@import './visualizations/bar-positive-negative-deviation/main.scss';
+@import './visualizations/combo-chart/main.scss';
+@import './visualizations/dendrogram/main.scss';
+@import './visualizations/donut/main.scss';
+@import './visualizations/donut-circle/main.scss';
+@import './visualizations/donut-with-toggle/main.scss';
+@import './visualizations/grouped-bar/main.scss';
+@import './visualizations/pyramid-graph/main.scss';
+@import './visualizations/line/main.scss';
+@import './visualizations/map-heat-bars/main.scss';
+@import './visualizations/plot-evolution-graph/main.scss';
+@import './visualizations/poet-network-chart/main.scss';
+@import './visualizations/ontology-viewer/main.scss';
+@import './visualizations/brush/main.scss';
+
+// Leaflet
+
+@import './leaflet/leaflet.scss';
+
+// Set uniform fonts
+//body { font-family: Helvetica, Arial, Sans-Serif; }
+
+// app global tooltip definition
+.tooltip {
+    text-decoration: underline;
+}

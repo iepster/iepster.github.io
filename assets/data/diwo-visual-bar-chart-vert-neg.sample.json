@@ -1,0 +1,69 @@
+{
+  "title": "Expected myRewards' Churn Rate for May 2017",
+  "legend": {
+    "isVisible": true,
+    "text": "{{name}}"
+  },
+  "tooltip": {
+    "hasImg": true,
+    "title": [ "{{name}}" ],
+    "body": [ "<span class='metric'>Sales Revenue</span><span class='number'>{{x}}</span>", "<span class='metric'>% Change in Sales</span><span class='number'>{{y}}</span>" ]
+  },
+  "x": {
+    "title": "Sales Revenue",
+    "prefix": "$",
+    "sufix": "",
+    "format": "locale",
+    "type": "number"
+  },
+  "y": {
+    "title": "% Change in Sales",
+    "prefix": "",
+    "sufix": "%",
+    "format": "locale",
+    "type": "number",
+    "target": 0
+  },
+  "data": [
+    {
+      "id": "Red Clutches",
+      "name": "Red Clutches",
+      "img": "./assets/images/Red-Clutches.jpg",
+      "x": 234000,
+      "y": 2.3,
+      "fill": "#FF420A",
+      "gradient": "#FF9575",
+      "stroke": "#AD2D07"
+    },
+    {
+      "id": "Gray Clutches",
+      "name": "Gray Clutches ",
+      "img": "./assets/images/Demi-Shoulder-Bag.jpg",
+      "x": 122120,
+      "y": 4.8,
+      "fill": "#abacad",
+      "gradient": "#E1E2E3",
+      "stroke": "#747575"
+    },
+    {
+      "id": "Blue Carryall",
+      "name": "Blue Carryall",
+      "img": "./assets/images/Blue-Carryall.jpg",
+      "x": 344000,
+      "y": -3.7,
+      "fill": "#00B3DA",
+      "gradient": "#3DDCFF",
+      "stroke": "#00829E"
+    },
+    {
+      "id": "Orange Clutches",
+      "name": "Orange Clutches",
+      "img": "./assets/images/Shoulder-Bags.jpg",
+      "x": 268800,
+      "y": -0.9,
+      "fill": "#FFB519",
+      "gradient": "#FFD782",
+      "stroke": "#C98900"
+    }
+  ]
+}
