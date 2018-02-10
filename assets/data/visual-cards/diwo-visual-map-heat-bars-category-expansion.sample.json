@@ -11,8 +11,8 @@
     "bars": {
       "title": [],
       "body": [
-        "<span class='metric' style='color: #575757;'>Sales</span><span class='number' style='color: #575757;'>{{sales}}</span>",
-        "<span class='metric' style='color: #575757;'>STS Ratio</span><span class='number' style='color: #575757;'>{{StsRatio}}</span>"
+        "<span class='metric'>Sales</span><span class='number'>{{sales}}</span>",
+        "<span class='metric'>STS Ratio</span><span class='number'>{{StsRatio}}</span>"
       ]
     }
   },
@@ -22,10 +22,10 @@
     "bars": {
       "title": [],
       "body": [
-          "<span class='metric' style='color: #575757;'>Store Location</span><span class='number' style='font-size:13px; font-weight:lighter; font-family:Yantramanav;color: #fa87c7;'>{{storeLocation}}</span>",
-          "<span class='metric' style='color: #575757;'>Number</span><span class='number' style='font-size:13px; font-weight:lighter; font-family:Yantramanav; color: #fa87c7;'>{{storeNumber}}</span>",
-          "<span class='metric' style='color: #575757;'>Store Type</span><span class='number' style='font-size:13px; font-weight:lighter; font-family:Yantramanav;color: #fa87c7;'>{{storeType}}</span>",
-          "<span class='metric' style='color: #575757;'>Footage</span><span class='number' style='font-size:13px; font-weight:lighter; font-family:Yantramanav;color: #fa87c7;'>{{storeFootage}}</span>"
+          "<span class='metric'>Store Location</span><span class='number'>{{storeLocation}}</span>",
+          "<span class='metric'>Number</span><span class='number'>{{storeNumber}}</span>",
+          "<span class='metric'>Store Type</span><span class='number'>{{storeType}}</span>",
+          "<span class='metric'>Footage</span><span class='number'>{{storeFootage}}</span>"
       ]
     }
   },

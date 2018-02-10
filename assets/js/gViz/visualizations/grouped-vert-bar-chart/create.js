@@ -46,7 +46,7 @@ module.exports = function () {
           _var.g = _var.g.enter().append('g').attr('class', "chart-wrap").merge(_var.g);
 
           // Update inner dimensions
-          _var.g.attr("transform", `translate(${_var.margin.left},${_var.margin.top})`).attr('clip-path', 'url(#clip-path-'+_var._id+')');
+          _var.g.attr("transform", `translate(0,${_var.margin.top})`).attr('clip-path', 'url(#clip-path-'+_var._id+')');
 
           // Draw g
           _var.gClip = _var.wrap.selectAll("g.chart-wrap-clip").data(["chart-wrap-clip"]); // svg:g

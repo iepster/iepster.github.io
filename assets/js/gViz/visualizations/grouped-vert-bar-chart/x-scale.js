@@ -112,6 +112,7 @@ module.exports = function () {
           }
 
           // Set x and xIn domain
+          _var.xBounds = [xDomain[0], xDomain[xDomain.length-1]];
           _var.x.domain(xDomain);
           _var.xIn.domain(xInDomain).range([0,_var.x.bandwidth()]);
 

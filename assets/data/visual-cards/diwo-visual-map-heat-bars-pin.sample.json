@@ -10,9 +10,9 @@
     "bars": {
       "title": [],
       "body": [
-        "<span class='metric' style='color: #575757;'>Sales</span><span class='number' style='color: #fa87c7;'>{{sales}}</span>",
-        "<span class='metric' style='color: #575757;'>Hourly Walk-ins</span><span class='number' style='color: #fa87c7;'>{{hourlyWalkIns}}</span>",
-        "<span class='metric' style='color: #575757;'>STS Ratio</span><span class='number' style='color: #fa87c7;'>{{StsRatio}}</span>"
+        "<span class='metric'>Sales</span><span class='number'>{{sales}}</span>",
+        "<span class='metric'>Hourly Walk-ins</span><span class='number'>{{hourlyWalkIns}}</span>",
+        "<span class='metric'>STS Ratio</span><span class='number'>{{StsRatio}}</span>"
       ]
     }
   },
@@ -22,10 +22,10 @@
     "bars": {
       "title": [],
       "body": [
-          "<span class='metric' style='color: #575757;'>Store Name</span><span class='number' style='color: #fa87c7;'>{{name}}</span>",
-          "<span class='metric' style='color: #575757;'>Store Location</span><span class='number' style='color: #fa87c7;'>{{storeLocation}}</span>",
-          "<span class='metric' style='color: #575757;'>Store Type</span><span class='number' style='color: #fa87c7;'>{{storeType}}</span>",
-          "<span class='metric' style='color: #575757;'>Footage</span><span class='number' style='color: #fa87c7;'>{{storeFootage}}</span>"
+          "<span class='metric'>Store Name</span><span class='number'>{{name}}</span>",
+          "<span class='metric'>Store Location</span><span class='number'>{{storeLocation}}</span>",
+          "<span class='metric'>Store Type</span><span class='number'>{{storeType}}</span>",
+          "<span class='metric'>Footage</span><span class='number'>{{storeFootage}}</span>"
       ]
     }
   },

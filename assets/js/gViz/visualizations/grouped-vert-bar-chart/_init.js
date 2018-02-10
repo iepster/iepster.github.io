@@ -30,7 +30,7 @@ module.exports = function () {
   let container = null;
   var colors = { main: shared.helpers.colors.main };
   let data = [];
-  let margin = { top: 5, right: 0, bottom: 30, left: 70 };
+  let margin = { top: 5, right: 1, bottom: 30, left: 70 };
   let hover = null;
 
   // Validate attributes

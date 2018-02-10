@@ -64,11 +64,11 @@ module.exports = function() {
                 // Set image
                 if(i === 0 && hasImg === true && obj.img != null && obj.img !== "") {
 
-                  t = "<span class='title with-image' style='color: #666; background-color: "+(backgroundColor == null ? "#FFF" : backgroundColor)+"; border-top: 1px solid "+(borderColor == null ? '{{color}}' : borderColor)+";'><span class='title-img' style='border-right: 1px solid {{color}}'><img src='{{img}}'/></span><span class='title-text'>"+t+"</span></span>";
+                  t = "<span class='title with-image' style='color: #575757; background-color: #FFF; border-top: 1px solid "+(borderColor == null ? '{{color}}' : borderColor)+";'><span class='title-img' style='border-right: 1px solid {{color}}'><img src='{{img}}'/></span><span class='title-text'>"+t+"</span></span>";
 
                 } else {
 
-                  t = "<span class='title' style='color: #666; background-color: "+(backgroundColor == null ? "#FFF" : backgroundColor)+"; border-top: 1px solid "+(borderColor == null ? '{{color}}' : borderColor)+";'>" + t + "</span>";
+                  t = "<span class='title' style='color: #575757; background-color: #FFF; border-top: 1px solid "+(borderColor == null ? '{{color}}' : borderColor)+";'>" + t + "</span>";
 
                 }
 
@@ -77,7 +77,7 @@ module.exports = function() {
 
               // Set body content
               body = body == null || body.constructor !== Array ? [] : body;
-              body = body.map(function(d) { return "<span class='text' style='background-color: "+(backgroundColor == null ? "{{color}}" : backgroundColor)+"; color: " + (helpers.colors.isDark(obj.color) ? "#FFF" : "#434343") + "; border-top: 1px solid "+(borderColor == null ? '{{color}}' : borderColor)+";'>" + d + "</span>"; }).join('');
+              body = body.map(function(d) { return "<span class='text' style='background-color: #FFF; color: #575757; border-top: 1px solid "+(borderColor == null ? '{{color}}' : borderColor)+";'>" + d + "</span>"; }).join('');
 
               // Join content
               content = helpers.text.replaceVariables(title, obj) + helpers.text.replaceVariables(body, obj);

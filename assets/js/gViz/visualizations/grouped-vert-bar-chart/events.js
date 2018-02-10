@@ -49,7 +49,7 @@ module.exports = function () {
                 .style("filter", function(g) { return g === node ? "url(#"+_var.shadowId+")" : ""; })
 
               // Get x and y values
-              var x = _var.hasWrapper(node.wrap) ? _var.x(node.x) + _var.x.bandwidth()/2 : _var.x(node.parent) + _var.xIn(node.x) + _var.xIn.bandwidth()/2;
+              var x = _var.hasWrapper(node.wrap) ? _var.x(node.x) + _var.x.bandwidth()/2 : _var.x(node.parent) + (_var.xIn(node.x) + _var.xIn.bandwidth()/2) * _var.zoomTransform.k;
               var y = _var.getY(node);
 
               // Get left and top positions

@@ -124,19 +124,6 @@ module.exports = function() {
             .attr('y', function(d) { return _var.y(+d.y); })
             .attr('height', 2)
 
-          // Draw Texts
-          var textValuesObj = {};
-          var textValues = node.values.filter(function(d) { var flag = textValuesObj[d.x] == null; textValuesObj[d.x] = true; return flag; });
-          var texts = nodeSel.selectAll("text.x-in-text").data((node.name == null || node.name === "" ? textValues : []), function(d) { return d.x; });
-          texts.exit().remove();
-          texts = texts.enter().append('text').attr("class", "x-in-text").merge(texts);
-          texts
-            .attr("x", function(d) { return _var.xIn(d.x) + _var.xIn.bandwidth()/2; })
-            .attr('y', _var.height + 17)
-            .attr('text-anchor', 'middle')
-            .text(function(d) { return d.name; })
-            .each(function(d) { shared.helpers.text.wrapBySize(d3.select(this), _var.xIn.bandwidth(), _var.margin.bottom, _var.xMaxLines); })
-
           break;
       }
     }
