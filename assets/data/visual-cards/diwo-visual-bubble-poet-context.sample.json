@@ -1,0 +1,484 @@
+{
+  "data": {
+    "backgroundColor": "#fdebf4",
+    "center": {
+      "backgroundColor": "#f7b7d2",
+      "borderColor": "#f7b7d2",
+      "color": "#FFF",
+      "topTitle": "Sport Bra",
+      "image": "/assets/images/gViz/visualizations/diwo-visual-bubble-poet-context/bra.png",
+      "bottomTitle": "Week 40"
+    },
+    "topLeft": {
+      "backgroundColor": "#FFF",
+      "borderColor": "#e96293",
+      "color": "#fa86ce",
+      "text": "Attribute Analysis",
+      "header": {
+        "backgroundColor": "#f7b7d2",
+        "color": "#FFF",
+        "text": "Attribute Analysis"
+      },
+      "visualization": {
+        "backgroundColor": "#f9f9f9",
+        "component": "DiwoVisualSimpleTable",
+        "data": [
+          {
+            "title": "Attribute Trends",
+            "inline": true,
+            "titleBackgroundColor": "transparent",
+            "titleBorderColor": "transparent",
+            "backgroundColor": "transparent",
+            "borderColor": "#ececec",
+            "color": "#323232",
+            "rowItems": [
+              { "text": "Color (Solid)", "highlight": false },
+              { "text": "Color (Print)", "highlight": false },
+              { "text": "Size", "highlight": false },
+              { "text": "Fabric", "highlight": false },
+              { "text": "Lining", "highlight": false },
+              { "text": "Lace", "highlight": false }
+            ]
+          },
+          {
+            "title": "Top <img src='/assets/images/top-trending-green.png' style='height: 12px; margin: 4px 0px 0px 10px;'/>",
+            "inline": true,
+            "titleBackgroundColor": "transparent",
+            "titleBorderColor": "#ececec",
+            "backgroundColor": "#e5e5e5",
+            "color": "#323232",
+            "textAlign": "center",
+            "rowItems": [
+              { "text": "Black", "highlight": false },
+              { "text": "Triangles", "highlight": false },
+              { "text": "Medium", "highlight": false },
+              { "text": "Soft Cotton", "highlight": false },
+              { "text": "Light", "highlight": false },
+              { "text": "Embroidery", "highlight": false }
+            ]
+          },
+          {
+            "title": "Bottom <img src='/assets/images/bottom-trending-red.png' style='height: 12px; margin: 4px 0px 0px 10px;'/>",
+            "inline": true,
+            "titleBackgroundColor": "transparent",
+            "titleBorderColor": "#ececec",
+            "backgroundColor": "#e5e5e5",
+            "color": "#323232",
+            "textAlign": "center",
+            "rowItems": [
+              { "text": "Purple", "highlight": false },
+              { "text": "Floral", "highlight": false },
+              { "text": "Small", "highlight": false },
+              { "text": "Nylon", "highlight": false },
+              { "text": "Unlined", "highlight": false },
+              { "text": "Light", "highlight": false }
+            ]
+          }
+        ]
+      }
+    },
+    "bottomLeft": {
+      "backgroundColor": "#FFF",
+      "borderColor": "#e96293",
+      "color": "#fa86ce",
+      "text": "Sales & Stock Analysis",
+      "header": {
+        "backgroundColor": "#f7b7d2",
+        "color": "#FFF",
+        "text": "Customer Analysis"
+      },
+      "visualization": {
+        "backgroundColor": "#FFF",
+        "component": "DiwoVisualVsSalesStockAnalysisComponent",
+        "data": {
+          "statsData": [
+            {
+              "title":  "Sales",
+              "prefix": "$",
+              "sufix":  "M",
+              "values": [
+                { "x": 16, "value": 1.1 },
+                { "x": 17, "value": 2.2 },
+                { "x": 18, "value": 3.3 },
+                { "x": 19, "value": 4.4 },
+                { "x": 21, "value": 1.5 },
+                { "x": 22, "value": 1.6 },
+                { "x": 23, "value": 1.7 },
+                { "x": 24, "value": 1.1 },
+                { "x": 25, "value": 5.2 },
+                { "x": 26, "value": 4.3 },
+                { "x": 27, "value": 2.4 },
+                { "x": 28, "value": 1.5 },
+                { "x": 29, "value": 2.6 }
+              ]
+            },
+            {
+              "title": "Units",
+              "prefix": "",
+              "sufix":  "",
+              "values": [
+                { "x": 16, "value": 1000 },
+                { "x": 17, "value": 2000 },
+                { "x": 18, "value": 3000 },
+                { "x": 19, "value": 4000 },
+                { "x": 21, "value": 5000 },
+                { "x": 22, "value": 6000 },
+                { "x": 23, "value": 5000 },
+                { "x": 24, "value": 4000 },
+                { "x": 25, "value": 3000 },
+                { "x": 26, "value": 2000 },
+                { "x": 27, "value": 1000 },
+                { "x": 28, "value": 3000 },
+                { "x": 29, "value": 2000 }
+              ]
+            },
+            {
+              "title": "STS Ratio",
+              "prefix": "",
+              "sufix":  "",
+              "values": [
+                { "x": 16, "value": 0.1 },
+                { "x": 17, "value": 0.2 },
+                { "x": 18, "value": 0.3 },
+                { "x": 19, "value": 0.4 },
+                { "x": 21, "value": 0.5 },
+                { "x": 22, "value": 0.6 },
+                { "x": 23, "value": 0.7 },
+                { "x": 24, "value": 0.5 },
+                { "x": 25, "value": 0.4 },
+                { "x": 26, "value": 0.3 },
+                { "x": 27, "value": 0.2 },
+                { "x": 28, "value": 0.1 },
+                { "x": 29, "value": 0.1 }
+              ]
+            },
+            {
+              "title": "Profitability",
+              "prefix": "$",
+              "sufix":  "M",
+              "values": [
+                { "x": 16, "value": 0.1 },
+                { "x": 17, "value": 0.2 },
+                { "x": 18, "value": 0.3 },
+                { "x": 19, "value": 0.4 },
+                { "x": 21, "value": 0.3 },
+                { "x": 22, "value": 0.2 },
+                { "x": 23, "value": 0.1 },
+                { "x": 24, "value": 0.2 },
+                { "x": 25, "value": 0.3 },
+                { "x": 26, "value": 0.4 },
+                { "x": 27, "value": 0.5 },
+                { "x": 28, "value": 0.5 },
+                { "x": 29, "value": 0.3 }
+              ]
+            }
+          ],
+          "lineGraphData": {
+            "legend": {
+              "isVisible": true,
+              "text": "{{name}}"
+            },
+            "tooltip": {
+              "hasImg": true,
+              "muted": true,
+              "propagate": "title",
+              "header": [ "This is a main header" ],
+              "title": [  "<span class='metric'>{{name}} ({{x}})</span><span class='number'>{{y}}</span>"],
+              "body": []
+            },
+            "y": {
+              "title": "Units (K)",
+              "prefix": "",
+              "sufix": "",
+              "format": "",
+              "min": 0,
+              "max": 4
+            },
+            "x": {
+              "title": "Weeks",
+              "type": "number",
+              "prefix": "",
+              "sufix": "",
+              "format": ""
+            },
+            "data": [
+              {
+                "id": "actual",
+                "name": "Actual",
+                "startColor": "#7fc8c4",
+                "stopColor": "#1a6f67",
+                "pointColor": "#1a6f67",
+                "pointSize": "2",
+                "values": [
+                  { "x": "16", "y": 2 },
+                  { "x": "17", "y": 3 },
+                  { "x": "18", "y": 1 },
+                  { "x": "19", "y": 3 },
+                  { "x": "20", "y": 2 },
+                  { "x": "21", "y": 1 },
+                  { "x": "22", "y": 0 },
+                  { "x": "23", "y": 0 },
+                  { "x": "24", "y": 2 },
+                  { "x": "25", "y": 1 },
+                  { "x": "26", "y": 3.5 },
+                  { "x": "27", "y": 2 },
+                  { "x": "28", "y": 1 },
+                  { "x": "29", "y": 2 }
+                ]
+              },
+              {
+                "id": "planned",
+                "name": "Planned",
+                "startColor": "#d5d1da",
+                "stopColor": "#657072",
+                "pointColor": "#657072",
+                "pointSize": "2",
+                "values": [
+                  { "x": "16", "y": 1 },
+                  { "x": "17", "y": 2 },
+                  { "x": "18", "y": 3 },
+                  { "x": "19", "y": 2 },
+                  { "x": "20", "y": 1 },
+                  { "x": "21", "y": 1 },
+                  { "x": "22", "y": 2 },
+                  { "x": "23", "y": 2 },
+                  { "x": "24", "y": 3 },
+                  { "x": "25", "y": 3 },
+                  { "x": "26", "y": 1.5 },
+                  { "x": "27", "y": 3 },
+                  { "x": "28", "y": 2 },
+                  { "x": "29", "y": 3 }
+                ]
+              }
+            ]
+          },
+          "brushData": {
+            "style": {
+              "backgroundColor": "#FFF",
+              "brush": {
+                "color": "#846288",
+                "backgroundColor": "#FFF",
+                "brushBackgroundColor": "#f5d9e9",
+                "borderColor": "#cdc1cf",
+                "arrowsColor": "#e96997"
+              },
+              "nodes": {
+                "color": "#846288",
+                "backgroundColor": "#FFF",
+                "borderColor": "#846288",
+                "hoveredColor": "#eb719b",
+                "hoveredBackgroundColor": "#FFF",
+                "selectedColor": "#eb719b",
+                "selectedBackgroundColor": "#FFF"
+              }
+            },
+            "data": [
+              {
+                "id": "last-week",
+                "name": "Last Week",
+                "values": [16,22],
+                "children": [
+                  { "id": "day-16", "name": "16", "values": [16,16] },
+                  { "id": "day-17", "name": "17", "values": [17,17] },
+                  { "id": "day-18", "name": "18", "values": [18,18] },
+                  { "id": "day-19", "name": "19", "values": [19,19] },
+                  { "id": "day-20", "name": "20", "values": [20,20] },
+                  { "id": "day-21", "name": "21", "values": [21,21] },
+                  { "id": "day-22", "name": "22", "values": [22,22] }
+                ]
+              },
+              {
+                "id": "this-week",
+                "name": "This Week",
+                "values": [23,29],
+                "children": [
+                  { "id": "day-23", "name": "23", "values": [23,23] },
+                  { "id": "day-24", "name": "24", "values": [24,24] },
+                  { "id": "day-25", "name": "25", "values": [25,25] },
+                  { "id": "day-26", "name": "26", "values": [26,26] },
+                  { "id": "day-27", "name": "27", "values": [27,27] },
+                  { "id": "day-28", "name": "28", "values": [28,28] },
+                  { "id": "day-29", "name": "29", "values": [29,29] }
+                ]
+              }
+            ]
+          }
+        }
+      }
+    },
+    "topRight": {
+      "backgroundColor": "#FFF",
+      "borderColor": "#e96293",
+      "color": "#fa86ce",
+      "text": "Customer Analysis",
+      "header": {
+        "backgroundColor": "#f7b7d2",
+        "color": "#FFF",
+        "text": "Customer Analysis"
+      },
+      "visualization": {
+        "backgroundColor": "#FFF",
+        "component": "DiwoVisualVsCustomerOverviewComponent",
+        "data": {
+          "data": {
+           "backgroundColor": "#f9f9f9",
+           "bubble": {
+             "backgroundColor": "#f7b7d2",
+             "borderColor": "#ee7ca8",
+             "color": "#FFF",
+             "content": "<img src='/assets/images/gViz/visualizations/diwo-visual-bubble-poet-context/women.png' style='height: 100%; display: block; margin: 0px auto;' />"
+           },
+           "right": {
+             "borderColor": "#ee7ca8",
+             "items": [
+               {
+                 "topText": {
+                   "backgroundColor": "#f6b8d0",
+                   "borderColor": "#f6b8d0",
+                   "color": "#FFF",
+                   "content": "<div style='width: 100%; text-align: center;'>Age</div>"
+                 },
+                 "bottomText": {
+                   "backgroundColor": "#f9f9f9",
+                   "borderColor": "#f9f9f9",
+                   "color": "#9196a5",
+                   "content": "<div style='width: 100%; text-align: center;'>21 yrs - 25 yrs</div>"
+                 }
+               },
+               {
+                 "topText": {
+                   "backgroundColor": "#f6b8d0",
+                   "borderColor": "#f6b8d0",
+                   "color": "#FFF",
+                   "content": "<div style='width: 100%; text-align: center;'>Income</div>"
+                 },
+                 "bottomText": {
+                   "backgroundColor": "#f9f9f9",
+                   "borderColor": "#f9f9f9",
+                   "color": "#9196a5",
+                   "content": "<div style='width: 100%; text-align: center;'>$80 K - $110 K</div>"
+                 }
+               },
+               {
+                 "topText": {
+                   "backgroundColor": "#f6b8d0",
+                   "borderColor": "#f6b8d0",
+                   "color": "#FFF",
+                   "content": "<div style='width: 100%; text-align: center;'>Average Basket Value</div>"
+                 },
+                 "bottomText": {
+                   "backgroundColor": "#f9f9f9",
+                   "borderColor": "#f9f9f9",
+                   "color": "#9196a5",
+                   "content": "<div style='width: 100%; text-align: center;'>$65</div>"
+                 }
+               },
+               {
+                 "topText": {
+                   "backgroundColor": "#f6b8d0",
+                   "borderColor": "#f6b8d0",
+                   "color": "#FFF",
+                   "content": "<div style='width: 100%; text-align: center;'>Lifestyle</div>"
+                 },
+                 "bottomText": {
+                   "backgroundColor": "#f9f9f9",
+                   "borderColor": "#f9f9f9",
+                   "color": "#9196a5",
+                   "content": "<div style='width: 100%; text-align: center;'>Trendsetter, Athletic, Social</div>"
+                 }
+               }
+             ]
+           }
+          }
+        }
+      }
+    },
+    "bottomRight": {
+      "backgroundColor": "#FFF",
+      "borderColor": "#e96293",
+      "color": "#fa86ce",
+      "text": "Price Point Analysis",
+      "header": {
+        "backgroundColor": "#f7b7d2",
+        "color": "#FFF",
+        "text": "Price Point Analysis"
+      },
+      "visualization": {
+        "backgroundColor": "#FFF",
+        "component": "DiwoVisualDonutWithToggleComponent",
+        "data": {
+          "toggle": {
+            "isVisible": false
+          },
+          "legend": {
+            "isVisible": true,
+            "text": "{{name}}"
+          },
+          "tooltip": {
+            "hasPercentage": false,
+            "title": "{{name}}"
+          },
+          "attrs": {
+            "radius": 20,
+            "muted": false,
+            "arcOpacity": 0.8
+          },
+          "x1": {
+            "title": "Sales Mix %",
+            "value": "sum",
+            "color": "#81638c",
+            "prefix": "",
+            "sufix": " %",
+            "format": "locale"
+          },
+          "data": [
+            {
+                "id": "donut-35-45",
+                "name": "$35-$45",
+                "color": "#f7b9ce",
+                "x1": 33
+            },
+            {
+                "id": "donut-18-25",
+                "name": "$18-$25",
+                "color": "#f7c9dd",
+                "x1": 27
+            },
+            {
+                "id": "donut-45-60",
+                "name": "$45-$60",
+                "color": "#f9d8e5",
+                "x1": 24
+            },
+            {
+                "id": "donut-25-35",
+                "name": "$35-$45",
+                "color": "#f9ecf2",
+                "x1": 16
+            }
+          ]
+        }
+      }
+    },
+    "mostTopLeft": {
+      "backgroundColor": "#f2d7e3",
+      "borderColor": "#f2d7e3",
+      "image": "/assets/images/gViz/visualizations/diwo-visual-bubble-poet-context/wave.png"
+    },
+    "mostTopRight": {
+      "backgroundColor": "#f2d7e3",
+      "borderColor": "#f2d7e3",
+      "image": "/assets/images/gViz/visualizations/diwo-visual-bubble-poet-context/women.png"
+    },
+    "mostBottomRight": {
+      "backgroundColor": "#f2d7e3",
+      "borderColor": "#f2d7e3",
+      "image": "/assets/images/gViz/visualizations/diwo-visual-bubble-poet-context/circle.png"
+    },
+    "connectors": "#e96293",
+    "smallBubbles": {
+      "backgroundColor": "#f2d7e3",
+      "borderColor": "#f2d7e3"
+    }
+  }
+}

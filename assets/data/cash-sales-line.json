@@ -1,0 +1,144 @@
+
+
+
+
+
+
+[
+  {
+    "id": "enterprise-series",
+    "name": "Enterprise",
+    "colors": {
+      "line": [
+        {
+          "offset": "100%",
+          "color": "#586A6C"
+        },
+        {
+          "offset": "100%",
+          "color": "#586A6C"  
+        }
+      ]
+    },
+    "values": [
+      {
+        "_date": "2016-01-01",
+        "value": 60
+      },
+      {
+        "_date": "2016-04-01",
+        "value": 80
+      },
+      {
+        "_date": "2016-07-01",
+        "value": 60
+      },
+      {
+        "_date": "2016-09-01",
+        "value": 50
+      }
+    ]
+  },
+  {
+    "id": "bags-series",
+    "name": "Bags",
+    "colors": {
+      "line": [
+        {
+          "offset": "100%",
+          "color": "#007AB9"
+        },
+        {
+          "offset": "100%",
+          "color": "#007AB9"
+        }
+      ]
+    },
+    "values": [
+      {
+        "_date": "2016-01-01",
+        "value": 10
+      },
+      {
+        "_date": "2016-04-01",
+        "value": 20
+      },
+      {
+        "_date": "2016-07-01",
+        "value": 50
+      },
+      {
+        "_date": "2016-09-01",
+        "value": 10
+      }
+    ]
+  },
+  {
+    "id": "accessory-series",
+    "name": "Accesories",
+    "colors": {
+      "line": [
+        {
+          "offset": "100%",
+          "color": "#006D62"
+        },
+        {
+          "offset": "100%",
+          "color": "#006D62" 
+        }
+      ]
+    },
+    "values": [
+      {
+        "_date": "2016-01-01",
+        "value": 17
+      },
+      {
+        "_date": "2016-04-01",
+        "value": 38
+      },
+      {
+        "_date": "2016-07-01",
+        "value": 30
+      },
+      {
+        "_date": "2016-09-01",
+        "value": 56
+      }
+    ]
+  },
+  {
+    "id": "jevelry-series",
+    "name": "Jevelry",
+    "colors": {
+      "line": [
+        {
+          "offset": "100%",
+          "color": "#FF7700"
+        },
+        {
+          "offset": "100%",
+          "color": "#FF7700"
+        }
+      ]
+    },
+    "values": [
+      {
+        "_date": "2016-01-01",
+        "value": 30
+      },
+      {
+        "_date": "2016-04-01",
+        "value": 5
+      },
+      {
+        "_date": "2016-07-01",
+        "value": 10
+      },
+      {
+        "_date": "2016-09-01",
+        "value": 13
+      }
+    ]
+  }
+]

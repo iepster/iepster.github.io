@@ -1,0 +1,61 @@
+svg.bar-positive-negative-deviation .chart-wrap {
+
+  .x-grid, .y-grid{
+    stroke-dasharray: 2 2;
+    stroke: #706f6f;
+  }
+
+  .x.axis, .y.axis {
+    text {
+      font-size: 8px;
+      font-weight: 100;
+      letter-spacing: 0px;
+      fill: #706f6f;
+      font-family: Roboto, "Helvetica Neue", sans-serif !important;
+    }
+    line {
+      fill: none;
+      stroke-width: 1px;
+      stroke: #d2ecf0;
+      stroke-opacity: 0.8;
+      stroke-dasharray: 0;
+    }
+    path {
+      fill: none;
+      stroke-width: 1px;
+      stroke: #d2ecf0;
+      stroke-opacity: 1;
+    }
+  }
+  .middle-line {
+    stroke-width: 1px;
+    stroke: #d2ecf0;
+    stroke-opacity: 1;
+  }
+  .axis-legend {
+    font-size: 10px;
+    font-weight: 300;
+    letter-spacing: 1px;
+    fill: #706f6f;
+  }
+  .target {
+    fill: none;
+    stroke-width: 1px;
+    stroke: #8C8C8C;
+    stroke-opacity: 1;
+    shape-rendering: crispEdges;
+  }
+  .target-text {
+    fill: #8C8C8C;
+    font-weight: bold;
+    font-size: 10px;
+  }
+  .element-group {
+    cursor: pointer;
+  }
+
+  .tick > text {
+    font-family: Yantramanav Thin;
+  }
+
+}

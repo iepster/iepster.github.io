@@ -1,0 +1,102 @@
+{
+  "title": "Test title",
+  "format": "%",
+  "colors": [
+    {
+      "id": "enterprise",
+      "fill": "#efefef",
+      "gradient": "#efefef",
+      "stroke": "#434343"
+    },
+    {
+      "id": "bags",
+      "fill": "#3eb1d4",
+      "gradient": "#6CD3EA",
+      "stroke": "#219ABF"
+    },
+    {
+      "id": "accessories",
+      "fill": "#3faca6",
+      "gradient": "#66CCC5",
+      "stroke": "#19807A"
+    },
+    {
+      "id": "jewelry",
+      "fill": "#fcc363",
+      "gradient": "#FFD081",
+      "stroke": "#C78C2A"
+    },
+    {
+      "id": "test",
+      "fill": "red",
+      "gradient": "#FFD081",
+      "stroke": "#C78C2A"
+    }
+  ],
+  "data": [
+    {
+      "id": "1q-2016",
+      "name": "1Q 2016",
+      "values": [
+        {
+          "id": "enterprise",
+          "name": "Enterprise",
+          "value": 100,
+          "isWrapper": true
+        },
+        {
+          "id": "bags",
+          "name": "Bags",
+          "value": 40
+        },
+        {
+          "id": "accessories",
+          "name": "Accessories",
+          "value": 20
+        },
+        {
+          "id": "jewelry",
+          "name": "Jewelry",
+          "value": 12
+        },
+        {
+          "id": "test",
+          "name": "testname",
+          "value": 12
+        }
+      ]
+    },
+    {
+      "id": "3q-2016",
+      "name": "1Q 2016",
+      "values": [
+        {
+          "id": "enterprise",
+          "name": "Enterprise",
+          "value": 100,
+          "isWrapper": true
+        },
+        {
+          "id": "bags",
+          "name": "Bags",
+          "value": 40
+        },
+        {
+          "id": "accessories",
+          "name": "Accessories",
+          "value": 20
+        },
+        {
+          "id": "jewelry",
+          "name": "Jewelry",
+          "value": 12
+        },
+        {
+          "id": "test",
+          "name": "testname",
+          "value": 12
+        }
+      ]
+    }
+  ]
+}

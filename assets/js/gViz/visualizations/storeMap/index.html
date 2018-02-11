@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Store Map </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <style>
+        body {
+            background-color: #F3F3F3
+        }
+    </style>
+
+</head>
+
+<body translate="no">
+
+    <div class="chart">
+    </div>
+
+
+    <script>
+        var mapModule = {}
+    </script>
+    <script src="../../../lib/d3.v4.js"></script>
+    <script src="handlers.js"></script>
+    <script src="create.js"></script>
+    <script src="elements.js"></script>
+    <script src="initialize.js"></script>
+    <script src="init.js"></script>
+
+    <!--<script>
+        var chart = module._init()
+            .container('.chart')
+            .data('test')
+            .run()
+    </script>-->
+
+    <script>
+        d3.json("states.json", function (states) {
+            d3.json('stores.json', function (err, stores) {
+
+                var chart = mapModule._init()
+                    .container('.chart')
+                    .data({
+                        map: states,
+                        stores: stores
+                    })
+                    .run()
+
+            })
+        });
+    </script>
+
+</body>
+
+</html>

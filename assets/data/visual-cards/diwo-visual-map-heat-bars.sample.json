@@ -1,0 +1,85 @@
+{
+  "title": "Map Heat Bars",
+  "mode": "heat",
+  "legend": {
+    "isVisible": false
+  },
+  "tooltip": {
+    "heat": {
+      "title": [ "{{properties.name}}" ],
+      "body": [ "<span class='metric'># Accounts</span><span class='number'>{{value}}</span>" ]
+    },
+    "bars": {
+      "title": [ "{{name}}" ],
+      "body": [ "<span class='metric'># Accounts</span><span class='number'>{{value}}</span>" ]
+    }
+  },
+  "tooltipTable": {
+    "heat": {
+      "title": [ "{{properties.name}}" ],
+      "body": [ "<span class='metric'># Accounts</span><span class='number'>{{value}}</span>" ]
+    },
+    "bars": {
+      "title": [ "{{name}}" ],
+      "body": [ "<span class='metric'># Accounts</span><span class='number'>{{value}}</span>" ]
+    }
+  },
+  "attrs": {
+    "legendBins": 4,
+    "legendColor": "#425d64",
+    "legendText": "Amount: {{amount}} | Sum: {{sum}} | Range: {{min}} - {{max}}",
+    "legendBorderColor": "#8bc3d2",
+    "width": "100%",
+    "height": "100%"
+  },
+  "bars": {
+    "mapColor": "#8BC3D2",
+    "mapStrokeColor": "#FFF",
+    "mapOpacity": "0.7",
+    "barWidth": "5",
+    "barMaxHeight": 40,
+    "bottomBarHeight": 5,
+    "bottomBarColor": "#596A6D",
+    "barColor": "#428DA1",
+    "prefix": "",
+    "sufix": "",
+    "format": "",
+    "type": "number"
+  },
+  "heat": {
+    "colors": ["#8BC3D2"],
+    "shapeId": "abbr",
+    "prefix": "",
+    "sufix": "",
+    "format": "locale",
+    "type": "number"
+  },
+  "data": {
+    "heat": [
+      {
+        "id": "al",
+        "value": "100"
+      },
+      {
+        "id": "ar",
+        "value": "200"
+      }
+    ],
+    "bars": [
+      {
+        "id": "store-1",
+        "name": "Alabama",
+        "lat": 32.806671,
+        "lon": -86.79113,
+        "value": "100"
+      },
+      {
+        "id": "store-2",
+        "name": "Arizona",
+        "lat": 33.729759,
+        "lon": -111.431221,
+        "value": "200"
+      }
+    ]
+  }
+}

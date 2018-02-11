@@ -1,0 +1,5 @@
+{ "id": "category-WATER", "name": "WATER", "type": "category", "shape": "rect", "color": "#0b3543", "strokeColor": "#0b3543" },
+{ "id": "category-POP SINGLES", "name": "POP SINGLES, ", "type": "category", "shape": "rect", "color": "#0b3543", "strokeColor": "#0b3543" },
+{ "id": "category-POP 12 PACKS", "name": "POP 12 PACKS, ", "type": "category", "shape": "rect", "color": "#0b3543", "strokeColor": "#0b3543" },
+{ "id": "category-JUICE", "name": "JUICE, ", "type": "category", "shape": "rect", "color": "#0b3543", "strokeColor": "#0b3543" },
+{ "id": "category-WATER", "name": "WATER, ", "type": "category", "shape": "rect", "color": "#0b3543", "strokeColor": "#0b3543" },

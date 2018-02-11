@@ -1,0 +1,16 @@
+{
+  "data": {
+    "backgroundColor": "#f3f3f3",
+    "tableBorderColor": "#f3f3f3",
+    "borderColor": "#afb0b0",
+    "color": "#000",
+    "textAlign": "center",
+    "data": [
+      [
+        "<div style='height: 77px; padding: 20px 0px 0px; position: relative;'><img src='/assets/images/pink-bag.png' style='display: block; width: 30px; margin: 0px auto 10px;' /><span style='width: 100%; font-weight: 300; font-size: 12px;'>Min</span><span style='position:absolute; display:block; width: 100%; top: 37px; font-size: 11px; font-family: Bebas; left: 0px; color: #FFF;'>$25</span></div>",
+        "<div style='height: 77px; padding: 15px 0px 0px; position: relative;'><img src='/assets/images/pink-bag.png' style='display: block; width: 35px; margin: 0px auto 10px;' /><span style='width: 100%; font-weight: 300; font-size: 12px;'>Avg</span><span style='position:absolute; display:block; width: 100%; top: 36px; font-size: 12px; font-family: Bebas; left: 0px; color: #FFF;'>$32</span></div>",
+        "<div style='height: 77px; padding: 10px 0px 0px; position: relative;'><img src='/assets/images/pink-bag.png' style='display: block; width: 40px; margin: 0px auto 10px;' /><span style='width: 100%; font-weight: 300; font-size: 12px;'>Max</span><span style='position:absolute; display:block; width: 100%; top: 34px; font-size: 13px; font-family: Bebas; left: 0px; color: #FFF;'>$65</span></div>"
+      ]
+    ]
+  }
+}

@@ -1,0 +1,121 @@
+{
+  "data": {
+    "backgroundColor": "#fdebf4",
+    "leftData": {
+      "data": {
+        "backgroundColor": "#fdebf4",
+        "bubble": {
+          "backgroundColor": "#f7b7d2",
+          "borderColor": "#EC75A2",
+          "color": "#FFF",
+          "content": "<img src='/assets/images/gViz/visualizations/diwo-visual-vs-bubble-cross-sell-up-sell/wew_bra_icon.png' style='height: 30px; display: block;     margin: 20px auto 0px;' />"
+        },
+        "left": {
+          "borderColor": "#EC75A2",
+          "items": [
+            {
+              "topText": {
+                "backgroundColor": "#f6b8d0",
+                "borderColor": "#f6b8d0",
+                "color": "#FFF",
+                "content": "Sales Mix %"
+              },
+              "bottomText": {
+                "backgroundColor": "#fff",
+                "borderColor": "#fff",
+                "color": "#9196a5",
+                "content": "9.82%"
+              }
+            },
+            {
+              "topText": {
+                "backgroundColor": "#f6b8d0",
+                "borderColor": "#f6b8d0",
+                "color": "#FFF",
+                "content": "Selling Frequency"
+              },
+              "bottomText": {
+                "backgroundColor": "#fff",
+                "borderColor": "#fff",
+                "color": "#9196a5",
+                "content": "Every 12 Transactions"
+              }
+            }
+          ]
+        }
+      }
+    },
+    "rightData": {
+      "data": {
+        "backgroundColor": "#fdebf4",
+        "bubble": {
+          "backgroundColor": "#f7b7d2",
+          "borderColor": "#EC75A2",
+          "color": "#FFF",
+          "content": "<img src='/assets/images/gViz/visualizations/diwo-visual-vs-bubble-cross-sell-up-sell/woman_pink_medium.png' style='height: 40px; display: block; margin: 14px auto 0px;' />"
+        },
+        "right": {
+          "borderColor": "#EC75A2",
+          "items": [
+            {
+              "topText": {
+                "backgroundColor": "#f6b8d0",
+                "borderColor": "#f6b8d0",
+                "color": "#FFF",
+                "content": "Age"
+              },
+              "bottomText": {
+                "backgroundColor": "#fff",
+                "borderColor": "#fff",
+                "color": "#9196a5",
+                "content": "21 yrs - 25 yrs"
+              }
+            },
+            {
+              "topText": {
+                "backgroundColor": "#f6b8d0",
+                "borderColor": "#f6b8d0",
+                "color": "#FFF",
+                "content": "Income"
+              },
+              "bottomText": {
+                "backgroundColor": "#fff",
+                "borderColor": "#fff",
+                "color": "#9196a5",
+                "content": "$80 K - $110 K"
+              }
+            },
+            {
+              "topText": {
+                "backgroundColor": "#f6b8d0",
+                "borderColor": "#f6b8d0",
+                "color": "#FFF",
+                "content": "Average Basket Value"
+              },
+              "bottomText": {
+                "backgroundColor": "#fff",
+                "borderColor": "#fff",
+                "color": "#9196a5",
+                "content": "$65"
+              }
+            },
+            {
+              "topText": {
+                "backgroundColor": "#f6b8d0",
+                "borderColor": "#f6b8d0",
+                "color": "#FFF",
+                "content": "Lifestyle"
+              },
+              "bottomText": {
+                "backgroundColor": "#fff",
+                "borderColor": "#fff",
+                "color": "#9196a5",
+                "content": "Trendsetter, Athletic, Social"
+              }
+            }
+          ]
+        }
+      }
+    }
+  }
+}
