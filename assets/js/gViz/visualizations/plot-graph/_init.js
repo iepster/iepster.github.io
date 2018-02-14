@@ -28,7 +28,7 @@ module.exports = function () {
   let container = null;
   var colors = { main: shared.helpers.colors.main };
   let data = [];
-  let margin = { top: 5, right: 2, bottom: 35, left: 0 };
+  let margin = { top: 10, right: 2, bottom: 35, left: 0 };
 
   // Validate attributes
   let validate = function (step) {
