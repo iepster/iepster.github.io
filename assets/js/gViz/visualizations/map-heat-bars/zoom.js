@@ -157,7 +157,9 @@ module.exports = function () {
 
           // Reset visualization zoom
           _var.container.d3.closest('.gViz-outer-wrapper').select("[data-action='reset']").on('click', function(d) {
-            _var.wrap.transition().call(_var.zoom_handler.transform, d3.zoomIdentity);
+            _var.zoomTransform = { k: 1, x: _var.margin.left, y: _var.margin.right };
+            _var.wrap.transition()
+              .call(_var.zoom_handler.transform, d3.zoomIdentity.translate(_var.zoomTransform.x, _var.zoomTransform.y).scale(_var.zoomTransform.k));
           });
 
           // Bind zoom in

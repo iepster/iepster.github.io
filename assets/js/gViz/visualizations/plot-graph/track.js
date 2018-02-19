@@ -52,7 +52,7 @@ module.exports = function () {
             .attr("transform", function(d) { return `translate(${_var.x(+d.x)},${_var.y(+d.y)})`; })
             .attr('r', function(d) { return _var.z(+d.z); })
             .attr('opacity', _var.clicked == null ? 0 : 1)
-            .transition().delay(200).duration(800)
+            .transition().delay(50).duration(800)
               .style('opacity', 1)
 
           // Event bindings
@@ -110,7 +110,7 @@ module.exports = function () {
               return path;
 
             }).style('opacity', _var.clicked == null ? 0 : 1)
-            .transition().delay(200).duration(800)
+            .transition().delay(50).duration(800)
               .style('opacity', 1)
 
           break;

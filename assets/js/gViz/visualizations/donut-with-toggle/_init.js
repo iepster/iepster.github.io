@@ -26,6 +26,7 @@ module.exports = function () {
   let data = [];
   let margin = { top: 10, right: 10, bottom: 10, left: 10};
   let metric = "x1";
+  let screenMode = "desktop";
 
   // Validate attributes
   let validate = function (step) {
@@ -72,6 +73,7 @@ module.exports = function () {
             .data(data)
             .margin(margin)
             .metric(metric)
+            .screenMode(screenMode)
             .run();
           break;
 
@@ -122,7 +124,7 @@ module.exports = function () {
   };
 
   // Expose global variables
-  ['_id', '_var', 'action', 'animation','container', 'colors', 'data', 'margin', 'metric'].forEach(function (key) {
+  ['_id', '_var', 'action', 'animation','container', 'colors', 'data', 'margin', 'metric', 'screenMode'].forEach(function (key) {
 
     // Attach variables to validation function
     validate[key] = function (_) {

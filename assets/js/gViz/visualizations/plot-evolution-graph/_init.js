@@ -23,6 +23,7 @@ module.exports = function () {
     xScale: require('./x-scale.js'),
     yScale: require('./y-scale.js'),
     zScale: require('./z-scale.js'),
+    zoom: require('./zoom.js')
   };
 
   // Get attributes values
@@ -53,6 +54,7 @@ module.exports = function () {
       case 'xScale':     return data != null && data.data != null && data.data.length > 0;
       case 'yScale':     return data != null && data.data != null && data.data.length > 0;
       case 'zScale':     return data != null && data.data != null && data.data.length > 0;
+      case 'zoom':       return data != null && data.data != null && data.data.length > 0;
       default: return false;
     }
   };
@@ -81,6 +83,7 @@ module.exports = function () {
           main('brush');
           main('values');
           main('elements');
+          main('zoom');
           break;
 
         // Initialize visualization variable
@@ -228,6 +231,16 @@ module.exports = function () {
           // If the brush was created
           if(_var.brush != null) { _var.gT.select(".brush").call(_var.brush.move, [0, _var.tAxis.totalWidth]); }
 
+          break;
+
+        // Set zoom case
+        case 'zoom':
+
+          // Creating wrappers
+          _var = components.zoom()
+            ._var(_var)
+            .components(components)
+            .run();
           break;
 
         // Show misc

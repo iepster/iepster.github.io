@@ -85,6 +85,9 @@ module.exports = function () {
             _var.width -= _var.margin.left;
           }
 
+          // Store _y scale
+          if(_var._y == null) { _var._y = _var.y; }
+
           break;
       }
     }

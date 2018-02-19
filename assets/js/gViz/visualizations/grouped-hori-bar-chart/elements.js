@@ -87,6 +87,46 @@ module.exports = function () {
 
             });
 
+          // Element canvas
+          var textElements = _var.g.selectAll(".chart-text-elements").data(["chart-text-elements"]);
+          textElements.exit().remove();
+          textElements = textElements.enter().append("g").attr("class", "chart-text-elements").merge(textElements);
+
+          // Create textGroups
+          var textGroups = textElements.selectAll(".element-text").data(_data, function (d) { return d.y; });
+          textGroups.exit().remove();
+          textGroups = textGroups.enter().append("g").attr("class", "element-text").merge(textGroups);
+
+          // For each element in group
+          textGroups
+            .attr("transform", function (d) { return `translate(0,${_var.y(d.y) + _var.zoomTransform.y})`; })
+            .each(function (e, i) {
+
+              // Draw Texts
+              var textValuesObj = {};
+              var textValues = e.values.filter(function(d) { var flag = textValuesObj[d.y] == null; textValuesObj[d.y] = true; return flag; });
+              var texts = d3.select(this).selectAll("text.x-in-text").data(((e.name == null || e.name === "") && _var.hasInnerLabels === false ? textValues : []), function(d) { return d.y; });
+              texts.exit().remove();
+              texts = texts.enter().append('text').attr("class", "x-in-text").merge(texts);
+              texts
+                .attr("x", -10)
+                .attr("y", function(d) { return (_var.yIn(d.y) + _var.yIn.bandwidth()/2) * _var.zoomTransform.k; })
+                .attr('text-anchor', 'end')
+                .text(function(d) { return d.name; })
+
+              // Draw inner labels (text above bars)
+              var innerLabels = d3.select(this).selectAll("text.y-in-text").data((_var.hasInnerLabels === true ? e.values : []), function(d) { return d.y; });
+              innerLabels.exit().remove();
+              innerLabels = innerLabels.enter().append('text').attr("class", "y-in-text").merge(innerLabels);
+              innerLabels
+                .attr("y", function(d) { return (_var.yIn(d.y) + _var.yIn.bandwidth()/2 - _var.barHeight/2) * _var.zoomTransform.k - 7; })
+                .attr('x', 10)
+                .attr('text-anchor', 'start')
+                .transition()
+                  .text(function(d) { return d.name; })
+
+            });
+
           // Draw Background clip Path
           _var.bgClip = _var.defs.selectAll(".bg-clip").data(["bg-clip"]);
           _var.bgClip.exit().remove();

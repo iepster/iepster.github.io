@@ -43,10 +43,16 @@ module.exports = function () {
           // Define y axis
           _var.yAxis = d3.axisLeft(_var.y).ticks(bins).tickPadding(10).tickFormat(_var.yFormat);
 
-          // Update margin left and width
-          _var.width += _var.margin.left;
-          _var.margin.left = 5 + d3.max(_var.yAxis.scale().ticks().map(function(d) { return shared.helpers.text.getSize(_var.yFormat(d)); }));
-          _var.width -= _var.margin.left;
+          // Adjust width and margin based on screenMode
+          if(_var.screenMode === 'portrait' || _var.screenMode === 'portrait-primary' || _var.screenMode === 'portrait-secondary') {
+            _var.width += _var.margin.left;
+            _var.margin.left = 5;
+            _var.width -= _var.margin.left;
+          } else {
+            _var.width += _var.margin.left;
+            _var.margin.left = 5 + d3.max(_var.yAxis.scale().ticks().map(function(d) { return shared.helpers.text.getSize(_var.yFormat(d)); }));
+            _var.width -= _var.margin.left;
+          }
 
           // Update x for d3 zoom transform
           _var.zoomTransform.x = _var.margin.left;

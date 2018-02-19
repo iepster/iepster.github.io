@@ -45,6 +45,9 @@ module.exports = function () {
           // Id for shadows
           _var.shadowId = `vis-shadow-${Math.floor(Math.random() * ((1000000000 - 5) + 1)) + 5}`
 
+          // Set zoom transform
+          if(_var.zoomTransform == null) { _var.zoomTransform = { k: 1, x: _var.margin.left, y: _var.margin.top }; }
+
            // Get container
           _var.container = {
             selector: container,
@@ -61,29 +64,8 @@ module.exports = function () {
 
           // Initialize line constructor
           _var.lineConstructor = d3.line()
-            .x(function (d) { return _var.x(d.x) + _var.x.bandwidth()/2; })
+            .x(function (d) { return _var.x(d.x) + _var.x.bandwidth()/2 + _var.zoomTransform.x; })
             .y(function (d) { return _var.yRight(+d.yLine); });
-
-          // Get Y function
-          _var.getY = function(y) {
-            if(_var.yLeftBounds[0] >= 0) { return _var.yLeft(+y); }
-            else if (_var.yLeftBounds[1] < 0) { return _var.yLeft(_var.yLeftBounds[1]); }
-            else { return +y >= 0 ? _var.yLeft(+y) : _var.yLeft(0); }
-          }
-
-          // Get Y function
-          _var.getYRight = function(y) {
-            if(_var.yRightBounds[0] >= 0) { return _var.yRight(+y); }
-            else if (_var.yRightBounds[1] < 0) { return _var.yRight(_var.yRightBounds[1]); }
-            else { return +y >= 0 ? _var.yRight(+y) : _var.yRight(0); }
-          }
-
-          // Get Height function
-          _var.getHeight = function(y) {
-            if(_var.yLeftBounds[0] >= 0) { return _var.height - _var.yLeft(+y); }
-            else if (_var.yLeftBounds[1] < 0) { return _var.yLeft(+y); }
-            else { return +y >= 0 ? (_var.yLeft(0) - _var.yLeft(+y)) : (_var.yLeft(+y) - _var.yLeft(0)); }
-          }
 
           break;
       }

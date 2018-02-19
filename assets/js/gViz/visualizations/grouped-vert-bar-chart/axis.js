@@ -44,7 +44,7 @@ module.exports = function () {
               _var.x_axis.selectAll(".tick line").attr('y1', 3)
               _var.x_axis.selectAll(".tick text")
                 .text(function(d) { return _var.nodes[d].name; })
-                .each(function(d) { shared.helpers.text.wrapBySize(d3.select(this), _var.x.bandwidth(), _var.margin.bottom, _var.xMaxLines); })
+                .each(function(d) { shared.helpers.text.wrapBySize(d3.select(this), _var.x.bandwidth()*0.9, _var.margin.bottom, _var.xMaxLines); })
 
               // Create and update Y axis
               _var.y_axis = _var.gClip.selectAll(".y.axis").data(['y']);
@@ -55,6 +55,11 @@ module.exports = function () {
 
               // Remove overlapping tick text
               _var.y_axis.selectAll(".tick text").filter(function(d) { return d === _var.yTarget; }).remove();
+
+              // Remove all text if portrait
+              if(_var.screenMode === 'portrait' || _var.screenMode === 'portrait-primary' || _var.screenMode === 'portrait-secondary') {
+                _var.y_axis.selectAll(".tick text").remove();
+              }
 
               break;
 

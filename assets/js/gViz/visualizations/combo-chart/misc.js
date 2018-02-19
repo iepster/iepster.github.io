@@ -97,8 +97,10 @@ module.exports = function() {
                 var legendStr = "";
 
                 // Add rect for obj
+                legendStr += "<span class='legend-content' >";
                 legendStr += "<span class='rect' style='background-color:"+fillColor+" ; border-top: 2px solid "+strokeColor+";'></span><span class='name'>";
                 legendStr += _var.data.attrs.legend;
+                legendStr += "</span>";
                 legendStr += "</span>";
 
                 // If the legend str wasnt computed, add to legend

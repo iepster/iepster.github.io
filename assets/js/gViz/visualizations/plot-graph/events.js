@@ -53,8 +53,8 @@ module.exports = function () {
                 })
 
               // Get x and y values
-              var x = _var.x(node.parsedX) + (_var.xIsDate || _var.xIsNumber ? 0 : _var.x.bandwidth()/2);
-              var y = _var.y(+node.y);
+              var x = _var._x(node.parsedX) + (_var.xIsDate || _var.xIsNumber ? 0 : _var._x.bandwidth()/2 + _var.zoomTransform.x);
+              var y = _var._y(+node.y);
               var z = _var.z(+node.z);
 
               // Get left and top positions

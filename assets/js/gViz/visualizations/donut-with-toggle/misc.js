@@ -60,9 +60,80 @@ module.exports = function() {
                 .style('display', hasTitle ? 'block' : 'none')
                 .html(_var.data.title)
 
+              /* -- Values wrapper */
+              _var.isLandscape = _var.screenMode === 'landscape' || _var.screenMode === 'landscape-primary' || _var.screenMode === 'landscape-secondary';
+
+              // Create values wrapper
+              var valuesWrapper = _var.container.outerWrapper.selectAll(".gviz-values-wrapper").data(_var.isLandscape ? ["gviz-values-wrapper"] : [], function(d) { return d; });
+              valuesWrapper.exit().remove();
+              valuesWrapper = valuesWrapper.enter().append("div").attr('class', "gviz-values-wrapper").merge(valuesWrapper);
+              valuesWrapper
+                .style('width', '40%')
+                .style('min-width', '110px')
+                .style('height', '120px')
+                .style('line-height', '30px')
+                .style('margin', '0px')
+                .style('padding', '30px 15px 10px')
+                .style('border', '1px solid #eee')
+                .style('border-right', 'none')
+                .style('border-top', 'none')
+                .style('overflow', 'hidden')
+                .style('color', '#666')
+                .style('font-size', '13px')
+                .style('z-index', "1005")
+                .style('position', 'absolute')
+                .style('right', "0px")
+                .style('display', _var.isLandscape ? 'block' : 'none')
+                .style('top', function(d) { return hasTitle ? "30px" : "0px"; })
+                .each(function(d) {
+
+                  // Create value element on right side of landscape mode
+                  _var.landscapeValue = d3.select(this).selectAll(".gviz-value").data(["gviz-value"], function(d) { return d; });
+                  _var.landscapeValue.exit().remove();
+                  _var.landscapeValue = _var.landscapeValue.enter().insert('div', ":first-child").attr('class', "gviz-value").merge(_var.landscapeValue);
+                  _var.landscapeValue
+                    .style('width', '100%')
+                    .style('height', '40px')
+                    .style('line-height', '40px')
+                    .style('overflow', 'hidden')
+                    .style('text-overflow', 'ellipsis')
+                    .style('white-space', 'nowrap')
+                    .style('font-family', 'Bebas')
+                    .style('font-weight', 'bold')
+                    .style('font-size', '22px')
+                    .style('text-align', 'center')
+                    .text(function(d) { return "$288M"; })
+
+                  // Create name element on right side of landscape mode
+                  _var.landscapeName = d3.select(this).selectAll(".gviz-name").data(["gviz-name"], function(d) { return d; });
+                  _var.landscapeName.exit().remove();
+                  _var.landscapeName = _var.landscapeName.enter().append('div').attr('class', "gviz-name").merge(_var.landscapeName);
+                  _var.landscapeName
+                    .style('width', '100%')
+                    .style('height', '30px')
+                    .style('line-height', '30px')
+                    .style('overflow', 'hidden')
+                    .style('text-overflow', 'ellipsis')
+                    .style('white-space', 'nowrap')
+                    .style('font-family', "'Yantramanav', sans-serif")
+                    .style('font-weight', '300')
+                    .style('font-size', '14px')
+                    .style('text-align', 'center')
+                    .text(function(d) { return "Total Sales Value"; })
+
+                });
+
+
               /* -- Legend -- */
               var hasLegend = _var.data.legend != null && _var.data.legend.isVisible != null && _var.data.legend.isVisible === true;
               var legendPos = hasLegend && (["top","left","right","bottom"].indexOf(_var.data.legend.position) !== -1) ? _var.data.legend.position : "top";
+
+              // Adjust legendPos based on screenMode
+              if(_var.screenMode === 'portrait' || _var.screenMode === 'portrait-primary' || _var.screenMode === 'portrait-secondary') {
+                legendPos = 'top';
+              } else if(_var.isLandscape) {
+                legendPos = 'right';
+              }
 
               // Initialize string
               var string = "";
@@ -100,13 +171,13 @@ module.exports = function() {
               legendWrapper.exit().remove();
               legendWrapper = legendWrapper.enter().append("div").attr('class', "gviz-legend-wrapper").merge(legendWrapper);
               legendWrapper
-                .style('width', legendPos === "top" || legendPos === "bottom" ? '100%' : '20%')
+                .style('width', legendPos === "top" || legendPos === "bottom" ? '100%' : '40%')
                 .style('min-width', '110px')
-                .style('height', 'auto')
+                .style('height', _var.isLandscape ? 'calc(100% - '+(hasTitle ? '150' : '120')+'px)' : 'auto')
                 .style('max-height', legendPos === 'top' && legendPos === 'bottom' ? '60px' : '100%')
                 .style('line-height', '30px')
-                .style('margin', '0px 0px 5px 0px')
-                .style('padding', '0px 10px')
+                .style('margin', _var.isLandscape ? '0px' : '0px 0px 5px 0px')
+                .style('border-left', '1px solid #eee')
                 .style('overflow', 'hidden')
                 .style('color', '#666')
                 .style('font-size', '13px')
@@ -115,6 +186,7 @@ module.exports = function() {
                 .style('left', legendPos === 'right' ? 'unset' : "0px")
                 .style('right', legendPos === 'right' ? "0px" : 'unset')
                 .style('display', hasLegend ? 'block' : 'none')
+                .style('padding', _var.isLandscape ? '10px 20px !important' : '0px 10px')
                 .each(function(d) {
 
                   // Set margin left and display style
@@ -139,13 +211,13 @@ module.exports = function() {
               // Update legend top position
               legendWrapper
                 .style('top', function() {
-                  if(legendPos === 'bottom') { return 'unset'; }
+                  if(legendPos === 'bottom' || _var.isLandscape) { return 'unset'; }
                   else if(legendPos === 'top') { return hasTitle ? "35px" : "0px"; }
                   else {
                     var legendHeight = legendWrapper.node().getBoundingClientRect().height + 5;
                     return ((_var.container.outerWrapperClientRect.height - _var.container.dimensions.title) >= _var.container.dimensions.legendHeight ?  (_var.container.outerWrapperClientRect.height/2 - _var.container.dimensions.title - legendHeight/2) : (hasTitle ? "35px" : "0px")) + 'px'; }
                 })
-                .style('bottom', legendPos === 'bottom' ? "0px" : 'unset')
+                .style('bottom', legendPos === 'bottom' || _var.isLandscape ? "0px" : 'unset')
 
               // Update container _id, height and client bound rect
               _var.container.d3
@@ -185,7 +257,7 @@ module.exports = function() {
               } else { _var.container.d3.selectAll("h5").remove(); }
 
               // Set donut size
-              _var.size   = d3.min([_var.width, _var.height]) / 2;
+              _var.size = d3.min([_var.width, _var.height]) / 2;
 
               // Initialize arc function
               _var.arc = d3.arc()

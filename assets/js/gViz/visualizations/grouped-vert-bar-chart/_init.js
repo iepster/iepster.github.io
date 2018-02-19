@@ -30,8 +30,9 @@ module.exports = function () {
   let container = null;
   var colors = { main: shared.helpers.colors.main };
   let data = [];
-  let margin = { top: 5, right: 1, bottom: 30, left: 70 };
+  let margin = { top: 5, right: 5, bottom: 30, left: 70 };
   let hover = null;
+  let screenMode = 'desktop';
 
   // Validate attributes
   let validate = function (step) {
@@ -89,6 +90,7 @@ module.exports = function () {
             .data(data)
             .hover(hover)
             .margin(margin)
+            .screenMode(screenMode)
             .run();
 
           break;
@@ -188,7 +190,7 @@ module.exports = function () {
   };
 
   // Expose global variables
-  ['_id', '_var', 'action', 'animation', 'container', 'colors', 'data', 'margin', 'hover'].forEach(function (key) {
+  ['_id', '_var', 'action', 'animation', 'container', 'colors', 'data', 'margin','hover','screenMode'].forEach(function (key) {
 
     // Attach variables to validation function
     validate[key] = function (_) {

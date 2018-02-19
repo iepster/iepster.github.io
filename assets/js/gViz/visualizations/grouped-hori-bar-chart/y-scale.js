@@ -115,6 +115,7 @@ module.exports = function () {
           }
 
           // Set y and yIn domain
+          _var.yBounds = [yDomain[0], yDomain[yDomain.length-1]];
           _var.y.domain(yDomain);
           _var.yIn.domain(yInDomain).range([0,_var.y.bandwidth()]);
 
@@ -124,10 +125,16 @@ module.exports = function () {
           // Get maximum size of text values object for margin left calculation
           var mLeftSize = d3.max(Object.keys(textValuesObj).map(function(k) { return shared.helpers.text.getSize(k); }));
 
-          // Update margin left and width
-          _var.width += _var.margin.left;
-          _var.margin.left = 5 + (mLeftSize == null || isNaN(+mLeftSize) ? 0 : +mLeftSize);
-          _var.width -= _var.margin.left;
+          // Adjust width and margin based on screenMode
+          if(_var.screenMode === 'portrait' || _var.screenMode === 'portrait-primary' || _var.screenMode === 'portrait-secondary') {
+            _var.width += _var.margin.left;
+            _var.margin.left = 5;
+            _var.width -= _var.margin.left;
+          } else {
+            _var.width += _var.margin.left;
+            _var.margin.left = 5 + (mLeftSize == null || isNaN(+mLeftSize) ? 0 : +mLeftSize);
+            _var.width -= _var.margin.left;
+          }
 
           break;
       }

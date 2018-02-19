@@ -106,6 +106,9 @@ module.exports = function () {
           _var.margin.left = 5 + d3.max(_var.yAxis.scale().ticks().map(function(d) { return shared.helpers.text.getSize(_var.yFormat(d)); }));
           _var.width -= _var.margin.left;
 
+          // Store _x scale
+          if(_var._y == null) { _var._y = _var.y; }
+
           break;
       }
     }

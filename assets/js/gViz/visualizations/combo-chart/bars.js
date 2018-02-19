@@ -37,7 +37,7 @@ module.exports = function() {
           var nodeSel = d3.select(nodeObj);
 
           // Set bar width
-          _var.barWidth = _var.x.bandwidth() > 50 ? 50 : _var.x.bandwidth();
+          _var.barWidth = _var.x.bandwidth() > 30 ? 30 : _var.x.bandwidth();
 
           // Draw bars
           var bars = nodeSel.selectAll("rect.bar").data(node.yBar != null && !isNaN(+node.yBar) ? [node] : [], function(d) { return d.x; });

@@ -37,22 +37,22 @@ module.exports = function () {
             case 'create':
 
               // Create and update X axis
-              _var.x_axis = _var.g.selectAll(".x.axis").data(['x']);
+              _var.x_axis = _var.gXClip.selectAll(".x.axis").data(['x']);
               _var.x_axis.exit().remove();
               _var.x_axis = _var.x_axis.enter().append('g').attr("class", "x axis").merge(_var.x_axis);
               _var.x_axis.call(_var.xAxis.tickSize(-_var.height)).attr("transform", 'translate(0,' + _var.height + ')')
               _var.x_axis.selectAll(".tick line").attr('y1', 3)
-              _var.x_axis.selectAll(".tick text")
-                .attr('x', function(d, i) {
-                  if(i === _var.x_axis.selectAll(".tick text").size()-1) { return -(this.getBBox().width/2) + _var.margin.right; }
-                  else { return 0; }
-                })
+              // _var.x_axis.selectAll(".tick text")
+              //   .attr('x', function(d, i) {
+              //     if(i === _var.x_axis.selectAll(".tick text").size()-1) { return -(this.getBBox().width/2) + _var.margin.right; }
+              //     else { return 0; }
+              //   })
 
               // Remove overlapping tick text
               _var.x_axis.selectAll(".tick text").filter(function(d) { return d === _var.xTarget; }).remove();
 
               // Create and update Y axis
-              _var.y_axis = _var.g.selectAll(".y.axis").data(['y']);
+              _var.y_axis = _var.gYClip.selectAll(".y.axis").data(['y']);
               _var.y_axis.exit().remove();
               _var.y_axis = _var.y_axis.enter().append('g').attr("class", "y axis").merge(_var.y_axis);
               _var.y_axis.call(_var.yAxis.tickSize(-_var.width))

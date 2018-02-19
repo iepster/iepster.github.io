@@ -171,7 +171,7 @@ module.exports = function () {
 
             // Get radius
             var isPin = _var.data.bars != null && _var.data.bars.barStyle != null && _var.data.bars.barStyle === 'pin';
-            var r = 5 / _var.getZoomTransform();
+            var r = isPin ? _var.pinRadius(d) : _var.barWidth(d);
             var dr = r*2;
             var x  = 0;
             var y  = isPin ? _var.pinY(d) : _var.barY(d);

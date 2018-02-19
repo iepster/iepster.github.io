@@ -38,7 +38,7 @@ module.exports = function () {
 
 
               // Create and Update ytarget line
-              var yTarget = _var.g.selectAll(".target.y-target").data(_var.yTarget == null ? [] : [_var.yTarget]);
+              var yTarget = _var.gClip.selectAll(".target.y-target").data(_var.yTarget == null ? [] : [_var.yTarget]);
               yTarget.exit().remove();
               yTarget = yTarget.enter().append('line').attr("class", "target y-target").merge(yTarget);
               yTarget
@@ -48,19 +48,20 @@ module.exports = function () {
                 .attr("y2", _var.y(_var.yTarget))
 
               // Create and Update yTarget text
-              var yTargetText = _var.g.selectAll(".target-text.y-target").data(_var.yTarget == null ? [] : [_var.yTarget]);
+              var yTargetText = _var.gClip.selectAll(".target-text.y-target").data(_var.yTarget == null ? [] : [_var.yTarget]);
               yTargetText.exit().remove();
               yTargetText = yTargetText.enter().append('text').attr("class", "target-text y-target").merge(yTargetText);
               yTargetText
                 .style("font-size", '10px')
                 .attr("text-anchor", 'end')
+                .attr("display", _var.screenMode === 'portrait' || _var.screenMode === 'portrait-primary' || _var.screenMode === 'portrait-secondary' ? 'none' : 'block')
                 .attr("x", -10)
                 .attr("y", _var.y(_var.yTarget) + 0.5)
                 .attr("dy", "0.32em")
                 .text(_var.yFormat(_var.yTarget))
 
               // Create and Update xtarget lines
-              var xTarget = _var.g.selectAll(".target.x-target").data(_var.xTarget == null ? [] : [_var.xTarget]);
+              var xTarget = _var.gClip.selectAll(".target.x-target").data(_var.xTarget == null ? [] : [_var.xTarget]);
               xTarget.exit().remove();
               xTarget = xTarget.enter().append('line').attr("class", "target x-target").merge(xTarget);
               xTarget

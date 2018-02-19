@@ -91,7 +91,7 @@ module.exports = function () {
           var node = _var.data[_var.metric];
 
           // Draw center title
-          var centerTitle = _var.g.selectAll("text.center-title").data(["center-title"]);
+          var centerTitle = _var.g.selectAll("text.center-title").data(_var.isLandscape ? [] : ["center-title"], function(d) { return d; });
           centerTitle.exit().remove();
           centerTitle = centerTitle.enter().append('text').attr("class", "center-title").merge(centerTitle);
           centerTitle
@@ -109,7 +109,7 @@ module.exports = function () {
           _var.g.selectAll(".center-image").transition().style('opacity', 0).remove();
 
           // Draw center value
-          var centerValue = _var.g.selectAll("text.center-value").data(["center-value"]);
+          var centerValue = _var.g.selectAll("text.center-value").data(_var.isLandscape ? [] : ["center-value"], function(d) { return d; });
           centerValue.exit().remove();
           centerValue = centerValue.enter().append('text').attr("class", "center-value").merge(centerValue);
           centerValue
@@ -129,7 +129,7 @@ module.exports = function () {
           centerPercentage = centerPercentage.enter().append('text').attr("class", "center-percentage").merge(centerPercentage);
           centerPercentage
             .attr('x', 0)
-            .attr('y', 55)
+            .attr('y', function(d) { return _var.isLandscape ? 0 : 55; })
             .attr('text-anchor', 'middle')
             .style('opacity', 0)
             .style('fill', _var.data[_var.metric].percentageColor != null ? _var.data[_var.metric].percentageColor : "#575757")
@@ -137,6 +137,12 @@ module.exports = function () {
             .text(function(d) { return d; })
             .transition()
               .style('opacity', 1)
+
+          // Set name and value if landscape
+          if(_var.isLandscape && _var.landscapeValue != null && _var.landscapeName != null) {
+            _var.landscapeName.html(_var.data != null && node != null && node.title != null ? node.title : "No Title");
+            _var.landscapeValue.html(_var.data != null && node != null ? node._value : "No value");
+          }
 
           break;
       }

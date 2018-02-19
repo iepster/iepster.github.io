@@ -15,6 +15,7 @@ module.exports = function () {
   let data = [];
   let hover = null;
   let margin = { top: 10, right: 10, bottom: 10, left: 10 };
+  let screenMode = 'desktop';
 
   // Validate attributes
   let validate = function (step) {
@@ -41,6 +42,7 @@ module.exports = function () {
           _var.animation = animation;
           _var.colors = colors;
           _var.margin = margin;
+          _var.screenMode = screenMode;
 
           // Set zoom transform
           if(_var.zoomTransform == null) { _var.zoomTransform = { k: 1, x: _var.margin.left, y: _var.margin.top }; }
@@ -79,7 +81,7 @@ module.exports = function () {
   };
 
   // Expose global variables
-  ['_id', '_var', 'animation', 'container', 'colors', 'data', 'hover', 'margin'].forEach(function (key) {
+  ['_id', '_var', 'animation', 'container', 'colors', 'data', 'hover', 'margin','screenMode'].forEach(function (key) {
 
     // Attach variables to validation function
     validate[key] = function (_) {

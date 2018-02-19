@@ -124,31 +124,6 @@ module.exports = function() {
             .attr("y", function(d) { return _var.yIn(d.y) + _var.yIn.bandwidth()/2 - _var.barHeight/2; })
             .attr('height', _var.barHeight)
 
-          // Draw axis Texts
-          var textValuesObj = {};
-          var textValues = node.values.filter(function(d) { var flag = textValuesObj[d.y] == null; textValuesObj[d.y] = true; return flag; });
-          var texts = nodeSel.selectAll("text.x-in-text").data(((node.name == null || node.name === "") && _var.hasInnerLabels === false ? textValues : []), function(d) { return d.y; });
-          texts.exit().remove();
-          texts = texts.enter().append('text').attr("class", "x-in-text").merge(texts);
-          texts
-            .attr("y", function(d) { return _var.yIn(d.y) + _var.yIn.bandwidth()/2; })
-            .attr('x', -10)
-            .attr('text-anchor', 'end')
-            .transition()
-              .text(function(d) { return d.name; })
-
-          // Draw inner labels (text above bars)
-          var innerLabels = nodeSel.selectAll("text.y-in-text").data((_var.hasInnerLabels === true ? node.values : []), function(d) { return d.y; });
-          innerLabels.exit().remove();
-          innerLabels = innerLabels.enter().append('text').attr("class", "y-in-text").merge(innerLabels);
-          innerLabels
-            .attr("y", function(d) { return _var.yIn(d.y) + _var.yIn.bandwidth()/2 - _var.barHeight/2 - 3; })
-            .attr('x', 10)
-            .attr('text-anchor', 'start')
-            .transition()
-              .text(function(d) { return d.name; })
-
-
           break;
       }
     }

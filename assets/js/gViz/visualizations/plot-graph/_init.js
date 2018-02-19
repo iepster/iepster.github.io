@@ -17,7 +17,8 @@ module.exports = function () {
     style: require('./style.js'),
     xScale: require('./x-scale.js'),
     yScale: require('./y-scale.js'),
-    zScale: require('./z-scale.js')
+    zScale: require('./z-scale.js'),
+    zoom: require('./zoom.js')
   };
 
   // Get attributes values
@@ -43,6 +44,7 @@ module.exports = function () {
       case 'xScale':     return data != null && data.data != null && data.data.length > 0;
       case 'yScale':     return data != null && data.data != null && data.data.length > 0;
       case 'zScale':     return data != null && data.data != null && data.data.length > 0;
+      case 'zoom':       return data != null && data.data != null && data.data.length > 0;
       default: return false;
     }
   };
@@ -67,6 +69,7 @@ module.exports = function () {
           main('create');
           main('axis');
           main('elements');
+          main('zoom');
           break;
 
         // Initialize visualization variable
@@ -149,6 +152,16 @@ module.exports = function () {
 
           // Running
           _var = components.elements()
+            ._var(_var)
+            .components(components)
+            .run();
+          break;
+
+        // Set zoom case
+        case 'zoom':
+
+          // Creating wrappers
+          _var = components.zoom()
             ._var(_var)
             .components(components)
             .run();

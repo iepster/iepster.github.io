@@ -17,7 +17,8 @@ module.exports = function () {
     legend: require('./legend.js'),
     target: require('./target.js'),
     xScale: require('./x-scale.js'),
-    yScale: require('./y-scale.js')
+    yScale: require('./y-scale.js'),
+    zoom: require('./zoom.js')
   };
 
   // Get attributes values
@@ -29,9 +30,10 @@ module.exports = function () {
   var colors = { main: shared.helpers.colors.main };
   let data = [];
   let height = null;
-  let margin = { top: 5, right: 0, bottom: 30, left: 0 };
+  let margin = { top: 5, right: 5, bottom: 30, left: 5 };
   let width = null;
   let hover = null;
+  let screenMode = 'desktop';
 
   // Validate attributes
   let validate = function (step) {
@@ -44,6 +46,7 @@ module.exports = function () {
       case 'legend':     return data != null && data.data != null && data.data.length > 0;
       case 'xScale':     return data != null && data.data != null && data.data.length > 0;
       case 'yScale':     return data != null && data.data != null && data.data.length > 0;
+      case 'zoom':       return data != null && data.data != null && data.data.length > 0;
       default:           return false;
     }
   };
@@ -66,6 +69,7 @@ module.exports = function () {
           main('axis');
           main('elements');
           main('legend');
+          main('zoom');
           break;
 
         // Initialize visualization variable
@@ -82,6 +86,7 @@ module.exports = function () {
             .data(data)
             .height(height)
             .margin(margin)
+            .screenMode(screenMode)
             .width(width)
             .run();
 
@@ -137,6 +142,15 @@ module.exports = function () {
             .run();
           break;
 
+        // Set zoom case
+        case 'zoom':
+
+          // Creating wrappers
+          _var = components.zoom()
+            ._var(_var)
+            .run();
+          break;
+
         // Show legend
         case 'legend':
 
@@ -154,7 +168,7 @@ module.exports = function () {
   };
 
   // Expose global variables
-  ['_id', '_var', 'action', 'animation', 'container', 'colors', 'data', 'height', 'margin', 'width'].forEach(function (key) {
+  ['_id', '_var', 'action', 'animation', 'container', 'colors', 'data', 'height', 'margin', 'screenMode', 'width'].forEach(function (key) {
 
     // Attach variables to validation function
     validate[key] = function (_) {

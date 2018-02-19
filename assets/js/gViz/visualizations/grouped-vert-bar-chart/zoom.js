@@ -60,6 +60,11 @@ module.exports = function () {
               .attr("transform", "translate(" + d3.event.transform.x+","+(_var.height)+")")
               .call(_var.xAxis.scale(_var.x));
 
+            // Update Texts positions and wraps
+            _var.x_axis.selectAll(".tick text")
+              .text(function(d) { return _var.nodes[d].name; })
+              .each(function(d) { shared.helpers.text.wrapBySize(d3.select(this), _var.x.bandwidth()*0.9, _var.margin.bottom, _var.xMaxLines); })
+
             // Set zoom transform
             _var.zoomTransform = d3.event.transform;
 
@@ -67,7 +72,7 @@ module.exports = function () {
 
           // Add zoom capabilities
           _var.zoom_handler = d3.zoom()
-            .scaleExtent([1,10])
+            .scaleExtent([1,3])
             .on("zoom", _var.zoom_actions)
             .on("start", function() { _var.wrap.classed('grabbing', true) })
             .on("end",   function() { _var.wrap.classed('grabbing', false) });

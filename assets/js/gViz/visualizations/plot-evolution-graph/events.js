@@ -47,8 +47,8 @@ module.exports = function () {
               circles.transition().style("filter", function(g) { return g === node ? "url(#"+_var.shadowId+")" : ""; })
 
               // Get x and y values
-              var x = _var.x(+node._values.x);
-              var y = _var.y(+node._values.y);
+              var x = _var._x(+node._values.x);
+              var y = _var._y(+node._values.y);
               var z = _var.z(+node._values.z);
 
               // Get left and top positions

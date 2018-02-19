@@ -50,10 +50,10 @@ module.exports = function () {
 
               // Get x and y values
               var x = _var.getX(node) + _var.getWidth(node)/2;
-              var y = _var.hasWrapper(node.wrap) ? _var.y(node.y) : _var.y(node.parent) + _var.yIn(node.y) + _var.yIn.bandwidth()/2 - _var.barHeight/2;
+              var y = _var.hasWrapper(node.wrap) ? _var.y(node.y) : _var.y(node.parent) + (_var.yIn(node.y) + _var.yIn.bandwidth()/2 - _var.barHeight/2) * _var.zoomTransform.k;
 
               // Get left and top positions
-              var left = _var.wrap.node().getBoundingClientRect().left +_var.margin.left + x;
+              var left = _var.wrap.node().getBoundingClientRect().left + _var.margin.left + x;
               var top  = _var.wrap.node().getBoundingClientRect().top + y + _var.zoomTransform.y;
 
               // Set node color

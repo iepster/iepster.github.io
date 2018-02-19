@@ -59,6 +59,34 @@ module.exports = function () {
 
             });
 
+          // Event bindings
+          elements.selectAll('.bar, .stroke, .wrapper-stroke, .wrapper-bar').on('mouseover', function(e) {
+
+            // Set hovered node
+            _var.hovered = e;
+
+            // Mouseover event
+            components.events()
+              ._var(_var)
+              .action("mouseover")
+              .components(components)
+              .node(e)
+              .run();
+
+          }).on('mouseout', function(e) {
+
+            // Reset hovered node
+            _var.hovered = null;
+
+            // Mouseout event
+            components.events()
+              ._var(_var)
+              .action("mouseout")
+              .components(components)
+              .run();
+
+          });
+
           // Element canvas
           var textElements = _var.g.selectAll(".chart-text-elements").data(["chart-text-elements"]);
           textElements.exit().remove();
@@ -89,35 +117,6 @@ module.exports = function () {
 
             });
 
-
-          // Event bindings
-          elements.selectAll('.bar, .stroke, .wrapper-stroke, .wrapper-bar').on('mouseover', function(e) {
-
-            // Set hovered node
-            _var.hovered = e;
-
-            // Mouseover event
-            components.events()
-              ._var(_var)
-              .action("mouseover")
-              .components(components)
-              .node(e)
-              .run();
-
-          }).on('mouseout', function(e) {
-
-            // Reset hovered node
-            _var.hovered = null;
-
-            // Mouseout event
-            components.events()
-              ._var(_var)
-              .action("mouseout")
-              .components(components)
-              .run();
-
-          });
-
           // Draw Background clip Path
           _var.bgClip = _var.defs.selectAll(".bg-clip").data(["bg-clip"]);
           _var.bgClip.exit().remove();
@@ -134,7 +133,7 @@ module.exports = function () {
                 .style('fill', 'transparent')
                 .attr("x", _var.margin.left)
                 .attr('y', 0)
-                .attr('width', (_var.width + _var.margin.right)  / _var.zoomTransform.k)
+                .attr('width', _var.width)
                 .attr("height", _var.height + _var.margin.bottom + _var.margin.top);
 
             });

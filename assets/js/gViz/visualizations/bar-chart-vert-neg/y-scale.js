@@ -73,12 +73,16 @@ module.exports = function () {
 
           // Display y axis
           if(_var.data.y != null && _var.data.y.isVisible !== false) {
-
-            // Update margin left and width
             _var.width += _var.margin.left;
             _var.margin.left = 5 + d3.max(_var.yAxis.scale().ticks().map(function(d) { return shared.helpers.text.getSize(_var.yFormat(d)); }));
             _var.width -= _var.margin.left;
+          }
 
+          // Adjust width and margin based on screenMode
+          if(_var.screenMode === 'portrait' || _var.screenMode === 'portrait-primary' || _var.screenMode === 'portrait-secondary') {
+            _var.width += _var.margin.left;
+            _var.margin.left = 5;
+            _var.width -= _var.margin.left;
           }
 
           break;
