@@ -82,8 +82,8 @@ module.exports = function () {
           main('axis');
           main('brush');
           main('values');
-          main('elements');
           main('zoom');
+          main('elements');
           break;
 
         // Initialize visualization variable

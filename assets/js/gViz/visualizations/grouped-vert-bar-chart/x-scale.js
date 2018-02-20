@@ -95,7 +95,7 @@ module.exports = function () {
           _var.calcWidth = _var.width > _var.calcWidth ? _var.width : _var.calcWidth;
 
           // Define scales
-          _var.x = d3.scaleBand().range([0, _var.calcWidth]).paddingInner(0.05).paddingOuter(0.05);
+          _var.x = _var.data.data.length === 1 ? d3.scaleBand().range([0, _var.calcWidth]).padding(0) : d3.scaleBand().range([0, _var.calcWidth]).paddingInner(0.2).paddingOuter(0.1);
           _var.xIn = _var.data.data.length === 1 ? d3.scaleBand().padding(0.1) : d3.scaleBand().paddingInner(0.05).paddingOuter(1);
 
           // Initialize domains

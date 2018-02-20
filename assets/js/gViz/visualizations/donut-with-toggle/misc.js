@@ -206,7 +206,7 @@ module.exports = function() {
 
               // Set legend dimension
               _var.container.dimensions.legendHeight = hasLegend && (legendPos === 'top' || legendPos === 'bottom') ? (legendWrapper.node().getBoundingClientRect().height + 5) : 0;
-              _var.container.dimensions.legendWidth = hasLegend && (legendPos === 'top' || legendPos === 'bottom') ?  0 : (legendWrapper.node().getBoundingClientRect().width);
+              _var.container.dimensions.legendWidth = hasLegend && (legendPos === 'top' || legendPos === 'bottom') ?  0 : (_var.isLandscape ? valuesWrapper.  node().getBoundingClientRect().width : legendWrapper.node().getBoundingClientRect().width);
 
               // Update legend top position
               legendWrapper

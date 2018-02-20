@@ -8,7 +8,6 @@ module.exports = function () {
 
   // Get attributes values
   var _var = null;
-  var components = {};
 
   // Validate attributes
   var validate = function (step) {
@@ -33,21 +32,14 @@ module.exports = function () {
           // Zoom functions
           _var.zoom_actions = function(){
 
-            if (d3.event != null && d3.event.transform != null) {
+            // Fix y transformation
+            d3.event.transform.y = _var.margin.top;
 
-              // Update X transform based on data bounds
-              if((_var.width * d3.event.transform.k) + d3.event.transform.x < _var.width) {
-                d3.event.transform.x = -(_var.width * d3.event.transform.k) + (_var.width);
-              } else if(d3.event.transform.x > 0) {
-                d3.event.transform.x = 0;
-              }
-
-              // Update Y transform based on data bounds
-              if((_var.height * d3.event.transform.k) + d3.event.transform.y < _var.height + _var.margin.top) {
-                d3.event.transform.y = -(_var.height * d3.event.transform.k) + (_var.height + _var.margin.top);
-              } else if(d3.event.transform.y > _var.margin.top) {
-                d3.event.transform.y = _var.margin.top;
-              }
+            if((_var.width * d3.event.transform.k) + d3.event.transform.x < _var.width) {
+              d3.event.transform.x = -(_var.width * d3.event.transform.k) + _var.width;
+            } else if(d3.event.transform.x > 0) {
+              d3.event.transform.x = 0;
+            }
 
               // Update X Scale
 
@@ -69,20 +61,12 @@ module.exports = function () {
                   .call(_var.xAxis.scale(_var._x));
               }
 
-              // Update Y Scale and axis based on its format
-              _var._y = d3.event.transform.rescaleY(_var.y);
-              _var.y_axis.call(_var.yAxis.scale(_var._y));
+            // Set zoom transform
+            _var.zoomTransform = d3.event.transform;
 
-              _var.gE.selectAll(".chart-elements .element-group")
-                .attr("transform", function (d) {
-                  var x = _var._x(d.parsedX) + (_var.xIsDate || _var.xIsNumber ? 0 : _var._x.bandwidth()/2 + d3.event.transform.x);
-                  return `translate(${x},${_var._y(+d.y)})`;
-                })
-
-              // Set zoom transform
-              _var.zoomTransform = d3.event.transform;
-
-            }
+            // Lines and points
+            _var.g.selectAll(".chart-elements .element-group .line").attr("d", function (d) { return _var.lineConstructor(d.values); })
+            _var.g.selectAll(".chart-elements .element-group .point").attr("d", _var.pointPath)
 
           }
 
@@ -98,7 +82,7 @@ module.exports = function () {
             .call(_var.zoom_handler)
             .call(_var.zoom_handler.transform, d3.zoomIdentity.translate(_var.zoomTransform.x, _var.zoomTransform.y).scale(_var.zoomTransform.k))
 
-          // Disable zooming for desktop
+          // Disable zoom for desktop mode
           if(_var.screenMode === 'desktop') { _var.wrap.on("wheel.zoom", null); }
 
           break;
@@ -109,7 +93,7 @@ module.exports = function () {
   };
 
   // Exposicao de variaveis globais
-  ['_var','components'].forEach(function (key) {
+  ['_var'].forEach(function (key) {
 
     // Attach variables to validation function
     validate[key] = function (_) {

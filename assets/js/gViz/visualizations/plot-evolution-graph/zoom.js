@@ -95,7 +95,9 @@ module.exports = function () {
           _var.wrap
             .call(_var.zoom_handler)
             .call(_var.zoom_handler.transform, d3.zoomIdentity.translate(_var.zoomTransform.x, _var.zoomTransform.y).scale(_var.zoomTransform.k))
-            // .on("wheel.zoom", null)
+
+          // Disable zoom for desktop mode
+          if(_var.screenMode === 'desktop') { _var.wrap.on("wheel.zoom", null); }
 
           break;
       }

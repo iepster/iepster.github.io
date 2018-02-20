@@ -84,7 +84,7 @@ module.exports = function () {
                 .attr("width", 65)
                 .attr("height", 65)
                 .attr('x', -30)
-                .attr('y', -55)
+                .attr('y', _var.isLandscape ? -55 : -35)
                 .style('opacity', 0)
                 .transition()
                   .style('opacity', 1);

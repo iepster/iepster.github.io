@@ -72,8 +72,8 @@ module.exports = function () {
           main('yScaleSize');
           main('create');
           main('axis');
-          main('elements');
           main('zoom');
+          main('elements');
           break;
 
         // Initialize visualization variable

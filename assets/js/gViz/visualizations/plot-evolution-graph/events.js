@@ -100,7 +100,9 @@ module.exports = function () {
               groups.transition().style('opacity', function(d) { return _var.clicked == null || _var.clicked.id === d.id ? 1 : 0.1; });
 
               // Remove filter
-              circles.transition().style("filter", "")
+              circles.transition()
+                .style("filter", "")
+                .attr('r', function(d) { return _var.z(+d._values.z); })
 
               // Put smaller elements on the front
               groups.sort(function(a,b) { return d3.descending(+a._values.z, +b._values.z); })

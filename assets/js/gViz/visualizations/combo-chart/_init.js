@@ -70,8 +70,8 @@ module.exports = function () {
           main('xScale');
           main('create');
           main('axis');
-          main('elements');
           main('zoom');
+          main('elements');
           break;
 
         // Initialize visualization variable

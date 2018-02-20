@@ -16,7 +16,8 @@ module.exports = function () {
     misc: require('./misc.js'),
     style: require('./style.js'),
     xScale: require('./x-scale.js'),
-    yScale: require('./y-scale.js')
+    yScale: require('./y-scale.js'),
+    zoom: require('./zoom.js')
   };
 
   // Get attributes values
@@ -27,7 +28,8 @@ module.exports = function () {
   let container = null;
   var colors = { main: shared.helpers.colors.main };
   let data = [];
-  let margin = { top: 5, right: 2, bottom: 35, left: 0 };
+  let margin = { top: 5, right: 5, bottom: 35, left: 0 };
+  let screenMode = 'desktop';
 
   // Validate attributes
   let validate = function (step) {
@@ -41,6 +43,7 @@ module.exports = function () {
       case 'style':      return true;
       case 'xScale':     return data != null && data.data != null && data.data.length > 0;
       case 'yScale':     return data != null && data.data != null && data.data.length > 0;
+      case 'zoom':       return data != null && data.data != null && data.data.length > 0;
       default: return false;
     }
   };
@@ -63,6 +66,7 @@ module.exports = function () {
           main('xScale');
           main('create');
           main('axis');
+          main('zoom');
           main('elements');
           break;
 
@@ -79,6 +83,7 @@ module.exports = function () {
             .colors(colors)
             .data(data)
             .margin(margin)
+            .screenMode(screenMode)
             .run();
           break;
 
@@ -130,6 +135,15 @@ module.exports = function () {
             .run();
           break;
 
+        // Set zoom case
+        case 'zoom':
+
+          // Creating wrappers
+          _var = components.zoom()
+            ._var(_var)
+            .run();
+          break;
+
         // Setup elements
         case 'elements':
 
@@ -157,7 +171,7 @@ module.exports = function () {
   };
 
   // Expose global variables
-  ['_id', '_var', 'action', 'animation', 'container', 'colors', 'data', 'margin'].forEach(function (key) {
+  ['_id', '_var', 'action', 'animation', 'container', 'colors', 'data', 'margin', 'screenMode'].forEach(function (key) {
 
     // Attach variables to validation function
     validate[key] = function (_) {
