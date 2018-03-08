@@ -84,8 +84,8 @@ module.exports = function () {
               stateLabelsAbbr.exit().remove();
               stateLabelsAbbr = stateLabelsAbbr.enter().append("text").attr("class", "state-label-abbr").merge(stateLabelsAbbr);
               stateLabelsAbbr
-                .attr('text-anchor', "middle")
-                .attr('font-size', _var.labelStateSize)
+                .style('text-anchor', "middle")
+                .style('font-size', _var.labelStateSize)
                 .attr('x', function(d) {
                   var offset = 0;
                   if(d.properties.abbr === 'de') { offset = 3; }
@@ -184,8 +184,8 @@ module.exports = function () {
               countiesLabels.exit().remove();
               countiesLabels = countiesLabels.enter().append("text").attr("class", "map-label").merge(countiesLabels);
               countiesLabels
-                .attr('text-anchor', "middle")
-                .attr('font-size', _var.labelSize)
+                .style('text-anchor', "middle")
+                .style('font-size', _var.labelSize)
                 .attr('x', function(d) { return _var.projection([+d.lon, +d.lat])[0]; })
                 .attr('y', function(d) { return _var.projection([+d.lon, +d.lat])[1]; })
                 .attr('dy', _var.labelDy )
@@ -248,8 +248,8 @@ module.exports = function () {
               barLabels.exit().remove();
               barLabels = barLabels.enter().append("text").attr("class", "bar-label").merge(barLabels);
               barLabels
-                .attr('text-anchor', "middle")
-                .attr('font-size', _var.labelSize)
+                .style('text-anchor', "middle")
+                .style('font-size', _var.labelSize)
                 .attr('x', 0)
                 .attr('y', function(d,i) { return (i % 2 === 0 ? 3 : 10) / _var.getZoomTransform(); })
                 .attr('dy', _var.labelDy )

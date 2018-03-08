@@ -17,26 +17,27 @@
     "muted": false,
     "arcOpacity": 0.8,
     "width": "100%",
-    "height": "100%",
-    "textColor": "#575757"
+    "height": "100%"
   },
   "x1": {
     "title": "Estimated External Assets",
     "value": "sum",
-    "color": "#575757",
-    "percentageColor": "#575757",
     "prefix": "$",
     "sufix": "",
-    "format": "locale"
+    "format": "locale",
+    "titleStyle": { "fontSize": 14, "fill": "#575757" },
+    "valueStyle": { "fontSize": 22, "fill": "#575757" },
+    "percentageStyle": { "fontSize": 18, "fill": "#575757" }
   },
   "x2": {
     "title": "Management Fees",
     "value": "$20,235,138",
-    "color": "#575757",
-    "percentageColor": "#575757",
     "prefix": "$",
     "sufix": "",
-    "format": ""
+    "format": "",
+    "titleStyle": { "fontSize": 14, "fill": "#575757" },
+    "valueStyle": { "fontSize": 22, "fill": "#575757" },
+    "percentageStyle": { "fontSize": 18, "fill": "#575757" }
   },
   "data": [
     {
@@ -45,7 +46,11 @@
         "img": "http://www.iconninja.com/files/303/834/442/phone-smartphone-apple-iphone-device-mobile-icon.png",
         "color": "#EB7147",
         "x1": 7515908,
-        "x2": 11562936
+        "x2": 11562936,
+        "nameStyle": { "fontSize": 14, "fill": "#575757" },
+        "x1Style": { "fontSize": 22, "fill": "#575757" },
+        "x2Style": { "fontSize": 22, "fill": "#575757" },
+        "percentageStyle": { "fontSize": 18, "fill": "#575757" }
     },
     {
         "id": "SAD315294",

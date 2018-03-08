@@ -69,11 +69,11 @@ module.exports = function () {
                     //#############################    BEHAVIORS  #########################
 
                     var behaviors = {};
-                    behaviors.drag = d3.drag()
-                        .on("start", d => handlers.dragStarted(d))
-                        .on("drag", (d, i) => handlers.dragging(d, i))
-                        .on("end", d => handlers.dragEnded(d)
-                        .touchable(true))
+                    // behaviors.drag = d3.drag()
+                    //     .on("start", d => handlers.dragStarted(d))
+                    //     .on("drag", (d, i) => handlers.dragging(d, i))
+                    //     .on("end", d => handlers.dragEnded(d))
+                    //     .touchable(true))
 
                     behaviors.zoom = d3
                         .zoom()

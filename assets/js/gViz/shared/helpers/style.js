@@ -17,6 +17,18 @@ module.exports = {
         strValue = oElm.currentStyle[strCssRule];
     }
     return strValue;
+  },
+
+  // Set style from attrStyle
+  set: function(selection, attr, obj) {
+    attr = attr + "Style";
+    selection.each(function() {
+      if (obj[attr] != null && (typeof obj[attr] === 'object' || myVar instanceof Object)) {
+        Object.keys(obj[attr]).forEach(function(k) {
+          selection.style(k.replace(/([A-Z]+)/g, "-$1").replace(/^-/, "").toLowerCase(), function() { return obj[attr][k]; });
+        });
+      }
+    });
   }
 
 };

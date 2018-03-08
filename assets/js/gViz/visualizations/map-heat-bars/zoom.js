@@ -75,8 +75,8 @@ module.exports = function () {
             stateLabelsAbbr.exit().remove();
             stateLabelsAbbr = stateLabelsAbbr.enter().append("text").attr("class", "state-label-abbr").merge(stateLabelsAbbr);
             stateLabelsAbbr
-              .attr('text-anchor', "middle")
-              .attr('font-size', _var.labelStateSize)
+              .style('text-anchor', "middle")
+              .style('font-size', _var.labelStateSize)
               .attr('x', function(d) {
                 var offset = 0;
                 if(d.properties.abbr === 'de') { offset = 3; }
@@ -105,8 +105,8 @@ module.exports = function () {
             _var.mapLabels.exit().remove();
             _var.mapLabels = _var.mapLabels.enter().append("text").attr("class", "map-label").merge(_var.mapLabels);
             _var.mapLabels
-              .attr('text-anchor', "middle")
-              .attr('font-size', _var.labelSize)
+              .style('text-anchor', "middle")
+              .style('font-size', _var.labelSize)
               .attr('x', function(d) { return _var.projection([+d.lon, +d.lat])[0]; })
               .attr('y', function(d) { return _var.projection([+d.lon, +d.lat])[1]; })
               .attr('dy', _var.labelDy )
@@ -118,8 +118,8 @@ module.exports = function () {
               barLabels.exit().remove();
               barLabels = barLabels.enter().append("text").attr("class", "bar-label").merge(barLabels);
               barLabels
-                .attr('text-anchor', "middle")
-                .attr('font-size', _var.labelSize)
+                .style('text-anchor', "middle")
+                .style('font-size', _var.labelSize)
                 .attr('x', 0)
                 .attr('y', function(d,i) { return (i % 2 === 0 ? 3 : 10) / _var.getZoomTransform(); })
                 .attr('dy', _var.labelDy )
@@ -128,6 +128,10 @@ module.exports = function () {
 
             // Update circle attrs
             _var.g.selectAll('.bar-circle').attr('r', _var.pinRadius).attr('cy', _var.pinY)
+
+            // Update reset button visibility
+            _var.container.d3.closest('.gViz-outer-wrapper').select("[data-action='reset']")
+              .style('display', d3.event.transform.k != 1 || d3.event.transform.x != _var.margin.left || d3.event.transform.y != _var.margin.right ? 'block' : 'none')
 
           }
 
@@ -171,6 +175,10 @@ module.exports = function () {
           _var.container.d3.closest('.gViz-outer-wrapper').select("[data-action='zoom-out']").on('click', function(d) {
             _var.zoom_handler.scaleBy(_var.wrap.transition(), 1/1.3);
           });
+
+          // Set visibility of map actions
+          _var.container.d3.closest('.gViz-outer-wrapper').select(".gViz-map-actions")
+            .style('display', (_var.data.actions != null && _var.data.actions.isVisible === false) || (_var.data.attrs != null && _var.data.attrs.zoom != null && _var.data.attrs.zoom === false) ? 'none' : 'block');
 
           break;
       }

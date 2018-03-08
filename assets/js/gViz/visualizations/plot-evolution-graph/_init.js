@@ -84,6 +84,7 @@ module.exports = function () {
           main('values');
           main('zoom');
           main('elements');
+          main('zoom');
           break;
 
         // Initialize visualization variable

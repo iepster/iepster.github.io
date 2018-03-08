@@ -1,6 +1,7 @@
 {
   "overridableParams": {
-    "title": "sunburst",
+    "hasExpanded": true,
+    "title": "Sunburst",
     "restModeSumValue": {
       "prefix": "$",
       "sufix": "",

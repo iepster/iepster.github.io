@@ -32,6 +32,7 @@
   "attrs": {
     "legendBins": 0,
     "cities": false,
+    "grid": false,
     "width": "100%",
     "height": "100%"
   },
