@@ -31,7 +31,7 @@ module.exports = function () {
         case 'run':
 
           // Define aggregation method based on json data
-          _var.zAggregation = _var.data.z != null && _var.data.z.aggregation != null && ['sum','mean','median','maz','min'].indexOf(_var.data.z.aggregation) !== -1 ? _var.data.z.aggregation : 'mean';
+          _var.zAggregation = _var.data.z != null && _var.data.z.aggregation != null && ['sum','mean','median','max','min'].indexOf(_var.data.z.aggregation) !== -1 ? _var.data.z.aggregation : 'mean';
 
           // Initialize scale
           _var.z = d3.scaleLinear().range([5, 20]);

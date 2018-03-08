@@ -1,20 +1,84 @@
 {
   "statsData": [
     {
-      "title": "Sales",
-      "value": "$2.3M"
+      "title":  "Sales",
+      "prefix": "$",
+      "sufix":  "M",
+      "values": [
+        { "x": 16, "value": 1.1 },
+        { "x": 17, "value": 2.2 },
+        { "x": 18, "value": 3.3 },
+        { "x": 19, "value": 4.4 },
+        { "x": 21, "value": 1.5 },
+        { "x": 22, "value": 1.6 },
+        { "x": 23, "value": 1.7 },
+        { "x": 24, "value": 1.1 },
+        { "x": 25, "value": 5.2 },
+        { "x": 26, "value": 4.3 },
+        { "x": 27, "value": 2.4 },
+        { "x": 28, "value": 1.5 },
+        { "x": 29, "value": 2.6 }
+      ]
     },
     {
       "title": "Units",
-      "value": "9250"
+      "prefix": "",
+      "sufix":  "",
+      "values": [
+        { "x": 16, "value": 1000 },
+        { "x": 17, "value": 2000 },
+        { "x": 18, "value": 3000 },
+        { "x": 19, "value": 4000 },
+        { "x": 21, "value": 5000 },
+        { "x": 22, "value": 6000 },
+        { "x": 23, "value": 5000 },
+        { "x": 24, "value": 4000 },
+        { "x": 25, "value": 3000 },
+        { "x": 26, "value": 2000 },
+        { "x": 27, "value": 1000 },
+        { "x": 28, "value": 3000 },
+        { "x": 29, "value": 2000 }
+      ]
     },
     {
       "title": "STS Ratio",
-      "value": "1.1"
+      "prefix": "",
+      "sufix":  "",
+      "values": [
+        { "x": 16, "value": 0.1 },
+        { "x": 17, "value": 0.2 },
+        { "x": 18, "value": 0.3 },
+        { "x": 19, "value": 0.4 },
+        { "x": 21, "value": 0.5 },
+        { "x": 22, "value": 0.6 },
+        { "x": 23, "value": 0.7 },
+        { "x": 24, "value": 0.5 },
+        { "x": 25, "value": 0.4 },
+        { "x": 26, "value": 0.3 },
+        { "x": 27, "value": 0.2 },
+        { "x": 28, "value": 0.1 },
+        { "x": 29, "value": 0.1 }
+      ]
     },
     {
       "title": "Profitability",
-      "value": "$1.2M"
+      "prefix": "$",
+      "sufix":  "M",
+      "values": [
+        { "x": 16, "value": 0.1 },
+        { "x": 17, "value": 0.2 },
+        { "x": 18, "value": 0.3 },
+        { "x": 19, "value": 0.4 },
+        { "x": 21, "value": 0.3 },
+        { "x": 22, "value": 0.2 },
+        { "x": 23, "value": 0.1 },
+        { "x": 24, "value": 0.2 },
+        { "x": 25, "value": 0.3 },
+        { "x": 26, "value": 0.4 },
+        { "x": 27, "value": 0.5 },
+        { "x": 28, "value": 0.5 },
+        { "x": 29, "value": 0.3 }
+      ]
     }
   ],
   "lineGraphData": {
@@ -26,7 +90,7 @@
       "hasImg": true,
       "muted": true,
       "propagate": "title",
-      "header": [ "This is a main header" ],
+      "header": [ "Sales vs Stock" ],
       "title": [  "<span class='metric'>{{name}} ({{x}})</span><span class='number'>{{y}}</span>"],
       "body": []
     },

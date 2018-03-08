@@ -54,7 +54,7 @@ module.exports = function () {
           _var.g = _var.g.enter().append('g').attr('class', "chart-wrap").merge(_var.g);
 
           // Update inner dimensions
-          _var.g.attr("transform", `translate(${_var.margin.left},${_var.margin.top})`).attr('clip-path', 'url(#clip-path-'+_var._id+')');
+          _var.g.attr("transform", `translate(${_var.margin.left},0)`).attr('clip-path', 'url(#clip-path-'+_var._id+')');
 
           // Draw defs
           _var.defs = _var.wrap.selectAll("defs.svg-defs").data(["svg-defs"]);

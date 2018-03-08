@@ -47,8 +47,8 @@ module.exports = function () {
               circles.transition().style("filter", function(g) { return g === node ? "url(#"+_var.shadowId+")" : ""; })
 
               // Get x and y values
-              var x = _var.x(+node._values.x);
-              var y = _var.y(+node._values.y);
+              var x = _var._x(+node._values.x);
+              var y = _var._y(+node._values.y);
               var z = _var.z(+node._values.z);
 
               // Get left and top positions
@@ -100,7 +100,9 @@ module.exports = function () {
               groups.transition().style('opacity', function(d) { return _var.clicked == null || _var.clicked.id === d.id ? 1 : 0.1; });
 
               // Remove filter
-              circles.transition().style("filter", "")
+              circles.transition()
+                .style("filter", "")
+                .attr('r', function(d) { return _var.z(+d._values.z); })
 
               // Put smaller elements on the front
               groups.sort(function(a,b) { return d3.descending(+a._values.z, +b._values.z); })

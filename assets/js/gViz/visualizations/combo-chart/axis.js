@@ -42,10 +42,10 @@ module.exports = function () {
               _var.x_axis = _var.x_axis.enter().append('g').attr("class", "x axis").merge(_var.x_axis);
               _var.x_axis.call(_var.xAxis.tickSize(-_var.height)).attr("transform", 'translate(0,' + _var.height + ')')
               _var.x_axis.selectAll(".tick line").attr('y1', 3)
-              _var.x_axis.selectAll(".tick text").text(function(d) { return _var.nodes[d].name; });
+              _var.x_axis.selectAll(".tick text").text(function(d) { return _var.nodes[d].name; })
 
               // Create and update Y axis
-              _var.y_left_axis = _var.g.selectAll(".y.axis.l-axis").data(_var.data.yLeft != null && _var.data.yLeft.isVisible !== false ? ['y'] : []);
+              _var.y_left_axis = _var.gYClip.selectAll(".y.axis.l-axis").data(_var.data.yLeft != null && _var.data.yLeft.isVisible !== false ? ['y'] : []);
               _var.y_left_axis.exit().remove();
               _var.y_left_axis = _var.y_left_axis.enter().append('g').attr("class", "y axis l-axis").merge(_var.y_left_axis);
               _var.y_left_axis.call(_var.yLeftAxis.tickSize(-_var.width))
@@ -55,7 +55,7 @@ module.exports = function () {
               _var.y_left_axis.selectAll(".tick text").filter(function(d) { return d === _var.yTarget; }).remove();
 
               // Create and update Y axis
-              _var.y_right_axis = _var.g.selectAll(".y.axis.r-axis").data(_var.data.yRight != null && _var.data.yRight.isVisible !== false ? ['y'] : []);
+              _var.y_right_axis = _var.gYClip.selectAll(".y.axis.r-axis").data(_var.data.yRight != null && _var.data.yRight.isVisible !== false ? ['y'] : []);
               _var.y_right_axis.exit().remove();
               _var.y_right_axis = _var.y_right_axis.enter().append('g').attr("class", "y axis r-axis").merge(_var.y_right_axis);
               _var.y_right_axis.call(_var.yRightAxis.tickSize(-_var.width)).attr("transform", 'translate(' + (_var.width - 3) + ',0)')

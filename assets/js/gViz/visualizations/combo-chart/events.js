@@ -66,7 +66,7 @@ module.exports = function () {
               var y = type === 'bar' ? _var.getY(node.yBar) : _var.getYRight(node.yLine);
 
               // Get left and top positions
-              var left = _var.wrap.node().getBoundingClientRect().left +_var.margin.left + x;
+              var left = _var.wrap.node().getBoundingClientRect().left +_var.margin.left + x + _var.zoomTransform.x;
               var top  = _var.wrap.node().getBoundingClientRect().top + _var.margin.top + y;
 
               // Set node color

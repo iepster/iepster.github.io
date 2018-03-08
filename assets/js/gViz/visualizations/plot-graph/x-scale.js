@@ -129,6 +129,9 @@ module.exports = function () {
 
           }
 
+          // Store _x scale
+          if(_var._x == null) { _var._x = _var.x; }
+
           break;
       }
     }

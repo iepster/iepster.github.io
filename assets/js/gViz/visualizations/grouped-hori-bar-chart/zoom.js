@@ -32,17 +32,38 @@ module.exports = function () {
           // Zoom functions
           _var.zoom_actions = function(){
 
-            // Set event transformation only vertically without zoom
-            d3.event.transform.k = 1;
+            // Fix x transformation
             d3.event.transform.x = _var.margin.left;
-            d3.event.transform.y = d3.event.transform.y < -_var.calcHeight + _var.height + 10 ? -_var.calcHeight + _var.height + 10 : d3.event.transform.y;
-            d3.event.transform.y = d3.event.transform.y > _var.margin.top ? _var.margin.top : d3.event.transform.y;
 
-            // Update bgClipRect
-            _var.bgClipRect.attr('y', -d3.event.transform.y);
+            if((_var.height * d3.event.transform.k) + d3.event.transform.y < _var.height + _var.margin.top) {
+              d3.event.transform.y = -(_var.height * d3.event.transform.k) + (_var.height + _var.margin.top);
+            } else if(d3.event.transform.y > _var.margin.top) {
+              d3.event.transform.y = _var.margin.top;
+            }
 
-            // Transform outer g
-            _var.g.attr("transform", d3.event.transform)
+            // Update x range
+            _var.y.range([_var.calcHeight * d3.event.transform.k, 0]);
+
+            // Bars
+            _var.g.selectAll(".chart-elements")
+              .attr("transform", "translate(0, " + d3.event.transform.y+")scale(1, " + d3.event.transform.k + ")");
+
+            // Update Texts positions
+            var textGroups = _var.g.selectAll(".element-text").attr("transform", function (d) { return `translate(0, ${_var.y(d.y)+d3.event.transform.y})`; })
+            textGroups.selectAll("text.x-in-text")
+              .attr("y", function(d) { return (_var.yIn(d.y) + _var.yIn.bandwidth()/2) * d3.event.transform.k; })
+              .attr("dy", '0.35em')
+              .text(function(d) { return d.name; })
+
+            textGroups.selectAll("text.y-in-text")
+              .attr("y", function(d) { return (_var.yIn(d.y) + _var.yIn.bandwidth()/2 - _var.barHeight/2) * d3.event.transform.k - 7; })
+              .attr("dy", '0.35em')
+              .text(function(d) { return d.name; })
+
+            // Axis
+            _var.y_axis
+              .attr("transform", "translate(0," + d3.event.transform.y + ")")
+              .call(_var.yAxis.scale(_var.y));
 
             // Set zoom transform
             _var.zoomTransform = d3.event.transform;
@@ -51,7 +72,7 @@ module.exports = function () {
 
           // Add zoom capabilities
           _var.zoom_handler = d3.zoom()
-            .scaleExtent([1,1])
+            .scaleExtent([1,3])
             .on("zoom", _var.zoom_actions)
             .on("start", function() { _var.wrap.classed('grabbing', true) })
             .on("end",   function() { _var.wrap.classed('grabbing', false) });
@@ -60,7 +81,9 @@ module.exports = function () {
           _var.wrap
             .call(_var.zoom_handler)
             .call(_var.zoom_handler.transform, d3.zoomIdentity.translate(_var.zoomTransform.x, _var.zoomTransform.y).scale(_var.zoomTransform.k))
-            .on("wheel.zoom", null)
+
+          // Disable zoom for desktop mode
+          if(_var.screenMode === 'desktop') { _var.wrap.on("wheel.zoom", null); }
 
           break;
       }

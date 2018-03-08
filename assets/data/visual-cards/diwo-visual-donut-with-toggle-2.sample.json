@@ -14,12 +14,16 @@
   "attrs": {
     "radius": 20,
     "muted": false,
-    "arcOpacity": 0.8
+    "arcOpacity": 0.8,
+    "width": "100%",
+    "height": "100%",
+    "textColor": "#575757"
   },
   "x1": {
     "title": "Estimated External Assets",
     "value": "sum",
-    "color": "#EB7147",
+    "color": "#575757",
+    "percentageColor": "#575757",
     "prefix": "$",
     "sufix": "",
     "format": "locale"
@@ -27,6 +31,8 @@
   "x2": {
     "title": "Management Fees",
     "value": "$20,235,138",
+    "color": "#575757",
+    "percentageColor": "#575757",
     "prefix": "$",
     "sufix": "",
     "format": ""

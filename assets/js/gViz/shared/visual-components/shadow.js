@@ -78,7 +78,7 @@ module.exports = function () {
                 feColorMatrix
                   .attr("result", "bluralpha")
                   .attr("type", "matrix")
-                  .attr("values", "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.7 0 ")
+                  .attr("values", "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.4 0 ")
 
                 // Translate output of Gaussian blur to the right and downwards with 2px
                 // store result in offsetBlur

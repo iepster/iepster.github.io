@@ -100,6 +100,9 @@ module.exports = function () {
           // Define axis
           _var.xAxis = d3.axisBottom(_var.x).ticks(bins).tickPadding(10).tickFormat(_var.xFormat);
 
+          // Store _x scale
+          if(_var._x == null) { _var._x = _var.x; }
+
           break;
       }
     }

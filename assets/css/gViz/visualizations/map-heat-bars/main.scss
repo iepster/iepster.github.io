@@ -104,6 +104,12 @@ svg.map-heat-bars {
     }
   }
   span[data-action='reset'] {
+    display: hidden;
+    -moz-transform: scale(-1, 1);
+    -webkit-transform: scale(-1, 1);
+    -o-transform: scale(-1, 1);
+    -ms-transform: scale(-1, 1);
+    transform: scale(-1, 1);
     background-color: transparent;
     color: #e82110;
     border: 1px solid transparent;

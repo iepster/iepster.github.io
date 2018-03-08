@@ -60,6 +60,11 @@ module.exports = function () {
               _var.y_axis.selectAll(".tick line").attr('x1', -3)
               _var.y_axis.selectAll(".tick text").text(function(d) { return _var.nodes[d].name; });
 
+              // Remove all text if portrait
+              if(_var.screenMode === 'portrait' || _var.screenMode === 'portrait-primary' || _var.screenMode === 'portrait-secondary') {
+                _var.y_axis.selectAll(".tick text").remove();
+              }
+
               break;
 
           }

@@ -1,4 +1,4 @@
-$iconSizes: 8 8px,10 10px, 12 12px, 14 14px, 16 16px, 20 20px, 24 24px, 25 25px, 48 48px;
+$iconSizes: 8 8px,10 10px, 12 12px, 14 14px, 16 16px, 20 20px, 24 24px, 25 25px, 30 30px, 48 48px;
 $iconName: diwo;
 
 @font-face {
@@ -81,9 +81,12 @@ button.expand{
   cursor: pointer;
   @include transition(box-shadow 250ms cubic-bezier(0.25, 0.8, 0.25, 1) 0s);
   &:hover{
-
     @include box-shadow(2px 4px 18px rgba(0, 0, 0, 0.2))
   }
+}
+
+.dynamic-material-hover {
+  @include box-shadow(2px 4px 18px rgba(0, 0, 0, 0.2))
 }
 
 @each $kvp in $buttonSizes {

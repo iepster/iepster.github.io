@@ -47,8 +47,8 @@ module.exports = function () {
           _var.filterLabels = function(d, i) {
             var zoom = _var.getZoomTransform();
             if(_var.getZoomTransform() < 2) { return false; }
-            else if(zoom >= 2  && zoom < 5  && d.is_capital === '1') { return true; }
-            else if(zoom >= 5  && zoom < 7  && (d.is_capital === '1' || i < 5)) { return true; }
+            else if(zoom >= 2  && zoom < 6  && d.is_capital === '1') { return true; }
+            else if(zoom >= 6  && zoom < 7  && (d.is_capital === '1' || i < 5)) { return true; }
             else if(zoom >= 7  && zoom < 8  && (d.is_capital === '1' || i < 10)) { return true; }
             else if(zoom >= 8  && zoom < 10 && (d.is_capital === '1' || i < 15)) { return true; }
             else if(zoom >= 10 && zoom < 11 && (d.is_capital === '1' || i < 20)) { return true; }
@@ -64,7 +64,7 @@ module.exports = function () {
             else { return false; }
           }
 
-          _var.filterStateLabelsAbbr = function() { return _var.getZoomTransform() < 8; }
+          _var.filterStateLabelsAbbr = function() { return _var.getZoomTransform() < 2; }
 
           // Get label state size
           _var.labelStateSize = function(d) { return (12 / _var.getZoomTransform()) + "px"; }
@@ -171,7 +171,7 @@ module.exports = function () {
 
             // Get radius
             var isPin = _var.data.bars != null && _var.data.bars.barStyle != null && _var.data.bars.barStyle === 'pin';
-            var r = 5 / _var.getZoomTransform();
+            var r = isPin ? _var.pinRadius(d) : _var.barWidth(d);
             var dr = r*2;
             var x  = 0;
             var y  = isPin ? _var.pinY(d) : _var.barY(d);

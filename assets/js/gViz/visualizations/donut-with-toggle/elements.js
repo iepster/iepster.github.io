@@ -91,7 +91,7 @@ module.exports = function () {
           var node = _var.data[_var.metric];
 
           // Draw center title
-          var centerTitle = _var.g.selectAll("text.center-title").data(["center-title"]);
+          var centerTitle = _var.g.selectAll("text.center-title").data(_var.isLandscape ? [] : ["center-title"], function(d) { return d; });
           centerTitle.exit().remove();
           centerTitle = centerTitle.enter().append('text').attr("class", "center-title").merge(centerTitle);
           centerTitle
@@ -101,15 +101,13 @@ module.exports = function () {
             .attr('text-anchor', 'middle')
             .attr('font-weight', '300')
             .text(_var.data != null && node != null && node.title != null ? node.title : "No Title")
+            .call(function(sel) { shared.helpers.style.set(sel, 'title', node); })
             .style('opacity', 0)
             .transition()
               .style('opacity', 1)
 
-          // Remove center image
-          _var.g.selectAll(".center-image").transition().style('opacity', 0).remove();
-
           // Draw center value
-          var centerValue = _var.g.selectAll("text.center-value").data(["center-value"]);
+          var centerValue = _var.g.selectAll("text.center-value").data(_var.isLandscape ? [] : ["center-value"], function(d) { return d; });
           centerValue.exit().remove();
           centerValue = centerValue.enter().append('text').attr("class", "center-value").merge(centerValue);
           centerValue
@@ -120,23 +118,18 @@ module.exports = function () {
             .text(_var.data != null && node != null ? node._value : "No value")
             .style('opacity', 0)
             .style('font-size', _var.data[_var.metric].valueSize != null ? _var.data[_var.metric].valueSize : "22px")
+            .call(function(sel) { shared.helpers.style.set(sel, 'value', node); })
             .transition()
               .style('opacity', 1)
 
-          // Draw center percentage
-          var centerPercentage = _var.g.selectAll("text.center-percentage").data(_var.data[_var.metric] != null && _var.data[_var.metric].percentage != null && _var.data[_var.metric].percentage !== "" ? [_var.data[_var.metric].percentage] : []);
-          centerPercentage.exit().remove();
-          centerPercentage = centerPercentage.enter().append('text').attr("class", "center-percentage").merge(centerPercentage);
-          centerPercentage
-            .attr('x', 0)
-            .attr('y', 55)
-            .attr('text-anchor', 'middle')
-            .style('opacity', 0)
-            .style('fill', _var.data[_var.metric].percentageColor != null ? _var.data[_var.metric].percentageColor : "#575757")
-            .style('font-size', _var.data[_var.metric].percentageSize != null ? _var.data[_var.metric].percentageSize : "18px")
-            .text(function(d) { return d; })
-            .transition()
-              .style('opacity', 1)
+          // Remove center image and percentage
+          _var.g.selectAll(".center-image, .center-percentage").transition().style('opacity', 0).remove();
+
+          // Set name and value if landscape
+          if(_var.isLandscape && _var.landscapeValue != null && _var.landscapeName != null) {
+            _var.landscapeName.html(_var.data != null && node != null && node.title != null ? node.title : "No Title");
+            _var.landscapeValue.html(_var.data != null && node != null ? node._value : "No value");
+          }
 
           break;
       }

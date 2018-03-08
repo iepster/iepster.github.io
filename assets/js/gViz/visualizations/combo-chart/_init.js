@@ -18,7 +18,8 @@ module.exports = function () {
     style: require('./style.js'),
     xScale: require('./x-scale.js'),
     yLeftScale: require('./y-left-scale.js'),
-    yRightScale: require('./y-right-scale.js')
+    yRightScale: require('./y-right-scale.js'),
+    zoom: require('./zoom.js')
   };
 
   // Get attributes values
@@ -45,6 +46,7 @@ module.exports = function () {
       case 'xScale':      return data != null && data.data != null && data.data.length > 0;
       case 'yLeftScale':  return data != null && data.data != null && data.data.length > 0;
       case 'yRightScale': return data != null && data.data != null && data.data.length > 0;
+      case 'zoom':        return data != null && data.data != null && data.data.length > 0;
       default:            return false;
     }
   };
@@ -68,6 +70,7 @@ module.exports = function () {
           main('xScale');
           main('create');
           main('axis');
+          main('zoom');
           main('elements');
           break;
 
@@ -155,6 +158,16 @@ module.exports = function () {
             ._var(_var)
             .components(components)
             .data(_var.data.data)
+            .run();
+          break;
+
+        // Set zoom case
+        case 'zoom':
+
+          // Creating wrappers
+          _var = components.zoom()
+            ._var(_var)
+            .components(components)
             .run();
           break;
 

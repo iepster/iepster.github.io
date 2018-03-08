@@ -14,6 +14,7 @@ module.exports = function() {
   var colors = { main: shared.helpers.colors.main, aux: shared.helpers.colors.aux };
   let data      = [];
   let margin    = { top: 10, right: 10, bottom: 10, left: 10 };
+  let screenMode = 'desktop';
 
   // Validate attributes
   let validate = function(step) {
@@ -40,9 +41,13 @@ module.exports = function() {
           _var.animation = animation;
           _var.colors = colors;
           _var.margin = margin;
+          _var.screenMode = screenMode;
 
           // Id for shadows
           _var.shadowId = `vis-shadow-${Math.floor(Math.random() * ((1000000000 - 5) + 1)) + 5}`
+
+          // Set zoom transform
+          if(_var.zoomTransform == null) { _var.zoomTransform = { k: 1, x: _var.margin.left, y: _var.margin.top }; }
 
            // Get container
           _var.container = {
@@ -63,7 +68,7 @@ module.exports = function() {
 
           // Initialize line constructor
           _var.lineConstructor = d3.line()
-            .x(function (d) { return _var.x(d.parsedX) + (_var.xIsDate || _var.xIsNumber ? 0 : _var.x.bandwidth()/2) ; })
+            .x(function (d) { return _var._x(d.parsedX) + (_var.xIsDate || _var.xIsNumber ? 0 : _var._x.bandwidth()/2 + _var.zoomTransform.x) ; })
             .y(function (d) { return _var.y(+d.y); });
 
           break;
@@ -74,7 +79,7 @@ module.exports = function() {
   };
 
   // Expose global variables
-  ['_id','_var','animation','container','colors','data','margin'].forEach(function(key) {
+  ['_id','_var','animation','container','colors','data','margin','screenMode'].forEach(function(key) {
 
     // Attach variables to validation function
     validate[key] = function(_) {

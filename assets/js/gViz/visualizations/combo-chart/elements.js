@@ -87,11 +87,16 @@ module.exports = function () {
 
             });
 
+          // Element canvas
+          var lineElements = _var.g.selectAll(".chart-line-elements").data(["chart-line-elements"]);
+          lineElements.exit().remove();
+          lineElements = lineElements.enter().append("g").attr("class", "chart-line-elements").merge(lineElements);
+
           // Create line
-          var lines = elements.selectAll(".line").data([_data.filter(function(d) { return d.yLine != null && !isNaN(+d.yLine); })]);
+          var lines = lineElements.selectAll(".line").data([_data.filter(function(d) { return d.yLine != null && !isNaN(+d.yLine); })]);
           lines.exit().remove();
           lines = lines.enter().append("path").attr("class", "line").merge(lines);
-          lines.transition().duration(200)
+          lines
             .attr("d", function (d) { return _var.lineConstructor(d); })
             .attr("fill", 'none')
             .attr("stroke-width", _var.lineWidth)
@@ -99,10 +104,10 @@ module.exports = function () {
             .attr("stroke", _var.lineColor)
 
           // Create line points
-          var points = elements.selectAll(".point").data(_data.filter(function(d) { return d.yLine != null && !isNaN(+d.yLine); }), function(d) { return d.x; });
+          var points = lineElements.selectAll(".point").data(_data.filter(function(d) { return d.yLine != null && !isNaN(+d.yLine); }), function(d) { return d.x; });
           points.exit().remove();
           points = points.enter().append("path").attr("class", "point").merge(points);
-          points.transition().duration(200)
+          points
             .attr("d", _var.pointPath)
             .attr("fill", _var.pointColor)
 
@@ -141,6 +146,27 @@ module.exports = function () {
           bg_rect.exit().remove();
           bg_rect = bg_rect.enter().insert('rect', ':first-child').attr("class", "bg-rect").style('fill', 'transparent').merge(bg_rect);
           bg_rect.style('fill', 'transparent').attr("x", 0).attr('y', 0).attr('width', _var.width).attr("height", _var.height);
+
+          // Draw Background clip Path
+          _var.bgClip = _var.defs.selectAll(".bg-clip").data(["bg-clip"]);
+          _var.bgClip.exit().remove();
+          _var.bgClip = _var.bgClip.enter().insert('clipPath', ':first-child').attr("class", "bg-clip").merge(_var.bgClip);
+          _var.bgClip
+            .attr("id", "clip-path-"+_var._id)
+            .each(function() {
+
+              // Draw Background rect
+              _var.bgClipRect = d3.select(this).selectAll("rect.bg-rect").data(["bg-rect"]);
+              _var.bgClipRect.exit().remove();
+              _var.bgClipRect = _var.bgClipRect.enter().insert('rect', ':first-child').attr("class", "bg-rect").style('fill', 'transparent').merge(_var.bgClipRect);
+              _var.bgClipRect
+                .style('fill', 'transparent')
+                .attr("x", 0)
+                .attr('y', 0)
+                .attr('width', _var.width + 1)
+                .attr("height", _var.height + _var.margin.bottom + _var.margin.top);
+
+            });
 
           break;
       }

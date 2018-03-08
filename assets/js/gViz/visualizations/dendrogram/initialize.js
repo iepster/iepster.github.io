@@ -80,7 +80,7 @@ module.exports = function() {
           _var.attrs = {
             maxDepth: 0,
             size: { w: 20, h: 20 },
-            offset: { x: 10, y: 10 },
+            offset: { x: 34, y: 10 },
             satelites: { s: 16 },
             depths: {},
             _uniques: {},

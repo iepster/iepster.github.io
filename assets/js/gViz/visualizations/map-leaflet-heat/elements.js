@@ -144,7 +144,8 @@ module.exports = function () {
                 pointEls.call(d3.drag()
                   .on("start", _var.dragstarted)
                   .on("drag", _var.dragging)
-                  .on("end", _var.dragended));
+                  .on("end", _var.dragended)
+                  .touchable(true));
 
               }
 

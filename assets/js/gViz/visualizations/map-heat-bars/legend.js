@@ -107,7 +107,7 @@ module.exports = function() {
               // Draw legend elements
               var borderColor = shared.helpers.colors.isDark(rectColor) ? 'transparent' : (_var.data.attrs != null && _var.data.attrs.legendBorderColor != null && _var.data.attrs.legendBorderColor !== "" ? _var.data.attrs.legendBorderColor : '#dedede');
               var string = "<div style='display: block; height:18px; border: 1px solid "+borderColor+"; width:18px; background:"+rectColor+"; float:left; margin-right:5px'></div>";
-              string += "<div style='display: block; height:18px; line-height:20px; float:left; font-size:11px; font-weight:lighter; color: "+color+";'>"+text+"</div>";
+              string += "<div style='display: block; height:18px; line-height:20px; float:left; font-size:12px; font-weight:lighter; color: "+color+";'>"+text+"</div>";
               return string;
             });
 

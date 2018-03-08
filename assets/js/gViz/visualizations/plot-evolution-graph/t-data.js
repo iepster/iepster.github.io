@@ -105,31 +105,38 @@ module.exports = function () {
               _var.root = { id: "Root Node", children: [] };
 
               // Years
+              var hasLevels = _var.data != null && _var.data.t != null && _var.data.t.levels != null && _var.data.t.levels.length !== 0;
               var years = d3.range(+y0, +y1 + 1);
               var yInd, qInd, mInd, wInd, dInd;
+              var yVisible = !hasLevels || _var.data.t.levels.indexOf('year') !== -1;
+              var qVisible = !hasLevels || _var.data.t.levels.indexOf('quarter') !== -1;
+              var mVisible = !hasLevels || _var.data.t.levels.indexOf('month') !== -1;
+              var wVisible = !hasLevels || _var.data.t.levels.indexOf('week') !== -1;
 
               // Iterate over years
               years.map(function(d) { return d.toString(); }).forEach(function(y) {
 
-                // Set year and get index
-                yInd = _var.root.children.findIndex(function(d) { return d.id === y; });
-                if(yInd === -1) {
+                if(yVisible) {
 
-                  // Define obj
-                  var yObj = {
-                    id: 'Y' + y,
-                    type: 'year',
-                    label: 'Y',
-                    name: y,
-                    values: [(new Date(+y, 0, 1)).getTime(), (new Date(+y, 12, 0)).getTime()],
-                    children: []
-                  };
+                  // Set year and get index
+                  yInd = _var.root.children.findIndex(function(d) { return d.id === y; });
+                  if(yInd === -1) {
 
-                  // Store year obj
-                  _var.root.children.push(yObj);
+                    // Define obj
+                    var yObj = {
+                      id: 'Y' + y,
+                      type: 'year',
+                      label: 'Y',
+                      name: y,
+                      values: [(new Date(+y, 0, 1)).getTime(), (new Date(+y, 12, 0)).getTime()],
+                      children: []
+                    };
 
-                  // Get index
-                  yInd = _var.root.children.length-1;
+                    // Store year obj
+                    _var.root.children.push(yObj);
+                    yInd = _var.root.children.length-1;
+                    if(!qVisible && !mVisible && !wVisible) { _var.root.children[yInd].v = 1; }
+                  }
                 }
 
                 if(_var.tAxis.unit >= 0) {
@@ -143,28 +150,35 @@ module.exports = function () {
                   // Iterate over quarters
                   quarters.map(function(d) { return d.toString(); }).forEach(function(q) {
 
-                    // Set quarter and get index
-                    qInd = _var.root.children[yInd].children.findIndex(function(d) { return d.id === q; });
-                    if(qInd === -1) {
+                    if (qVisible) {
 
-                      // Define obj
-                      var qObj = {
-                        id: 'Y'+y+'Q'+q,
-                        type: 'quarter',
-                        label: 'Q',
-                        name: 'Q'+q,
-                        values: [(new Date(y,(3 * (+q-1)), 1)).getTime(), (new Date(y, (3 * (+q-1) + 3), 0)).getTime()],
-                        children: []
-                      };
+                      // Set quarter and get index
+                      if(yVisible) { qInd = _var.root.children[yInd].children.findIndex(function(d) { return d.id === q; });
+                      } else { qInd = _var.root.children.findIndex(function(d) { return d.id === q; }); }
 
-                      // Store quarter obj
-                      _var.root.children[yInd].children.push(qObj);
+                      if(qInd === -1) {
 
-                      // Get index
-                      qInd = _var.root.children[yInd].children.length-1;
+                        // Define obj
+                        var qObj = {
+                          id: 'Y'+y+'Q'+q,
+                          type: 'quarter',
+                          label: 'Q',
+                          name: 'Q'+q,
+                          values: [(new Date(y,(3 * (+q-1)), 1)).getTime(), (new Date(y, (3 * (+q-1) + 3), 0)).getTime()],
+                          children: []
+                        };
 
-                      // Set value
-                      if(_var.tAxis.unit === 0) { _var.root.children[yInd].children[qInd].v = 1; }
+                        // Store quarter obj, get index and set value
+                        if(yVisible) {
+                          _var.root.children[yInd].children.push(qObj);
+                          qInd = _var.root.children[yInd].children.length-1;
+                          if(_var.tAxis.unit === 0 || (!mVisible && !wVisible)) { _var.root.children[yInd].children[qInd].v = 1; }
+                        } else {
+                          _var.root.children.push(qObj);
+                          qInd = _var.root.children.length-1;
+                          if(_var.tAxis.unit === 0 || (!mVisible && !wVisible)) { _var.root.children[qInd].v = 1; }
+                        }
+                      }
                     }
 
                     if(_var.tAxis.unit >= 1) {
@@ -178,28 +192,50 @@ module.exports = function () {
                       // Iterate over months
                       months.map(function(d) { return d.toString().length === 1 ? ("0" + d.toString()) : d.toString(); }).forEach(function(m) {
 
-                        // Set month and get index
-                        mInd = _var.root.children[yInd].children[qInd].children.findIndex(function(d) { return d.id === m; });
-                        if(mInd === -1) {
+                        if(mVisible) {
 
-                          // Define obj
-                          var mObj = {
-                            id: 'Y'+y+'Q'+q+'M'+m,
-                            type: 'month',
-                            label: 'M',
-                            name: getMonthName(y+'-'+m),
-                            values: [(new Date(+y, +m-1, 1)).getTime(), (new Date(+y, +m, 0)).getTime()],
-                            children: []
-                          };
+                          // Set month and get index
+                          if(yVisible && qVisible) {
+                            mInd = _var.root.children[yInd].children[qInd].children.findIndex(function(d) { return d.id === m; });
+                          } else if(yVisible) {
+                            mInd = _var.root.children[yInd].children.findIndex(function(d) { return d.id === m; });
+                          } else if(qVisible) {
+                            mInd = _var.root.children[qInd].children.findIndex(function(d) { return d.id === m; });
+                          } else {
+                            mInd = _var.root.children.findIndex(function(d) { return d.id === m; });
+                          }
 
-                          // Store month obj
-                          _var.root.children[yInd].children[qInd].children.push(mObj);
+                          if(mInd === -1) {
 
-                          // Get index
-                          mInd = _var.root.children[yInd].children[qInd].children.length-1;
+                            // Define obj
+                            var mObj = {
+                              id: 'Y'+y+'Q'+q+'M'+m,
+                              type: 'month',
+                              label: 'M',
+                              name: getMonthName(y+'-'+m),
+                              values: [(new Date(+y, +m-1, 1)).getTime(), (new Date(+y, +m, 0)).getTime()],
+                              children: []
+                            };
 
-                          // Set value
-                          if(_var.tAxis.unit === 1) { _var.root.children[yInd].children[qInd].children[mInd].v = 1; }
+                            // Store month obj, get index and set value
+                            if(yVisible && qVisible) {
+                              _var.root.children[yInd].children[qInd].children.push(mObj);
+                              mInd = _var.root.children[yInd].children[qInd].children.length-1;
+                              if(_var.tAxis.unit === 1 || !wVisible) { _var.root.children[yInd].children[qInd].children[mInd].v = 1; }
+                            } else if(yVisible) {
+                              _var.root.children[yInd].children.push(mObj);
+                              mInd = _var.root.children[yInd].children.length-1;
+                              if(_var.tAxis.unit === 1 || !wVisible) { _var.root.children[yInd].children[mInd].v = 1; }
+                            } else if(qVisible) {
+                              _var.root.children[qInd].children.push(mObj);
+                              mInd = _var.root.children[qInd].children.length-1;
+                              if(_var.tAxis.unit === 1 || !wVisible) { _var.root.children[qInd].children[mInd].v = 1; }
+                            } else {
+                              _var.root.children.push(mObj);
+                              mInd = _var.root.children.length-1;
+                              if(_var.tAxis.unit === 1 || !wVisible) { _var.root.children[mInd].v = 1; }
+                            }
+                          }
                         }
 
                         if(_var.tAxis.unit >= 2) {
@@ -213,29 +249,73 @@ module.exports = function () {
                           // Iterate over weeks
                           weeks.map(function(d) { return d.toString(); }).forEach(function(w) {
 
-                            // Set weekand get index
-                            wInd = _var.root.children[yInd].children[qInd].children[mInd].children.findIndex(function(d) { return d.id === w; });
-                            if(wInd === -1) {
+                            if(wVisible) {
 
-                              var wObj = {
-                                id: 'Y'+y+'Q'+q+'M'+m+'W'+w,
-                                type: 'week',
-                                label: 'W',
-                                name: 'W'+w,
-                                values: [(new Date(+y, +m-1, (7 * (+w-1) + 1))).getTime(),
-                                  (+w !== 4 ? new Date(+y, +m-1, (7 * (+w-1) + 7)) : new Date(+y, +m, 0)).getTime()
-                                ],
-                                children: []
-                              };
+                              // Set weekand get index
+                              if(yVisible && qVisible && mVisible) {
+                                wInd = _var.root.children[yInd].children[qInd].children[mInd].children.findIndex(function(d) { return d.id === w; });
+                              } else if(yVisible && qVisible) {
+                                wInd = _var.root.children[yInd].children[qInd].children.findIndex(function(d) { return d.id === w; });
+                              } else if(yVisible && mVisible) {
+                                wInd = _var.root.children[yInd].children[mInd].children.findIndex(function(d) { return d.id === w; });
+                              } else if(qVisible && mVisible) {
+                                wInd = _var.root.children[qInd].children[mInd].children.findIndex(function(d) { return d.id === w; });
+                              } else if(qVisible) {
+                                wInd = _var.root.children[qInd].children.findIndex(function(d) { return d.id === w; });
+                              } else if(mVisible) {
+                                wInd = _var.root.children[mInd].children.findIndex(function(d) { return d.id === w; });
+                              } else {
+                                wInd = _var.root.children.findIndex(function(d) { return d.id === w; });
+                              }
 
-                              // Store obj
-                              _var.root.children[yInd].children[qInd].children[mInd].children.push(wObj);
+                              if(wInd === -1) {
 
-                              // Get index
-                              wInd = _var.root.children[yInd].children[qInd].children[mInd].children.length-1;
+                                var wObj = {
+                                  id: 'Y'+y+'Q'+q+'M'+m+'W'+w,
+                                  type: 'week',
+                                  label: 'W',
+                                  name: 'W'+w,
+                                  values: [(new Date(+y, +m-1, (7 * (+w-1) + 1))).getTime(),
+                                    (+w !== 4 ? new Date(+y, +m-1, (7 * (+w-1) + 7)) : new Date(+y, +m, 0)).getTime()
+                                  ],
+                                  children: []
+                                };
 
-                              // set value
-                              if(_var.tAxis.unit === 2) { _var.root.children[yInd].children[qInd].children[mInd].children[wInd].v = 1; }
+                                // Store obj, get index and set value
+                                if(yVisible && qVisible && mVisible) {
+                                  _var.root.children[yInd].children[qInd].children[mInd].children.push(wObj);
+                                  wInd = _var.root.children[yInd].children[qInd].children[mInd].children.length-1;
+                                  if(_var.tAxis.unit === 2) { _var.root.children[yInd].children[qInd].children[mInd].children[wInd].v = 1; }
+                                } else if(yVisible && qVisible) {
+                                  _var.root.children[yInd].children[qInd].children.push(wObj);
+                                  wInd = _var.root.children[yInd].children[qInd].children.length-1;
+                                  if(_var.tAxis.unit === 2) { _var.root.children[yInd].children[qInd].children[wInd].v = 1; }
+                                } else if(yVisible && mVisible) {
+                                  _var.root.children[yInd].children[mInd].children.push(wObj);
+                                  wInd = _var.root.children[yInd].children[mInd].children.length-1;
+                                  if(_var.tAxis.unit === 2) { _var.root.children[yInd].children[mInd].children[wInd].v = 1; }
+                                } else if(qVisible && mVisible) {
+                                  _var.root.children[qInd].children[mInd].children.push(wObj);
+                                  wInd = _var.root.children[qInd].children[mInd].children.length-1;
+                                  if(_var.tAxis.unit === 2) { _var.root.children[qInd].children[mInd].children[wInd].v = 1; }
+                                } else if(yVisible) {
+                                  _var.root.children[yInd].children.push(wObj);
+                                  wInd = _var.root.children[yInd].children.length-1;
+                                  if(_var.tAxis.unit === 2) { _var.root.children[yInd].children[wInd].v = 1; }
+                                } else if(qVisible) {
+                                  _var.root.children[qInd].children.push(wObj);
+                                  wInd = _var.root.children[qInd].children.length-1;
+                                  if(_var.tAxis.unit === 2) { _var.root.children[qInd].children[wInd].v = 1; }
+                                } else if(mVisible) {
+                                  _var.root.children[mInd].children.push(wObj);
+                                  wInd = _var.root.children[mInd].children.length-1;
+                                  if(_var.tAxis.unit === 2) { _var.root.children[mInd].children[wInd].v = 1; }
+                                } else {
+                                  _var.root.children.push(wObj);
+                                  wInd = _var.root.children.length-1;
+                                  if(_var.tAxis.unit === 2) { _var.root.children[wInd].v = 1; }
+                                }
+                              }
                             }
 
                           });

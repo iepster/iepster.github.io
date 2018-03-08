@@ -38,10 +38,10 @@ module.exports = function () {
           trackElements = trackElements.enter().insert("g", '.chart-elements').attr("class", "chart-track-elements").merge(trackElements);
 
           // Select values
-          var values = node.values.filter(function(d) { return +d._tValue >= _var.tAxis.bounds[0] && +d._tValue <= _var.tAxis.bounds[1]; });
+          _var.trackValues = node.values.filter(function(d) { return +d._tValue >= _var.tAxis.bounds[0] && +d._tValue <= _var.tAxis.bounds[1]; });
 
           // Draw track circle
-          var trackCircle = trackElements.selectAll("circle.track-circle").data(values.sort(function(a,b) { return d3.descending(+a.z, +b.z); }));
+          var trackCircle = trackElements.selectAll("circle.track-circle").data(_var.trackValues.sort(function(a,b) { return d3.descending(+a.z, +b.z); }));
           trackCircle.exit().remove();
           trackCircle = trackCircle.enter().append('circle').attr("class", "track-circle").merge(trackCircle);
           trackCircle
@@ -49,7 +49,7 @@ module.exports = function () {
             .style('stroke', node.color)
             .style('stroke-opacity', 0.7)
             .style('stroke-dasharray', '1 1')
-            .attr("transform", function(d) { return `translate(${_var.x(+d.x)},${_var.y(+d.y)})`; })
+            .attr("transform", function(d) { return `translate(${_var._x(+d.x)},${_var._y(+d.y)})`; })
             .attr('r', function(d) { return _var.z(+d.z); })
             .attr('opacity', _var.clicked == null ? 0 : 1)
             .transition().delay(200).duration(800)
@@ -110,12 +110,12 @@ module.exports = function () {
             .style('stroke-dasharray', '1 1')
             .attr("d", function(d) {
 
-              var path = 'M ' + values
+              var path = 'M ' + _var.trackValues
                 .sort(function(a,b) { return d3.ascending(+a._tValue, +b._tValue); })
-                .map(function(d) { return `${_var.x(+d.x)} ${_var.y(+d.y)}`; })
+                .map(function(d) { return `${_var._x(+d.x)} ${_var._y(+d.y)}`; })
                 .join(' ');
 
-              return path;
+              return _var.trackValues.length === 0 ? null : path;
 
             }).style('opacity', _var.clicked == null ? 0 : 1)
             .transition().delay(200).duration(800)

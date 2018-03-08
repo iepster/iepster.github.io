@@ -56,13 +56,13 @@ module.exports = function() {
               title = title == null || title.constructor !== Array ? [] : title;
               title = title.map(function(t, i) {
 
-                return "<div class='node-header' style='color: {{color}}; background-color: " + (backgroundColor == null ? (helpers.colors.isDark(obj.color) ? "#FFF" : "#434343") : backgroundColor) + "; border-top: 1px solid {{borderColor}};'>" + t + "</div>";
+                return "<div class='node-header' style='color: #575757 !important; background-color: #FFF !important; border-top: 1px solid {{borderColor}};'>" + t + "</div>";
 
               }).join('');
 
               // Set body content
               body = body == null || body.constructor !== Array ? [] : body;
-              body = body.map(function(d) { return "<div class='node-edge' style='border-top: 1px solid " + borderColor + "; background-color: " + (backgroundColor == null ? "{{color}}" : backgroundColor) + "; color: " + (backgroundColor == null ? (helpers.colors.isDark(obj.color) ? "#FFF" : "#434343") : "{{color}}") + ";'>" + d + "</div>"; }).join('');
+              body = body.map(function(d) { return "<div class='node-edge' style='border-top: 1px solid " + borderColor + "; background-color: #FFF !important; color: #575757 !important;'>" + d + "</div>"; }).join('');
 
               // Join content
               content = helpers.text.replaceVariables(title, obj) + helpers.text.replaceVariables(body, obj);

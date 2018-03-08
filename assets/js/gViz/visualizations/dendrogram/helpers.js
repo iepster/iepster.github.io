@@ -235,47 +235,69 @@ module.exports = function() {
           }
 
           // Get attrs from nodes
-          _var.getAttrs = function (d) {
+          _var.getAttrs = function (node) {
 
-            // Set bbox
-            if (d.bbox == null) { d.bbox = { width: _var.attrs.size.w, height: _var.attrs.size.h }; }
-            d.acc = 0;
+            var levels = {};
 
-            // Recursive iteration
-            if (d.children != null && d.children.length !== 0) {
+            var navigateTree = function(d) {
 
-              // Get sizes from children
-              var bbox_array = d.children.map(function (c) { return _var.getAttrs(c); });
-              var width = d3.max(bbox_array.map(function (a) { return a._width; }));
-              var height = d3.sum(bbox_array.map(function (a) { return a._height; }));
+              // Set bbox
+              if (d.bbox == null) { d.bbox = { width: _var.attrs.size.w, height: _var.attrs.size.h }; }
+              d.acc = 0;
 
-              if(_var.sumLevel != null && d.depth === _var.sumLevel) {
-                var h = Object.keys(_var.attrs._uniques).length * ( _var.attrs.size.h + _var.attrs.offset.x);
-                height = h / _var.attrs.depths[`${d.depth}`].count;
+              if(levels[d.depth.toString()] == null) {
+                levels[d.depth.toString()] = { length: 1, size: d.bbox.height * 2 + _var.attrs.offset.x };
+              } else {
+                levels[d.depth.toString()].length += 1;
+                levels[d.depth.toString()].size += d.bbox.height * 2 + _var.attrs.offset.x;
               }
 
-              // Set sizes
-              d.bbox._width = d.bbox.width > width ? d.bbox.width + 6 * _var.attrs.offset.y : width;
-              d.bbox._height = d.bbox.height > height ? d.bbox.height + _var.attrs.offset.x : height;
+              // Recursive iteration
+              if (d.children != null && d.children.length !== 0 && (d.data.collapsed == null || d.data.collapsed !== true)) {
 
-            } else if ((d._children == null || d._children.length === 0) && (d.children == null || (d.children != null && d.children.length === 0))) {
+                // Get sizes from children
+                var bbox_array = d.children.map(function (c) { return navigateTree(c); });
+                var width = d3.max(bbox_array.map(function (a) { return a.bbox._width; }));
+                var height = d3.sum(bbox_array.map(function (a) { return a.bbox.height * 2 + _var.attrs.offset.x; }));
 
-              d.bbox._width = d.bbox.width + 6 * _var.attrs.offset.y;
-              d.bbox._height = d.bbox.height * 2 + 6 + _var.attrs.offset.x;
+                if(_var.sumLevel != null && d.depth === _var.sumLevel) {
+                  var h = Object.keys(_var.attrs._uniques).length * ( _var.attrs.size.h + _var.attrs.offset.x);
+                  height = h / _var.attrs.depths[`${d.depth}`].count;
+                }
 
-            } else if ((d._children != null && d._children.length !== 0) || (d.data.collapsed != null && d.data.collapsed === true)) {
+                // Set sizes
+                d.bbox._width = d.bbox.width > width ? d.bbox.width + 6 * _var.attrs.offset.y : width;
+                d.bbox._height = d.bbox.height > height ? d.bbox.height * 2 + _var.attrs.offset.x : height;
 
-              d.bbox._width = d.bbox.width + 6 * _var.attrs.offset.y;
-              d.bbox._height = d.bbox.height + _var.attrs.offset.x;
+              } else {
 
-            } else {
+                d.bbox._width = d.bbox.width + 6 * _var.attrs.offset.y;
+                d.bbox._height = d.bbox.height * 2 + _var.attrs.offset.x;
 
-              d.bbox._width = d.bbox.width + 6 * _var.attrs.offset.y;
-              d.bbox._height = d.bbox.height * 2 + 6 + _var.attrs.offset.x;
+              }
+
+              return d;
 
             }
 
-            return d.bbox;
+            // Navigate on tree setting levels attributes
+            navigateTree(node);
+
+            // Get max level height
+            var mlHeight = null;
+            Object.keys(levels).forEach(function(k) { if(mlHeight == null || mlHeight.size < levels[k].size) { mlHeight = levels[k]; } });
+
+            var setHeight = function(d) {
+              if (d.children != null && d.children.length !== 0 && (d.data.collapsed == null || d.data.collapsed !== true)) {
+                d.children.forEach(function (c) { return setHeight(c); });
+                d.bbox._height = (mlHeight.size / levels[(d.depth + 1).toString()].length) * d.children.length;
+              } else {
+                d.bbox._height = d.bbox.height * 2 + _var.attrs.offset.x;
+              }
+            }
+
+            setHeight(node);
+
           };
 
           // Reset sizes based on tree

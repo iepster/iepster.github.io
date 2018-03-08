@@ -69,10 +69,11 @@ module.exports = function () {
                     //#############################    BEHAVIORS  #########################
 
                     var behaviors = {};
-                    behaviors.drag = d3.drag()
-                        .on("start", d => handlers.dragStarted(d))
-                        .on("drag", (d, i) => handlers.dragging(d, i))
-                        .on("end", d => handlers.dragEnded(d))
+                    // behaviors.drag = d3.drag()
+                    //     .on("start", d => handlers.dragStarted(d))
+                    //     .on("drag", (d, i) => handlers.dragging(d, i))
+                    //     .on("end", d => handlers.dragEnded(d))
+                    //     .touchable(true))
 
                     behaviors.zoom = d3
                         .zoom()
@@ -92,12 +93,12 @@ module.exports = function () {
                         idCounter++;
                         d.data.generatedId = 'node' + idCounter
                         //if node does have parent and does not have color
-                       
+
                         if (!d.data.color && d.parent) {
                             d.data.color = d.parent.data.color;
                         }
 
-                      
+
 
                     });
 

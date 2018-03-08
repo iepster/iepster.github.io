@@ -93,11 +93,26 @@ module.exports = function () {
 
             });
 
-          // Draw Background rect
-          var bg_rect = _var.g.selectAll("rect.bg-rect").data(["bg-rect"]);
-          bg_rect.exit().remove();
-          bg_rect = bg_rect.enter().insert('rect', ':first-child').attr("class", "bg-rect").style('fill', 'transparent').merge(bg_rect);
-          bg_rect.style('fill', 'transparent').attr("x", 0).attr('y', 0).attr('width', _var.width).attr("height", _var.height);
+          // Draw Background clip Path
+          _var.bgClip = _var.defs.selectAll(".bg-clip").data(["bg-clip"]);
+          _var.bgClip.exit().remove();
+          _var.bgClip = _var.bgClip.enter().insert('clipPath', ':first-child').attr("class", "bg-clip").merge(_var.bgClip);
+          _var.bgClip
+            .attr("id", "clip-path-"+_var._id)
+            .each(function() {
+
+              // Draw Background rect
+              _var.bgClipRect = d3.select(this).selectAll("rect.bg-rect").data(["bg-rect"]);
+              _var.bgClipRect.exit().remove();
+              _var.bgClipRect = _var.bgClipRect.enter().insert('rect', ':first-child').attr("class", "bg-rect").style('fill', 'transparent').merge(_var.bgClipRect);
+              _var.bgClipRect
+                .style('fill', 'transparent')
+                .attr("x", _var.margin.left)
+                .attr('y', 0)
+                .attr('width', (_var.width + _var.margin.right)  / _var.zoomTransform.k)
+                .attr("height", _var.height + _var.margin.bottom + _var.margin.top);
+
+            });
 
           break;
       }

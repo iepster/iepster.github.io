@@ -32,7 +32,7 @@ svg.donut-with-toggle {
   z-index: 12;
   top: calc(25%);
   left: calc(50% - 12px);
-  .toggle-ctn { background-color: #EDEDED; }
+  .toggle-ctn { background-color: #EDEDED; padding: 2px 2px 3px 2px !important; }
   .toggle { background-color: #666 !important; }
 
   &.gViz-donut-with-toggle-center-toggle-with-title {

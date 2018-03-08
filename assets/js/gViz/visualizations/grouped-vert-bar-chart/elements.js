@@ -59,31 +59,61 @@ module.exports = function () {
 
             });
 
-            // Event bindings
-            elements.selectAll('.bar, .stroke, .wrapper-stroke, .wrapper-bar').on('mouseover', function(e) {
+          // Event bindings
+          elements.selectAll('.bar, .stroke, .wrapper-stroke, .wrapper-bar').on('mouseover', function(e) {
 
-              // Set hovered node
-              _var.hovered = e;
+            // Set hovered node
+            _var.hovered = e;
 
-              // Mouseover event
-              components.events()
-                ._var(_var)
-                .action("mouseover")
-                .components(components)
-                .node(e)
-                .run();
+            // Mouseover event
+            components.events()
+              ._var(_var)
+              .action("mouseover")
+              .components(components)
+              .node(e)
+              .run();
 
-            }).on('mouseout', function(e) {
+          }).on('mouseout', function(e) {
 
-              // Reset hovered node
-              _var.hovered = null;
+            // Reset hovered node
+            _var.hovered = null;
 
-              // Mouseout event
-              components.events()
-                ._var(_var)
-                .action("mouseout")
-                .components(components)
-                .run();
+            // Mouseout event
+            components.events()
+              ._var(_var)
+              .action("mouseout")
+              .components(components)
+              .run();
+
+          });
+
+          // Element canvas
+          var textElements = _var.g.selectAll(".chart-text-elements").data(["chart-text-elements"]);
+          textElements.exit().remove();
+          textElements = textElements.enter().append("g").attr("class", "chart-text-elements").merge(textElements);
+
+          // Create textGroups
+          var textGroups = textElements.selectAll(".element-text").data(_data, function (d) { return d.x; });
+          textGroups.exit().remove();
+          textGroups = textGroups.enter().append("g").attr("class", "element-text").merge(textGroups);
+
+          // For each element in group
+          textGroups
+            .attr("transform", function (d) { return `translate(${_var.x(d.x) + _var.zoomTransform.x},0)`; })
+            .each(function (e, i) {
+
+              // Draw Texts
+              var textValuesObj = {};
+              var textValues = e.values.filter(function(d) { var flag = textValuesObj[d.x] == null; textValuesObj[d.x] = true; return flag; });
+              var texts = d3.select(this).selectAll("text.x-in-text").data((e.name == null || e.name === "" ? textValues : []), function(d) { return d.x; });
+              texts.exit().remove();
+              texts = texts.enter().append('text').attr("class", "x-in-text").merge(texts);
+              texts
+                .attr("x", function(d) { return (_var.xIn(d.x) + _var.xIn.bandwidth()/2) * _var.zoomTransform.k; })
+                .attr('y', _var.height + 17)
+                .attr('text-anchor', 'middle')
+                .text(function(d) { return d.name; })
+                .each(function(d) { shared.helpers.text.wrapBySize(d3.select(this), _var.xIn.bandwidth() * _var.zoomTransform.k, _var.margin.bottom, _var.xMaxLines); })
 
             });
 
@@ -101,9 +131,9 @@ module.exports = function () {
               _var.bgClipRect = _var.bgClipRect.enter().insert('rect', ':first-child').attr("class", "bg-rect").style('fill', 'transparent').merge(_var.bgClipRect);
               _var.bgClipRect
                 .style('fill', 'transparent')
-                .attr("x", 0)
+                .attr("x", _var.margin.left)
                 .attr('y', 0)
-                .attr('width', _var.width + _var.margin.right + 1)
+                .attr('width', _var.width)
                 .attr("height", _var.height + _var.margin.bottom + _var.margin.top);
 
             });

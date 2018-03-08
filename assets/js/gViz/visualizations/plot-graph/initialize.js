@@ -44,6 +44,9 @@ module.exports = function() {
           // Id for shadows
           _var.shadowId = `vis-shadow-${Math.floor(Math.random() * ((1000000000 - 5) + 1)) + 5}`
 
+          // Set zoom transform
+          if(_var.zoomTransform == null) { _var.zoomTransform = { k: 1, x: _var.margin.left, y: _var.margin.top }; }
+
            // Get container
           _var.container = {
             selector: container,

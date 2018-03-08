@@ -37,7 +37,8 @@
   "t": {
     "title": "Progress in time",
     "type": "time",
-    "format": "%Y-%d-%m"
+    "format": "%Y-%d-%m",
+    "levels": ["year","quarter","month","week"]
   },
   "attrs": {
     "width": "100%",

@@ -108,7 +108,7 @@
         "hasTopBorder": false,
         "hasBottomBorder": false,
         "color": "#FFF",
-        "pdfBorderColor": "#bbb",
+        "pdfBorderColor": "#e5e5e5",
         "pdfColor": "#575757",
         "textAlign": "left",
         "trPadding": "2px 0px",

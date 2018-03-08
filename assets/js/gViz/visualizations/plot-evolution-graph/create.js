@@ -50,13 +50,30 @@ module.exports = function () {
           _var.gE = _var.wrap.selectAll("g.chart-wrap-elements").data(["chart-wrap-elements"]); // svg:g
           _var.gE.exit().remove();
           _var.gE = _var.gE.enter().append('g').attr('class', "chart-wrap-elements").merge(_var.gE);
-          _var.gE.attr("transform", `translate(${_var.margin.left},${_var.margin.top})`);
+          _var.gE.attr("transform", `translate(${_var.margin.left},${_var.margin.top})`).attr('clip-path', 'url(#e-clip-path-'+_var._id+')');
 
           // Draw gT for t-axis-wrap
           _var.gT = _var.wrap.selectAll("g.t-axis-wrap").data(["t-axis-wrap"]); // svg:g
           _var.gT.exit().remove();
           _var.gT = _var.gT.enter().append('g').attr('class', "t-axis-wrap").merge(_var.gT);
           _var.gT.attr("transform", `translate(${_var.margin.tOffset + _var.margin.tLeft},${_var.height + _var.margin.top + _var.margin.bottom})`);
+
+          // Draw g clip for x axis
+          _var.gXClip = _var.wrap.selectAll("g.chart-wrap-x-clip").data(["chart-wrap-x-clip"]); // svg:g
+          _var.gXClip.exit().remove();
+          _var.gXClip = _var.gXClip.enter().insert('g',':first-child').attr('class', "chart-wrap-x-clip").merge(_var.gXClip);
+          _var.gXClip.attr("transform", `translate(${_var.margin.left},${_var.margin.top})`).attr('clip-path', 'url(#x-clip-path-'+_var._id+')');
+
+          // Draw g clip for y axis
+          _var.gYClip = _var.wrap.selectAll("g.chart-wrap-y-clip").data(["chart-wrap-y-clip"]); // svg:g
+          _var.gYClip.exit().remove();
+          _var.gYClip = _var.gYClip.enter().insert('g',':first-child').attr('class', "chart-wrap-y-clip").merge(_var.gYClip);
+          _var.gYClip.attr("transform", `translate(${_var.margin.left},${_var.margin.top})`).attr('clip-path', 'url(#y-clip-path-'+_var._id+')');
+
+          // Draw defs
+          _var.defs = _var.wrap.selectAll("defs.svg-defs").data(["svg-defs"]);
+          _var.defs.exit().remove();
+          _var.defs = _var.defs.enter().insert('defs',':first-child').attr("class", "svg-defs").merge(_var.defs);
 
           // Draw shadow
           shared.visualComponents.shadow()

@@ -30,6 +30,27 @@ module.exports = function () {
         // Build entire visualizations
         case 'run':
 
+          // Get Y function
+          _var.getY = function(y) {
+            if(_var.yLeftBounds[0] >= 0) { return _var.yLeft(+y); }
+            else if (_var.yLeftBounds[1] < 0) { return _var.yLeft(_var.yLeftBounds[1]); }
+            else { return +y >= 0 ? _var.yLeft(+y) : _var.yLeft(0); }
+          }
+
+          // Get Y function
+          _var.getYRight = function(y) {
+            if(_var.yRightBounds[0] >= 0) { return _var.yRight(+y); }
+            else if (_var.yRightBounds[1] < 0) { return _var.yRight(_var.yRightBounds[1]); }
+            else { return +y >= 0 ? _var.yRight(+y) : _var.yRight(0); }
+          }
+
+          // Get Height function
+          _var.getHeight = function(y) {
+            if(_var.yLeftBounds[0] >= 0) { return _var.height - _var.yLeft(+y); }
+            else if (_var.yLeftBounds[1] < 0) { return _var.yLeft(+y); }
+            else { return +y >= 0 ? (_var.yLeft(0) - _var.yLeft(+y)) : (_var.yLeft(+y) - _var.yLeft(0)); }
+          }
+
           // Set line width
           _var.lineWidth = function(d) {
             return _var.data != null && _var.data.attrs != null && _var.data.attrs.strokeWidth != null && !isNaN(_var.data.attrs.strokeWidth) ? _var.data.attrs.strokeWidth + "px" : "3px";
@@ -59,7 +80,7 @@ module.exports = function () {
             // Get radius
             var r  = 4;
             var dr = r*2;
-            var x  = _var.x(d.x) + _var.x.bandwidth()/2;
+            var x  = _var.x(d.x) + _var.x.bandwidth()/2 + _var.zoomTransform.x;
             var y  = _var.yRight(+d.yLine);
             var shape = _var.data != null && _var.data.attrs != null && _var.data.attrs.pointShape != null ? _var.data.attrs.pointShape : "circle";
 

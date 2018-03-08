@@ -85,7 +85,7 @@ module.exports = function () {
             // Get radius
             var r = _var.pointSize(d);
             var dr = r*2;
-            var x  = _var.x(d.parsedX) + (_var.xIsDate || _var.xIsNumber ? 0 : _var.x.bandwidth()/2);
+            var x  = _var._x(d.parsedX) + (_var.xIsDate || _var.xIsNumber ? 0 : _var._x.bandwidth()/2 + _var.zoomTransform.x);
             var y  = _var.y(+d.y);
             var shape = d.pointShape != null ? d.pointShape : (d._parent.pointShape != null ? d._parent.pointShape : "circle");
 
